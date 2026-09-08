@@ -37,8 +37,8 @@
 | U202313397 | Oroncoy Almeyda, Alejandro Daniel |
 | U202312222 | Rivera Sosa, Eduardo Gael |
 | U20241C134 | Tumi Oliden, Manuel Ignacio |
-| Pendiente | Werner Khalil Lang Nassi |
-| Pendiente | Kevin Chi |
+| Pendiente | Lang Nassi, Werner Khalil |
+| Pendiente | Chi Cruzatt, Kevin Jorge |
 
 <br>
 
