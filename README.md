@@ -1,39 +1,54 @@
 <div align="center">
 
-# UNIVERSIDAD PERUANA DE CIENCIAS APLICADAS
+<br><br>
 
-## INGENIERÍA DE SOFTWARE
+<img src="./assets/images/logos/upc-logo.png" alt="Logo UPC" width="250">
 
-### 1ASI0728 — ARQUITECTURAS DE SOFTWARE EMERGENTES
+<br><br>
 
-**NRC:** 16365<br>
-**PROFESOR:** Enrique Alejandro Valdivia Verde
+**Universidad Peruana de Ciencias Aplicadas**
 
 <br>
 
-# INFORME DE TRABAJO FINAL
+**Ingeniería de Software**
 
-**CICLO:** 2026-20
+**Periodo:** 2026-20
 
-## STARTUP: THROPIC
+<br>
 
-## PRODUCTO: TALKI
+**1ASI0728 | Arquitecturas de Software Emergentes**
 
-### INTEGRANTES
+**NRC:** 16365
 
-| Código | Apellidos y nombres |
-| :---: | --- |
-| U202313397 | Alejandro Oroncoy |
-| Pendiente | Manuel Tumi |
+**Docente:** Valdivia Verde, Enrique Alejandro
+
+### Informe de Trabajo Final
+
+**Startup:** Thropic
+
+**Producto:** Talki
+
+<br>
+
+**Integrantes:**
+
+| Código | Apellidos y Nombres |
+|--------|---------------------|
+| U202313397 | Oroncoy Almeyda, Alejandro Daniel |
+| U202312222 | Rivera Sosa, Eduardo Gael |
+| U20241C134 | Tumi Oliden, Manuel Ignacio |
 | Pendiente | Werner Khalil Lang Nassi |
 | Pendiente | Kevin Chi |
-| Pendiente | Gael Rivera |
 
-**Septiembre de 2026**
+<br>
+
+**Septiembre, 2026**
+
+<br><br>
 
 </div>
 
----
+<div style="page-break-after: always;"></div>
 
 # Registro de Versiones del Informe
 
