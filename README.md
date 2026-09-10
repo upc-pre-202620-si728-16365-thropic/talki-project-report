@@ -228,8 +228,8 @@ Talki es la solución principal de Thropic: una aplicación web que utiliza IA p
       <td><em>Foto pendiente</em></td>
     </tr>
     <tr>
-      <td><strong>Chi Cruzatt, Kevin Jorge</strong> (U202313655)<br><em>Perfil pendiente de completar por el integrante.</em></td>
-      <td><em>Foto pendiente</em></td>
+      <td><strong>Chi Cruzatt, Kevin Jorge</strong> (U202313655)<br>Actualmente estoy cursando la carrera de ingeniería de Software y me encuentro en el 8° ciclo. Tengo experiencia utilizando diferentes metodologías de diseño, como Domain Driven Design (DDD) y CMV, además de frameworks como Laravel y Spring en lenguajes como Java, PHP, etc. Me considero una persona paciente y perseverante en situaciones difíciles.</td>
+      <td><img src="assets/images/photos/kevin-chi.png" alt="kevin-chi" width="200"></td>
     </tr>
   </tbody>
 </table>
