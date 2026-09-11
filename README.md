@@ -224,8 +224,8 @@ Talki es la solución principal de Thropic: una aplicación web que utiliza IA p
       <td><img src="assets/images/photos/manuel-tumi.jpg" alt="Manuel Tumi" width="200"></td>
     </tr>
     <tr>
-      <td><strong>Lang Nassi, Werner Khalil</strong> (U202310003)<br><em>Perfil pendiente de completar por el integrante.</em></td>
-      <td><em>Foto pendiente</em></td>
+      <td><strong>Lang Nassi, Werner Khalil</strong> (U202310003)<br>Estudiante de la Universidad Peruana de Ciencias Aplicadas (UPC), cursando en 8.º ciclo. Tengo afinidad con la arquitectura de software y e desarollado habilidades con machine y deep learning. Ademas siempre estoy dispuesto a aprender nuevas metologias o habilidades que me ayuden a desarollarme en la carrera.</td>
+      <td><img src="assets/images/photos/werner-lang.jpg"></td>
     </tr>
     <tr>
       <td><strong>Chi Cruzatt, Kevin Jorge</strong> (U202313655)<br>Actualmente estoy cursando la carrera de ingeniería de Software y me encuentro en el 8° ciclo. Tengo experiencia utilizando diferentes metodologías de diseño, como Domain Driven Design (DDD) y CMV, además de frameworks como Laravel y Spring en lenguajes como Java, PHP, etc. Me considero una persona paciente y perseverante en situaciones difíciles.</td>
