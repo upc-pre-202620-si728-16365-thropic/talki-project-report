@@ -405,7 +405,132 @@ El canvas documenta de forma visual: business outcomes, problemas de usuario, op
 
 ### 2.1.1. Análisis competitivo
 
+Para identificar las fortalezas, debilidades y estrategias de nuestros competidores directos e indirectos, con el fin de definir la propuesta de valor diferenciada de Talki y detectar oportunidades de mercado no atendidas, se elaboró el siguiente **Competitive Analysis Landscape** comparando Talki con tres competidores relevantes en el espacio de aplicaciones de mejora de la comunicación oral: ELSA Speak, Speeko y Orai.
+
+<table>
+  <tr>
+    <th colspan="6">Competitive Analysis Landscape</th>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><b>¿Por qué llevar a cabo este análisis?</b></td>
+    <td colspan="4">Para identificar las fortalezas, debilidades y estrategias de nuestros competidores directos e indirectos, con el fin de definir la propuesta de valor diferenciada de Talki y detectar oportunidades de mercado no atendidas.</td>
+  </tr>
+  <tr>
+    <th colspan="2">Nombre</th>
+    <th>Talki (Thropic)</th>
+    <th>ELSA Speak</th>
+    <th>Speeko</th>
+    <th>Orai</th>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><b>Logo</b></td>
+    <td align="center"><img src="assets/images/logos/talki-logo.png" alt="Talki logo" width="100"></td>
+    <td align="center"><img src="assets/images/logos/elsa-speak-logo.png" alt="ELSA Speak" width="100"></td>
+    <td align="center"><img src="assets/images/logos/speeko-logo.png" alt="Speeko" width="100"></td>
+    <td align="center"><img src="assets/images/logos/orai-logo.png" alt="Orai" width="100"></td>
+  </tr>
+  <tr>
+    <td rowspan="2"><b>Perfil</b></td>
+    <td><b>Overview</b></td>
+    <td>Aplicación web con IA que analiza y retroalimenta la comunicación oral de estudiantes universitarios peruanos en tiempo real, en español.</td>
+    <td>App de pronunciación en inglés con IA que evalúa y corrige la pronunciación del usuario en tiempo real mediante reconocimiento de voz avanzado.</td>
+    <td>App de coaching para hablar en público con lecciones estructuradas impartidas por coaches reales y ejercicios de práctica.</td>
+    <td>App móvil con IA que analiza la oratoria del usuario (ritmo, palabras de relleno, energía, expresión facial) y entrega retroalimentación inmediata y lecciones personalizadas.</td>
+  </tr>
+  <tr>
+    <td><b>Ventaja competitiva ¿Qué valor ofrece a los clientes?</b></td>
+    <td>Feedback en tiempo real en español con contexto académico peruano; enfocado en universitarios latinoamericanos.</td>
+    <td>Motor de IA especializado en detección de errores fonéticos del inglés; más de 50M usuarios globales.</td>
+    <td>Contenido creado por coaches profesionales de oratoria; estructura de cursos progresivos y micro-lecciones de 5 minutos.</td>
+    <td>Análisis multimodal (voz + expresión facial) con plan de entrenamiento adaptativo; gamificación y seguimiento de progreso detallado.</td>
+  </tr>
+  <tr>
+    <td rowspan="2"><b>Perfil de Marketing</b></td>
+    <td><b>Mercado objetivo</b></td>
+    <td>Estudiantes universitarios peruanos/latinoamericanos de ciclos 1-10.</td>
+    <td>Hablantes no nativos de inglés que desean mejorar su pronunciación, principalmente en Asia y Latinoamérica.</td>
+    <td>Profesionales y estudiantes angloparlantes que quieren mejorar su oratoria y liderazgo comunicacional.</td>
+    <td>Profesionales, estudiantes y ejecutivos angloparlantes que necesitan mejorar presentaciones y discursos.</td>
+  </tr>
+  <tr>
+    <td><b>Estrategias de Marketing</b></td>
+    <td>Freemium, marketing universitario, referidos entre compañeros.</td>
+    <td>Freemium, referidos, partnerships con instituciones educativas.</td>
+    <td>Freemium, publicidad en LinkedIn y redes, membresías corporativas.</td>
+    <td>Freemium con trial de 7 días, alianzas con instituciones educativas, plan Enterprise para equipos.</td>
+  </tr>
+  <tr>
+    <td rowspan="3"><b>Perfil de Producto</b></td>
+    <td><b>Productos &amp; Servicios</b></td>
+    <td>Aplicación web con análisis de voz, ejercicios guiados, simulador de entrevistas y dashboard de progreso.</td>
+    <td>App móvil (iOS/Android) con lecciones de pronunciación, conversación simulada y análisis fonético detallado.</td>
+    <td>App móvil con cursos de oratoria, ejercicios diarios de 5 minutos y biblioteca de habilidades comunicacionales.</td>
+    <td>App móvil (iOS/Android) con análisis de voz e imagen, lecciones gamificadas, historial de práctica y plan personalizado de 4 semanas.</td>
+  </tr>
+  <tr>
+    <td><b>Precios y Costos</b></td>
+    <td>Freemium; plan premium S/. 15-25/mes.</td>
+    <td>Gratis con funciones limitadas; premium desde $6.99/mes.</td>
+    <td>Gratis con funciones básicas; premium desde $9.99/mes.</td>
+    <td>Gratis con funciones básicas; premium desde $9.99/mes o $39.99/año.</td>
+  </tr>
+  <tr>
+    <td><b>Canales de distribución</b></td>
+    <td>Sitio web (talki.com), compatible con navegadores modernos (Chrome, Edge, Safari, Firefox).</td>
+    <td>App Store, Google Play, web.</td>
+    <td>App Store, Google Play.</td>
+    <td>App Store, Google Play.</td>
+  </tr>
+  <tr>
+    <td rowspan="4"><b>Análisis SWOT</b></td>
+    <td><b>Fortalezas</b></td>
+    <td>Español nativo, contexto universitario peruano, IA personalizada, gamificación.</td>
+    <td>IA muy precisa, gran base de usuarios global, contenido extenso y probado.</td>
+    <td>Contenido de alta calidad creado por expertos, formato de micro-lecciones atractivo.</td>
+    <td>Análisis multimodal avanzado, plan adaptativo personalizado, gamificación efectiva, disponible en iOS y Android.</td>
+  </tr>
+  <tr>
+    <td><b>Oportunidades</b></td>
+    <td>Mercado latinoamericano poco atendido, alianzas con universidades, expansión a otros países.</td>
+    <td>Expansión a otros idiomas, mercado B2B con instituciones educativas.</td>
+    <td>Mercado B2B corporativo, expansión a español y otros idiomas.</td>
+    <td>Expansión a idiomas distintos del inglés, mercado educativo universitario latinoamericano sin atender.</td>
+  </tr>
+  <tr>
+    <td><b>Debilidades</b></td>
+    <td>Startup nueva sin track record, recursos limitados, marca poco conocida.</td>
+    <td>Enfocado solo en pronunciación del inglés, no cubre comunicación oral en español.</td>
+    <td>Sin IA para feedback en tiempo real, contenido exclusivamente en inglés.</td>
+    <td>Solo disponible en inglés, sin adaptación al contexto académico ni latinoamericano.</td>
+  </tr>
+  <tr>
+    <td><b>Amenazas</b></td>
+    <td>Entrada de apps internacionales al mercado hispanohablante, competidores con mayor financiamiento.</td>
+    <td>Competidores con IA generativa más avanzada, apps multiidioma con mayor alcance.</td>
+    <td>Apps con IA generativa que ofrecen feedback personalizado, saturación del mercado edtech.</td>
+    <td>Saturación del mercado edtech en inglés, nuevos competidores con IA generativa más potente.</td>
+  </tr>
+</table>
+
 ### 2.1.2. Estrategias y tácticas frente a competidores
+
+A partir del análisis competitivo, Thropic adopta las siguientes estrategias para posicionar Talki en el mercado:
+
+**Frente a ELSA Speak:**
+ELSA Speak domina el mercado de pronunciación en inglés pero no atiende la comunicación oral en español ni el contexto académico latinoamericano. Talki se diferencia enfocándose exclusivamente en español con contexto universitario peruano, ofreciendo ejercicios de exposición académica y simulación de sustentaciones que ELSA no contempla.
+
+**Frente a Speeko:**
+Speeko utiliza contenido pregrabado por coaches sin feedback personalizado en tiempo real. Talki responde con IA generativa que analiza el discurso del usuario en el momento y entrega retroalimentación específica e inmediata, no guiones estáticos. Además, Speeko no tiene presencia en el mercado hispanohablante, lo que representa una ventana de oportunidad directa.
+
+**Frente a Orai:**
+Orai ofrece análisis de oratoria con IA de manera similar a Talki, pero opera exclusivamente en inglés y sin ninguna adaptación al contexto académico latinoamericano. Talki capitaliza esta brecha ofreciendo la misma profundidad de análisis (ritmo, fluidez, claridad) pero en español, con ejercicios diseñados para sustentaciones, exposiciones universitarias y entrevistas de prácticas preprofesionales típicas del sistema educativo peruano.
+
+**Estrategia de diferenciación general:**
+
+- *Localización:* Único producto diseñado para el contexto universitario peruano/latinoamericano en español
+- *Precio accesible:* Modelo freemium con plan premium a S/. 15-25/mes, muy por debajo de los competidores internacionales
+- *Alianzas universitarias:* Partnerships con facultades de Ingeniería y Comunicaciones de universidades peruanas para adopción institucional
+- *Gamificación contextual:* Sistema de logros y streaks adaptado a los ciclos académicos peruanos (exposiciones, sustentaciones, entrevistas de prácticas)
 
 ## 2.2. Entrevistas
 
@@ -623,13 +748,183 @@ Las entrevistadas del Segmento 1 (Belén e Isabel) expresaron su disposición a 
 
 ### 2.3.1. User Personas
 
+Para comprender mejor las necesidades, motivaciones y comportamientos de los usuarios clave de Talki, se han desarrollado dos perfiles de usuario o personas representativas. Estos perfiles sintetizan características típicas, objetivos y retos de los segmentos principales, facilitando el diseño centrado en el usuario y la toma de decisiones estratégicas durante el desarrollo de la plataforma.
+
+**Persona 1: Valeria Ríos, la Estudiante en Formación Oral**
+
+Estudiante universitaria de 19 años, residente en Lima, Perú, cursando los ciclos 1 al 5 de una carrera con alta demanda de presentaciones orales. Valeria representa a los estudiantes de ciclos iniciales que enfrentan con frecuencia exposiciones como principal forma de evaluación, pero carecen de herramientas y métodos efectivos para practicar. Se considera responsable y esforzada, aunque algo insegura al hablar en público y en busca de mejorar de forma constante. Sus principales frustraciones son que su voz se apaga durante la exposición sin que ella lo note y los "black outs" provocados por los nervios. Valora recibir retroalimentación honesta y objetiva que le permita identificar errores (como la pérdida de volumen de voz o los olvidos por nervios) y mejorar progresivamente su desempeño, sin depender de terceros y a un costo accesible.
+
+> *"Sé que voy a estar nerviosa, pero trato de estar lo más preparada posible."*
+
+![Ficha de persona de Valeria Ríos](assets/images/personas/PersonaSeg1.jpg)
+
+**Persona 2: Rodrigo Sánchez, el Estudiante Avanzado con Miras Profesionales**
+
+Estudiante universitario de 23 años, residente en Lima, Perú, cursando los ciclos 6 al 10 de Ingeniería de Software con vida laboral activa. Rodrigo encarna a los estudiantes avanzados que, habiendo ganado experiencia académica y laboral, reconocen que la comunicación oral es un factor decisivo en su desarrollo profesional. Es analítico, proactivo y autodidacta; domina herramientas digitales como Speak y NotebookLM, pero ninguna cubre el feedback de oratoria que necesita (manejo de silencios, muletillas, claridad de ideas). Una mala entrevista en inglés con una empresa española le dejó claro que la comunicación oral es tan importante como el conocimiento técnico. Busca una solución específica que le brinde análisis detallado de su oratoria y le permita prepararse de forma autónoma para sustentaciones importantes y entrevistas de trabajo reales, con la opción de complementar la práctica autónoma con orientación periódica de un tutor.
+
+> *"A medida que sube la complejidad, te das cuenta de que la preparación es algo fundamental."*
+
+![Ficha de persona de Rodrigo Sánchez](assets/images/personas/PersonaSeg2.jpg)
+
 ### 2.3.2. User Task Matrix
+
+<table>
+  <thead>
+    <tr>
+      <th rowspan="2">Tareas</th>
+      <th colspan="2">Valeria Ríos (Ciclos iniciales)</th>
+      <th colspan="2">Rodrigo Sánchez (Ciclos avanzados)</th>
+    </tr>
+    <tr>
+      <th>Frecuencia</th>
+      <th>Importancia</th>
+      <th>Frecuencia</th>
+      <th>Importancia</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Grabarse practicando una exposición</td>
+      <td>Raramente</td>
+      <td>Alta</td>
+      <td>Casi siempre</td>
+      <td>Muy alta</td>
+    </tr>
+    <tr>
+      <td>Recibir retroalimentación sobre su oratoria</td>
+      <td>A veces</td>
+      <td>Muy alta</td>
+      <td>Casi siempre</td>
+      <td>Muy alta</td>
+    </tr>
+    <tr>
+      <td>Practicar simulaciones de exposiciones</td>
+      <td>A veces</td>
+      <td>Alta</td>
+      <td>Siempre</td>
+      <td>Muy alta</td>
+    </tr>
+    <tr>
+      <td>Practicar simulaciones de entrevistas de trabajo</td>
+      <td>Nunca</td>
+      <td>Media</td>
+      <td>Casi siempre</td>
+      <td>Muy alta</td>
+    </tr>
+    <tr>
+      <td>Identificar muletillas y palabras repetidas</td>
+      <td>Raramente</td>
+      <td>Alta</td>
+      <td>Casi siempre</td>
+      <td>Alta</td>
+    </tr>
+    <tr>
+      <td>Analizar volumen y claridad de voz</td>
+      <td>A veces</td>
+      <td>Muy alta</td>
+      <td>A veces</td>
+      <td>Alta</td>
+    </tr>
+    <tr>
+      <td>Revisar historial de sesiones de práctica</td>
+      <td>Raramente</td>
+      <td>Media</td>
+      <td>Casi siempre</td>
+      <td>Alta</td>
+    </tr>
+    <tr>
+      <td>Compartir resultados con un tutor o profesor</td>
+      <td>A veces</td>
+      <td>Media</td>
+      <td>A veces</td>
+      <td>Alta</td>
+    </tr>
+    <tr>
+      <td>Cargar material propio para practicar</td>
+      <td>Raramente</td>
+      <td>Media</td>
+      <td>Casi siempre</td>
+      <td>Muy alta</td>
+    </tr>
+    <tr>
+      <td>Consultar tips y guías de oratoria</td>
+      <td>A veces</td>
+      <td>Alta</td>
+      <td>A veces</td>
+      <td>Media</td>
+    </tr>
+  </tbody>
+</table>
+
+Las tareas más frecuentes para los perfiles de usuario en Talki muestran diferencias claras según el ciclo académico y las metas de cada uno. Valeria Ríos, como estudiante de ciclos iniciales, interactúa principalmente con las funciones de grabación, análisis de volumen de voz y recepción de retroalimentación general, considerándolas cruciales para superar su inseguridad al exponer. En contraste, Rodrigo Sánchez, estudiante avanzado con experiencia laboral, utiliza la plataforma de forma más estratégica y constante, priorizando las simulaciones de entrevistas de trabajo, la carga de material propio y el seguimiento de su historial de sesiones, actividades que realiza con alta frecuencia y considera muy importantes para su desarrollo profesional. Ambos perfiles coinciden en el valor de practicar simulaciones de exposiciones y recibir retroalimentación sobre su oratoria, aunque Rodrigo las ejecuta con mayor regularidad y profundidad.
+
+Coincidencias:
+- Ambos consideran de muy alta importancia recibir retroalimentación sobre su oratoria, aunque Rodrigo lo hace con mayor frecuencia.
+
+- Comparten una actitud positiva hacia la práctica de simulaciones de exposiciones, siendo una tarea central para los dos perfiles.
+
+- Las funciones de identificación de muletillas y análisis de claridad de voz tienen importancia alta para ambos, aunque con distinta frecuencia de uso.
+
+Diferencias:
+- Valeria prioriza el análisis de volumen y claridad de voz como su necesidad más urgente, mientras que Rodrigo enfoca su atención en el manejo de silencios, la variedad de vocabulario y la preparación para entrevistas laborales.
+
+- Rodrigo utiliza con mucha mayor frecuencia la carga de material propio y el historial de sesiones, tareas que Valeria realiza raramente por encontrarse en etapas más básicas de práctica.
+
+- Las simulaciones de entrevistas de trabajo son de muy alta importancia y frecuencia para Rodrigo, mientras que para Valeria tienen una importancia media y nunca las ha practicado aún, dado que su foco está en las exposiciones académicas.
 
 ### 2.3.3. Empathy Mapping
 
+A continuación se presentan los mapas de empatía para los dos perfiles principales de usuarios de Talki: Valeria Ríos, estudiante universitaria de ciclos iniciales, y Rodrigo Sánchez, estudiante avanzado con experiencia laboral. Estos mapas permiten comprender en profundidad sus necesidades, pensamientos, sentimientos y comportamientos, facilitando un diseño centrado en el usuario.
+
+**Segmento 1:**
+
+El mapa de empatía de Valeria muestra que es una estudiante que enfrenta con frecuencia exposiciones orales como principal forma de evaluación, pero carece de métodos objetivos para practicar. Se siente frustrada porque los nervios le provocan olvidos y su voz se apaga durante las presentaciones, y no encuentra herramientas digitales específicas que la ayuden a mejorar de forma autónoma y accesible.
+
+![Empathy Map de Valeria Ríos (Segmento 1, ciclos 1 al 5)](assets/images/personas/Empathymap1-ValeriaRíos.jpg)
+
+**Segmento 2:**
+
+El mapa de empatía de Rodrigo refleja a un estudiante avanzado con clara conciencia de que la comunicación oral es decisiva para su desarrollo profesional. Busca una solución específica que vaya más allá de la pronunciación y le ofrezca análisis profundo de su oratoria, permitiéndole prepararse de forma autónoma para entrevistas de trabajo y sustentaciones importantes con feedback real y medible.
+
+![Empathy Map de Rodrigo Sánchez (Segmento 2, ciclos 6 al 10)](assets/images/personas/Empathymap2-RodrigoSanchez.jpg)
+
 ### 2.3.4. As-is Scenario Mapping
 
+**Segmento 1**
+
+Mediante este artefacto, se ha llevado a cabo la elaboración del As-is Scenario Mapping para el primer segmento. Este escenario refleja cómo los estudiantes universitarios que enfrentan exposiciones orales frecuentes se preparan actualmente para ellas, las dificultades que experimentan al no contar con herramientas objetivas de práctica, así como las emociones de ansiedad, frustración y resignación que acompañan cada etapa de su proceso expositivo.
+
+![As-Is Scenario Mapping del Segmento 1 (Valeria Ríos, ciclos 1 al 5)](assets/images/As-is-To-be/As-Is_Segmento1.png)
+
+**Segmento 2**
+
+Mediante este artefacto, se ha llevado a cabo la elaboración del As-is Scenario Mapping para el segundo segmento. Este escenario describe cómo los estudiantes de ciclos superiores con experiencia laboral se preparan hoy en día para sustentaciones importantes y entrevistas de trabajo, evidenciando las limitaciones de las herramientas digitales actuales, los métodos de práctica poco objetivos a los que recurren y la incertidumbre que sienten al no poder medir su progreso de forma concreta.
+
+![As-Is Scenario Mapping del Segmento 2 (Rodrigo Sánchez, ciclos 6 al 10)](assets/images/As-is-To-be/As-Is_Segmento2.png)
+
 ## 2.4. Ubiquitous Language
+
+El lenguaje ubicuo (Ubiquitous Language) establece un vocabulario común y compartido entre el equipo de desarrollo, los stakeholders y los usuarios de Talki. Este glosario garantiza que todos los términos del dominio de la comunicación oral y del análisis de oratoria se comprendan e interpreten de forma consistente a lo largo de todo el informe, el modelo de dominio y la implementación de la solución.
+
+| Término (EN / ES) | Descripción |
+|---|---|
+| **Speaker / Orador** | Estudiante universitario que utiliza Talki para practicar y mejorar su comunicación oral mediante exposiciones, sustentaciones o simulaciones de entrevistas. |
+| **Practice Session / Sesión de Práctica** | Actividad en la que el orador se graba practicando una exposición, sustentación o entrevista, y sobre la cual Talki ejecuta el análisis de su oratoria. |
+| **Live Coach / Coach en Vivo** | Componente de IA que acompaña al orador durante la sesión de práctica en tiempo real, entregando retroalimentación inmediata sobre su desempeño oral. |
+| **Voice Coach Score / Puntuación del Coach de Voz** | Métrica integral, generada por Talki al finalizar una sesión, que resume el desempeño del orador en cinco dimensiones: fluidez, claridad, volumen, vocabulario y confianza. |
+| **Fluency / Fluidez** | Dimensión que mide la continuidad y el ritmo del discurso del orador, penalizando las interrupciones, titubeos y pausas involuntarias. |
+| **Clarity / Claridad** | Dimensión que evalúa qué tan comprensible y bien organizada es la exposición de las ideas del orador. |
+| **Volume / Volumen** | Dimensión que analiza la intensidad y estabilidad de la voz del orador durante la sesión, detectando por ejemplo la pérdida de volumen hacia el final de la presentación. |
+| **Vocabulary / Vocabulario** | Dimensión que mide la riqueza y variedad léxica del discurso, identificando la repetición excesiva de palabras. |
+| **Confidence / Confianza** | Dimensión que estima la seguridad percibida del orador a partir de indicadores acústicos y de fluidez. |
+| **Filler Word / Muletilla** | Palabra o sonido de relleno (por ejemplo, "eh", "este", "o sea") que el orador utiliza de forma involuntaria y que Talki detecta y contabiliza como oportunidad de mejora. |
+| **Silence Management / Manejo de Silencios** | Habilidad del orador para gestionar las pausas y silencios de su discurso; Talki mide la proporción de silencios para identificar pausas excesivas o incómodas. |
+| **Feedback / Retroalimentación** | Conjunto de observaciones y recomendaciones específicas y accionables que Talki entrega al orador tras analizar su sesión de práctica. |
+| **Interview Simulation / Simulación de Entrevista** | Modo de práctica en el que Talki recrea una entrevista de trabajo o de prácticas preprofesionales para que el orador ensaye sus respuestas y reciba análisis de su oratoria. |
+| **Thesis Defense / Sustentación** | Modo de práctica orientado a exposiciones y sustentaciones académicas de alta importancia frente a un jurado o profesor. |
+| **Progress Dashboard / Panel de Progreso** | Vista que consolida el historial de sesiones del orador y la evolución de cada dimensión del Voice Coach Score a lo largo del tiempo. |
+| **Gamification / Gamificación** | Conjunto de mecánicas (logros, streaks y niveles) que incentivan la práctica constante del orador, adaptadas al calendario académico universitario. |
+| **Freemium** | Modelo de negocio de Talki que ofrece funcionalidades básicas de forma gratuita y funcionalidades avanzadas mediante un plan premium de pago (S/. 15-25 mensuales). |
 
 # Capítulo III: Requirements Specification
 
