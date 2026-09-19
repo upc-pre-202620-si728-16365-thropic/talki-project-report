@@ -1154,7 +1154,7 @@ La siguiente trazabilidad complementa el diagrama y asegura que cada meta SMART 
 
 ## 3.4. Product Backlog
 
-El Product Backlog conserva la identificación histórica del proyecto y añade las historias US29–US38. La priorización combina MoSCoW con *story points* como estimación relativa; estos valores deberán refinarse durante el Sprint Planning.
+El Product Backlog conserva la identificación histórica del proyecto y añade las historias US29–US38. La priorización combina MoSCoW con *story points* como estimación relativa; estos valores deberán refinarse durante el Sprint Planning. El orden numérico prioriza la entrega de valor visible para el usuario; las Technical Stories son habilitadores transversales del MVP y se calendarizan junto con las historias de las que dependen.
 
 | Orden | ID | Título | Prioridad | SP | Dependencias | Entrega objetivo |
 |---:|---|---|:---:|---:|---|---|
