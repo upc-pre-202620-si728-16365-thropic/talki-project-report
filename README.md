@@ -1101,7 +1101,7 @@ flowchart LR
 
 ## 3.4. Product Backlog
 
-El Product Backlog conserva la identificación histórica del proyecto y añade las historias US29–US38. La priorización combina MoSCoW con *story points* como estimación relativa; estos valores deberán refinarse durante el Sprint Planning.
+El Product Backlog conserva la identificación histórica del proyecto y añade las historias US29–US38. La priorización combina MoSCoW con *story points* de la secuencia Fibonacci (1, 2, 3, 5, 8 y 13) como estimación relativa; estos valores deberán refinarse durante el Sprint Planning.
 
 | Orden | ID | Título | Prioridad | SP | Dependencias | Entrega objetivo |
 |---:|---|---|:---:|---:|---|---|
@@ -1115,7 +1115,7 @@ El Product Backlog conserva la identificación histórica del proyecto y añade 
 | 8 | US12 | Iniciar grabación y transcripción | Must | 8 | US09, US29 | MVP |
 | 9 | US13 | Pausar y reanudar | Should | 3 | US12 | MVP |
 | 10 | US14 | Finalizar y guardar | Must | 3 | US12 | MVP |
-| 11 | US38 | Recibir coaching en tiempo cercano al real | Must | 8 | US12 | MVP |
+| 11 | US38 | Recibir coaching en tiempo cercano al real | Must | 13 | US12 | MVP |
 | 12 | US15 | Recibir feedback general | Must | 8 | US14 | MVP |
 | 13 | US16 | Analizar muletillas | Should | 5 | US14 | MVP |
 | 14 | US19 | Recibir sugerencias por sección | Should | 5 | US15 | MVP |
@@ -1129,7 +1129,7 @@ El Product Backlog conserva la identificación histórica del proyecto y añade 
 | 22 | US24 | Establecer metas | Could | 3 | US08 | Incremento 2 |
 | 23 | US25 | Seleccionar áreas de enfoque | Could | 3 | US09 | Incremento 2 |
 | 24 | US30 | Cargar material de contexto | Should | 8 | US09 | Incremento 2 |
-| 25 | US31 | Simular entrevista o sustentación | Should | 8 | US10, US30, US38 | Incremento 2 |
+| 25 | US31 | Simular entrevista o sustentación | Should | 13 | US10, US30, US38 | Incremento 2 |
 | 26 | US17 | Analizar palabras clave | Should | 5 | US14, US30 | Incremento 2 |
 | 27 | US18 | Mejorar el léxico | Could | 5 | US17 | Incremento 2 |
 | 28 | US21 | Ver progreso | Should | 5 | US20 | Incremento 2 |
