@@ -56,6 +56,7 @@
 | :---: | :---: | --- | --- |
 | 0.1 | 08/09/2026 | Equipo Thropic | Creación de la estructura completa del informe de acuerdo con el formato oficial del Trabajo Final. |
 | 0.2 | 08/09/2026 | Rivera Sosa, Eduardo Gael | Desarrollo de las secciones 1.1 a 1.3 (Startup Profile, Solution Profile, Lean UX Process y Segmentos objetivo) y 2.2 (Entrevistas), adaptando y actualizando el contenido validado en la fase inicial del proyecto Talki. |
+| 0.3 | 19/09/2026 | Lang Nassi, Werner Khalil | Desarrollo de la sección 4.2 (Strategic-Level Domain-Driven Design): EventStorming, Candidate Context Discovery, Domain Message Flows, Bounded Context Canvases y Context Mapping, con DSL de Structurizr del context map. |
 
 # Project Report Collaboration Insights
 
@@ -1467,15 +1468,366 @@ La siguiente matriz conserva la estructura de refinamiento ADD: cada fila conect
 
 ## 4.2. Strategic-Level Domain-Driven Design
 
+La sección 4.1 respondió a la pregunta de *cómo* debe comportarse la arquitectura de Talki frente a sus drivers; el diseño estratégico guiado por Domain-Driven Design responde a *dónde* deben vivir las responsabilidades del dominio. Para ello, el equipo modeló el dominio del problema mediante una sesión de EventStorming, derivó de ella los bounded contexts candidatos, visualizó la colaboración entre ellos con Domain Storytelling, formalizó cada contexto en un Bounded Context Canvas y finalizó con un context map que define las relaciones estructurales entre contextos utilizando los patrones de DDD.
+
+El resultado mantiene trazabilidad directa con los insumos previos: el lenguaje ubicuo de la sección 2.4 provee el vocabulario, los escenarios To-Be de la sección 3.1 describen el flujo de valor (configurar → verificar → practicar → analizar → recomendar → repetir), y las decisiones ADD-01 a ADD-14 de la sección 4.1 se materializan ahora como contextos concretos y contratos entre ellos.
+
 ### 4.2.1. EventStorming
+
+#### Organización de la sesión
+
+El equipo realizó una sesión de EventStorming de aproximadamente 90 minutos sobre un tablero de **Miro**, con la participación de los cinco integrantes de Thropic. Un integrante actuó como facilitador (guía el avance por fases y protege el timebox) y otro como timekeeper; los roles se alternaron entre bloques. La sesión partió de los insumos ya validados en capítulos anteriores: el glosario de la sección 2.4, los escenarios As-is y To-Be, y las historias US05–US38 con sus escenarios de aceptación.
+
+La duración acotada respondió a la recomendación de concentrar el esfuerzo: en lugar de exhaustividad, se buscó una primera aproximación suficiente al dominio, cuyas zonas inciertas quedaran registradas como *hot spots* para resolverlas con posterioridad.
+
+#### Convenciones del tablero
+
+El tablero se organizó sobre una línea de tiempo infinita (unbounded timeline) con una leyenda de colores fija:
+
+| Color | Elemento | Ejemplo en Talki |
+|---|---|---|
+| Naranja | Domain Event (hecho de negocio en pasado) | `Sesión Finalizada`, `Reporte Disponible`. |
+| Azul | Command (intención que dispara un evento) | `IniciarGrabación`, `SolicitarEliminación`. |
+| Amarillo | Actor / usuario | Estudiante, Tutor, Equipo Thropic. |
+| Lila | Policy (regla automática "cuando X, entonces Y") | "Cuando `Métricas Calculadas`, entonces calcular puntuación". |
+| Rosado | Hot Spot (zona incierta o en disputa) | "¿Quién valida la validez de una sesión?". |
+| Verde | Read Model (vista de consulta) | Transcripción en vivo, Panel de Progreso. |
+| Morado | Sistema externo | Gemini Live API. |
+
+#### Fase 1: Inventario y ordenamiento de eventos de dominio
+
+El equipo partió de los momentos de mayor valor —obtener feedback del ensayo y ver progreso— y en paralelo escribió eventos de dominio en notas naranjas, primero sin orden y luego sobre la línea de tiempo. Los eventos se redactaron en español, en pasado y en lenguaje de negocio, conservando la equivalencia con el glosario de la sección 2.4. La siguiente tabla resume los eventos representativos por tramo del flujo:
+
+| Tramo del flujo | Eventos de dominio identificados |
+|---|---|
+| Identidad y acceso | `Cuenta Registrada`, `Perfil Actualizado`, `Sesión de Usuario Iniciada`, `Consentimiento Otorgado`, `Consentimiento Revocado`. |
+| Preparación | `Borrador de Sesión Creado`, `Modo de Práctica Seleccionado`, `Duración Objetivo Definida`, `Material de Contexto Cargado`, `Metas Definidas`, `Sesión Preparada`. |
+| Práctica en vivo | `Grabación Iniciada`, `Fragmento de Audio Capturado`, `Transcripción Incrementada`, `Señal de Coaching Emitida`, `Grabación Pausada`, `Grabación Reanudada`, `Simulación Iniciada`, `Pregunta Formulada`, `Respuesta Registrada`. |
+| Cierre y análisis | `Sesión Finalizada`, `Sesión Recuperada`, `Análisis Iniciado`, `Métricas de Discurso Calculadas`, `Palabras Clave Identificadas`, `Puntuación Generada`, `Sugerencias Priorizadas Generadas`, `Reporte Disponible`, `Análisis Fallido`. |
+| Progreso y engagement | `Progreso Actualizado`, `Sesiones Comparadas`, `Plan Adaptativo Generado`, `Racha Actualizada`, `Logro Concedido`. |
+| Compartición y privacidad | `Reporte Exportado`, `Enlace Temporal Creado`, `Acceso Revocado`, `Eliminación Solicitada`, `Datos Purgados`. |
+
+![Fase 1 de EventStorming en Miro: inventario y ordenamiento de eventos de dominio sobre la línea de tiempo](assets/images/eventstorming/es-01-domain-events.png)
+
+#### Fase 2: Comandos, actores, políticas y sistemas externos
+
+Sobre los eventos, el equipo agregó los comandos que los originan, los actores que los emiten y las políticas que reaccionan en cadena. Esta fase hizo visible el contraste entre dos mundos que conviven en Talki: el **mundo síncrono en vivo** (comandos del estudiante que producen señales de coaching con restricción de latencia) y el **mundo asíncrono posterior** (cadena de políticas que transforma `Sesión Finalizada` en `Reporte Disponible`). También se marcaron los sistemas externos: Gemini Live API alimenta tanto la conversación en vivo como parte del procesamiento posterior, siempre detrás de un adaptador.
+
+#### Fase 3: Eventos pivote y hot spots
+
+El equipo marcó como **eventos pivote** aquellos que implican un cambio de estado estructural en el proceso de negocio:
+
+| Evento pivote | Por qué es pivotal |
+|---|---|
+| `Consentimiento Otorgado` | Antes de él no puede procesarse voz ni material; condiciona todo el pipeline y materializa TS01. |
+| `Grabación Iniciada` | Abre el mundo en vivo: captura, transcripción incremental y señales de coaching con presupuesto de latencia. |
+| `Sesión Finalizada` | Cierra el mundo en vivo y activa la cadena asíncrona de análisis; exige idempotencia (QAS-REL-01). |
+| `Reporte Disponible` | Momento en que el sistema entrega el valor central; habilita progreso, comparación y compartición. |
+| `Acceso Revocado` / `Datos Purgados` | Cambio de estado de privacidad: el acceso debe cesar de inmediato y la eliminación propagarse (QAS-PRI-01). |
+
+Las zonas en disputa se registraron como *hot spots* rosados y se resolvieron o dejaron en backlog con esa etiqueta:
+
+| Hot Spot | Resolución durante la sesión o acción posterior |
+|---|---|
+| ¿La transcripción en vivo y la transcripción final son el mismo objeto? | Sí: la versión incremental se consolida al finalizar; el análisis consume la versión consolidada y versionada. |
+| ¿Quién decide si una sesión es válida para puntuar? | La política de validez pertenece al ciclo de sesión; el análisis y la gamificación solo consumen el veredicto. |
+| ¿Dónde vive el consentimiento? | Se registra una vez con la identidad y se propaga como estado verificable; no se consulta en línea en cada captura. |
+| ¿Qué pasa si Gemini Live no responde a mitad de la sesión? | Degradación explícita: conservar estado confirmado, ofrecer cierre seguro o resultado parcial etiquetado (QAS-AVA-01). |
+| ¿Cómo evitamos reportes duplicados por reintentos del bus? | Clave de idempotencia `session_id + analysis_version` en todos los consumidores (ADD-05). |
+
+![Fase 3 de EventStorming: eventos pivote marcados y hot spots discutidos sobre el tablero](assets/images/eventstorming/es-02-pivotal-events-hotspots.png)
+
+#### Resultado de la sesión
+
+Al cierre quedaron ordenados los eventos del flujo completo, el puente entre el mundo en vivo y el pipeline asíncrono, y las primeras fronteras visibles: la gestión del ciclo de sesión, la conversación y señales en tiempo real, el análisis posterior, la puntuación, el progreso y el bloque de privacidad. Esta fotografia final del EventStorm es el insumo directo de la Candidate Context Discovery.
+
+![EventStorm consolidado al cierre de la sesión en Miro](assets/images/eventstorming/es-03-eventstorm-final.png)
 
 ### 4.2.2. Candidate Context Discovery
 
+#### Técnica aplicada
+
+El equipo combinó dos de las técnicas propuestas: **look-for-pivotal-events** como método principal —porque los cinco eventos pivote delimitan con claridad los cambios de estado entre partes del proceso— y **start-with-value** como verificación, comprobando que las partes del dominio con mayor valor para el negocio (el coaching en vivo y el análisis del discurso con IA) quedaran dentro de fronteras propias y protegidas. La sesión de descubrimiento se realizó sobre el mismo tablero de Miro, duplicando el EventStorm consolidado para poder comparar los cambios progresivos; su duración fue menor a dos horas.
+
+#### Proceso sobre el EventStorm
+
+1. **Marcado de eventos pivote.** Se rodearon los cinco eventos pivote y se preguntó, para cada uno: ¿qué partes del sistema deben reaccionar y con qué lenguaje propio?
+2. **Agrupación por políticas.** Cada política lila se adscribió al evento que la dispara, formando clusters naturales de eventos, comandos y reglas que cambian juntos.
+3. **Verificación de lenguaje consistente.** Dentro de cada cluster se comprobó que los términos se usaran con un solo significado. Cuando un término (por ejemplo, "sesión") significaba cosas distintas a ambos lados de una frontera, la frontera se mantuvo.
+4. **Verificación start-with-value.** Se confirmó que el núcleo de valor —analizar la oratoria y retroalimentarla— no quedara diluido en un contexto genérico de "IA".
+5. **Trazado de fronteras candidatas.** Se dibujaron polígonos alrededor de cada cluster y se nombraron.
+6. **Crítica.** Se cuestionó cada frontera: ¿es fragmentación innecesaria para un equipo de cinco personas? ¿los clusters cambian por razones distintas?
+
+#### Cambios progresivos del EventStorm
+
+La primera pasada produjo seis candidatos; la revisión de crítica separó la puntuación del análisis (rúbricas y explicaciones por segmento cambian por razones distintas que el procesamiento acústico y lingüístico) y elevó la pasarela de IA a contexto propio para impedir que el proveedor contamine el lenguaje del dominio (ADD-06). El conjunto final quedó así:
+
+| Bounded context candidato | Eventos y políticas agrupados | Clasificación estratégica | Justificación |
+|---|---|---|---|
+| **Live Coaching** (Coaching en Vivo) | `Grabación Iniciada` → `Señal de Coaching Emitida`; conversación de simulación; gestión del canal en tiempo real. | **Core.** Diferenciador experiencial del producto. | La señal discreta dentro del umbral de latencia es la promesa central durante la práctica (QAS-PER-01). |
+| **Speech Analysis** (Análisis del Discurso) | `Sesión Finalizada` → `Análisis Iniciado` → `Métricas de Discurso Calculadas`; detección de muletillas, silencios, volumen y vocabulario. | **Core.** Núcleo del valor de conocimiento. | Sin métricas confiables no hay feedback accionable (BG-02); reglas de procesamiento propias. |
+| **Scoring & Feedback** (Puntuación y Retroalimentación) | `Métricas Calculadas` → `Puntuación Generada` → `Sugerencias Priorizadas Generadas`; explicación por segmento. | **Core.** Traduce métricas en mejora. | Rúbricas versionadas (C-09) y adaptación por segmento cambian por razones pedagógicas, no acústicas. |
+| **Practice Session Management** (Gestión de Sesiones de Práctica) | Preparación completa, ciclo de estados, validez, material de contexto, recuperación (US09–US14, US23–US25, US30, US34). | **Supporting.** Habilita el core sin ser diferenciador. | Su máquina de estados y su política de validez son propias y estables. |
+| **Progress & Adaptation** (Progreso y Adaptación) | `Progreso Actualizado`, comparación de sesiones, `Plan Adaptativo Generado` (US20–US22, US36). | **Supporting.** Sostiene el hábito. | Requiere modelo de lectura y versionado de métricas propio. |
+| **Gamification** (Gamificación) | `Racha Actualizada`, `Logro Concedido`; reglas de validez para contar sesiones. | **Supporting.** Engagement. | Mecánicas de juego con lenguaje propio (streaks, logros) y alta tasa de experimentación. |
+| **Identity & Access** (Identidad y Acceso) | `Cuenta Registrada`, autenticación, perfil, registro verificable de consentimiento (US05–US08, US28, TS01). | **Generic.** Resuelto con patrones conocidos. | No diferencia al producto; se requiere alta confiabilidad y un contrato de identidad estable. |
+| **Sharing & Retention** (Compartición y Retención) | `Reporte Exportado`, `Enlace Temporal Creado`, `Acceso Revocado`, `Eliminación Solicitada` (US27, US32, US33). | **Supporting.** Confianza y colaboración. | PF-08 y QAS-PRI-01 exigen un único dueño de compartición, revocación y retención. |
+| **AI Provider Gateway** (Pasarela de Proveedores de IA) | Contrato canónico hacia Gemini Live; aislamiento de proveedor y de sus capacidades exclusivas. | **Generic.** Capacidad técnica externa. | C-01 y QAS-INT-01: sustituir o agregar proveedores con cambios localizados. |
+| **Notifications** (Notificaciones) | Consumo de `Reporte Disponible`, `Acceso Revocado`, eventos de cuenta; envío por correo. | **Generic.** Utilitario. | Solo reacciona a hechos ya publicados por otros contextos. |
+
+![Primera pasada de Candidate Context Discovery: clusters y fronteras candidatas sobre el EventStorm duplicado](assets/images/candidate-contexts/cc-01-fronteras-candidatas.png)
+
+![Fronteras finales nombradas y clasificadas tras la crítica](assets/images/candidate-contexts/cc-02-contextos-finales.png)
+
+La decisión deliberada fue **no** crear un contexto por cada tabla o entidad, y **no** fragmentar más el core: Live Coaching, Speech Analysis y Scoring & Feedback permanecen separados porque sus razones de cambio difieren (latencia y conversación, procesamiento lingüístico, pedagogía y rúbricas), pero dentro de cada uno las capacidades comparten lenguaje y datos.
+
 ### 4.2.3. Domain Message Flows Modeling
+
+Para visualizar cómo deben colaborar los bounded contexts, el equipo aplicó **Domain Storytelling**: cada escenario se narra como una secuencia numerada de frases con la estructura *actor → actividad → objeto de trabajo*, y cada actividad se asigna al bounded context que la ejecuta. Las sesiones se realizaron sobre el tablero de Miro con la plantilla de Domain Storytelling (actores como figuras, actividades como flechas numeradas y objetos de trabajo como documentos); como alternativa de detalle, el equipo dispone del Domain Storytelling Tool (domainstorytelling.org), que exporta los mismos diagramas en formato intercambiable. Se modelaron tres casos que cubren los dos segmentos objetivo y el bloque de privacidad.
+
+#### DS-01: Primera práctica guiada (segmento 1 — Valeria)
+
+| # | Actor | Actividad | Objeto de trabajo | Bounded context ejecutor |
+|---:|---|---|---|---|
+| 1 | Estudiante | Se registra y otorga consentimiento | Cuenta, registro de consentimiento | Identity & Access |
+| 2 | Estudiante | Crea y configura el ensayo (modo, duración, áreas de enfoque) | Borrador de sesión | Practice Session Management |
+| 3 | Estudiante | Prueba el micrófono y autoriza la captura | Verificación de audio, permiso | Practice Session Management → Identity & Access (valida consentimiento) |
+| 4 | Estudiante | Inicia la práctica | Sesión activa | Practice Session Management → Live Coaching |
+| 5 | Live Coaching | Transcribe en vivo y emite señales de ritmo, volumen y pausas | Transcripción incremental, señales | Live Coaching (con AI Provider Gateway) |
+| 6 | Estudiante | Finaliza y confirma | Sesión finalizada | Practice Session Management |
+| 7 | Live Coaching | Publica `Sesión Finalizada` con la transcripción consolidada | Evento de cierre | Live Coaching → Speech Analysis |
+| 8 | Speech Analysis | Calcula métricas (muletillas, silencios, volumen, vocabulario) | Métricas de discurso | Speech Analysis |
+| 9 | Scoring & Feedback | Genera puntuación, sugerencias priorizadas y explicación por segmento | Reporte | Scoring & Feedback |
+| 10 | Progress & Adaptation | Actualiza progreso y compara con sesiones previas | Panel de progreso | Progress & Adaptation |
+| 11 | Estudiante | Consulta el reporte y elige una acción de mejora | Reporte, plan de acción | Speech Analysis (consulta) / Scoring & Feedback |
+
+![Domain Storytelling DS-01: colaboración de bounded contexts en la primera práctica guiada](assets/images/domain-storytelling/ds-01-primera-practica.png)
+
+#### DS-02: Simulación contextualizada (segmento 2 — Rodrigo)
+
+| # | Actor | Actividad | Objeto de trabajo | Bounded context ejecutor |
+|---:|---|---|---|---|
+| 1 | Estudiante | Carga CV, oferta laboral o rúbrica | Material de contexto | Practice Session Management |
+| 2 | Practice Session Management | Valida formato y registra el material autorizado | Material autorizado | Practice Session Management |
+| 3 | Live Coaching | Solicita la contextualización del simulador | Configuración de simulación | Live Coaching → AI Provider Gateway |
+| 4 | AI Provider Gateway | Traduce el contrato canónico al proveedor y contextualiza con material autorizado | Sesión de simulación con Gemini Live | AI Provider Gateway (ACL hacia Gemini) |
+| 5 | Estudiante | Responde preguntas y repreguntas por voz | Turnos de conversación | Live Coaching |
+| 6 | Live Coaching | Mantiene turnos, tiempos y métricas; cierra la simulación | Transcripción consolidada | Live Coaching |
+| 7 | Speech Analysis | Evalúa claridad de respuestas con el contexto autorizado | Métricas y cobertura temática | Speech Analysis |
+| 8 | Scoring & Feedback | Genera reporte por competencia con evidencia trazable | Reporte avanzado | Scoring & Feedback |
+| 9 | Notifications | Notifica que el reporte está disponible | Notificación | Notifications |
+
+![Domain Storytelling DS-02: simulación contextualizada con material autorizado](assets/images/domain-storytelling/ds-02-simulacion-contextualizada.png)
+
+#### DS-03: Compartir y revocar un reporte (colaboración con tutor)
+
+| # | Actor | Actividad | Objeto de trabajo | Bounded context ejecutor |
+|---:|---|---|---|---|
+| 1 | Estudiante | Solicita compartir el reporte con su tutor | Solicitud de enlace | Sharing & Retention |
+| 2 | Sharing & Retention | Crea un enlace temporal con expiración | Enlace de acceso temporal | Sharing & Retention |
+| 3 | Tutor | Abre el enlace y consulta el reporte | Vista de solo lectura | Sharing & Retention (consulta el reporte publicado) |
+| 4 | Estudiante | Revoca el acceso | Orden de revocación | Sharing & Retention |
+| 5 | Sharing & Retention | Invalida el enlace de inmediato y publica `Acceso Revocado` | Evento de revocación | Sharing & Retention → Notifications |
+| 6 | Estudiante | Solicita eliminar una sesión | Orden de eliminación | Sharing & Retention |
+| 7 | Sharing & Retention | Propaga la eliminación lógica a los contextos dueños de los datos | Órdenes de purga | Sharing & Retention → Speech Analysis / Progress & Adaptation |
+| 8 | Notifications | Informa al usuario el resultado de la acción | Notificación | Notifications |
+
+![Domain Storytelling DS-03: compartición temporal, revocación y eliminación bajo control del propietario](assets/images/domain-storytelling/ds-03-compartir-revocar.png)
+
+Los tres flujos confirmaron las fronteras: el material de contexto viaja de Practice Session Management hacia la pasarela sin que Live Coaching conozca su formato interno; el consentimiento actúa como compuerta previa a la captura sin consultas en línea repetidas; y la revocación se propaga por eventos, no por llamadas sincrónicas, evitando acoplar la privacidad a la disponibilidad de otros contextos.
 
 ### 4.2.4. Bounded Context Canvases
 
+Cada canvas se elaboró siguiendo un proceso iterativo con seis pasos: (1) **Context Overview Definition** — propósito y clasificación estratégica; (2) **Business Rules Distillation & Ubiquitous Language Capture** — reglas de negocio esenciales y glosario propio; (3) **Capability Analysis** — capacidades que el contexto ofrece; (4) **Capability Layering**, cuando aplica — organización de capacidades en capas (núcleo, soporte, adaptación); (5) **Dependencies Capture** — de qué contextos depende y quiénes dependen de él; y (6) **Design Critique** — revisión crítica que validó o ajustó la frontera. Los canvas se presentan en orden de importancia para el negocio, empezando por el core.
+
+#### 1. Live Coaching (Coaching en Vivo)
+
+| Sección | Contenido |
+|---|---|
+| Clasificación estratégica | Core domain. Diferenciador experiencial: acompañamiento discreto mientras el estudiante habla. |
+| Propósito | Sostener la interacción por voz en tiempo cercano al real: capturar audio, transcribir incrementalmente, conducir simulaciones y emitir señales de coaching sin interrumpir el discurso. |
+| Lenguaje ubicuo | Señal de coaching, transcripción incremental, turno de conversación, repregunta, fragmento de audio, canal en vivo. |
+| Capacidades clave | Gestionar el canal en vivo (WebSocket); transcribir incrementalmente; generar señales de ritmo/volumen/pausas; conducir la simulación con turnos y tiempos; consolidar la transcripción al cierre. |
+| Eventos publicados | `Grabación Iniciada`, `Transcripción Incrementada`, `Señal de Coaching Emitida`, `Sesión Finalizada` (con transcripción consolidada). |
+| Eventos consumidos | `Sesión Preparada` (Practice Session Management), `Consentimiento Otorgado` (Identity & Access). |
+| Reglas de negocio | Ninguna captura sin consentimiento válido y prueba de audio; las señales pueden silenciarse pero nunca bloquean la captura; la finalización ocurre una sola vez por sesión. |
+| Dependencias | Aguas arriba: Practice Session Management (Customer/Supplier), Identity & Access (Conformist). Aguas abajo: Speech Analysis (publica el cierre). Hacia AI Provider Gateway: Customer/Supplier. |
+| Capas de capacidades | Núcleo de tiempo real (canal, señales); soporte de conversación (simulación); adaptación (pasarela de IA). |
+| Crítica de diseño | Se evaluó separar "captura" y "conversación de simulación"; se rechazó para el piloto por compartir restricciones de latencia y equipo; se documenta como posible partición futura si escala la concurrencia. |
+
+#### 2. Speech Analysis (Análisis del Discurso)
+
+| Sección | Contenido |
+|---|---|
+| Clasificación estratégica | Core domain. Núcleo del valor de conocimiento: convertir el discurso en métricas confiables. |
+| Propósito | Procesar la transcripción consolidada y producir métricas de fluidez, claridad, volumen, vocabulario y confianza, con detección de muletillas, manejo de silencios y palabras clave. |
+| Lenguaje ubicuo | Métrica de discurso, muletilla, proporción de silencios, estabilidad de volumen, riqueza léxica, versión de análisis, evidencia. |
+| Capacidades clave | Iniciar y procesar el análisis; calcular métricas dimensionales; identificar muletillas y palabras clave; consultar estado y reintentar (US37); versionar cada ejecución de análisis. |
+| Eventos publicados | `Análisis Iniciado`, `Métricas de Discurso Calculadas`, `Análisis Fallido`. |
+| Eventos consumidos | `Sesión Finalizada` (Live Coaching), material autorizado (Practice Session Management). |
+| Reglas de negocio | Un único resultado por `session_id + analysis_version` (idempotencia, ADD-05); una sesión sin evidencia suficiente se marca como tal sin fabricar conclusiones; el procesamiento usa solo material autorizado. |
+| Dependencias | Aguas arriba: Live Coaching (Customer/Supplier vía lenguaje publicado). Hacia AI Provider Gateway: Customer/Supplier. Aguas abajo: Scoring & Feedback (publica métricas), Sharing & Retention (expone reportes). |
+| Capas de capacidades | Ingesta y consolidación; enriquecimiento lingüístico y acústico; cómputo de métricas versionadas. |
+| Crítica de diseño | Se evaluó un Shared Kernel de definiciones de métricas con Scoring & Feedback; se rechazó en favor de un lenguaje publicado versionado (C-09) para preservar autonomía de despliegue. |
+
+#### 3. Scoring & Feedback (Puntuación y Retroalimentación)
+
+| Sección | Contenido |
+|---|---|
+| Clasificación estratégica | Core domain. Traduce métricas en mejora concreta: el Voice Coach Score y las acciones priorizadas. |
+| Propósito | Generar la puntuación integral, fortalezas y oportunidades, sugerencias con evidencia y explicaciones adaptadas al segmento académico. |
+| Lenguaje ubicuo | Voice Coach Score, sugerencia priorizada, rúbrica versionada, evidencia, recomendación por segmento. |
+| Capacidades clave | Calcular el Voice Coach Score por rúbrica; priorizar sugerencias y asociarlas a evidencia; adaptar la explicación al segmento (US26); versionar rúbricas y resultados. |
+| Eventos publicados | `Puntuación Generada`, `Sugerencias Priorizadas Generadas`, `Reporte Disponible`. |
+| Eventos consumidos | `Métricas de Discurso Calculadas` (Speech Analysis), `Análisis Fallido`. |
+| Reglas de negocio | Todo resultado indica versión de rúbrica y de análisis (C-09); las sugerencias referencian evidencia del discurso; la validez de la sesión la declara Practice Session Management, no este contexto. |
+| Dependencias | Aguas arriba: Speech Analysis (Customer/Supplier). Aguas abajo: Progress & Adaptation y Sharing & Retention (consumen el reporte publicado). |
+| Crítica de diseño | La separación respecto de Speech Analysis fue la principal decisión de la crítica: rúbricas y pedagogía cambian por razones distintas que el procesamiento acústico-lingüístico. |
+
+#### 4. Practice Session Management (Gestión de Sesiones de Práctica)
+
+| Sección | Contenido |
+|---|---|
+| Clasificación estratégica | Supporting subdomain. Orquesta el ciclo de vida del ensayo; habilita al core sin ser diferenciador. |
+| Propósito | Crear, configurar, validar y cerrar sesiones de práctica; administrar el material de contexto y declarar la validez de cada sesión. |
+| Lenguaje ubicuo | Borrador de sesión, modo de práctica (pitch, exposición, entrevista, sustentación), duración objetivo, área de enfoque, material autorizado, sesión válida. |
+| Capacidades clave | Crear borrador y configurar sesión; validar micrófono y consentimiento previos (US29); recibir y autorizar material (US30); gestionar estados (pausa, reanudación, recuperación US34); declarar validez para puntuación. |
+| Eventos publicados | `Borrador de Sesión Creado`, `Material de Contexto Cargado`, `Sesión Preparada`, `Sesión Recuperada`, veredicto de validez. |
+| Eventos consumidos | `Cuenta Registrada` / `Consentimiento Otorgado` (Identity & Access). |
+| Reglas de negocio | No se inicia sin consentimiento y prueba de audio; el borrador es cancelable; la validez se declara una vez y los consumidores la respetan (hot spot resuelto en 4.2.1). |
+| Dependencias | Aguas arriba: Identity & Access (Conformist). Aguas abajo: Live Coaching, Speech Analysis y Gamification (Customer/Supplier — consumen sus eventos). |
+| Crítica de diseño | La política de validez se mantiene aquí y se publica como hecho, evitando que análisis o gamificación reimplementen criterios divergentes. |
+
+#### 5. Progress & Adaptation (Progreso y Adaptación)
+
+| Sección | Contenido |
+|---|---|
+| Clasificación estratégica | Supporting subdomain. Sostiene el hábito mediante evidencia de evolución. |
+| Propósito | Consolidar el historial, mostrar tendencias por habilidad, comparar sesiones compatibles y generar el plan adaptativo de ejercicios. |
+| Lenguaje ubicuo | Panel de progreso, tendencia, sesión compatible, plan adaptativo, meta de mejora. |
+| Capacidades clave | Consultar historial propio (US20); calcular tendencias con versiones de métricas (US21); comparar sesiones (US22); generar plan adaptativo justificado (US36). |
+| Eventos publicados | `Progreso Actualizado`, `Plan Adaptativo Generado`. |
+| Eventos consumidos | `Reporte Disponible`, `Puntuación Generada` (Scoring & Feedback), `Sesión Finalizada` (para comparabilidad). |
+| Reglas de negocio | Solo se comparan sesiones compatibles por versión de rúbrica y análisis; los cambios pequeños no se sobredimensionan; el plan explica por qué recomienda cada ejercicio. |
+| Dependencias | Aguas arriba: Scoring & Feedback (Customer/Supplier). Aguas abajo: Gamification (publica hechos de práctica válida). |
+| Crítica de diseño | Se evaluó mover el plan adaptativo a Scoring & Feedback; se rechazó porque depende del historial longitudinal que este contexto posee. |
+
+#### 6. Sharing & Retention (Compartición y Retención)
+
+| Sección | Contenido |
+|---|---|
+| Clasificación estratégica | Supporting subdomain. Dueño de la confianza: compartición controlada y cumplimiento de retención. |
+| Propósito | Exportar reportes, crear accesos temporales revocables y propagar la eliminación de datos bajo control exclusivo del propietario. |
+| Lenguaje ubicuo | Enlace temporal, expiración, revocación, eliminación lógica, purga, política de retención. |
+| Capacidades clave | Exportar transcripción y feedback (US27); crear y revocar enlaces (US32); iniciar eliminación y purga auditable (US33); administrar la política de retención (TS02). |
+| Eventos publicados | `Reporte Exportado`, `Enlace Temporal Creado`, `Acceso Revocado`, `Eliminación Solicitada`, `Datos Purgados`. |
+| Eventos consumidos | `Reporte Disponible` (para saber qué es compartible), veredicto de validez. |
+| Reglas de negocio | Un enlace revocado deja de otorgar acceso de inmediato (QAS-PRI-01); el borrado lógico se completa en minutos y la purga física según política; la auditoría no registra contenido privado. |
+| Dependencias | Aguas arriba: Speech Analysis y Scoring & Feedback (Customer/Supplier para obtener reportes). Aguas abajo: Notifications (publica hechos de privacidad). |
+| Crítica de diseño | Concentrar compartición, revocación y retención en un solo contexto evita criterios de privacidad dispersos; se descartó repartir estas capacidades entre los contextos dueños de los datos. |
+
+#### 7. Gamification (Gamificación)
+
+| Sección | Contenido |
+|---|---|
+| Clasificación estratégica | Supporting subdomain. Engagement con lenguaje y ritmo de cambio propios. |
+| Propósito | Incentivar la práctica constante con rachas, niveles y logros alineados al calendario académico. |
+| Lenguaje ubicuo | Racha, logro, nivel, hito, práctica válida. |
+| Capacidades clave | Actualizar rachas; conceder logros una sola vez (US35); exponer el estado de engagement. |
+| Eventos publicados | `Racha Actualizada`, `Logro Concedido`. |
+| Eventos consumidos | Hechos de práctica válida (Practice Session Management, Progress & Adaptation). |
+| Reglas de negocio | Las sesiones inválidas no cuentan; cada logro se concede una sola vez; compartir un logro es opcional. |
+| Dependencias | Aguas arriba: Practice Session Management y Progress & Adaptation (Conformist a sus hechos publicados). |
+| Crítica de diseño | Se evaluó fusionar con Progress & Adaptation; se rechazó: la gamificación experimenta mecánicas con alta frecuencia, mientras el progreso exige estabilidad histórica. |
+
+#### 8. Identity & Access (Identidad y Acceso)
+
+| Sección | Contenido |
+|---|---|
+| Clasificación estratégica | Generic subdomain. Resuelto con patrones estándar, alta exigencia de confiabilidad. |
+| Propósito | Autenticar usuarios, gestionar cuentas y perfil, y emitir tokens de corta duración y consentimientos verificables. |
+| Lenguaje ubicuo | Cuenta, token de acceso, refresh rotativo, consentimiento verificable, propiedad del recurso. |
+| Capacidades clave | Registrar y verificar cuentas (US05); autenticar y revocar sesiones (US06, US28); gestionar perfil (US08); registrar consentimiento con versión aceptada (TS01); validar identidad y propiedad. |
+| Eventos publicados | `Cuenta Registrada`, `Consentimiento Otorgado`, `Consentimiento Revocado`. |
+| Eventos consumidos | — (es el origen de la cadena de confianza). |
+| Reglas de negocio | Los errores de autenticación no revelan qué credencial falló; el consentimiento registra la versión aceptada y condiciona todo procesamiento posterior. |
+| Dependencias | Aguas arriba de todos: expone un Open Host Service de validación de identidad; los demás contextos son Conformist a su modelo de claims. |
+| Crítica de diseño | El consentimiento vive aquí como registro verificable (quién, qué, cuándo, versión); la ejecución de la privacidad (compartir, revocar, borrar) pertenece a Sharing & Retention. |
+
+#### 9. AI Provider Gateway (Pasarela de Proveedores de IA)
+
+| Sección | Contenido |
+|---|---|
+| Clasificación estratégica | Generic subdomain. Capacidad técnica que aísla al dominio del proveedor externo (C-01). |
+| Propósito | Ofrecer un contrato canónico de capacidades de IA (voz en vivo, análisis, contextualización) y traducirlo a proveedores concretos, iniciando por Gemini Live. |
+| Lenguaje ubicuo | Contrato canónico, capacidad declarada, adaptador de proveedor, Anti-Corruption Layer. |
+| Capacidades clave | Negociar capacidades del proveedor; traducir contratos; medir latencia y disponibilidad por proveedor; conmutar proveedor por configuración. |
+| Eventos publicados | Hechos de operación (proveedor degradado, disponible) para observabilidad. |
+| Eventos consumidos | Solicitudes de Live Coaching y Speech Analysis. |
+| Reglas de negocio | Solo el material autorizado sale hacia el proveedor; las capacidades exclusivas de un proveedor se declaran opcionales y no contaminan el contrato común (QAS-INT-01). |
+| Dependencias | Aguas arriba: Live Coaching y Speech Analysis (Customer/Supplier sobre su lenguaje publicado). Aguas abajo: Gemini Live API mediante Anti-Corruption Layer. |
+| Crítica de diseño | Se evaluó que cada contexto integre al proveedor por su cuenta; se rechazó porque duplicaría traducción, límites de consumo y controles de privacidad. |
+
+#### 10. Notifications (Notificaciones)
+
+| Sección | Contenido |
+|---|---|
+| Clasificación estratégica | Generic subdomain. Utilitario puro, reacciona a hechos publicados. |
+| Propósito | Informar a los usuarios los hechos relevantes (reporte disponible, revocaciones, eventos de cuenta) por correo electrónico. |
+| Lenguaje ubicuo | Notificación, plantilla, destinatario, preferencia de contacto. |
+| Capacidades clave | Enviar notificaciones por correo con plantillas versionadas; respetar preferencias de contacto. |
+| Eventos publicados | Hechos de entrega para observabilidad. |
+| Eventos consumidos | `Reporte Disponible`, `Acceso Revocado`, `Datos Purgados`, `Cuenta Registrada`. |
+| Reglas de negocio | Ninguna notificación incluye contenido de reporte en el cuerpo del correo; los enlaces referencian accesos controlados por Sharing & Retention. |
+| Dependencias | Aguas arriba: múltiples contextos mediante el lenguaje publicado de eventos (colaboración por eventos). |
+| Crítica de diseño | Mantenerlo como contexto propio y consumidor pasivo evita que cada dominio incorpore envío de correos; se descartó un shared service embebido en otros contextos. |
+
 ### 4.2.5. Context Mapping
+
+#### Proceso de elaboración
+
+Con las dependencias capturadas en cada Bounded Context Canvas, el equipo realizó una sesión de revisión para producir el context map: la visualización de las relaciones estructurales entre los bounded contexts. Para cada relación candidata se discutió qué patrón de DDD la describe mejor, qué contrato la materializa (evento versionado, API REST, contrato canónico de IA) y qué equipo es customer y cuál supplier. El insumo fue la información recolectada en las secciones anteriores: hot spots resueltos, flujos de Domain Storytelling y las decisiones ADD-01 a ADD-14.
+
+#### Alternativas exploradas
+
+Siguiendo la recomendación de discutir alternativas antes de fijar el mapa, el equipo respondió explícitamente las preguntas de transformación:
+
+| Pregunta | Alternativa analizada | Decisión y justificación |
+|---|---|---|
+| ¿Qué pasaría si movemos este capability a otro bounded context? | Mover la generación del plan adaptativo de Progress & Adaptation a Scoring & Feedback. | Rechazado: el plan depende del historial longitudinal que solo Progress posee; moverlo crearía una dependencia de lectura cruzada peor que la actual. |
+| ¿Qué pasaría si descomponemos este capability y movemos un sub-capability a otro bounded context? | Dividir Speech Analysis en "cómputo de métricas" y "generación de recomendaciones". | Parcialmente adoptado: la separación efectiva se hizo entre Speech Analysis (métricas) y Scoring & Feedback (recomendaciones y puntuación); una división adicional no aporta porque ambas comparten el lenguaje del reporte. |
+| ¿Qué pasaría si partimos el bounded context en múltiples bounded contexts? | Partir Live Coaching en "captura/transcripción" y "conversación de simulación". | Rechazado para el piloto: comparten canal, presupuesto de latencia y equipo; se documenta como partición futura si la concurrencia de simulaciones escala. |
+| ¿Qué pasaría si tomamos capabilities de varios contexts para formar un nuevo context? | Formar un contexto "Consentimiento y Privacidad" con capacidades de Identity & Access y Sharing & Retention. | Rechazado: el registro del consentimiento es un hecho de identidad (quién aceptó qué versión), mientras que la ejecución de la privacidad es operativa; unificarlas acoplaría disponibilidad de inicio de sesión con operación de borrado. |
+| ¿Qué pasaría si duplicamos una funcionalidad para romper la dependencia? | Duplicar la verificación de consentimiento en Live Coaching y Practice Session Management. | Adoptado con matices: el estado de consentimiento se propaga como claim firmado y los contextos lo verifican localmente al iniciar la captura, rompiendo la dependencia en línea con Identity & Access en el camino caliente (QAS-PER-01). |
+| ¿Qué pasaría si creamos un shared service para reducir la duplicación? | Convertir Notifications en un shared service invocado por cada contexto; o un "servicio de métricas" compartido entre análisis y scoring. | Notificaciones se mantiene como contexto genérico que consume eventos publicados (no compartido, desacoplado); el servicio de métricas compartido se rechazó por reatar la autonomía de despliegue del core. |
+| ¿Qué pasaría si aislamos los core capabilities y movemos los otros a un context aparte? | Aislar las capacidades core de Live Coaching, Speech Analysis y Scoring & Feedback del resto. | Ya materializado: la clasificación core/supporting/generic del mapa protege al core, y las capacidades genéricas (identidad, IA, notificaciones) viven en contextos aparte. |
+
+#### Discusión del Shared Kernel
+
+El equipo evaluó explícitamente un **Shared Kernel** de definiciones de métricas entre Speech Analysis y Scoring & Feedback, pues ambos hablan de fluidez, claridad, volumen, vocabulario y confianza. Se rechazó por tres razones: (1) obligaría a coordinar despliegues de dos contextos core para cualquier ajuste, justo donde se espera más experimentación; (2) la restricción C-09 ya exige versionar rúbricas y análisis, por lo que un **lenguaje publicado versionado** (Published Language) alcanza la consistencia sin acoplamiento; y (3) el equipo de cinco estudiantes no puede sostener la gobernanza continua que exige un kernel compartido. Las definiciones canónicas viajan como contratos de eventos versionados y cualquier cambio incompatible crea una nueva versión, no una edición.
+
+#### Mapa de relaciones entre bounded contexts
+
+| Upstream | Downstream | Patrón DDD | Contrato que lo materializa | Justificación |
+|---|---|---|---|---|
+| Identity & Access | Todos los contextos | Open Host Service + Published Language; downstream **Conformist** | Tokens firmados y claims de consentimiento; API de validación estable | Ningún contexto reinventa identidad ni consentimiento; adoptan el modelo de claims tal cual. |
+| Practice Session Management | Live Coaching, Speech Analysis, Gamification | Customer/Supplier + Published Language | Eventos de ciclo de vida y veredicto de validez versionados | El ciclo de sesión alimenta al resto; los consumidores se adaptan al contrato publicado. |
+| Live Coaching | Speech Analysis | Customer/Supplier | Evento `Sesión Finalizada` con transcripción consolidada versionada | El análisis consume el cierre; el formato de transcripción pertenece a quien la produce. |
+| Speech Analysis | Scoring & Feedback | Customer/Supplier + Published Language | Esquema versionado de métricas de discurso | Consistencia entre versiones sin Shared Kernel (C-09). |
+| Scoring & Feedback | Progress & Adaptation, Sharing & Retention | Customer/Supplier | Evento `Reporte Disponible` y reporte publicado | El reporte es el objeto de trabajo de progreso y compartición. |
+| Live Coaching, Speech Analysis | AI Provider Gateway | Customer/Supplier sobre Open Host Service | Contrato canónico de capacidades de IA | Ambos contextos consumen el mismo contrato; la conmutación de proveedor es transparente. |
+| AI Provider Gateway | Gemini Live API (externo) | **Anti-Corruption Layer** | Adaptador de proveedor + negociación de capacidades | Impide que el modelo del proveedor contamine el lenguaje del dominio (ADD-06, QAS-INT-01). |
+| Practice Session Management, Progress & Adaptation | Gamification | **Conformist** | Hechos de práctica válida publicados | La gamificación se adapta a los hechos; no negocia contratos propios. |
+| Speech Analysis, Scoring & Feedback | Sharing & Retention | Customer/Supplier | Consulta de reportes publicados | La compartición no duplica reportes; referencia los existentes. |
+| Sharing & Retention | Speech Analysis, Progress & Adaptation | Customer/Supplier | Órdenes de eliminación propagadas | La purga respeta el ownership de datos de cada contexto. |
+| Múltiples contextos | Notifications | Colaboración por eventos (Published Language) | Eventos de dominio versionados en el bus | Notifications no aparece como dependencia síncrona de nadie. |
+
+![Context map final de Talki con patrones DDD entre bounded contexts](assets/images/context-mapping/context-map.png)
+
+
+#### Conclusión del context mapping
+
+El mapa resultante protege tres propiedades: (1) el **core** (Live Coaching, Speech Analysis, Scoring & Feedback) solo depende de contratos publicados y de una pasarela con Anti-Corruption Layer, nunca de detalles de proveedores ni de contextos genéricos; (2) la **privacidad** opera por eventos, de modo que revocar o eliminar no depende de la disponibilidad de otros contextos; y (3) la **evolución** —nuevos modos, rúbricas o proveedores— queda confinada a un contexto por tipo de cambio. Este mapa es el insumo directo de los diagramas C4 de la sección 4.3 y de la descomposición táctica del capítulo V.
 
 ## 4.3. Software Architecture
 
