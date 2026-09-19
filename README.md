@@ -1031,15 +1031,44 @@ Las siguientes **Technical Stories** representan restricciones sin interacción 
 
 | Historia | Dado | Cuando | Entonces |
 |---|---|---|---|
-| US01–US04 | el visitante navega la landing page | consulta beneficios, planes, testimonios o contacto | ve información vigente por segmento; los formularios validan datos y confirman el envío. |
-| US05–US08, US28 | el estudiante registra o gestiona su cuenta | envía datos válidos, inválidos o solicita cierre | el sistema crea o actualiza una única cuenta, protege errores de credenciales y revoca la sesión al cerrar. |
-| US09–US11, US23–US25 | el estudiante prepara una práctica | define modo, duración, segmento o metas | el borrador conserva una configuración válida y las recomendaciones se adaptan al contexto elegido. |
-| US29–US30 | el estudiante aún no inició la práctica | prueba micrófono, acepta consentimiento o adjunta material | Talki bloquea la captura sin consentimiento, valida audio y usa solo material autorizado. |
-| US12–US14, US34 | existe una sesión preparada o interrumpida | inicia, pausa, reanuda, finaliza o se desconecta | Talki conserva un único estado válido, muestra la transcripción y ofrece recuperar o cerrar la sesión. |
-| US31, US38 | el estudiante avanzado inicia una simulación o coaching | habla, responde una repregunta o silencia señales | la IA respeta turnos y material autorizado, y entrega señales discretas sin bloquear la captura. |
-| US15–US19, US26, US37 | una sesión tiene suficiente evidencia | termina el análisis o se reintenta tras un fallo recuperable | se publica un reporte único, accionable y trazable a fragmentos de la sesión. |
-| US20–US22, US35–US36 | el estudiante tiene sesiones compatibles | consulta historial, compara resultados o solicita un plan | visualiza evolución consistente, logros válidos y recomendaciones justificadas por evidencia. |
-| US27, US32–US33 | el estudiante es propietario de un reporte | exporta, comparte, revoca o elimina | Talki limita el acceso al alcance autorizado, invalida enlaces revocados y activa la purga. |
+| US01 | el visitante abre la landing page | consulta beneficios | ve beneficios diferenciados y accesibles por segmento. |
+| US02 | el visitante consulta planes | selecciona un plan | ve precio, límites y funcionalidades reales. |
+| US03 | existe un testimonio autorizado | el visitante lo consulta | ve segmento sin datos personales innecesarios. |
+| US04 | el visitante completa el formulario | envía una consulta válida | recibe confirmación y los datos se usan solo para responder. |
+| US05 | el correo no está registrado | completa registro válido | se crea una cuenta única y se solicita verificación. |
+| US06 | el estudiante ingresa credenciales | intenta iniciar sesión | accede con datos válidos sin revelar qué credencial falló. |
+| US07 | el estudiante solicita recuperación | usa el enlace recibido | restablece una vez dentro de su vigencia. |
+| US08 | el estudiante edita su perfil | guarda cambios válidos | se actualizan futuras recomendaciones. |
+| US09 | el estudiante autenticado inicia una práctica | registra título y objetivo | se crea un borrador cancelable. |
+| US10 | existe un borrador | el estudiante elige un modo | Talki explica criterios y configura el reporte. |
+| US11 | existe un borrador | define una duración válida | el cronómetro la muestra y avisa sin bloquear. |
+| US12 | hay permisos de micrófono | inicia la práctica | se captura audio y aparece transcripción incremental. |
+| US13 | la práctica está activa o pausada | pausa o reanuda | conserva estado, cronómetro y transcripción sin duplicados. |
+| US14 | la práctica está activa | confirma finalización | guarda un estado único e inicia análisis. |
+| US15 | el análisis tiene evidencia suficiente | finaliza procesamiento | entrega puntuación, fortalezas y oportunidades. |
+| US16 | existe una transcripción | consulta muletillas | ve tipo, conteo y evidencia. |
+| US17 | existe transcripción y contexto autorizado | consulta palabras clave | distingue términos usados y sugeridos. |
+| US18 | existe una recomendación léxica | el estudiante la consulta | recibe alternativas apropiadas al contexto. |
+| US19 | el análisis está listo | consulta una sugerencia | ve evidencia y una acción priorizada. |
+| US20 | el estudiante tiene sesiones | abre historial | ve solo recursos propios, ordenados correctamente. |
+| US21 | existen sesiones compatibles | consulta progreso | ve métricas con versión y período. |
+| US22 | selecciona dos sesiones compatibles | las compara | ve cambios y evidencia sin sobredimensionarlos. |
+| US23 | el estudiante selecciona su ciclo | guarda el segmento | cambian recomendaciones sin bloquear funciones. |
+| US24 | el estudiante define una meta | la guarda | el reporte relaciona recomendaciones con ella. |
+| US25 | el estudiante selecciona un área | inicia análisis | prioriza esa métrica sin ocultar alertas críticas. |
+| US26 | existe evidencia de práctica | recibe feedback | la explicación se adapta a su segmento. |
+| US27 | el estudiante es propietario | exporta un reporte | recibe fecha, versiones y solo datos autorizados. |
+| US28 | existe una sesión autenticada | el estudiante cierra sesión | se revoca refresh token y se eliminan credenciales locales. |
+| US29 | aún no hay consentimiento | prueba audio o inicia | Talki bloquea captura hasta consentimiento y validación. |
+| US30 | el estudiante selecciona un archivo | lo adjunta | valida formato y tamaño, y permite eliminarlo. |
+| US31 | el estudiante avanzado inicia simulación | responde preguntas | la IA respeta turnos, tiempo y material autorizado. |
+| US32 | el propietario comparte un reporte | crea o revoca enlace | el acceso es temporal, limitado y revocable. |
+| US33 | el propietario solicita revocación o borrado | confirma la acción | se bloquean accesos y se activa purga auditable. |
+| US34 | ocurre una desconexión | vuelve a la práctica | conserva estado válido y ofrece reanudar o cierre parcial. |
+| US35 | existe una sesión válida | alcanza un hito | concede el logro una sola vez. |
+| US36 | existe historial suficiente | solicita un plan | recibe ejercicios justificados por errores recurrentes. |
+| US37 | el análisis falla recuperablemente | consulta estado o reintenta | ve estado y evita reportes duplicados. |
+| US38 | el estudiante habla durante práctica | recibe una señal | obtiene coaching silenciable sin interrumpir captura. |
 
 
 ## 3.3. Impact Mapping
@@ -1167,6 +1196,17 @@ El Product Backlog conserva la identificación histórica del proyecto y añade 
 | 36 | US02 | Ver planes y precios | Could | 2 | — | Incremento 3 |
 | 37 | US03 | Ver testimonios | Could | 1 | — | Incremento 3 |
 | 38 | US04 | Enviar una consulta | Could | 2 | — | Incremento 3 |
+
+Las Technical Stories también son ítems del Product Backlog. Se ejecutan transversalmente desde el MVP y se mantienen visibles para que restricciones y decisiones de arquitectura sean planificables.
+
+| Orden | ID | Título | Prioridad | SP | Dependencias | Entrega objetivo |
+|---:|---|---|:---:|---:|---|---|
+| 39 | TS01 | Consentimiento verificable | Must | 3 | US29 | MVP |
+| 40 | TS02 | Audio efímero | Must | 3 | US12, US14 | MVP |
+| 41 | TS03 | Base tecnológica existente | Must | 5 | — | MVP |
+| 42 | TS04 | Trazabilidad versionada | Must | 3 | — | MVP |
+| 43 | TS05 | Experiencia web en español | Must | 3 | US05, US09 | MVP |
+| 44 | TS06 | Presupuesto y plazo académico | Must | 2 | — | MVP |
 
 ### Criterio de priorización
 
