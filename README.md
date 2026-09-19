@@ -966,7 +966,7 @@ Los dos escenarios convergen en el flujo **configurar → verificar → practica
 
 Para conservar la trazabilidad con el proyecto desarrollado en el ciclo anterior, se mantienen los identificadores **US01–US28** y se actualiza su redacción cuando corresponde. Las historias **US29–US38** amplían el backlog con privacidad, material contextual, simulación, continuidad, procesamiento asíncrono, aprendizaje adaptativo y coaching en vivo, capacidades necesarias para la versión actual de Talki.
 
-Los criterios de aceptación se ejecutan como escenarios **Given–When–Then**. La tabla mantiene una versión compacta para hacer legible el backlog; en cada criterio, la primera condición equivale a *Given*, la acción del usuario o sistema a *When* y el resultado observable a *Then*. Esta convención evita criterios subjetivos y permite convertir cada fila en pruebas de aceptación durante el sprint.
+Los criterios de aceptación se especifican como escenarios **Dado–Cuando–Entonces**, de modo que cada historia pueda verificarse durante el sprint.
 
 | Epic / Story ID | Título | User Story | Criterios de aceptación principales |
 |---|---|---|---|
@@ -1026,6 +1026,20 @@ Las siguientes **Technical Stories** representan restricciones sin interacción 
 | TS04 | Trazabilidad versionada | Como equipo, necesitamos versionar código, contratos, rúbricas y análisis en GitHub para que sean revisables. | **Given** un cambio de contrato o rúbrica, **When** se integra, **Then** queda identificado por versión y revisión de Pull Request. |
 | TS05 | Experiencia web en español | Como equipo, necesitamos entregar el piloto web en español para el segmento definido. | **Given** un navegador moderno con micrófono disponible, **When** un estudiante abre Talki, **Then** puede completar el flujo en español sin requerir una app nativa. |
 | TS06 | Presupuesto y plazo académico | Como equipo, necesitamos operar dentro del presupuesto y calendario del curso para entregar un piloto viable. | **Given** una alternativa arquitectónica, **When** se evalúa, **Then** se descarta si excede el presupuesto o el plazo acordado. |
+
+### Escenarios de aceptación
+
+| Historia | Dado | Cuando | Entonces |
+|---|---|---|---|
+| US01–US04 | el visitante navega la landing page | consulta beneficios, planes, testimonios o contacto | ve información vigente por segmento; los formularios validan datos y confirman el envío. |
+| US05–US08, US28 | el estudiante registra o gestiona su cuenta | envía datos válidos, inválidos o solicita cierre | el sistema crea o actualiza una única cuenta, protege errores de credenciales y revoca la sesión al cerrar. |
+| US09–US11, US23–US25 | el estudiante prepara una práctica | define modo, duración, segmento o metas | el borrador conserva una configuración válida y las recomendaciones se adaptan al contexto elegido. |
+| US29–US30 | el estudiante aún no inició la práctica | prueba micrófono, acepta consentimiento o adjunta material | Talki bloquea la captura sin consentimiento, valida audio y usa solo material autorizado. |
+| US12–US14, US34 | existe una sesión preparada o interrumpida | inicia, pausa, reanuda, finaliza o se desconecta | Talki conserva un único estado válido, muestra la transcripción y ofrece recuperar o cerrar la sesión. |
+| US31, US38 | el estudiante avanzado inicia una simulación o coaching | habla, responde una repregunta o silencia señales | la IA respeta turnos y material autorizado, y entrega señales discretas sin bloquear la captura. |
+| US15–US19, US26, US37 | una sesión tiene suficiente evidencia | termina el análisis o se reintenta tras un fallo recuperable | se publica un reporte único, accionable y trazable a fragmentos de la sesión. |
+| US20–US22, US35–US36 | el estudiante tiene sesiones compatibles | consulta historial, compara resultados o solicita un plan | visualiza evolución consistente, logros válidos y recomendaciones justificadas por evidencia. |
+| US27, US32–US33 | el estudiante es propietario de un reporte | exporta, comparte, revoca o elimina | Talki limita el acceso al alcance autorizado, invalida enlaces revocados y activa la purga. |
 
 
 ## 3.3. Impact Mapping
@@ -1090,6 +1104,16 @@ flowchart LR
 | Tutor o profesor | Brinda orientación sin requerir acceso permanente a la cuenta o a todas las sesiones. | Exportación y acceso temporal revocable. | US27, US32. |
 | Equipo Thropic | Valida hipótesis, incorpora nuevos modos y mantiene el servicio confiable sin exponer datos privados. | Versionado, recuperación, estado de análisis, eliminación y observabilidad. | US33, US34, US37; decisiones ADD del capítulo IV. |
 
+La siguiente trazabilidad complementa el diagrama y asegura que cada meta SMART se conecte con una persona, cambio de comportamiento, entregable y User Stories concretas.
+
+| Business Goal | Persona | Impacto esperado | Deliverable | User Stories |
+|---|---|---|---|---|
+| BG-01: práctica sostenida | Valeria y Rodrigo | Incorporan tres prácticas semanales a su rutina. | Configuración guiada, sesión, coaching y feedback. | US09, US12, US14, US15, US26, US38. |
+| BG-02: mejora accionable | Valeria y Rodrigo | Identifican y aplican una recomendación basada en evidencia. | Reporte con métricas, sugerencias y comparación. | US16–US22, US36. |
+| BG-03: menor fricción inicial | Valeria | Inicia una primera práctica sin asistencia. | Onboarding, prueba de micrófono y consentimiento. | US05, US09, US10, US29. |
+| BG-04: utilidad avanzada | Rodrigo | Usa una simulación contextual para prepararse para entrevista o sustentación. | Carga de material, simulación y repreguntas. | US30, US31. |
+| BG-05: confianza en datos | Valeria, Rodrigo y tutor | Comparte o elimina información manteniendo control. | Enlaces temporales, revocación y borrado. | US27, US32, US33. |
+
 ### Hipótesis de impacto
 
 1. Si el inicio de una sesión requiere pocos pasos y verifica previamente el audio, aumentará la cantidad de prácticas válidas completadas.
@@ -1151,7 +1175,7 @@ El Product Backlog conserva la identificación histórica del proyecto y añade 
 - **Should:** incrementa contextualización, profundidad del entrenamiento, adaptación y colaboración.
 - **Could:** fortalece engagement, adquisición y conveniencia, pero no bloquea la validación inicial.
 
-La tabla constituye el Product Backlog versionado del equipo para TB1. Su evidencia navegable se conserva en esta misma rama y su historial de cambios puede consultarse en el [Pull Request #2](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/pull/2).
+La tabla constituye el Product Backlog versionado del equipo para TB1. Las User Stories y sus criterios quedan redactados en este informe, de acuerdo con el enunciado; su evolución queda trazada mediante los commits y Pull Requests de esta rama.
 
 ### Definición de Ready
 
@@ -1287,16 +1311,19 @@ En cada iteración se toma el siguiente driver de mayor prioridad, se revisan la
 
 #### Candidate Pattern Evaluation Matrix
 
-| Driver(es) evaluado(s) | Alternativa / patrón | Ventajas | Desventajas o riesgo | Decisión y criterio |
-|---|---|---|---|---|
-| AD-F03, AD-F04, AD-Q01 | REST + polling | Simple de implementar y depurar. | Incrementa latencia y tráfico; no ofrece interacción bidireccional fluida. | Descartado para el flujo en vivo: no satisface QAS-PER-01. |
-| AD-F03, AD-F04, AD-Q01 | REST para comandos + WebSocket para flujo en vivo | Comunicación persistente, bidireccional y con menor sobrecarga. | Requiere heartbeats, reconexión y control de presión. | Seleccionado: satisface el límite de latencia con tácticas de reconexión y backpressure. |
-| AD-F06, AD-Q03, AD-Q05 | Pipeline síncrono entre servicios | Flujo lineal y consistencia inmediata en casos simples. | Acoplamiento temporal; una falla externa bloquea el reporte. | Descartado: no tolera fallas ni reintentos del QAS-REL-01. |
-| AD-F06, AD-Q03, AD-Q05 | Eventos RabbitMQ + Outbox/Inbox | Desacopla análisis, admite reintentos e idempotencia. | Consistencia eventual y contratos de evento que gobernar. | Seleccionado: un único resultado se verifica con `session_id + analysis_version`. |
-| AD-F05, AD-Q04, AD-C01 | SDK Gemini dentro del dominio | Implementación inicial rápida. | Dependencia irreversible y pruebas difíciles con otro proveedor. | Descartado: vulnera modificabilidad e interoperabilidad. |
-| AD-F05, AD-Q04, AD-C01 | Ports & Adapters / AI Provider Adapter | Aísla proveedor, permite *fake* y reemplazo contractual. | El contrato común puede ocultar capacidades propietarias. | Seleccionado: cumple QAS-INT-01 sin prometer equivalencia total. |
-| AD-Q02, AD-C02, AD-C08 | Conservar audio crudo | Facilita reprocesamiento. | Aumenta exposición, costo y superficie de consentimiento. | Descartado por restricciones de privacidad del piloto. |
-| AD-Q02, AD-C02, AD-C08 | Audio temporal con TTL y borrado por defecto | Minimiza datos y costo; respeta consentimiento. | Reduce opciones de reprocesamiento. | Seleccionado: el transcript y métricas autorizados preservan trazabilidad. |
+Los tres patrones se evalúan contra los mismos siete drivers H/H. Cada celda resume el principal pro o contra para ese driver.
+
+| Driver H/H | Monolito modular | Microservicios + REST síncrono | Microservicios + Event-Driven |
+|---|---|---|---|
+| AD-Q02: privacidad y autorización | **Pro:** una política central. **Contra:** mayor radio de exposición. | **Pro:** separación de datos. **Contra:** propaga autorización en cada llamada. | **Pro:** ownership y minimización por servicio. **Contra:** auditar eventos exige gobierno. |
+| AD-F03: ciclo de sesión y recuperación | **Pro:** transacción simple. **Contra:** una falla afecta todo el ciclo. | **Pro:** separa sesión y captura. **Contra:** acoplamiento temporal al recuperar. | **Pro:** checkpoints y recuperación desacoplada. **Contra:** consistencia eventual. |
+| AD-F04: coaching en vivo | **Pro:** camino corto. **Contra:** escala todo el sistema. | **Pro:** WebSocket especializado. **Contra:** dependencia del servicio en vivo. | **Pro:** aísla eventos secundarios. **Contra:** no reemplaza WebSocket para el audio en vivo. |
+| AD-F06: análisis y reporte | **Pro:** respuesta directa. **Contra:** bloquea al usuario durante el análisis. | **Pro:** servicios especializados. **Contra:** cadena síncrona vulnerable a fallas. | **Pro:** colas, reintentos e idempotencia. **Contra:** reporte con consistencia eventual. |
+| AD-Q03: idempotencia | **Pro:** transacción única. **Contra:** difícil escalar procesos pesados. | **Pro:** contratos claros. **Contra:** reintentos entre servicios duplican trabajo. | **Pro:** Outbox/Inbox y consumidores idempotentes. **Contra:** requiere gobierno de eventos. |
+| AD-Q05: degradación ante fallas | **Pro:** menor operación. **Contra:** punto único de falla. | **Pro:** aislamiento parcial. **Contra:** una dependencia lenta bloquea la cadena. | **Pro:** circuit breaker, DLQ y degradación. **Contra:** mayor complejidad operativa. |
+| AD-F05: simulación contextual | **Pro:** integración IA rápida. **Contra:** acopla proveedor y dominio. | **Pro:** adaptador por servicio. **Contra:** llamadas bloqueantes. | **Pro:** adaptador IA aislado y eventos para resultados. **Contra:** más contratos que mantener. |
+
+**Conclusión:** se selecciona **Microservicios + Event-Driven** para el pipeline de sesión y análisis porque satisface mejor los drivers de confiabilidad, recuperación e idempotencia. Se complementa con REST para comandos/consultas y WebSocket para coaching en vivo; el patrón no se aplica como sustituto del canal de baja latencia.
 
 | ID | Categoría ADD | Decisión | Drivers | Alternativas consideradas | Trade-off principal |
 |---|---|---|---|---|---|
@@ -1392,7 +1419,7 @@ La siguiente matriz conserva la estructura de refinamiento ADD: cada fila conect
 |---|---|---|---|
 | AD-F01 / AD-Q02 | QAS-SEC-01, QAS-PRI-01 | ADD-02, ADD-08, ADD-09, ADD-13 | US05, US06, US28, US29, US32, US33. |
 | AD-F03 / AD-Q05 | QAS-AVA-01 | ADD-03, ADD-10, ADD-12, ADD-13 | US12, US13, US14, US34, US37. |
-| AD-F04 / AD-Q01 | QAS-PER-01 | ADD-02, ADD-03, ADD-06, ADD-12 | US31, US38. |
+| AD-F04 / AD-Q01 | QAS-PER-01 | ADD-02, ADD-03, ADD-06, ADD-12 | US38. |
 | AD-F06 / AD-Q03 | QAS-PER-02, QAS-REL-01 | ADD-04, ADD-05, ADD-07, ADD-14 | US15–US19, US26, US37. |
 | AD-Q04 / AD-C01 | QAS-MOD-01, QAS-INT-01 | ADD-06, ADD-11, ADD-14 | US10, US23–US25, US30, US31, US36. |
 | AD-Q06 | QAS-OBS-01 | ADD-02, ADD-13 | US34, US37. |
