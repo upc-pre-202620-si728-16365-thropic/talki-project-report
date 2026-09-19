@@ -1101,7 +1101,7 @@ flowchart LR
 
 ## 3.4. Product Backlog
 
-El Product Backlog conserva la identificación histórica del proyecto y añade las historias US29–US38. La priorización combina MoSCoW con *story points* de la secuencia Fibonacci (1, 2, 3, 5, 8 y 13) como estimación relativa; estos valores deberán refinarse durante el Sprint Planning.
+El Product Backlog conserva la identificación histórica del proyecto y añade las historias US29–US38. La priorización combina MoSCoW con *story points* como estimación relativa; estos valores deberán refinarse durante el Sprint Planning.
 
 | Orden | ID | Título | Prioridad | SP | Dependencias | Entrega objetivo |
 |---:|---|---|:---:|---:|---|---|
