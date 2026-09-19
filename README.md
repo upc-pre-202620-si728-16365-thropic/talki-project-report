@@ -966,6 +966,8 @@ Los dos escenarios convergen en el flujo **configurar → verificar → practica
 
 Para conservar la trazabilidad con el proyecto desarrollado en el ciclo anterior, se mantienen los identificadores **US01–US28** y se actualiza su redacción cuando corresponde. Las historias **US29–US38** amplían el backlog con privacidad, material contextual, simulación, continuidad, procesamiento asíncrono, aprendizaje adaptativo y coaching en vivo, capacidades necesarias para la versión actual de Talki.
 
+Los criterios de aceptación se ejecutan como escenarios **Given–When–Then**. La tabla mantiene una versión compacta para hacer legible el backlog; en cada criterio, la primera condición equivale a *Given*, la acción del usuario o sistema a *When* y el resultado observable a *Then*. Esta convención evita criterios subjetivos y permite convertir cada fila en pruebas de aceptación durante el sprint.
+
 | Epic / Story ID | Título | User Story | Criterios de aceptación principales |
 |---|---|---|---|
 | EP01 | Página de aterrizaje | Como visitante, quiero comprender el valor y condiciones de Talki antes de registrarme. | No corresponde. |
@@ -1014,6 +1016,17 @@ Para conservar la trazabilidad con el proyecto desarrollado en el ciclo anterior
 | US32 | Compartir temporalmente un reporte | Como estudiante, quiero dar acceso limitado a un tutor para recibir orientación adicional. | El enlace tiene expiración y revocación; no expone otras sesiones; el tutor no puede modificar datos. |
 | US33 | Revocar consentimiento y eliminar datos | Como estudiante, quiero retirar permisos o eliminar sesiones para conservar control de mi información. | La revocación impide nuevos accesos; el borrado cambia el estado inmediatamente y activa la purga; queda evidencia de auditoría. |
 
+Las siguientes **Technical Stories** representan restricciones sin interacción directa de usuario final. Se priorizan y verifican igual que las User Stories, en vez de ocultarlas como decisiones de implementación.
+
+| ID | Título | Technical Story | Criterio de aceptación Given–When–Then |
+|---|---|---|---|
+| TS01 | Consentimiento verificable | Como equipo, necesitamos registrar consentimiento antes de procesar voz o material para cumplir la política de privacidad del piloto. | **Given** una sesión sin consentimiento, **When** se intenta iniciarla, **Then** el sistema la bloquea y registra la versión aceptada al consentir. |
+| TS02 | Audio efímero | Como equipo, necesitamos no persistir audio crudo por defecto para minimizar exposición y costo. | **Given** una sesión finalizada sin consentimiento adicional, **When** vence su ventana temporal, **Then** no queda audio crudo accesible. |
+| TS03 | Base tecnológica existente | Como equipo, necesitamos mantener compatibilidad con Spring Boot, PostgreSQL y RabbitMQ para evolucionar el trabajo previo. | **Given** un servicio nuevo, **When** se integra al piloto, **Then** usa contratos compatibles con la base técnica acordada. |
+| TS04 | Trazabilidad versionada | Como equipo, necesitamos versionar código, contratos, rúbricas y análisis en GitHub para que sean revisables. | **Given** un cambio de contrato o rúbrica, **When** se integra, **Then** queda identificado por versión y revisión de Pull Request. |
+| TS05 | Experiencia web en español | Como equipo, necesitamos entregar el piloto web en español para el segmento definido. | **Given** un navegador moderno con micrófono disponible, **When** un estudiante abre Talki, **Then** puede completar el flujo en español sin requerir una app nativa. |
+| TS06 | Presupuesto y plazo académico | Como equipo, necesitamos operar dentro del presupuesto y calendario del curso para entregar un piloto viable. | **Given** una alternativa arquitectónica, **When** se evalúa, **Then** se descarta si excede el presupuesto o el plazo acordado. |
+
 
 ## 3.3. Impact Mapping
 
@@ -1022,6 +1035,16 @@ El Impact Map conecta los objetivos de negocio con los actores, los cambios de c
 ### Objetivo del piloto
 
 **Validar que Talki fomenta una práctica oral constante y accionable**, buscando que al menos el 40 % de usuarios activos mantenga tres sesiones semanales durante cuatro semanas y pueda identificar una mejora concreta mediante la comparación de sus reportes.
+
+### Business Goals SMART
+
+| ID | Objetivo de negocio | Indicador y horizonte |
+|---|---|---|
+| BG-01 | Validar práctica sostenida en el piloto. | Al cierre de 4 semanas, al menos 40 % de usuarios activos completa 3 sesiones por semana. |
+| BG-02 | Validar que el feedback permite una mejora accionable. | Al cierre de 4 semanas, al menos 60 % de quienes completan 2 sesiones marca una recomendación como aplicada o registra una mejora en la métrica asociada. |
+| BG-03 | Reducir la fricción de la primera práctica. | Durante la prueba de usabilidad del piloto, al menos 90 % de participantes inicia una sesión válida en 3 minutos o menos, sin ayuda. |
+| BG-04 | Validar utilidad para escenarios avanzados. | Al cierre del piloto, al menos 70 % de estudiantes de ciclos 6–10 que prueban una simulación contextualizada la califica útil para entrevista o sustentación. |
+| BG-05 | Sostener confianza en el tratamiento de datos. | Durante el piloto, 100 % de sesiones registra consentimiento antes de capturar audio y 100 % de enlaces revocados deja de otorgar acceso de inmediato. |
 
 ```mermaid
 flowchart LR
@@ -1092,7 +1115,7 @@ El Product Backlog conserva la identificación histórica del proyecto y añade 
 | 8 | US12 | Iniciar grabación y transcripción | Must | 8 | US09, US29 | MVP |
 | 9 | US13 | Pausar y reanudar | Should | 3 | US12 | MVP |
 | 10 | US14 | Finalizar y guardar | Must | 3 | US12 | MVP |
-| 11 | US38 | Recibir coaching en tiempo cercano al real | Must | 13 | US12 | MVP |
+| 11 | US38 | Recibir coaching en tiempo cercano al real | Must | 8 | US12 | MVP |
 | 12 | US15 | Recibir feedback general | Must | 8 | US14 | MVP |
 | 13 | US16 | Analizar muletillas | Should | 5 | US14 | MVP |
 | 14 | US19 | Recibir sugerencias por sección | Should | 5 | US15 | MVP |
@@ -1106,7 +1129,7 @@ El Product Backlog conserva la identificación histórica del proyecto y añade 
 | 22 | US24 | Establecer metas | Could | 3 | US08 | Incremento 2 |
 | 23 | US25 | Seleccionar áreas de enfoque | Could | 3 | US09 | Incremento 2 |
 | 24 | US30 | Cargar material de contexto | Should | 8 | US09 | Incremento 2 |
-| 25 | US31 | Simular entrevista o sustentación | Should | 13 | US10, US30, US38 | Incremento 2 |
+| 25 | US31 | Simular entrevista o sustentación | Should | 8 | US10, US30, US38 | Incremento 2 |
 | 26 | US17 | Analizar palabras clave | Should | 5 | US14, US30 | Incremento 2 |
 | 27 | US18 | Mejorar el léxico | Could | 5 | US17 | Incremento 2 |
 | 28 | US21 | Ver progreso | Should | 5 | US20 | Incremento 2 |
@@ -1123,9 +1146,12 @@ El Product Backlog conserva la identificación histórica del proyecto y añade 
 
 ### Criterio de priorización
 
+- El orden se determina primero por el **valor de negocio para validar el piloto** (practicar, obtener retroalimentación accionable y repetir con confianza), no por el orden técnico de implementación. Por ello, autenticación y seguridad aparecen solamente cuando habilitan ese flujo y su privacidad.
 - **Must:** conforma el circuito mínimo de valor y las salvaguardas necesarias para operar: acceso → preparación → práctica → análisis → feedback → historial, privacidad y recuperación.
 - **Should:** incrementa contextualización, profundidad del entrenamiento, adaptación y colaboración.
 - **Could:** fortalece engagement, adquisición y conveniencia, pero no bloquea la validación inicial.
+
+La tabla constituye el Product Backlog versionado del equipo para TB1. Su evidencia navegable se conserva en esta misma rama y su historial de cambios puede consultarse en el [Pull Request #2](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/pull/2).
 
 ### Definición de Ready
 
@@ -1219,6 +1245,8 @@ Cada escenario incluye fuente, estímulo, entorno, artefacto, respuesta y medida
 | C-08 | El usuario debe consentir el procesamiento de voz y material cargado. | Ninguna sesión puede comenzar sin permisos; la revocación y eliminación deben formar parte del diseño. |
 | C-09 | Los reportes históricos deben indicar la versión de la rúbrica y del análisis. | Evita comparar resultados producidos con criterios incompatibles y permite reproducibilidad. |
 
+**Precisión de ADD:** la disponibilidad inicial de Gemini Live (C-01) se trata como una condición del piloto, no como una razón para acoplar el dominio al proveedor. La decisión de integración se compara explícitamente en 4.1.4; las restricciones C-02 a C-09 se implementan mediante TS01–TS06 y las historias de consentimiento, borrado y trazabilidad.
+
 ### 4.1.3. Architectural Drivers Backlog
 
 Los candidatos se priorizan con dos dimensiones: importancia para stakeholders e impacto sobre la arquitectura. Los elementos H/H son los drivers principales; todas las restricciones se consideran drivers por tener cero grados de libertad.
@@ -1232,21 +1260,43 @@ Los candidatos se priorizan con dos dimensiones: importancia para stakeholders e
 | 5 | AD-Q03 | Calidad | Garantizar procesamiento idempotente frente a duplicados y reintentos. | H/H | QAS-REL-01. |
 | 6 | AD-Q05 | Calidad | Degradar y recuperarse ante fallas del proveedor o de componentes internos. | H/H | QAS-AVA-01. |
 | 7 | AD-F05 | Funcional | Ejecutar simulaciones contextualizadas con material autorizado. | H/H | PF-05. |
-| 8 | AD-Q04 | Calidad | Incorporar modos, rúbricas y proveedores con cambios localizados. | H/H | QAS-MOD-01, QAS-INT-01. |
-| 9 | AD-F01 | Funcional | Autenticar usuarios y asegurar propiedad de sesiones y reportes. | H/H | PF-01, QAS-SEC-01. |
-| 10 | AD-Q01 | Calidad | Sostener latencia y capacidad del flujo en vivo durante el piloto. | H/H | QAS-PER-01, QAS-PER-02. |
-| 11 | AD-F08 | Funcional | Revocar compartición y eliminar datos de una sesión. | H/H | PF-08, QAS-PRI-01. |
+| 8 | AD-Q04 | Calidad | Incorporar modos, rúbricas y proveedores con cambios localizados. | H/M | QAS-MOD-01, QAS-INT-01. |
+| 9 | AD-F01 | Funcional | Autenticar usuarios y asegurar propiedad de sesiones y reportes. | H/M | PF-01, QAS-SEC-01. |
+| 10 | AD-Q01 | Calidad | Sostener latencia y capacidad del flujo en vivo durante el piloto. | H/M | QAS-PER-01, QAS-PER-02. |
+| 11 | AD-F08 | Funcional | Revocar compartición y eliminar datos de una sesión. | H/M | PF-08, QAS-PRI-01. |
 | 12 | AD-Q06 | Calidad | Trazar una sesión entre componentes sin registrar contenido privado. | M/H | QAS-OBS-01. |
 | 13 | AD-F07 | Funcional | Mantener historial, comparación y recomendaciones adaptativas. | H/M | PF-07. |
 | 14 | AD-Q07 | Calidad | Reducir fricción para iniciar una primera sesión válida. | H/M | QAS-USA-01. |
-| 15 | AD-C01 | Restricción | Gemini Live es el proveedor inicial, aislado detrás de una interfaz interna. | Restricción | C-01. |
-| 16 | AD-C02 | Restricción | No persistir audio crudo por defecto. | Restricción | C-02. |
-| 17 | AD-C03 | Restricción | Reutilizar Spring Boot, PostgreSQL y RabbitMQ. | Restricción | C-04. |
-| 18 | AD-C04 | Restricción | Mantener versionado de rúbricas, análisis y contratos. | Restricción | C-07, C-09. |
+| 15 | AD-C01 | Restricción | Usar la integración de voz disponible para el piloto, encapsulada tras una interfaz interna. | Restricción | C-01. |
+| 16 | AD-C02 | Restricción | No persistir audio crudo por defecto. | Restricción | C-02, TS02. |
+| 17 | AD-C03 | Restricción | Entregar una experiencia web en español. | Restricción | C-03, TS05. |
+| 18 | AD-C04 | Restricción | Reutilizar Spring Boot, PostgreSQL y RabbitMQ. | Restricción | C-04, TS03. |
+| 19 | AD-C05 | Restricción | Mantener una solución realizable por cinco estudiantes durante el semestre. | Restricción | C-05, TS06. |
+| 20 | AD-C06 | Restricción | Operar con presupuesto limitado y servicios cloud administrados. | Restricción | C-06, TS06. |
+| 21 | AD-C07 | Restricción | Versionar código y documentación mediante GitHub y Pull Requests. | Restricción | C-07, TS04. |
+| 22 | AD-C08 | Restricción | Obtener consentimiento antes de procesar voz o material cargado. | Restricción | C-08, TS01. |
+| 23 | AD-C09 | Restricción | Versionar rúbricas y análisis en los reportes históricos. | Restricción | C-09, TS04. |
 
 ### 4.1.4. Architectural Design Decisions
 
 Las decisiones se presentan como propuestas estratégicas para TB1. Su implementación y refinamiento táctico deberán validarse en los capítulos posteriores y durante los sprints.
+
+#### Proceso de decisión por iteración ADD
+
+En cada iteración se toma el siguiente driver de mayor prioridad, se revisan las restricciones aplicables, se seleccionan tácticas candidatas y se comparan patrones o alternativas por su capacidad de satisfacer el escenario medible. Se elige la alternativa que cubre el driver sin violar restricciones de privacidad, plazo, presupuesto o base técnica; el *trade-off* queda registrado y se vuelve a iterar con el siguiente driver. Así, las decisiones no parten de una tecnología preferida: parten de PF, QAS y constraints trazables.
+
+#### Candidate Pattern Evaluation Matrix
+
+| Driver(es) evaluado(s) | Alternativa / patrón | Ventajas | Desventajas o riesgo | Decisión y criterio |
+|---|---|---|---|---|
+| AD-F03, AD-F04, AD-Q01 | REST + polling | Simple de implementar y depurar. | Incrementa latencia y tráfico; no ofrece interacción bidireccional fluida. | Descartado para el flujo en vivo: no satisface QAS-PER-01. |
+| AD-F03, AD-F04, AD-Q01 | REST para comandos + WebSocket para flujo en vivo | Comunicación persistente, bidireccional y con menor sobrecarga. | Requiere heartbeats, reconexión y control de presión. | Seleccionado: satisface el límite de latencia con tácticas de reconexión y backpressure. |
+| AD-F06, AD-Q03, AD-Q05 | Pipeline síncrono entre servicios | Flujo lineal y consistencia inmediata en casos simples. | Acoplamiento temporal; una falla externa bloquea el reporte. | Descartado: no tolera fallas ni reintentos del QAS-REL-01. |
+| AD-F06, AD-Q03, AD-Q05 | Eventos RabbitMQ + Outbox/Inbox | Desacopla análisis, admite reintentos e idempotencia. | Consistencia eventual y contratos de evento que gobernar. | Seleccionado: un único resultado se verifica con `session_id + analysis_version`. |
+| AD-F05, AD-Q04, AD-C01 | SDK Gemini dentro del dominio | Implementación inicial rápida. | Dependencia irreversible y pruebas difíciles con otro proveedor. | Descartado: vulnera modificabilidad e interoperabilidad. |
+| AD-F05, AD-Q04, AD-C01 | Ports & Adapters / AI Provider Adapter | Aísla proveedor, permite *fake* y reemplazo contractual. | El contrato común puede ocultar capacidades propietarias. | Seleccionado: cumple QAS-INT-01 sin prometer equivalencia total. |
+| AD-Q02, AD-C02, AD-C08 | Conservar audio crudo | Facilita reprocesamiento. | Aumenta exposición, costo y superficie de consentimiento. | Descartado por restricciones de privacidad del piloto. |
+| AD-Q02, AD-C02, AD-C08 | Audio temporal con TTL y borrado por defecto | Minimiza datos y costo; respeta consentimiento. | Reduce opciones de reprocesamiento. | Seleccionado: el transcript y métricas autorizados preservan trazabilidad. |
 
 | ID | Categoría ADD | Decisión | Drivers | Alternativas consideradas | Trade-off principal |
 |---|---|---|---|---|---|
@@ -1270,6 +1320,16 @@ La combinación resultante separa dos necesidades diferentes: el **flujo en vivo
 ### 4.1.5. Quality Attribute Scenario Refinements
 
 Los escenarios de mayor prioridad se refinan con tácticas, decisiones asociadas, elementos afectados, prueba verificable y riesgos residuales.
+
+La siguiente matriz conserva la estructura de refinamiento ADD: cada fila conecta escenario, objetivo de negocio, atributo relevante, estímulo, fuente, entorno, artefacto, respuesta, medida, preguntas y riesgos pendientes.
+
+| Scenario(s) | Business Goals | Relevant Quality Attributes | Stimulus | Stimulus Source | Environment | Artifact | Response | Response Measure | Questions | Issues |
+|---|---|---|---|---|---|---|---|---|---|---|
+| QAS-PER-01: coaching en vivo | BG-01, BG-03 | Rendimiento, escalabilidad | Llega un nuevo fragmento de audio. | Estudiante que practica. | Carga normal del piloto. | Cliente, WebSocket, Live Coach y adaptador IA. | Procesa y entrega una señal sin bloquear captura. | p95 ≤ 2 s; error < 1 %, validados por prueba de carga. | ¿Cuál es la concurrencia aprobada y el presupuesto de latencia externo? | Variabilidad del proveedor; degradar señales secundarias antes de la captura. |
+| QAS-PER-02 y QAS-REL-01: reporte único | BG-01, BG-02 | Rendimiento, confiabilidad | Finalización o reentrega de un mismo evento hasta diez veces. | Estudiante y RabbitMQ. | Carga normal y reintentos tras falla. | Pipeline de análisis, scoring y progreso. | Genera un reporte único y consistente. | 95 % ≤ 60 s; un resultado por `session_id + analysis_version`. | ¿Qué capacidad de cola se requiere en el piloto? | Eventos fuera de orden; usar versión, máquina de estados e Inbox/Outbox. |
+| QAS-SEC-01 y QAS-PRI-01: acceso y borrado | BG-05 | Seguridad, privacidad | Acceso ajeno, revocación de enlace o solicitud de borrado. | Usuario no autorizado o propietario. | Operación normal o intento malicioso. | Gateway, identidad, sesión, reporte y almacenamiento. | Deniega acceso, revoca enlace y propaga borrado. | 100 % de accesos ajenos rechazados; enlace inválido inmediato; borrado lógico ≤ 1 min. | ¿Cuál es el plazo contractual de purga física? | Procesamiento temporal por tercero; minimizar datos y registrar consentimiento. |
+| QAS-AVA-01 y QAS-OBS-01: caída y diagnóstico | BG-01, BG-05 | Disponibilidad, resiliencia, observabilidad | El proveedor no responde o soporte recibe una sesión fallida. | Proveedor IA o agente de soporte. | Sesión activa o producción. | Adaptador IA, orquestador, sesión, logs y trazas. | Evita cascada, conserva estado y correlaciona la causa. | Detección ≤ 10 s; componente identificado ≤ 15 min. | ¿Qué nivel de servicio ofrece el proveedor? | Desconexión prolongada; permitir cierre seguro o resultado parcial etiquetado. |
+| QAS-MOD-01 y QAS-INT-01: evolución | BG-04 | Modificabilidad, interoperabilidad | Se solicita el modo debate o un proveedor alterno. | Equipo de producto. | Evolución planificada. | Catálogo de modos, rúbricas, orquestador y adaptador IA. | Incorpora configuración/adaptador sin cambiar el ciclo central. | Modo ≤ 2 persona-días; proveedor equivalente ≤ 5 persona-días y suite contractual aprobada. | ¿Qué capacidades son realmente comunes entre proveedores? | Capacidades exclusivas; declararlas opcionales y aislar extensiones. |
 
 #### Refinamiento QAS-PER-01 — Latencia del coaching en vivo
 
