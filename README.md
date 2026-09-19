@@ -1833,11 +1833,27 @@ El mapa resultante protege tres propiedades: (1) el **core** (Live Coaching, Spe
 
 ### 4.3.1. System Landscape Diagram
 
+El siguiente diagrama muestra a Talki dentro de su ecosistema, identificando a los usuarios (estudiantes y administradores) y los sistemas externos con los que interactúa, como el proveedor de IA conversacional.
+
+![System Landscape de Talki](assets/images/DiagramsUML/system_landscape.png)
+
 ### 4.3.2. Context Level Diagrams
+
+El diagrama de contexto detalla las personas y sistemas de software que se comunican directamente con Talki, especificando el propósito de cada interacción a alto nivel.
+
+![Diagrama de Contexto de Talki](assets/images/DiagramsUML/context.png)
 
 ### 4.3.3. Container Level Diagrams
 
+El diagrama de contenedores descompone a Talki en sus bloques desplegables (aplicaciones, servicios y almacenes de datos), mostrando cómo se comunican entre sí para entregar la funcionalidad del sistema.
+
+![Diagrama de Contenedores de Talki](assets/images/DiagramsUML/conainer.png)
+
 ### 4.3.4. Deployment Diagrams
+
+El diagrama de despliegue representa la infraestructura sobre la que se ejecutan los contenedores de Talki, indicando los nodos de ejecución y la ubicación de cada componente en el entorno productivo.
+
+![Diagrama de Despliegue de Talki](assets/images/DiagramsUML/deploy.png)
 
 # Capítulo V: Tactical-Level Software Design
 
