@@ -56,12 +56,11 @@
 | :---: | :---: | --- | --- |
 | 0.1 | 08/09/2026 | Equipo Thropic | Creación de la estructura completa del informe de acuerdo con el formato oficial del Trabajo Final. |
 | 0.2 | 08/09/2026 | Rivera Sosa, Eduardo Gael | Desarrollo de las secciones 1.1 a 1.3 (Startup Profile, Solution Profile, Lean UX Process y Segmentos objetivo) y 2.2 (Entrevistas), adaptando y actualizando el contenido validado en la fase inicial del proyecto Talki. |
-| 0.3 | 19/09/2026 | Lang Nassi, Werner Khalil | Desarrollo de la sección 4.2 (Strategic-Level Domain-Driven Design): EventStorming, Candidate Context Discovery, Domain Message Flows, Bounded Context Canvases y Context Mapping, con DSL de Structurizr del context map. |
-| 0.4 | 19/09/2026 | Tumi Oliden, Manuel Ignacio | Desarrollo de las secciones 2.1 a 2.4: análisis de competidores, entrevistas, needfinding y lenguaje ubicuo de Talki. |
-| 0.5 | 19/09/2026 | Chi Cruzatt, Kevin Jorge | Incorporación y actualización de su perfil como integrante del equipo en el informe. |
+| 0.3 | 10/09/2026 | Tumi Oliden, Manuel Ignacio | Desarrollo de las secciones 2.1 a 2.4: análisis de competidores, entrevistas, needfinding y lenguaje ubicuo de Talki. |
+| 0.4 | 10/09/2026 | Chi Cruzatt, Kevin Jorge | Incorporación y actualización de su perfil como integrante del equipo en el informe. |
+| 0.5 | 19/09/2026 | Lang Nassi, Werner Khalil | Desarrollo de la sección 4.2 (Strategic-Level Domain-Driven Design): EventStorming, Candidate Context Discovery, Domain Message Flows, Bounded Context Canvases y Context Mapping, con DSL de Structurizr del context map. |
 | 0.6 | 19/09/2026 | Oroncoy Almeyda, Alejandro Daniel | Desarrollo de las secciones 3.1 a 4.1.5: especificación de requisitos y diseño estratégico basado en ADD. |
-| 0.7 | 19/09/2026 | Lang Nassi, Werner Khalil | Complementación de las secciones 4.2 a 4.2.5: diseño estratégico basado en DDD, bounded contexts y Context Mapping. |
-| 0.8 | 19/09/2026 | Equipo Thropic | Complementación del Student Outcome con la trazabilidad de los aportes de cada integrante en el TB1. |
+| 0.7 | 19/09/2026 | Equipo Thropic | Complementación del Student Outcome con la trazabilidad de los aportes de cada integrante en el TB1. |
 
 # Project Report Collaboration Insights
 
