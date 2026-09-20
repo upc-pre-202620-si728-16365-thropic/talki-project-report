@@ -62,12 +62,21 @@
 | 0.6 | 19/09/2026 | Oroncoy Almeyda, Alejandro Daniel | Desarrollo de las secciones 3.1 a 4.1.5: especificación de requisitos y diseño estratégico basado en ADD. |
 | 0.7 | 19/09/2026 | Equipo Thropic | Complementación del Student Outcome con la trazabilidad de los aportes de cada integrante en el TB1. |
 | 0.8 | 19/09/2026 | Chi Cruzatt, Kevin Jorge | Desarrollo de la sección 4.3 (Software Architecture) y elaboración de los diagramas System Landscape, Context Level, Container Level y Deployment. |
+| 0.9 | 19/09/2026 | Equipo Thropic | Incorporación del avance de conclusiones y recomendaciones, bibliografía, anexos y evidencia de colaboración del TB1. |
 
 # Project Report Collaboration Insights
 
 Repositorio del informe: [talki-project-report](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report)
 
-En esta sección se incluirán, para cada entrega, las evidencias de colaboración del equipo obtenidas desde GitHub: commits, ramas, pull requests, participación de cada integrante y los gráficos de contribución correspondientes.
+La evidencia de colaboración del TB1 se mantiene en GitHub mediante los commits, ramas y pull requests del repositorio. El detalle de responsabilidades y calificaciones asignadas por el Team Leader se encuentra en el [Informe de Participación — Startup Thropic](https://docs.google.com/document/d/1-tnKLS9I_qJD4kkLwBUQB8QqxdgXBQbJcZ0smvAn1KM/edit).
+
+| Integrante | Aporte principal registrado en TB1 | Evidencia |
+| --- | --- | --- |
+| Eduardo Gael Rivera Sosa | Capítulo I y entrevistas. | Commits y secciones 1.1–1.3 y 2.2. |
+| Manuel Ignacio Tumi Oliden | Competidores, needfinding y lenguaje ubicuo. | Secciones 2.1, 2.3 y 2.4. |
+| Alejandro Daniel Oroncoy Almeyda | Especificación de requisitos y ADD. | Secciones 3.1–4.1.5. |
+| Werner Khalil Lang Nassi | Diseño estratégico basado en DDD. | Secciones 4.2–4.2.5. |
+| Kevin Jorge Chi Cruzatt | Software Architecture y sus cuatro diagramas. | Sección 4.3. |
 
 # Contenido
 
@@ -1966,10 +1975,51 @@ El diagrama de despliegue representa la infraestructura sobre la que se ejecutan
 
 ## Conclusiones
 
+Al cierre del TB1, el equipo Thropic consolidó la base de producto, requisitos y diseño estratégico de Talki para atender la práctica de comunicación oral de estudiantes universitarios.
+
+- La investigación de usuarios, las entrevistas y los artefactos de needfinding permitieron diferenciar dos segmentos con necesidades complementarias: práctica guiada y feedback para estudiantes de ciclos iniciales, y simulación contextualizada para estudiantes de ciclos superiores.
+- Los escenarios To-Be, las user stories, el Impact Mapping y el Product Backlog conectan los hallazgos de investigación con funcionalidades priorizadas, criterios de aceptación y metas de producto verificables.
+- El uso de ADD permitió priorizar privacidad, ciclo de sesión, coaching en vivo, análisis, resiliencia e idempotencia como drivers arquitectónicos, vinculándolos con decisiones y escenarios de calidad medibles.
+- El diseño DDD identificó bounded contexts, mensajes de dominio y relaciones de integración que delimitan las responsabilidades de Talki antes del diseño táctico.
+- Los diagramas System Landscape, Context Level, Container Level y Deployment completan la vista arquitectónica de alto nivel del primer entregable.
+
 ## Recomendaciones
+
+- Validar las historias priorizadas y los criterios de aceptación con estudiantes y docentes antes de iniciar la implementación.
+- Mantener la trazabilidad entre los drivers ADD, los bounded contexts y los diagramas de arquitectura cuando se incorporen nuevas decisiones de diseño.
+- Representar explícitamente RabbitMQ dentro del entorno Railway y los canales de comunicación correspondientes cuando se refine el diagrama de despliegue en el siguiente hito.
+- Usar los escenarios de calidad refinados como base de pruebas de rendimiento, privacidad, recuperación e idempotencia durante la fase de implementación.
+- Desarrollar los capítulos V, VI y VII en los siguientes hitos, sin adelantarlos como contenido de esta primera entrega.
 
 # Video About-the-Team
 
 # Bibliografía
 
+Crown Counseling. (2024). *30+ revealing fear of public speaking statistics for 2025*. https://crowncounseling.com/statistics/fear-of-public-speaking-statistics/
+
+ELSA Corp. (2024). *ELSA Speak: AI-powered English pronunciation coach* [Aplicación móvil]. https://elsaspeak.com/
+
+Maldonado, M. A., García García, A., Armada Crespo, J. M., Alós, F. J., & Moreno Osella, E. M. (2022). Competencia oral y ansiedad: entrenamiento y eficacia en estudiantes universitarios. *Revista Latina de Comunicación Social*, (80). https://doi.org/10.4185/RLCS-2022-1800
+
+Orai Inc. (2024). *Orai: AI-powered public speaking coach* [Aplicación móvil]. https://orai.com/
+
+Redalyc. (2022). *Competencias laborales blandas de alto impacto en egresados universitarios: Un estudio descriptivo*. https://www.redalyc.org/journal/1942/194276552011/html/
+
+Ries, E. (2011). *The Lean Startup: How today's entrepreneurs use continuous innovation to create radically successful businesses*. Crown Business.
+
+Speeko Inc. (2024). *Speeko: Public Speaking Coach* [Aplicación móvil]. https://www.speeko.co/
+
+Superintendencia Nacional de Educación Superior Universitaria. (2023). *Sistema de información universitaria TUNI: Estadísticas de matrícula universitaria*. https://www.sunedu.gob.pe/
+
+Teleprompter.com. (2024). *Public speaking statistics 2025: Global fear & trends*. https://www.teleprompter.com/blog/public-speaking-statistics
+
+Wojcik, R., Bachmann, F., Bass, L., Clements, P., Merson, P., Nord, R., & Wood, B. (2006). *Attribute-Driven Design (ADD), Version 2.0* (Technical Report CMU/SEI-2006-TR-023). Software Engineering Institute, Carnegie Mellon University. https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=8147
+
 # Anexos
+
+| Anexo | Descripción | Enlace o ubicación |
+| --- | --- | --- |
+| A | Grabaciones y evidencias de entrevistas de ambos segmentos. | [Carpeta de entrevistas](https://drive.google.com/drive/folders/1IwH1aTzPJ2Y5cYJS3yqF8UM4eHfprvLE?usp=sharing) |
+| B | Informe de participación del equipo para TB1. | [Informe de Participación — Startup Thropic](https://docs.google.com/document/d/1-tnKLS9I_qJD4kkLwBUQB8QqxdgXBQbJcZ0smvAn1KM/edit) |
+| C | Evidencias de colaboración: commits, ramas y pull requests. | [Repositorio del informe](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report) |
+| D | Diagramas de Software Architecture. | `assets/images/DiagramsUML/` |
