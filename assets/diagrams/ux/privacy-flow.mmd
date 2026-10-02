@@ -1,0 +1,17 @@
+flowchart TD
+  owner["Propietario del reporte"] --> action{"Accion"}
+  action -- Compartir --> expiration["Definir vigencia"]
+  expiration --> grant["Crear permiso de solo lectura"]
+  grant --> tutor["Tutor abre enlace"]
+  tutor --> check{"Activo, vigente y recurso accesible?"}
+  check -- Si --> view["Ver solo reporte autorizado"]
+  check -- No --> unavailable["Enlace no disponible"]
+  grant --> revoke["Revocar permiso"]
+  revoke --> unavailable
+  action -- Eliminar --> confirm["Confirmar consecuencia"]
+  confirm --> tombstone["Bloquear acceso y revocar enlaces"]
+  tombstone --> purge["Propagar orden a contextos propietarios"]
+  purge --> receipts{"Todos los recibos de purga?"}
+  receipts -- No --> pending["Purga pendiente / reintento"]
+  pending --> purge
+  receipts -- Si --> done["Confirmar datos purgados"]

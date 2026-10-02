@@ -1,0 +1,17 @@
+flowchart TD
+  home["Estudiante autenticado"] --> mode["Entrevista o sustentacion"]
+  mode --> context["Adjuntar material opcional"]
+  context --> valid{"Tipo, tamano y autorizacion validos?"}
+  valid -- No --> fix["Explicar error / quitar archivo"]
+  fix --> context
+  valid -- Si --> mic["Audio y consentimiento"]
+  mic --> live["Pregunta / respuesta / repregunta"]
+  live --> network{"Canal disponible?"}
+  network -- Si --> finish["Confirmar cierre"]
+  network -- No --> checkpoint["Mostrar ultimo checkpoint confirmado"]
+  checkpoint --> choice{"Accion del estudiante"}
+  choice -- Reanudar --> live
+  choice -- Cerrar parcialmente --> partial["Resultado parcial identificado"]
+  finish --> report["Feedback contextual con evidencia"]
+  report --> practice["Proxima practica"]
+  partial --> practice
