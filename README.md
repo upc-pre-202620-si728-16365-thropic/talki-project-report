@@ -2810,6 +2810,86 @@ app_users conserva el correo, nombre de usuario, segmento académico, contraseñ
 
 ## 5.9. Bounded Context: AI Provider Gateway
 
+Este contexto organiza la comunicación de Talki con proveedores de inteligencia artificial. Mantiene un contrato común para que las diferencias de cada proveedor permanezcan en sus adaptadores.
+
+**Servicio o componente asociado:** Pasarela de integración propuesta.
+
+### 5.9.1. Domain Layer
+
+La capa de dominio propuesta define el contrato que debe cumplir una integración con un proveedor de inteligencia artificial. Su función es expresar las capacidades necesarias para una conversación, independientemente de la API del proveedor.
+
+**Integration Port**
+
+AIProviderPort define, en el diseño propuesto, las operaciones de apertura y cierre de la conversación y la obtención de la transcripción. Este contrato permite expresar las capacidades que Talki necesita sin depender de la API de un proveedor. Las sesiones y evaluaciones permanecen bajo responsabilidad de sus respectivos contextos.
+
+**Elementos de Domain Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| AIProviderPort | Puerto de integración (diseño propuesto) | Define las operaciones de apertura, intercambio y cierre de la conversación con un proveedor. | Domain |
+
+**Reglas principales**
+
+1. El proveedor recibe únicamente la información autorizada necesaria para la práctica.
+2. La selección del proveedor comprueba que disponga de las capacidades requeridas por el modo elegido.
+3. Los errores se traducen a respuestas que el resto de Talki pueda interpretar y recuperar.
+4. Los registros técnicos evitan conservar audio, material personal y solicitudes completas.
+
+### 5.9.2. Interface Layer
+
+La pasarela propuesta ofrece un contrato interno a Live Coaching. No expone una API pública adicional para el estudiante.
+
+**Contrato de integración.** AIProviderPort recibe la solicitud de conversación autorizada y define las operaciones de apertura y cierre. Los datos comunes incluyen el modo de práctica, las instrucciones del escenario y las condiciones del intercambio.
+
+**Representación de la respuesta.** La pasarela devuelve los datos necesarios para continuar la conversación y traduce las respuestas y los errores del proveedor. La emisión de la credencial temporal permanece vinculada al flujo de preparación de Live Coaching; las credenciales permanentes no se entregan al cliente.
+
+### 5.9.3. Application Layer
+
+La capa de aplicación propuesta coordina la selección del proveedor y la ejecución de la conversación mediante un contrato común.
+
+**Coordinación de la integración**
+
+AIIntegrationApplicationService se propone para comprobar las capacidades requeridas por una práctica, seleccionar el adaptador y solicitar la conversación mediante AIProviderPort. El servicio devuelve la respuesta o el error al contexto que inició la solicitud.
+
+**Elementos de Application Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| AIIntegrationApplicationService | Servicio de aplicación propuesto | Comprueba las capacidades requeridas, selecciona el adaptador y coordina la solicitud autorizada. | Application |
+
+### 5.9.4. Infrastructure Layer
+
+La capa de infraestructura propuesta contiene los adaptadores que conocen las APIs de los proveedores de inteligencia artificial.
+
+**Elementos de Infrastructure Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| GeminiLiveClient | Adaptador propuesto | Implementa AIProviderPort para el intercambio con Gemini Live. | Infrastructure |
+| Configuración del proveedor | Configuración de integración | Protege las credenciales y determina las capacidades disponibles. | Infrastructure |
+
+La emisión de credenciales temporales utiliza GeminiTokenService en Live Coaching. La pasarela común se integrará para mantener las diferencias de cada proveedor en su adaptador. No requiere almacenar el audio ni el material personal de la práctica.
+
+### 5.9.5. Bounded Context Software Architecture Component Level Diagrams
+
+El servicio de integración utiliza AIProviderPort y la infraestructura proporciona GeminiLiveClient como adaptador. El proveedor externo queda fuera del modelo de negocio de Talki.
+
+![Componentes de AI Provider Gateway](assets/diagrams/tactical/09-ai-provider-gateway-components.png)
+
+### 5.9.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 5.9.6.1. Bounded Context Domain Layer Class Diagrams
+
+AIIntegrationApplicationService utiliza AIProviderPort y GeminiLiveClient implementa las operaciones del contrato propuesto. El adaptador pertenece a infraestructura y permite sustituir al proveedor sin cambiar el modelo de práctica.
+
+![Clases de AI Provider Gateway](assets/diagrams/tactical/09-ai-provider-gateway-classes.png)
+
+#### 5.9.6.2. Bounded Context Database Design Diagram
+
+Este contexto no almacena audio ni transcripciones. La configuración y las credenciales se administran mediante los mecanismos de infraestructura, separados del material del estudiante.
+
+![Persistencia de AI Provider Gateway](assets/diagrams/tactical/09-ai-provider-gateway-database.png)
+
 ## 5.10. Bounded Context: Notifications
 
 ## Trazabilidad del diseño táctico
