@@ -1,0 +1,28 @@
+classDiagram
+class ShareGrant {
+  +UUID id
+  +UUID reportId
+  +Long ownerId
+  +String tokenHash
+  +Date expiresAt
+  +Date revokedAt
+  +isAccessible(now)
+  +revoke()
+}
+class DeletionRequest {
+  +UUID id
+  +UUID sessionId
+  +Long ownerId
+  +DeletionState state
+  +Date deadline
+  +registerReceipt(context)
+  +complete()
+}
+class PurgeReceipt {
+  +UUID id
+  +String context
+  +Date completedAt
+  +acknowledge()
+}
+DeletionRequest "1" *-- "0..*" PurgeReceipt : confirma
+ShareGrant ..> DeletionRequest : bloqueado por tombstone
