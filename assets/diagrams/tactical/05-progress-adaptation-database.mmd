@@ -1,15 +1,26 @@
 erDiagram
-    USER_PROGRESS ||--o{ SESSION_METRICS : aggregates
+    USER_PROGRESS ||--o{ SESSION_METRICS : resume
     USER_PROGRESS {
         bigint user_id PK
         int total_sessions
-        double avg_overall
-        int xp_total
-        timestamp updated_at
+        int total_minutes
+        double average_score
+        int best_score
+        int current_streak
     }
     SESSION_METRICS {
-        uuid session_id PK
+        uuid id PK
+        uuid session_id
         bigint user_id FK
+        varchar mode
+        int duration_seconds
         int overall
+        int fluency
+        int clarity
+        int volume
+        int vocabulary
+        int confidence
+        varchar analysis_version
+        varchar rubric_version
         timestamp occurred_at
     }

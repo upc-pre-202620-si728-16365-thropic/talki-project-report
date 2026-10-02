@@ -1,7 +1,9 @@
 erDiagram
     SCORE_RESULTS {
         uuid id PK
-        uuid session_id UK
+        uuid session_id
+        varchar analysis_version
+        varchar rubric_version
         bigint user_id
         int fluency
         int clarity

@@ -74,6 +74,7 @@
 | 1.8 | 02/10/2026 | Edición asistida por Codex | Retirada de las consultas de disponibilidad técnica de Interface Layer para centrar el diseño táctico en las operaciones del producto. |
 | 1.9 | 02/10/2026 | Edición asistida por Codex | Desarrollo de las explicaciones de cada capa, identificación de controladores y contratos, organización de repositorios y adaptadores, guías de estilo y navegación por plataforma y wireflows con pantallas web y móvil. |
 | 1.10 | 02/10/2026 | Edición asistida por Codex | Organización de Domain Layer por tipo de elemento, separación de comandos, consultas y coordinación de eventos, tablas de capas uniformes y rotulado de figuras web/móvil. |
+| 1.11 | 02/10/2026 | Edición asistida por Codex | Retirada de enlaces de fuentes editables, revisión de congruencia entre modelos y explicaciones, ajuste de datos de progreso y cuenta, y relación de las pantallas con el diseño táctico. |
 
 # Project Report Collaboration Insights
 
@@ -1183,7 +1184,6 @@ Las siguientes **Technical Stories** representan restricciones sin interacción 
 | US37 | el análisis falla recuperablemente | consulta estado o reintenta | ve estado y evita reportes duplicados. |
 | US38 | el estudiante habla durante práctica | recibe una señal | obtiene coaching silenciable sin interrumpir captura. |
 
-
 ## 3.3. Impact Mapping
 
 El Impact Map conecta los objetivos de negocio con los actores, los cambios de comportamiento esperados y los entregables que los hacen posibles. El objetivo no es implementar todas las ideas, sino priorizar aquellas que aportan evidencia sobre adopción, práctica sostenida y mejora percibida.
@@ -1264,7 +1264,6 @@ La siguiente trazabilidad complementa el diagrama y asegura que cada meta SMART 
 4. Si el progreso se expresa mediante comparaciones válidas y recomendaciones adaptativas, aumentará la repetición de sesiones.
 5. Si la privacidad es visible y controlable, disminuirá la resistencia a grabarse y cargar material personal.
 
-
 ## 3.4. Product Backlog
 
 El Product Backlog conserva la identificación histórica del proyecto y añade las historias US29–US38. La priorización combina MoSCoW con *story points* como estimación relativa; estos valores deberán refinarse durante el Sprint Planning. El orden numérico prioriza la entrega de valor visible para el usuario; las Technical Stories son habilitadores transversales del MVP y se calendarizan junto con las historias de las que dependen.
@@ -1338,7 +1337,6 @@ Una historia puede ingresar a un sprint cuando posee actor, beneficio, criterios
 
 Una historia se considera terminada cuando está integrada, cumple los criterios de aceptación, cuenta con pruebas pertinentes, no introduce defectos críticos, actualiza contratos o documentación afectados y dispone de evidencia para el Sprint Review.
 
-
 # Capítulo IV: Strategic-Level Software Design
 
 ## 4.1. Strategic-Level Attribute-Driven Design
@@ -1389,7 +1387,6 @@ Las historias primarias se seleccionan por su relevancia para el valor del negoc
 | PF-06 | US15, US16, US17, US18, US19, US26, US37 | Procesar métricas, puntuación, recomendaciones y estado del análisis. | Favorece pipeline asíncrono, idempotencia, trazabilidad y consistencia eventual. |
 | PF-07 | US20, US21, US22, US35, US36 | Mantener historial, comparación, engagement y recomendaciones adaptativas. | Requiere modelos de lectura, versionado de métricas y procesamiento de evolución. |
 | PF-08 | US27, US32, US33 | Exportar, compartir y eliminar información bajo control del usuario. | Define permisos temporales, revocación, retención y propagación de borrado. |
-
 
 #### 4.1.2.2. Quality Attribute Scenarios
 
@@ -1746,7 +1743,7 @@ Para visualizar cómo deben colaborar los bounded contexts, el equipo aplicó **
 
 ![Domain Storytelling DS-03: compartición temporal, revocación y eliminación bajo control del propietario](assets/images/domain-storytelling/ds-03-compartir-revocar.png)
 
-Los tres flujos confirmaron las fronteras: el material de contexto viaja de Practice Session Management hacia la pasarela sin que Live Coaching conozca su formato interno; el consentimiento actúa como compuerta previa a la captura sin consultas en línea repetidas; y la revocación se propaga por eventos, no por llamadas sincrónicas, evitando acoplar la privacidad a la disponibilidad de otros contextos.
+Los tres flujos confirmaron las fronteras: el material de contexto viaja de Practice Session Management hacia la pasarela sin que Live Coaching conozca su formato interno y el consentimiento actúa como compuerta previa a la captura. Sharing & Retention invalida el permiso antes de responder a la revocación; después comunica el cambio por eventos a los demás contextos, manteniendo el bloqueo de nuevas consultas independiente de la entrega de avisos.
 
 ### 4.2.4. Bounded Context Canvases
 
@@ -1936,7 +1933,6 @@ El equipo evaluó explícitamente un **Shared Kernel** de definiciones de métri
 
 ![Context map final de Talki con patrones DDD entre bounded contexts](assets/images/context-mapping/context-map.png)
 
-
 #### Conclusión del context mapping
 
 El mapa resultante protege tres propiedades: (1) el **core** (Live Coaching, Speech Analysis, Scoring & Feedback) solo depende de contratos publicados y de una pasarela con Anti-Corruption Layer, nunca de detalles de proveedores ni de contextos genéricos; (2) la **privacidad** opera por eventos, de modo que revocar o eliminar no depende de la disponibilidad de otros contextos; y (3) la **evolución**, que comprende nuevos modos, rúbricas o proveedores, queda confinada a un contexto por tipo de cambio. Este mapa es el insumo directo de los diagramas C4 de la sección 4.3 y de la descomposición táctica del capítulo V.
@@ -1963,7 +1959,7 @@ Para el segundo hito se refina la vista inicial: se mantiene React/Flutter y los
 
 ![Diagrama de Contenedores refinado de Talki](assets/diagrams/tactical/container-refinement.png)
 
-[Fuente editable](assets/diagrams/tactical/container-refinement.mmd) · [Vista del primer hito](assets/images/DiagramsUML/conainer.png)
+[Vista del primer hito](assets/images/DiagramsUML/conainer.png)
 
 ### 4.3.4. Deployment Diagrams
 
@@ -1973,7 +1969,7 @@ La vista refinada es un **despliegue propuesto**, no evidencia de infraestructur
 
 ![Diagrama de Despliegue refinado de Talki](assets/diagrams/tactical/deployment-refinement.png)
 
-[Fuente editable](assets/diagrams/tactical/deployment-refinement.mmd) · [Vista del primer hito](assets/images/DiagramsUML/deploy.png)
+[Vista del primer hito](assets/images/DiagramsUML/deploy.png)
 
 # Capítulo V: Tactical-Level Software Design
 
@@ -2082,8 +2078,6 @@ LiveCoachController recibe las acciones del cliente y las delega al orquestador.
 
 ![Componentes de Live Coaching](assets/diagrams/tactical/01-live-coaching-components.png)
 
-[Fuente editable del diagrama de componentes](assets/diagrams/tactical/01-live-coaching-components.mmd)
-
 ### 5.1.6. Bounded Context Software Architecture Code Level Diagrams
 
 #### 5.1.6.1. Bounded Context Domain Layer Class Diagrams
@@ -2092,15 +2086,11 @@ Las estrategias comparten una interfaz y el orquestador utiliza una fábrica par
 
 ![Clases de Live Coaching](assets/diagrams/tactical/01-live-coaching-classes.png)
 
-[Fuente editable del diagrama de clases](assets/diagrams/tactical/01-live-coaching-classes.mmd)
-
 #### 5.1.6.2. Bounded Context Database Design Diagram
 
 Este contexto no requiere una base de datos propia. La transcripción y el resultado del cierre se conservan en los contextos responsables de sesiones y evaluación.
 
 ![Persistencia de Live Coaching](assets/diagrams/tactical/01-live-coaching-database.png)
-
-[Fuente editable del diseño de datos](assets/diagrams/tactical/01-live-coaching-database.mmd)
 
 ## 5.2. Bounded Context: Speech Analysis
 
@@ -2156,7 +2146,6 @@ La recepción de SessionLiveFinalizedEvent inicia el análisis de la transcripci
 | Análisis de transcripción | Caso de uso | Identifica muletillas y obtiene el conteo por expresión y la cantidad de palabras. | Application |
 | Preparación del resultado | Caso de uso | Relaciona las métricas con la sesión y solicita la publicación de FillerAnalyzedEvent. | Application |
 
-
 ### 5.2.4. Infrastructure Layer
 
 La capa de infraestructura conecta el análisis con los demás contextos mediante RabbitMQ. Los adaptadores de mensajería transportan la evidencia y el resultado.
@@ -2168,15 +2157,13 @@ La capa de infraestructura conecta el análisis con los demás contextos mediant
 | SessionLiveFinalizedConsumer | Consumidor de eventos | Recibe el cierre de práctica y activa el análisis. | Infrastructure |
 | FillerAnalyzedPublisher | Publicador de eventos | Comunica el resultado a Scoring & Feedback. | Infrastructure |
 
-El análisis no mantiene una base propia. FillerDetector utiliza reglas de detección sobre la transcripción; el transporte del resultado conserva la referencia de sesión. La ampliación del diseño contempla versiones y reintentos para recuperar el procesamiento.
+El análisis de muletillas no mantiene una base propia. FillerDetector procesa la transcripción y el resultado conserva la referencia de sesión. El diseño ampliado de 4.2 incorpora métricas acústicas y análisis contextual mediante evidencia autorizada y adaptadores especializados. También requiere comunicar la versión, el estado y los fallos del análisis para permitir los reintentos de US37.
 
 ### 5.2.5. Bounded Context Software Architecture Component Level Diagrams
 
-El consumidor recibe la sesión finalizada, solicita la detección de muletillas y entrega el resultado al publicador. El cálculo de la puntuación permanece en un contexto distinto.
+El diagrama presenta el recorrido del análisis de muletillas: el consumidor recibe la sesión finalizada, solicita la detección y entrega el resultado al publicador. Las ampliaciones acústicas y contextuales requieren sus propios adaptadores; el cálculo de la puntuación permanece en Scoring & Feedback.
 
 ![Componentes de Speech Analysis](assets/diagrams/tactical/02-speech-analysis-components.png)
-
-[Fuente editable del diagrama de componentes](assets/diagrams/tactical/02-speech-analysis-components.mmd)
 
 ### 5.2.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -2186,15 +2173,11 @@ FillerDetector produce FillerResult. El consumidor y el publicador coordinan la 
 
 ![Clases de Speech Analysis](assets/diagrams/tactical/02-speech-analysis-classes.png)
 
-[Fuente editable del diagrama de clases](assets/diagrams/tactical/02-speech-analysis-classes.mmd)
-
 #### 5.2.6.2. Bounded Context Database Design Diagram
 
 El contexto no conserva una copia del reporte. Sus métricas se comunican mediante fillers.analyzed y se almacenan con el resultado de evaluación. El registro técnico de reintentos se definirá durante la integración.
 
 ![Persistencia de Speech Analysis](assets/diagrams/tactical/02-speech-analysis-database.png)
-
-[Fuente editable del diseño de datos](assets/diagrams/tactical/02-speech-analysis-database.mmd)
 
 ## 5.3. Bounded Context: Scoring & Feedback
 
@@ -2208,7 +2191,7 @@ La capa de dominio reúne los conceptos que permiten convertir la evidencia de u
 
 **Aggregate Root**
 
-ScoreResult identifica la evaluación de una práctica y conserva su relación con la sesión y el estudiante. Reúne la puntuación y el momento del cálculo para mantener un resultado consistente.
+ScoreResult identifica la evaluación de una práctica y conserva su relación con la sesión y el estudiante. Reúne la puntuación y el momento del cálculo; el modelo ampliado añade las versiones de análisis y rúbrica para interpretar el resultado histórico.
 
 **Value Objects**
 
@@ -2259,7 +2242,6 @@ La lectura del reporte recuperará la evaluación para un estudiante autorizado.
 | Evaluación de la práctica | Caso de uso | Solicita el cálculo a ScoreCalculator con las métricas del análisis. | Application |
 | Registro y comunicación del resultado | Caso de uso | Conserva ScoreResult y solicita la publicación de ScoringCompletedEvent. | Application |
 
-
 ### 5.3.4. Infrastructure Layer
 
 La capa de infraestructura recibe las métricas, conserva las evaluaciones y comunica los resultados a los contextos interesados.
@@ -2280,25 +2262,19 @@ Las métricas recibidas se entregan al calculador y el resultado se conserva ant
 
 ![Componentes de Scoring & Feedback](assets/diagrams/tactical/03-scoring-feedback-components.png)
 
-[Fuente editable del diagrama de componentes](assets/diagrams/tactical/03-scoring-feedback-components.mmd)
-
 ### 5.3.6. Bounded Context Software Architecture Code Level Diagrams
 
 #### 5.3.6.1. Bounded Context Domain Layer Class Diagrams
 
-ScoreResult contiene VoiceScore como parte de la evaluación. ScoreCalculator aplica los criterios de puntuación y el consumidor coordina el procesamiento del evento.
+ScoreResult contiene VoiceScore y, en el modelo ampliado, las versiones de análisis y rúbrica. ScoreCalculator aplica los criterios de puntuación y el consumidor coordina el procesamiento del evento. Las dimensiones sin evidencia admiten un valor ausente en lugar de asignarles cero.
 
 ![Clases de Scoring & Feedback](assets/diagrams/tactical/03-scoring-feedback-classes.png)
 
-[Fuente editable del diagrama de clases](assets/diagrams/tactical/03-scoring-feedback-classes.mmd)
-
 #### 5.3.6.2. Bounded Context Database Design Diagram
 
-La tabla score_results contiene la referencia a la sesión, el usuario, las dimensiones evaluadas y la fecha de cálculo. La ampliación propuesta incorpora las versiones de análisis y rúbrica, y permite representar dimensiones sin evidencia.
+La tabla score_results contiene la referencia a la sesión, el usuario, las dimensiones evaluadas y la fecha de cálculo. El esquema ampliado incorpora las versiones de análisis y rúbrica. La combinación de sesión y ambas versiones debe ser única; las dimensiones sin evidencia admiten valores nulos y se presentan como “Sin evidencia”.
 
 ![Persistencia de Scoring & Feedback](assets/diagrams/tactical/03-scoring-feedback-database.png)
-
-[Fuente editable del diseño de datos](assets/diagrams/tactical/03-scoring-feedback-database.mmd)
 
 ## 5.4. Bounded Context: Practice Session Management
 
@@ -2320,7 +2296,7 @@ Feedback representa una retroalimentación vinculada a la práctica. Cada regist
 
 **Value Objects**
 
-SessionUserContext reúne la información de identidad que necesita este contexto. Permite expresar la relación con el estudiante en el lenguaje de sesiones sin incorporar el modelo completo de cuentas.
+SessionUserContext reúne el identificador, correo, nombre de usuario y segmento académico del estudiante. SessionContextFacade adapta estos datos al lenguaje de sesiones, sin incorporar el modelo completo de cuentas.
 
 **Elementos de Domain Layer**
 
@@ -2395,8 +2371,6 @@ El controlador dirige las solicitudes a los servicios de comandos o consultas. E
 
 ![Componentes de Practice Session Management](assets/diagrams/tactical/04-practice-sessions-components.png)
 
-[Fuente editable del diagrama de componentes](assets/diagrams/tactical/04-practice-sessions-components.mmd)
-
 ### 5.4.6. Bounded Context Software Architecture Code Level Diagrams
 
 #### 5.4.6.1. Bounded Context Domain Layer Class Diagrams
@@ -2405,15 +2379,11 @@ Session contiene los registros de Feedback y consulta SessionUserContext para id
 
 ![Clases de Practice Session Management](assets/diagrams/tactical/04-practice-sessions-classes.png)
 
-[Fuente editable del diagrama de clases](assets/diagrams/tactical/04-practice-sessions-classes.mmd)
-
 #### 5.4.6.2. Bounded Context Database Design Diagram
 
 sessions y session_feedback se relacionan mediante el identificador de sesión. El usuario se conserva como referencia externa y structured_data permite almacenar feedback estructurado. El consentimiento, la configuración versionada y la marca de eliminación son ampliaciones propuestas.
 
 ![Persistencia de Practice Session Management](assets/diagrams/tactical/04-practice-sessions-database.png)
-
-[Fuente editable del diseño de datos](assets/diagrams/tactical/04-practice-sessions-database.mmd)
 
 ## 5.5. Bounded Context: Progress & Adaptation
 
@@ -2427,7 +2397,7 @@ La capa de dominio representa la evolución del estudiante a partir de sus prác
 
 **Aggregate Root**
 
-UserProgress reúne los totales de actividad y el desempeño acumulado del estudiante. Cada evaluación recibida contribuye a su resumen de progreso.
+UserProgress reúne la cantidad de sesiones, minutos de práctica, promedio y mejor puntuación del estudiante. La experiencia y las reglas de racha pertenecen a Gamification; el panel puede presentar la racha como información resumida, sin redefinir sus reglas.
 
 **Entities**
 
@@ -2502,25 +2472,19 @@ ProgressController consulta el resumen conservado por UserProgressRepository. Sc
 
 ![Componentes de Progress & Adaptation](assets/diagrams/tactical/05-progress-adaptation-components.png)
 
-[Fuente editable del diagrama de componentes](assets/diagrams/tactical/05-progress-adaptation-components.mmd)
-
 ### 5.5.6. Bounded Context Software Architecture Code Level Diagrams
 
 #### 5.5.6.1. Bounded Context Domain Layer Class Diagrams
 
-UserProgress reúne las métricas registradas y SessionMetrics identifica cada práctica. El consumidor actualiza estos datos y el servicio de consulta los utiliza para preparar las vistas.
+UserProgress reúne los totales y las puntuaciones resumidas del estudiante. SessionMetrics y UserProgressQueryService son ampliaciones propuestas: conservan evidencia por práctica y permiten consultar resultados compatibles. El modo, las dimensiones y las versiones sostienen las tendencias y la comparación presentadas en 6.4.
 
 ![Clases de Progress & Adaptation](assets/diagrams/tactical/05-progress-adaptation-classes.png)
 
-[Fuente editable del diagrama de clases](assets/diagrams/tactical/05-progress-adaptation-classes.mmd)
-
 #### 5.5.6.2. Bounded Context Database Design Diagram
 
-user_progress se relaciona con session_metrics mediante el usuario. Cada métrica identifica la sesión que la originó. Para admitir varias evaluaciones se propone conservar la versión del análisis y la rúbrica; eliminar una sesión retira sus métricas y recalcula el resumen.
+user_progress conserva los totales y puntuaciones resumidas del estudiante. La tabla propuesta session_metrics registra la sesión, modo, duración, dimensiones y versiones de análisis y rúbrica. La combinación de sesión y versiones debe ser única. La eliminación retira sus métricas y recalcula el resumen, manteniendo los puntos de experiencia bajo responsabilidad de Gamification.
 
 ![Persistencia de Progress & Adaptation](assets/diagrams/tactical/05-progress-adaptation-database.png)
-
-[Fuente editable del diseño de datos](assets/diagrams/tactical/05-progress-adaptation-database.mmd)
 
 ## 5.6. Bounded Context: Sharing & Retention
 
@@ -2621,8 +2585,6 @@ Las solicitudes de compartir, revocar, exportar y eliminar se coordinan mediante
 
 ![Componentes de Sharing & Retention](assets/diagrams/tactical/06-sharing-retention-components.png)
 
-[Fuente editable del diagrama de componentes](assets/diagrams/tactical/06-sharing-retention-components.mmd)
-
 ### 5.6.6. Bounded Context Software Architecture Code Level Diagrams
 
 #### 5.6.6.1. Bounded Context Domain Layer Class Diagrams
@@ -2631,15 +2593,11 @@ ShareGrant administra la vigencia del acceso. DeletionRequest reúne los registr
 
 ![Clases de Sharing & Retention](assets/diagrams/tactical/06-sharing-retention-classes.png)
 
-[Fuente editable del diagrama de clases](assets/diagrams/tactical/06-sharing-retention-classes.mmd)
-
 #### 5.6.6.2. Bounded Context Database Design Diagram
 
 share_grants almacena el reporte, propietario, hash del enlace y fechas de vigencia y revocación. deletion_requests registra la solicitud de eliminación y purge_receipts sus confirmaciones. Los registros deben evitar permisos o confirmaciones duplicados. Este esquema corresponde al diseño propuesto.
 
 ![Persistencia de Sharing & Retention](assets/diagrams/tactical/06-sharing-retention-database.png)
-
-[Fuente editable del diseño de datos](assets/diagrams/tactical/06-sharing-retention-database.mmd)
 
 ## 5.7. Bounded Context: Gamification
 
@@ -2729,8 +2687,6 @@ La evaluación recibida actualiza la racha y, cuando se cumple una condición, o
 
 ![Componentes de Gamification](assets/diagrams/tactical/07-gamification-components.png)
 
-[Fuente editable del diagrama de componentes](assets/diagrams/tactical/07-gamification-components.mmd)
-
 ### 5.7.6. Bounded Context Software Architecture Code Level Diagrams
 
 #### 5.7.6.1. Bounded Context Domain Layer Class Diagrams
@@ -2739,15 +2695,11 @@ UserStreak conserva la racha y la experiencia del usuario, mientras que Achievem
 
 ![Clases de Gamification](assets/diagrams/tactical/07-gamification-classes.png)
 
-[Fuente editable del diagrama de clases](assets/diagrams/tactical/07-gamification-classes.mmd)
-
 #### 5.7.6.2. Bounded Context Database Design Diagram
 
 user_streaks y achievements se relacionan por usuario dentro de la misma base. La ampliación propone identificar los logros por usuario, código y versión de regla para evitar duplicados.
 
 ![Persistencia de Gamification](assets/diagrams/tactical/07-gamification-database.png)
-
-[Fuente editable del diseño de datos](assets/diagrams/tactical/07-gamification-database.mmd)
 
 ## 5.8. Bounded Context: Identity & Access
 
@@ -2761,7 +2713,7 @@ La capa de dominio representa la cuenta del estudiante y los roles reconocidos p
 
 **Aggregate Root**
 
-AppUser representa la cuenta del estudiante. Conserva su identificador, correo, contraseña protegida y datos de perfil.
+AppUser representa la cuenta del estudiante. Conserva su identificador, correo, contraseña protegida, nombre de usuario, segmento académico y rol.
 
 **Entities**
 
@@ -2821,7 +2773,6 @@ La renovación, el cierre de sesión y la gestión del consentimiento amplían e
 | Renovación y cierre de sesión | Casos de uso propuestos | Renuevan o revocan las credenciales de acceso. | Application |
 | Gestión de consentimiento | Caso de uso propuesto | Registra la versión, alcance y retiro de la autorización de procesamiento. | Application |
 
-
 ### 5.8.4. Infrastructure Layer
 
 La capa de infraestructura implementa el almacenamiento de cuentas, la protección de contraseñas y la emisión de credenciales de acceso.
@@ -2843,25 +2794,19 @@ AuthController delega el registro y el acceso a AuthService. Los adaptadores de 
 
 ![Componentes de Identity & Access](assets/diagrams/tactical/08-identity-access-components.png)
 
-[Fuente editable del diagrama de componentes](assets/diagrams/tactical/08-identity-access-components.mmd)
-
 ### 5.8.6. Bounded Context Software Architecture Code Level Diagrams
 
 #### 5.8.6.1. Bounded Context Domain Layer Class Diagrams
 
-AppUser se relaciona con sus tokens de renovación y con UserRole. La asociación conserva la identidad de la cuenta durante el acceso y permite revocar una sesión.
+AppUser reúne los datos de la cuenta y se relaciona con UserRole. RefreshToken representa la ampliación propuesta para renovar el acceso y revocar esas credenciales al cerrar la sesión de cuenta.
 
 ![Clases de Identity & Access](assets/diagrams/tactical/08-identity-access-classes.png)
 
-[Fuente editable del diagrama de clases](assets/diagrams/tactical/08-identity-access-classes.mmd)
-
 #### 5.8.6.2. Bounded Context Database Design Diagram
 
-app_users y refresh_tokens se relacionan por usuario. El correo y el hash del token tienen restricciones de unicidad. El registro versionado de consentimiento se incorpora como ampliación del modelo.
+app_users conserva el correo, nombre de usuario, segmento académico, contraseña protegida y rol. La tabla propuesta refresh_tokens se relaciona con la cuenta y conserva la vigencia y revocación de las credenciales. El correo y el hash del token tienen restricciones de unicidad; el registro versionado de consentimiento es una ampliación adicional.
 
 ![Persistencia de Identity & Access](assets/diagrams/tactical/08-identity-access-database.png)
-
-[Fuente editable del diseño de datos](assets/diagrams/tactical/08-identity-access-database.mmd)
 
 ## 5.9. Bounded Context: AI Provider Gateway
 
@@ -2912,7 +2857,6 @@ AIIntegrationApplicationService se propone para comprobar las capacidades requer
 | --- | --- | --- | --- |
 | AIIntegrationApplicationService | Servicio de aplicación propuesto | Comprueba las capacidades requeridas, selecciona el adaptador y coordina la solicitud autorizada. | Application |
 
-
 ### 5.9.4. Infrastructure Layer
 
 La capa de infraestructura propuesta contiene los adaptadores que conocen las APIs de los proveedores de inteligencia artificial.
@@ -2932,25 +2876,19 @@ El servicio de integración utiliza AIProviderPort y la infraestructura proporci
 
 ![Componentes de AI Provider Gateway](assets/diagrams/tactical/09-ai-provider-gateway-components.png)
 
-[Fuente editable del diagrama de componentes](assets/diagrams/tactical/09-ai-provider-gateway-components.mmd)
-
 ### 5.9.6. Bounded Context Software Architecture Code Level Diagrams
 
 #### 5.9.6.1. Bounded Context Domain Layer Class Diagrams
 
-AIProviderPort define el contrato y GeminiLiveClient representa su adaptación propuesta. El adaptador pertenece a infraestructura; el puerto permite sustituir la integración sin cambiar Session.
+AIIntegrationApplicationService utiliza AIProviderPort y GeminiLiveClient implementa las operaciones del contrato propuesto. El adaptador pertenece a infraestructura y permite sustituir al proveedor sin cambiar el modelo de práctica.
 
 ![Clases de AI Provider Gateway](assets/diagrams/tactical/09-ai-provider-gateway-classes.png)
-
-[Fuente editable del diagrama de clases](assets/diagrams/tactical/09-ai-provider-gateway-classes.mmd)
 
 #### 5.9.6.2. Bounded Context Database Design Diagram
 
 Este contexto no almacena audio ni transcripciones. La configuración y las credenciales se administran mediante los mecanismos de infraestructura, separados del material del estudiante.
 
 ![Persistencia de AI Provider Gateway](assets/diagrams/tactical/09-ai-provider-gateway-database.png)
-
-[Fuente editable del diseño de datos](assets/diagrams/tactical/09-ai-provider-gateway-database.mmd)
 
 ## 5.10. Bounded Context: Notifications
 
@@ -2982,7 +2920,7 @@ NotificationPushService representa el contrato propuesto para entregar un aviso 
 
 Este contexto recibe los eventos que originan avisos al estudiante. No necesita que el cliente solicite directamente el envío de una notificación.
 
-**Contratos de entrada.** ScoringCompletedEvent permite reconocer que una evaluación terminó. AchievementUnlockedEvent identifica el logro obtenido. Los eventos `scoring.completed` y `achievement.unlocked` conservan la referencia del destinatario y del hecho que origina el aviso.
+**Contratos de entrada.** ScoringCompletedEvent permite reconocer que una evaluación terminó. AchievementUnlockedEvent identifica el logro obtenido. Los eventos `scoring.completed` y `achievement.unlocked` conservan la referencia del destinatario y del hecho que origina el aviso. La ampliación prevista en 4.2 incorpora eventos de cuenta, revocación de acceso y eliminación de datos; sus contratos y consumidores se definirán durante la integración.
 
 **Entrega propuesta.** El mensaje permite al estudiante reconocer el aviso y acceder a su reporte o logro. WebSocketPushAdapter y el proveedor de correo son canales propuestos; su disponibilidad y las preferencias de contacto se comprobarán antes del envío.
 
@@ -3000,8 +2938,8 @@ Los eventos de evaluación y logro identifican al destinatario y el tipo de avis
 | --- | --- | --- | --- |
 | Aviso de evaluación disponible | Caso de uso | Prepara un mensaje que permita acceder al resultado de la práctica. | Application |
 | Aviso de logro obtenido | Caso de uso | Prepara el reconocimiento que corresponde al evento recibido. | Application |
+| Avisos de cuenta y privacidad | Casos de uso propuestos | Informan sobre acciones de cuenta, revocación y eliminación según los flujos de 4.2. | Application |
 | Despacho del aviso | Caso de uso propuesto | Comprueba las preferencias y solicita la entrega mediante NotificationPushService. | Application |
-
 
 ### 5.10.4. Infrastructure Layer
 
@@ -3020,11 +2958,9 @@ Los consumidores base registran la intención de notificar. La entrega efectiva,
 
 ### 5.10.5. Bounded Context Software Architecture Component Level Diagrams
 
-Los consumidores reciben los eventos de evaluación o logro. La integración propuesta coordina la preparación del aviso y utiliza NotificationPushService para su entrega mediante WebSocketPushAdapter o un canal de correo.
+Los consumidores reciben los eventos de evaluación o logro. La integración propuesta incorpora los avisos de cuenta y privacidad y coordina la preparación del mensaje. NotificationPushService define su entrega mediante WebSocketPushAdapter o un canal de correo.
 
 ![Componentes de Notifications](assets/diagrams/tactical/10-notifications-components.png)
-
-[Fuente editable del diagrama de componentes](assets/diagrams/tactical/10-notifications-components.mmd)
 
 ### 5.10.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -3034,15 +2970,11 @@ Los consumidores actúan como adaptadores de entrada de eventos. NotificationPus
 
 ![Clases de Notifications](assets/diagrams/tactical/10-notifications-classes.png)
 
-[Fuente editable del diagrama de clases](assets/diagrams/tactical/10-notifications-classes.mmd)
-
 #### 5.10.6.2. Bounded Context Database Design Diagram
 
 El contexto no requiere una base de negocio propia. El registro de envíos y preferencias se definirá si se incorpora un canal de correo con seguimiento persistente.
 
 ![Persistencia de Notifications](assets/diagrams/tactical/10-notifications-database.png)
-
-[Fuente editable del diseño de datos](assets/diagrams/tactical/10-notifications-database.mmd)
 
 ## Trazabilidad del diseño táctico
 
@@ -3059,7 +2991,7 @@ La siguiente tabla relaciona cada contexto con las historias de usuario, decisio
 | 5.7. Gamification | US35; ADD-05, ADD-07, ADD-11; QAS-REL-01 |
 | 5.8. Identity & Access | US05–US08, US23, US28, US29; TS01; ADD-02, ADD-09, ADD-13; QAS-SEC-01 |
 | 5.9. AI Provider Gateway | Habilita US12, US17–US19, US30, US31, US38; TS02; ADD-06, ADD-08, ADD-10, ADD-12, ADD-14; QAS-INT-01, QAS-PER-01 |
-| 5.10. Notifications | Notifica resultados de US05, US07, US15, US32, US33; ADD-04, ADD-05, ADD-10, ADD-13; QAS-REL-01 |
+| 5.10. Notifications | Avisos de evaluación y logro: US15, US35. Ampliaciones de cuenta y privacidad: US05, US07, US32, US33; ADD-04, ADD-05, ADD-10, ADD-13; QAS-REL-01 |
 
 # Capítulo VI: Solution UX Design
 
@@ -3151,8 +3083,6 @@ Las acciones de pausar y finalizar se diferencian para evitar cierres involuntar
 La información se organiza por tareas: practicar, consultar el historial, revisar el progreso y administrar el perfil. La primera práctica sigue una secuencia guiada. La landing presenta el servicio a nuevos usuarios, mientras que las sesiones y los reportes se consultan desde el espacio personal del estudiante. El tutor accede únicamente al reporte que se le ha compartido.
 
 ![Arquitectura de información de Talki](assets/diagrams/ux/information-architecture.png)
-
-[Fuente editable del mapa](assets/diagrams/ux/information-architecture.mmd)
 
 | Espacio | Contenido y criterio de organización |
 | --- | --- |
@@ -3282,6 +3212,18 @@ El mock-up presenta el mensaje “Ensaya tus ideas. Hazlas escuchar.” junto co
 <img src="assets/ux/mockups/mobile-landing.png" alt="Mock-up de la landing pública de Talki: móvil" width="320">
 
 ## 6.4. Applications UX/UI Design
+
+Las pantallas representan las operaciones descritas en el capítulo V. La siguiente relación permite revisar qué contexto responde a cada tarea, incluyendo las funciones propuestas.
+
+| Pantallas y tarea | Contextos relacionados |
+| --- | --- |
+| A01–A03, P01: cuenta, acceso, recuperación y perfil | Identity & Access (5.8); la recuperación y las ampliaciones del perfil forman parte del diseño propuesto. |
+| S01–S02: configurar la práctica, preparar audio y autorizar el procesamiento | Practice Session Management (5.4), con Identity & Access (5.8) para el consentimiento. |
+| S03: practicar, pausar, reanudar y finalizar | Live Coaching (5.1) y Practice Session Management (5.4); AI Provider Gateway (5.9) es la pasarela propuesta. |
+| S04, R01: seguir el análisis y revisar el reporte | Speech Analysis (5.2) obtiene métricas y Scoring & Feedback (5.3) calcula la evaluación. |
+| H01–H02, G01–G03: consultar actividad, historial, tendencias y plan | Practice Session Management (5.4) aporta el historial, Progress & Adaptation (5.5) reúne el progreso y Gamification (5.7) aporta rachas y logros. La comparación y el plan son ampliaciones propuestas. |
+| D01, T01: compartir, exportar, revocar y eliminar | Sharing & Retention (5.6), en colaboración con los contextos propietarios de los datos. |
+| N01: administrar preferencias de contacto | Notifications (5.10); la entrega por canal y el seguimiento son funciones propuestas. |
 
 ### 6.4.1. Applications Wireframes
 
@@ -3556,23 +3498,17 @@ El estudiante pasa del inicio a la configuración, comprueba el audio y realiza 
 
 <img src="assets/diagrams/ux/wireflow-web.png" alt="Wireflow web de Talki con las pantallas del recorrido de práctica" width="900">
 
-[Fuente editable del wireflow web](assets/diagrams/ux/wireflow-web.html)
-
 **Wireflow Mobile Application**
 
 La adaptación móvil conserva las mismas etapas y presenta una acción principal en cada pantalla. Los avisos de permiso, conexión y análisis permiten recuperar la tarea antes de continuar.
 
 <img src="assets/diagrams/ux/wireflow-mobile.png" alt="Wireflow móvil de Talki con las pantallas del recorrido de práctica" width="900">
 
-[Fuente editable del wireflow móvil](assets/diagrams/ux/wireflow-mobile.html)
-
 **Decisiones y recuperación del recorrido**
 
 El siguiente diagrama resume las decisiones de acceso, consentimiento y recuperación que acompañan a las pantallas anteriores.
 
 ![Decisiones y recuperación de la práctica](assets/diagrams/ux/wireflow.png)
-
-[Fuente editable de las decisiones del recorrido](assets/diagrams/ux/wireflow.mmd)
 
 | Recorrido | Acción del estudiante y respuesta de la interfaz | Pantallas |
 | --- | --- | --- |
@@ -3891,19 +3827,13 @@ El mensaje confirma que la sesión ya no puede consultarse e informa que la elim
 
 ![User flow de primera práctica](assets/diagrams/ux/first-practice-flow.png)
 
-[Fuente editable de UF-01](assets/diagrams/ux/first-practice-flow.mmd)
-
 **UF-02: Simulación contextualizada (Rodrigo).** El estudiante prepara una entrevista o sustentación, añade material autorizado de forma opcional y participa en una práctica por turnos. El flujo contempla la recuperación de la conexión y la revisión del feedback contextual. El material de preparación permanece fuera del reporte compartido con el tutor.
 
 ![User flow de práctica avanzada](assets/diagrams/ux/advanced-practice-flow.png)
 
-[Fuente editable de UF-02](assets/diagrams/ux/advanced-practice-flow.mmd)
-
 **UF-03: Compartición y eliminación.** El estudiante crea un acceso temporal para un tutor y puede revocarlo desde la misma sección. Si solicita eliminar la sesión, esta deja de estar disponible y se muestra “Purga pendiente” mientras concluye la eliminación de sus datos.
 
 ![User flow de privacidad](assets/diagrams/ux/privacy-flow.png)
-
-[Fuente editable de UF-03](assets/diagrams/ux/privacy-flow.mmd)
 
 ## 6.5. Applications Prototyping
 

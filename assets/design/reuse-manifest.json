@@ -24,41 +24,45 @@
       "section": "5.2",
       "context": "Speech Analysis",
       "legacy_service": "filler-detection-service",
-      "kind": "reused_source_model",
+      "kind": "adapted_source_model",
       "model_files": [
         "assets/diagrams/tactical/02-speech-analysis-classes.mmd",
         "assets/diagrams/tactical/02-speech-analysis-database.mmd"
-      ]
+      ],
+      "model_note": "Resultado FillerResult identificado como propuesta de diseño."
     },
     {
       "section": "5.3",
       "context": "Scoring & Feedback",
       "legacy_service": "scoring-service",
-      "kind": "reused_source_model",
+      "kind": "adapted_source_model",
       "model_files": [
         "assets/diagrams/tactical/03-scoring-feedback-classes.mmd",
         "assets/diagrams/tactical/03-scoring-feedback-database.mmd"
-      ]
+      ],
+      "model_note": "Modelo ampliado con versiones de análisis y rúbrica y dimensiones que admiten ausencia de evidencia."
     },
     {
       "section": "5.4",
       "context": "Practice Session Management",
       "legacy_service": "session-service",
-      "kind": "reused_source_model",
+      "kind": "adapted_source_model",
       "model_files": [
         "assets/diagrams/tactical/04-practice-sessions-classes.mmd",
         "assets/diagrams/tactical/04-practice-sessions-database.mmd"
-      ]
+      ],
+      "model_note": "SessionUserContext alineado con la identidad local adaptada por SessionContextFacade."
     },
     {
       "section": "5.5",
       "context": "Progress & Adaptation",
       "legacy_service": "progress-service",
-      "kind": "reused_source_model",
+      "kind": "adapted_source_model",
       "model_files": [
         "assets/diagrams/tactical/05-progress-adaptation-classes.mmd",
         "assets/diagrams/tactical/05-progress-adaptation-database.mmd"
-      ]
+      ],
+      "model_note": "Totales y puntuaciones de progreso separados de la experiencia de Gamification; métricas versionadas para comparación propuesta."
     },
     {
       "section": "5.6",
@@ -74,21 +78,23 @@
       "section": "5.7",
       "context": "Gamification",
       "legacy_service": "gamification-service",
-      "kind": "reused_source_model",
+      "kind": "adapted_source_model",
       "model_files": [
         "assets/diagrams/tactical/07-gamification-classes.mmd",
         "assets/diagrams/tactical/07-gamification-database.mmd"
-      ]
+      ],
+      "model_note": "Achievement identificado como entidad propuesta."
     },
     {
       "section": "5.8",
       "context": "Identity & Access",
       "legacy_service": "identity-service",
-      "kind": "reused_source_model",
+      "kind": "adapted_source_model",
       "model_files": [
         "assets/diagrams/tactical/08-identity-access-classes.mmd",
         "assets/diagrams/tactical/08-identity-access-database.mmd"
-      ]
+      ],
+      "model_note": "Datos de cuenta alineados con username y academicSegment; renovación identificada como propuesta."
     },
     {
       "section": "5.9",
@@ -104,11 +110,12 @@
       "section": "5.10",
       "context": "Notifications",
       "legacy_service": "notification-service",
-      "kind": "reused_source_model",
+      "kind": "adapted_source_model",
       "model_files": [
         "assets/diagrams/tactical/10-notifications-classes.mmd",
         "assets/diagrams/tactical/10-notifications-database.mmd"
-      ]
+      ],
+      "model_note": "Adaptador de entrega identificado como propuesta; vista de persistencia centrada en avisos al estudiante y seguimiento futuro."
     }
   ],
   "copied_assets": [

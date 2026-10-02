@@ -1,11 +1,17 @@
 classDiagram
+class AIIntegrationApplicationService {
+  <<Propuesto>>
+  +startConversation(request)
+}
 class AIProviderPort {
   <<interface>>
   +openLive(request)
   +closeAndCollectTranscript()
 }
 class GeminiLiveClient {
-  +connect(prompt) WebSocketSession
+  <<Adaptador propuesto>>
+  +openLive(request)
   +closeAndCollectTranscript() String
 }
-AIProviderPort <|.. GeminiLiveClient : adaptacion propuesta
+AIIntegrationApplicationService --> AIProviderPort : utiliza contrato
+AIProviderPort <|.. GeminiLiveClient : implementa

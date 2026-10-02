@@ -20,9 +20,10 @@ classDiagram
     }
     class SessionUserContext {
         <<Value Object - ACL>>
-        +Long localUserId
+        +Long userId
         +String email
-        +UserRole role
+        +String username
+        +String academicSegment
     }
     Session "1" *-- "*" Feedback : intra-BC
-    Session ..> SessionUserContext : reads from JWT
+    Session ..> SessionUserContext : identidad adaptada por ACL

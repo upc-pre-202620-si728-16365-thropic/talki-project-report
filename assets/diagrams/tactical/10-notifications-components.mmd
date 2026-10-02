@@ -5,4 +5,5 @@ flowchart TB
   adapter["Infrastructure propuesta: WebSocketPushAdapter"] -. implementa .-> port
   adapter --> user["Cliente de Talki: mostrar aviso"]
   email["Canal de correo y seguimiento propuestos"] -.-> port
+  privacy["Ampliación: eventos de cuenta, revocación y eliminación"] -.-> app
   note["Sin base de negocio propia"] -.-> app

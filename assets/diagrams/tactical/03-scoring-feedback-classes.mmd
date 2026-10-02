@@ -1,5 +1,8 @@
 classDiagram
     class ScoreResult {
+        <<Modelo ampliado>>
+        +String analysisVersion
+        +String rubricVersion
         +UUID id
         +UUID sessionId
         +Long userId
@@ -8,12 +11,12 @@ classDiagram
     }
     class VoiceScore {
         <<Value Object>>
-        +int fluency
-        +int clarity
-        +int volume
-        +int vocabulary
-        +int confidence
-        +overall() int
+        +Integer fluency
+        +Integer clarity
+        +Integer volume
+        +Integer vocabulary
+        +Integer confidence
+        +overall() Integer
     }
     class ScoreCalculator {
         +calculate(FillerAnalyzedEvent) VoiceScore

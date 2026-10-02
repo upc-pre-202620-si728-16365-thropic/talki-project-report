@@ -1,5 +1,5 @@
 flowchart TD
-  visit["Landing: conocer beneficios"] --> register["Registrar / verificar cuenta"]
+  visit["Landing: conocer beneficios"] --> register["Registro o acceso"]
   register --> profile["Elegir segmento y meta"]
   profile --> setup["Configurar modo y duracion"]
   setup --> check["Probar microfono y revisar privacidad"]
@@ -12,6 +12,6 @@ flowchart TD
   close -- Si --> processing["Analisis: estado visible"]
   processing --> result{"Evidencia suficiente?"}
   result -- Si --> report["Reporte con versiones y acciones"]
-  result -- No --> partial["Resultado parcial: sin score inventado"]
+  result -- No --> partial["Resultado parcial: dimensiones sin evidencia"]
   report --> next["Elegir ejercicio y repetir"]
   partial --> next

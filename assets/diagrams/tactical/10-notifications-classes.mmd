@@ -9,7 +9,9 @@ classDiagram
         <<interface>>
         +push(Long userId, String message) void
     }
-    class WebSocketPushAdapter
+    class WebSocketPushAdapter {
+        <<Propuesto>>
+    }
     NotificationPushService <|.. WebSocketPushAdapter
     ScoreNotificationConsumer --> NotificationPushService
     AchievementNotificationConsumer --> NotificationPushService

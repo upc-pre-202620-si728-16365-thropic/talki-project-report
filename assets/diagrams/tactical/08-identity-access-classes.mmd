@@ -3,11 +3,10 @@ classDiagram
         +Long id
         +String email
         +String passwordHash
-        +String fullName
+        +String username
+        +String academicSegment
         +UserRole role
         +Instant createdAt
-        +register(email, password) AppUser
-        +rotateRefreshToken() RefreshToken
     }
     class UserRole {
         <<enumeration>>
@@ -15,6 +14,7 @@ classDiagram
         ADMIN
     }
     class RefreshToken {
+        <<Propuesto>>
         +Long id
         +Long userId
         +String tokenHash

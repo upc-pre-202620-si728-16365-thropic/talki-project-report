@@ -1,3 +1,4 @@
 flowchart LR
-  service["notification-service"] --> output["Eventos / resultado hacia contexto propietario"]
-  note["Servicio stateless sin base propia"] -.-> service
+  service["notification-service"] --> client["Avisos al estudiante por canal propuesto"]
+  note["Sin base de negocio propia"] -.-> service
+  tracking["Seguimiento de entregas: ampliación propuesta"] -.-> service
