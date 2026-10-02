@@ -1,0 +1,25 @@
+classDiagram
+    class AppUser {
+        +Long id
+        +String email
+        +String passwordHash
+        +String username
+        +String academicSegment
+        +UserRole role
+        +Instant createdAt
+    }
+    class UserRole {
+        <<enumeration>>
+        STUDENT
+        ADMIN
+    }
+    class RefreshToken {
+        <<Propuesto>>
+        +Long id
+        +Long userId
+        +String tokenHash
+        +Instant expiresAt
+        +boolean revoked
+    }
+    AppUser "1" *-- "*" RefreshToken : owns
+    AppUser --> UserRole : has

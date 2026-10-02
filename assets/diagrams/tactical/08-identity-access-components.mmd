@@ -1,0 +1,10 @@
+flowchart TB
+  input["Interface: AuthController"] --> app["Application: AuthService"]
+  app --> model["Domain: AppUser y UserRole"]
+  app --> security["Infrastructure: PasswordEncoder y JwtTokenProvider"]
+  app --> repo["Infrastructure: AppUserRepository"]
+  repo --> db["PostgreSQL: app_users"]
+  app --> port["Application: UserRegisteredEventPublisher"]
+  adapter["Infrastructure: RabbitUserRegisteredPublisher"] -. implementa .-> port
+  adapter --> others["RabbitMQ: user.registered"]
+  proposal["Ampliación: RefreshToken y registro de consentimiento"] -.-> app
