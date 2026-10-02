@@ -1,0 +1,193 @@
+{
+  "source_repository": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-project-report",
+  "source_branch": "develop",
+  "source_commit": "2cfa379b72241a1380d87b4f8c5be53a70950d81",
+  "reused_sections": [
+    "4.1.5",
+    "5.1.2",
+    "5.3.3.4",
+    "5.3.3.5"
+  ],
+  "contexts": [
+    {
+      "section": "5.1",
+      "context": "Live Coaching",
+      "legacy_service": "live-coach-service",
+      "kind": "adapted_source_model",
+      "model_files": [
+        "assets/diagrams/tactical/01-live-coaching-classes.mmd",
+        "assets/diagrams/tactical/01-live-coaching-database.mmd"
+      ],
+      "model_note": "Diagrama de clases actualizado con LiveCoachOrchestrator, GeminiTokenService y SessionFinalizedPublisher; conserva las estrategias de modo de práctica."
+    },
+    {
+      "section": "5.2",
+      "context": "Speech Analysis",
+      "legacy_service": "filler-detection-service",
+      "kind": "adapted_source_model",
+      "model_files": [
+        "assets/diagrams/tactical/02-speech-analysis-classes.mmd",
+        "assets/diagrams/tactical/02-speech-analysis-database.mmd"
+      ],
+      "model_note": "Resultado FillerResult identificado como propuesta de diseño."
+    },
+    {
+      "section": "5.3",
+      "context": "Scoring & Feedback",
+      "legacy_service": "scoring-service",
+      "kind": "adapted_source_model",
+      "model_files": [
+        "assets/diagrams/tactical/03-scoring-feedback-classes.mmd",
+        "assets/diagrams/tactical/03-scoring-feedback-database.mmd"
+      ],
+      "model_note": "Modelo ampliado con versiones de análisis y rúbrica y dimensiones que admiten ausencia de evidencia."
+    },
+    {
+      "section": "5.4",
+      "context": "Practice Session Management",
+      "legacy_service": "session-service",
+      "kind": "adapted_source_model",
+      "model_files": [
+        "assets/diagrams/tactical/04-practice-sessions-classes.mmd",
+        "assets/diagrams/tactical/04-practice-sessions-database.mmd"
+      ],
+      "model_note": "SessionUserContext alineado con la identidad local adaptada por SessionContextFacade."
+    },
+    {
+      "section": "5.5",
+      "context": "Progress & Adaptation",
+      "legacy_service": "progress-service",
+      "kind": "adapted_source_model",
+      "model_files": [
+        "assets/diagrams/tactical/05-progress-adaptation-classes.mmd",
+        "assets/diagrams/tactical/05-progress-adaptation-database.mmd"
+      ],
+      "model_note": "Totales y puntuaciones de progreso separados de la experiencia de Gamification; métricas versionadas para comparación propuesta."
+    },
+    {
+      "section": "5.6",
+      "context": "Sharing & Retention",
+      "legacy_service": "Extensión del modelo previo para Sharing & Retention",
+      "kind": "adaptation",
+      "model_files": [
+        "assets/diagrams/tactical/06-sharing-retention-classes.mmd",
+        "assets/diagrams/tactical/06-sharing-retention-database.mmd"
+      ]
+    },
+    {
+      "section": "5.7",
+      "context": "Gamification",
+      "legacy_service": "gamification-service",
+      "kind": "adapted_source_model",
+      "model_files": [
+        "assets/diagrams/tactical/07-gamification-classes.mmd",
+        "assets/diagrams/tactical/07-gamification-database.mmd"
+      ],
+      "model_note": "Achievement identificado como entidad propuesta."
+    },
+    {
+      "section": "5.8",
+      "context": "Identity & Access",
+      "legacy_service": "identity-service",
+      "kind": "adapted_source_model",
+      "model_files": [
+        "assets/diagrams/tactical/08-identity-access-classes.mmd",
+        "assets/diagrams/tactical/08-identity-access-database.mmd"
+      ],
+      "model_note": "Datos de cuenta alineados con username y academicSegment; renovación identificada como propuesta."
+    },
+    {
+      "section": "5.9",
+      "context": "AI Provider Gateway",
+      "legacy_service": "GeminiLiveClient (extraído del modelo previo de Live Coach)",
+      "kind": "adaptation",
+      "model_files": [
+        "assets/diagrams/tactical/09-ai-provider-gateway-classes.mmd",
+        "assets/diagrams/tactical/09-ai-provider-gateway-database.mmd"
+      ]
+    },
+    {
+      "section": "5.10",
+      "context": "Notifications",
+      "legacy_service": "notification-service",
+      "kind": "adapted_source_model",
+      "model_files": [
+        "assets/diagrams/tactical/10-notifications-classes.mmd",
+        "assets/diagrams/tactical/10-notifications-database.mmd"
+      ],
+      "model_note": "Adaptador de entrega identificado como propuesta; vista de persistencia centrada en avisos al estudiante y seguimiento futuro."
+    }
+  ],
+  "copied_assets": [
+    {
+      "source": "assets/images/Backend/SessionRepository.png",
+      "destination": "assets/reused-202601/Backend/SessionRepository.png",
+      "sha256": "a3da95872a256045e8d7489f1a35698b1a8444015639f8f7a1cda2b956c162a3"
+    },
+    {
+      "source": "assets/images/Backend/UserRepository.png",
+      "destination": "assets/reused-202601/Backend/UserRepository.png",
+      "sha256": "f5e3225ebc6dce600c007ac6e1b90e57361dc51f73a9ec57eaa1483731fd631f"
+    },
+    {
+      "source": "assets/images/Backend/SessionContextFacade.png",
+      "destination": "assets/reused-202601/Backend/SessionContextFacade.png",
+      "sha256": "4eb53820351ce78db1ae835e0c1c7c4aa96ff1cdbf00441eccb22c2fae5cc34f"
+    },
+    {
+      "source": "assets/images/Backend/SessionCommandServiceImpl.png",
+      "destination": "assets/reused-202601/Backend/SessionCommandServiceImpl.png",
+      "sha256": "9c407e8add9e8f555a40f9edc28eb878a4e133a81760ccedd8d7b2f913f8e09b"
+    },
+    {
+      "source": "assets/images/Backend/SessionQueryServiceImpl.png",
+      "destination": "assets/reused-202601/Backend/SessionQueryServiceImpl.png",
+      "sha256": "3be63cb5d58a1829031ecd4cf22a0e45397ead4d37843a42c8bd4bc7acdbe2ad"
+    },
+    {
+      "source": "assets/images/Backend/CreateSessionRequest.png",
+      "destination": "assets/reused-202601/Backend/CreateSessionRequest.png",
+      "sha256": "7e9bb862cfde17ec73ae02cddff28e9a10e2bbf5808f7798c2819db69d7e9be6"
+    },
+    {
+      "source": "assets/images/Backend/SessionController.png",
+      "destination": "assets/reused-202601/Backend/SessionController.png",
+      "sha256": "b3164fd26bed075b887afed490ee5c994aa07e0b5c09704cc3b89d6f94d7d2be"
+    },
+    {
+      "source": "assets/images/frontend/01-login.png",
+      "destination": "assets/reused-202601/frontend/01-login.png",
+      "sha256": "d769f04107c60fa73cc87c057e78a867242ad184d1be8dee13306d608a31fe4e"
+    },
+    {
+      "source": "assets/images/frontend/02-dashboard.png",
+      "destination": "assets/reused-202601/frontend/02-dashboard.png",
+      "sha256": "7ad49f1332369b2e4d3119aaa3af0fc1de1237584d2515cc44ce634a762bb2d0"
+    },
+    {
+      "source": "assets/images/frontend/03-coach.png",
+      "destination": "assets/reused-202601/frontend/03-coach.png",
+      "sha256": "6c1937dc347885ad851f3a10fe92dcd4044d5ee7b9284b41ca0c311d4829f967"
+    },
+    {
+      "source": "assets/images/frontend/04-sessions.png",
+      "destination": "assets/reused-202601/frontend/04-sessions.png",
+      "sha256": "bdfb67de2cb735c95a5be1bda8d769457d9542c98561d510374d6a7bec38b13f"
+    },
+    {
+      "source": "assets/images/frontend/07-coach-ai-feedback.png",
+      "destination": "assets/reused-202601/frontend/07-coach-ai-feedback.png",
+      "sha256": "b39f98f73a0168f479026f9a3782149c5e0a67875f09155f1db81723c0537426"
+    },
+    {
+      "source": "assets/images/frontend/08-session-recording.png",
+      "destination": "assets/reused-202601/frontend/08-session-recording.png",
+      "sha256": "f4c14404f5390e7befb1a7b87ad3f02b303bc7a74b8901fdb3d5cad222c84b34"
+    },
+    {
+      "source": "assets/images/frontend/09-session-ai-feedback.png",
+      "destination": "assets/reused-202601/frontend/09-session-ai-feedback.png",
+      "sha256": "35056fce7017887a893c850ba2756080427abe1c94f9967a8065be179bc83c0b"
+    }
+  ]
+}

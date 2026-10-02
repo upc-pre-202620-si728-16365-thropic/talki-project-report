@@ -1,0 +1,24 @@
+flowchart TB
+  student["Estudiante"] --> web["React: cliente web"]
+  student --> mobile["Flutter: cliente movil propuesto"]
+  tutor["Tutor con permiso temporal"] --> web
+  web -->|HTTPS / WSS| bff["API Gateway / BFF"]
+  mobile -->|HTTPS / WSS| bff
+  subgraph backend["Backend: Spring Boot, fronteras de contexto"]
+    identity["User Module: Identity and Access"]
+    sessions["Session Module: Practice Sessions / Live Coaching"]
+    analysis["Analysis Module: Speech Analysis / Scoring / AI Gateway"]
+    engagement["Engagement Module: Progress / Gamification"]
+    privacy["Sharing and Retention"]
+    notifications["Notifications"]
+  end
+  bff --> identity
+  bff --> sessions
+  bff --> analysis
+  bff --> engagement
+  bff --> privacy
+  backend <--> bus["RabbitMQ: eventos, reintentos, DLQ"]
+  backend --> db[("PostgreSQL: esquemas privados por contexto")]
+  sessions -->|Contrato interno de IA| analysis
+  analysis -->|ACL / TLS| ai["Gemini Live API y capacidades de analisis autorizadas"]
+  notifications --> mail["Proveedor de correo configurable"]
