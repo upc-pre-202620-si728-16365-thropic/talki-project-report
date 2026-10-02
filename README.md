@@ -2892,6 +2892,90 @@ Este contexto no almacena audio ni transcripciones. La configuración y las cred
 
 ## 5.10. Bounded Context: Notifications
 
+Este contexto comunica resultados y logros al estudiante mediante avisos. El envío se realiza después de los eventos del dominio y mantiene la práctica independiente de la disponibilidad del canal de notificación.
+
+**Servicio o componente asociado:** notification-service.
+
+### 5.10.1. Domain Layer
+
+La capa de dominio propuesta define la entrega de avisos al estudiante sin depender de un canal concreto. Las reglas determinan qué información puede incluirse y cuándo corresponde enviar una notificación.
+
+**Output Port**
+
+NotificationPushService representa el contrato propuesto para entregar un aviso al estudiante. El contenido se origina a partir de una evaluación o un logro y evita incluir la evidencia privada de la práctica. La entrega se describe mediante un puerto y un adaptador de canal; su historial persistente requeriría ampliar el modelo.
+
+**Elementos de Domain Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| NotificationPushService | Puerto de salida (diseño propuesto) | Define la operación de envío de un aviso al estudiante. | Domain |
+
+**Reglas principales**
+
+1. Un fallo de notificación no bloquea el cierre de una práctica.
+2. Los mensajes evitan exponer transcripciones, puntuaciones o material personal.
+3. Los avisos opcionales respetan las preferencias del estudiante; los mensajes de seguridad siguen sus reglas transaccionales.
+
+### 5.10.2. Interface Layer
+
+Este contexto recibe los eventos que originan avisos al estudiante. No necesita que el cliente solicite directamente el envío de una notificación.
+
+**Contratos de entrada.** ScoringCompletedEvent permite reconocer que una evaluación terminó. AchievementUnlockedEvent identifica el logro obtenido. Los eventos `scoring.completed` y `achievement.unlocked` conservan la referencia del destinatario y del hecho que origina el aviso. La ampliación prevista en 4.2 incorpora eventos de cuenta, revocación de acceso y eliminación de datos; sus contratos y consumidores se definirán durante la integración.
+
+**Entrega propuesta.** El mensaje permite al estudiante reconocer el aviso y acceder a su reporte o logro. WebSocketPushAdapter y el proveedor de correo son canales propuestos; su disponibilidad y las preferencias de contacto se comprobarán antes del envío.
+
+### 5.10.3. Application Layer
+
+La capa de aplicación propuesta prepara los avisos a partir de los eventos del negocio. La preparación del contenido permanece separada del canal utilizado para entregarlo.
+
+**Procesamiento de eventos**
+
+Los eventos de evaluación y logro identifican al destinatario y el tipo de aviso. El caso de uso propuesto prepara el contenido, comprueba las preferencias y solicita la entrega mediante NotificationPushService. La entrega del aviso mantiene su resultado separado del resultado de la práctica.
+
+**Elementos de Application Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| Aviso de evaluación disponible | Caso de uso | Prepara un mensaje que permita acceder al resultado de la práctica. | Application |
+| Aviso de logro obtenido | Caso de uso | Prepara el reconocimiento que corresponde al evento recibido. | Application |
+| Avisos de cuenta y privacidad | Casos de uso propuestos | Informan sobre acciones de cuenta, revocación y eliminación según los flujos de 4.2. | Application |
+| Despacho del aviso | Caso de uso propuesto | Comprueba las preferencias y solicita la entrega mediante NotificationPushService. | Application |
+
+### 5.10.4. Infrastructure Layer
+
+La capa de infraestructura recibe los eventos que originan avisos. La entrega al estudiante requiere los adaptadores de canal previstos en el diseño.
+
+**Elementos de Infrastructure Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| ScoreNotificationConsumer | Consumidor de eventos | Recibe las evaluaciones completadas desde RabbitMQ. | Infrastructure |
+| AchievementNotificationConsumer | Consumidor de eventos | Recibe los logros obtenidos desde RabbitMQ. | Infrastructure |
+| WebSocketPushAdapter | Adaptador propuesto | Implementa NotificationPushService para entregar avisos al cliente. | Infrastructure |
+| Proveedor de correo | Integración propuesta | Entrega los avisos que correspondan a las preferencias de contacto. | Infrastructure |
+
+Los consumidores base registran la intención de notificar. La entrega efectiva, el control de reintentos y el seguimiento de envíos forman parte de la integración propuesta. La falla del canal no modifica el resultado de la práctica.
+
+### 5.10.5. Bounded Context Software Architecture Component Level Diagrams
+
+Los consumidores reciben los eventos de evaluación o logro. La integración propuesta incorpora los avisos de cuenta y privacidad y coordina la preparación del mensaje. NotificationPushService define su entrega mediante WebSocketPushAdapter o un canal de correo.
+
+![Componentes de Notifications](assets/diagrams/tactical/10-notifications-components.png)
+
+### 5.10.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 5.10.6.1. Bounded Context Domain Layer Class Diagrams
+
+Los consumidores actúan como adaptadores de entrada de eventos. NotificationPushService define el contrato de envío propuesto y WebSocketPushAdapter representa su implementación de canal. El diagrama resume esas colaboraciones.
+
+![Clases de Notifications](assets/diagrams/tactical/10-notifications-classes.png)
+
+#### 5.10.6.2. Bounded Context Database Design Diagram
+
+El contexto no requiere una base de negocio propia. El registro de envíos y preferencias se definirá si se incorpora un canal de correo con seguimiento persistente.
+
+![Persistencia de Notifications](assets/diagrams/tactical/10-notifications-database.png)
+
 ## Trazabilidad del diseño táctico
 
 La siguiente tabla relaciona cada contexto con las historias de usuario, decisiones de arquitectura y escenarios de calidad definidos en los capítulos anteriores.
