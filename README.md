@@ -71,6 +71,7 @@
 | 1.5 | 02/10/2026 | Edición asistida por Codex | Revisión de la redacción de diseño: tipografía, colores, componentes, navegación y prototipado; aclaración de las descripciones de modelos de dominio. |
 | 1.6 | 02/10/2026 | Edición asistida por Codex | Justificación de la identidad visual y simplificación de la paleta por función de diseño, sin referencias a archivos CSS. |
 | 1.7 | 02/10/2026 | Edición asistida por Codex | Revisión integral de V y VI: organización de capas por propósito, trazabilidad consolidada, diagramas de componentes corregidos y descripciones diferenciadas de wireframes y mock-ups. |
+| 1.8 | 02/10/2026 | Edición asistida por Codex | Retirada de las consultas de disponibilidad técnica de Interface Layer para centrar el diseño táctico en las operaciones del producto. |
 
 # Project Report Collaboration Insights
 
@@ -2092,7 +2093,6 @@ Esta capa ofrece las operaciones del contexto y recibe la información necesaria
 | --- | --- |
 | `session.live.finalized` | Recibir la transcripción y las métricas autorizadas de una práctica finalizada. |
 | `fillers.analyzed` | Publicar conteo/distribución de muletillas y evidencia de análisis. |
-| `GET /actuator/health` | Consultar salud del servicio; el análisis se procesa mediante eventos. |
 
 ### 5.2.3. Application Layer
 
@@ -2163,7 +2163,6 @@ Esta capa ofrece las operaciones del contexto y recibe la información necesaria
 | --- | --- |
 | `fillers.analyzed` | Consumir métricas del análisis. |
 | `scoring.completed` | Comunicar la evaluación para actualizar progreso y reconocimientos. |
-| `GET /actuator/health` | Consultar la disponibilidad técnica del servicio. |
 
 ### 5.3.3. Application Layer
 
