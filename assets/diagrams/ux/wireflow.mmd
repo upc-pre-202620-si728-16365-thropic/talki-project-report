@@ -1,0 +1,32 @@
+flowchart TB
+  L["L01 Landing"] --> A["A01 Registro / A02 Acceso"]
+  A --> access{"Acceso confirmado?"}
+  access -- No --> A
+  access -- Si --> P["P01 Perfil"]
+  P --> H["H01 Inicio"]
+  H --> S["S01 Configuración y material"]
+  S --> S2["S02 Audio y consentimiento"]
+  S2 --> ready{"Audio y autorización disponibles?"}
+  ready -- No --> fix["Explicar permiso o prueba pendiente"]
+  fix --> S2
+  ready -- Si --> S3["S03 Práctica en vivo"]
+  S3 --> network{"Conexión disponible?"}
+  network -- No --> recover["Conservar estado y ofrecer reconexión"]
+  recover --> S3
+  network -- Si --> finish{"Confirmar finalización?"}
+  finish -- No --> S3
+  finish -- Si --> S4["S04 Estado del análisis"]
+  S4 --> status{"Resultado del análisis"}
+  status -- Falló --> retry["Mostrar causa y ofrecer reintento"]
+  retry --> S4
+  status -- "Completo o parcial" --> R["R01 Reporte: evidencia disponible"]
+  R --> G["G03 Plan de práctica propuesto"]
+  G --> S
+  H --> I["H02 Historial"]
+  I --> R
+  I --> G2["G02 Comparación propuesta"]
+  H --> G1["G01 Tendencias"]
+  G1 --> G2
+  R --> D["D01 Compartición y eliminación"]
+  D --> T["T01 Reporte autorizado del tutor"]
+  P --> N["N01 Preferencias de contacto"]
