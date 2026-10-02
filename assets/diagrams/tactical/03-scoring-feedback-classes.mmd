@@ -1,0 +1,29 @@
+classDiagram
+    class ScoreResult {
+        <<Modelo ampliado>>
+        +String analysisVersion
+        +String rubricVersion
+        +UUID id
+        +UUID sessionId
+        +Long userId
+        +VoiceScore score
+        +Instant computedAt
+    }
+    class VoiceScore {
+        <<Value Object>>
+        +Integer fluency
+        +Integer clarity
+        +Integer volume
+        +Integer vocabulary
+        +Integer confidence
+        +overall() Integer
+    }
+    class ScoreCalculator {
+        +calculate(FillerAnalyzedEvent) VoiceScore
+    }
+    class FillerAnalyzedConsumer {
+        +handle(FillerAnalyzedEvent) void
+    }
+    ScoreResult *-- VoiceScore : embedded
+    FillerAnalyzedConsumer --> ScoreCalculator
+    FillerAnalyzedConsumer --> ScoreResult : persists
