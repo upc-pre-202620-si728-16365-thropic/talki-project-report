@@ -73,6 +73,7 @@
 | 1.7 | 02/10/2026 | Edición asistida por Codex | Revisión integral de V y VI: organización de capas por propósito, trazabilidad consolidada, diagramas de componentes corregidos y descripciones diferenciadas de wireframes y mock-ups. |
 | 1.8 | 02/10/2026 | Edición asistida por Codex | Retirada de las consultas de disponibilidad técnica de Interface Layer para centrar el diseño táctico en las operaciones del producto. |
 | 1.9 | 02/10/2026 | Edición asistida por Codex | Desarrollo de las explicaciones de cada capa, identificación de controladores y contratos, organización de repositorios y adaptadores, guías de estilo y navegación por plataforma y wireflows con pantallas web y móvil. |
+| 1.10 | 02/10/2026 | Edición asistida por Codex | Organización de Domain Layer por tipo de elemento, separación de comandos, consultas y coordinación de eventos, tablas de capas uniformes y rotulado de figuras web/móvil. |
 
 # Project Report Collaboration Insights
 
@@ -153,91 +154,91 @@ Esta revisión incorpora capítulos V y VI y sus fuentes/artefactos en la rama `
     - [5.1.2. Interface Layer](#512-interface-layer)
     - [5.1.3. Application Layer](#513-application-layer)
     - [5.1.4. Infrastructure Layer](#514-infrastructure-layer)
-    - [5.1.5. Component Level Diagrams](#515-component-level-diagrams)
-    - [5.1.6. Code Level Diagrams](#516-code-level-diagrams)
-      - [5.1.6.1. Domain Layer Class Diagrams](#5161-domain-layer-class-diagrams)
-      - [5.1.6.2. Database Design Diagram](#5162-database-design-diagram)
+    - [5.1.5. Bounded Context Software Architecture Component Level Diagrams](#515-bounded-context-software-architecture-component-level-diagrams)
+    - [5.1.6. Bounded Context Software Architecture Code Level Diagrams](#516-bounded-context-software-architecture-code-level-diagrams)
+      - [5.1.6.1. Bounded Context Domain Layer Class Diagrams](#5161-bounded-context-domain-layer-class-diagrams)
+      - [5.1.6.2. Bounded Context Database Design Diagram](#5162-bounded-context-database-design-diagram)
   - [5.2. Bounded Context: Speech Analysis](#52-bounded-context-speech-analysis)
     - [5.2.1. Domain Layer](#521-domain-layer)
     - [5.2.2. Interface Layer](#522-interface-layer)
     - [5.2.3. Application Layer](#523-application-layer)
     - [5.2.4. Infrastructure Layer](#524-infrastructure-layer)
-    - [5.2.5. Component Level Diagrams](#525-component-level-diagrams)
-    - [5.2.6. Code Level Diagrams](#526-code-level-diagrams)
-      - [5.2.6.1. Domain Layer Class Diagrams](#5261-domain-layer-class-diagrams)
-      - [5.2.6.2. Database Design Diagram](#5262-database-design-diagram)
+    - [5.2.5. Bounded Context Software Architecture Component Level Diagrams](#525-bounded-context-software-architecture-component-level-diagrams)
+    - [5.2.6. Bounded Context Software Architecture Code Level Diagrams](#526-bounded-context-software-architecture-code-level-diagrams)
+      - [5.2.6.1. Bounded Context Domain Layer Class Diagrams](#5261-bounded-context-domain-layer-class-diagrams)
+      - [5.2.6.2. Bounded Context Database Design Diagram](#5262-bounded-context-database-design-diagram)
   - [5.3. Bounded Context: Scoring & Feedback](#53-bounded-context-scoring--feedback)
     - [5.3.1. Domain Layer](#531-domain-layer)
     - [5.3.2. Interface Layer](#532-interface-layer)
     - [5.3.3. Application Layer](#533-application-layer)
     - [5.3.4. Infrastructure Layer](#534-infrastructure-layer)
-    - [5.3.5. Component Level Diagrams](#535-component-level-diagrams)
-    - [5.3.6. Code Level Diagrams](#536-code-level-diagrams)
-      - [5.3.6.1. Domain Layer Class Diagrams](#5361-domain-layer-class-diagrams)
-      - [5.3.6.2. Database Design Diagram](#5362-database-design-diagram)
+    - [5.3.5. Bounded Context Software Architecture Component Level Diagrams](#535-bounded-context-software-architecture-component-level-diagrams)
+    - [5.3.6. Bounded Context Software Architecture Code Level Diagrams](#536-bounded-context-software-architecture-code-level-diagrams)
+      - [5.3.6.1. Bounded Context Domain Layer Class Diagrams](#5361-bounded-context-domain-layer-class-diagrams)
+      - [5.3.6.2. Bounded Context Database Design Diagram](#5362-bounded-context-database-design-diagram)
   - [5.4. Bounded Context: Practice Session Management](#54-bounded-context-practice-session-management)
     - [5.4.1. Domain Layer](#541-domain-layer)
     - [5.4.2. Interface Layer](#542-interface-layer)
     - [5.4.3. Application Layer](#543-application-layer)
     - [5.4.4. Infrastructure Layer](#544-infrastructure-layer)
-    - [5.4.5. Component Level Diagrams](#545-component-level-diagrams)
-    - [5.4.6. Code Level Diagrams](#546-code-level-diagrams)
-      - [5.4.6.1. Domain Layer Class Diagrams](#5461-domain-layer-class-diagrams)
-      - [5.4.6.2. Database Design Diagram](#5462-database-design-diagram)
+    - [5.4.5. Bounded Context Software Architecture Component Level Diagrams](#545-bounded-context-software-architecture-component-level-diagrams)
+    - [5.4.6. Bounded Context Software Architecture Code Level Diagrams](#546-bounded-context-software-architecture-code-level-diagrams)
+      - [5.4.6.1. Bounded Context Domain Layer Class Diagrams](#5461-bounded-context-domain-layer-class-diagrams)
+      - [5.4.6.2. Bounded Context Database Design Diagram](#5462-bounded-context-database-design-diagram)
   - [5.5. Bounded Context: Progress & Adaptation](#55-bounded-context-progress--adaptation)
     - [5.5.1. Domain Layer](#551-domain-layer)
     - [5.5.2. Interface Layer](#552-interface-layer)
     - [5.5.3. Application Layer](#553-application-layer)
     - [5.5.4. Infrastructure Layer](#554-infrastructure-layer)
-    - [5.5.5. Component Level Diagrams](#555-component-level-diagrams)
-    - [5.5.6. Code Level Diagrams](#556-code-level-diagrams)
-      - [5.5.6.1. Domain Layer Class Diagrams](#5561-domain-layer-class-diagrams)
-      - [5.5.6.2. Database Design Diagram](#5562-database-design-diagram)
+    - [5.5.5. Bounded Context Software Architecture Component Level Diagrams](#555-bounded-context-software-architecture-component-level-diagrams)
+    - [5.5.6. Bounded Context Software Architecture Code Level Diagrams](#556-bounded-context-software-architecture-code-level-diagrams)
+      - [5.5.6.1. Bounded Context Domain Layer Class Diagrams](#5561-bounded-context-domain-layer-class-diagrams)
+      - [5.5.6.2. Bounded Context Database Design Diagram](#5562-bounded-context-database-design-diagram)
   - [5.6. Bounded Context: Sharing & Retention](#56-bounded-context-sharing--retention)
     - [5.6.1. Domain Layer](#561-domain-layer)
     - [5.6.2. Interface Layer](#562-interface-layer)
     - [5.6.3. Application Layer](#563-application-layer)
     - [5.6.4. Infrastructure Layer](#564-infrastructure-layer)
-    - [5.6.5. Component Level Diagrams](#565-component-level-diagrams)
-    - [5.6.6. Code Level Diagrams](#566-code-level-diagrams)
-      - [5.6.6.1. Domain Layer Class Diagrams](#5661-domain-layer-class-diagrams)
-      - [5.6.6.2. Database Design Diagram](#5662-database-design-diagram)
+    - [5.6.5. Bounded Context Software Architecture Component Level Diagrams](#565-bounded-context-software-architecture-component-level-diagrams)
+    - [5.6.6. Bounded Context Software Architecture Code Level Diagrams](#566-bounded-context-software-architecture-code-level-diagrams)
+      - [5.6.6.1. Bounded Context Domain Layer Class Diagrams](#5661-bounded-context-domain-layer-class-diagrams)
+      - [5.6.6.2. Bounded Context Database Design Diagram](#5662-bounded-context-database-design-diagram)
   - [5.7. Bounded Context: Gamification](#57-bounded-context-gamification)
     - [5.7.1. Domain Layer](#571-domain-layer)
     - [5.7.2. Interface Layer](#572-interface-layer)
     - [5.7.3. Application Layer](#573-application-layer)
     - [5.7.4. Infrastructure Layer](#574-infrastructure-layer)
-    - [5.7.5. Component Level Diagrams](#575-component-level-diagrams)
-    - [5.7.6. Code Level Diagrams](#576-code-level-diagrams)
-      - [5.7.6.1. Domain Layer Class Diagrams](#5761-domain-layer-class-diagrams)
-      - [5.7.6.2. Database Design Diagram](#5762-database-design-diagram)
+    - [5.7.5. Bounded Context Software Architecture Component Level Diagrams](#575-bounded-context-software-architecture-component-level-diagrams)
+    - [5.7.6. Bounded Context Software Architecture Code Level Diagrams](#576-bounded-context-software-architecture-code-level-diagrams)
+      - [5.7.6.1. Bounded Context Domain Layer Class Diagrams](#5761-bounded-context-domain-layer-class-diagrams)
+      - [5.7.6.2. Bounded Context Database Design Diagram](#5762-bounded-context-database-design-diagram)
   - [5.8. Bounded Context: Identity & Access](#58-bounded-context-identity--access)
     - [5.8.1. Domain Layer](#581-domain-layer)
     - [5.8.2. Interface Layer](#582-interface-layer)
     - [5.8.3. Application Layer](#583-application-layer)
     - [5.8.4. Infrastructure Layer](#584-infrastructure-layer)
-    - [5.8.5. Component Level Diagrams](#585-component-level-diagrams)
-    - [5.8.6. Code Level Diagrams](#586-code-level-diagrams)
-      - [5.8.6.1. Domain Layer Class Diagrams](#5861-domain-layer-class-diagrams)
-      - [5.8.6.2. Database Design Diagram](#5862-database-design-diagram)
+    - [5.8.5. Bounded Context Software Architecture Component Level Diagrams](#585-bounded-context-software-architecture-component-level-diagrams)
+    - [5.8.6. Bounded Context Software Architecture Code Level Diagrams](#586-bounded-context-software-architecture-code-level-diagrams)
+      - [5.8.6.1. Bounded Context Domain Layer Class Diagrams](#5861-bounded-context-domain-layer-class-diagrams)
+      - [5.8.6.2. Bounded Context Database Design Diagram](#5862-bounded-context-database-design-diagram)
   - [5.9. Bounded Context: AI Provider Gateway](#59-bounded-context-ai-provider-gateway)
     - [5.9.1. Domain Layer](#591-domain-layer)
     - [5.9.2. Interface Layer](#592-interface-layer)
     - [5.9.3. Application Layer](#593-application-layer)
     - [5.9.4. Infrastructure Layer](#594-infrastructure-layer)
-    - [5.9.5. Component Level Diagrams](#595-component-level-diagrams)
-    - [5.9.6. Code Level Diagrams](#596-code-level-diagrams)
-      - [5.9.6.1. Domain Layer Class Diagrams](#5961-domain-layer-class-diagrams)
-      - [5.9.6.2. Database Design Diagram](#5962-database-design-diagram)
+    - [5.9.5. Bounded Context Software Architecture Component Level Diagrams](#595-bounded-context-software-architecture-component-level-diagrams)
+    - [5.9.6. Bounded Context Software Architecture Code Level Diagrams](#596-bounded-context-software-architecture-code-level-diagrams)
+      - [5.9.6.1. Bounded Context Domain Layer Class Diagrams](#5961-bounded-context-domain-layer-class-diagrams)
+      - [5.9.6.2. Bounded Context Database Design Diagram](#5962-bounded-context-database-design-diagram)
   - [5.10. Bounded Context: Notifications](#510-bounded-context-notifications)
     - [5.10.1. Domain Layer](#5101-domain-layer)
     - [5.10.2. Interface Layer](#5102-interface-layer)
     - [5.10.3. Application Layer](#5103-application-layer)
     - [5.10.4. Infrastructure Layer](#5104-infrastructure-layer)
-    - [5.10.5. Component Level Diagrams](#5105-component-level-diagrams)
-    - [5.10.6. Code Level Diagrams](#5106-code-level-diagrams)
-      - [5.10.6.1. Domain Layer Class Diagrams](#51061-domain-layer-class-diagrams)
-      - [5.10.6.2. Database Design Diagram](#51062-database-design-diagram)
+    - [5.10.5. Bounded Context Software Architecture Component Level Diagrams](#5105-bounded-context-software-architecture-component-level-diagrams)
+    - [5.10.6. Bounded Context Software Architecture Code Level Diagrams](#5106-bounded-context-software-architecture-code-level-diagrams)
+      - [5.10.6.1. Bounded Context Domain Layer Class Diagrams](#51061-bounded-context-domain-layer-class-diagrams)
+      - [5.10.6.2. Bounded Context Database Design Diagram](#51062-bounded-context-database-design-diagram)
   - [Trazabilidad del diseño táctico](#trazabilidad-del-diseño-táctico)
 - [Capítulo VI: Solution UX Design](#capítulo-vi-solution-ux-design)
   - [6.1. Style Guidelines](#61-style-guidelines)
@@ -2005,14 +2006,21 @@ Este contexto acompaña al estudiante durante el ensayo mediante transcripción,
 
 La capa de dominio define las reglas de conversación que diferencian una práctica rápida, una entrevista, una sustentación y un escenario contextualizado. Su responsabilidad es decidir cómo se prepara el ensayo según el modo elegido.
 
-**Políticas de dominio.** SessionModeStrategy establece el contrato común de las estrategias. QuickPracticeStrategy, InterviewStrategy, ThesisDefenseStrategy y ScenarioStrategy definen la orientación y las condiciones de cada modo. No se crea un agregado de sesión adicional en este contexto: la práctica pertenece a Practice Session Management.
+**Domain Policies**
 
-**Elementos de la capa de dominio**
+SessionModeStrategy define las reglas comunes para preparar una conversación. QuickPracticeStrategy, InterviewStrategy, ThesisDefenseStrategy y ScenarioStrategy aplican las condiciones del modo elegido, como la orientación del diálogo y su duración sugerida. La identidad y el estado de la práctica se administran en Practice Session Management.
 
-| Elemento | Tipo | Propósito |
-| --- | --- | --- |
-| SessionModeStrategy | Política de dominio | Define la preparación y los turnos de conversación de cada modo de práctica. |
-| QuickPracticeStrategy, InterviewStrategy, ThesisDefenseStrategy y ScenarioStrategy | Estrategias | Aplican las reglas de práctica rápida, entrevista, sustentación y escenario contextualizado. |
+**Domain Factories**
+
+SessionModeStrategyFactory crea la estrategia correspondiente al modo solicitado. LiveCoachOrchestrator utiliza esta fábrica para preparar las instrucciones de la conversación.
+
+**Elementos de Domain Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| SessionModeStrategy | Política de dominio | Define la preparación y los turnos de conversación de cada modo de práctica. | Domain |
+| SessionModeStrategyFactory | Domain Factory | Crea la estrategia correspondiente al modo solicitado por el estudiante. | Domain |
+| QuickPracticeStrategy, InterviewStrategy, ThesisDefenseStrategy y ScenarioStrategy | Estrategias | Aplican las reglas de práctica rápida, entrevista, sustentación y escenario contextualizado. | Domain |
 
 **Reglas principales**
 
@@ -2038,12 +2046,19 @@ LiveCoachController recibe las solicitudes del cliente para consultar los modos,
 
 La capa de aplicación coordina la preparación y el cierre de la conversación. Selecciona las reglas del modo elegido y solicita los recursos de integración necesarios.
 
-**Componentes y casos de uso**
+**Commands**
 
-| Nombre | Tipo | Responsabilidad |
-| --- | --- | --- |
-| LiveCoachOrchestrator | Servicio de aplicación | Prepara las instrucciones del ensayo, solicita la credencial temporal y comunica su finalización. |
-| SessionModeStrategyFactory | Fábrica de estrategias | Selecciona la estrategia del modo solicitado; conserva su colaboración con el modelo de dominio. |
+La preparación de la conversación solicita una credencial temporal para el modo y escenario elegidos. La finalización reúne la transcripción y las métricas para comunicar el cierre de la práctica.
+
+**Queries**
+
+La consulta de modos presenta las opciones que puede elegir el estudiante. LiveCoachController ofrece esta lectura; LiveCoachOrchestrator coordina la preparación y la finalización.
+
+**Elementos de Application Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| LiveCoachOrchestrator | Servicio de aplicación | Prepara las instrucciones del ensayo, solicita la credencial temporal y comunica su finalización. | Application |
 
 **Recorrido del caso de uso.** Al preparar una práctica, el orquestador obtiene la estrategia y solicita a GeminiTokenService una credencial temporal. Al finalizar, reúne la transcripción y las métricas y solicita su publicación. El diseño de recuperación añade la confirmación del cierre en Practice Session Management antes de continuar el análisis.
 
@@ -2051,17 +2066,17 @@ La capa de aplicación coordina la preparación y el cierre de la conversación.
 
 La capa de infraestructura gestiona la obtención de credenciales del proveedor y la publicación del cierre de la práctica.
 
-**Repositorios y adaptadores**
+**Elementos de Infrastructure Layer**
 
-| Nombre | Tipo | Responsabilidad |
-| --- | --- | --- |
-| GeminiTokenService | Servicio de integración | Solicita a Gemini una credencial temporal vinculada a las instrucciones del ensayo. |
-| SessionFinalizedPublisher | Publicador de eventos | Comunica SessionLiveFinalizedEvent mediante RabbitMQ. |
-| GeminiLiveClient | Adaptador propuesto | Representa la conexión de conversación dentro de la pasarela común de proveedores. |
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| GeminiTokenService | Servicio de integración | Solicita a Gemini una credencial temporal vinculada a las instrucciones del ensayo. | Infrastructure |
+| SessionFinalizedPublisher | Publicador de eventos | Comunica SessionLiveFinalizedEvent mediante RabbitMQ. | Infrastructure |
+| GeminiLiveClient | Adaptador propuesto | Representa la conexión de conversación dentro de la pasarela común de proveedores. | Infrastructure |
 
 El cliente utiliza la credencial temporal para el intercambio de voz. Live Coaching no necesita una base de negocio propia; la evidencia de cierre corresponde a Practice Session Management. La recuperación y la confirmación del cierre amplían el flujo de integración.
 
-### 5.1.5. Component Level Diagrams
+### 5.1.5. Bounded Context Software Architecture Component Level Diagrams
 
 LiveCoachController recibe las acciones del cliente y las delega al orquestador. La fábrica selecciona la estrategia y GeminiTokenService prepara la credencial temporal. La finalización se comunica mediante SessionFinalizedPublisher; el diseño de recuperación incorpora su confirmación en Sessions.
 
@@ -2069,9 +2084,9 @@ LiveCoachController recibe las acciones del cliente y las delega al orquestador.
 
 [Fuente editable del diagrama de componentes](assets/diagrams/tactical/01-live-coaching-components.mmd)
 
-### 5.1.6. Code Level Diagrams
+### 5.1.6. Bounded Context Software Architecture Code Level Diagrams
 
-#### 5.1.6.1. Domain Layer Class Diagrams
+#### 5.1.6.1. Bounded Context Domain Layer Class Diagrams
 
 Las estrategias comparten una interfaz y el orquestador utiliza una fábrica para elegirlas. GeminiTokenService prepara la credencial temporal del proveedor. El modelo distingue esta preparación del intercambio de voz realizado por el cliente.
 
@@ -2079,7 +2094,7 @@ Las estrategias comparten una interfaz y el orquestador utiliza una fábrica par
 
 [Fuente editable del diagrama de clases](assets/diagrams/tactical/01-live-coaching-classes.mmd)
 
-#### 5.1.6.2. Database Design Diagram
+#### 5.1.6.2. Bounded Context Database Design Diagram
 
 Este contexto no requiere una base de datos propia. La transcripción y el resultado del cierre se conservan en los contextos responsables de sesiones y evaluación.
 
@@ -2097,14 +2112,20 @@ Este contexto analiza la transcripción autorizada de una práctica y obtiene m�
 
 La capa de dominio representa el análisis de muletillas sobre la transcripción de una práctica. Separa las reglas de detección del transporte de mensajes y de la evaluación global del desempeño.
 
-**Servicio de dominio y resultado.** FillerDetector identifica las expresiones consideradas muletillas y calcula sus apariciones. FillerResult representa, en el modelo de diseño, el conteo total, la distribución por expresión y su proporción. La transcripción y las métricas acústicas recibidas pertenecen a la evidencia de la sesión.
+**Domain Services**
 
-**Elementos de la capa de dominio**
+FillerDetector identifica las expresiones consideradas muletillas y calcula sus apariciones en la transcripción. Esta responsabilidad permite modificar los criterios de detección sin cambiar el transporte de mensajes.
 
-| Elemento | Tipo | Propósito |
-| --- | --- | --- |
-| FillerDetector | Servicio de dominio | Aplica las reglas de detección de muletillas sobre la transcripción. |
-| FillerResult | Resultado de análisis | Reúne el total de muletillas, su distribución por tipo y su proporción. |
+**Resultado del análisis**
+
+FillerResult representa el resultado propuesto en el modelo de diseño: conteo total, distribución por expresión y proporción. La transcripción y las métricas acústicas recibidas forman parte de la evidencia de la sesión.
+
+**Elementos de Domain Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| FillerDetector | Domain Service | Aplica las reglas de detección de muletillas sobre la transcripción. | Domain |
+| FillerResult | Resultado de análisis (diseño propuesto) | Reúne el total de muletillas, su distribución por tipo y su proporción. | Domain |
 
 **Reglas principales**
 
@@ -2124,29 +2145,32 @@ Este contexto recibe la evidencia mediante eventos de integración. No necesita 
 
 La capa de aplicación coordina el análisis de la evidencia recibida. El caso de uso utiliza las reglas de FillerDetector y prepara el resultado que necesita el contexto de evaluación.
 
-**Componentes y casos de uso**
+**Procesamiento de eventos**
 
-| Nombre | Tipo | Responsabilidad |
-| --- | --- | --- |
-| Análisis de transcripción | Caso de uso | Identifica muletillas y obtiene el conteo por expresión y la cantidad de palabras. |
-| Preparación del resultado | Caso de uso | Relaciona las métricas con la sesión y solicita la publicación de FillerAnalyzedEvent. |
+La recepción de SessionLiveFinalizedEvent inicia el análisis de la transcripción. La coordinación entrega el texto a FillerDetector, reúne las métricas obtenidas y prepara FillerAnalyzedEvent. Estas operaciones se describen como casos de uso; el consumidor concreto activa el flujo desde la infraestructura.
 
-**Recorrido del caso de uso.** La recepción de SessionLiveFinalizedEvent inicia el análisis. El detector procesa la transcripción y el resultado conserva las referencias de sesión y estudiante. El diseño mantiene separada esta coordinación de la recepción y publicación de mensajes.
+**Elementos de Application Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| Análisis de transcripción | Caso de uso | Identifica muletillas y obtiene el conteo por expresión y la cantidad de palabras. | Application |
+| Preparación del resultado | Caso de uso | Relaciona las métricas con la sesión y solicita la publicación de FillerAnalyzedEvent. | Application |
+
 
 ### 5.2.4. Infrastructure Layer
 
 La capa de infraestructura conecta el análisis con los demás contextos mediante RabbitMQ. Los adaptadores de mensajería transportan la evidencia y el resultado.
 
-**Repositorios y adaptadores**
+**Elementos de Infrastructure Layer**
 
-| Nombre | Tipo | Responsabilidad |
-| --- | --- | --- |
-| SessionLiveFinalizedConsumer | Consumidor de eventos | Recibe el cierre de práctica y activa el análisis. |
-| FillerAnalyzedPublisher | Publicador de eventos | Comunica el resultado a Scoring & Feedback. |
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| SessionLiveFinalizedConsumer | Consumidor de eventos | Recibe el cierre de práctica y activa el análisis. | Infrastructure |
+| FillerAnalyzedPublisher | Publicador de eventos | Comunica el resultado a Scoring & Feedback. | Infrastructure |
 
 El análisis no mantiene una base propia. FillerDetector utiliza reglas de detección sobre la transcripción; el transporte del resultado conserva la referencia de sesión. La ampliación del diseño contempla versiones y reintentos para recuperar el procesamiento.
 
-### 5.2.5. Component Level Diagrams
+### 5.2.5. Bounded Context Software Architecture Component Level Diagrams
 
 El consumidor recibe la sesión finalizada, solicita la detección de muletillas y entrega el resultado al publicador. El cálculo de la puntuación permanece en un contexto distinto.
 
@@ -2154,9 +2178,9 @@ El consumidor recibe la sesión finalizada, solicita la detección de muletillas
 
 [Fuente editable del diagrama de componentes](assets/diagrams/tactical/02-speech-analysis-components.mmd)
 
-### 5.2.6. Code Level Diagrams
+### 5.2.6. Bounded Context Software Architecture Code Level Diagrams
 
-#### 5.2.6.1. Domain Layer Class Diagrams
+#### 5.2.6.1. Bounded Context Domain Layer Class Diagrams
 
 FillerDetector produce FillerResult. El consumidor y el publicador coordinan la entrada y salida de este resultado sin modificar las reglas de detección.
 
@@ -2164,7 +2188,7 @@ FillerDetector produce FillerResult. El consumidor y el publicador coordinan la 
 
 [Fuente editable del diagrama de clases](assets/diagrams/tactical/02-speech-analysis-classes.mmd)
 
-#### 5.2.6.2. Database Design Diagram
+#### 5.2.6.2. Bounded Context Database Design Diagram
 
 El contexto no conserva una copia del reporte. Sus métricas se comunican mediante fillers.analyzed y se almacenan con el resultado de evaluación. El registro técnico de reintentos se definirá durante la integración.
 
@@ -2182,15 +2206,25 @@ Este contexto convierte las métricas del discurso en una evaluación y recomend
 
 La capa de dominio reúne los conceptos que permiten convertir la evidencia de una práctica en una evaluación interpretable. El cálculo de la puntuación se mantiene separado de la recepción de eventos y del almacenamiento.
 
-**Agregado y objeto de valor.** ScoreResult reúne el resultado de una evaluación y su vínculo con la sesión y el estudiante. VoiceScore agrupa las dimensiones del desempeño. ScoreCalculator aplica los criterios de la rúbrica sobre las métricas disponibles; una dimensión sin evidencia se identifica como tal en la ampliación del modelo.
+**Aggregate Root**
 
-**Elementos de la capa de dominio**
+ScoreResult identifica la evaluación de una práctica y conserva su relación con la sesión y el estudiante. Reúne la puntuación y el momento del cálculo para mantener un resultado consistente.
 
-| Elemento | Tipo | Propósito |
-| --- | --- | --- |
-| ScoreResult | Agregado | Identifica la evaluación de una sesión, su propietario y el momento de cálculo. |
-| VoiceScore | Objeto de valor | Agrupa las dimensiones de fluidez, claridad, volumen, vocabulario y confianza estimada. |
-| ScoreCalculator | Servicio de dominio | Aplica los criterios de cálculo sobre las métricas recibidas. |
+**Value Objects**
+
+VoiceScore agrupa las dimensiones de fluidez, claridad, volumen, vocabulario y confianza estimada. Sus valores describen el desempeño obtenido en la evaluación.
+
+**Domain Services**
+
+ScoreCalculator aplica los criterios de puntuación sobre las métricas disponibles. La ampliación del diseño permite identificar una dimensión sin evidencia y conservar la versión de la rúbrica utilizada.
+
+**Elementos de Domain Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| ScoreResult | Aggregate Root | Identifica la evaluación de una sesión, su propietario y el momento de cálculo. | Domain |
+| VoiceScore | Value Object | Agrupa las dimensiones de fluidez, claridad, volumen, vocabulario y confianza estimada. | Domain |
+| ScoreCalculator | Domain Service | Aplica los criterios de cálculo sobre las métricas recibidas. | Domain |
 
 **Reglas principales**
 
@@ -2210,30 +2244,37 @@ La evaluación se activa al recibir el evento `fillers.analyzed`. FillerAnalyzed
 
 La capa de aplicación coordina el cálculo, el registro y la comunicación de una evaluación. Utiliza el servicio de dominio para calcular la puntuación y conserva el resultado antes de comunicarlo.
 
-**Componentes y casos de uso**
+**Procesamiento de eventos**
 
-| Nombre | Tipo | Responsabilidad |
-| --- | --- | --- |
-| Evaluación de la práctica | Caso de uso | Solicita el cálculo a ScoreCalculator con las métricas del análisis. |
-| Registro y comunicación del resultado | Caso de uso | Conserva ScoreResult y solicita la publicación de ScoringCompletedEvent. |
+La evaluación comienza con FillerAnalyzedEvent. El flujo comprueba si existe un resultado para la sesión, solicita el cálculo, conserva ScoreResult y comunica ScoringCompletedEvent.
 
-**Recorrido del caso de uso.** El flujo comprueba si el análisis ya produjo un resultado, aplica la rúbrica, guarda la evaluación y comunica su finalización. La ampliación del diseño permite diferenciar resultados por versión de análisis y rúbrica.
+**Queries propuestas**
+
+La lectura del reporte recuperará la evaluación para un estudiante autorizado. Su contrato se definirá durante la integración y deberá presentar la versión de la rúbrica y las dimensiones sin evidencia.
+
+**Elementos de Application Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| Evaluación de la práctica | Caso de uso | Solicita el cálculo a ScoreCalculator con las métricas del análisis. | Application |
+| Registro y comunicación del resultado | Caso de uso | Conserva ScoreResult y solicita la publicación de ScoringCompletedEvent. | Application |
+
 
 ### 5.3.4. Infrastructure Layer
 
 La capa de infraestructura recibe las métricas, conserva las evaluaciones y comunica los resultados a los contextos interesados.
 
-**Repositorios y adaptadores**
+**Elementos de Infrastructure Layer**
 
-| Nombre | Tipo | Responsabilidad |
-| --- | --- | --- |
-| FillerAnalyzedConsumer | Consumidor de eventos | Recibe las métricas y activa el flujo de evaluación. |
-| ScoreResultRepository | Repositorio | Conserva y consulta evaluaciones en PostgreSQL. |
-| ScoringCompletedPublisher | Publicador de eventos | Comunica la evaluación completada mediante RabbitMQ. |
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| FillerAnalyzedConsumer | Consumidor de eventos | Recibe las métricas y activa el flujo de evaluación. | Infrastructure |
+| ScoreResultRepository | Repositorio | Conserva y consulta evaluaciones en PostgreSQL. | Infrastructure |
+| ScoringCompletedPublisher | Publicador de eventos | Comunica la evaluación completada mediante RabbitMQ. | Infrastructure |
 
 La persistencia base conserva una evaluación por sesión. El diseño ampliado identifica los resultados por sesión y versión y registra la rúbrica utilizada. La entrega del reporte deberá comprobar el permiso sobre la práctica.
 
-### 5.3.5. Component Level Diagrams
+### 5.3.5. Bounded Context Software Architecture Component Level Diagrams
 
 Las métricas recibidas se entregan al calculador y el resultado se conserva antes de comunicar scoring.completed. Las consultas recuperan la evaluación autorizada para su presentación en el reporte.
 
@@ -2241,9 +2282,9 @@ Las métricas recibidas se entregan al calculador y el resultado se conserva ant
 
 [Fuente editable del diagrama de componentes](assets/diagrams/tactical/03-scoring-feedback-components.mmd)
 
-### 5.3.6. Code Level Diagrams
+### 5.3.6. Bounded Context Software Architecture Code Level Diagrams
 
-#### 5.3.6.1. Domain Layer Class Diagrams
+#### 5.3.6.1. Bounded Context Domain Layer Class Diagrams
 
 ScoreResult contiene VoiceScore como parte de la evaluación. ScoreCalculator aplica los criterios de puntuación y el consumidor coordina el procesamiento del evento.
 
@@ -2251,7 +2292,7 @@ ScoreResult contiene VoiceScore como parte de la evaluación. ScoreCalculator ap
 
 [Fuente editable del diagrama de clases](assets/diagrams/tactical/03-scoring-feedback-classes.mmd)
 
-#### 5.3.6.2. Database Design Diagram
+#### 5.3.6.2. Bounded Context Database Design Diagram
 
 La tabla score_results contiene la referencia a la sesión, el usuario, las dimensiones evaluadas y la fecha de cálculo. La ampliación propuesta incorpora las versiones de análisis y rúbrica, y permite representar dimensiones sin evidencia.
 
@@ -2269,15 +2310,25 @@ Este contexto administra la preparación y el ciclo de vida de cada práctica. R
 
 La capa de dominio describe la práctica del estudiante, sus estados y la retroalimentación asociada. Las reglas de este modelo determinan cuándo puede iniciarse, cerrarse y consultarse una sesión.
 
-**Agregado y entidades.** Session es la raíz del agregado que conserva la identidad y el estado de la práctica. Feedback representa cada retroalimentación vinculada a esa sesión. SessionUserContext reúne la información de identidad necesaria en el lenguaje de este contexto, sin incorporar el modelo completo de cuentas.
+**Aggregate Root**
 
-**Elementos de la capa de dominio**
+Session es el punto de entrada al agregado de práctica. Conserva su identidad, propietario y estado, y controla los cambios de su ciclo de vida.
 
-| Elemento | Tipo | Propósito |
-| --- | --- | --- |
-| Session | Agregado | Representa la práctica y controla sus cambios de estado. |
-| Feedback | Entidad | Conserva la retroalimentación asociada a una sesión. |
-| SessionUserContext | Objeto de valor | Representa la identidad del estudiante en el lenguaje de este contexto. |
+**Entities**
+
+Feedback representa una retroalimentación vinculada a la práctica. Cada registro conserva su identidad y el contenido que el estudiante podrá revisar.
+
+**Value Objects**
+
+SessionUserContext reúne la información de identidad que necesita este contexto. Permite expresar la relación con el estudiante en el lenguaje de sesiones sin incorporar el modelo completo de cuentas.
+
+**Elementos de Domain Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| Session | Aggregate Root | Representa la práctica y controla sus cambios de estado. | Domain |
+| Feedback | Entity | Conserva la retroalimentación asociada a una sesión. | Domain |
+| SessionUserContext | Value Object | Representa la identidad del estudiante en el lenguaje de este contexto. | Domain |
 
 **Reglas principales**
 
@@ -2306,32 +2357,39 @@ SessionController expone las operaciones de preparación, consulta y cierre de l
 
 La capa de aplicación coordina las operaciones de escritura y lectura de una práctica. Mantiene separados los cambios del ciclo de vida de las consultas del estudiante.
 
-**Componentes y casos de uso**
+**Commands**
 
-| Nombre | Tipo | Responsabilidad |
-| --- | --- | --- |
-| SessionCommandService y SessionCommandServiceImpl | Contrato e implementación de comandos | Coordinan creación, cierre y registro de feedback. |
-| SessionQueryService y SessionQueryServiceImpl | Contrato e implementación de consultas | Recuperan sesiones y retroalimentaciones. |
-| SessionContextFacade | Adaptador de contexto | Traduce la identidad externa a SessionUserContext. |
+Las operaciones de escritura crean una práctica, finalizan su ciclo y registran feedback. SessionCommandService define estas operaciones y SessionCommandServiceImpl las coordina con el dominio y los repositorios.
 
-**Comandos y consultas.** La creación reúne título, tipo y estudiante; el cierre identifica la sesión que debe finalizar; el registro de feedback vincula su contenido a la práctica. Las consultas recuperan una sesión por identificador, las sesiones del estudiante o sus retroalimentaciones. La ampliación incorpora la preparación de material, la recuperación y la eliminación.
+**Queries**
 
+Las operaciones de lectura recuperan una sesión por identificador, las sesiones de un estudiante y las retroalimentaciones de una práctica. SessionQueryService y SessionQueryServiceImpl coordinan estas consultas. SessionContextFacade adapta la información de identidad a SessionUserContext.
+
+**Elementos de Application Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| SessionCommandService y SessionCommandServiceImpl | Contrato e implementación de comandos | Coordinan creación, cierre y registro de feedback. | Application |
+| SessionQueryService y SessionQueryServiceImpl | Contrato e implementación de consultas | Recuperan sesiones y retroalimentaciones. | Application |
+| SessionContextFacade | Adaptador de contexto | Traduce la identidad externa a SessionUserContext. | Application |
+
+**Ampliación del ciclo de práctica.** La preparación de material, la recuperación y la eliminación se incorporan como operaciones propuestas y deberán respetar las reglas de acceso de la sesión.
 ### 5.4.4. Infrastructure Layer
 
 La capa de infraestructura implementa la persistencia de sesiones y feedback en PostgreSQL y recibe las actualizaciones de identidad necesarias para el contexto.
 
-**Repositorios y adaptadores**
+**Elementos de Infrastructure Layer**
 
-| Nombre | Tipo | Responsabilidad |
-| --- | --- | --- |
-| SessionRepository | Repositorio JPA | Conserva prácticas y permite consultarlas por identificador o estudiante. |
-| FeedbackRepository | Repositorio JPA | Conserva las retroalimentaciones asociadas a una práctica. |
-| AppUserRepository | Repositorio de proyección local | Recupera la identidad local que utiliza SessionContextFacade. |
-| UserRegisteredConsumer | Consumidor de eventos | Recibe el registro de una cuenta para actualizar su representación local. |
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| SessionRepository | Repositorio JPA | Conserva prácticas y permite consultarlas por identificador o estudiante. | Infrastructure |
+| FeedbackRepository | Repositorio JPA | Conserva las retroalimentaciones asociadas a una práctica. | Infrastructure |
+| AppUserRepository | Repositorio de proyección local | Recupera la identidad local que utiliza SessionContextFacade. | Infrastructure |
+| UserRegisteredConsumer | Consumidor de eventos | Recibe el registro de una cuenta para actualizar su representación local. | Infrastructure |
 
 Las relaciones entre sesión y feedback permanecen dentro del contexto. La ampliación del ciclo de vida incorpora recuperación, material y eliminación con sus reglas de acceso. SessionController pertenece a Interface Layer y delega la persistencia mediante los servicios de aplicación.
 
-### 5.4.5. Component Level Diagrams
+### 5.4.5. Bounded Context Software Architecture Component Level Diagrams
 
 El controlador dirige las solicitudes a los servicios de comandos o consultas. Estos trabajan con Session y Feedback mediante repositorios y una adaptación de la identidad del usuario.
 
@@ -2339,9 +2397,9 @@ El controlador dirige las solicitudes a los servicios de comandos o consultas. E
 
 [Fuente editable del diagrama de componentes](assets/diagrams/tactical/04-practice-sessions-components.mmd)
 
-### 5.4.6. Code Level Diagrams
+### 5.4.6. Bounded Context Software Architecture Code Level Diagrams
 
-#### 5.4.6.1. Domain Layer Class Diagrams
+#### 5.4.6.1. Bounded Context Domain Layer Class Diagrams
 
 Session contiene los registros de Feedback y consulta SessionUserContext para identificar al estudiante. Sus métodos reflejan las transiciones del ciclo de práctica.
 
@@ -2349,7 +2407,7 @@ Session contiene los registros de Feedback y consulta SessionUserContext para id
 
 [Fuente editable del diagrama de clases](assets/diagrams/tactical/04-practice-sessions-classes.mmd)
 
-#### 5.4.6.2. Database Design Diagram
+#### 5.4.6.2. Bounded Context Database Design Diagram
 
 sessions y session_feedback se relacionan mediante el identificador de sesión. El usuario se conserva como referencia externa y structured_data permite almacenar feedback estructurado. El consentimiento, la configuración versionada y la marca de eliminación son ampliaciones propuestas.
 
@@ -2367,14 +2425,20 @@ Este contexto organiza el historial de desempeño del estudiante y permite revis
 
 La capa de dominio representa la evolución del estudiante a partir de sus prácticas. Distingue el resumen de actividad de la evidencia individual utilizada para comparar resultados.
 
-**Agregado y evidencia de sesión.** UserProgress reúne los totales y el desempeño acumulado del estudiante. SessionMetrics forma parte de la ampliación del diseño para conservar las métricas y la versión de cada práctica. Estas referencias permiten comparar resultados compatibles y explicar de dónde procede una recomendación.
+**Aggregate Root**
 
-**Elementos de la capa de dominio**
+UserProgress reúne los totales de actividad y el desempeño acumulado del estudiante. Cada evaluación recibida contribuye a su resumen de progreso.
 
-| Elemento | Tipo | Propósito |
-| --- | --- | --- |
-| UserProgress | Agregado | Reúne el resumen de actividad y desempeño de un estudiante. |
-| SessionMetrics | Entidad | Conserva las métricas de cada sesión incorporada al historial. |
+**Entities**
+
+SessionMetrics se propone para conservar las métricas y la versión de cada práctica. Estas evidencias permitirán comparar resultados compatibles y reconocer el origen de las recomendaciones.
+
+**Elementos de Domain Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| UserProgress | Aggregate Root | Reúne el resumen de actividad y desempeño de un estudiante. | Domain |
+| SessionMetrics | Entity (diseño propuesto) | Conserva las métricas de cada sesión incorporada al historial. | Domain |
 
 **Reglas principales**
 
@@ -2400,13 +2464,21 @@ ProgressController ofrece la consulta del resumen de desempeño. La actualizaci�
 
 La capa de aplicación coordina la incorporación de evaluaciones y la consulta del progreso. Las operaciones de escritura actualizan el resumen y las de lectura presentan la evolución al estudiante.
 
-**Componentes y casos de uso**
+**Actualización por eventos**
 
-| Nombre | Tipo | Responsabilidad |
-| --- | --- | --- |
-| Actualización del progreso | Caso de uso | Incorpora puntuación y duración al resumen de UserProgress. |
-| UserProgressQueryService | Servicio de consulta propuesto | Organiza la lectura del panel y la comparación de prácticas compatibles. |
-| Preparación del plan adaptativo | Caso de uso propuesto | Relaciona ejercicios con recomendaciones y sesiones que aportan evidencia. |
+ScoringCompletedEvent incorpora la puntuación y la duración de una práctica al resumen de UserProgress. El diseño ampliado registra la evidencia por sesión para evitar contribuciones duplicadas.
+
+**Queries**
+
+La consulta del panel recupera los totales y el desempeño del estudiante. UserProgressQueryService se propone para organizar esta lectura y la comparación de prácticas compatibles. El plan adaptativo es una ampliación que relacionará las recomendaciones con ejercicios de mejora.
+
+**Elementos de Application Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| Actualización del progreso | Caso de uso | Incorpora puntuación y duración al resumen de UserProgress. | Application |
+| UserProgressQueryService | Servicio de consulta propuesto | Organiza la lectura del panel y la comparación de prácticas compatibles. | Application |
+| Preparación del plan adaptativo | Caso de uso propuesto | Relaciona ejercicios con recomendaciones y sesiones que aportan evidencia. | Application |
 
 **Recorrido del caso de uso.** Una evaluación completada actualiza los totales y las métricas del estudiante. Las consultas obtienen el resumen y, en la ampliación, las evidencias por sesión. La comparación verifica el modo y la versión antes de presentar variaciones de desempeño.
 
@@ -2414,17 +2486,17 @@ La capa de aplicación coordina la incorporación de evaluaciones y la consulta 
 
 La capa de infraestructura conserva el resumen de desempeño y recibe las evaluaciones completadas.
 
-**Repositorios y adaptadores**
+**Elementos de Infrastructure Layer**
 
-| Nombre | Tipo | Responsabilidad |
-| --- | --- | --- |
-| UserProgressRepository | Repositorio | Conserva UserProgress en PostgreSQL y lo consulta por estudiante. |
-| ScoringCompletedConsumer | Consumidor de eventos | Recibe la evaluación y activa la actualización del progreso. |
-| Persistencia de SessionMetrics | Ampliación propuesta | Conserva evidencia por sesión y versión para comparar prácticas. |
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| UserProgressRepository | Repositorio | Conserva UserProgress en PostgreSQL y lo consulta por estudiante. | Infrastructure |
+| ScoringCompletedConsumer | Consumidor de eventos | Recibe la evaluación y activa la actualización del progreso. | Infrastructure |
+| Persistencia de SessionMetrics | Ampliación propuesta | Conserva evidencia por sesión y versión para comparar prácticas. | Infrastructure |
 
 RabbitMQ comunica la evaluación y PostgreSQL almacena el resumen. La ampliación conserva resultados compatibles y retira la contribución de una práctica cuando se confirma su eliminación.
 
-### 5.5.5. Component Level Diagrams
+### 5.5.5. Bounded Context Software Architecture Component Level Diagrams
 
 ProgressController consulta el resumen conservado por UserProgressRepository. ScoringCompletedConsumer recibe las evaluaciones y activa su actualización. UserProgressQueryService y SessionMetrics amplían el diseño para comparar prácticas y preparar el plan.
 
@@ -2432,9 +2504,9 @@ ProgressController consulta el resumen conservado por UserProgressRepository. Sc
 
 [Fuente editable del diagrama de componentes](assets/diagrams/tactical/05-progress-adaptation-components.mmd)
 
-### 5.5.6. Code Level Diagrams
+### 5.5.6. Bounded Context Software Architecture Code Level Diagrams
 
-#### 5.5.6.1. Domain Layer Class Diagrams
+#### 5.5.6.1. Bounded Context Domain Layer Class Diagrams
 
 UserProgress reúne las métricas registradas y SessionMetrics identifica cada práctica. El consumidor actualiza estos datos y el servicio de consulta los utiliza para preparar las vistas.
 
@@ -2442,7 +2514,7 @@ UserProgress reúne las métricas registradas y SessionMetrics identifica cada p
 
 [Fuente editable del diagrama de clases](assets/diagrams/tactical/05-progress-adaptation-classes.mmd)
 
-#### 5.5.6.2. Database Design Diagram
+#### 5.5.6.2. Bounded Context Database Design Diagram
 
 user_progress se relaciona con session_metrics mediante el usuario. Cada métrica identifica la sesión que la originó. Para admitir varias evaluaciones se propone conservar la versión del análisis y la rúbrica; eliminar una sesión retira sus métricas y recalcula el resumen.
 
@@ -2460,15 +2532,21 @@ Este contexto permite compartir reportes por tiempo limitado, exportarlos y soli
 
 La capa de dominio propuesta define las condiciones de acceso temporal a un reporte y el seguimiento de la eliminación de una sesión. Cada permiso o solicitud conserva su propia identidad y estado.
 
-**Agregados y confirmaciones.** ShareGrant representa el permiso de lectura, su propietario, su vigencia y su revocación. DeletionRequest registra la solicitud de eliminación y reúne los PurgeReceipt enviados por los contextos responsables. La solicitud concluye cuando se reciben las confirmaciones necesarias.
+**Aggregate Roots**
 
-**Elementos de la capa de dominio**
+ShareGrant representa el permiso temporal de lectura de un reporte. Conserva el propietario, la vigencia y la revocación del acceso. DeletionRequest registra la solicitud de eliminación y controla su avance hasta recibir las confirmaciones necesarias. Ambos agregados pertenecen al diseño propuesto.
 
-| Elemento | Tipo | Propósito |
-| --- | --- | --- |
-| ShareGrant | Agregado | Representa un permiso temporal de lectura sobre un reporte. |
-| DeletionRequest | Agregado | Registra una solicitud de eliminación y su estado. |
-| PurgeReceipt | Entidad | Confirma la eliminación realizada por cada contexto responsable. |
+**Entities**
+
+PurgeReceipt registra la confirmación de eliminación enviada por cada contexto responsable. Su relación con DeletionRequest permite identificar las confirmaciones recibidas y las que todavía faltan.
+
+**Elementos de Domain Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| ShareGrant | Aggregate Root (diseño propuesto) | Representa un permiso temporal de lectura sobre un reporte. | Domain |
+| DeletionRequest | Aggregate Root (diseño propuesto) | Registra una solicitud de eliminación y su estado. | Domain |
+| PurgeReceipt | Entity (diseño propuesto) | Confirma la eliminación realizada por cada contexto responsable. | Domain |
 
 **Reglas principales**
 
@@ -2498,16 +2576,28 @@ Los controladores propuestos reciben las solicitudes de compartir, revocar, expo
 
 La capa de aplicación propuesta coordina la creación de permisos, la consulta de reportes compartidos y la eliminación distribuida de datos.
 
-**Componentes y casos de uso**
+**Commands propuestos**
 
-| Nombre | Tipo | Responsabilidad |
-| --- | --- | --- |
-| CreateShareGrantHandler | Command Handler | Comprueba el propietario y registra la vigencia del permiso. |
-| ResolveSharedReportHandler | Query Handler | Comprueba el permiso y recupera la vista autorizada del reporte. |
-| RevokeShareHandler | Command Handler | Retira el permiso de lectura. |
-| RequestDeletionHandler | Command Handler | Registra la solicitud y comunica la eliminación a los contextos responsables. |
-| CollectPurgeReceiptHandler | Manejador de confirmaciones | Reúne las confirmaciones y determina si la solicitud concluyó. |
-| ExportReportHandler | Manejador de exportación | Prepara la descarga con el alcance y las versiones autorizadas. |
+La creación de un permiso, su revocación y la solicitud de eliminación modifican el estado de ShareGrant o DeletionRequest. La recepción de una confirmación actualiza el avance de la eliminación.
+
+**Queries propuestas**
+
+La lectura compartida comprueba la vigencia del permiso antes de recuperar la vista autorizada del reporte. La exportación prepara únicamente la información que puede consultar el solicitante.
+
+**Command Handlers y Query Handlers**
+
+Los manejadores propuestos separan cada operación y reúnen las comprobaciones necesarias antes de utilizar los repositorios o publicar mensajes.
+
+**Elementos de Application Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| CreateShareGrantHandler | Command Handler | Comprueba el propietario y registra la vigencia del permiso. | Application |
+| ResolveSharedReportHandler | Query Handler | Comprueba el permiso y recupera la vista autorizada del reporte. | Application |
+| RevokeShareHandler | Command Handler | Retira el permiso de lectura. | Application |
+| RequestDeletionHandler | Command Handler | Registra la solicitud y comunica la eliminación a los contextos responsables. | Application |
+| CollectPurgeReceiptHandler | Manejador de confirmaciones | Reúne las confirmaciones y determina si la solicitud concluyó. | Application |
+| ExportReportHandler | Manejador de exportación | Prepara la descarga con el alcance y las versiones autorizadas. | Application |
 
 **Recorrido del caso de uso.** Compartir genera un permiso temporal; consultar verifica su vigencia y revocación. Eliminar bloquea nuevas consultas y solicita el retiro de los datos a cada contexto responsable. La solicitud se completa cuando se reúnen las confirmaciones esperadas.
 
@@ -2515,17 +2605,17 @@ La capa de aplicación propuesta coordina la creación de permisos, la consulta 
 
 La capa de infraestructura propuesta conserva los permisos y solicitudes y comunica la eliminación a los contextos propietarios de los datos.
 
-**Repositorios y adaptadores**
+**Elementos de Infrastructure Layer**
 
-| Nombre | Tipo | Responsabilidad |
-| --- | --- | --- |
-| Persistencia de permisos y solicitudes | Repositorios propuestos | Conserva ShareGrant, DeletionRequest y sus confirmaciones en PostgreSQL. |
-| Mensajería de eliminación | Adaptador de eventos propuesto | Comunica las solicitudes y confirmaciones mediante RabbitMQ. |
-| Exportación del reporte | Adaptador propuesto | Prepara un archivo con información autorizada y vigencia de descarga limitada. |
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| Persistencia de permisos y solicitudes | Repositorios propuestos | Conserva ShareGrant, DeletionRequest y sus confirmaciones en PostgreSQL. | Infrastructure |
+| Mensajería de eliminación | Adaptador de eventos propuesto | Comunica las solicitudes y confirmaciones mediante RabbitMQ. | Infrastructure |
+| Exportación del reporte | Adaptador propuesto | Prepara un archivo con información autorizada y vigencia de descarga limitada. | Infrastructure |
 
 Los enlaces se conservan mediante un hash. Si no puede comprobarse la vigencia del permiso, la consulta se bloquea. Revocar un enlace retira el acceso futuro, pero no recupera una copia que ya haya sido descargada.
 
-### 5.6.5. Component Level Diagrams
+### 5.6.5. Bounded Context Software Architecture Component Level Diagrams
 
 Las solicitudes de compartir, revocar, exportar y eliminar se coordinan mediante casos de uso separados. Los repositorios conservan los permisos y las confirmaciones permiten seguir el avance de la eliminación.
 
@@ -2533,9 +2623,9 @@ Las solicitudes de compartir, revocar, exportar y eliminar se coordinan mediante
 
 [Fuente editable del diagrama de componentes](assets/diagrams/tactical/06-sharing-retention-components.mmd)
 
-### 5.6.6. Code Level Diagrams
+### 5.6.6. Bounded Context Software Architecture Code Level Diagrams
 
-#### 5.6.6.1. Domain Layer Class Diagrams
+#### 5.6.6.1. Bounded Context Domain Layer Class Diagrams
 
 ShareGrant administra la vigencia del acceso. DeletionRequest reúne los registros PurgeReceipt y conserva el estado de la eliminación hasta recibir las confirmaciones necesarias.
 
@@ -2543,7 +2633,7 @@ ShareGrant administra la vigencia del acceso. DeletionRequest reúne los registr
 
 [Fuente editable del diagrama de clases](assets/diagrams/tactical/06-sharing-retention-classes.mmd)
 
-#### 5.6.6.2. Database Design Diagram
+#### 5.6.6.2. Bounded Context Database Design Diagram
 
 share_grants almacena el reporte, propietario, hash del enlace y fechas de vigencia y revocación. deletion_requests registra la solicitud de eliminación y purge_receipts sus confirmaciones. Los registros deben evitar permisos o confirmaciones duplicados. Este esquema corresponde al diseño propuesto.
 
@@ -2561,14 +2651,20 @@ Este contexto reconoce la constancia del estudiante mediante rachas y logros. Lo
 
 La capa de dominio representa la continuidad de las prácticas y los reconocimientos del estudiante. Las reglas de racha y experiencia se evalúan sobre las sesiones que cumplen las condiciones de validez.
 
-**Agregado y reconocimientos.** UserStreak conserva la racha actual, la mejor racha y la experiencia acumulada. Achievement representa el reconocimiento obtenido; su registro como entidad forma parte de la ampliación del diseño. La evaluación de una práctica puede actualizar la racha y originar un evento de logro.
+**Aggregate Root**
 
-**Elementos de la capa de dominio**
+UserStreak conserva la racha actual, la mejor racha y la experiencia acumulada del estudiante. Las evaluaciones de práctica permiten actualizar estas medidas de continuidad.
 
-| Elemento | Tipo | Propósito |
-| --- | --- | --- |
-| UserStreak | Agregado | Representa la continuidad de las prácticas y la experiencia acumulada. |
-| Achievement | Entidad | Registra un logro obtenido por el estudiante. |
+**Entities**
+
+Achievement representa un reconocimiento obtenido por el estudiante. Su registro como entidad forma parte de la ampliación del diseño; la comunicación de un logro se origina al comprobar sus condiciones.
+
+**Elementos de Domain Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| UserStreak | Aggregate Root | Representa la continuidad de las prácticas y la experiencia acumulada. | Domain |
+| Achievement | Entity (diseño propuesto) | Registra un logro obtenido por el estudiante. | Domain |
 
 **Reglas principales**
 
@@ -2595,12 +2691,20 @@ GamificationController permite consultar las rachas y el ranking. Los cambios de
 
 La capa de aplicación coordina la actualización de rachas y la evaluación de logros. Una misma práctica debe producir una única actualización del reconocimiento.
 
-**Componentes y casos de uso**
+**Actualización por eventos**
 
-| Nombre | Tipo | Responsabilidad |
-| --- | --- | --- |
-| Actualización de racha y experiencia | Caso de uso | Aplica las reglas de continuidad y experiencia a UserStreak. |
-| Evaluación de logros | Caso de uso | Comprueba las condiciones de reconocimiento y solicita su comunicación. |
+Una evaluación completada activa la actualización de la racha y la experiencia. El flujo comprueba los logros obtenidos y solicita su comunicación.
+
+**Queries**
+
+Las lecturas presentan la racha de un estudiante y el ranking. La participación pública opcional y el control de sesiones ya procesadas forman parte de la ampliación del diseño.
+
+**Elementos de Application Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| Actualización de racha y experiencia | Caso de uso | Aplica las reglas de continuidad y experiencia a UserStreak. | Application |
+| Evaluación de logros | Caso de uso | Comprueba las condiciones de reconocimiento y solicita su comunicación. | Application |
 
 **Recorrido del caso de uso.** La evaluación completada identifica al estudiante y la práctica. El flujo valida su contribución a la racha, actualiza la experiencia y comprueba los logros. El diseño ampliado añade el veredicto de práctica válida, la zona horaria y el registro de sesiones ya procesadas.
 
@@ -2608,18 +2712,18 @@ La capa de aplicación coordina la actualización de rachas y la evaluación de 
 
 La capa de infraestructura conserva las rachas y conecta la evaluación con los reconocimientos mediante RabbitMQ.
 
-**Repositorios y adaptadores**
+**Elementos de Infrastructure Layer**
 
-| Nombre | Tipo | Responsabilidad |
-| --- | --- | --- |
-| UserStreakRepository | Repositorio | Conserva las rachas y la experiencia en PostgreSQL. |
-| ScoringCompletedConsumer | Consumidor de eventos | Recibe la evaluación que origina la actualización de reconocimientos. |
-| AchievementUnlockedPublisher | Publicador de eventos | Comunica el logro obtenido a Notifications. |
-| Registro de Achievement | Persistencia propuesta | Conserva los logros y las sesiones que los originaron. |
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| UserStreakRepository | Repositorio | Conserva las rachas y la experiencia en PostgreSQL. | Infrastructure |
+| ScoringCompletedConsumer | Consumidor de eventos | Recibe la evaluación que origina la actualización de reconocimientos. | Infrastructure |
+| AchievementUnlockedPublisher | Publicador de eventos | Comunica el logro obtenido a Notifications. | Infrastructure |
+| Registro de Achievement | Persistencia propuesta | Conserva los logros y las sesiones que los originaron. | Infrastructure |
 
 La ampliación añade el control de sesiones ya procesadas y las reglas versionadas de reconocimiento. La consulta pública respeta la decisión de participación del estudiante.
 
-### 5.7.5. Component Level Diagrams
+### 5.7.5. Bounded Context Software Architecture Component Level Diagrams
 
 La evaluación recibida actualiza la racha y, cuando se cumple una condición, origina un logro. AchievementUnlockedPublisher comunica ese reconocimiento a Notifications. Su registro como entidad forma parte de la ampliación del diseño.
 
@@ -2627,9 +2731,9 @@ La evaluación recibida actualiza la racha y, cuando se cumple una condición, o
 
 [Fuente editable del diagrama de componentes](assets/diagrams/tactical/07-gamification-components.mmd)
 
-### 5.7.6. Code Level Diagrams
+### 5.7.6. Bounded Context Software Architecture Code Level Diagrams
 
-#### 5.7.6.1. Domain Layer Class Diagrams
+#### 5.7.6.1. Bounded Context Domain Layer Class Diagrams
 
 UserStreak conserva la racha y la experiencia del usuario, mientras que Achievement identifica cada reconocimiento. El consumidor coordina sus actualizaciones y comunica los logros obtenidos.
 
@@ -2637,7 +2741,7 @@ UserStreak conserva la racha y la experiencia del usuario, mientras que Achievem
 
 [Fuente editable del diagrama de clases](assets/diagrams/tactical/07-gamification-classes.mmd)
 
-#### 5.7.6.2. Database Design Diagram
+#### 5.7.6.2. Bounded Context Database Design Diagram
 
 user_streaks y achievements se relacionan por usuario dentro de la misma base. La ampliación propone identificar los logros por usuario, código y versión de regla para evitar duplicados.
 
@@ -2655,15 +2759,25 @@ Este contexto administra las cuentas y el acceso a Talki. También organiza la i
 
 La capa de dominio representa la cuenta del estudiante y los roles reconocidos por Talki. El modelo de acceso distingue la identidad de la persona de las autorizaciones particulares sobre sus sesiones.
 
-**Agregado, roles y renovación.** AppUser conserva el identificador, correo, contraseña protegida y datos de la cuenta. UserRole define los roles de acceso. RefreshToken se incorpora en el diseño de renovación para registrar la vigencia y revocación de credenciales; el consentimiento de voz requiere un registro adicional con versión y alcance.
+**Aggregate Root**
 
-**Elementos de la capa de dominio**
+AppUser representa la cuenta del estudiante. Conserva su identificador, correo, contraseña protegida y datos de perfil.
 
-| Elemento | Tipo | Propósito |
-| --- | --- | --- |
-| AppUser | Agregado | Representa la cuenta, los datos del estudiante y su rol. |
-| RefreshToken | Entidad | Permite renovar el acceso y registrar su revocación. |
-| UserRole | Enumeración | Define los roles de acceso reconocidos por la aplicación. |
+**Entities**
+
+RefreshToken se propone para registrar la vigencia y revocación de las credenciales de renovación. El consentimiento de voz requiere un registro adicional con su versión, alcance y momento de aceptación.
+
+**Enumerations**
+
+UserRole define los roles de acceso reconocidos por Talki. Las autorizaciones sobre una sesión se comprueban en el contexto responsable de esa práctica.
+
+**Elementos de Domain Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| AppUser | Aggregate Root | Representa la cuenta, los datos del estudiante y su rol. | Domain |
+| RefreshToken | Entity (diseño propuesto) | Permite renovar el acceso y registrar su revocación. | Domain |
+| UserRole | Enumeración | Define los roles de acceso reconocidos por la aplicación. | Domain |
 
 **Reglas principales**
 
@@ -2690,33 +2804,40 @@ AuthController recibe las solicitudes de registro e inicio de sesión y las dele
 
 La capa de aplicación coordina el registro y la autenticación. Utiliza la cuenta del dominio, el almacenamiento y los servicios de seguridad para preparar el acceso del estudiante.
 
-**Componentes y casos de uso**
+**Commands**
 
-| Nombre | Tipo | Responsabilidad |
-| --- | --- | --- |
-| AuthService | Servicio de aplicación | Comprueba el correo, protege la contraseña, registra la cuenta y valida las credenciales de acceso. |
-| UserRegisteredEventPublisher | Puerto de publicación | Define la comunicación del registro a los contextos interesados. |
-| Renovación y cierre de sesión | Casos de uso propuestos | Renuevan o revocan las credenciales de acceso. |
-| Gestión de consentimiento | Caso de uso propuesto | Registra la versión, alcance y retiro de la autorización de procesamiento. |
+El registro crea una cuenta después de comprobar el correo y proteger la contraseña. El inicio de sesión verifica las credenciales y solicita un token de acceso. AuthService coordina ambas operaciones.
 
-**Recorrido del caso de uso.** El registro comprueba que el correo sea único, protege la contraseña, conserva AppUser y comunica UserRegisteredEvent. El inicio de sesión verifica las credenciales y solicita una credencial de acceso. El consentimiento para voz se gestiona como una autorización distinta de la creación de cuenta.
+**Commands propuestos**
+
+La renovación, el cierre de sesión y la gestión del consentimiento amplían el modelo de acceso. El consentimiento de voz conserva su autorización de manera independiente del registro de la cuenta.
+
+**Elementos de Application Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| AuthService | Servicio de aplicación | Comprueba el correo, protege la contraseña, registra la cuenta y valida las credenciales de acceso. | Application |
+| UserRegisteredEventPublisher | Puerto de publicación | Define la comunicación del registro a los contextos interesados. | Application |
+| Renovación y cierre de sesión | Casos de uso propuestos | Renuevan o revocan las credenciales de acceso. | Application |
+| Gestión de consentimiento | Caso de uso propuesto | Registra la versión, alcance y retiro de la autorización de procesamiento. | Application |
+
 
 ### 5.8.4. Infrastructure Layer
 
 La capa de infraestructura implementa el almacenamiento de cuentas, la protección de contraseñas y la emisión de credenciales de acceso.
 
-**Repositorios y adaptadores**
+**Elementos de Infrastructure Layer**
 
-| Nombre | Tipo | Responsabilidad |
-| --- | --- | --- |
-| AppUserRepository | Repositorio | Conserva las cuentas en PostgreSQL y permite localizarlas por correo. |
-| PasswordEncoder | Servicio de seguridad | Protege y verifica la contraseña sin conservar su valor original. |
-| JwtTokenProvider | Servicio de seguridad | Genera la credencial de acceso del estudiante. |
-| RabbitUserRegisteredPublisher | Publicador de eventos | Implementa UserRegisteredEventPublisher mediante RabbitMQ. |
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| AppUserRepository | Repositorio | Conserva las cuentas en PostgreSQL y permite localizarlas por correo. | Infrastructure |
+| PasswordEncoder | Servicio de seguridad | Protege y verifica la contraseña sin conservar su valor original. | Infrastructure |
+| JwtTokenProvider | Servicio de seguridad | Genera la credencial de acceso del estudiante. | Infrastructure |
+| RabbitUserRegisteredPublisher | Publicador de eventos | Implementa UserRegisteredEventPublisher mediante RabbitMQ. | Infrastructure |
 
 Spring Security organiza las reglas de acceso. El cliente web utiliza el BFF y cookies protegidas; la adaptación móvil requiere almacenamiento seguro. La persistencia de renovación y consentimiento corresponde a las ampliaciones propuestas.
 
-### 5.8.5. Component Level Diagrams
+### 5.8.5. Bounded Context Software Architecture Component Level Diagrams
 
 AuthController delega el registro y el acceso a AuthService. Los adaptadores de seguridad y persistencia permiten conservar la cuenta y preparar sus credenciales. El publicador comunica el registro; la renovación y el consentimiento son ampliaciones propuestas.
 
@@ -2724,9 +2845,9 @@ AuthController delega el registro y el acceso a AuthService. Los adaptadores de 
 
 [Fuente editable del diagrama de componentes](assets/diagrams/tactical/08-identity-access-components.mmd)
 
-### 5.8.6. Code Level Diagrams
+### 5.8.6. Bounded Context Software Architecture Code Level Diagrams
 
-#### 5.8.6.1. Domain Layer Class Diagrams
+#### 5.8.6.1. Bounded Context Domain Layer Class Diagrams
 
 AppUser se relaciona con sus tokens de renovación y con UserRole. La asociación conserva la identidad de la cuenta durante el acceso y permite revocar una sesión.
 
@@ -2734,7 +2855,7 @@ AppUser se relaciona con sus tokens de renovación y con UserRole. La asociació
 
 [Fuente editable del diagrama de clases](assets/diagrams/tactical/08-identity-access-classes.mmd)
 
-#### 5.8.6.2. Database Design Diagram
+#### 5.8.6.2. Bounded Context Database Design Diagram
 
 app_users y refresh_tokens se relacionan por usuario. El correo y el hash del token tienen restricciones de unicidad. El registro versionado de consentimiento se incorpora como ampliación del modelo.
 
@@ -2752,13 +2873,15 @@ Este contexto organiza la comunicación de Talki con proveedores de inteligencia
 
 La capa de dominio propuesta define el contrato que debe cumplir una integración con un proveedor de inteligencia artificial. Su función es expresar las capacidades necesarias para una conversación, independientemente de la API del proveedor.
 
-**Puerto de integración.** AIProviderPort establece las operaciones de apertura y cierre de la conversación y la obtención de la transcripción. La pasarela no administra las sesiones del estudiante ni sus evaluaciones: estas responsabilidades permanecen en sus respectivos contextos.
+**Integration Port**
 
-**Elementos de la capa de dominio**
+AIProviderPort define, en el diseño propuesto, las operaciones de apertura y cierre de la conversación y la obtención de la transcripción. Este contrato permite expresar las capacidades que Talki necesita sin depender de la API de un proveedor. Las sesiones y evaluaciones permanecen bajo responsabilidad de sus respectivos contextos.
 
-| Elemento | Tipo | Propósito |
-| --- | --- | --- |
-| AIProviderPort | Puerto de integración | Define las operaciones de apertura, intercambio y cierre de la conversación con un proveedor. |
+**Elementos de Domain Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| AIProviderPort | Puerto de integración (diseño propuesto) | Define las operaciones de apertura, intercambio y cierre de la conversación con un proveedor. | Domain |
 
 **Reglas principales**
 
@@ -2779,28 +2902,31 @@ La pasarela propuesta ofrece un contrato interno a Live Coaching. No expone una 
 
 La capa de aplicación propuesta coordina la selección del proveedor y la ejecución de la conversación mediante un contrato común.
 
-**Componentes y casos de uso**
+**Coordinación de la integración**
 
-| Nombre | Tipo | Responsabilidad |
-| --- | --- | --- |
-| AIIntegrationApplicationService | Servicio de aplicación propuesto | Comprueba las capacidades requeridas, selecciona el adaptador y coordina la solicitud autorizada. |
+AIIntegrationApplicationService se propone para comprobar las capacidades requeridas por una práctica, seleccionar el adaptador y solicitar la conversación mediante AIProviderPort. El servicio devuelve la respuesta o el error al contexto que inició la solicitud.
 
-**Recorrido del caso de uso.** El servicio recibe el modo y las condiciones de la práctica, comprueba que el proveedor disponga de las capacidades necesarias y delega el intercambio al adaptador. Las respuestas y los errores regresan al contexto solicitante en una representación común.
+**Elementos de Application Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| AIIntegrationApplicationService | Servicio de aplicación propuesto | Comprueba las capacidades requeridas, selecciona el adaptador y coordina la solicitud autorizada. | Application |
+
 
 ### 5.9.4. Infrastructure Layer
 
 La capa de infraestructura propuesta contiene los adaptadores que conocen las APIs de los proveedores de inteligencia artificial.
 
-**Repositorios y adaptadores**
+**Elementos de Infrastructure Layer**
 
-| Nombre | Tipo | Responsabilidad |
-| --- | --- | --- |
-| GeminiLiveClient | Adaptador propuesto | Implementa AIProviderPort para el intercambio con Gemini Live. |
-| Configuración del proveedor | Configuración de integración | Protege las credenciales y determina las capacidades disponibles. |
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| GeminiLiveClient | Adaptador propuesto | Implementa AIProviderPort para el intercambio con Gemini Live. | Infrastructure |
+| Configuración del proveedor | Configuración de integración | Protege las credenciales y determina las capacidades disponibles. | Infrastructure |
 
 La emisión de credenciales temporales utiliza GeminiTokenService en Live Coaching. La pasarela común se integrará para mantener las diferencias de cada proveedor en su adaptador. No requiere almacenar el audio ni el material personal de la práctica.
 
-### 5.9.5. Component Level Diagrams
+### 5.9.5. Bounded Context Software Architecture Component Level Diagrams
 
 El servicio de integración utiliza AIProviderPort y la infraestructura proporciona GeminiLiveClient como adaptador. El proveedor externo queda fuera del modelo de negocio de Talki.
 
@@ -2808,9 +2934,9 @@ El servicio de integración utiliza AIProviderPort y la infraestructura proporci
 
 [Fuente editable del diagrama de componentes](assets/diagrams/tactical/09-ai-provider-gateway-components.mmd)
 
-### 5.9.6. Code Level Diagrams
+### 5.9.6. Bounded Context Software Architecture Code Level Diagrams
 
-#### 5.9.6.1. Domain Layer Class Diagrams
+#### 5.9.6.1. Bounded Context Domain Layer Class Diagrams
 
 AIProviderPort define el contrato y GeminiLiveClient representa su adaptación propuesta. El adaptador pertenece a infraestructura; el puerto permite sustituir la integración sin cambiar Session.
 
@@ -2818,7 +2944,7 @@ AIProviderPort define el contrato y GeminiLiveClient representa su adaptación p
 
 [Fuente editable del diagrama de clases](assets/diagrams/tactical/09-ai-provider-gateway-classes.mmd)
 
-#### 5.9.6.2. Database Design Diagram
+#### 5.9.6.2. Bounded Context Database Design Diagram
 
 Este contexto no almacena audio ni transcripciones. La configuración y las credenciales se administran mediante los mecanismos de infraestructura, separados del material del estudiante.
 
@@ -2836,13 +2962,15 @@ Este contexto comunica resultados y logros al estudiante mediante avisos. El env
 
 La capa de dominio propuesta define la entrega de avisos al estudiante sin depender de un canal concreto. Las reglas determinan qué información puede incluirse y cuándo corresponde enviar una notificación.
 
-**Puerto de salida.** NotificationPushService representa el contrato para entregar un aviso. El contenido se origina a partir de una evaluación o un logro, pero no sustituye al reporte ni conserva la evidencia de la práctica. El modelo no requiere un agregado de negocio propio mientras la entrega no tenga un ciclo persistente.
+**Output Port**
 
-**Elementos de la capa de dominio**
+NotificationPushService representa el contrato propuesto para entregar un aviso al estudiante. El contenido se origina a partir de una evaluación o un logro y evita incluir la evidencia privada de la práctica. La entrega se describe mediante un puerto y un adaptador de canal; su historial persistente requeriría ampliar el modelo.
 
-| Elemento | Tipo | Propósito |
-| --- | --- | --- |
-| NotificationPushService | Puerto de salida | Define la operación de envío de un aviso al estudiante. |
+**Elementos de Domain Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| NotificationPushService | Puerto de salida (diseño propuesto) | Define la operación de envío de un aviso al estudiante. | Domain |
 
 **Reglas principales**
 
@@ -2862,32 +2990,35 @@ Este contexto recibe los eventos que originan avisos al estudiante. No necesita 
 
 La capa de aplicación propuesta prepara los avisos a partir de los eventos del negocio. La preparación del contenido permanece separada del canal utilizado para entregarlo.
 
-**Componentes y casos de uso**
+**Procesamiento de eventos**
 
-| Nombre | Tipo | Responsabilidad |
-| --- | --- | --- |
-| Aviso de evaluación disponible | Caso de uso | Prepara un mensaje que permita acceder al resultado de la práctica. |
-| Aviso de logro obtenido | Caso de uso | Prepara el reconocimiento que corresponde al evento recibido. |
-| Despacho del aviso | Caso de uso propuesto | Comprueba las preferencias y solicita la entrega mediante NotificationPushService. |
+Los eventos de evaluación y logro identifican al destinatario y el tipo de aviso. El caso de uso propuesto prepara el contenido, comprueba las preferencias y solicita la entrega mediante NotificationPushService. La entrega del aviso mantiene su resultado separado del resultado de la práctica.
 
-**Recorrido del caso de uso.** La recepción de una evaluación o un logro identifica al destinatario. El flujo prepara un mensaje breve, comprueba si corresponde enviarlo y solicita su entrega. Una falla del canal no modifica la evaluación ni bloquea la práctica.
+**Elementos de Application Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| Aviso de evaluación disponible | Caso de uso | Prepara un mensaje que permita acceder al resultado de la práctica. | Application |
+| Aviso de logro obtenido | Caso de uso | Prepara el reconocimiento que corresponde al evento recibido. | Application |
+| Despacho del aviso | Caso de uso propuesto | Comprueba las preferencias y solicita la entrega mediante NotificationPushService. | Application |
+
 
 ### 5.10.4. Infrastructure Layer
 
 La capa de infraestructura recibe los eventos que originan avisos. La entrega al estudiante requiere los adaptadores de canal previstos en el diseño.
 
-**Repositorios y adaptadores**
+**Elementos de Infrastructure Layer**
 
-| Nombre | Tipo | Responsabilidad |
-| --- | --- | --- |
-| ScoreNotificationConsumer | Consumidor de eventos | Recibe las evaluaciones completadas desde RabbitMQ. |
-| AchievementNotificationConsumer | Consumidor de eventos | Recibe los logros obtenidos desde RabbitMQ. |
-| WebSocketPushAdapter | Adaptador propuesto | Implementa NotificationPushService para entregar avisos al cliente. |
-| Proveedor de correo | Integración propuesta | Entrega los avisos que correspondan a las preferencias de contacto. |
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| ScoreNotificationConsumer | Consumidor de eventos | Recibe las evaluaciones completadas desde RabbitMQ. | Infrastructure |
+| AchievementNotificationConsumer | Consumidor de eventos | Recibe los logros obtenidos desde RabbitMQ. | Infrastructure |
+| WebSocketPushAdapter | Adaptador propuesto | Implementa NotificationPushService para entregar avisos al cliente. | Infrastructure |
+| Proveedor de correo | Integración propuesta | Entrega los avisos que correspondan a las preferencias de contacto. | Infrastructure |
 
 Los consumidores base registran la intención de notificar. La entrega efectiva, el control de reintentos y el seguimiento de envíos forman parte de la integración propuesta. La falla del canal no modifica el resultado de la práctica.
 
-### 5.10.5. Component Level Diagrams
+### 5.10.5. Bounded Context Software Architecture Component Level Diagrams
 
 Los consumidores reciben los eventos de evaluación o logro. La integración propuesta coordina la preparación del aviso y utiliza NotificationPushService para su entrega mediante WebSocketPushAdapter o un canal de correo.
 
@@ -2895,9 +3026,9 @@ Los consumidores reciben los eventos de evaluación o logro. La integración pro
 
 [Fuente editable del diagrama de componentes](assets/diagrams/tactical/10-notifications-components.mmd)
 
-### 5.10.6. Code Level Diagrams
+### 5.10.6. Bounded Context Software Architecture Code Level Diagrams
 
-#### 5.10.6.1. Domain Layer Class Diagrams
+#### 5.10.6.1. Bounded Context Domain Layer Class Diagrams
 
 Los consumidores actúan como adaptadores de entrada de eventos. NotificationPushService define el contrato de envío propuesto y WebSocketPushAdapter representa su implementación de canal. El diagrama resume esas colaboraciones.
 
@@ -2905,7 +3036,7 @@ Los consumidores actúan como adaptadores de entrada de eventos. NotificationPus
 
 [Fuente editable del diagrama de clases](assets/diagrams/tactical/10-notifications-classes.mmd)
 
-#### 5.10.6.2. Database Design Diagram
+#### 5.10.6.2. Bounded Context Database Design Diagram
 
 El contexto no requiere una base de negocio propia. El registro de envíos y preferencias se definirá si se incorpora un canal de correo con seguimiento persistente.
 
@@ -2949,6 +3080,14 @@ La identidad de Talki busca transmitir cercanía y confianza para que el estudia
 **Typography**
 
 Geist se utiliza en títulos, textos y controles por su apariencia clara y su facilidad de lectura en pantalla. El tamaño y el peso diferencian los encabezados, el contenido y las ayudas. Geist Mono se reserva para datos que necesitan alineación uniforme. La jerarquía tipográfica permite reconocer primero la información principal y después sus detalles.
+
+| Uso | Criterio de diseño |
+| --- | --- |
+| Títulos de página y sección | Mayor tamaño y peso para reconocer la tarea y los grupos de contenido. |
+| Texto de lectura | Peso regular y separación entre líneas para leer instrucciones y recomendaciones. |
+| Etiquetas y botones | Texto breve con peso suficiente para identificar controles y acciones. |
+| Datos alineados | Geist Mono cuando la alineación facilita revisar valores; el resto del contenido conserva Geist. |
+| Ayudas y mensajes | Jerarquía secundaria con contraste legible, junto al control al que se refieren. |
 
 **Colors**
 
@@ -3122,11 +3261,11 @@ La landing pública (L01) presenta Talki a los estudiantes y reúne la propuesta
 
 El wireframe organiza la landing en bloques de propuesta de valor, beneficios por segmento, pasos de uso, planes y formulario de consulta. La acción de registro se mantiene visible y el reporte de muestra permite anticipar el tipo de feedback que ofrece Talki. La sección de testimonios prevista en US03 se incorporará cuando existan testimonios autorizados.
 
-**Web**
+**Wireframe de la landing pública de Talki (web)**
 
 <img src="assets/ux/wireframes/web-landing.png" alt="Wireframe de la landing pública de Talki: web" width="900">
 
-**Móvil**
+**Wireframe de la landing pública de Talki (móvil)**
 
 <img src="assets/ux/wireframes/mobile-landing.png" alt="Wireframe de la landing pública de Talki: móvil" width="320">
 
@@ -3134,11 +3273,11 @@ El wireframe organiza la landing en bloques de propuesta de valor, beneficios po
 
 El mock-up presenta el mensaje “Ensaya tus ideas. Hazlas escuchar.” junto con la acción principal “Empezar a practicar”. Los bloques de beneficios y pasos de uso explican el servicio antes del registro. Los planes se muestran como una propuesta cuyas condiciones están por definir; el formulario de consulta permite explorar la interacción de contacto.
 
-**Web**
+**Mock-up de la landing pública de Talki (web)**
 
 <img src="assets/ux/mockups/web-landing.png" alt="Mock-up de la landing pública de Talki: web" width="900">
 
-**Móvil**
+**Mock-up de la landing pública de Talki (móvil)**
 
 <img src="assets/ux/mockups/mobile-landing.png" alt="Mock-up de la landing pública de Talki: móvil" width="320">
 
@@ -3175,11 +3314,11 @@ El wireframe divide la pantalla entre la presentación de Talki y el formulario 
 
 **Historias relacionadas:** US05.
 
-**Web**
+**Wireframe de registro (web)**
 
 <img src="assets/ux/wireframes/web-register.png" alt="Wireframe de registro: web" width="900">
 
-**Móvil**
+**Wireframe de registro (móvil)**
 
 <img src="assets/ux/wireframes/mobile-register.png" alt="Wireframe de registro: móvil" width="320">
 
@@ -3189,11 +3328,11 @@ El formulario de acceso reúne correo, contraseña y la acción de iniciar sesi�
 
 **Historias relacionadas:** US06.
 
-**Web**
+**Wireframe de acceso (web)**
 
 <img src="assets/ux/wireframes/web-login.png" alt="Wireframe de acceso: web" width="900">
 
-**Móvil**
+**Wireframe de acceso (móvil)**
 
 <img src="assets/ux/wireframes/mobile-login.png" alt="Wireframe de acceso: móvil" width="320">
 
@@ -3203,11 +3342,11 @@ La recuperación se concentra en un campo de correo y una acción de envío. La 
 
 **Historias relacionadas:** US07.
 
-**Web**
+**Wireframe de recuperación (web)**
 
 <img src="assets/ux/wireframes/web-recovery.png" alt="Wireframe de recuperación: web" width="900">
 
-**Móvil**
+**Wireframe de recuperación (móvil)**
 
 <img src="assets/ux/wireframes/mobile-recovery.png" alt="Wireframe de recuperación: móvil" width="320">
 
@@ -3217,11 +3356,11 @@ La pantalla organiza los datos del perfil, el segmento del estudiante y su meta 
 
 **Historias relacionadas:** US08, US23, US24.
 
-**Web**
+**Wireframe de perfil y segmento (web)**
 
 <img src="assets/ux/wireframes/web-profile.png" alt="Wireframe de perfil y segmento: web" width="900">
 
-**Móvil**
+**Wireframe de perfil y segmento (móvil)**
 
 <img src="assets/ux/wireframes/mobile-profile.png" alt="Wireframe de perfil y segmento: móvil" width="320">
 
@@ -3231,11 +3370,11 @@ El inicio distribuye el resumen de actividad, la invitación a preparar una prá
 
 **Historias relacionadas:** US09, US20, US21, US35.
 
-**Web**
+**Wireframe de inicio (web)**
 
 <img src="assets/ux/wireframes/web-dashboard.png" alt="Wireframe de inicio: web" width="900">
 
-**Móvil**
+**Wireframe de inicio (móvil)**
 
 <img src="assets/ux/wireframes/mobile-dashboard.png" alt="Wireframe de inicio: móvil" width="320">
 
@@ -3245,11 +3384,11 @@ La configuración agrupa el título, modo, duración y meta del ensayo. El mater
 
 **Historias relacionadas:** US09–US11, US24, US25, US30.
 
-**Web**
+**Wireframe de configuración y material (web)**
 
 <img src="assets/ux/wireframes/web-setup.png" alt="Wireframe de configuración y material: web" width="900">
 
-**Móvil**
+**Wireframe de configuración y material (móvil)**
 
 <img src="assets/ux/wireframes/mobile-setup.png" alt="Wireframe de configuración y material: móvil" width="320">
 
@@ -3259,11 +3398,11 @@ La estructura diferencia la comprobación del micrófono del consentimiento para
 
 **Historias relacionadas:** US29, TS01.
 
-**Web**
+**Wireframe de audio y consentimiento (web)**
 
 <img src="assets/ux/wireframes/web-microphone.png" alt="Wireframe de audio y consentimiento: web" width="900">
 
-**Móvil**
+**Wireframe de audio y consentimiento (móvil)**
 
 <img src="assets/ux/wireframes/mobile-microphone.png" alt="Wireframe de audio y consentimiento: móvil" width="320">
 
@@ -3273,11 +3412,11 @@ La pantalla reserva áreas para el tiempo del ensayo, las señales de acompañam
 
 **Historias relacionadas:** US12–US14, US31, US34, US38.
 
-**Web**
+**Wireframe de práctica en vivo (web)**
 
 <img src="assets/ux/wireframes/web-live.png" alt="Wireframe de práctica en vivo: web" width="900">
 
-**Móvil**
+**Wireframe de práctica en vivo (móvil)**
 
 <img src="assets/ux/wireframes/mobile-live.png" alt="Wireframe de práctica en vivo: móvil" width="320">
 
@@ -3287,11 +3426,11 @@ El estado del análisis ocupa el área principal y se acompaña de las acciones 
 
 **Historias relacionadas:** US37.
 
-**Web**
+**Wireframe de estado del análisis (web)**
 
 <img src="assets/ux/wireframes/web-processing.png" alt="Wireframe de estado del análisis: web" width="900">
 
-**Móvil**
+**Wireframe de estado del análisis (móvil)**
 
 <img src="assets/ux/wireframes/mobile-processing.png" alt="Wireframe de estado del análisis: móvil" width="320">
 
@@ -3301,11 +3440,11 @@ El reporte organiza la puntuación, las dimensiones de desempeño, las recomenda
 
 **Historias relacionadas:** US15–US19, US26.
 
-**Web**
+**Wireframe de reporte y evidencia (web)**
 
 <img src="assets/ux/wireframes/web-report.png" alt="Wireframe de reporte y evidencia: web" width="900">
 
-**Móvil**
+**Wireframe de reporte y evidencia (móvil)**
 
 <img src="assets/ux/wireframes/mobile-report.png" alt="Wireframe de reporte y evidencia: móvil" width="320">
 
@@ -3315,11 +3454,11 @@ La búsqueda y los filtros preceden a la lista de sesiones. Cada fila reserva es
 
 **Historias relacionadas:** US20.
 
-**Web**
+**Wireframe de historial y búsqueda (web)**
 
 <img src="assets/ux/wireframes/web-history.png" alt="Wireframe de historial y búsqueda: web" width="900">
 
-**Móvil**
+**Wireframe de historial y búsqueda (móvil)**
 
 <img src="assets/ux/wireframes/mobile-history.png" alt="Wireframe de historial y búsqueda: móvil" width="320">
 
@@ -3329,11 +3468,11 @@ La vista de progreso reúne un resumen de desempeño y un gráfico de las práct
 
 **Historias relacionadas:** US21.
 
-**Web**
+**Wireframe de tendencias (web)**
 
 <img src="assets/ux/wireframes/web-progress.png" alt="Wireframe de tendencias: web" width="900">
 
-**Móvil**
+**Wireframe de tendencias (móvil)**
 
 <img src="assets/ux/wireframes/mobile-progress.png" alt="Wireframe de tendencias: móvil" width="320">
 
@@ -3343,11 +3482,11 @@ La estructura presenta dos selectores de sesión y un área para el resultado de
 
 **Historias relacionadas:** US22.
 
-**Web**
+**Wireframe de comparación (web)**
 
 <img src="assets/ux/wireframes/web-compare.png" alt="Wireframe de comparación: web" width="900">
 
-**Móvil**
+**Wireframe de comparación (móvil)**
 
 <img src="assets/ux/wireframes/mobile-compare.png" alt="Wireframe de comparación: móvil" width="320">
 
@@ -3357,11 +3496,11 @@ El plan se organiza en bloques de ejercicios con una meta, una duración y una a
 
 **Historias relacionadas:** US36.
 
-**Web**
+**Wireframe de plan adaptativo (web)**
 
 <img src="assets/ux/wireframes/web-plan.png" alt="Wireframe de plan adaptativo: web" width="900">
 
-**Móvil**
+**Wireframe de plan adaptativo (móvil)**
 
 <img src="assets/ux/wireframes/mobile-plan.png" alt="Wireframe de plan adaptativo: móvil" width="320">
 
@@ -3371,11 +3510,11 @@ La pantalla separa el acceso temporal al reporte, la exportación y la eliminaci
 
 **Historias relacionadas:** US27, US32, US33.
 
-**Web**
+**Wireframe de compartición, exportación y borrado (web)**
 
 <img src="assets/ux/wireframes/web-privacy.png" alt="Wireframe de compartición, exportación y borrado: web" width="900">
 
-**Móvil**
+**Wireframe de compartición, exportación y borrado (móvil)**
 
 <img src="assets/ux/wireframes/mobile-privacy.png" alt="Wireframe de compartición, exportación y borrado: móvil" width="320">
 
@@ -3385,11 +3524,11 @@ La vista compartida reúne la identificación del reporte, la vigencia del permi
 
 **Historias relacionadas:** US32.
 
-**Web**
+**Wireframe de reporte de tutor (web)**
 
 <img src="assets/ux/wireframes/web-shared.png" alt="Wireframe de reporte de tutor: web" width="900">
 
-**Móvil**
+**Wireframe de reporte de tutor (móvil)**
 
 <img src="assets/ux/wireframes/mobile-shared.png" alt="Wireframe de reporte de tutor: móvil" width="320">
 
@@ -3399,11 +3538,11 @@ Las preferencias agrupan los avisos opcionales y la información sobre comunicac
 
 **Historias relacionadas:** Soporte transversal.
 
-**Web**
+**Wireframe de preferencias de contacto (web)**
 
 <img src="assets/ux/wireframes/web-preferences.png" alt="Wireframe de preferencias de contacto: web" width="900">
 
-**Móvil**
+**Wireframe de preferencias de contacto (móvil)**
 
 <img src="assets/ux/wireframes/mobile-preferences.png" alt="Wireframe de preferencias de contacto: móvil" width="320">
 
@@ -3452,11 +3591,11 @@ Los mock-ups desarrollan la jerarquía visual, los controles y la presentación 
 
 La propuesta visual distingue los campos del formulario y destaca la acción de crear cuenta. Las etiquetas permanecen visibles y la información de ayuda utiliza un nivel secundario de texto. La adaptación móvil conserva esa jerarquía en una columna.
 
-**Web**
+**Mock-up de registro (web)**
 
 <img src="assets/ux/mockups/web-register.png" alt="Mock-up de registro: web" width="900">
 
-**Móvil**
+**Mock-up de registro (móvil)**
 
 <img src="assets/ux/mockups/mobile-register.png" alt="Mock-up de registro: móvil" width="320">
 
@@ -3464,11 +3603,11 @@ La propuesta visual distingue los campos del formulario y destaca la acción de 
 
 La captura web concentra la atención en el acceso a Talki. En la propuesta móvil, el botón principal se diferencia de los enlaces de recuperación y registro mediante su color y posición.
 
-**Web**
+**Mock-up de acceso (web)**
 
 <img src="assets/reused-202601/frontend/01-login.png" alt="Mock-up de acceso: web" width="900">
 
-**Móvil**
+**Mock-up de acceso (móvil)**
 
 <img src="assets/ux/mockups/mobile-login.png" alt="Mock-up de acceso: móvil" width="320">
 
@@ -3476,11 +3615,11 @@ La captura web concentra la atención en el acceso a Talki. En la propuesta móv
 
 El campo de correo y el botón de envío constituyen el foco de la pantalla. El texto de apoyo explica la recuperación y la confirmación evita revelar si la dirección pertenece a una cuenta registrada.
 
-**Web**
+**Mock-up de recuperación (web)**
 
 <img src="assets/ux/mockups/web-recovery.png" alt="Mock-up de recuperación: web" width="900">
 
-**Móvil**
+**Mock-up de recuperación (móvil)**
 
 <img src="assets/ux/mockups/mobile-recovery.png" alt="Mock-up de recuperación: móvil" width="320">
 
@@ -3488,11 +3627,11 @@ El campo de correo y el botón de envío constituyen el foco de la pantalla. El 
 
 Los bloques del perfil diferencian los datos personales, el segmento y la meta de práctica. Los controles seleccionados se reconocen mediante texto y resaltado, y la acción de guardar cierra el recorrido.
 
-**Web**
+**Mock-up de perfil y segmento (web)**
 
 <img src="assets/ux/mockups/web-profile.png" alt="Mock-up de perfil y segmento: web" width="900">
 
-**Móvil**
+**Mock-up de perfil y segmento (móvil)**
 
 <img src="assets/ux/mockups/mobile-profile.png" alt="Mock-up de perfil y segmento: móvil" width="320">
 
@@ -3500,11 +3639,11 @@ Los bloques del perfil diferencian los datos personales, el segmento y la meta d
 
 La vista web muestra métricas, rachas y estado de servicios mediante bloques diferenciados. La adaptación móvil destaca la siguiente práctica y las sesiones recientes, conservando una lectura de resumen a detalle.
 
-**Web**
+**Mock-up de inicio (web)**
 
 <img src="assets/reused-202601/frontend/02-dashboard.png" alt="Mock-up de inicio: web" width="900">
 
-**Móvil**
+**Mock-up de inicio (móvil)**
 
 <img src="assets/ux/mockups/mobile-dashboard.png" alt="Mock-up de inicio: móvil" width="320">
 
@@ -3512,11 +3651,11 @@ La vista web muestra métricas, rachas y estado de servicios mediante bloques di
 
 La captura de Coach presenta los modos y las opciones de preparación del ensayo. La propuesta móvil distingue las selecciones y el material contextual mediante bloques de formulario, con una acción principal para continuar.
 
-**Web**
+**Mock-up de configuración y material (web)**
 
 <img src="assets/reused-202601/frontend/03-coach.png" alt="Mock-up de configuración y material: web" width="900">
 
-**Móvil**
+**Mock-up de configuración y material (móvil)**
 
 <img src="assets/ux/mockups/mobile-setup.png" alt="Mock-up de configuración y material: móvil" width="320">
 
@@ -3524,11 +3663,11 @@ La captura de Coach presenta los modos y las opciones de preparación del ensayo
 
 La propuesta diferencia el estado del micrófono, la explicación de privacidad y el control de consentimiento. El botón de inicio refleja si se han completado las condiciones necesarias para practicar.
 
-**Web**
+**Mock-up de audio y consentimiento (web)**
 
 <img src="assets/ux/mockups/web-microphone.png" alt="Mock-up de audio y consentimiento: web" width="900">
 
-**Móvil**
+**Mock-up de audio y consentimiento (móvil)**
 
 <img src="assets/ux/mockups/mobile-microphone.png" alt="Mock-up de audio y consentimiento: móvil" width="320">
 
@@ -3536,11 +3675,11 @@ La propuesta diferencia el estado del micrófono, la explicación de privacidad 
 
 La vista web presenta la grabación y la transcripción de la sesión. En móvil, el cronómetro y las señales mantienen una jerarquía visible, y los controles distinguen pausa, reanudación y finalización.
 
-**Web**
+**Mock-up de práctica en vivo (web)**
 
 <img src="assets/reused-202601/frontend/08-session-recording.png" alt="Mock-up de práctica en vivo: web" width="900">
 
-**Móvil**
+**Mock-up de práctica en vivo (móvil)**
 
 <img src="assets/ux/mockups/mobile-live.png" alt="Mock-up de práctica en vivo: móvil" width="320">
 
@@ -3548,11 +3687,11 @@ La vista web presenta la grabación y la transcripción de la sesión. En móvil
 
 El mensaje de procesamiento identifica el estado actual y orienta al estudiante sobre el siguiente paso. Las acciones de consulta o reintento se presentan según el resultado, conservando una distribución estable.
 
-**Web**
+**Mock-up de estado del análisis (web)**
 
 <img src="assets/ux/mockups/web-processing.png" alt="Mock-up de estado del análisis: web" width="900">
 
-**Móvil**
+**Mock-up de estado del análisis (móvil)**
 
 <img src="assets/ux/mockups/mobile-processing.png" alt="Mock-up de estado del análisis: móvil" width="320">
 
@@ -3560,11 +3699,11 @@ El mensaje de procesamiento identifica el estado actual y orienta al estudiante 
 
 La puntuación resume el desempeño y las dimensiones permiten consultar sus componentes. Los bloques de recomendaciones separan la observación de la acción sugerida; la adaptación móvil conserva ese orden antes de mostrar la evidencia.
 
-**Web**
+**Mock-up de reporte y evidencia (web)**
 
 <img src="assets/reused-202601/frontend/09-session-ai-feedback.png" alt="Mock-up de reporte y evidencia: web" width="900">
 
-**Móvil**
+**Mock-up de reporte y evidencia (móvil)**
 
 <img src="assets/ux/mockups/mobile-report.png" alt="Mock-up de reporte y evidencia: móvil" width="320">
 
@@ -3572,11 +3711,11 @@ La puntuación resume el desempeño y las dimensiones permiten consultar sus com
 
 Las sesiones se presentan mediante filas con título, datos de la práctica y acceso al reporte. En móvil, la separación entre filas y los controles de búsqueda ayudan a localizar una sesión sin perder la referencia de sus resultados.
 
-**Web**
+**Mock-up de historial y búsqueda (web)**
 
 <img src="assets/reused-202601/frontend/04-sessions.png" alt="Mock-up de historial y búsqueda: web" width="900">
 
-**Móvil**
+**Mock-up de historial y búsqueda (móvil)**
 
 <img src="assets/ux/mockups/mobile-history.png" alt="Mock-up de historial y búsqueda: móvil" width="320">
 
@@ -3584,11 +3723,11 @@ Las sesiones se presentan mediante filas con título, datos de la práctica y ac
 
 El gráfico utiliza etiquetas y series diferenciadas para comparar las prácticas. Las métricas de resumen y las acciones relacionadas se organizan alrededor del gráfico para facilitar su interpretación.
 
-**Web**
+**Mock-up de tendencias (web)**
 
 <img src="assets/ux/mockups/web-progress.png" alt="Mock-up de tendencias: web" width="900">
 
-**Móvil**
+**Mock-up de tendencias (móvil)**
 
 <img src="assets/ux/mockups/mobile-progress.png" alt="Mock-up de tendencias: móvil" width="320">
 
@@ -3596,11 +3735,11 @@ El gráfico utiliza etiquetas y series diferenciadas para comparar las práctica
 
 Las dos sesiones seleccionadas se identifican antes del resultado. Las diferencias disponibles y los mensajes de incompatibilidad utilizan bloques de información distintos, acompañados de explicaciones breves.
 
-**Web**
+**Mock-up de comparación (web)**
 
 <img src="assets/ux/mockups/web-compare.png" alt="Mock-up de comparación: web" width="900">
 
-**Móvil**
+**Mock-up de comparación (móvil)**
 
 <img src="assets/ux/mockups/mobile-compare.png" alt="Mock-up de comparación: móvil" width="320">
 
@@ -3608,11 +3747,11 @@ Las dos sesiones seleccionadas se identifican antes del resultado. Las diferenci
 
 Los ejercicios se presentan en tarjetas que reúnen la meta, el tiempo sugerido y el avance. La acción de preparar una práctica se destaca dentro del bloque correspondiente.
 
-**Web**
+**Mock-up de plan adaptativo (web)**
 
 <img src="assets/ux/mockups/web-plan.png" alt="Mock-up de plan adaptativo: web" width="900">
 
-**Móvil**
+**Mock-up de plan adaptativo (móvil)**
 
 <img src="assets/ux/mockups/mobile-plan.png" alt="Mock-up de plan adaptativo: móvil" width="320">
 
@@ -3620,11 +3759,11 @@ Los ejercicios se presentan en tarjetas que reúnen la meta, el tiempo sugerido 
 
 Las opciones de compartir y exportar se distinguen de la eliminación. La acción de borrado utiliza una presentación de atención y solicita confirmación; la vigencia del acceso y su revocación se muestran junto al permiso.
 
-**Web**
+**Mock-up de compartición, exportación y borrado (web)**
 
 <img src="assets/ux/mockups/web-privacy.png" alt="Mock-up de compartición, exportación y borrado: web" width="900">
 
-**Móvil**
+**Mock-up de compartición, exportación y borrado (móvil)**
 
 <img src="assets/ux/mockups/mobile-privacy.png" alt="Mock-up de compartición, exportación y borrado: móvil" width="320">
 
@@ -3632,11 +3771,11 @@ Las opciones de compartir y exportar se distinguen de la eliminación. La acció
 
 La presentación de lectura mantiene visibles la vigencia del acceso y el resumen del reporte. Las métricas y recomendaciones se ordenan con la misma jerarquía de la vista del estudiante, limitada al contenido compartido.
 
-**Web**
+**Mock-up de reporte de tutor (web)**
 
 <img src="assets/ux/mockups/web-shared.png" alt="Mock-up de reporte de tutor: web" width="900">
 
-**Móvil**
+**Mock-up de reporte de tutor (móvil)**
 
 <img src="assets/ux/mockups/mobile-shared.png" alt="Mock-up de reporte de tutor: móvil" width="320">
 
@@ -3644,11 +3783,11 @@ La presentación de lectura mantiene visibles la vigencia del acceso y el resume
 
 El control de contacto opcional se acompaña de una explicación breve. Los mensajes de seguridad se presentan en un bloque informativo separado para distinguirlos de las preferencias que el estudiante puede cambiar.
 
-**Web**
+**Mock-up de preferencias de contacto (web)**
 
 <img src="assets/ux/mockups/web-preferences.png" alt="Mock-up de preferencias de contacto: web" width="900">
 
-**Móvil**
+**Mock-up de preferencias de contacto (móvil)**
 
 <img src="assets/ux/mockups/mobile-preferences.png" alt="Mock-up de preferencias de contacto: móvil" width="320">
 
@@ -3666,11 +3805,11 @@ Las siguientes vistas muestran la respuesta de la interfaz ante permisos, conexi
 
 La interfaz mantiene deshabilitado el inicio de la práctica y explica cómo habilitar el micrófono para volver a comprobarlo.
 
-**Web**
+**Permiso denegado (web)**
 
 <img src="assets/ux/mockups/web-permission-denied.png" alt="Permiso denegado: web" width="900">
 
-**Móvil**
+**Permiso denegado (móvil)**
 
 <img src="assets/ux/mockups/mobile-permission-denied.png" alt="Permiso denegado: móvil" width="320">
 
@@ -3678,11 +3817,11 @@ La interfaz mantiene deshabilitado el inicio de la práctica y explica cómo hab
 
 La interfaz informa la interrupción y permite reanudar desde el punto conservado o finalizar con un resultado parcial.
 
-**Web**
+**Desconexión (web)**
 
 <img src="assets/ux/mockups/web-disconnected.png" alt="Desconexión: web" width="900">
 
-**Móvil**
+**Desconexión (móvil)**
 
 <img src="assets/ux/mockups/mobile-disconnected.png" alt="Desconexión: móvil" width="320">
 
@@ -3690,11 +3829,11 @@ La interfaz informa la interrupción y permite reanudar desde el punto conservad
 
 El mensaje explica que el análisis no pudo completarse y ofrece una acción para volver a intentarlo.
 
-**Web**
+**Fallo del análisis (web)**
 
 <img src="assets/ux/mockups/web-analysis-failed.png" alt="Fallo del análisis: web" width="900">
 
-**Móvil**
+**Fallo del análisis (móvil)**
 
 <img src="assets/ux/mockups/mobile-analysis-failed.png" alt="Fallo del análisis: móvil" width="320">
 
@@ -3702,11 +3841,11 @@ El mensaje explica que el análisis no pudo completarse y ofrece una acción par
 
 El reporte indica qué dimensiones no pueden evaluarse y ofrece una acción para volver a practicar. La puntuación global se muestra únicamente cuando existe evidencia suficiente.
 
-**Web**
+**Evidencia insuficiente (web)**
 
 <img src="assets/ux/mockups/web-insufficient-evidence.png" alt="Evidencia insuficiente: web" width="900">
 
-**Móvil**
+**Evidencia insuficiente (móvil)**
 
 <img src="assets/ux/mockups/mobile-insufficient-evidence.png" alt="Evidencia insuficiente: móvil" width="320">
 
@@ -3714,11 +3853,11 @@ El reporte indica qué dimensiones no pueden evaluarse y ofrece una acción para
 
 La interfaz explica la diferencia de modo o versión de rúbrica y solicita elegir sesiones compatibles antes de mostrar variaciones numéricas.
 
-**Web**
+**Comparación incompatible (web)**
 
 <img src="assets/ux/mockups/web-incompatible-comparison.png" alt="Comparación incompatible: web" width="900">
 
-**Móvil**
+**Comparación incompatible (móvil)**
 
 <img src="assets/ux/mockups/mobile-incompatible-comparison.png" alt="Comparación incompatible: móvil" width="320">
 
@@ -3726,11 +3865,11 @@ La interfaz explica la diferencia de modo o versión de rúbrica y solicita eleg
 
 La vista informa que el recurso no está disponible y bloquea el contenido del reporte compartido.
 
-**Web**
+**Enlace revocado (web)**
 
 <img src="assets/ux/mockups/web-revoked-link.png" alt="Enlace revocado: web" width="900">
 
-**Móvil**
+**Enlace revocado (móvil)**
 
 <img src="assets/ux/mockups/mobile-revoked-link.png" alt="Enlace revocado: móvil" width="320">
 
@@ -3738,11 +3877,11 @@ La vista informa que el recurso no está disponible y bloquea el contenido del r
 
 El mensaje confirma que la sesión ya no puede consultarse e informa que la eliminación de sus datos continúa en curso.
 
-**Web**
+**Purga pendiente (web)**
 
 <img src="assets/ux/mockups/web-purge-pending.png" alt="Purga pendiente: web" width="900">
 
-**Móvil**
+**Purga pendiente (móvil)**
 
 <img src="assets/ux/mockups/mobile-purge-pending.png" alt="Purga pendiente: móvil" width="320">
 
@@ -3860,7 +3999,7 @@ En el primer hito de TB1, el equipo Thropic consolidó la base de producto, requ
 
 Con el segundo hito de semana 7, esa base se extiende a diseño táctico y UX:
 
-- Los diez contextos tienen agregados, invariantes, puertos, casos de uso y persistencia propios; los diagramas diferencian frontera de modelo de agrupación de despliegue.
+- El diseño de los diez contextos identifica modelos, reglas y colaboraciones. La persistencia se define según la responsabilidad de cada contexto y los diagramas distinguen sus límites de la agrupación de servicios para el despliegue.
 - La finalización y el análisis se coordinan con confirmación de estado, versiones e idempotencia; los mecanismos deben verificarse durante implementación.
 - Los flujos web y móvil incluyen preparación, práctica, evidencia, progreso y privacidad, con estados explícitos de desconexión, insuficiencia de datos y purga pendiente.
 - Los wireframes, mock-ups y el prototipo navegable permiten revisar decisiones de interacción antes de integrar micrófono, IA y servicios; sus datos de ejemplo no prueban eficacia o rendimiento.
