@@ -42,7 +42,7 @@
 
 <br>
 
-**Septiembre, 2026**
+**Octubre, 2026**
 
 <br><br>
 
@@ -63,12 +63,24 @@
 | 0.7 | 19/09/2026 | Equipo Thropic | Complementación del Student Outcome con la trazabilidad de los aportes de cada integrante en el TB1. |
 | 0.8 | 19/09/2026 | Chi Cruzatt, Kevin Jorge | Desarrollo de la sección 4.3 (Software Architecture) y elaboración de los diagramas System Landscape, Context Level, Container Level y Deployment. |
 | 0.9 | 19/09/2026 | Equipo Thropic | Incorporación del avance de conclusiones y recomendaciones, bibliografía, anexos y evidencia de colaboración del TB1. |
+| 1.0 | 02/10/2026 | Edición asistida por Codex | Desarrollo del diseño táctico y UX del segundo hito de TB1; incorporación de modelos, diagramas, pantallas y prototipo web/móvil. Revisión del equipo y feedback docente pendientes. |
+| 1.1 | 02/10/2026 | Edición asistida por Codex | Ajuste de UX para conservar las pantallas del cliente Talki como base: retirada de seis mock-ups web duplicados, unificación visual de complementos y uso del cliente web como prototipo principal. |
+| 1.2 | 02/10/2026 | Edición asistida por Codex | Alineación de la paleta de colores y las tablas de las pantallas complementarias con la identidad visual de Talki en sus temas claro y oscuro. |
+| 1.3 | 02/10/2026 | Edición asistida por Codex | Presentación de wireframes, mock-ups y estados críticos mediante descripción e imágenes web/móvil dentro del informe. |
+| 1.4 | 02/10/2026 | Edición asistida por Codex | Revisión editorial de los capítulos V y VI, sustitución de rayas largas y acceso directo a los diseños de la landing desde el catálogo. |
+| 1.5 | 02/10/2026 | Edición asistida por Codex | Revisión de la redacción de diseño: tipografía, colores, componentes, navegación y prototipado; aclaración de las descripciones de modelos de dominio. |
+| 1.6 | 02/10/2026 | Edición asistida por Codex | Justificación de la identidad visual y simplificación de la paleta por función de diseño, sin referencias a archivos CSS. |
+| 1.7 | 02/10/2026 | Edición asistida por Codex | Revisión integral de V y VI: organización de capas por propósito, trazabilidad consolidada, diagramas de componentes corregidos y descripciones diferenciadas de wireframes y mock-ups. |
+| 1.8 | 02/10/2026 | Edición asistida por Codex | Retirada de las consultas de disponibilidad técnica de Interface Layer para centrar el diseño táctico en las operaciones del producto. |
+| 1.9 | 02/10/2026 | Edición asistida por Codex | Desarrollo de las explicaciones de cada capa, identificación de controladores y contratos, organización de repositorios y adaptadores, guías de estilo y navegación por plataforma y wireflows con pantallas web y móvil. |
+| 1.10 | 02/10/2026 | Edición asistida por Codex | Organización de Domain Layer por tipo de elemento, separación de comandos, consultas y coordinación de eventos, tablas de capas uniformes y rotulado de figuras web/móvil. |
+| 1.11 | 02/10/2026 | Edición asistida por Codex | Retirada de enlaces de fuentes editables, revisión de congruencia entre modelos y explicaciones, ajuste de datos de progreso y cuenta, y relación de las pantallas con el diseño táctico. |
 
 # Project Report Collaboration Insights
 
 Repositorio del informe: [talki-project-report](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report)
 
-La evidencia de colaboración del TB1 se mantiene en GitHub mediante los commits, ramas y pull requests del repositorio. El detalle de responsabilidades y calificaciones asignadas por el Team Leader se encuentra en el [Informe de Participación — Startup Thropic](https://docs.google.com/document/d/1-tnKLS9I_qJD4kkLwBUQB8QqxdgXBQbJcZ0smvAn1KM/edit).
+La evidencia de colaboración del TB1 se mantiene en GitHub mediante los commits, ramas y pull requests del repositorio. El detalle de responsabilidades y calificaciones asignadas por el Team Leader se encuentra en el [Informe de Participación: Startup Thropic](https://docs.google.com/document/d/1-tnKLS9I_qJD4kkLwBUQB8QqxdgXBQbJcZ0smvAn1KM/edit).
 
 | Integrante | Aporte principal registrado en TB1 | Evidencia |
 | --- | --- | --- |
@@ -77,6 +89,10 @@ La evidencia de colaboración del TB1 se mantiene en GitHub mediante los commits
 | Alejandro Daniel Oroncoy Almeyda | Especificación de requisitos y ADD. | Secciones 3.1–4.1.5. |
 | Werner Khalil Lang Nassi | Diseño estratégico basado en DDD. | Secciones 4.2–4.2.5. |
 | Kevin Jorge Chi Cruzatt | Software Architecture y sus cuatro diagramas. | Sección 4.3. |
+
+## Segundo hito de TB1: semana 7
+
+Esta revisión incorpora capítulos V y VI y sus fuentes/artefactos en la rama `development`, creada desde el avance consolidado en `develop`. La edición se realizó con asistencia de Codex a solicitud de Alejandro. La revisión del equipo y la sustentación de este hito están pendientes; sus aportes se incorporarán al registro individual con la evidencia correspondiente. El feedback docente de los capítulos previos sigue pendiente de incorporación.
 
 # Contenido
 
@@ -133,15 +149,98 @@ La evidencia de colaboración del TB1 se mantiene en GitHub mediante los commits
     - [4.3.3. Container Level Diagrams](#433-container-level-diagrams)
     - [4.3.4. Deployment Diagrams](#434-deployment-diagrams)
 - [Capítulo V: Tactical-Level Software Design](#capítulo-v-tactical-level-software-design)
-  - [5.X. Bounded Context: Nombre del Bounded Context](#5x-bounded-context-nombre-del-bounded-context)
-    - [5.X.1. Domain Layer](#5x1-domain-layer)
-    - [5.X.2. Interface Layer](#5x2-interface-layer)
-    - [5.X.3. Application Layer](#5x3-application-layer)
-    - [5.X.4. Infrastructure Layer](#5x4-infrastructure-layer)
-    - [5.X.5. Component Level Diagrams](#5x5-component-level-diagrams)
-    - [5.X.6. Code Level Diagrams](#5x6-code-level-diagrams)
-      - [5.X.6.1. Domain Layer Class Diagrams](#5x61-domain-layer-class-diagrams)
-      - [5.X.6.2. Database Design Diagram](#5x62-database-design-diagram)
+  - [Organización por capas](#organización-por-capas)
+  - [5.1. Bounded Context: Live Coaching](#51-bounded-context-live-coaching)
+    - [5.1.1. Domain Layer](#511-domain-layer)
+    - [5.1.2. Interface Layer](#512-interface-layer)
+    - [5.1.3. Application Layer](#513-application-layer)
+    - [5.1.4. Infrastructure Layer](#514-infrastructure-layer)
+    - [5.1.5. Bounded Context Software Architecture Component Level Diagrams](#515-bounded-context-software-architecture-component-level-diagrams)
+    - [5.1.6. Bounded Context Software Architecture Code Level Diagrams](#516-bounded-context-software-architecture-code-level-diagrams)
+      - [5.1.6.1. Bounded Context Domain Layer Class Diagrams](#5161-bounded-context-domain-layer-class-diagrams)
+      - [5.1.6.2. Bounded Context Database Design Diagram](#5162-bounded-context-database-design-diagram)
+  - [5.2. Bounded Context: Speech Analysis](#52-bounded-context-speech-analysis)
+    - [5.2.1. Domain Layer](#521-domain-layer)
+    - [5.2.2. Interface Layer](#522-interface-layer)
+    - [5.2.3. Application Layer](#523-application-layer)
+    - [5.2.4. Infrastructure Layer](#524-infrastructure-layer)
+    - [5.2.5. Bounded Context Software Architecture Component Level Diagrams](#525-bounded-context-software-architecture-component-level-diagrams)
+    - [5.2.6. Bounded Context Software Architecture Code Level Diagrams](#526-bounded-context-software-architecture-code-level-diagrams)
+      - [5.2.6.1. Bounded Context Domain Layer Class Diagrams](#5261-bounded-context-domain-layer-class-diagrams)
+      - [5.2.6.2. Bounded Context Database Design Diagram](#5262-bounded-context-database-design-diagram)
+  - [5.3. Bounded Context: Scoring & Feedback](#53-bounded-context-scoring--feedback)
+    - [5.3.1. Domain Layer](#531-domain-layer)
+    - [5.3.2. Interface Layer](#532-interface-layer)
+    - [5.3.3. Application Layer](#533-application-layer)
+    - [5.3.4. Infrastructure Layer](#534-infrastructure-layer)
+    - [5.3.5. Bounded Context Software Architecture Component Level Diagrams](#535-bounded-context-software-architecture-component-level-diagrams)
+    - [5.3.6. Bounded Context Software Architecture Code Level Diagrams](#536-bounded-context-software-architecture-code-level-diagrams)
+      - [5.3.6.1. Bounded Context Domain Layer Class Diagrams](#5361-bounded-context-domain-layer-class-diagrams)
+      - [5.3.6.2. Bounded Context Database Design Diagram](#5362-bounded-context-database-design-diagram)
+  - [5.4. Bounded Context: Practice Session Management](#54-bounded-context-practice-session-management)
+    - [5.4.1. Domain Layer](#541-domain-layer)
+    - [5.4.2. Interface Layer](#542-interface-layer)
+    - [5.4.3. Application Layer](#543-application-layer)
+    - [5.4.4. Infrastructure Layer](#544-infrastructure-layer)
+    - [5.4.5. Bounded Context Software Architecture Component Level Diagrams](#545-bounded-context-software-architecture-component-level-diagrams)
+    - [5.4.6. Bounded Context Software Architecture Code Level Diagrams](#546-bounded-context-software-architecture-code-level-diagrams)
+      - [5.4.6.1. Bounded Context Domain Layer Class Diagrams](#5461-bounded-context-domain-layer-class-diagrams)
+      - [5.4.6.2. Bounded Context Database Design Diagram](#5462-bounded-context-database-design-diagram)
+  - [5.5. Bounded Context: Progress & Adaptation](#55-bounded-context-progress--adaptation)
+    - [5.5.1. Domain Layer](#551-domain-layer)
+    - [5.5.2. Interface Layer](#552-interface-layer)
+    - [5.5.3. Application Layer](#553-application-layer)
+    - [5.5.4. Infrastructure Layer](#554-infrastructure-layer)
+    - [5.5.5. Bounded Context Software Architecture Component Level Diagrams](#555-bounded-context-software-architecture-component-level-diagrams)
+    - [5.5.6. Bounded Context Software Architecture Code Level Diagrams](#556-bounded-context-software-architecture-code-level-diagrams)
+      - [5.5.6.1. Bounded Context Domain Layer Class Diagrams](#5561-bounded-context-domain-layer-class-diagrams)
+      - [5.5.6.2. Bounded Context Database Design Diagram](#5562-bounded-context-database-design-diagram)
+  - [5.6. Bounded Context: Sharing & Retention](#56-bounded-context-sharing--retention)
+    - [5.6.1. Domain Layer](#561-domain-layer)
+    - [5.6.2. Interface Layer](#562-interface-layer)
+    - [5.6.3. Application Layer](#563-application-layer)
+    - [5.6.4. Infrastructure Layer](#564-infrastructure-layer)
+    - [5.6.5. Bounded Context Software Architecture Component Level Diagrams](#565-bounded-context-software-architecture-component-level-diagrams)
+    - [5.6.6. Bounded Context Software Architecture Code Level Diagrams](#566-bounded-context-software-architecture-code-level-diagrams)
+      - [5.6.6.1. Bounded Context Domain Layer Class Diagrams](#5661-bounded-context-domain-layer-class-diagrams)
+      - [5.6.6.2. Bounded Context Database Design Diagram](#5662-bounded-context-database-design-diagram)
+  - [5.7. Bounded Context: Gamification](#57-bounded-context-gamification)
+    - [5.7.1. Domain Layer](#571-domain-layer)
+    - [5.7.2. Interface Layer](#572-interface-layer)
+    - [5.7.3. Application Layer](#573-application-layer)
+    - [5.7.4. Infrastructure Layer](#574-infrastructure-layer)
+    - [5.7.5. Bounded Context Software Architecture Component Level Diagrams](#575-bounded-context-software-architecture-component-level-diagrams)
+    - [5.7.6. Bounded Context Software Architecture Code Level Diagrams](#576-bounded-context-software-architecture-code-level-diagrams)
+      - [5.7.6.1. Bounded Context Domain Layer Class Diagrams](#5761-bounded-context-domain-layer-class-diagrams)
+      - [5.7.6.2. Bounded Context Database Design Diagram](#5762-bounded-context-database-design-diagram)
+  - [5.8. Bounded Context: Identity & Access](#58-bounded-context-identity--access)
+    - [5.8.1. Domain Layer](#581-domain-layer)
+    - [5.8.2. Interface Layer](#582-interface-layer)
+    - [5.8.3. Application Layer](#583-application-layer)
+    - [5.8.4. Infrastructure Layer](#584-infrastructure-layer)
+    - [5.8.5. Bounded Context Software Architecture Component Level Diagrams](#585-bounded-context-software-architecture-component-level-diagrams)
+    - [5.8.6. Bounded Context Software Architecture Code Level Diagrams](#586-bounded-context-software-architecture-code-level-diagrams)
+      - [5.8.6.1. Bounded Context Domain Layer Class Diagrams](#5861-bounded-context-domain-layer-class-diagrams)
+      - [5.8.6.2. Bounded Context Database Design Diagram](#5862-bounded-context-database-design-diagram)
+  - [5.9. Bounded Context: AI Provider Gateway](#59-bounded-context-ai-provider-gateway)
+    - [5.9.1. Domain Layer](#591-domain-layer)
+    - [5.9.2. Interface Layer](#592-interface-layer)
+    - [5.9.3. Application Layer](#593-application-layer)
+    - [5.9.4. Infrastructure Layer](#594-infrastructure-layer)
+    - [5.9.5. Bounded Context Software Architecture Component Level Diagrams](#595-bounded-context-software-architecture-component-level-diagrams)
+    - [5.9.6. Bounded Context Software Architecture Code Level Diagrams](#596-bounded-context-software-architecture-code-level-diagrams)
+      - [5.9.6.1. Bounded Context Domain Layer Class Diagrams](#5961-bounded-context-domain-layer-class-diagrams)
+      - [5.9.6.2. Bounded Context Database Design Diagram](#5962-bounded-context-database-design-diagram)
+  - [5.10. Bounded Context: Notifications](#510-bounded-context-notifications)
+    - [5.10.1. Domain Layer](#5101-domain-layer)
+    - [5.10.2. Interface Layer](#5102-interface-layer)
+    - [5.10.3. Application Layer](#5103-application-layer)
+    - [5.10.4. Infrastructure Layer](#5104-infrastructure-layer)
+    - [5.10.5. Bounded Context Software Architecture Component Level Diagrams](#5105-bounded-context-software-architecture-component-level-diagrams)
+    - [5.10.6. Bounded Context Software Architecture Code Level Diagrams](#5106-bounded-context-software-architecture-code-level-diagrams)
+      - [5.10.6.1. Bounded Context Domain Layer Class Diagrams](#51061-bounded-context-domain-layer-class-diagrams)
+      - [5.10.6.2. Bounded Context Database Design Diagram](#51062-bounded-context-database-design-diagram)
+  - [Trazabilidad del diseño táctico](#trazabilidad-del-diseño-táctico)
 - [Capítulo VI: Solution UX Design](#capítulo-vi-solution-ux-design)
   - [6.1. Style Guidelines](#61-style-guidelines)
     - [6.1.1. General Style Guidelines](#611-general-style-guidelines)
@@ -947,7 +1046,7 @@ El lenguaje ubicuo (Ubiquitous Language) establece un vocabulario común y compa
 
 El *To-Be Scenario Mapping* representa la experiencia futura de los dos segmentos objetivo cuando incorporan Talki a su preparación académica y profesional. Los escenarios se construyen a partir de los hallazgos de las entrevistas: necesidad de practicar de manera autónoma, recibir retroalimentación objetiva, detectar muletillas, controlar volumen y silencios, cargar material propio y observar un progreso medible.
 
-### Segmento 1: Valeria Ríos — estudiantes de ciclos 1 al 5
+### Segmento 1: Valeria Ríos (estudiantes de ciclos 1 al 5)
 
 Valeria debe preparar una exposición académica, pero no dispone de un profesor o compañero que pueda escuchar todos sus ensayos. Con Talki puede configurar una práctica guiada, ensayar en un espacio privado y obtener recomendaciones concretas antes de exponer.
 
@@ -961,7 +1060,7 @@ Valeria debe preparar una exposición académica, pero no dispone de un profesor
 | Reporte | Revisa los resultados al terminar. | Entrega un *Voice Coach Score*, hallazgos concretos, ejemplos del discurso y acciones prioritarias. | “Ahora sé qué hice mal y cómo corregirlo.” | Convertir métricas en recomendaciones accionables. |
 | Iteración | Repite la sesión enfocándose en un punto débil. | Compara la nueva sesión con la anterior y muestra evolución. | Motivación por progreso visible. | Ciclo corto de práctica, feedback y repetición. |
 
-### Segmento 2: Rodrigo Sánchez — estudiantes de ciclos 6 al 10
+### Segmento 2: Rodrigo Sánchez (estudiantes de ciclos 6 al 10)
 
 Rodrigo se prepara para una entrevista de prácticas o una sustentación ante jurado. Necesita un entorno más exigente, preguntas contextualizadas y un análisis que vaya más allá de la pronunciación. Talki le permite cargar material, simular el escenario y evaluar tanto la forma como la claridad de sus respuestas.
 
@@ -1085,7 +1184,6 @@ Las siguientes **Technical Stories** representan restricciones sin interacción 
 | US37 | el análisis falla recuperablemente | consulta estado o reintenta | ve estado y evita reportes duplicados. |
 | US38 | el estudiante habla durante práctica | recibe una señal | obtiene coaching silenciable sin interrumpir captura. |
 
-
 ## 3.3. Impact Mapping
 
 El Impact Map conecta los objetivos de negocio con los actores, los cambios de comportamiento esperados y los entregables que los hacen posibles. El objetivo no es implementar todas las ideas, sino priorizar aquellas que aportan evidencia sobre adopción, práctica sostenida y mejora percibida.
@@ -1166,14 +1264,13 @@ La siguiente trazabilidad complementa el diagrama y asegura que cada meta SMART 
 4. Si el progreso se expresa mediante comparaciones válidas y recomendaciones adaptativas, aumentará la repetición de sesiones.
 5. Si la privacidad es visible y controlable, disminuirá la resistencia a grabarse y cargar material personal.
 
-
 ## 3.4. Product Backlog
 
 El Product Backlog conserva la identificación histórica del proyecto y añade las historias US29–US38. La priorización combina MoSCoW con *story points* como estimación relativa; estos valores deberán refinarse durante el Sprint Planning. El orden numérico prioriza la entrega de valor visible para el usuario; las Technical Stories son habilitadores transversales del MVP y se calendarizan junto con las historias de las que dependen.
 
 | Orden | ID | Título | Prioridad | SP | Dependencias | Entrega objetivo |
 |---:|---|---|:---:|---:|---|---|
-| 1 | US05 | Registrar una cuenta | Must | 5 | — | MVP |
+| 1 | US05 | Registrar una cuenta | Must | 5 | No aplica | MVP |
 | 2 | US06 | Iniciar sesión | Must | 5 | US05 | MVP |
 | 3 | US28 | Cerrar sesión | Must | 1 | US06 | MVP |
 | 4 | US09 | Crear una sesión | Must | 3 | US06 | MVP |
@@ -1207,10 +1304,10 @@ El Product Backlog conserva la identificación histórica del proyecto y añade 
 | 32 | US32 | Compartir temporalmente un reporte | Should | 5 | US15, US33 | Incremento 2 |
 | 33 | US35 | Mantener rachas y logros | Could | 5 | US20 | Incremento 3 |
 | 34 | US07 | Recuperar contraseña | Should | 3 | US05 | Incremento 3 |
-| 35 | US01 | Visualizar beneficios | Could | 2 | — | Incremento 3 |
-| 36 | US02 | Ver planes y precios | Could | 2 | — | Incremento 3 |
-| 37 | US03 | Ver testimonios | Could | 1 | — | Incremento 3 |
-| 38 | US04 | Enviar una consulta | Could | 2 | — | Incremento 3 |
+| 35 | US01 | Visualizar beneficios | Could | 2 | No aplica | Incremento 3 |
+| 36 | US02 | Ver planes y precios | Could | 2 | No aplica | Incremento 3 |
+| 37 | US03 | Ver testimonios | Could | 1 | No aplica | Incremento 3 |
+| 38 | US04 | Enviar una consulta | Could | 2 | No aplica | Incremento 3 |
 
 Las Technical Stories también son ítems del Product Backlog. Se ejecutan transversalmente desde el MVP y se mantienen visibles para que restricciones y decisiones de arquitectura sean planificables.
 
@@ -1218,10 +1315,10 @@ Las Technical Stories también son ítems del Product Backlog. Se ejecutan trans
 |---:|---|---|:---:|---:|---|---|
 | 39 | TS01 | Consentimiento verificable | Must | 3 | US29 | MVP |
 | 40 | TS02 | Audio efímero | Must | 3 | US12, US14 | MVP |
-| 41 | TS03 | Base tecnológica existente | Must | 5 | — | MVP |
-| 42 | TS04 | Trazabilidad versionada | Must | 3 | — | MVP |
+| 41 | TS03 | Base tecnológica existente | Must | 5 | No aplica | MVP |
+| 42 | TS04 | Trazabilidad versionada | Must | 3 | No aplica | MVP |
 | 43 | TS05 | Experiencia web en español | Must | 3 | US05, US09 | MVP |
-| 44 | TS06 | Presupuesto y plazo académico | Must | 2 | — | MVP |
+| 44 | TS06 | Presupuesto y plazo académico | Must | 2 | No aplica | MVP |
 
 ### Criterio de priorización
 
@@ -1240,12 +1337,11 @@ Una historia puede ingresar a un sprint cuando posee actor, beneficio, criterios
 
 Una historia se considera terminada cuando está integrada, cumple los criterios de aceptación, cuenta con pruebas pertinentes, no introduce defectos críticos, actualiza contratos o documentación afectados y dispone de evidencia para el Sprint Review.
 
-
 # Capítulo IV: Strategic-Level Software Design
 
 ## 4.1. Strategic-Level Attribute-Driven Design
 
-El diseño estratégico de Talki utiliza Attribute-Driven Design (ADD) para transformar la funcionalidad primaria, los atributos de calidad y las restricciones en decisiones arquitectónicas justificadas. En esta etapa se diseña el sistema como un todo; la descomposición táctica de cada contexto se desarrollará en capítulos posteriores.
+El diseño estratégico de Talki utiliza Attribute-Driven Design (ADD) para transformar la funcionalidad primaria, los atributos de calidad y las restricciones en decisiones arquitectónicas justificadas. En esta etapa se diseña el sistema como un todo; la descomposición táctica de cada contexto se desarrolla en el capítulo V de esta revisión.
 
 ### 4.1.1. Design Purpose
 
@@ -1271,7 +1367,7 @@ El propósito del diseño es definir una arquitectura capaz de soportar una expe
 | Soporte y operaciones | Recuperación ante fallos, trazabilidad, alertas y diagnóstico sin exponer datos privados. |
 | Universidad o aliado institucional | Seguridad, gobernanza, disponibilidad y posibilidad de integración futura. |
 
-**Fuera del alcance de esta iteración:** definición táctica completa de agregados, clases, repositorios y esquemas de cada Bounded Context; implementación de una aplicación móvil nativa; evaluación clínica de ansiedad; y decisiones comerciales definitivas de facturación institucional.
+**Fuera del alcance de la primera iteración (capítulo IV):** definición táctica completa de agregados, clases, repositorios y esquemas de cada Bounded Context; implementación de una aplicación móvil nativa; evaluación clínica de ansiedad; y decisiones comerciales definitivas de facturación institucional.
 
 ### 4.1.2. Attribute-Driven Design Inputs
 
@@ -1291,7 +1387,6 @@ Las historias primarias se seleccionan por su relevancia para el valor del negoc
 | PF-06 | US15, US16, US17, US18, US19, US26, US37 | Procesar métricas, puntuación, recomendaciones y estado del análisis. | Favorece pipeline asíncrono, idempotencia, trazabilidad y consistencia eventual. |
 | PF-07 | US20, US21, US22, US35, US36 | Mantener historial, comparación, engagement y recomendaciones adaptativas. | Requiere modelos de lectura, versionado de métricas y procesamiento de evolución. |
 | PF-08 | US27, US32, US33 | Exportar, compartir y eliminar información bajo control del usuario. | Define permisos temporales, revocación, retención y propagación de borrado. |
-
 
 #### 4.1.2.2. Quality Attribute Scenarios
 
@@ -1413,7 +1508,7 @@ La siguiente matriz conserva la estructura de refinamiento ADD: cada fila conect
 | QAS-AVA-01 y QAS-OBS-01: caída y diagnóstico | BG-01, BG-05 | Disponibilidad, resiliencia, observabilidad | El proveedor no responde o soporte recibe una sesión fallida. | Proveedor IA o agente de soporte. | Sesión activa o producción. | Adaptador IA, orquestador, sesión, logs y trazas. | Evita cascada, conserva estado y correlaciona la causa. | Detección ≤ 10 s; componente identificado ≤ 15 min. | ¿Qué nivel de servicio ofrece el proveedor? | Desconexión prolongada; permitir cierre seguro o resultado parcial etiquetado. |
 | QAS-MOD-01 y QAS-INT-01: evolución | BG-04 | Modificabilidad, interoperabilidad | Se solicita el modo debate o un proveedor alterno. | Equipo de producto. | Evolución planificada. | Catálogo de modos, rúbricas, orquestador y adaptador IA. | Incorpora configuración/adaptador sin cambiar el ciclo central. | Modo ≤ 2 persona-días; proveedor equivalente ≤ 5 persona-días y suite contractual aprobada. | ¿Qué capacidades son realmente comunes entre proveedores? | Capacidades exclusivas; declararlas opcionales y aislar extensiones. |
 
-#### Refinamiento QAS-PER-01 — Latencia del coaching en vivo
+#### Refinamiento QAS-PER-01: Latencia del coaching en vivo
 
 | Elemento | Refinamiento |
 |---|---|
@@ -1424,7 +1519,7 @@ La siguiente matriz conserva la estructura de refinamiento ADD: cada fila conect
 | Verificación | Prueba de carga con la concurrencia objetivo aprobada para el piloto, audio simulado y medición p50/p95/p99; contrastar el objetivo inicial p95 ≤ 2 s y tasa de error < 1 %. |
 | Riesgo residual | Latencia variable del proveedor. Mitigación: timeout, circuit breaker, aviso de degradación y métricas separadas entre latencia interna y externa. |
 
-#### Refinamiento QAS-REL-01 — Idempotencia del pipeline
+#### Refinamiento QAS-REL-01: Idempotencia del pipeline
 
 | Elemento | Refinamiento |
 |---|---|
@@ -1435,7 +1530,7 @@ La siguiente matriz conserva la estructura de refinamiento ADD: cada fila conect
 | Verificación | Publicar el mismo evento diez veces, reiniciar consumidores durante el procesamiento y comprobar un único resultado por `session_id + analysis_version`. |
 | Riesgo residual | Eventos fuera de orden. Mitigación: versión, timestamp, máquina de estados y rechazo o espera de transiciones inválidas. |
 
-#### Refinamiento QAS-SEC-01 y QAS-PRI-01 — Seguridad y privacidad
+#### Refinamiento QAS-SEC-01 y QAS-PRI-01: Seguridad y privacidad
 
 | Elemento | Refinamiento |
 |---|---|
@@ -1446,7 +1541,7 @@ La siguiente matriz conserva la estructura de refinamiento ADD: cada fila conect
 | Verificación | Pruebas de autorización horizontal, acceso con otro usuario, revocación de enlace, eliminación propagada y revisión automatizada de PII/secretos en logs. |
 | Riesgo residual | El proveedor externo procesa voz durante la sesión. Mitigación: consentimiento informado, configuración contractual de no retención cuando exista y envío exclusivo de datos necesarios. |
 
-#### Refinamiento QAS-MOD-01 y QAS-INT-01 — Nuevos modos y proveedores
+#### Refinamiento QAS-MOD-01 y QAS-INT-01: Nuevos modos y proveedores
 
 | Elemento | Refinamiento |
 |---|---|
@@ -1457,7 +1552,7 @@ La siguiente matriz conserva la estructura de refinamiento ADD: cada fila conect
 | Verificación | Implementar un modo “debate” sin modificar el ciclo de sesión; sustituir el adaptador por un fake o segundo proveedor y ejecutar la misma suite contractual. |
 | Riesgo residual | Funciones exclusivas del proveedor no encajan en el contrato común. Mitigación: capacidades opcionales declaradas y extensiones aisladas. |
 
-#### Refinamiento QAS-AVA-01 y QAS-OBS-01 — Recuperación y diagnóstico
+#### Refinamiento QAS-AVA-01 y QAS-OBS-01: Recuperación y diagnóstico
 
 | Elemento | Refinamiento |
 |---|---|
@@ -1510,7 +1605,7 @@ El tablero se organizó sobre una línea de tiempo infinita (unbounded timeline)
 
 #### Fase 1: Inventario y ordenamiento de eventos de dominio
 
-El equipo partió de los momentos de mayor valor —obtener feedback del ensayo y ver progreso— y en paralelo escribió eventos de dominio en notas naranjas, primero sin orden y luego sobre la línea de tiempo. Los eventos se redactaron en español, en pasado y en lenguaje de negocio, conservando la equivalencia con el glosario de la sección 2.4. La siguiente tabla resume los eventos representativos por tramo del flujo:
+El equipo partió de los momentos de mayor valor, obtener feedback del ensayo y ver progreso, y en paralelo escribió eventos de dominio en notas naranjas, primero sin orden y luego sobre la línea de tiempo. Los eventos se redactaron en español, en pasado y en lenguaje de negocio, conservando la equivalencia con el glosario de la sección 2.4. La siguiente tabla resume los eventos representativos por tramo del flujo:
 
 | Tramo del flujo | Eventos de dominio identificados |
 |---|---|
@@ -1561,14 +1656,14 @@ Al cierre quedaron ordenados los eventos del flujo completo, el puente entre el 
 
 #### Técnica aplicada
 
-El equipo combinó dos de las técnicas propuestas: **look-for-pivotal-events** como método principal —porque los cinco eventos pivote delimitan con claridad los cambios de estado entre partes del proceso— y **start-with-value** como verificación, comprobando que las partes del dominio con mayor valor para el negocio (el coaching en vivo y el análisis del discurso con IA) quedaran dentro de fronteras propias y protegidas. La sesión de descubrimiento se realizó sobre el mismo tablero de Miro, duplicando el EventStorm consolidado para poder comparar los cambios progresivos; su duración fue menor a dos horas.
+El equipo combinó dos de las técnicas propuestas: **look-for-pivotal-events** como método principal, porque los cinco eventos pivote delimitan con claridad los cambios de estado entre partes del proceso, y **start-with-value** como verificación, comprobando que las partes del dominio con mayor valor para el negocio (el coaching en vivo y el análisis del discurso con IA) quedaran dentro de fronteras propias y protegidas. La sesión de descubrimiento se realizó sobre el mismo tablero de Miro, duplicando el EventStorm consolidado para poder comparar los cambios progresivos; su duración fue menor a dos horas.
 
 #### Proceso sobre el EventStorm
 
 1. **Marcado de eventos pivote.** Se rodearon los cinco eventos pivote y se preguntó, para cada uno: ¿qué partes del sistema deben reaccionar y con qué lenguaje propio?
 2. **Agrupación por políticas.** Cada política lila se adscribió al evento que la dispara, formando clusters naturales de eventos, comandos y reglas que cambian juntos.
 3. **Verificación de lenguaje consistente.** Dentro de cada cluster se comprobó que los términos se usaran con un solo significado. Cuando un término (por ejemplo, "sesión") significaba cosas distintas a ambos lados de una frontera, la frontera se mantuvo.
-4. **Verificación start-with-value.** Se confirmó que el núcleo de valor —analizar la oratoria y retroalimentarla— no quedara diluido en un contexto genérico de "IA".
+4. **Verificación start-with-value.** Se confirmó que el núcleo de valor, analizar la oratoria y retroalimentarla, no quedara diluido en un contexto genérico de "IA".
 5. **Trazado de fronteras candidatas.** Se dibujaron polígonos alrededor de cada cluster y se nombraron.
 6. **Crítica.** Se cuestionó cada frontera: ¿es fragmentación innecesaria para un equipo de cinco personas? ¿los clusters cambian por razones distintas?
 
@@ -1599,7 +1694,7 @@ La decisión deliberada fue **no** crear un contexto por cada tabla o entidad, y
 
 Para visualizar cómo deben colaborar los bounded contexts, el equipo aplicó **Domain Storytelling**: cada escenario se narra como una secuencia numerada de frases con la estructura *actor → actividad → objeto de trabajo*, y cada actividad se asigna al bounded context que la ejecuta. Las sesiones se realizaron sobre el tablero de Miro con la plantilla de Domain Storytelling (actores como figuras, actividades como flechas numeradas y objetos de trabajo como documentos); como alternativa de detalle, el equipo dispone del Domain Storytelling Tool (domainstorytelling.org), que exporta los mismos diagramas en formato intercambiable. Se modelaron tres casos que cubren los dos segmentos objetivo y el bloque de privacidad.
 
-#### DS-01: Primera práctica guiada (segmento 1 — Valeria)
+#### DS-01: Primera práctica guiada (segmento 1: Valeria)
 
 | # | Actor | Actividad | Objeto de trabajo | Bounded context ejecutor |
 |---:|---|---|---|---|
@@ -1617,7 +1712,7 @@ Para visualizar cómo deben colaborar los bounded contexts, el equipo aplicó **
 
 ![Domain Storytelling DS-01: colaboración de bounded contexts en la primera práctica guiada](assets/images/domain-storytelling/ds-01-primera-practica.png)
 
-#### DS-02: Simulación contextualizada (segmento 2 — Rodrigo)
+#### DS-02: Simulación contextualizada (segmento 2: Rodrigo)
 
 | # | Actor | Actividad | Objeto de trabajo | Bounded context ejecutor |
 |---:|---|---|---|---|
@@ -1648,11 +1743,11 @@ Para visualizar cómo deben colaborar los bounded contexts, el equipo aplicó **
 
 ![Domain Storytelling DS-03: compartición temporal, revocación y eliminación bajo control del propietario](assets/images/domain-storytelling/ds-03-compartir-revocar.png)
 
-Los tres flujos confirmaron las fronteras: el material de contexto viaja de Practice Session Management hacia la pasarela sin que Live Coaching conozca su formato interno; el consentimiento actúa como compuerta previa a la captura sin consultas en línea repetidas; y la revocación se propaga por eventos, no por llamadas sincrónicas, evitando acoplar la privacidad a la disponibilidad de otros contextos.
+Los tres flujos confirmaron las fronteras: el material de contexto viaja de Practice Session Management hacia la pasarela sin que Live Coaching conozca su formato interno y el consentimiento actúa como compuerta previa a la captura. Sharing & Retention invalida el permiso antes de responder a la revocación; después comunica el cambio por eventos a los demás contextos, manteniendo el bloqueo de nuevas consultas independiente de la entrega de avisos.
 
 ### 4.2.4. Bounded Context Canvases
 
-Cada canvas se elaboró siguiendo un proceso iterativo con seis pasos: (1) **Context Overview Definition** — propósito y clasificación estratégica; (2) **Business Rules Distillation & Ubiquitous Language Capture** — reglas de negocio esenciales y glosario propio; (3) **Capability Analysis** — capacidades que el contexto ofrece; (4) **Capability Layering**, cuando aplica — organización de capacidades en capas (núcleo, soporte, adaptación); (5) **Dependencies Capture** — de qué contextos depende y quiénes dependen de él; y (6) **Design Critique** — revisión crítica que validó o ajustó la frontera. Los canvas se presentan en orden de importancia para el negocio, empezando por el core.
+Cada canvas se elaboró siguiendo un proceso iterativo con seis pasos: (1) **Context Overview Definition**: propósito y clasificación estratégica; (2) **Business Rules Distillation & Ubiquitous Language Capture**: reglas de negocio esenciales y glosario propio; (3) **Capability Analysis**: capacidades que el contexto ofrece; (4) **Capability Layering**, cuando aplica: organización de capacidades en capas (núcleo, soporte, adaptación); (5) **Dependencies Capture**: de qué contextos depende y quiénes dependen de él; y (6) **Design Critique**: revisión crítica que validó o ajustó la frontera. Los canvas se presentan en orden de importancia para el negocio, empezando por el core.
 
 #### 1. Live Coaching (Coaching en Vivo)
 
@@ -1709,7 +1804,7 @@ Cada canvas se elaboró siguiendo un proceso iterativo con seis pasos: (1) **Con
 | Eventos publicados | `Borrador de Sesión Creado`, `Material de Contexto Cargado`, `Sesión Preparada`, `Sesión Recuperada`, veredicto de validez. |
 | Eventos consumidos | `Cuenta Registrada` / `Consentimiento Otorgado` (Identity & Access). |
 | Reglas de negocio | No se inicia sin consentimiento y prueba de audio; el borrador es cancelable; la validez se declara una vez y los consumidores la respetan (hot spot resuelto en 4.2.1). |
-| Dependencias | Aguas arriba: Identity & Access (Conformist). Aguas abajo: Live Coaching, Speech Analysis y Gamification (Customer/Supplier — consumen sus eventos). |
+| Dependencias | Aguas arriba: Identity & Access (Conformist). Aguas abajo: Live Coaching, Speech Analysis y Gamification (Customer/Supplier: consumen sus eventos). |
 | Crítica de diseño | La política de validez se mantiene aquí y se publica como hecho, evitando que análisis o gamificación reimplementen criterios divergentes. |
 
 #### 5. Progress & Adaptation (Progreso y Adaptación)
@@ -1763,7 +1858,7 @@ Cada canvas se elaboró siguiendo un proceso iterativo con seis pasos: (1) **Con
 | Lenguaje ubicuo | Cuenta, token de acceso, refresh rotativo, consentimiento verificable, propiedad del recurso. |
 | Capacidades clave | Registrar y verificar cuentas (US05); autenticar y revocar sesiones (US06, US28); gestionar perfil (US08); registrar consentimiento con versión aceptada (TS01); validar identidad y propiedad. |
 | Eventos publicados | `Cuenta Registrada`, `Consentimiento Otorgado`, `Consentimiento Revocado`. |
-| Eventos consumidos | — (es el origen de la cadena de confianza). |
+| Eventos consumidos | Ninguno; es el origen de la cadena de confianza. |
 | Reglas de negocio | Los errores de autenticación no revelan qué credencial falló; el consentimiento registra la versión aceptada y condiciona todo procesamiento posterior. |
 | Dependencias | Aguas arriba de todos: expone un Open Host Service de validación de identidad; los demás contextos son Conformist a su modelo de claims. |
 | Crítica de diseño | El consentimiento vive aquí como registro verificable (quién, qué, cuándo, versión); la ejecución de la privacidad (compartir, revocar, borrar) pertenece a Sharing & Retention. |
@@ -1838,10 +1933,9 @@ El equipo evaluó explícitamente un **Shared Kernel** de definiciones de métri
 
 ![Context map final de Talki con patrones DDD entre bounded contexts](assets/images/context-mapping/context-map.png)
 
-
 #### Conclusión del context mapping
 
-El mapa resultante protege tres propiedades: (1) el **core** (Live Coaching, Speech Analysis, Scoring & Feedback) solo depende de contratos publicados y de una pasarela con Anti-Corruption Layer, nunca de detalles de proveedores ni de contextos genéricos; (2) la **privacidad** opera por eventos, de modo que revocar o eliminar no depende de la disponibilidad de otros contextos; y (3) la **evolución** —nuevos modos, rúbricas o proveedores— queda confinada a un contexto por tipo de cambio. Este mapa es el insumo directo de los diagramas C4 de la sección 4.3 y de la descomposición táctica del capítulo V.
+El mapa resultante protege tres propiedades: (1) el **core** (Live Coaching, Speech Analysis, Scoring & Feedback) solo depende de contratos publicados y de una pasarela con Anti-Corruption Layer, nunca de detalles de proveedores ni de contextos genéricos; (2) la **privacidad** opera por eventos, de modo que revocar o eliminar no depende de la disponibilidad de otros contextos; y (3) la **evolución**, que comprende nuevos modos, rúbricas o proveedores, queda confinada a un contexto por tipo de cambio. Este mapa es el insumo directo de los diagramas C4 de la sección 4.3 y de la descomposición táctica del capítulo V.
 
 ## 4.3. Software Architecture
 
@@ -1861,75 +1955,99 @@ El diagrama de contexto detalla las personas y sistemas de software que se comun
 
 El diagrama de contenedores descompone a Talki en sus bloques desplegables (aplicaciones, servicios y almacenes de datos), mostrando cómo se comunican entre sí para entregar la funcionalidad del sistema.
 
-![Diagrama de Contenedores de Talki](assets/images/DiagramsUML/conainer.png)
+Para el segundo hito se refina la vista inicial: se mantiene React/Flutter y los módulos Java, se representa RabbitMQ y se explicita ownership de datos por contexto. Compartir infraestructura PostgreSQL no permite acceso a tablas de otro contexto. La agrupación de paquetes no obliga a desplegar diez procesos desde el piloto.
+
+![Diagrama de Contenedores refinado de Talki](assets/diagrams/tactical/container-refinement.png)
+
+[Vista del primer hito](assets/images/DiagramsUML/conainer.png)
 
 ### 4.3.4. Deployment Diagrams
 
 El diagrama de despliegue representa la infraestructura sobre la que se ejecutan los contenedores de Talki, indicando los nodos de ejecución y la ubicación de cada componente en el entorno productivo.
 
-![Diagrama de Despliegue de Talki](assets/images/DiagramsUML/deploy.png)
+La vista refinada es un **despliegue propuesto**, no evidencia de infraestructura en ejecución. Incluye RabbitMQ en el entorno Railway, HTTPS/WSS para ambos clientes y conexión PostgreSQL con TLS a Supabase. El almacenamiento de material y proveedor de correo se muestran como adaptadores pendientes de configurar. Firebase no se asume como dependencia del flujo: su uso requiere una decisión posterior específica.
+
+![Diagrama de Despliegue refinado de Talki](assets/diagrams/tactical/deployment-refinement.png)
+
+[Vista del primer hito](assets/images/DiagramsUML/deploy.png)
 
 # Capítulo V: Tactical-Level Software Design
 
-> La siguiente estructura se repite para cada Bounded Context identificado en el proyecto.
+El diseño táctico describe los elementos que forman cada bounded context de Talki y la responsabilidad de sus capas. Este capítulo desarrolla los diez contextos identificados en el capítulo IV mediante sus modelos, operaciones, componentes y datos.
 
-## 5.X. Bounded Context: Nombre del Bounded Context
+Los componentes descritos combinan la estructura de los servicios de Talki con el modelo previsto para consentimiento, recuperación, versionado, compartición y eliminación. Los elementos identificados como propuestos expresan decisiones de diseño que requieren implementación e integración. Los diagramas presentan el modelo de la solución y sus colaboraciones, no una transcripción literal de todos los archivos de código.
 
-### 5.X.1. Domain Layer
+Cada contexto mantiene una responsabilidad de negocio. Los servicios pueden agrupar capacidades relacionadas sin convertir cada contexto en un proceso de despliegue independiente.
 
-### 5.X.2. Interface Layer
+## Organización por capas
 
-### 5.X.3. Application Layer
+| Capa | Responsabilidad |
+| --- | --- |
+| Domain Layer | Representa los conceptos del negocio y sus reglas. |
+| Interface Layer | Recibe solicitudes y eventos, y presenta las operaciones del contexto. |
+| Application Layer | Coordina los casos de uso y las colaboraciones necesarias para ejecutarlos. |
+| Infrastructure Layer | Implementa el almacenamiento y la comunicación con otros servicios y proveedores. |
 
-### 5.X.4. Infrastructure Layer
+Los datos permanecen bajo responsabilidad del contexto que los administra. Las relaciones internas se conservan en su propia base y los identificadores de otros contextos se utilizan como referencias. Los servicios que procesan información sin almacenarla permanentemente no requieren una base de negocio propia.
 
-### 5.X.5. Component Level Diagrams
+Los diagramas de componentes resumen el recorrido de la información entre capas. Las relaciones etiquetadas como “implementa” identifican el adaptador que cumple un contrato de integración.
 
-### 5.X.6. Code Level Diagrams
+## 5.1. Bounded Context: Live Coaching
 
-#### 5.X.6.1. Domain Layer Class Diagrams
+## 5.2. Bounded Context: Speech Analysis
 
-#### 5.X.6.2. Database Design Diagram
+## 5.3. Bounded Context: Scoring & Feedback
+
+## 5.4. Bounded Context: Practice Session Management
+
+## 5.5. Bounded Context: Progress & Adaptation
+
+## 5.6. Bounded Context: Sharing & Retention
+
+## 5.7. Bounded Context: Gamification
+
+## 5.8. Bounded Context: Identity & Access
+
+## 5.9. Bounded Context: AI Provider Gateway
+
+## 5.10. Bounded Context: Notifications
+
+## Trazabilidad del diseño táctico
+
+La siguiente tabla relaciona cada contexto con las historias de usuario, decisiones de arquitectura y escenarios de calidad definidos en los capítulos anteriores.
+
+| Contexto | Requisitos y decisiones relacionados |
+| --- | --- |
+| 5.1. Live Coaching | US12–US14, US31, US34, US38; ADD-03, ADD-06, ADD-08, ADD-10, ADD-12; QAS-PER-01, QAS-AVA-01 |
+| 5.2. Speech Analysis | US16–US18, US37 y métricas de US15; ADD-04–ADD-08, ADD-10, ADD-14; QAS-PER-02, QAS-REL-01 |
+| 5.3. Scoring & Feedback | US15, US19, US26, US37; ADD-05, ADD-07, ADD-11, ADD-14; C-09, QAS-REL-01 |
+| 5.4. Practice Session Management | US09–US14, US23–US25, US29, US30, US34; ADD-03–ADD-05, ADD-09, ADD-11; QAS-AVA-01, QAS-USA-01 |
+| 5.5. Progress & Adaptation | US20–US22, US24, US36; ADD-05, ADD-07, ADD-11; C-09, QAS-REL-01 |
+| 5.6. Sharing & Retention | US27, US32, US33; TS02; ADD-08, ADD-09, ADD-13; QAS-SEC-01, QAS-PRI-01 |
+| 5.7. Gamification | US35; ADD-05, ADD-07, ADD-11; QAS-REL-01 |
+| 5.8. Identity & Access | US05–US08, US23, US28, US29; TS01; ADD-02, ADD-09, ADD-13; QAS-SEC-01 |
+| 5.9. AI Provider Gateway | Habilita US12, US17–US19, US30, US31, US38; TS02; ADD-06, ADD-08, ADD-10, ADD-12, ADD-14; QAS-INT-01, QAS-PER-01 |
+| 5.10. Notifications | Avisos de evaluación y logro: US15, US35. Ampliaciones de cuenta y privacidad: US05, US07, US32, US33; ADD-04, ADD-05, ADD-10, ADD-13; QAS-REL-01 |
 
 # Capítulo VI: Solution UX Design
 
+El diseño de experiencia de usuario organiza las tareas de Valeria, estudiante de ciclos iniciales, y Rodrigo, estudiante de ciclos superiores, en un recorrido de preparación, práctica y revisión del desempeño. Las versiones web y móvil comparten los mismos criterios de navegación, privacidad y presentación del feedback, con una distribución adaptada al espacio de cada dispositivo.
+
+Las pantallas de acceso, inicio, Coach, sesiones y feedback del cliente web de Talki sirven como referencia visual. Los wireframes definen la estructura de las pantallas y los mock-ups desarrollan su apariencia. Las adaptaciones móviles y las funciones complementarias se presentan como propuestas de diseño; los datos mostrados son ejemplos utilizados para ilustrar la interacción.
+
 ## 6.1. Style Guidelines
-
-### 6.1.1. General Style Guidelines
-
-### 6.1.2. Web, Mobile and Devices Style Guidelines
 
 ## 6.2. Information Architecture
 
-### 6.2.1. Organization Systems
-
-### 6.2.2. Labeling Systems
-
-### 6.2.3. SEO Tags and Meta Tags
-
-### 6.2.4. Searching Systems
-
-### 6.2.5. Navigation Systems
-
 ## 6.3. Landing Page UI Design
 
-### 6.3.1. Landing Page Wireframe
-
-### 6.3.2. Landing Page Mock-up
-
 ## 6.4. Applications UX/UI Design
-
-### 6.4.1. Applications Wireframes
-
-### 6.4.2. Applications Wireflow Diagrams
-
-### 6.4.3. Applications Mock-ups
-
-### 6.4.4. Applications User Flow Diagrams
 
 ## 6.5. Applications Prototyping
 
 # Capítulo VII: Software Product Implementation, Validation & Deployment
+
+Este capítulo corresponde a los hitos posteriores de implementación y validación. Se conserva la estructura del formato oficial; este avance de semana 7 no presenta sprints ejecutados, pruebas de producto, despliegues, entrevistas de validación ni videos que todavía no existen. El prototipo UX de 6.5 es evidencia de diseño, no de un producto integrado. La siguiente estructura se completará con evidencia real en esos hitos.
 
 ## 7.1. Software Configuration Management
 
@@ -1975,7 +2093,7 @@ El diagrama de despliegue representa la infraestructura sobre la que se ejecutan
 
 ## Conclusiones
 
-Al cierre del TB1, el equipo Thropic consolidó la base de producto, requisitos y diseño estratégico de Talki para atender la práctica de comunicación oral de estudiantes universitarios.
+En el primer hito de TB1, el equipo Thropic consolidó la base de producto, requisitos y diseño estratégico de Talki para atender la práctica de comunicación oral de estudiantes universitarios.
 
 - La investigación de usuarios, las entrevistas y los artefactos de needfinding permitieron diferenciar dos segmentos con necesidades complementarias: práctica guiada y feedback para estudiantes de ciclos iniciales, y simulación contextualizada para estudiantes de ciclos superiores.
 - Los escenarios To-Be, las user stories, el Impact Mapping y el Product Backlog conectan los hallazgos de investigación con funcionalidades priorizadas, criterios de aceptación y metas de producto verificables.
@@ -1983,15 +2101,24 @@ Al cierre del TB1, el equipo Thropic consolidó la base de producto, requisitos 
 - El diseño DDD identificó bounded contexts, mensajes de dominio y relaciones de integración que delimitan las responsabilidades de Talki antes del diseño táctico.
 - Los diagramas System Landscape, Context Level, Container Level y Deployment completan la vista arquitectónica de alto nivel del primer entregable.
 
+Con el segundo hito de semana 7, esa base se extiende a diseño táctico y UX:
+
+- El diseño de los diez contextos identifica modelos, reglas y colaboraciones. La persistencia se define según la responsabilidad de cada contexto y los diagramas distinguen sus límites de la agrupación de servicios para el despliegue.
+- La finalización y el análisis se coordinan con confirmación de estado, versiones e idempotencia; los mecanismos deben verificarse durante implementación.
+- Los flujos web y móvil incluyen preparación, práctica, evidencia, progreso y privacidad, con estados explícitos de desconexión, insuficiencia de datos y purga pendiente.
+- Los wireframes, mock-ups y el prototipo navegable permiten revisar decisiones de interacción antes de integrar micrófono, IA y servicios; sus datos de ejemplo no prueban eficacia o rendimiento.
+
 ## Recomendaciones
 
 - Validar las historias priorizadas y los criterios de aceptación con estudiantes y docentes antes de iniciar la implementación.
 - Mantener la trazabilidad entre los drivers ADD, los bounded contexts y los diagramas de arquitectura cuando se incorporen nuevas decisiones de diseño.
-- Representar explícitamente RabbitMQ dentro del entorno Railway y los canales de comunicación correspondientes cuando se refine el diagrama de despliegue en el siguiente hito.
+- Revisar el despliegue refinado de 4.3.4 con RabbitMQ y canales HTTPS/WSS, y comprobar presupuesto, conectividad y roles de base de datos antes de operar.
 - Usar los escenarios de calidad refinados como base de pruebas de rendimiento, privacidad, recuperación e idempotencia durante la fase de implementación.
-- Desarrollar los capítulos V, VI y VII en los siguientes hitos, sin adelantarlos como contenido de esta primera entrega.
+- Incorporar el feedback docente a I–IV y revisar V–VI con el equipo; ejecutar después la implementación, pruebas y validaciones del capítulo VII con evidencias reales.
 
 # Video About-the-Team
+
+El video se incorporará en el hito que lo requiera. Este avance no agrega un enlace de grabación inexistente.
 
 # Bibliografía
 
@@ -2015,11 +2142,25 @@ Teleprompter.com. (2024). *Public speaking statistics 2025: Global fear & trends
 
 Wojcik, R., Bachmann, F., Bass, L., Clements, P., Merson, P., Nord, R., & Wood, B. (2006). *Attribute-Driven Design (ADD), Version 2.0* (Technical Report CMU/SEI-2006-TR-023). Software Engineering Institute, Carnegie Mellon University. https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=8147
 
+RabbitMQ. (s. f.). *Consumer acknowledgements and publisher confirms*. https://www.rabbitmq.com/docs/confirms
+
+World Wide Web Consortium. (s. f.). *Understanding Success Criterion 1.4.3: Contrast (Minimum)*. https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html
+
+World Wide Web Consortium. (s. f.). *Understanding Success Criterion 2.5.8: Target Size (Minimum)*. https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html
+
+Thropic. (2026). *Talki: Project report* [Repositorio de GitHub, versión 2cfa379]. [GitHub](https://github.com/upc-pre-202601-si657-7940-thropic/talki-project-report/blob/2cfa379b72241a1380d87b4f8c5be53a70950d81/README.MD).
+
 # Anexos
 
 | Anexo | Descripción | Enlace o ubicación |
 | --- | --- | --- |
 | A | Grabaciones y evidencias de entrevistas de ambos segmentos. | [Carpeta de entrevistas](https://drive.google.com/drive/folders/1IwH1aTzPJ2Y5cYJS3yqF8UM4eHfprvLE?usp=sharing) |
-| B | Informe de participación del equipo para TB1. | [Informe de Participación — Startup Thropic](https://docs.google.com/document/d/1-tnKLS9I_qJD4kkLwBUQB8QqxdgXBQbJcZ0smvAn1KM/edit) |
+| B | Informe de participación del equipo para TB1. | [Informe de Participación: Startup Thropic](https://docs.google.com/document/d/1-tnKLS9I_qJD4kkLwBUQB8QqxdgXBQbJcZ0smvAn1KM/edit) |
 | C | Evidencias de colaboración: commits, ramas y pull requests. | [Repositorio del informe](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report) |
 | D | Diagramas de Software Architecture. | `assets/images/DiagramsUML/` |
+| E | Diseño táctico por contexto: componentes, clases, datos/servicios stateless y fuentes Mermaid. | `assets/diagrams/tactical/`, `assets/design/reuse-manifest.json` |
+| F | Vistas de contenedores y despliegue refinadas para el curso actual. | `assets/diagrams/tactical/container-refinement.*`, `deployment-refinement.*` |
+| G | Arquitectura de información, wireflow y tres user flows. | `assets/diagrams/ux/` |
+| H | Wireframes y mock-ups web/móvil, incluyendo estados de error y privacidad. | `assets/ux/wireframes/`, `assets/ux/mockups/` |
+| I | Prototipo UX navegable, con datos ficticios y modo wireframe. | [HTML](assets/ux/prototype/index.html), [instrucciones](assets/ux/prototype/README.md) |
+| J | Activos técnicos y registro de versiones de Talki. | `assets/reused-202601/`, [registro de procedencia](assets/design/reuse-manifest.json) |
