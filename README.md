@@ -68,6 +68,7 @@
 | 1.2 | 02/10/2026 | Edición asistida por Codex | Alineación de la tabla de colores y los complementos UX con los tokens de temas claro/oscuro y el componente Table del frontend Talki, versión d63e889. |
 | 1.3 | 02/10/2026 | Edición asistida por Codex | Presentación de wireframes, mock-ups y estados críticos mediante descripción e imágenes web/móvil dentro del informe. |
 | 1.4 | 02/10/2026 | Edición asistida por Codex | Revisión editorial de los capítulos V y VI, sustitución de rayas largas y acceso directo a los diseños de la landing desde el catálogo. |
+| 1.5 | 02/10/2026 | Edición asistida por Codex | Revisión de la redacción de diseño: tipografía, colores, componentes, navegación y prototipado; aclaración de las descripciones de modelos de dominio. |
 
 # Project Report Collaboration Insights
 
@@ -2006,7 +2007,7 @@ com.thropic.talki.<service>/
 └── infrastructure/config/ # Configuración de framework
 ```
 
-Interface traduce HTTP/eventos a casos de uso; Application orquesta; Domain define reglas; Infrastructure implementa puertos. DTO, JPA y SDK de IA no se propagan como modelo compartido entre contextos. PostgreSQL conserva ownership por servicio/contexto; los IDs externos son referencias lógicas, sin FK entre bases. Los servicios stateless no requieren una base de datos propia; la persistencia se asigna al contexto propietario.
+Interface traduce HTTP/eventos a casos de uso; Application orquesta; Domain define reglas; Infrastructure implementa puertos. DTO, JPA y SDK de IA no se propagan como modelo compartido entre contextos. PostgreSQL conserva responsabilidad sobre los datos por servicio/contexto; los IDs externos son referencias lógicas, sin FK entre bases. Los servicios stateless no requieren una base de datos propia; la persistencia se asigna al contexto propietario.
 
 **Contratos y autorización.** Cada sección Interface Layer identifica las rutas, eventos o puertos del contexto. Las ampliaciones propuestas se concretarán mediante contratos versionados durante la integración. La identidad y el acceso a recursos se verifican en el servidor.
 
@@ -2020,10 +2021,10 @@ Este contexto convierte la práctica autorizada en transcripción incremental, s
 
 ### 5.1.1. Domain Layer
 
-**Modelo de dominio:** No mantiene agregado persistente propio. Usa LiveCoachOrchestrator, SessionModeStrategy y SessionModeStrategyFactory.
+**Modelo de dominio:** LiveCoachOrchestrator coordina la práctica mediante las estrategias seleccionadas por SessionModeStrategyFactory. Este contexto no mantiene un agregado persistente propio.
 
 1. La estrategia depende del modo; agregar un modo no modifica el orquestador central.
-2. No se conserva audio crudo por defecto. Transcript y métricas del cierre se entregan al propietario durable de la sesión.
+2. No se conserva audio crudo por defecto. Transcript y métricas del cierre se entregan al contexto responsable de conservar la sesión.
 3. Los permisos y consentimiento de US29 deben verificarse antes de habilitar captura. Recuperación, señal silenciable y cierre parcial se incorporan como ampliaciones del diseño.
 
 ### 5.1.2. Interface Layer
@@ -2040,7 +2041,7 @@ LiveCoachOrchestrator inicia y cierra la práctica; SessionModeStrategyFactory s
 
 ### 5.1.4. Infrastructure Layer
 
-El servicio es stateless: buffers y cálculo acústico en memoria, transporte WebSocket/Gemini y publisher RabbitMQ. El estado durable pertenece a session-service. Para ADD-05, el cierre confirmado y su Outbox deberán guardarse en Sessions antes de publicar; conservar un checkpoint para US34 es una extensión propuesta del piloto.
+El servicio es stateless: buffers y cálculo acústico en memoria, transporte WebSocket/Gemini y publisher RabbitMQ. El estado persistente pertenece a session-service. Para ADD-05, el cierre confirmado y su Outbox deberán guardarse en Sessions antes de publicar; conservar un checkpoint para US34 es una extensión propuesta del piloto.
 
 ### 5.1.5. Component Level Diagrams
 
@@ -2062,7 +2063,7 @@ El servicio es stateless: buffers y cálculo acústico en memoria, transporte We
 
 [Fuente editable](assets/diagrams/tactical/01-live-coaching-database.mmd).
 
-N/A: el servicio no tiene base propia. El resultado durable queda en session-service y scoring-service.
+N/A: el servicio no tiene base propia. El resultado persistente queda en session-service y scoring-service.
 
 ## 5.2. Bounded Context: Speech Analysis
 
@@ -2072,10 +2073,10 @@ Este contexto transforma la evidencia autorizada en métricas reproducibles del 
 
 ### 5.2.1. Domain Layer
 
-**Modelo de dominio:** No mantiene agregado persistente propio; FillerDetector es servicio de dominio y FillerResult es el resultado de análisis.
+**Modelo de dominio:** FillerDetector aplica las reglas de detección de muletillas y FillerResult representa el resultado del análisis. Este contexto no mantiene un agregado persistente propio.
 
 1. FillerResult expresa conteo y proporción; no constituye todavía una puntuación global.
-2. La evidencia se deriva del transcript autorizado. Volumen y otras dimensiones acústicas requieren features de captura; no pueden inferirse como mediciones reales solo desde texto.
+2. La evidencia se deriva del transcript autorizado. Volumen y otras dimensiones acústicas requieren características acústicas de la captura; no pueden inferirse como mediciones reales solo desde texto.
 3. Una sesión insuficiente debe identificarse; al adaptar el pipeline se añade analysis_version y evidencia disponible sin fabricar métricas.
 
 ### 5.2.2. Interface Layer
@@ -2092,7 +2093,7 @@ SessionLiveFinalizedConsumer recibe el evento, FillerDetector procesa la transcr
 
 ### 5.2.4. Infrastructure Layer
 
-El transformador stateless consume y publica eventos mediante RabbitMQ. El análisis utiliza regex y contempla ONNX opcional, sin base persistente propia. La persistencia del resultado corresponde a scoring-service. Estado consultable, versiones de análisis e idempotencia persistente de US37/ADD-05 son ampliaciones pendientes de integración y verificación.
+El transformador stateless consume y publica eventos mediante RabbitMQ. El análisis utiliza expresiones regulares y contempla ONNX opcional, sin base persistente propia. La persistencia del resultado corresponde a scoring-service. Estado consultable, versiones de análisis e idempotencia persistente de US37/ADD-05 son ampliaciones pendientes de integración y verificación.
 
 ### 5.2.5. Component Level Diagrams
 
@@ -2124,7 +2125,7 @@ Este contexto convierte las métricas del discurso en una puntuación y recomend
 
 ### 5.3.1. Domain Layer
 
-**Modelo de dominio:** ScoreResult; VoiceScore es value object embebido.
+**Modelo de dominio:** ScoreResult representa el resultado de la evaluación y contiene VoiceScore como objeto de valor con las dimensiones de desempeño.
 
 1. VoiceScore conserva cinco dimensiones de 0 a 100; no representa una nota del curso ni un diagnóstico.
 2. La versión de análisis/rúbrica y la disponibilidad de evidencia se incorporan al evolucionar ScoreResult; no se reescribe la historia al cambiar criterios.
@@ -2176,7 +2177,7 @@ Este contexto administra el ciclo de vida de cada práctica, su configuración, 
 
 ### 5.4.1. Domain Layer
 
-**Modelo de dominio:** Session; Feedback es entidad intra-contexto y SessionUserContext es value object ACL.
+**Modelo de dominio:** Session representa la práctica y administra su estado. Feedback es una entidad del mismo contexto, mientras que SessionUserContext traduce la información de identidad mediante un objeto de valor de la capa anticorrupción.
 
 1. Session es autoridad del estado; Feedback pertenece a la sesión y no se confunde con el cálculo remoto del score.
 2. La identidad se traduce mediante SessionUserContext; ningún DTO del cliente puede cambiar el propietario.
@@ -2228,7 +2229,7 @@ Este contexto construye el historial y las tendencias de desempeño del estudian
 
 ### 5.5.1. Domain Layer
 
-**Modelo de dominio:** UserProgress; SessionMetrics conserva cada sesión proyectada.
+**Modelo de dominio:** UserProgress reúne el progreso del estudiante y SessionMetrics conserva las métricas de cada sesión incluida en el historial.
 
 1. recordSession actualiza totalSessions y promedio una vez por resultado lógico.
 2. Comparar exige propietario y versiones compatibles; no se mezclan rúbricas diferentes sin una regla de equivalencia.
@@ -2334,7 +2335,7 @@ Este contexto reconoce la constancia y los hitos comprobados del estudiante a pa
 
 ### 5.7.1. Domain Layer
 
-**Modelo de dominio:** UserStreak; Achievement registra cada logro.
+**Modelo de dominio:** UserStreak representa la continuidad de las prácticas y Achievement registra los logros obtenidos por el estudiante.
 
 1. Una práctica inválida no cuenta para racha o logro; el veredicto pertenece a Sessions.
 2. Una sesión repetida no incrementa XP dos veces y un logro se concede una vez según su regla.
@@ -2376,7 +2377,7 @@ Spring Boot, RabbitMQ y PostgreSQL con user_streaks/achievements. En el modelo d
 
 [Fuente editable](assets/diagrams/tactical/07-gamification-database.mmd).
 
-Tablas user_streaks y achievements, ambas bajo ownership del servicio. Se propone UNIQUE(user_id, code, rule_version) para logros y deduplicación por sesión/versión; el diagrama muestra los campos del esquema base.
+Tablas user_streaks y achievements, ambas bajo responsabilidad sobre los datos del servicio. Se propone UNIQUE(user_id, code, rule_version) para logros y deduplicación por sesión/versión; el diagrama muestra los campos del esquema base.
 
 ## 5.8. Bounded Context: Identity & Access
 
@@ -2386,7 +2387,7 @@ Este contexto gestiona las cuentas, el perfil, la autenticación y el registro v
 
 ### 5.8.1. Domain Layer
 
-**Modelo de dominio:** AppUser; RefreshToken conserva sesiones renovables y UserRole es enumeración.
+**Modelo de dominio:** AppUser representa la cuenta del estudiante. RefreshToken permite renovar la sesión de acceso y UserRole define los roles mediante una enumeración.
 
 1. El email es único y la contraseña se almacena como hash, nunca como texto.
 2. El refresh token rota y puede revocarse; el cliente no establece roles o identidad de otro usuario.
@@ -2438,7 +2439,7 @@ Este contexto traduce los contratos de Talki a los proveedores de IA y aplica l�
 
 ### 5.9.1. Domain Layer
 
-**Modelo de dominio:** AIProviderPort y GeminiLiveClient; la pasarela es una frontera de integración, sin agregado de negocio persistente obligatorio.
+**Modelo de dominio:** AIProviderPort define el contrato de integración con proveedores y GeminiLiveClient actúa como adaptador. La pasarela no requiere un agregado de negocio persistente propio.
 
 1. Live Coaching y Speech Analysis envían solo evidencia autorizada y necesaria; el gateway valida alcance, presupuesto y capacidades antes de invocar.
 2. Las capacidades opcionales se declaran. Un proveedor sin conversación bidireccional no se sustituye silenciosamente en un flujo que la necesita.
@@ -2490,7 +2491,7 @@ Este contexto envía mensajes transaccionales y opcionales derivados de eventos 
 
 ### 5.10.1. Domain Layer
 
-**Modelo de dominio:** No mantiene agregado persistente propio; usa consumidores y NotificationPushService.
+**Modelo de dominio:** Los consumidores de eventos y NotificationPushService coordinan los avisos al estudiante. El contexto no mantiene un agregado persistente propio.
 
 1. Las notificaciones se derivan de eventos; no bloquean finalizar o practicar.
 2. Un aviso por correo no expone transcript, score o material, y sus enlaces siguen autorización vigente.
@@ -2535,77 +2536,79 @@ N/A: el servicio es stateless. Un ledger técnico de envíos/preferencias es una
 
 # Capítulo VI: Solution UX Design
 
-El diseño UX convierte los escenarios To-Be de Valeria (ciclos 1–5) y Rodrigo (ciclos 6–10) en una experiencia de práctica: preparar → comprobar → ensayar → comprender → repetir. Se incluyen **web de escritorio y aplicación móvil** con las mismas reglas de privacidad, estados y contratos. El cliente web Next.js/React de Talki es la referencia principal de las pantallas y del recorrido navegable. El diseño móvil de 4.3 adapta esa identidad a una distribución propia; las pantallas móviles y los flujos adicionales son propuestas pendientes de integración.
+El diseño de experiencia de usuario organiza las tareas de Valeria, estudiante de ciclos iniciales, y Rodrigo, estudiante de ciclos superiores, en un recorrido de preparación, práctica y revisión del desempeño. Las versiones web y móvil comparten los mismos criterios de navegación, privacidad y presentación del feedback, con una distribución adaptada al espacio de cada dispositivo.
 
-El cliente web de Talki incluye pantallas de acceso, dashboard, Coach, sesiones y feedback. Se mantienen sus capturas como base, sin crear otro mock-up web para esas vistas. Los wireframes describen la estructura; los mock-ups móviles y las pantallas faltantes desarrollan las capacidades propuestas del diseño. Los nombres de personas, transcripciones, puntuaciones y tendencias de sus pantallas son **datos ficticios de demostración**, no nuevos resultados de entrevistas, pruebas de usabilidad o análisis de voz. Los complementos y estados propuestos se capturan desde el prototipo auxiliar, siguiendo el estilo del cliente web.
+Las pantallas de acceso, inicio, Coach, sesiones y feedback del cliente web de Talki sirven como referencia visual. Los wireframes definen la estructura de las pantallas y los mock-ups desarrollan su apariencia. Las adaptaciones móviles y las funciones complementarias se presentan como propuestas de diseño; los datos mostrados son ejemplos utilizados para ilustrar la interacción.
 
 ## 6.1. Style Guidelines
 
 ### 6.1.1. General Style Guidelines
 
-**Personalidad y tono.** Talki acompaña al estudiante con instrucciones breves y feedback concreto. Usa “práctica”, “ensayo” y “siguiente acción”; evita presentar el score como nota académica o el indicador de confianza como evaluación psicológica. Los errores explican la causa observable y el paso para recuperarse. El usuario mantiene el control del inicio, pausa, cierre y uso de sus datos.
+**Personalidad y tono.** Talki se comunica con instrucciones breves y recomendaciones concretas. El lenguaje se centra en la práctica y la mejora: “ensayo”, “siguiente acción” y “volver a practicar”. Los mensajes de error explican qué ocurrió y cómo continuar. La puntuación se presenta como una referencia de desempeño, y el estudiante conserva el control del inicio, la pausa y el cierre de cada práctica.
 
-**Identidad.** La marca y la paleta se definen con los tokens del [frontend de Talki](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend/blob/d63e889a216d093a86bf24a2a328c18d0e610618/src/app/globals.css). El tema claro utiliza naranja como acción principal, fondos claros y texto azul oscuro; el tema oscuro utiliza fondo profundo y acento violeta. El cliente declara el tema claro como predeterminado. Los complementos aplican ese tema; los valores del tema oscuro quedan documentados para mantener consistencia.
+**Identidad visual.** La paleta de Talki utiliza fondos claros, texto azul oscuro y naranja para destacar las acciones principales. Esta combinación establece una jerarquía visual entre el contenido, los controles y las recomendaciones. El tema oscuro incorpora fondos profundos y un acento violeta. La siguiente tabla recoge los colores definidos en la [paleta del cliente web de Talki](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend/blob/d63e889a216d093a86bf24a2a328c18d0e610618/src/app/globals.css).
 
-| Token CSS | Tema claro | Tema oscuro | Uso |
+| Elemento visual | Tema claro | Tema oscuro | Uso |
 | --- | --- | --- | --- |
-| `--background` | `#F7F8FC` | `#0F1117` | Fondo de página. |
-| `--foreground` | `#0F172A` | `#E6E8EC` | Texto principal. |
-| `--card` | `#FFFFFF` | `#161A22` | Tarjetas y superficies. |
-| `--card-foreground` | `#0F172A` | `#E6E8EC` | Texto dentro de tarjetas. |
-| `--primary` | `#F97316` | `#6C7CFF` | Acciones principales y selección. |
-| `--primary-foreground` | `#FFFFFF` | `#0F1117` | Texto de acciones principales. |
-| `--secondary` | `#F1F3F9` | `#1D2230` | Acciones y superficies secundarias. |
-| `--secondary-foreground` | `#0F172A` | `#E6E8EC` | Texto secundario sobre superficies. |
-| `--muted` | `#F1F3F9` | `#1D2230` | Fondos discretos y estados de tabla. |
-| `--muted-foreground` | `#475569` | `#9AA4B2` | Descripción y texto de apoyo. |
-| `--accent` | `#F1F3F9` | `#1D2230` | Resaltado de navegación. |
-| `--accent-foreground` | `#0F172A` | `#E6E8EC` | Texto sobre resaltado. |
-| `--destructive` | `#EF4444` | `#E26D6D` | Acciones y estados destructivos. |
-| `--destructive-foreground` | `#FFFFFF` | `#0F1117` | Texto sobre color destructivo. |
-| `--border` | `#E2E8F0` | `#252A3A` | Bordes y separadores. |
-| `--input` | `#E2E8F0` | `#252A3A` | Bordes de controles. |
-| `--ring` | `#F97316` | `#6C7CFF` | Foco de teclado. |
-| `--chart-1` | `#F97316` | `#6C7CFF` | Serie principal. |
-| `--chart-2` | `#ea7a12` | `#7B61FF` | Segunda serie. |
-| `--chart-3` | `#22C55E` | `#3DDC97` | Tercera serie. |
-| `--chart-4` | `#F59E0B` | `#F5C26B` | Cuarta serie. |
-| `--chart-5` | `#EF4444` | `#E26D6D` | Quinta serie. |
-| `--sidebar` | `#FFFFFF` | `#0F1117` | Fondo de navegación lateral. |
-| `--sidebar-foreground` | `#0F172A` | `#E6E8EC` | Texto de navegación lateral. |
-| `--sidebar-primary` | `#F97316` | `#6C7CFF` | Selección principal en navegación. |
-| `--sidebar-accent` | `#F1F3F9` | `#1D2230` | Resaltado secundario en navegación. |
-| `--sidebar-border` | `#E2E8F0` | `#252A3A` | Separadores de navegación. |
+| Fondo general | `#F7F8FC` | `#0F1117` | Fondo de página. |
+| Texto principal | `#0F172A` | `#E6E8EC` | Texto principal. |
+| Tarjetas | `#FFFFFF` | `#161A22` | Tarjetas y superficies. |
+| Texto de tarjetas | `#0F172A` | `#E6E8EC` | Texto dentro de tarjetas. |
+| Acción principal | `#F97316` | `#6C7CFF` | Acciones principales y selección. |
+| Texto de acción principal | `#FFFFFF` | `#0F1117` | Texto de acciones principales. |
+| Acción secundaria | `#F1F3F9` | `#1D2230` | Acciones y superficies secundarias. |
+| Texto de acción secundaria | `#0F172A` | `#E6E8EC` | Texto secundario sobre superficies. |
+| Fondo de apoyo | `#F1F3F9` | `#1D2230` | Fondos discretos y estados de tabla. |
+| Texto de apoyo | `#475569` | `#9AA4B2` | Descripción y texto de apoyo. |
+| Resaltado | `#F1F3F9` | `#1D2230` | Resaltado de navegación. |
+| Texto sobre resaltado | `#0F172A` | `#E6E8EC` | Texto sobre resaltado. |
+| Acción destructiva | `#EF4444` | `#E26D6D` | Acciones y estados destructivos. |
+| Texto de acción destructiva | `#FFFFFF` | `#0F1117` | Texto sobre color destructivo. |
+| Separadores | `#E2E8F0` | `#252A3A` | Bordes y separadores. |
+| Bordes de campos | `#E2E8F0` | `#252A3A` | Bordes de controles. |
+| Indicador de foco | `#F97316` | `#6C7CFF` | Foco de teclado. |
+| Gráfico: serie 1 | `#F97316` | `#6C7CFF` | Serie principal. |
+| Gráfico: serie 2 | `#ea7a12` | `#7B61FF` | Segunda serie. |
+| Gráfico: serie 3 | `#22C55E` | `#3DDC97` | Tercera serie. |
+| Gráfico: serie 4 | `#F59E0B` | `#F5C26B` | Cuarta serie. |
+| Gráfico: serie 5 | `#EF4444` | `#E26D6D` | Quinta serie. |
+| Fondo de navegación | `#FFFFFF` | `#0F1117` | Fondo de navegación lateral. |
+| Texto de navegación | `#0F172A` | `#E6E8EC` | Texto de navegación lateral. |
+| Selección de navegación | `#F97316` | `#6C7CFF` | Selección principal en navegación. |
+| Resaltado de navegación | `#F1F3F9` | `#1D2230` | Resaltado secundario en navegación. |
+| Separadores de navegación | `#E2E8F0` | `#252A3A` | Separadores de navegación. |
 
-**Base visual de Talki.** Los componentes conservan tarjetas claras, bordes definidos y navegación lateral con Nueva sesión, Dashboard, Sesiones, Coach y Ranking. Las capturas existentes documentan sus pantallas; los complementos siguen los tokens de la versión actual del frontend.
+**Organización visual.** Las tarjetas agrupan información relacionada, como las métricas de una sesión o una recomendación de práctica. Los bordes y las diferencias de fondo delimitan cada bloque. En escritorio, la navegación lateral mantiene disponibles los accesos a las principales tareas; en móvil, la distribución en una columna facilita la lectura y el uso de los controles.
 
-**Tipografía y ritmo.** El cliente utiliza Geist y Geist Mono según `src/app/layout.tsx`, con alternativas Arial/Helvetica. El prototipo auxiliar utiliza Geist si está disponible y las alternativas del sistema. El token `--radius` es `0.625rem` (10 px); los componentes aplican sus variantes: tarjetas `rounded-xl` (14 px) y botones `rounded-lg` (10 px). El espaciado del diseño usa múltiplos de 4 px y las distribuciones web/móvil de 6.1.2.
+**Tipografía.** Geist es la familia principal para títulos, textos y controles de la interfaz. Geist Mono se reserva para información que requiere caracteres de ancho uniforme. La jerarquía entre títulos, subtítulos y texto de apoyo permite reconocer las secciones y localizar las acciones. Arial y Helvetica se consideran alternativas cuando la fuente principal no está disponible.
 
-**Tablas de interfaz.** Se sigue [`src/components/ui/table.tsx`](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend/blob/d63e889a216d093a86bf24a2a328c18d0e610618/src/components/ui/table.tsx): texto de 14 px, cabecera de 40 px, celdas de 8 px de padding, encabezados alineados a la izquierda, separadores `--border` y desplazamiento horizontal dentro del contenedor. El estado hover usa `--muted` al 50 % y la selección usa `--muted`.
+**Espaciado y formas.** La separación entre elementos sigue una escala de 4 px para mantener un orden consistente entre pantallas. Las tarjetas presentan esquinas redondeadas de 14 px y los botones de 10 px. Los márgenes y espacios internos distinguen los grupos de contenido y dejan suficiente separación entre controles.
 
-**Componentes y estados.** Botón primario para continuar o practicar; secundario para volver, cancelar o consultar; acción destructiva con texto explícito y confirmación. Campos con etiqueta persistente, ayuda y validación próxima al control. Los chips combinan texto y color; los estados nunca dependen solo de verde/rojo. Un score ausente se muestra como “Sin evidencia”, no como cero. Cada recomendación separa observación, evidencia y acción.
+**Tablas.** Los encabezados y el contenido se alinean a la izquierda, con texto de 14 px y separadores discretos entre filas. La cabecera tiene una altura de 40 px y las celdas cuentan con 8 px de espacio interno. Un cambio de fondo identifica la fila seleccionada o aquella sobre la que se sitúa el cursor. En pantallas pequeñas, el desplazamiento se limita al área de la tabla para conservar el ancho de la página.
 
-**Accesibilidad como criterio de diseño.** Se busca contraste de texto normal ≥ 4.5:1 y texto grande ≥ 3:1, según [W3C, criterio 1.4.3](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html). Se propone objetivo táctil de 44 px, por encima del mínimo de 24 px sujeto a excepciones del [criterio 2.5.8](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html). Foco visible, orden de teclado, enlace para saltar al contenido, etiquetas de campos y avisos con región de estado son parte del prototipo. Estas decisiones no constituyen una certificación de conformidad: la aplicación final requiere evaluación con tecnologías de asistencia y usuarios.
+**Controles y estados.** Los botones principales destacan acciones como continuar o iniciar una práctica. Los botones secundarios permiten volver, cancelar o consultar información. La eliminación de una sesión se presenta con una etiqueta explícita y una confirmación previa. Los campos mantienen sus etiquetas visibles y muestran los mensajes de validación junto al dato que debe corregirse. Los estados combinan texto y color, y los reportes indican “Sin evidencia” cuando una dimensión no puede evaluarse. Cada recomendación distingue la observación, su evidencia y la acción sugerida.
+
+**Accesibilidad.** El diseño contempla navegación por teclado, foco visible, etiquetas en los campos y mensajes de estado comprensibles. Se establece como objetivo un contraste mínimo de 4.5:1 para texto normal y de 3:1 para texto grande, de acuerdo con el [criterio 1.4.3 de WCAG](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html). Los controles táctiles se proponen con un tamaño de 44 px para facilitar su selección, considerando el [criterio 2.5.8](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html). La evaluación de estos criterios con usuarios y tecnologías de asistencia se realizará sobre la aplicación integrada.
 
 ### 6.1.2. Web, Mobile and Devices Style Guidelines
 
 | Aspecto | Web de escritorio | Aplicación móvil propuesta |
 | --- | --- | --- |
-| Estructura | Sidebar de 232 px, cabecera, área de contenido hasta 1250 px. | Una columna, cabecera breve y barra inferior con Inicio, Practicar, Historial, Progreso y Perfil. |
-| Formularios | Dos columnas cuando los campos son independientes; avance por pasos. | Campos apilados y acciones visibles sin scroll horizontal. |
-| Práctica | Cronómetro/señales junto a transcript; controles de pausa y cierre separados. | Cronómetro y controles primero; transcript debajo; botón de cerrar distinguible del de pausar. |
-| Reportes | Métricas y recomendaciones en paralelo. | Score, dimensiones, recomendaciones y evidencia en secuencia. |
+| Estructura | Navegación lateral, cabecera y área principal de contenido. | Una columna, cabecera breve y barra inferior con Inicio, Practicar, Historial, Progreso y Perfil. |
+| Formularios | Dos columnas cuando los campos son independientes; avance por pasos. | Campos apilados y acciones visibles sin desplazamiento horizontal. |
+| Práctica | Cronómetro y señales junto a la transcripción; controles de pausa y cierre separados. | Cronómetro y controles primero; transcripción debajo; acciones de pausa y cierre diferenciadas. |
+| Reportes | Métricas y recomendaciones en paralelo. | Puntuación, dimensiones, recomendaciones y evidencia en secuencia. |
 | Historial y comparación | Lista y filtros; tablas con encabezados. | Filas compactas y filtros apilados; tabla puede desplazarse dentro de su contenedor. |
-| Audio | Permiso del navegador; entrada compatible y prueba previa. | Permiso del sistema y prueba previa; interrupción por cambio de app/llamada conduce a checkpoint o cierre parcial. |
-| Sesión y privacidad | Acceso por HTTPS/WSS; cierre de sesión con advertencia si hay práctica activa. | Mismos contratos; ningún secreto del proveedor en cliente. Tokens se protegerán con mecanismos del cliente nativo en implementación. |
+| Audio | Permiso del navegador; entrada compatible y prueba previa. | Permiso del dispositivo y prueba previa; una interrupción permite recuperar la práctica o finalizarla parcialmente. |
+| Sesión y privacidad | Acceso a sesiones propias y confirmación de salida cuando hay una práctica activa. | Mismo control de acceso a recursos y confirmación de salida durante una práctica activa. |
 
-El prototipo cambia a la distribución móvil a ≤ 700 px; se exportan mock-ups a 1440 px y 390 px. La aplicación final deberá probar micrófono, cambios de ruta de audio y reconexión en los dispositivos acordados; el HTML no mide estas capacidades.
+Los mock-ups se presentan en anchos de 1440 px para escritorio y 390 px para móvil. En espacios reducidos, el contenido pasa a una sola columna y la navegación se sitúa en la parte inferior. La adaptación conserva la secuencia de tareas y la visibilidad de las acciones principales.
 
 ## 6.2. Information Architecture
 
 ### 6.2.1. Organization Systems
 
-Se combina una organización **por tarea** (Practicar, Historial, Progreso, Perfil) con una secuencia guiada para la primera práctica. La adquisición pública y los recursos privados se mantienen en espacios diferentes. El tutor recibe una vista específica del recurso autorizado.
+La información se organiza por tareas: practicar, consultar el historial, revisar el progreso y administrar el perfil. La primera práctica sigue una secuencia guiada. La landing presenta el servicio a nuevos usuarios, mientras que las sesiones y los reportes se consultan desde el espacio personal del estudiante. El tutor accede únicamente al reporte que se le ha compartido.
 
 ![Arquitectura de información de Talki](assets/diagrams/ux/information-architecture.png)
 
@@ -2629,7 +2632,7 @@ Se combina una organización **por tarea** (Practicar, Historial, Progreso, Perf
 | Audio y privacidad | Comprobar entrada y autorizar procesamiento; el permiso del dispositivo y el consentimiento son distintos. |
 | Pausar / Reanudar | Modificar captura manteniendo estado confirmado. |
 | Finalizar práctica | Confirmar cierre e iniciar análisis; no se confunde con pausar. |
-| En análisis / Falló / Reporte disponible | Estado real del pipeline, sin prometer disponibilidad si no existe reporte. |
+| En análisis / Falló / Reporte disponible | Indicar si el análisis está en curso, requiere reintento o dispone de un reporte. |
 | Voice Coach Score | Referencia de desempeño bajo una rúbrica; no es nota del curso. |
 | Sin evidencia / Resultado parcial | Una dimensión o resultado carece de soporte; no indica desempeño cero. |
 | Compartir reporte / Revocar enlace | Crear o retirar acceso limitado; no comparte la cuenta completa. |
@@ -2639,9 +2642,9 @@ Los términos coinciden con el lenguaje ubicuo de 2.4; en la interfaz se prefier
 
 ### 6.2.3. SEO Tags and Meta Tags
 
-La landing tendrá metadatos descriptivos; las páginas de cuenta, sesión y enlaces de tutor deben excluirse de indexación. `noindex` es una indicación al buscador, **no un control de acceso**; la autorización se resuelve en servidor según el capítulo V. El prototipo completo usa `noindex,nofollow` porque contiene ejemplos, no una landing publicada.
+La landing incorpora un título y una descripción orientados a explicar el servicio en los resultados de búsqueda. Las páginas de cuenta, las sesiones y los reportes compartidos se excluyen de la indexación mediante `noindex`; su acceso requiere, además, la autorización correspondiente. El prototipo de diseño se mantiene fuera de la indexación.
 
-Contrato propuesto para la landing de producción:
+Metadatos propuestos para la landing:
 
 ```html
 <html lang="es">
@@ -2653,19 +2656,19 @@ Contrato propuesto para la landing de producción:
 <meta property="og:description" content="Ensaya, comprende tu desempeño y elige tu siguiente acción de mejora.">
 ```
 
-El dominio canónico, `og:url` y la URL pública de imagen se añadirán al definir el hosting; no se incluyen direcciones de despliegue inexistentes. Se usarán títulos jerárquicos, texto alternativo descriptivo y enlaces comprensibles; los recursos privados tampoco aparecen en sitemap.
+La dirección canónica y la imagen de vista previa se definirán al publicar la landing. Los títulos jerárquicos, las descripciones de imágenes y los enlaces comprensibles apoyan la navegación y la presentación del contenido. El mapa del sitio incluirá las páginas públicas.
 
 ### 6.2.4. Searching Systems
 
-Historial usa búsqueda por título, filtro por modo, intervalo de fechas y estado, con paginación por cursor en el contrato de Progress. La consulta se restringe al propietario en servidor. Un resultado muestra título, fecha, duración, estado y score disponible con versiones; no lista fragmentos privados de otras cuentas.
+El historial permite localizar prácticas por título y filtrarlas por modo, fecha y estado. Cada resultado presenta el nombre de la sesión, su fecha, duración y puntuación disponible. La búsqueda se limita a las sesiones del estudiante.
 
-La búsqueda del prototipo aplica título y modo sobre datos ficticios locales. En la aplicación, una lista sin coincidencias ofrecerá limpiar filtros y distinguirá “no hay prácticas” de “no se pudo cargar”. Comparación exige seleccionar dos prácticas propias y verificar compatibilidad antes de calcular variación.
+En el prototipo se puede explorar la búsqueda por título y el filtro por modo con datos de ejemplo. Cuando no se encuentran coincidencias, la interfaz debe ofrecer la opción de limpiar los filtros. Un error de carga se comunica mediante un mensaje distinto para que el estudiante pueda volver a intentarlo.
 
 ### 6.2.5. Navigation Systems
 
-El cliente web conserva Nueva sesión, Dashboard, Sesiones, Coach y Ranking. Los complementos ofrecen accesos a progreso, perfil y privacidad según la tarea. Dentro de Practicar, un stepper muestra Configurar → Audio y privacidad → Practicar. Las pantallas de reporte tienen accesos contextuales a Repetir, Plan y Compartir. Volver a configuración conserva las elecciones del borrador; salir de una práctica activa o finalizar exige confirmar consecuencias.
+La navegación del cliente web reúne Nueva sesión, Dashboard, Sesiones, Coach y Ranking. Las propuestas complementarias incorporan accesos a progreso, perfil y privacidad. La preparación de una práctica se organiza en tres pasos: configurar, comprobar audio y autorizar su procesamiento, y practicar. Desde el reporte, el estudiante puede repetir el ensayo, consultar un plan o compartir sus resultados. Volver a la configuración conserva las elecciones previas, y el cierre de una práctica activa requiere confirmación.
 
-La vista de tutor evita navegación hacia historial o cuenta del propietario. Un enlace revocado/expirado muestra una respuesta uniforme de recurso no disponible. En móvil, la barra inferior no tapa el último contenido o las acciones; en escritorio, la sidebar mantiene el destino seleccionado. La carga del estado y los avisos de error deben conservar el contexto, sin regresar al inicio inesperadamente.
+La vista del tutor se concentra en el reporte compartido. Si el permiso caduca o se revoca, la interfaz informa que el recurso ya no está disponible. En escritorio, el destino seleccionado se destaca en la navegación lateral; en móvil, la barra inferior deja visibles el contenido y las acciones. Los avisos de error conservan el contexto de la tarea para facilitar su recuperación.
 
 ## 6.3. Landing Page UI Design
 
@@ -2673,7 +2676,7 @@ La landing pública (L01) presenta Talki a los estudiantes y reúne la propuesta
 
 ### 6.3.1. Landing Page Wireframe
 
-La estructura prioriza propuesta de valor, acción de registro, pasos del servicio, beneficios por segmento, planes propuestos y formulario de consulta. El reporte de muestra se identifica como ejemplo. No se fabrican testimonios: US03 se implementará cuando existan testimonios autorizados y verificables.
+El wireframe organiza la landing en bloques de propuesta de valor, beneficios por segmento, pasos de uso, planes y formulario de consulta. La acción de registro se mantiene visible y el reporte de muestra permite anticipar el tipo de feedback que ofrece Talki. La sección de testimonios prevista en US03 se incorporará cuando existan testimonios autorizados.
 
 **Web**
 
@@ -2685,7 +2688,7 @@ La estructura prioriza propuesta de valor, acción de registro, pasos del servic
 
 ### 6.3.2. Landing Page Mock-up
 
-La portada presenta “Ensaya tus ideas. Hazlas escuchar.” y una muestra de feedback, con CTA principal “Empezar a practicar”. El bloque de planes mantiene precio/límites por definir para no anunciar funciones o condiciones todavía no validadas. El formulario confirma una consulta de prueba; la integración de contacto real queda para implementación.
+El mock-up presenta el mensaje “Ensaya tus ideas. Hazlas escuchar.” junto con la acción principal “Empezar a practicar”. Los bloques de beneficios y pasos de uso explican el servicio antes del registro. Los planes se muestran como una propuesta cuyas condiciones están por definir; el formulario de consulta permite explorar la interacción de contacto.
 
 **Web**
 
@@ -3283,19 +3286,19 @@ La confirmación distingue el acceso ya bloqueado de la eliminación física tod
 
 ### 6.4.4. Applications User Flow Diagrams
 
-**UF-01: Primera práctica guiada (Valeria).** Registro/acceso, segmento y meta, configuración, audio/consentimiento, ensayo y siguiente acción. No se permite que un error de permiso se interprete como una práctica válida.
+**UF-01: Primera práctica guiada (Valeria).** El recorrido comprende el registro o acceso, la elección del segmento y la meta, la configuración del ensayo, la preparación de audio y el consentimiento. Tras practicar, el estudiante revisa su feedback y elige una acción de mejora. Si se deniega el permiso de micrófono, el flujo vuelve a la preparación de audio.
 
 ![User flow de primera práctica](assets/diagrams/ux/first-practice-flow.png)
 
 [Fuente editable de UF-01](assets/diagrams/ux/first-practice-flow.mmd)
 
-**UF-02: Simulación contextualizada (Rodrigo).** Entrevista/sustentación, material autorizado opcional, turnos de conversación, recuperación de canal y feedback contextual. El material no se publica en enlaces de tutor.
+**UF-02: Simulación contextualizada (Rodrigo).** El estudiante prepara una entrevista o sustentación, añade material autorizado de forma opcional y participa en una práctica por turnos. El flujo contempla la recuperación de la conexión y la revisión del feedback contextual. El material de preparación permanece fuera del reporte compartido con el tutor.
 
 ![User flow de práctica avanzada](assets/diagrams/ux/advanced-practice-flow.png)
 
 [Fuente editable de UF-02](assets/diagrams/ux/advanced-practice-flow.mmd)
 
-**UF-03: Compartición y eliminación.** Crear permiso con vigencia, consultar como tutor, revocar y solicitar eliminación. La UI conserva “purga pendiente” hasta confirmación de todos los contextos propietarios.
+**UF-03: Compartición y eliminación.** El estudiante crea un acceso temporal para un tutor y puede revocarlo desde la misma sección. Si solicita eliminar la sesión, se bloquea el acceso al recurso y se muestra el estado “Purga pendiente” hasta recibir la confirmación de eliminación de los contextos responsables.
 
 ![User flow de privacidad](assets/diagrams/ux/privacy-flow.png)
 
@@ -3303,23 +3306,23 @@ La confirmación distingue el acceso ya bloqueado de la eliminación física tod
 
 ## 6.5. Applications Prototyping
 
-**Prototipo principal: cliente web de Talki:** la [aplicación web](https://talki-frontend.vercel.app) y su [repositorio Next.js](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend) incluyen autenticación, sesiones, Coach y feedback. La URL pública respondió HTTP 200 durante la revisión. La comprobación de disponibilidad no acredita pruebas autenticadas ni validación del backend. Los cambios de diseño móvil y privacidad requieren integración.
+**Cliente web de Talki.** La [aplicación web](https://talki-frontend.vercel.app) reúne las pantallas de acceso, sesiones, Coach y feedback. Su [repositorio](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend) documenta la implementación de referencia para el diseño web.
 
-**Prototipo auxiliar: pantallas y estados complementarios:**
+**Prototipo de pantallas complementarias.**
 
-El [prototipo auxiliar](assets/ux/prototype/index.html#privacy) permite revisar consentimiento, recuperación, análisis, comparación, plan, compartición, revocación y eliminación con datos ficticios. En escritorio, acceso, dashboard, Coach, grabación, reporte e historial muestran las capturas del cliente web y un enlace para abrir Talki. Las capturas son referencias estáticas; sus funciones se recorren en el cliente web principal. La vista móvil presenta propuestas adaptadas a la misma identidad visual. **GitHub muestra su código; para interactuar se debe descargar/clonar el repositorio y abrir el HTML en un navegador.** También puede servirse localmente desde la raíz con `python3 -m http.server 8000` y abrir `http://localhost:8000/assets/ux/prototype/`. Reducir la ventana a 390 px permite explorar móvil; añadir `?view=wireframe` activa la vista de estructura.
+El [prototipo de diseño](assets/ux/prototype/index.html#privacy) permite explorar las propuestas de consentimiento, recuperación, análisis, comparación, plan de práctica y control de datos. En escritorio, las pantallas del cliente web se presentan mediante capturas de referencia; los complementos y la adaptación móvil ofrecen recorridos interactivos con datos de ejemplo. Para recorrerlo, se debe abrir el HTML en un navegador siguiendo las [instrucciones de ejecución](assets/ux/prototype/README.md).
 
 | Recorrido de demostración | Acciones disponibles |
 | --- | --- |
-| Base existente | Abrir Talki para recorrer acceso, dashboard, Coach, sesiones, grabación y feedback. Las capturas de referencia conservan estas vistas en el prototipo auxiliar. |
-| Preparación complementaria | Desde Coach, explorar material contextual, elegir configuración de ejemplo y comprobar audio/consentimiento. El archivo no se lee ni se envía. |
-| Recuperación | Simular permiso denegado; simular desconexión y reanudar; simular fallo del análisis y reintentar sobre el mismo estado. |
-| Progreso | Consultar historial, buscar por título/modo, revisar tendencia ficticia, comparar versiones compatibles y seleccionar opción incompatible. |
-| Control de datos | Crear permiso de ejemplo, abrir vista de tutor, revocar y comprobar bloqueo; exportar reporte de ejemplo; confirmar eliminación y observar purga pendiente. |
+| Cliente web | Consultar las pantallas de acceso, inicio, Coach, sesiones y feedback de Talki. |
+| Preparación | Elegir el escenario y las condiciones del ensayo, y explorar la comprobación de audio y el consentimiento. |
+| Recuperación | Explorar la respuesta a permisos denegados, desconexiones y fallos de análisis. |
+| Progreso | Consultar el historial de ejemplo, aplicar filtros y comparar sesiones compatibles. |
+| Control de datos | Explorar el acceso temporal del tutor, la revocación, la exportación y la solicitud de eliminación. |
 
-**Fidelidad y límites del prototipo auxiliar.** Los formularios, confirmaciones y estados complementarios son interactivos; las capturas de referencia del cliente web son estáticas. No hay autenticación real, llamadas a IA, captura de micrófono, backend, correo, pagos ni purga física. El score, timer, transcript y gráfico son fixtures visibles; el usuario activa los cambios de estado de análisis para explorar resultados. El prototipo mantiene el recorrido en memoria; recargar la página restaura los ejemplos. Estos límites separan evaluación de interacción de validación funcional del producto.
+**Alcance del prototipo.** Los formularios, las confirmaciones y los estados complementarios permiten evaluar la secuencia de tareas y la comprensión de los mensajes. Las puntuaciones, transcripciones y tendencias son datos de ejemplo. El prototipo simula la interacción sin conectarse a servicios de autenticación, análisis de voz o almacenamiento; la validación funcional corresponde a la aplicación integrada.
 
-**Plan de evaluación de UX.** Se propone observar a participantes de ambos segmentos realizando primera práctica, simulación contextualizada y revocación/eliminación. Se registrarán éxito por tarea, tiempo de inicio, errores, comprensión del feedback y control de privacidad, con autorización y sin exponer material personal. QAS-USA-01 fija como meta inicial que al menos 90 % inicie una sesión válida en ≤ 3 minutos sin asistencia; aquí no se reporta ese resultado como obtenido. Los hallazgos reales, entrevistas de validación y evaluación heurística corresponderán al capítulo VII cuando se ejecuten.
+**Evaluación prevista.** La evaluación de UX observará a estudiantes de ambos segmentos realizando una primera práctica, una simulación contextualizada y una tarea de revocación o eliminación. Se registrarán el éxito por tarea, el tiempo de preparación, los errores y la comprensión del feedback y de las opciones de privacidad. El escenario QAS-USA-01 establece como objetivo que al menos el 90 % inicie una sesión válida en tres minutos o menos sin asistencia. Los resultados se incorporarán al capítulo VII cuando se realice la evaluación.
 
 # Capítulo VII: Software Product Implementation, Validation & Deployment
 
