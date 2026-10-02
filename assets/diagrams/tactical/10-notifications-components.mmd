@@ -1,8 +1,8 @@
 flowchart TB
-  input["Interface: eventos de evaluación y logros"] --> consumers["Application: ScoreNotificationConsumer y AchievementNotificationConsumer"]
-  consumers --> port["Domain: NotificationPushService / puerto de salida"]
-  adapter["Infrastructure: WebSocketPushAdapter"] -. implementa .-> port
+  broker["RabbitMQ: evaluación completada y logro obtenido"] --> consumers["Infrastructure: ScoreNotificationConsumer y AchievementNotificationConsumer"]
+  consumers --> app["Application propuesta: preparar y despachar aviso"]
+  app --> port["Domain propuesto: NotificationPushService"]
+  adapter["Infrastructure propuesta: WebSocketPushAdapter"] -. implementa .-> port
   adapter --> user["Cliente de Talki: mostrar aviso"]
-  broker["Infrastructure: RabbitMQ"] --> input
-  email["Ampliacion propuesta: canal de correo y seguimiento de envios"] -.-> port
-  note["Sin base de negocio propia"] -.-> consumers
+  email["Canal de correo y seguimiento propuestos"] -.-> port
+  note["Sin base de negocio propia"] -.-> app

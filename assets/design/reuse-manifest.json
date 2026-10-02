@@ -13,11 +13,12 @@
       "section": "5.1",
       "context": "Live Coaching",
       "legacy_service": "live-coach-service",
-      "kind": "reused_source_model",
+      "kind": "adapted_source_model",
       "model_files": [
         "assets/diagrams/tactical/01-live-coaching-classes.mmd",
         "assets/diagrams/tactical/01-live-coaching-database.mmd"
-      ]
+      ],
+      "model_note": "Diagrama de clases actualizado con LiveCoachOrchestrator, GeminiTokenService y SessionFinalizedPublisher; conserva las estrategias de modo de práctica."
     },
     {
       "section": "5.2",

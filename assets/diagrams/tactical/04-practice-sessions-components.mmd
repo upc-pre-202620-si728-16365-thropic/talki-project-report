@@ -1,9 +1,11 @@
 flowchart TB
-  input["Interface: SessionController / REST"] --> commands["Application: SessionCommandService"]
-  input --> queries["Application: SessionQueryService"]
+  input["Interface: SessionController / CreateSessionRequest"] --> commands["Application: SessionCommandServiceImpl"]
+  input --> queries["Application: SessionQueryServiceImpl"]
   commands --> session["Domain: Session y Feedback"]
   commands --> facade["Application: SessionContextFacade"]
   facade --> user["Domain: SessionUserContext"]
-  session --> repo["Infrastructure: repositorios JPA"]
+  commands --> repo["Infrastructure: SessionRepository y FeedbackRepository"]
   queries --> repo
-  repo --> db["PostgreSQL: sessions y session_feedback"]
+  repo --> db["PostgreSQL: sesiones y feedback"]
+  consumer["Infrastructure: UserRegisteredConsumer"] --> users["Infrastructure: AppUserRepository / proyección local"]
+  facade --> users

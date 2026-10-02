@@ -1,9 +1,10 @@
 flowchart TB
-  input["Interface: registro, acceso, renovación y perfil"] --> app["Application: casos de uso de cuenta y acceso"]
-  app --> model["Domain: AppUser, RefreshToken y UserRole"]
-  app --> security["Infrastructure: Spring Security y JWT"]
-  model --> repo["Infrastructure: persistencia de cuentas"]
-  repo --> db["PostgreSQL: app_users y refresh_tokens"]
-  app --> broker["Infrastructure: RabbitMQ / user.registered"]
-  broker --> others["Contextos interesados en el registro"]
-  consent["Ampliacion: registro verificable de consentimiento"] -.-> app
+  input["Interface: AuthController"] --> app["Application: AuthService"]
+  app --> model["Domain: AppUser y UserRole"]
+  app --> security["Infrastructure: PasswordEncoder y JwtTokenProvider"]
+  app --> repo["Infrastructure: AppUserRepository"]
+  repo --> db["PostgreSQL: app_users"]
+  app --> port["Application: UserRegisteredEventPublisher"]
+  adapter["Infrastructure: RabbitUserRegisteredPublisher"] -. implementa .-> port
+  adapter --> others["RabbitMQ: user.registered"]
+  proposal["Ampliación: RefreshToken y registro de consentimiento"] -.-> app

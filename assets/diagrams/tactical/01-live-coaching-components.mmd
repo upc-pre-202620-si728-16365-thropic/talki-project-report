@@ -1,9 +1,11 @@
 flowchart TB
-  input["Interface: modos, acceso temporal y cierre"] --> app["Application: LiveCoachOrchestrator"]
-  app --> factory["Application: SessionModeStrategyFactory"]
+  input["Interface: LiveCoachController y LiveTokenResponse"] --> app["Application: LiveCoachOrchestrator"]
+  app --> factory["Selección: SessionModeStrategyFactory"]
   factory --> strategy["Domain: SessionModeStrategy y estrategias de práctica"]
-  app --> client["Infrastructure: GeminiLiveClient"]
-  client --> provider["Gemini Live / pasarela de integración propuesta"]
-  app --> events["Infrastructure: publicación RabbitMQ"]
-  events --> sessions["Practice Session Management: conservar cierre"]
+  app --> token["Infrastructure: GeminiTokenService"]
+  token --> provider["Gemini: credencial temporal"]
+  provider --> client["Cliente: conversación de voz"]
+  app --> events["Infrastructure: SessionFinalizedPublisher / RabbitMQ"]
+  events --> next["Speech Analysis: procesar cierre"]
+  confirm["Ampliación: confirmar cierre en Sessions"] -.-> events
   note["Sin base de datos propia"] -.-> app
