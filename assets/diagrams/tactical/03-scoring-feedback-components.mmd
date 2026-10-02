@@ -1,0 +1,9 @@
+flowchart TB
+    input["Interface: REST / consumidor Métricas Calculadas"] --> app["FillerAnalyzedConsumer / ScoreCalculator"]
+    app --> domain["Domain: ScoreResult + ScoreCalculator"]
+    app --> port["Puerto: ScoreResultRepository"]
+    adapter["Infrastructure: adaptador de scoring-service"] -. implementa .-> port
+    adapter --> resource["Persistencia privada o salida del servicio"]
+    app --> integration["Puerto de integracion / eventos"]
+    infrastructure["Adaptador autorizado HTTP, WebSocket o RabbitMQ"] -. implementa .-> integration
+    infrastructure --> external["Speech Analysis / RubricRepository"]

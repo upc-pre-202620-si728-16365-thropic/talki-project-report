@@ -1,0 +1,17 @@
+flowchart TD
+  visit["Landing: conocer beneficios"] --> register["Registrar / verificar cuenta"]
+  register --> profile["Elegir segmento y meta"]
+  profile --> setup["Configurar modo y duracion"]
+  setup --> check["Probar microfono y revisar privacidad"]
+  check --> ready{"Permiso, audio y consentimiento validos?"}
+  ready -- No --> correct["Mostrar causa y pasos para corregir"]
+  correct --> check
+  ready -- Si --> live["Practicar: transcripcion y senales"]
+  live --> close{"Confirmar finalizacion?"}
+  close -- No --> live
+  close -- Si --> processing["Analisis: estado visible"]
+  processing --> result{"Evidencia suficiente?"}
+  result -- Si --> report["Reporte con versiones y acciones"]
+  result -- No --> partial["Resultado parcial: sin score inventado"]
+  report --> next["Elegir ejercicio y repetir"]
+  partial --> next

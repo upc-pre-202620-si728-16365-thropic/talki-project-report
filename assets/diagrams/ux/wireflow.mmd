@@ -1,0 +1,19 @@
+flowchart LR
+  L["L01 Landing"] --> A["A01 Registro / A02 Acceso"]
+  A --> P["P01 Perfil"]
+  P --> H["H01 Inicio"]
+  H --> S["S01 Configuracion"]
+  S --> S2["S02 Audio y consentimiento"]
+  S2 --> S3["S03 Practica en vivo"]
+  S3 --> S4["S04 Estado del analisis"]
+  S4 --> R["R01 Reporte"]
+  R --> G["G03 Plan de practica"]
+  G --> S
+  H --> I["H02 Historial"]
+  I --> R
+  I --> G2["G02 Comparacion"]
+  H --> G1["G01 Progreso"]
+  G1 --> G2
+  R --> D["D01 Privacidad"]
+  D --> T["T01 Vista del tutor"]
+  P --> N["N01 Notificaciones"]

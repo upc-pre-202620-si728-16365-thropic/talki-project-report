@@ -1,0 +1,9 @@
+flowchart TB
+    input["Interface: WebSocket / eventos de privacidad"] --> app["LiveCoachOrchestrator"]
+    app --> domain["Domain: LiveCoachOrchestrator + SessionModeStrategy"]
+    app --> port["Puerto: SessionStatePort"]
+    adapter["Infrastructure: adaptador de live-coach-service"] -. implementa .-> port
+    adapter --> resource["Persistencia privada o salida del servicio"]
+    app --> integration["Puerto de integracion / eventos"]
+    infrastructure["Adaptador autorizado HTTP, WebSocket o RabbitMQ"] -. implementa .-> integration
+    infrastructure --> external["AI Provider Gateway / Sessions"]

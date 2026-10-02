@@ -1,0 +1,25 @@
+classDiagram
+    class UserProgress {
+        +Long userId
+        +int totalSessions
+        +double avgOverall
+        +int xpTotal
+        +Instant updatedAt
+        +recordSession(VoiceScore) void
+    }
+    class SessionMetrics {
+        +UUID sessionId
+        +Long userId
+        +int overall
+        +Instant occurredAt
+    }
+    class ScoringCompletedConsumer {
+        +handle(ScoringCompletedEvent) void
+    }
+    class UserProgressQueryService {
+        +getDashboard(Long userId) UserProgressView
+        +compareSessions(UUID a, UUID b) ComparisonView
+    }
+    ScoringCompletedConsumer --> UserProgress : updates
+    ScoringCompletedConsumer --> SessionMetrics : appends
+    UserProgressQueryService ..> UserProgress : reads

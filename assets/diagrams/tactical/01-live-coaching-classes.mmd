@@ -1,0 +1,27 @@
+classDiagram
+    class LiveCoachOrchestrator {
+        +start(sessionId, mode) void
+        +finalize(sessionId) SessionLiveFinalizedEvent
+    }
+    class SessionModeStrategyFactory {
+        +forMode(SessionMode) SessionModeStrategy
+    }
+    class SessionModeStrategy {
+        <<interface>>
+        +buildSystemPrompt() String
+        +configureTurnTaking() Config
+    }
+    class QuickPracticeStrategy
+    class InterviewStrategy
+    class ThesisDefenseStrategy
+    class ScenarioStrategy
+    class GeminiLiveClient {
+        +connect(prompt) WebSocketSession
+        +closeAndCollectTranscript() String
+    }
+    SessionModeStrategy <|.. QuickPracticeStrategy
+    SessionModeStrategy <|.. InterviewStrategy
+    SessionModeStrategy <|.. ThesisDefenseStrategy
+    SessionModeStrategy <|.. ScenarioStrategy
+    LiveCoachOrchestrator --> SessionModeStrategyFactory
+    LiveCoachOrchestrator --> GeminiLiveClient

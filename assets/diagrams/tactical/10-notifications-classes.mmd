@@ -1,0 +1,15 @@
+classDiagram
+    class ScoreNotificationConsumer {
+        +handle(ScoringCompletedEvent) void
+    }
+    class AchievementNotificationConsumer {
+        +handle(AchievementUnlockedEvent) void
+    }
+    class NotificationPushService {
+        <<interface>>
+        +push(Long userId, String message) void
+    }
+    class WebSocketPushAdapter
+    NotificationPushService <|.. WebSocketPushAdapter
+    ScoreNotificationConsumer --> NotificationPushService
+    AchievementNotificationConsumer --> NotificationPushService

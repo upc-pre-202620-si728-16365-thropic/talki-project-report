@@ -1,0 +1,15 @@
+erDiagram
+    USER_PROGRESS ||--o{ SESSION_METRICS : aggregates
+    USER_PROGRESS {
+        bigint user_id PK
+        int total_sessions
+        double avg_overall
+        int xp_total
+        timestamp updated_at
+    }
+    SESSION_METRICS {
+        uuid session_id PK
+        bigint user_id FK
+        int overall
+        timestamp occurred_at
+    }

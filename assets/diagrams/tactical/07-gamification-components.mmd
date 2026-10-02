@@ -1,0 +1,9 @@
+flowchart TB
+    input["Interface: REST / consumidor Veredicto de Validez"] --> app["ScoringCompletedConsumer de Gamification"]
+    app --> domain["Domain: UserStreak + Achievement"]
+    app --> port["Puerto: UserStreakRepository"]
+    adapter["Infrastructure: adaptador de gamification-service"] -. implementa .-> port
+    adapter --> resource["Persistencia privada o salida del servicio"]
+    app --> integration["Puerto de integracion / eventos"]
+    infrastructure["Adaptador autorizado HTTP, WebSocket o RabbitMQ"] -. implementa .-> integration
+    infrastructure --> external["Practice Session Management / Progress"]

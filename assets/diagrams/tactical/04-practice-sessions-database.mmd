@@ -1,0 +1,18 @@
+erDiagram
+    SESSIONS ||--o{ SESSION_FEEDBACK : has
+    SESSIONS {
+        uuid id PK
+        bigint user_id
+        varchar title
+        varchar mode
+        varchar state
+        timestamp started_at
+        timestamp finalized_at
+    }
+    SESSION_FEEDBACK {
+        uuid id PK
+        uuid session_id FK
+        text content
+        jsonb structured_data
+        timestamp created_at
+    }

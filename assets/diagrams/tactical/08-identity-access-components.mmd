@@ -1,0 +1,9 @@
+flowchart TB
+    input["Interface: REST / autenticación / consentimiento"] --> app["Casos de uso de Identity"]
+    app --> domain["Domain: AppUser + RefreshToken"]
+    app --> port["Puerto: AppUserRepository"]
+    adapter["Infrastructure: adaptador de identity-service"] -. implementa .-> port
+    adapter --> resource["Persistencia privada o salida del servicio"]
+    app --> integration["Puerto de integracion / eventos"]
+    infrastructure["Adaptador autorizado HTTP, WebSocket o RabbitMQ"] -. implementa .-> integration
+    infrastructure --> external["TokenIssuer / PasswordHasher"]

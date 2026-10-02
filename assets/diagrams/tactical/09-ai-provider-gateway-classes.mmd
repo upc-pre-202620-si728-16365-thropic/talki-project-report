@@ -1,0 +1,11 @@
+classDiagram
+class AIProviderPort {
+  <<interface>>
+  +openLive(request)
+  +closeAndCollectTranscript()
+}
+class GeminiLiveClient {
+  +connect(prompt) WebSocketSession
+  +closeAndCollectTranscript() String
+}
+AIProviderPort <|.. GeminiLiveClient : adaptacion propuesta

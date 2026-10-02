@@ -1,0 +1,9 @@
+flowchart TB
+    input["Interface: REST / recibos de purga"] --> app["PrivacyApplicationService"]
+    app --> domain["Domain: ShareGrant + DeletionRequest"]
+    app --> port["Puerto: PrivacyRepository"]
+    adapter["Infrastructure: adaptador de Sharing & Retention"] -. implementa .-> port
+    adapter --> resource["Persistencia privada o salida del servicio"]
+    app --> integration["Puerto de integracion / eventos"]
+    infrastructure["Adaptador autorizado HTTP, WebSocket o RabbitMQ"] -. implementa .-> integration
+    infrastructure --> external["Scoring / Sessions / contextos propietarios"]

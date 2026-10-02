@@ -1,0 +1,26 @@
+classDiagram
+    class UserStreak {
+        +Long userId
+        +int currentStreakDays
+        +int longestStreakDays
+        +int xp
+        +Instant lastSessionAt
+        +incrementOrReset(Instant) void
+        +addXp(int delta) void
+    }
+    class Achievement {
+        +Long id
+        +Long userId
+        +String code
+        +String title
+        +Instant unlockedAt
+    }
+    class ScoringCompletedConsumer {
+        +handle(ScoringCompletedEvent) void
+    }
+    class AchievementUnlockedPublisher {
+        +publish(AchievementUnlockedEvent) void
+    }
+    ScoringCompletedConsumer --> UserStreak : updates
+    ScoringCompletedConsumer --> Achievement : creates
+    ScoringCompletedConsumer --> AchievementUnlockedPublisher

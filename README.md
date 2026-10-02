@@ -42,7 +42,7 @@
 
 <br>
 
-**Septiembre, 2026**
+**Octubre, 2026**
 
 <br><br>
 
@@ -63,6 +63,7 @@
 | 0.7 | 19/09/2026 | Equipo Thropic | Complementación del Student Outcome con la trazabilidad de los aportes de cada integrante en el TB1. |
 | 0.8 | 19/09/2026 | Chi Cruzatt, Kevin Jorge | Desarrollo de la sección 4.3 (Software Architecture) y elaboración de los diagramas System Landscape, Context Level, Container Level y Deployment. |
 | 0.9 | 19/09/2026 | Equipo Thropic | Incorporación del avance de conclusiones y recomendaciones, bibliografía, anexos y evidencia de colaboración del TB1. |
+| 1.0 | 02/10/2026 | Edición asistida por Codex | Reutilización y adaptación del informe previo de Talki (SI657, 2026-01, develop 2cfa379) al diseño táctico y UX del segundo hito de TB1; incorporación de modelos, capturas existentes y complementos de diseño web/móvil. Revisión del equipo y feedback docente pendientes. |
 
 # Project Report Collaboration Insights
 
@@ -77,6 +78,10 @@ La evidencia de colaboración del TB1 se mantiene en GitHub mediante los commits
 | Alejandro Daniel Oroncoy Almeyda | Especificación de requisitos y ADD. | Secciones 3.1–4.1.5. |
 | Werner Khalil Lang Nassi | Diseño estratégico basado en DDD. | Secciones 4.2–4.2.5. |
 | Kevin Jorge Chi Cruzatt | Software Architecture y sus cuatro diagramas. | Sección 4.3. |
+
+## Segundo hito de TB1 — semana 7
+
+Esta revisión incorpora capítulos V y VI y sus fuentes/artefactos en la rama `development`, creada desde el avance consolidado en `develop`. La edición reutiliza el [informe previo de Talki](https://github.com/upc-pre-202601-si657-7940-thropic/talki-project-report/blob/2cfa379b72241a1380d87b4f8c5be53a70950d81/README.MD) y fue adaptada con asistencia de Codex a solicitud de Alejandro. La revisión del equipo y la sustentación de este hito están pendientes; sus aportes se incorporarán al registro individual con la evidencia correspondiente. El feedback docente de los capítulos previos sigue pendiente de incorporación.
 
 # Contenido
 
@@ -133,15 +138,96 @@ La evidencia de colaboración del TB1 se mantiene en GitHub mediante los commits
     - [4.3.3. Container Level Diagrams](#433-container-level-diagrams)
     - [4.3.4. Deployment Diagrams](#434-deployment-diagrams)
 - [Capítulo V: Tactical-Level Software Design](#capítulo-v-tactical-level-software-design)
-  - [5.X. Bounded Context: Nombre del Bounded Context](#5x-bounded-context-nombre-del-bounded-context)
-    - [5.X.1. Domain Layer](#5x1-domain-layer)
-    - [5.X.2. Interface Layer](#5x2-interface-layer)
-    - [5.X.3. Application Layer](#5x3-application-layer)
-    - [5.X.4. Infrastructure Layer](#5x4-infrastructure-layer)
-    - [5.X.5. Component Level Diagrams](#5x5-component-level-diagrams)
-    - [5.X.6. Code Level Diagrams](#5x6-code-level-diagrams)
-      - [5.X.6.1. Domain Layer Class Diagrams](#5x61-domain-layer-class-diagrams)
-      - [5.X.6.2. Database Design Diagram](#5x62-database-design-diagram)
+  - [5.1. Bounded Context: Live Coaching](#51-bounded-context-live-coaching)
+    - [5.1.1. Domain Layer](#511-domain-layer)
+    - [5.1.2. Interface Layer](#512-interface-layer)
+    - [5.1.3. Application Layer](#513-application-layer)
+    - [5.1.4. Infrastructure Layer](#514-infrastructure-layer)
+    - [5.1.5. Component Level Diagrams](#515-component-level-diagrams)
+    - [5.1.6. Code Level Diagrams](#516-code-level-diagrams)
+      - [5.1.6.1. Domain Layer Class Diagrams](#5161-domain-layer-class-diagrams)
+      - [5.1.6.2. Database Design Diagram](#5162-database-design-diagram)
+  - [5.2. Bounded Context: Speech Analysis](#52-bounded-context-speech-analysis)
+    - [5.2.1. Domain Layer](#521-domain-layer)
+    - [5.2.2. Interface Layer](#522-interface-layer)
+    - [5.2.3. Application Layer](#523-application-layer)
+    - [5.2.4. Infrastructure Layer](#524-infrastructure-layer)
+    - [5.2.5. Component Level Diagrams](#525-component-level-diagrams)
+    - [5.2.6. Code Level Diagrams](#526-code-level-diagrams)
+      - [5.2.6.1. Domain Layer Class Diagrams](#5261-domain-layer-class-diagrams)
+      - [5.2.6.2. Database Design Diagram](#5262-database-design-diagram)
+  - [5.3. Bounded Context: Scoring & Feedback](#53-bounded-context-scoring--feedback)
+    - [5.3.1. Domain Layer](#531-domain-layer)
+    - [5.3.2. Interface Layer](#532-interface-layer)
+    - [5.3.3. Application Layer](#533-application-layer)
+    - [5.3.4. Infrastructure Layer](#534-infrastructure-layer)
+    - [5.3.5. Component Level Diagrams](#535-component-level-diagrams)
+    - [5.3.6. Code Level Diagrams](#536-code-level-diagrams)
+      - [5.3.6.1. Domain Layer Class Diagrams](#5361-domain-layer-class-diagrams)
+      - [5.3.6.2. Database Design Diagram](#5362-database-design-diagram)
+  - [5.4. Bounded Context: Practice Session Management](#54-bounded-context-practice-session-management)
+    - [5.4.1. Domain Layer](#541-domain-layer)
+    - [5.4.2. Interface Layer](#542-interface-layer)
+    - [5.4.3. Application Layer](#543-application-layer)
+    - [5.4.4. Infrastructure Layer](#544-infrastructure-layer)
+    - [5.4.5. Component Level Diagrams](#545-component-level-diagrams)
+    - [5.4.6. Code Level Diagrams](#546-code-level-diagrams)
+      - [5.4.6.1. Domain Layer Class Diagrams](#5461-domain-layer-class-diagrams)
+      - [5.4.6.2. Database Design Diagram](#5462-database-design-diagram)
+  - [5.5. Bounded Context: Progress & Adaptation](#55-bounded-context-progress--adaptation)
+    - [5.5.1. Domain Layer](#551-domain-layer)
+    - [5.5.2. Interface Layer](#552-interface-layer)
+    - [5.5.3. Application Layer](#553-application-layer)
+    - [5.5.4. Infrastructure Layer](#554-infrastructure-layer)
+    - [5.5.5. Component Level Diagrams](#555-component-level-diagrams)
+    - [5.5.6. Code Level Diagrams](#556-code-level-diagrams)
+      - [5.5.6.1. Domain Layer Class Diagrams](#5561-domain-layer-class-diagrams)
+      - [5.5.6.2. Database Design Diagram](#5562-database-design-diagram)
+  - [5.6. Bounded Context: Sharing & Retention](#56-bounded-context-sharing--retention)
+    - [5.6.1. Domain Layer](#561-domain-layer)
+    - [5.6.2. Interface Layer](#562-interface-layer)
+    - [5.6.3. Application Layer](#563-application-layer)
+    - [5.6.4. Infrastructure Layer](#564-infrastructure-layer)
+    - [5.6.5. Component Level Diagrams](#565-component-level-diagrams)
+    - [5.6.6. Code Level Diagrams](#566-code-level-diagrams)
+      - [5.6.6.1. Domain Layer Class Diagrams](#5661-domain-layer-class-diagrams)
+      - [5.6.6.2. Database Design Diagram](#5662-database-design-diagram)
+  - [5.7. Bounded Context: Gamification](#57-bounded-context-gamification)
+    - [5.7.1. Domain Layer](#571-domain-layer)
+    - [5.7.2. Interface Layer](#572-interface-layer)
+    - [5.7.3. Application Layer](#573-application-layer)
+    - [5.7.4. Infrastructure Layer](#574-infrastructure-layer)
+    - [5.7.5. Component Level Diagrams](#575-component-level-diagrams)
+    - [5.7.6. Code Level Diagrams](#576-code-level-diagrams)
+      - [5.7.6.1. Domain Layer Class Diagrams](#5761-domain-layer-class-diagrams)
+      - [5.7.6.2. Database Design Diagram](#5762-database-design-diagram)
+  - [5.8. Bounded Context: Identity & Access](#58-bounded-context-identity--access)
+    - [5.8.1. Domain Layer](#581-domain-layer)
+    - [5.8.2. Interface Layer](#582-interface-layer)
+    - [5.8.3. Application Layer](#583-application-layer)
+    - [5.8.4. Infrastructure Layer](#584-infrastructure-layer)
+    - [5.8.5. Component Level Diagrams](#585-component-level-diagrams)
+    - [5.8.6. Code Level Diagrams](#586-code-level-diagrams)
+      - [5.8.6.1. Domain Layer Class Diagrams](#5861-domain-layer-class-diagrams)
+      - [5.8.6.2. Database Design Diagram](#5862-database-design-diagram)
+  - [5.9. Bounded Context: AI Provider Gateway](#59-bounded-context-ai-provider-gateway)
+    - [5.9.1. Domain Layer](#591-domain-layer)
+    - [5.9.2. Interface Layer](#592-interface-layer)
+    - [5.9.3. Application Layer](#593-application-layer)
+    - [5.9.4. Infrastructure Layer](#594-infrastructure-layer)
+    - [5.9.5. Component Level Diagrams](#595-component-level-diagrams)
+    - [5.9.6. Code Level Diagrams](#596-code-level-diagrams)
+      - [5.9.6.1. Domain Layer Class Diagrams](#5961-domain-layer-class-diagrams)
+      - [5.9.6.2. Database Design Diagram](#5962-database-design-diagram)
+  - [5.10. Bounded Context: Notifications](#510-bounded-context-notifications)
+    - [5.10.1. Domain Layer](#5101-domain-layer)
+    - [5.10.2. Interface Layer](#5102-interface-layer)
+    - [5.10.3. Application Layer](#5103-application-layer)
+    - [5.10.4. Infrastructure Layer](#5104-infrastructure-layer)
+    - [5.10.5. Component Level Diagrams](#5105-component-level-diagrams)
+    - [5.10.6. Code Level Diagrams](#5106-code-level-diagrams)
+      - [5.10.6.1. Domain Layer Class Diagrams](#51061-domain-layer-class-diagrams)
+      - [5.10.6.2. Database Design Diagram](#51062-database-design-diagram)
 - [Capítulo VI: Solution UX Design](#capítulo-vi-solution-ux-design)
   - [6.1. Style Guidelines](#61-style-guidelines)
     - [6.1.1. General Style Guidelines](#611-general-style-guidelines)
@@ -1245,7 +1331,7 @@ Una historia se considera terminada cuando está integrada, cumple los criterios
 
 ## 4.1. Strategic-Level Attribute-Driven Design
 
-El diseño estratégico de Talki utiliza Attribute-Driven Design (ADD) para transformar la funcionalidad primaria, los atributos de calidad y las restricciones en decisiones arquitectónicas justificadas. En esta etapa se diseña el sistema como un todo; la descomposición táctica de cada contexto se desarrollará en capítulos posteriores.
+El diseño estratégico de Talki utiliza Attribute-Driven Design (ADD) para transformar la funcionalidad primaria, los atributos de calidad y las restricciones en decisiones arquitectónicas justificadas. En esta etapa se diseña el sistema como un todo; la descomposición táctica de cada contexto se desarrolla en el capítulo V de esta revisión.
 
 ### 4.1.1. Design Purpose
 
@@ -1271,7 +1357,7 @@ El propósito del diseño es definir una arquitectura capaz de soportar una expe
 | Soporte y operaciones | Recuperación ante fallos, trazabilidad, alertas y diagnóstico sin exponer datos privados. |
 | Universidad o aliado institucional | Seguridad, gobernanza, disponibilidad y posibilidad de integración futura. |
 
-**Fuera del alcance de esta iteración:** definición táctica completa de agregados, clases, repositorios y esquemas de cada Bounded Context; implementación de una aplicación móvil nativa; evaluación clínica de ansiedad; y decisiones comerciales definitivas de facturación institucional.
+**Fuera del alcance de la primera iteración (capítulo IV):** definición táctica completa de agregados, clases, repositorios y esquemas de cada Bounded Context; implementación de una aplicación móvil nativa; evaluación clínica de ansiedad; y decisiones comerciales definitivas de facturación institucional.
 
 ### 4.1.2. Attribute-Driven Design Inputs
 
@@ -1861,75 +1947,919 @@ El diagrama de contexto detalla las personas y sistemas de software que se comun
 
 El diagrama de contenedores descompone a Talki en sus bloques desplegables (aplicaciones, servicios y almacenes de datos), mostrando cómo se comunican entre sí para entregar la funcionalidad del sistema.
 
-![Diagrama de Contenedores de Talki](assets/images/DiagramsUML/conainer.png)
+Para el segundo hito se refina la vista inicial: se mantiene React/Flutter y los módulos Java, se representa RabbitMQ y se explicita ownership de datos por contexto. Compartir infraestructura PostgreSQL no permite acceso a tablas de otro contexto. La agrupación de paquetes no obliga a desplegar diez procesos desde el piloto.
+
+![Diagrama de Contenedores refinado de Talki](assets/diagrams/tactical/container-refinement.png)
+
+[Fuente editable](assets/diagrams/tactical/container-refinement.mmd) · [Vista del primer hito](assets/images/DiagramsUML/conainer.png)
 
 ### 4.3.4. Deployment Diagrams
 
 El diagrama de despliegue representa la infraestructura sobre la que se ejecutan los contenedores de Talki, indicando los nodos de ejecución y la ubicación de cada componente en el entorno productivo.
 
-![Diagrama de Despliegue de Talki](assets/images/DiagramsUML/deploy.png)
+La vista refinada es un **despliegue propuesto**, no evidencia de infraestructura en ejecución. Incluye RabbitMQ en el entorno Railway, HTTPS/WSS para ambos clientes y conexión PostgreSQL con TLS a Supabase. El almacenamiento de material y proveedor de correo se muestran como adaptadores pendientes de configurar. Firebase no se asume como dependencia del flujo: su uso requiere una decisión posterior específica.
+
+![Diagrama de Despliegue refinado de Talki](assets/diagrams/tactical/deployment-refinement.png)
+
+[Fuente editable](assets/diagrams/tactical/deployment-refinement.mmd) · [Vista del primer hito](assets/images/DiagramsUML/deploy.png)
 
 # Capítulo V: Tactical-Level Software Design
 
-> La siguiente estructura se repite para cada Bounded Context identificado en el proyecto.
+El diseño táctico **reutiliza los modelos del informe anterior de Talki (SI657, 2026-01)** y los organiza con el formato de Arquitecturas de Software Emergentes (SI728, 2026-20). Se toma la versión consolidada de [`develop`, commit `2cfa379`](https://github.com/upc-pre-202601-si657-7940-thropic/talki-project-report/blob/2cfa379b72241a1380d87b4f8c5be53a70950d81/README.MD), particularmente 4.1.5 (clases y datos por microservicio), 5.1.2 (capas/patrones) y 5.3.3.5 (contratos del cliente). Las clases y tablas de origen se conservan; las ampliaciones exigidas por US29–US38, C-09 y el mapa actual se identifican como evolución de esa base.
 
-## 5.X. Bounded Context: Nombre del Bounded Context
+El informe anterior agrupaba el dominio en cinco contextos y ocho microservicios. El capítulo IV actual separa diez fronteras. Se reutilizan las capacidades existentes con la siguiente correspondencia; **una frontera de modelo no exige crear otro microservicio**.
 
-### 5.X.1. Domain Layer
+| Bounded context actual | Base reutilizada del proyecto previo | Adaptación para esta entrega |
+| --- | --- | --- |
+| Live Coaching | live-coach-service: Orchestrator, Strategy/Factory y cliente Gemini. | Señales, recuperación y chequeo de consentimiento del modelo actual. |
+| Speech Analysis | filler-detection-service: FillerDetector/FillerResult y eventos. | Disponibilidad de evidencia y versionado de análisis. |
+| Scoring & Feedback | scoring-service: ScoreResult/VoiceScore. | Separación respecto del análisis, rúbrica y recomendaciones trazables. |
+| Practice Session Management | session-service: Session, Feedback, CQRS y ACL. | Preparación, material autorizado y veredicto de validez. |
+| Progress & Adaptation | progress-service: UserProgress/SessionMetrics y consultas CQRS. | Comparabilidad por versión y plan adaptativo. |
+| Sharing & Retention | Funciones de exportación/media previstas en el trabajo anterior. | Modelo específico de permisos temporales, revocación y purga. |
+| Gamification | gamification-service: UserStreak/Achievement. | Consumir veredicto válido y evitar duplicados. |
+| Identity & Access | identity-service: AppUser, UserRole, RefreshToken. | Consentimiento verificable y control de recursos. |
+| AI Provider Gateway | GeminiLiveClient y patrón de adaptador descritos en Live Coach. | Extraer la integración como ACL/puerto sin asumir otro proceso. |
+| Notifications | notification-service: consumers y NotificationPushService. | Avisos de privacidad, preferencias y correo transaccional. |
 
-### 5.X.2. Interface Layer
+## Convenciones de capas y persistencia
 
-### 5.X.3. Application Layer
+Se reutiliza la estructura hexagonal del informe anterior:
 
-### 5.X.4. Infrastructure Layer
+```text
+com.thropic.talki.<service>/
+├── domain/
+│   ├── model/          # Agregados, entidades y value objects
+│   ├── event/          # Eventos de dominio
+│   ├── port/in/        # Casos de uso
+│   ├── port/out/       # Repositorios e integraciones
+│   └── service/        # Reglas de dominio
+├── application/service/    # Orquestación de casos de uso
+├── infrastructure/adapter/
+│   ├── web/            # REST y DTOs: Interface Layer
+│   ├── persistence/    # JPA/PostgreSQL
+│   └── messaging/      # RabbitMQ listeners/publishers
+└── infrastructure/config/ # Configuración de framework
+```
 
-### 5.X.5. Component Level Diagrams
+Interface traduce HTTP/eventos a casos de uso; Application orquesta; Domain define reglas; Infrastructure implementa puertos. DTO, JPA y SDK de IA no se propagan como modelo compartido entre contextos. PostgreSQL conserva ownership por servicio/contexto; los IDs externos son referencias lógicas, sin FK entre bases. Los servicios stateless del trabajo previo no reciben una base de datos ficticia para llenar el formato.
 
-### 5.X.6. Code Level Diagrams
+**Compatibilidad de eventos.** Se conservan `user.registered`, `session.live.finalized`, `fillers.analyzed`, `scoring.completed` y `achievement.unlocked` como nombres de la base anterior. Su evolución debe añadir versión de esquema, análisis/rúbrica e IDs de correlación mediante contratos compatibles. ADD-05 exige cierre duradero/Outbox y deduplicación en los propietarios de resultado; el informe previo identifica como pendiente un broker compartido. Copiar documentación no resuelve automáticamente esa integración ni acredita nuevas pruebas de calidad.
 
-#### 5.X.6.1. Domain Layer Class Diagrams
+## 5.1. Bounded Context: Live Coaching
 
-#### 5.X.6.2. Database Design Diagram
+**Base:** live-coach-service. **Trazabilidad:** US12–US14, US31, US34, US38; ADD-03, ADD-06, ADD-08, ADD-10, ADD-12; QAS-PER-01, QAS-AVA-01.
+
+Convertir la práctica autorizada en transcripción incremental, señales discretas y turnos de simulación, sin asumir las reglas de validez o la puntuación del ensayo.
+
+### 5.1.1. Domain Layer
+
+**Modelo de dominio:** No mantiene agregado persistente propio. Usa LiveCoachOrchestrator, SessionModeStrategy y SessionModeStrategyFactory.
+
+1. La estrategia depende del modo; agregar un modo no modifica el orquestador central.
+2. No se conserva audio crudo por defecto. Transcript y métricas del cierre se entregan al propietario durable de la sesión.
+3. Los permisos y consentimiento de US29 deben verificarse antes de habilitar captura. Recuperación, señal silenciable y cierre parcial se incorporan como extensiones del curso actual.
+
+### 5.1.2. Interface Layer
+
+| Contrato / capacidad | Responsabilidad |
+| --- | --- |
+| `GET /v1/coach/modes` | Consultar modos de práctica del servicio previo. |
+| `POST /v1/coach/live-token?mode=` | Obtener token efímero para el cliente Gemini Live. |
+| `POST /v1/coach/{id}/finalize` | Finalizar el flujo en vivo y generar session.live.finalized. |
+
+Los contratos marcados como base anterior proceden de 5.3.3.5 del informe fuente; las capacidades nuevas se concretarán mediante contratos versionados. Identidad y propiedad se verifican en servidor, no se aceptan como permisos declarados por el cliente.
+
+### 5.1.3. Application Layer
+
+Se reutiliza LiveCoachOrchestrator para iniciar/cerrar la práctica, SessionModeStrategyFactory para seleccionar QuickPracticeStrategy, InterviewStrategy, ThesisDefenseStrategy o ScenarioStrategy, y GeminiLiveClient para la conexión al proveedor. El cliente web previo también documenta la ruta de token efímero y feedback local; la integración del curso actual deberá consolidar qué responsabilidad vive en cliente y cuál en servidor.
+
+### 5.1.4. Infrastructure Layer
+
+El modelo previo es stateless: buffers y cálculo acústico en memoria, transporte WebSocket/Gemini y publisher RabbitMQ. El estado durable pertenece a session-service. Para ADD-05, el cierre confirmado y su Outbox deberán guardarse en Sessions antes de publicar; conservar un checkpoint para US34 es una extensión del piloto, no una tabla existente del servicio anterior.
+
+### 5.1.5. Component Level Diagrams
+
+![Componentes de Live Coaching](assets/diagrams/tactical/01-live-coaching-components.png)
+
+[Fuente editable](assets/diagrams/tactical/01-live-coaching-components.mmd). La vista organiza los componentes de la base reutilizada con las capas del formato actual; la flecha discontinua indica implementación de puerto.
+
+### 5.1.6. Code Level Diagrams
+
+#### 5.1.6.1. Domain Layer Class Diagrams
+
+![Clases de Live Coaching](assets/diagrams/tactical/01-live-coaching-classes.png)
+
+[Fuente editable](assets/diagrams/tactical/01-live-coaching-classes.mmd). Modelo reutilizado; las clases de origen conservan sus nombres y tipos para facilitar la continuidad con los repositorios existentes.
+
+#### 5.1.6.2. Database Design Diagram
+
+![Persistencia de Live Coaching](assets/diagrams/tactical/01-live-coaching-database.png)
+
+[Fuente editable](assets/diagrams/tactical/01-live-coaching-database.mmd).
+
+N/A en el modelo previo: el servicio no tiene base propia. El resultado durable queda en session-service y scoring-service; no se inventa una tabla LiveChannel como si ya existiera.
+
+## 5.2. Bounded Context: Speech Analysis
+
+**Base:** filler-detection-service. **Trazabilidad:** US16–US18, US37 y métricas de US15; ADD-04–ADD-08, ADD-10, ADD-14; QAS-PER-02, QAS-REL-01.
+
+Transformar evidencia autorizada en métricas reproducibles de discurso; no decide metas pedagógicas ni el Voice Coach Score.
+
+### 5.2.1. Domain Layer
+
+**Modelo de dominio:** No mantiene agregado persistente propio; FillerDetector es servicio de dominio y FillerResult es el resultado de análisis.
+
+1. FillerResult expresa conteo y proporción; no constituye todavía una puntuación global.
+2. La evidencia se deriva del transcript autorizado. Volumen y otras dimensiones acústicas requieren features de captura; no pueden inferirse como mediciones reales solo desde texto.
+3. Una sesión insuficiente debe identificarse; al adaptar el pipeline se añade analysis_version y evidencia disponible sin fabricar métricas.
+
+### 5.2.2. Interface Layer
+
+| Contrato / capacidad | Responsabilidad |
+| --- | --- |
+| `session.live.finalized` | Consumir transcript_gemini y métricas autorizadas del cierre. |
+| `fillers.analyzed` | Publicar conteo/distribución de muletillas y evidencia de análisis. |
+| `GET /actuator/health` | Consultar salud; el informe previo no documenta una API REST de análisis. |
+
+Los contratos marcados como base anterior proceden de 5.3.3.5 del informe fuente; las capacidades nuevas se concretarán mediante contratos versionados. Identidad y propiedad se verifican en servidor, no se aceptan como permisos declarados por el cliente.
+
+### 5.2.3. Application Layer
+
+SessionLiveFinalizedConsumer recibe el evento, FillerDetector procesa la transcripción y devuelve FillerResult (totalFillers, byType y fillerRatio); FillerAnalyzedPublisher emite fillers.analyzed. El procesamiento determinista se separa de la construcción del score, que pertenece a Scoring & Feedback.
+
+### 5.2.4. Infrastructure Layer
+
+Se reutiliza el consumidor/publisher RabbitMQ del transformador stateless. La fuente describe regex y ONNX opcional, sin base persistente propia. La persistencia del resultado está aguas abajo en scoring-service. Estado consultable, versiones de análisis e idempotencia persistente de US37/ADD-05 son evoluciones a verificar, no endpoints heredados ya disponibles.
+
+### 5.2.5. Component Level Diagrams
+
+![Componentes de Speech Analysis](assets/diagrams/tactical/02-speech-analysis-components.png)
+
+[Fuente editable](assets/diagrams/tactical/02-speech-analysis-components.mmd). La vista organiza los componentes de la base reutilizada con las capas del formato actual; la flecha discontinua indica implementación de puerto.
+
+### 5.2.6. Code Level Diagrams
+
+#### 5.2.6.1. Domain Layer Class Diagrams
+
+![Clases de Speech Analysis](assets/diagrams/tactical/02-speech-analysis-classes.png)
+
+[Fuente editable](assets/diagrams/tactical/02-speech-analysis-classes.mmd). Modelo reutilizado; las clases de origen conservan sus nombres y tipos para facilitar la continuidad con los repositorios existentes.
+
+#### 5.2.6.2. Database Design Diagram
+
+![Persistencia de Speech Analysis](assets/diagrams/tactical/02-speech-analysis-database.png)
+
+[Fuente editable](assets/diagrams/tactical/02-speech-analysis-database.mmd).
+
+N/A en el modelo previo: las métricas viajan en fillers.analyzed. La nueva persistencia técnica de estado/reintento se diseñará al integrar US37; el resultado final no se duplica en este transformador.
+
+## 5.3. Bounded Context: Scoring & Feedback
+
+**Base:** scoring-service. **Trazabilidad:** US15, US19, US26, US37; ADD-05, ADD-07, ADD-11, ADD-14; C-09, QAS-REL-01.
+
+Convertir métricas en puntuación y recomendaciones trazables mediante una rúbrica explícita y versionada.
+
+### 5.3.1. Domain Layer
+
+**Modelo de dominio:** ScoreResult; VoiceScore es value object embebido.
+
+1. VoiceScore conserva cinco dimensiones de 0 a 100; no representa una nota del curso ni un diagnóstico.
+2. La versión de análisis/rúbrica y la disponibilidad de evidencia se incorporan al evolucionar ScoreResult; no se reescribe la historia al cambiar criterios.
+3. Reentregar un mismo análisis no produce un segundo resultado; la nueva clave compuesta debe protegerlo antes de habilitar reprocesamiento.
+
+### 5.3.2. Interface Layer
+
+| Contrato / capacidad | Responsabilidad |
+| --- | --- |
+| `fillers.analyzed` | Consumir métricas del análisis. |
+| `scoring.completed` | Publicar el score calculado para progreso y engagement. |
+| `GET /actuator/health` | Salud del servicio; no equivale a una consulta REST del reporte. |
+
+Los contratos marcados como base anterior proceden de 5.3.3.5 del informe fuente; las capacidades nuevas se concretarán mediante contratos versionados. Identidad y propiedad se verifican en servidor, no se aceptan como permisos declarados por el cliente.
+
+### 5.3.3. Application Layer
+
+FillerAnalyzedConsumer delega en ScoreCalculator, que genera VoiceScore con fluency, clarity, volume, vocabulary y confidence. Persiste ScoreResult y publica scoring.completed. Se reutiliza el modelo previo y se separa conceptualmente de Speech Analysis conforme a 4.2.4; las recomendaciones con evidencia y lenguaje por segmento amplían ese resultado.
+
+### 5.3.4. Infrastructure Layer
+
+Spring Boot, RabbitMQ y PostgreSQL con score_results e índice único por session_id en la base previa. Para C-09/ADD-05 se evolucionará la clave a session_id + analysis_version y se guardará rubric_version; el diagrama conservado muestra el punto de partida. Una UI de consulta debe obtener el reporte por un contrato autorizado del BFF/Sessions, sin inventar una ruta REST de dominio en el servicio anterior.
+
+### 5.3.5. Component Level Diagrams
+
+![Componentes de Scoring & Feedback](assets/diagrams/tactical/03-scoring-feedback-components.png)
+
+[Fuente editable](assets/diagrams/tactical/03-scoring-feedback-components.mmd). La vista organiza los componentes de la base reutilizada con las capas del formato actual; la flecha discontinua indica implementación de puerto.
+
+### 5.3.6. Code Level Diagrams
+
+#### 5.3.6.1. Domain Layer Class Diagrams
+
+![Clases de Scoring & Feedback](assets/diagrams/tactical/03-scoring-feedback-classes.png)
+
+[Fuente editable](assets/diagrams/tactical/03-scoring-feedback-classes.mmd). Modelo reutilizado; las clases de origen conservan sus nombres y tipos para facilitar la continuidad con los repositorios existentes.
+
+#### 5.3.6.2. Database Design Diagram
+
+![Persistencia de Scoring & Feedback](assets/diagrams/tactical/03-scoring-feedback-database.png)
+
+[Fuente editable](assets/diagrams/tactical/03-scoring-feedback-database.mmd).
+
+Base previa: score_results, session_id único, user_id como referencia externa. Adaptación requerida: analysis_version, rubric_version y dimensiones nullable cuando no exista evidencia; el índice único pasa a sesión/versión.
+
+## 5.4. Bounded Context: Practice Session Management
+
+**Base:** session-service. **Trazabilidad:** US09–US14, US23–US25, US29, US30, US34; ADD-03–ADD-05, ADD-09, ADD-11; QAS-AVA-01, QAS-USA-01.
+
+Ser autoridad del ciclo de vida, configuración, material autorizado y veredicto de validez de cada práctica.
+
+### 5.4.1. Domain Layer
+
+**Modelo de dominio:** Session; Feedback es entidad intra-contexto y SessionUserContext es value object ACL.
+
+1. Session es autoridad del estado; Feedback pertenece a la sesión y no se confunde con el cálculo remoto del score.
+2. La identidad se traduce mediante SessionUserContext; ningún DTO del cliente puede cambiar el propietario.
+3. Consentimiento, material autorizado y veredicto de validez de US29/US30 se agregan a la preparación. Finalizar dos veces conserva un cierre único.
+
+### 5.4.2. Interface Layer
+
+| Contrato / capacidad | Responsabilidad |
+| --- | --- |
+| `GET /v1/sessions; POST /v1/sessions` | Consultar sesiones propias o crear una sesión. |
+| `GET /v1/sessions/{id}; POST /v1/sessions/{id}/finalize` | Consultar detalle y confirmar cierre. |
+| `GET /v1/sessions/{id}/feedbacks; POST /v1/sessions/{id}/feedbacks` | Consultar/registrar feedback asociado; el cliente previo usa tipos ai_*. |
+
+Los contratos marcados como base anterior proceden de 5.3.3.5 del informe fuente; las capacidades nuevas se concretarán mediante contratos versionados. Identidad y propiedad se verifican en servidor, no se aceptan como permisos declarados por el cliente.
+
+### 5.4.3. Application Layer
+
+SessionCommandService gestiona creación/finalización y SessionQueryService consultas (CQRS). SessionContextFacade traduce el contexto de identidad al lenguaje local. Se conservan los métodos start, finalize, markAsCompleted y markAsAnalysisPending del agregado previo; la configuración, autorización de material y veredicto de validez de esta entrega se añaden sobre ese ciclo, sin copiar estados de sprint como resultados nuevos.
+
+### 5.4.4. Infrastructure Layer
+
+Spring Boot REST, SessionController/CreateSessionRequest, repositorios JPA y PostgreSQL con sessions/session_feedback. Las relaciones de Feedback son locales al contexto. El modelo previo documenta DRAFT → RECORDING → PROCESSING → COMPLETED / ANALYSIS_PENDING. Pausa, recuperación y purga se modelan como evolución; las transiciones se protegen por estado/version y finalización idempotente.
+
+### 5.4.5. Component Level Diagrams
+
+![Componentes de Practice Session Management](assets/diagrams/tactical/04-practice-sessions-components.png)
+
+[Fuente editable](assets/diagrams/tactical/04-practice-sessions-components.mmd). La vista organiza los componentes de la base reutilizada con las capas del formato actual; la flecha discontinua indica implementación de puerto.
+
+### 5.4.6. Code Level Diagrams
+
+#### 5.4.6.1. Domain Layer Class Diagrams
+
+![Clases de Practice Session Management](assets/diagrams/tactical/04-practice-sessions-classes.png)
+
+[Fuente editable](assets/diagrams/tactical/04-practice-sessions-classes.mmd). Modelo reutilizado; las clases de origen conservan sus nombres y tipos para facilitar la continuidad con los repositorios existentes.
+
+#### 5.4.6.2. Database Design Diagram
+
+![Persistencia de Practice Session Management](assets/diagrams/tactical/04-practice-sessions-database.png)
+
+[Fuente editable](assets/diagrams/tactical/04-practice-sessions-database.mmd).
+
+Esquema previo: sessions y session_feedback, relación 1:N mediante session_id. user_id es una referencia lógica a Identity, sin FK entre bases. structured_data JSONB conserva feedback; consentimiento, configuración versionada y tombstone de eliminación son extensiones del segundo hito.
+
+## 5.5. Bounded Context: Progress & Adaptation
+
+**Base:** progress-service. **Trazabilidad:** US20–US22, US24, US36; ADD-05, ADD-07, ADD-11; C-09, QAS-REL-01.
+
+Construir historial y tendencias longitudinales y proponer ejercicios justificados por evidencia compatible.
+
+### 5.5.1. Domain Layer
+
+**Modelo de dominio:** UserProgress; SessionMetrics conserva cada sesión proyectada.
+
+1. recordSession actualiza totalSessions y promedio una vez por resultado lógico.
+2. Comparar exige propietario y versiones compatibles; no se mezclan rúbricas diferentes sin una regla de equivalencia.
+3. Sin historial suficiente se recomienda una práctica inicial; no se atribuye un error recurrente inexistente.
+
+### 5.5.2. Interface Layer
+
+| Contrato / capacidad | Responsabilidad |
+| --- | --- |
+| `GET /v1/progress/dashboard?userId` | Contrato de dashboard documentado en el cliente previo; autorización debe comprobar propiedad. |
+| `scoring.completed` | Actualizar proyección de métricas. |
+| `Comparación / plan adaptativo` | Casos de uso ampliados del curso actual; rutas/versiones se fijarán al integrar US22/US36. |
+
+Los contratos marcados como base anterior proceden de 5.3.3.5 del informe fuente; las capacidades nuevas se concretarán mediante contratos versionados. Identidad y propiedad se verifican en servidor, no se aceptan como permisos declarados por el cliente.
+
+### 5.5.3. Application Layer
+
+ScoringCompletedConsumer actualiza UserProgress y añade SessionMetrics. UserProgressQueryService ofrece getDashboard y compareSessions. Se reutiliza CQRS para el panel histórico; un plan adaptativo requiere evidencia recurrente y referencias a sesiones compatibles, como extensión de esta base.
+
+### 5.5.4. Infrastructure Layer
+
+PostgreSQL con user_progress/session_metrics, consumidores RabbitMQ y modelo de lectura separado de los comandos. El informe previo advierte que la cadena requiere broker compartido; importar el modelo no confirma que ese pendiente esté resuelto. Se añade compatibilidad de versiones y retiro de proyecciones al eliminar una sesión.
+
+### 5.5.5. Component Level Diagrams
+
+![Componentes de Progress & Adaptation](assets/diagrams/tactical/05-progress-adaptation-components.png)
+
+[Fuente editable](assets/diagrams/tactical/05-progress-adaptation-components.mmd). La vista organiza los componentes de la base reutilizada con las capas del formato actual; la flecha discontinua indica implementación de puerto.
+
+### 5.5.6. Code Level Diagrams
+
+#### 5.5.6.1. Domain Layer Class Diagrams
+
+![Clases de Progress & Adaptation](assets/diagrams/tactical/05-progress-adaptation-classes.png)
+
+[Fuente editable](assets/diagrams/tactical/05-progress-adaptation-classes.mmd). Modelo reutilizado; las clases de origen conservan sus nombres y tipos para facilitar la continuidad con los repositorios existentes.
+
+#### 5.5.6.2. Database Design Diagram
+
+![Persistencia de Progress & Adaptation](assets/diagrams/tactical/05-progress-adaptation-database.png)
+
+[Fuente editable](assets/diagrams/tactical/05-progress-adaptation-database.mmd).
+
+user_progress y session_metrics se relacionan dentro de la base del servicio; session_id identifica la práctica proyectada. Para varias versiones se incorpora analysis_version a la clave y rubric_version al modelo de lectura; la eliminación retira la proyección y recalcula tendencias.
+
+## 5.6. Bounded Context: Sharing & Retention
+
+**Base:** Extensión del modelo previo para Sharing & Retention. **Trazabilidad:** US27, US32, US33; TS02; ADD-08, ADD-09, ADD-13; QAS-SEC-01, QAS-PRI-01.
+
+Autorizar accesos temporales, exportaciones y eliminación coordinada sin duplicar la propiedad del reporte.
+
+### 5.6.1. Domain Layer
+
+**Modelo de dominio:** ShareGrant y DeletionRequest son agregados distintos.
+
+1. El token aleatorio de enlace se entrega una sola vez; solo su hash se persiste. El acceso comprueba expiración, revocación y recurso activo en cada solicitud.
+2. Revocar cambia el estado duradero antes de confirmar al usuario. El acceso no se decide con un JWT autónomo de larga duración ni con una caché que pueda ignorar revocación.
+3. Solicitar eliminación marca un tombstone de acceso antes de propagar la orden; cada contexto acusa su purga. Datos Purgados solo se publica cuando se reciben todos los recibos requeridos.
+4. Exportar exige acceso autorizado, minimiza campos y no incluye materiales ni audio por defecto. La auditoría registra IDs técnicos y estados, no el contenido eliminado.
+
+### 5.6.2. Interface Layer
+
+| Contrato / capacidad | Responsabilidad |
+| --- | --- |
+| `POST /api/v1/reports/{reportId}/shares; DELETE /api/v1/shares/{grantId}` | Crear o revocar permiso del propietario; expiración requerida. |
+| `GET /api/v1/shared-reports/{token}` | Validar permiso y devolver una vista de solo lectura del reporte. |
+| `POST /api/v1/reports/{reportId}/exports` | Exportar reporte autorizado con versiones. |
+| `POST /api/v1/sessions/{sessionId}/deletions; GET /api/v1/deletions/{requestId}` | Iniciar eliminación idempotente y consultar progreso. |
+
+Los contratos marcados como base anterior proceden de 5.3.3.5 del informe fuente; las capacidades nuevas se concretarán mediante contratos versionados. Identidad y propiedad se verifican en servidor, no se aceptan como permisos declarados por el cliente.
+
+### 5.6.3. Application Layer
+
+CreateShareGrantHandler valida propiedad y guarda el hash del token; ResolveSharedReportHandler aplica la política vigente y obtiene una vista autorizada. RevokeShareHandler revoca de forma atómica. RequestDeletionHandler crea el tombstone y Outbox; CollectPurgeReceiptHandler agrega recibos, reintenta órdenes pendientes y emite Datos Purgados al completar. ExportReportHandler produce una descarga temporal bajo la misma autorización.
+
+### 5.6.4. Infrastructure Layer
+
+Controllers Spring Boot, PostgreSQL con hash de enlaces y ledger de purga, RabbitMQ para coordinación. Timeout de consulta de permiso bloquea acceso. Workers acotados generan exportaciones temporales; las referencias caducan y se purgan. Revocar no recupera una copia ya descargada: la interfaz comunica ese límite antes de compartir.
+
+### 5.6.5. Component Level Diagrams
+
+![Componentes de Sharing & Retention](assets/diagrams/tactical/06-sharing-retention-components.png)
+
+[Fuente editable](assets/diagrams/tactical/06-sharing-retention-components.mmd). La vista organiza los componentes de la base reutilizada con las capas del formato actual; la flecha discontinua indica implementación de puerto.
+
+### 5.6.6. Code Level Diagrams
+
+#### 5.6.6.1. Domain Layer Class Diagrams
+
+![Clases de Sharing & Retention](assets/diagrams/tactical/06-sharing-retention-classes.png)
+
+[Fuente editable](assets/diagrams/tactical/06-sharing-retention-classes.mmd). Adaptación del modelo previo; las clases de origen conservan sus nombres y tipos para facilitar la continuidad con los repositorios existentes.
+
+#### 5.6.6.2. Database Design Diagram
+
+![Persistencia de Sharing & Retention](assets/diagrams/tactical/06-sharing-retention-database.png)
+
+[Fuente editable](assets/diagrams/tactical/06-sharing-retention-database.mmd).
+
+UNIQUE(token_hash) y UNIQUE(request_id, context). session_id en deletion_requests identifica una solicitud activa única (índice parcial). expires_at debe ser posterior a creación. El ledger mantiene estados sin transcript; fallar un recibo deja PURGE_PENDING, no éxito ficticio. Las bases propietarias hacen su borrado físico local. Este es un esquema propuesto de la ampliación; no figura como implementación terminada en el trabajo anterior.
+
+## 5.7. Bounded Context: Gamification
+
+**Base:** gamification-service. **Trazabilidad:** US35; ADD-05, ADD-07, ADD-11; QAS-REL-01.
+
+Reconocer constancia e hitos comprobados, sin decidir la validez de una sesión o confundir logros con rendimiento clínico.
+
+### 5.7.1. Domain Layer
+
+**Modelo de dominio:** UserStreak; Achievement registra cada logro.
+
+1. Una práctica inválida no cuenta para racha o logro; el veredicto pertenece a Sessions.
+2. Una sesión repetida no incrementa XP dos veces y un logro se concede una vez según su regla.
+3. El día de racha se interpreta con zona horaria y compartir/ranking es una decisión del estudiante.
+
+### 5.7.2. Interface Layer
+
+| Contrato / capacidad | Responsabilidad |
+| --- | --- |
+| `GET /v1/gamification/leaderboard` | Ranking documentado en el cliente previo; la participación pública debe ser opcional. |
+| `GET /v1/gamification/streaks/{userId}` | Consultar racha bajo propiedad/autorización. |
+| `scoring.completed / achievement.unlocked` | Consumir resultado y publicar logro. |
+
+Los contratos marcados como base anterior proceden de 5.3.3.5 del informe fuente; las capacidades nuevas se concretarán mediante contratos versionados. Identidad y propiedad se verifican en servidor, no se aceptan como permisos declarados por el cliente.
+
+### 5.7.3. Application Layer
+
+ScoringCompletedConsumer actualiza UserStreak y crea Achievement; AchievementUnlockedPublisher publica el hecho. Los métodos incrementOrReset y addXp se mantienen. Para el modelo estratégico actual se incorpora el veredicto de práctica válida desde Sessions, evitando conceder racha solo por cualquier evento de score.
+
+### 5.7.4. Infrastructure Layer
+
+Spring Boot, RabbitMQ y PostgreSQL con user_streaks/achievements. Se reutiliza el modelo de engagement previo; la regla versionada, día local del usuario y deduplicación por sesión/logro son ajustes a integrar con US35.
+
+### 5.7.5. Component Level Diagrams
+
+![Componentes de Gamification](assets/diagrams/tactical/07-gamification-components.png)
+
+[Fuente editable](assets/diagrams/tactical/07-gamification-components.mmd). La vista organiza los componentes de la base reutilizada con las capas del formato actual; la flecha discontinua indica implementación de puerto.
+
+### 5.7.6. Code Level Diagrams
+
+#### 5.7.6.1. Domain Layer Class Diagrams
+
+![Clases de Gamification](assets/diagrams/tactical/07-gamification-classes.png)
+
+[Fuente editable](assets/diagrams/tactical/07-gamification-classes.mmd). Modelo reutilizado; las clases de origen conservan sus nombres y tipos para facilitar la continuidad con los repositorios existentes.
+
+#### 5.7.6.2. Database Design Diagram
+
+![Persistencia de Gamification](assets/diagrams/tactical/07-gamification-database.png)
+
+[Fuente editable](assets/diagrams/tactical/07-gamification-database.mmd).
+
+Tablas heredadas user_streaks y achievements, ambas bajo ownership del servicio. Se propone UNIQUE(user_id, code, rule_version) para logros y deduplicación por sesión/versión; el diagrama previo muestra los campos existentes del modelo.
+
+## 5.8. Bounded Context: Identity & Access
+
+**Base:** identity-service. **Trazabilidad:** US05–US08, US23, US28, US29; TS01; ADD-02, ADD-09, ADD-13; QAS-SEC-01.
+
+Gestionar cuentas, perfil, autenticación y registro verificable de consentimiento; no ejecutar la purga de recursos de otros contextos.
+
+### 5.8.1. Domain Layer
+
+**Modelo de dominio:** AppUser; RefreshToken conserva sesiones renovables y UserRole es enumeración.
+
+1. El email es único y la contraseña se almacena como hash, nunca como texto.
+2. El refresh token rota y puede revocarse; el cliente no establece roles o identidad de otro usuario.
+3. El procesamiento sensible necesita consentimiento vigente y propiedad; el registro verificable de consentimiento se añadirá al modelo previo.
+
+### 5.8.2. Interface Layer
+
+| Contrato / capacidad | Responsabilidad |
+| --- | --- |
+| `POST /v1/auth/register; POST /v1/auth/login` | Registro y autenticación del cliente previo. |
+| `Refresh / logout / perfil / consentimiento` | Capacidades del modelo actual; reutilizar contratos existentes y completar las extensiones de US08/US29/TS01 con versión explícita. |
+| `user.registered` | Hecho publicado para consumidores que necesitan identidad local. |
+
+Los contratos marcados como base anterior proceden de 5.3.3.5 del informe fuente; las capacidades nuevas se concretarán mediante contratos versionados. Identidad y propiedad se verifican en servidor, no se aceptan como permisos declarados por el cliente.
+
+### 5.8.3. Application Layer
+
+Se reutilizan registro, contraseña hash, UserRole y RefreshToken del modelo previo. El caso de rotación sustituye el refresh token anterior y logout lo revoca. El consentimiento verificable y su revocación son una extensión del curso actual, separada de aceptar condiciones de cuenta; se registran versión, alcance y momento.
+
+### 5.8.4. Infrastructure Layer
+
+Spring Boot/Security, JWT y PostgreSQL con app_users/refresh_tokens. El cliente Next.js previo custodia JWT mediante BFF y cookie httpOnly; el cliente móvil propuesto requiere almacenamiento seguro nativo. Un token no sustituye la autorización por recurso. No se copian credenciales de demostración al informe actual.
+
+### 5.8.5. Component Level Diagrams
+
+![Componentes de Identity & Access](assets/diagrams/tactical/08-identity-access-components.png)
+
+[Fuente editable](assets/diagrams/tactical/08-identity-access-components.mmd). La vista organiza los componentes de la base reutilizada con las capas del formato actual; la flecha discontinua indica implementación de puerto.
+
+### 5.8.6. Code Level Diagrams
+
+#### 5.8.6.1. Domain Layer Class Diagrams
+
+![Clases de Identity & Access](assets/diagrams/tactical/08-identity-access-classes.png)
+
+[Fuente editable](assets/diagrams/tactical/08-identity-access-classes.mmd). Modelo reutilizado; las clases de origen conservan sus nombres y tipos para facilitar la continuidad con los repositorios existentes.
+
+#### 5.8.6.2. Database Design Diagram
+
+![Persistencia de Identity & Access](assets/diagrams/tactical/08-identity-access-database.png)
+
+[Fuente editable](assets/diagrams/tactical/08-identity-access-database.mmd).
+
+app_users y refresh_tokens, relación local por user_id. email/token_hash únicos. La evolución añade registro versionado de consentimiento y alcance, manteniendo los IDs de usuario existentes y referencias lógicas desde otros servicios.
+
+## 5.9. Bounded Context: AI Provider Gateway
+
+**Base:** GeminiLiveClient (extraído del modelo previo de Live Coach). **Trazabilidad:** Habilita US12, US17–US19, US30, US31, US38; TS02; ADD-06, ADD-08, ADD-10, ADD-12, ADD-14; QAS-INT-01, QAS-PER-01.
+
+Traducir el lenguaje canónico de Talki a proveedores de IA y aplicar límites técnicos, manteniendo prompts, resultados y fallos ajenos al modelo del dominio.
+
+### 5.9.1. Domain Layer
+
+**Modelo de dominio:** AIProviderPort y GeminiLiveClient; la pasarela es una frontera de integración, sin agregado de negocio persistente obligatorio.
+
+1. Live Coaching y Speech Analysis envían solo evidencia autorizada y necesaria; el gateway valida alcance, presupuesto y capacidades antes de invocar.
+2. Las capacidades opcionales se declaran. Un proveedor sin conversación bidireccional no se sustituye silenciosamente en un flujo que la necesita.
+3. El gateway no conserva audio, CV, transcript ni prompt completo. Registra ID técnico, duración, cantidad de uso y códigos sanitizados.
+4. Un timeout o circuit breaker devuelve un error canónico recuperable; no se reintenta un turno de voz si podría duplicar una respuesta ya entregada.
+
+### 5.9.2. Interface Layer
+
+| Contrato / capacidad | Responsabilidad |
+| --- | --- |
+| `Puerto AIProviderPort` | Contrato interno de apertura/cierre e intercambio autorizado. |
+| `GeminiLiveClient / live-token` | Integración previa: cliente de voz y token efímero; límites/consentimiento se aplican antes de invocar. |
+
+Los contratos marcados como base anterior proceden de 5.3.3.5 del informe fuente; las capacidades nuevas se concretarán mediante contratos versionados. Identidad y propiedad se verifican en servidor, no se aceptan como permisos declarados por el cliente.
+
+### 5.9.3. Application Layer
+
+La factory de integración selecciona el adaptador que implementa AIProviderPort, verifica capacidades y autorización, y traduce fallos/respuestas al lenguaje canónico. El cliente Gemini previo se mantiene detrás del puerto; un cambio de proveedor no modifica el agregado Session.
+
+### 5.9.4. Infrastructure Layer
+
+Se reutiliza GeminiLiveClient de Live Coach como adaptador inicial. La configuración selecciona proveedor/capacidades y protege secretos. La extracción de ACL es una evolución del mapa actual; no requiere una base de datos nueva ni almacena audio, CV, transcript o prompts completos.
+
+### 5.9.5. Component Level Diagrams
+
+![Componentes de AI Provider Gateway](assets/diagrams/tactical/09-ai-provider-gateway-components.png)
+
+[Fuente editable](assets/diagrams/tactical/09-ai-provider-gateway-components.mmd). La vista organiza los componentes de la base reutilizada con las capas del formato actual; la flecha discontinua indica implementación de puerto.
+
+### 5.9.6. Code Level Diagrams
+
+#### 5.9.6.1. Domain Layer Class Diagrams
+
+![Clases de AI Provider Gateway](assets/diagrams/tactical/09-ai-provider-gateway-classes.png)
+
+[Fuente editable](assets/diagrams/tactical/09-ai-provider-gateway-classes.mmd). Adaptación del modelo previo; las clases de origen conservan sus nombres y tipos para facilitar la continuidad con los repositorios existentes.
+
+#### 5.9.6.2. Database Design Diagram
+
+![Persistencia de AI Provider Gateway](assets/diagrams/tactical/09-ai-provider-gateway-database.png)
+
+[Fuente editable](assets/diagrams/tactical/09-ai-provider-gateway-database.mmd).
+
+No se exige base propia. Secretos y configuración se administran fuera del dominio; no se persiste material de sesión en la pasarela.
+
+## 5.10. Bounded Context: Notifications
+
+**Base:** notification-service. **Trazabilidad:** Notifica resultados de US05, US07, US15, US32, US33; ADD-04, ADD-05, ADD-10, ADD-13; QAS-REL-01.
+
+Enviar mensajes transaccionales y opcionales derivados de hechos del dominio, sin ser dependencia síncrona de la práctica.
+
+### 5.10.1. Domain Layer
+
+**Modelo de dominio:** No mantiene agregado persistente propio en la base anterior; usa consumidores y NotificationPushService.
+
+1. Las notificaciones se derivan de eventos; no bloquean finalizar o practicar.
+2. Un aviso por correo no expone transcript, score o material, y sus enlaces siguen autorización vigente.
+3. Preferencias controlan avisos opcionales; recuperación/verificación de cuenta son transaccionales. No se garantiza exactamente una vez frente a un proveedor sin idempotencia.
+
+### 5.10.2. Interface Layer
+
+| Contrato / capacidad | Responsabilidad |
+| --- | --- |
+| `scoring.completed / achievement.unlocked` | Disparar avisos del resultado/logro. |
+| `WebSocket del cliente / proveedor de correo` | Salida desacoplada; las preferencias y avisos de privacidad amplían la base anterior. |
+
+Los contratos marcados como base anterior proceden de 5.3.3.5 del informe fuente; las capacidades nuevas se concretarán mediante contratos versionados. Identidad y propiedad se verifican en servidor, no se aceptan como permisos declarados por el cliente.
+
+### 5.10.3. Application Layer
+
+ScoreNotificationConsumer y AchievementNotificationConsumer delegan en NotificationPushService, implementado por WebSocketPushAdapter. Se reutiliza el patrón Observer/event-driven; el diseño del curso actual añade correo transaccional y eventos de privacidad sin acoplarlos al camino de voz.
+
+### 5.10.4. Infrastructure Layer
+
+Servicio consumidor stateless con RabbitMQ y adaptador de notificación WebSocket; el informe previo contempla correo externo opcional. Si se requiere deduplicación duradera y recibos, se añade un ledger de entrega como evolución, con claves estables y reintentos acotados; no se afirma que existan esas tablas en el trabajo anterior.
+
+### 5.10.5. Component Level Diagrams
+
+![Componentes de Notifications](assets/diagrams/tactical/10-notifications-components.png)
+
+[Fuente editable](assets/diagrams/tactical/10-notifications-components.mmd). La vista organiza los componentes de la base reutilizada con las capas del formato actual; la flecha discontinua indica implementación de puerto.
+
+### 5.10.6. Code Level Diagrams
+
+#### 5.10.6.1. Domain Layer Class Diagrams
+
+![Clases de Notifications](assets/diagrams/tactical/10-notifications-classes.png)
+
+[Fuente editable](assets/diagrams/tactical/10-notifications-classes.mmd). Modelo reutilizado; las clases de origen conservan sus nombres y tipos para facilitar la continuidad con los repositorios existentes.
+
+#### 5.10.6.2. Database Design Diagram
+
+![Persistencia de Notifications](assets/diagrams/tactical/10-notifications-database.png)
+
+[Fuente editable](assets/diagrams/tactical/10-notifications-database.mmd).
+
+N/A en el modelo stateless previo. Un ledger técnico de envíos/preferencias es una extensión futura si se adopta entrega persistente por correo; no se añade una BD ficticia como evidencia heredada.
+
+## Patrones reutilizados del trabajo anterior
+
+Las siguientes capturas pertenecen al desarrollo previo y se conservan como referencia técnica de las capas; no se presentan como nuevos commits del curso actual.
+
+![Repository de sesiones del proyecto previo](assets/reused-202601/Backend/SessionRepository.png)
+
+![ACL SessionContextFacade del proyecto previo](assets/reused-202601/Backend/SessionContextFacade.png)
+
+![Servicio de comandos CQRS del proyecto previo](assets/reused-202601/Backend/SessionCommandServiceImpl.png)
+
+![Servicio de consultas CQRS del proyecto previo](assets/reused-202601/Backend/SessionQueryServiceImpl.png)
+
+La evolución del modelo deberá verificar idempotencia del cierre/reporte, comparabilidad de versiones, recuperación del canal, autorización por recurso y purga con tombstones. Las pruebas y métricas nuevas se registrarán cuando se ejecuten; no se trasladan puntajes, sprints o resultados académicos del curso anterior.
 
 # Capítulo VI: Solution UX Design
+
+El diseño UX convierte los escenarios To-Be de Valeria (ciclos 1–5) y Rodrigo (ciclos 6–10) en una experiencia de práctica: preparar → comprobar → ensayar → comprender → repetir. Se incluyen **web de escritorio y aplicación móvil** con las mismas reglas de privacidad, estados y contratos. La base web existente es Next.js sobre React; el cliente móvil Flutter de 4.3 se diseña con navegación y distribución propias; el prototipo HTML permite evaluar ambas vistas, sin afirmar que ya existe una aplicación Flutter implementada.
+
+La base web reutiliza las pantallas de acceso, dashboard, Coach, sesiones y feedback del informe previo (5.3.3.4). Sus capturas se mantienen sin alteración y se identifican como material de 2026-01. Los wireframes, mock-ups móviles y pantallas complementarias son propuestas para cubrir el formato actual; no reemplazan el frontend construido. Los nombres de personas, transcripciones, puntuaciones y tendencias de sus pantallas son **datos ficticios de demostración**, no nuevos resultados de entrevistas, pruebas de usabilidad o análisis de voz. Las imágenes se generan desde el mismo prototipo para mantener consistencia entre pantallas y estados.
 
 ## 6.1. Style Guidelines
 
 ### 6.1.1. General Style Guidelines
 
+**Personalidad y tono.** Talki acompaña al estudiante con instrucciones breves y feedback concreto. Usa “práctica”, “ensayo” y “siguiente acción”; evita presentar el score como nota académica o el indicador de confianza como evaluación psicológica. Los errores explican la causa observable y el paso para recuperarse. El usuario mantiene el control del inicio, pausa, cierre y uso de sus datos.
+
+**Identidad.** Se conserva el [isotipo existente de Talki](assets/images/logos/talki-logo.png). La composición `talki.` y la siguiente paleta de interfaz son una propuesta para este hito: el gradiente del isotipo identifica la marca y los colores sólidos facilitan lectura, estados y acciones. No se declara un nuevo manual de marca validado.
+
+| Token | Valor | Uso |
+| --- | --- | --- |
+| `primary` | `#1749B5` | Acción principal, selección y series de gráficos. |
+| `primary-soft` | `#EAF0FF` | Fondo de selección y avisos informativos. |
+| `ink` | `#14223B` | Títulos y texto principal. |
+| `muted` | `#536177` | Texto secundario, etiquetas y explicaciones. |
+| `teal` | `#08766B` | Recomendaciones y señales de mejora. |
+| `canvas` / `surface` | `#F4F6FB` / `#FFFFFF` | Fondo general y tarjetas. |
+| `line` | `#DCE2EC` | Separación visual decorativa; los controles usan borde más oscuro. |
+| `danger` | `#B42336` | Eliminación y confirmaciones destructivas. |
+| `warning` | `#865000` sobre `#FFF3DF` | Desconexión, datos insuficientes y purga pendiente. |
+
+**Base visual reutilizada.** El frontend previo aplica fondo blanco, texto negro/gris, tarjetas con borde suave y sidebar con Nueva sesión, Dashboard, Sesiones, Coach y Ranking. Esa es la referencia de continuidad del producto existente. La paleta azul/teal descrita arriba corresponde únicamente a los complementos de diseño, pendientes de revisión; no implica migrar o reescribir el frontend anterior.
+
+**Tipografía y ritmo.** Se propone una familia sans-serif del sistema, cuerpo de 16 px, interlineado 1.55 y títulos de 36/23/17 px en aplicación web. En móvil el título principal baja a 29 px. El tiempo de práctica usa una fuente monoespaciada. El espaciado utiliza pasos de 4/8 px, márgenes de 20 px en móvil y 38 px en escritorio; tarjetas con radio de 18 px y separación de 22 px. La portada puede usar un título mayor, sin trasladarlo a los formularios.
+
+**Componentes y estados.** Botón primario para continuar o practicar; secundario para volver, cancelar o consultar; acción destructiva con texto explícito y confirmación. Campos con etiqueta persistente, ayuda y validación próxima al control. Los chips combinan texto y color; los estados nunca dependen solo de verde/rojo. Un score ausente se muestra como “Sin evidencia”, no como cero. Cada recomendación separa observación, evidencia y acción.
+
+**Accesibilidad como criterio de diseño.** Se busca contraste de texto normal ≥ 4.5:1 y texto grande ≥ 3:1, según [W3C, criterio 1.4.3](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html). Se propone objetivo táctil de 44 px, por encima del mínimo de 24 px sujeto a excepciones del [criterio 2.5.8](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html). Foco visible, orden de teclado, enlace para saltar al contenido, etiquetas de campos y avisos con región de estado son parte del prototipo. Estas decisiones no constituyen una certificación de conformidad: la aplicación final requiere evaluación con tecnologías de asistencia y usuarios.
+
 ### 6.1.2. Web, Mobile and Devices Style Guidelines
+
+| Aspecto | Web de escritorio | Aplicación móvil propuesta |
+| --- | --- | --- |
+| Estructura | Sidebar de 232 px, cabecera, área de contenido hasta 1250 px. | Una columna, cabecera breve y barra inferior con Inicio, Practicar, Historial, Progreso y Perfil. |
+| Formularios | Dos columnas cuando los campos son independientes; avance por pasos. | Campos apilados y acciones visibles sin scroll horizontal. |
+| Práctica | Cronómetro/señales junto a transcript; controles de pausa y cierre separados. | Cronómetro y controles primero; transcript debajo; botón de cerrar distinguible del de pausar. |
+| Reportes | Métricas y recomendaciones en paralelo. | Score, dimensiones, recomendaciones y evidencia en secuencia. |
+| Historial y comparación | Lista y filtros; tablas con encabezados. | Filas compactas y filtros apilados; tabla puede desplazarse dentro de su contenedor. |
+| Audio | Permiso del navegador; entrada compatible y prueba previa. | Permiso del sistema y prueba previa; interrupción por cambio de app/llamada conduce a checkpoint o cierre parcial. |
+| Sesión y privacidad | Acceso por HTTPS/WSS; cierre de sesión con advertencia si hay práctica activa. | Mismos contratos; ningún secreto del proveedor en cliente. Tokens se protegerán con mecanismos del cliente nativo en implementación. |
+
+El prototipo cambia a la distribución móvil a ≤ 700 px; se exportan mock-ups a 1440 px y 390 px. La aplicación final deberá probar micrófono, cambios de ruta de audio y reconexión en los dispositivos acordados; el HTML no mide estas capacidades.
 
 ## 6.2. Information Architecture
 
 ### 6.2.1. Organization Systems
 
+Se combina una organización **por tarea** (Practicar, Historial, Progreso, Perfil) con una secuencia guiada para la primera práctica. La adquisición pública y los recursos privados se mantienen en espacios diferentes. El tutor recibe una vista específica del recurso autorizado.
+
+![Arquitectura de información de Talki](assets/diagrams/ux/information-architecture.png)
+
+[Fuente editable del mapa](assets/diagrams/ux/information-architecture.mmd)
+
+| Espacio | Contenido y criterio de organización |
+| --- | --- |
+| Público | Beneficios por segmento, proceso de práctica, planes propuestos, consulta y acceso. No muestra información privada. |
+| Inicio | Próxima acción, ejemplos de actividad y accesos a práctica e historial. |
+| Practicar | Modo, duración, meta, enfoque, material opcional, prueba de audio y consentimiento. Orden secuencial. |
+| Historial | Sesiones propias por fecha, título, modo y estado; acceso al reporte y a acciones de privacidad. |
+| Progreso | Tendencias por dimensiones y versiones compatibles; comparación y plan de ejercicios. |
+| Perfil | Segmento, metas, datos opcionales, preferencias de contacto y control de datos. |
+| Tutor | Solo reporte permitido, fecha/versión y vigencia; no incluye otras sesiones, configuración ni edición. |
+
 ### 6.2.2. Labeling Systems
+
+| Etiqueta visible | Significado y límite |
+| --- | --- |
+| Nueva práctica | Crear un borrador; todavía no inicia captura. |
+| Audio y privacidad | Comprobar entrada y autorizar procesamiento; el permiso del dispositivo y el consentimiento son distintos. |
+| Pausar / Reanudar | Modificar captura manteniendo estado confirmado. |
+| Finalizar práctica | Confirmar cierre e iniciar análisis; no se confunde con pausar. |
+| En análisis / Falló / Reporte disponible | Estado real del pipeline, sin prometer disponibilidad si no existe reporte. |
+| Voice Coach Score | Referencia de desempeño bajo una rúbrica; no es nota del curso. |
+| Sin evidencia / Resultado parcial | Una dimensión o resultado carece de soporte; no indica desempeño cero. |
+| Compartir reporte / Revocar enlace | Crear o retirar acceso limitado; no comparte la cuenta completa. |
+| Eliminar sesión / Purga pendiente | Bloquear acceso e iniciar eliminación; el borrado físico necesita confirmación de los contextos. |
+
+Los términos coinciden con el lenguaje ubicuo de 2.4; en la interfaz se prefiere español y se explica “Voice Coach Score” en su primera aparición.
 
 ### 6.2.3. SEO Tags and Meta Tags
 
+La landing tendrá metadatos descriptivos; las páginas de cuenta, sesión y enlaces de tutor deben excluirse de indexación. `noindex` es una indicación al buscador, **no un control de acceso**; la autorización se resuelve en servidor según el capítulo V. El prototipo completo usa `noindex,nofollow` porque contiene ejemplos, no una landing publicada.
+
+Contrato propuesto para la landing de producción:
+
+```html
+<html lang="es">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Talki | Practica exposiciones y entrevistas en español</title>
+<meta name="description" content="Prepara exposiciones, entrevistas y sustentaciones con práctica guiada, feedback con evidencia y control de tus datos.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Talki | Haz escuchar tus ideas">
+<meta property="og:description" content="Ensaya, comprende tu desempeño y elige tu siguiente acción de mejora.">
+```
+
+El dominio canónico, `og:url` y la URL pública de imagen se añadirán al definir el hosting; no se incluyen direcciones de despliegue inexistentes. Se usarán títulos jerárquicos, texto alternativo descriptivo y enlaces comprensibles; los recursos privados tampoco aparecen en sitemap.
+
 ### 6.2.4. Searching Systems
 
+Historial usa búsqueda por título, filtro por modo, intervalo de fechas y estado, con paginación por cursor en el contrato de Progress. La consulta se restringe al propietario en servidor. Un resultado muestra título, fecha, duración, estado y score disponible con versiones; no lista fragmentos privados de otras cuentas.
+
+La búsqueda del prototipo aplica título y modo sobre datos ficticios locales. En la aplicación, una lista sin coincidencias ofrecerá limpiar filtros y distinguirá “no hay prácticas” de “no se pudo cargar”. Comparación exige seleccionar dos prácticas propias y verificar compatibilidad antes de calcular variación.
+
 ### 6.2.5. Navigation Systems
+
+La navegación global contiene cinco destinos estables. Dentro de Practicar, un stepper muestra Configurar → Audio y privacidad → Practicar. Las pantallas de reporte tienen accesos contextuales a Repetir, Plan y Compartir. Volver a configuración conserva las elecciones del borrador; salir de una práctica activa o finalizar exige confirmar consecuencias.
+
+La vista de tutor evita navegación hacia historial o cuenta del propietario. Un enlace revocado/expirado muestra una respuesta uniforme de recurso no disponible. En móvil, la barra inferior no tapa el último contenido o las acciones; en escritorio, la sidebar mantiene el destino seleccionado. La carga del estado y los avisos de error deben conservar el contexto, sin regresar al inicio inesperadamente.
 
 ## 6.3. Landing Page UI Design
 
 ### 6.3.1. Landing Page Wireframe
 
+La estructura prioriza propuesta de valor, acción de registro, pasos del servicio, beneficios por segmento, planes propuestos y formulario de consulta. El reporte de muestra se identifica como ejemplo. No se fabrican testimonios: US03 se implementará cuando existan testimonios autorizados y verificables.
+
+![Wireframe web de la landing](assets/ux/wireframes/web-landing.png)
+
+![Wireframe móvil de la landing](assets/ux/wireframes/mobile-landing.png)
+
 ### 6.3.2. Landing Page Mock-up
+
+La portada presenta “Ensaya tus ideas. Hazlas escuchar.” y una muestra de feedback, con CTA principal “Empezar a practicar”. El bloque de planes mantiene precio/límites por definir para no anunciar funciones o condiciones todavía no validadas. El formulario confirma una consulta de prueba; la integración de contacto real queda para implementación.
+
+![Mock-up web de la landing](assets/ux/mockups/web-landing.png)
+
+![Mock-up móvil de la landing](assets/ux/mockups/mobile-landing.png)
 
 ## 6.4. Applications UX/UI Design
 
 ### 6.4.1. Applications Wireframes
 
+Los wireframes mantienen estructura, etiquetas y rutas del prototipo, con escala de grises, bordes planos y sin énfasis de marca. Se exportan las 18 pantallas en web y móvil. El catálogo ofrece el artefacto correspondiente a cada tarea.
+
+| ID | Pantalla | Historias relacionadas | Wireframe web | Wireframe móvil |
+| --- | --- | --- | --- | --- |
+| L01 | Landing pública | US01–US04 | [Ver](assets/ux/wireframes/web-landing.png) | [Ver](assets/ux/wireframes/mobile-landing.png) |
+| A01 | Registro | US05 | [Ver](assets/ux/wireframes/web-register.png) | [Ver](assets/ux/wireframes/mobile-register.png) |
+| A02 | Acceso | US06 | [Ver](assets/ux/wireframes/web-login.png) | [Ver](assets/ux/wireframes/mobile-login.png) |
+| A03 | Recuperación | US07 | [Ver](assets/ux/wireframes/web-recovery.png) | [Ver](assets/ux/wireframes/mobile-recovery.png) |
+| P01 | Perfil y segmento | US08, US23, US24 | [Ver](assets/ux/wireframes/web-profile.png) | [Ver](assets/ux/wireframes/mobile-profile.png) |
+| H01 | Inicio | US09, US20, US21, US35 | [Ver](assets/ux/wireframes/web-dashboard.png) | [Ver](assets/ux/wireframes/mobile-dashboard.png) |
+| S01 | Configuración y material | US09–US11, US24, US25, US30 | [Ver](assets/ux/wireframes/web-setup.png) | [Ver](assets/ux/wireframes/mobile-setup.png) |
+| S02 | Audio y consentimiento | US29, TS01 | [Ver](assets/ux/wireframes/web-microphone.png) | [Ver](assets/ux/wireframes/mobile-microphone.png) |
+| S03 | Práctica en vivo | US12–US14, US31, US34, US38 | [Ver](assets/ux/wireframes/web-live.png) | [Ver](assets/ux/wireframes/mobile-live.png) |
+| S04 | Estado del análisis | US37 | [Ver](assets/ux/wireframes/web-processing.png) | [Ver](assets/ux/wireframes/mobile-processing.png) |
+| R01 | Reporte y evidencia | US15–US19, US26 | [Ver](assets/ux/wireframes/web-report.png) | [Ver](assets/ux/wireframes/mobile-report.png) |
+| H02 | Historial y búsqueda | US20 | [Ver](assets/ux/wireframes/web-history.png) | [Ver](assets/ux/wireframes/mobile-history.png) |
+| G01 | Tendencias | US21 | [Ver](assets/ux/wireframes/web-progress.png) | [Ver](assets/ux/wireframes/mobile-progress.png) |
+| G02 | Comparación | US22 | [Ver](assets/ux/wireframes/web-compare.png) | [Ver](assets/ux/wireframes/mobile-compare.png) |
+| G03 | Plan adaptativo | US36 | [Ver](assets/ux/wireframes/web-plan.png) | [Ver](assets/ux/wireframes/mobile-plan.png) |
+| D01 | Compartición, exportación y borrado | US27, US32, US33 | [Ver](assets/ux/wireframes/web-privacy.png) | [Ver](assets/ux/wireframes/mobile-privacy.png) |
+| T01 | Reporte de tutor | US32 | [Ver](assets/ux/wireframes/web-shared.png) | [Ver](assets/ux/wireframes/mobile-shared.png) |
+| N01 | Preferencias de contacto | Soporte transversal | [Ver](assets/ux/wireframes/web-preferences.png) | [Ver](assets/ux/wireframes/mobile-preferences.png) |
+
+![Wireframe web de configuración de práctica](assets/ux/wireframes/web-setup.png)
+
+![Wireframe móvil de preparación de audio y consentimiento](assets/ux/wireframes/mobile-microphone.png)
+
 ### 6.4.2. Applications Wireflow Diagrams
+
+El wireflow relaciona las pantallas del catálogo con las acciones del recorrido; se aplica en ambas plataformas, con disposición específica según 6.1.2. El cierre no abre inmediatamente un reporte: pasa por S04, que puede terminar en disponible, parcial o fallo recuperable.
+
+![Wireflow de pantallas de Talki](assets/diagrams/ux/wireflow.png)
+
+[Fuente editable del wireflow](assets/diagrams/ux/wireflow.mmd)
+
+| Transición | Acción y respuesta esperada |
+| --- | --- |
+| H01 → S01 | Nueva práctica crea/configura borrador; cancelar vuelve sin iniciar captura. |
+| S01 → S02 | Guardar modo, duración y meta válidos; material inválido ofrece corrección. |
+| S02 → S03 | Solo se habilita con prueba de audio y consentimiento. Permiso denegado informa cómo habilitarlo. |
+| S03 → S04 | Confirmar finalización consolida evidencia e inicia análisis una sola vez. |
+| S04 → R01 | Un reporte disponible muestra versiones; datos insuficientes no generan score ficticio. |
+| R01 → G03 → S01 | Una recomendación con evidencia orienta el siguiente ejercicio. |
+| H02 → G02 | Elegir dos sesiones propias; incompatibilidad muestra la causa antes de calcular deltas. |
+| R01 → D01 → T01 | Crear acceso temporal de lectura; revocar o eliminar impide mostrar contenido. |
 
 ### 6.4.3. Applications Mock-ups
 
+#### Pantallas web reutilizadas del producto anterior
+
+La fuente es el informe 2026-01, sección 5.3.3.4, versión `2cfa379`. Estas imágenes documentan el cliente Next.js/React existente; sus estados y resultados pertenecen a esa evidencia histórica y no a una nueva evaluación del curso actual.
+
+| Pantalla existente | Artefacto reutilizado | Referencia funcional |
+| --- | --- | --- |
+| Acceso | [Ver](assets/reused-202601/frontend/01-login.png) | Registro/acceso mediante Identity y BFF. |
+| Dashboard | [Ver](assets/reused-202601/frontend/02-dashboard.png) | Métricas, rachas y salud de servicios. |
+| Live Coach | [Ver](assets/reused-202601/frontend/03-coach.png) | Modos y configuración de práctica. |
+| Sesiones | [Ver](assets/reused-202601/frontend/04-sessions.png) | Historial y detalle. |
+| Feedback de Coach | [Ver](assets/reused-202601/frontend/07-coach-ai-feedback.png) | Resumen, muletillas, ritmo y fluidez. |
+| Grabación de sesión | [Ver](assets/reused-202601/frontend/08-session-recording.png) | Captura y transcripción. |
+| Feedback de sesión | [Ver](assets/reused-202601/frontend/09-session-ai-feedback.png) | Reporte persistido de la práctica previa. |
+
+![Dashboard reutilizado del frontend previo](assets/reused-202601/frontend/02-dashboard.png)
+
+![Live Coach reutilizado del frontend previo](assets/reused-202601/frontend/03-coach.png)
+
+![Feedback de sesión reutilizado del frontend previo](assets/reused-202601/frontend/09-session-ai-feedback.png)
+
+#### Complementos de diseño para el formato actual
+
+
+Los mock-ups aplican tipografía, paleta, jerarquía, controles y estados del sistema. Se incluyen 18 pantallas por plataforma y variaciones de error/privacidad. La UI de móvil cubre el recorrido completo, incluyendo historial, progreso, perfil y controles de datos, además de la pantalla de práctica.
+
+| ID | Pantalla | Mock-up web | Mock-up móvil |
+| --- | --- | --- | --- |
+| L01 | Landing pública | [Ver](assets/ux/mockups/web-landing.png) | [Ver](assets/ux/mockups/mobile-landing.png) |
+| A01 | Registro | [Ver](assets/ux/mockups/web-register.png) | [Ver](assets/ux/mockups/mobile-register.png) |
+| A02 | Acceso | [Ver](assets/ux/mockups/web-login.png) | [Ver](assets/ux/mockups/mobile-login.png) |
+| A03 | Recuperación | [Ver](assets/ux/mockups/web-recovery.png) | [Ver](assets/ux/mockups/mobile-recovery.png) |
+| P01 | Perfil y segmento | [Ver](assets/ux/mockups/web-profile.png) | [Ver](assets/ux/mockups/mobile-profile.png) |
+| H01 | Inicio | [Ver](assets/ux/mockups/web-dashboard.png) | [Ver](assets/ux/mockups/mobile-dashboard.png) |
+| S01 | Configuración y material | [Ver](assets/ux/mockups/web-setup.png) | [Ver](assets/ux/mockups/mobile-setup.png) |
+| S02 | Audio y consentimiento | [Ver](assets/ux/mockups/web-microphone.png) | [Ver](assets/ux/mockups/mobile-microphone.png) |
+| S03 | Práctica en vivo | [Ver](assets/ux/mockups/web-live.png) | [Ver](assets/ux/mockups/mobile-live.png) |
+| S04 | Estado del análisis | [Ver](assets/ux/mockups/web-processing.png) | [Ver](assets/ux/mockups/mobile-processing.png) |
+| R01 | Reporte y evidencia | [Ver](assets/ux/mockups/web-report.png) | [Ver](assets/ux/mockups/mobile-report.png) |
+| H02 | Historial y búsqueda | [Ver](assets/ux/mockups/web-history.png) | [Ver](assets/ux/mockups/mobile-history.png) |
+| G01 | Tendencias | [Ver](assets/ux/mockups/web-progress.png) | [Ver](assets/ux/mockups/mobile-progress.png) |
+| G02 | Comparación | [Ver](assets/ux/mockups/web-compare.png) | [Ver](assets/ux/mockups/mobile-compare.png) |
+| G03 | Plan adaptativo | [Ver](assets/ux/mockups/web-plan.png) | [Ver](assets/ux/mockups/mobile-plan.png) |
+| D01 | Compartición, exportación y borrado | [Ver](assets/ux/mockups/web-privacy.png) | [Ver](assets/ux/mockups/mobile-privacy.png) |
+| T01 | Reporte de tutor | [Ver](assets/ux/mockups/web-shared.png) | [Ver](assets/ux/mockups/mobile-shared.png) |
+| N01 | Preferencias de contacto | [Ver](assets/ux/mockups/web-preferences.png) | [Ver](assets/ux/mockups/mobile-preferences.png) |
+
+![Inicio de la aplicación web](assets/ux/mockups/web-dashboard.png)
+
+![Configuración web de práctica con material contextual](assets/ux/mockups/web-setup.png)
+
+![Práctica móvil con cronómetro, señales y controles](assets/ux/mockups/mobile-live.png)
+
+![Reporte web con dimensiones, versiones y evidencia](assets/ux/mockups/web-report.png)
+
+![Reporte móvil con acciones de mejora](assets/ux/mockups/mobile-report.png)
+
+![Historial móvil](assets/ux/mockups/mobile-history.png)
+
+![Privacidad web con compartición, revocación y borrado](assets/ux/mockups/web-privacy.png)
+
+Los estados críticos disponen de capturas adicionales:
+
+| Estado | Artefacto móvil | Implicación de diseño |
+| --- | --- | --- |
+| Permiso denegado | [Ver](assets/ux/mockups/mobile-permission-denied.png) | No habilitar inicio; explicar recuperación. |
+| Desconexión | [Ver](assets/ux/mockups/mobile-disconnected.png) | Mostrar checkpoint y elección de reanudar/cierre parcial. |
+| Fallo del análisis | [Ver](assets/ux/mockups/mobile-analysis-failed.png) | Reintentar el mismo job, evitando duplicado. |
+| Evidencia insuficiente | [Ver](assets/ux/mockups/mobile-insufficient-evidence.png) | Score global ausente y dimensiones sin soporte identificadas. |
+| Comparación incompatible | [Ver](assets/ux/mockups/mobile-incompatible-comparison.png) | Explicar modo/versión diferente; no mostrar diferencia numérica. |
+| Enlace revocado | [Ver](assets/ux/mockups/mobile-revoked-link.png) | No mostrar contenido del reporte. |
+| Purga pendiente | [Ver](assets/ux/mockups/mobile-purge-pending.png) | Diferenciar acceso bloqueado de borrado físico completado. |
+
 ### 6.4.4. Applications User Flow Diagrams
+
+**UF-01 — Primera práctica guiada (Valeria).** Registro/acceso, segmento y meta, configuración, audio/consentimiento, ensayo y siguiente acción. No se permite que un error de permiso se interprete como una práctica válida.
+
+![User flow de primera práctica](assets/diagrams/ux/first-practice-flow.png)
+
+[Fuente editable de UF-01](assets/diagrams/ux/first-practice-flow.mmd)
+
+**UF-02 — Simulación contextualizada (Rodrigo).** Entrevista/sustentación, material autorizado opcional, turnos de conversación, recuperación de canal y feedback contextual. El material no se publica en enlaces de tutor.
+
+![User flow de práctica avanzada](assets/diagrams/ux/advanced-practice-flow.png)
+
+[Fuente editable de UF-02](assets/diagrams/ux/advanced-practice-flow.mmd)
+
+**UF-03 — Compartición y eliminación.** Crear permiso con vigencia, consultar como tutor, revocar y solicitar eliminación. La UI conserva “purga pendiente” hasta confirmación de todos los contextos propietarios.
+
+![User flow de privacidad](assets/diagrams/ux/privacy-flow.png)
+
+[Fuente editable de UF-03](assets/diagrams/ux/privacy-flow.mmd)
 
 ## 6.5. Applications Prototyping
 
+**Recorrido existente reutilizado:** el [cliente web previo de Talki](https://talki-frontend.vercel.app) y su [repositorio Next.js](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend) ofrecen la base de autenticación, sesiones, Coach y feedback documentada en el informe anterior. La URL pública respondió HTTP 200 al revisar esta adaptación; no se repitieron aquí las operaciones autenticadas o pruebas de backend. Los cambios de diseño móvil/privacidad aún requieren integración.
+
+**Prototipo complementario del diseño:**
+
+El [prototipo navegable](assets/ux/prototype/index.html) contiene los wireframes y mock-ups en una fuente común, sin dependencias externas. **GitHub muestra su código; para interactuar se debe descargar/clonar el repositorio y abrir el HTML en un navegador.** También puede servirse localmente desde la raíz con `python3 -m http.server 8000` y abrir `http://localhost:8000/assets/ux/prototype/`. Reducir la ventana a 390 px permite explorar móvil; añadir `?view=wireframe` activa la vista de estructura.
+
+| Recorrido de demostración | Acciones disponibles |
+| --- | --- |
+| Primera práctica | Landing → registro → perfil → inicio → configurar → simular prueba de audio y consentir → iniciar → pausar/reanudar → confirmar cierre → simular reporte disponible → consultar evidencia → repetir. |
+| Simulación avanzada | Elegir entrevista/sustentación, seleccionar material de prueba, quitarlo, llegar a práctica y revisar pregunta contextual de ejemplo. No se lee ni envía el archivo. |
+| Recuperación | Simular permiso denegado; simular desconexión y reanudar; simular fallo del análisis y reintentar sobre el mismo estado. |
+| Progreso | Consultar historial, buscar por título/modo, revisar tendencia ficticia, comparar versiones compatibles y seleccionar opción incompatible. |
+| Control de datos | Crear permiso de ejemplo, abrir vista de tutor, revocar y comprobar bloqueo; exportar reporte de ejemplo; confirmar eliminación y observar purga pendiente. |
+
+**Fidelidad y límites.** Navegación, formularios, selección, confirmaciones, filtros y estados son interactivos. No hay autenticación real, llamadas a IA, captura de micrófono, backend, correo, pagos ni purga física. El score, timer, transcript y gráfico son fixtures visibles; el usuario activa los cambios de estado de análisis para explorar resultados. El prototipo mantiene el recorrido en memoria y reiniciarlo restaura los ejemplos. Estos límites separan evaluación de interacción de validación funcional del producto.
+
+**Plan de evaluación de UX.** Se propone observar a participantes de ambos segmentos realizando primera práctica, simulación contextualizada y revocación/eliminación. Se registrarán éxito por tarea, tiempo de inicio, errores, comprensión del feedback y control de privacidad, con autorización y sin exponer material personal. QAS-USA-01 fija como meta inicial que al menos 90 % inicie una sesión válida en ≤ 3 minutos sin asistencia; aquí no se reporta ese resultado como obtenido. Los hallazgos reales, entrevistas de validación y evaluación heurística corresponderán al capítulo VII cuando se ejecuten.
+
 # Capítulo VII: Software Product Implementation, Validation & Deployment
+
+Este capítulo corresponde a los hitos posteriores de implementación y validación. Se conserva la estructura del formato oficial; este avance de semana 7 no presenta sprints ejecutados, pruebas de producto, despliegues, entrevistas de validación ni videos que todavía no existen. El prototipo UX de 6.5 es evidencia de diseño, no de un producto integrado. La siguiente estructura se completará con evidencia real en esos hitos.
 
 ## 7.1. Software Configuration Management
 
@@ -1975,7 +2905,7 @@ El diagrama de despliegue representa la infraestructura sobre la que se ejecutan
 
 ## Conclusiones
 
-Al cierre del TB1, el equipo Thropic consolidó la base de producto, requisitos y diseño estratégico de Talki para atender la práctica de comunicación oral de estudiantes universitarios.
+En el primer hito de TB1, el equipo Thropic consolidó la base de producto, requisitos y diseño estratégico de Talki para atender la práctica de comunicación oral de estudiantes universitarios.
 
 - La investigación de usuarios, las entrevistas y los artefactos de needfinding permitieron diferenciar dos segmentos con necesidades complementarias: práctica guiada y feedback para estudiantes de ciclos iniciales, y simulación contextualizada para estudiantes de ciclos superiores.
 - Los escenarios To-Be, las user stories, el Impact Mapping y el Product Backlog conectan los hallazgos de investigación con funcionalidades priorizadas, criterios de aceptación y metas de producto verificables.
@@ -1983,15 +2913,24 @@ Al cierre del TB1, el equipo Thropic consolidó la base de producto, requisitos 
 - El diseño DDD identificó bounded contexts, mensajes de dominio y relaciones de integración que delimitan las responsabilidades de Talki antes del diseño táctico.
 - Los diagramas System Landscape, Context Level, Container Level y Deployment completan la vista arquitectónica de alto nivel del primer entregable.
 
+Con el segundo hito de semana 7, esa base se extiende a diseño táctico y UX:
+
+- Los diez contextos tienen agregados, invariantes, puertos, casos de uso y persistencia propios; los diagramas diferencian frontera de modelo de agrupación de despliegue.
+- La finalización y el análisis se coordinan con confirmación de estado, versiones e idempotencia; los mecanismos deben verificarse durante implementación.
+- Los flujos web y móvil incluyen preparación, práctica, evidencia, progreso y privacidad, con estados explícitos de desconexión, insuficiencia de datos y purga pendiente.
+- Los wireframes, mock-ups y el prototipo navegable permiten revisar decisiones de interacción antes de integrar micrófono, IA y servicios; sus datos de ejemplo no prueban eficacia o rendimiento.
+
 ## Recomendaciones
 
 - Validar las historias priorizadas y los criterios de aceptación con estudiantes y docentes antes de iniciar la implementación.
 - Mantener la trazabilidad entre los drivers ADD, los bounded contexts y los diagramas de arquitectura cuando se incorporen nuevas decisiones de diseño.
-- Representar explícitamente RabbitMQ dentro del entorno Railway y los canales de comunicación correspondientes cuando se refine el diagrama de despliegue en el siguiente hito.
+- Revisar el despliegue refinado de 4.3.4 con RabbitMQ y canales HTTPS/WSS, y comprobar presupuesto, conectividad y roles de base de datos antes de operar.
 - Usar los escenarios de calidad refinados como base de pruebas de rendimiento, privacidad, recuperación e idempotencia durante la fase de implementación.
-- Desarrollar los capítulos V, VI y VII en los siguientes hitos, sin adelantarlos como contenido de esta primera entrega.
+- Incorporar el feedback docente a I–IV y revisar V–VI con el equipo; ejecutar después la implementación, pruebas y validaciones del capítulo VII con evidencias reales.
 
 # Video About-the-Team
+
+El video se incorporará en el hito que lo requiera. Este avance no agrega un enlace de grabación inexistente.
 
 # Bibliografía
 
@@ -2015,6 +2954,12 @@ Teleprompter.com. (2024). *Public speaking statistics 2025: Global fear & trends
 
 Wojcik, R., Bachmann, F., Bass, L., Clements, P., Merson, P., Nord, R., & Wood, B. (2006). *Attribute-Driven Design (ADD), Version 2.0* (Technical Report CMU/SEI-2006-TR-023). Software Engineering Institute, Carnegie Mellon University. https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=8147
 
+RabbitMQ. (s. f.). *Consumer acknowledgements and publisher confirms*. https://www.rabbitmq.com/docs/confirms
+
+World Wide Web Consortium. (s. f.). *Understanding Success Criterion 1.4.3: Contrast (Minimum)*. https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html
+
+World Wide Web Consortium. (s. f.). *Understanding Success Criterion 2.5.8: Target Size (Minimum)*. https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html
+
 # Anexos
 
 | Anexo | Descripción | Enlace o ubicación |
@@ -2023,3 +2968,9 @@ Wojcik, R., Bachmann, F., Bass, L., Clements, P., Merson, P., Nord, R., & Wood, 
 | B | Informe de participación del equipo para TB1. | [Informe de Participación — Startup Thropic](https://docs.google.com/document/d/1-tnKLS9I_qJD4kkLwBUQB8QqxdgXBQbJcZ0smvAn1KM/edit) |
 | C | Evidencias de colaboración: commits, ramas y pull requests. | [Repositorio del informe](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report) |
 | D | Diagramas de Software Architecture. | `assets/images/DiagramsUML/` |
+| E | Diseño táctico: Modelos reutilizados por contexto: componentes, clases, datos/servicios stateless y fuentes Mermaid. | `assets/diagrams/tactical/`, `assets/design/reuse-manifest.json` |
+| F | Vistas de contenedores y despliegue refinadas para el curso actual. | `assets/diagrams/tactical/container-refinement.*`, `deployment-refinement.*` |
+| G | Arquitectura de información, wireflow y tres user flows. | `assets/diagrams/ux/` |
+| H | Wireframes y mock-ups web/móvil, incluyendo estados de error y privacidad. | `assets/ux/wireframes/`, `assets/ux/mockups/` |
+| I | Prototipo UX navegable, con datos ficticios y modo wireframe. | [HTML](assets/ux/prototype/index.html), [instrucciones](assets/ux/prototype/README.md) |
+| J | Modelos, patrones y pantallas reutilizados del informe Talki 2026-01, con commit de origen y hashes. | `assets/reused-202601/`, [registro de procedencia](assets/design/reuse-manifest.json) |

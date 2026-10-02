@@ -1,0 +1,9 @@
+flowchart TB
+    input["Interface: HTTP interno / streaming autorizado"] --> app["AIIntegrationApplicationService"]
+    app --> domain["Domain: AIProviderPort + GeminiLiveClient"]
+    app --> port["Puerto: Configuracion / SecretResolverPort"]
+    adapter["Infrastructure: adaptador de AI Provider Gateway"] -. implementa .-> port
+    adapter --> resource["Persistencia privada o salida del servicio"]
+    app --> integration["Puerto de integracion / eventos"]
+    infrastructure["Adaptador autorizado HTTP, WebSocket o RabbitMQ"] -. implementa .-> integration
+    infrastructure --> external["GeminiLiveAdapter / API externa"]

@@ -1,0 +1,18 @@
+classDiagram
+    class SessionLiveFinalizedConsumer {
+        +handle(SessionLiveFinalizedEvent) void
+    }
+    class FillerDetector {
+        +detect(String transcript) FillerResult
+    }
+    class FillerResult {
+        +int totalFillers
+        +Map byType
+        +double fillerRatio
+    }
+    class FillerAnalyzedPublisher {
+        +publish(FillerAnalyzedEvent) void
+    }
+    SessionLiveFinalizedConsumer --> FillerDetector
+    SessionLiveFinalizedConsumer --> FillerAnalyzedPublisher
+    FillerDetector --> FillerResult
