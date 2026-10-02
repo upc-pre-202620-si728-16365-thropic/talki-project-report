@@ -2488,6 +2488,117 @@ user_progress conserva los totales y puntuaciones resumidas del estudiante. La t
 
 ## 5.6. Bounded Context: Sharing & Retention
 
+Este contexto permite compartir reportes por tiempo limitado, exportarlos y solicitar la eliminación de una sesión. Coordina el acceso y el retiro de los datos con los contextos responsables de conservarlos.
+
+**Servicio o componente asociado:** Modelo propuesto.
+
+### 5.6.1. Domain Layer
+
+La capa de dominio propuesta define las condiciones de acceso temporal a un reporte y el seguimiento de la eliminación de una sesión. Cada permiso o solicitud conserva su propia identidad y estado.
+
+**Aggregate Roots**
+
+ShareGrant representa el permiso temporal de lectura de un reporte. Conserva el propietario, la vigencia y la revocación del acceso. DeletionRequest registra la solicitud de eliminación y controla su avance hasta recibir las confirmaciones necesarias. Ambos agregados pertenecen al diseño propuesto.
+
+**Entities**
+
+PurgeReceipt registra la confirmación de eliminación enviada por cada contexto responsable. Su relación con DeletionRequest permite identificar las confirmaciones recibidas y las que todavía faltan.
+
+**Elementos de Domain Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| ShareGrant | Aggregate Root (diseño propuesto) | Representa un permiso temporal de lectura sobre un reporte. | Domain |
+| DeletionRequest | Aggregate Root (diseño propuesto) | Registra una solicitud de eliminación y su estado. | Domain |
+| PurgeReceipt | Entity (diseño propuesto) | Confirma la eliminación realizada por cada contexto responsable. | Domain |
+
+**Reglas principales**
+
+1. El acceso a un reporte comprueba la vigencia del permiso y su posible revocación.
+2. Revocar un enlace impide nuevas consultas al reporte compartido.
+3. Solicitar la eliminación bloquea el acceso al recurso; la eliminación física concluye cuando se reciben las confirmaciones requeridas.
+4. La exportación incluye únicamente información autorizada del reporte.
+
+### 5.6.2. Interface Layer
+
+Los controladores propuestos reciben las solicitudes de compartir, revocar, exportar y eliminar. Su responsabilidad es identificar al solicitante, validar la estructura de los datos y delegar el caso de uso correspondiente.
+
+**Operaciones propuestas**
+
+| Operación | Responsabilidad |
+| --- | --- |
+| `POST /api/v1/reports/{reportId}/shares` | Crear un permiso de lectura con fecha de vencimiento. |
+| `DELETE /api/v1/shares/{grantId}` | Revocar un permiso creado por el propietario. |
+| `GET /api/v1/shared-reports/{token}` | Consultar la vista autorizada de un reporte compartido. |
+| `POST /api/v1/reports/{reportId}/exports` | Preparar la exportación del reporte. |
+| `POST /api/v1/sessions/{sessionId}/deletions` | Registrar una solicitud de eliminación. |
+| `GET /api/v1/deletions/{requestId}` | Consultar el estado de la eliminación. |
+
+**Datos de entrada y respuesta.** La compartición identifica el reporte, su vigencia y el alcance permitido. La respuesta devuelve el enlace temporal y su vencimiento. La eliminación devuelve el identificador de la solicitud y su estado. La vista del tutor omite el material contextual y los datos que no formen parte del permiso.
+
+### 5.6.3. Application Layer
+
+La capa de aplicación propuesta coordina la creación de permisos, la consulta de reportes compartidos y la eliminación distribuida de datos.
+
+**Commands propuestos**
+
+La creación de un permiso, su revocación y la solicitud de eliminación modifican el estado de ShareGrant o DeletionRequest. La recepción de una confirmación actualiza el avance de la eliminación.
+
+**Queries propuestas**
+
+La lectura compartida comprueba la vigencia del permiso antes de recuperar la vista autorizada del reporte. La exportación prepara únicamente la información que puede consultar el solicitante.
+
+**Command Handlers y Query Handlers**
+
+Los manejadores propuestos separan cada operación y reúnen las comprobaciones necesarias antes de utilizar los repositorios o publicar mensajes.
+
+**Elementos de Application Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| CreateShareGrantHandler | Command Handler | Comprueba el propietario y registra la vigencia del permiso. | Application |
+| ResolveSharedReportHandler | Query Handler | Comprueba el permiso y recupera la vista autorizada del reporte. | Application |
+| RevokeShareHandler | Command Handler | Retira el permiso de lectura. | Application |
+| RequestDeletionHandler | Command Handler | Registra la solicitud y comunica la eliminación a los contextos responsables. | Application |
+| CollectPurgeReceiptHandler | Manejador de confirmaciones | Reúne las confirmaciones y determina si la solicitud concluyó. | Application |
+| ExportReportHandler | Manejador de exportación | Prepara la descarga con el alcance y las versiones autorizadas. | Application |
+
+**Recorrido del caso de uso.** Compartir genera un permiso temporal; consultar verifica su vigencia y revocación. Eliminar bloquea nuevas consultas y solicita el retiro de los datos a cada contexto responsable. La solicitud se completa cuando se reúnen las confirmaciones esperadas.
+
+### 5.6.4. Infrastructure Layer
+
+La capa de infraestructura propuesta conserva los permisos y solicitudes y comunica la eliminación a los contextos propietarios de los datos.
+
+**Elementos de Infrastructure Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| Persistencia de permisos y solicitudes | Repositorios propuestos | Conserva ShareGrant, DeletionRequest y sus confirmaciones en PostgreSQL. | Infrastructure |
+| Mensajería de eliminación | Adaptador de eventos propuesto | Comunica las solicitudes y confirmaciones mediante RabbitMQ. | Infrastructure |
+| Exportación del reporte | Adaptador propuesto | Prepara un archivo con información autorizada y vigencia de descarga limitada. | Infrastructure |
+
+Los enlaces se conservan mediante un hash. Si no puede comprobarse la vigencia del permiso, la consulta se bloquea. Revocar un enlace retira el acceso futuro, pero no recupera una copia que ya haya sido descargada.
+
+### 5.6.5. Bounded Context Software Architecture Component Level Diagrams
+
+Las solicitudes de compartir, revocar, exportar y eliminar se coordinan mediante casos de uso separados. Los repositorios conservan los permisos y las confirmaciones permiten seguir el avance de la eliminación.
+
+![Componentes de Sharing & Retention](assets/diagrams/tactical/06-sharing-retention-components.png)
+
+### 5.6.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 5.6.6.1. Bounded Context Domain Layer Class Diagrams
+
+ShareGrant administra la vigencia del acceso. DeletionRequest reúne los registros PurgeReceipt y conserva el estado de la eliminación hasta recibir las confirmaciones necesarias.
+
+![Clases de Sharing & Retention](assets/diagrams/tactical/06-sharing-retention-classes.png)
+
+#### 5.6.6.2. Bounded Context Database Design Diagram
+
+share_grants almacena el reporte, propietario, hash del enlace y fechas de vigencia y revocación. deletion_requests registra la solicitud de eliminación y purge_receipts sus confirmaciones. Los registros deben evitar permisos o confirmaciones duplicados. Este esquema corresponde al diseño propuesto.
+
+![Persistencia de Sharing & Retention](assets/diagrams/tactical/06-sharing-retention-database.png)
+
 ## 5.7. Bounded Context: Gamification
 
 ## 5.8. Bounded Context: Identity & Access
