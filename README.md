@@ -3185,6 +3185,32 @@ Volver a la configuración conserva las elecciones previas. Los mensajes de erro
 
 ## 6.3. Landing Page UI Design
 
+La landing pública (L01) presenta Talki a los estudiantes y reúne la propuesta de valor, los beneficios, los pasos de uso y el acceso al registro. A continuación se muestran su wireframe y su mock-up, cada uno en versiones web y móvil.
+
+### 6.3.1. Landing Page Wireframe
+
+El wireframe organiza la landing en bloques de propuesta de valor, beneficios por segmento, pasos de uso, planes y formulario de consulta. La acción de registro se mantiene visible y el reporte de muestra permite anticipar el tipo de feedback que ofrece Talki. La sección de testimonios prevista en US03 se incorporará cuando existan testimonios autorizados.
+
+**Wireframe de la landing pública de Talki (web)**
+
+<img src="assets/ux/wireframes/web-landing.png" alt="Wireframe de la landing pública de Talki: web" width="900">
+
+**Wireframe de la landing pública de Talki (móvil)**
+
+<img src="assets/ux/wireframes/mobile-landing.png" alt="Wireframe de la landing pública de Talki: móvil" width="320">
+
+### 6.3.2. Landing Page Mock-up
+
+El mock-up presenta el mensaje “Ensaya tus ideas. Hazlas escuchar.” junto con la acción principal “Empezar a practicar”. Los bloques de beneficios y pasos de uso explican el servicio antes del registro. Los planes se muestran como una propuesta cuyas condiciones están por definir; el formulario de consulta permite explorar la interacción de contacto.
+
+**Mock-up de la landing pública de Talki (web)**
+
+<img src="assets/ux/mockups/web-landing.png" alt="Mock-up de la landing pública de Talki: web" width="900">
+
+**Mock-up de la landing pública de Talki (móvil)**
+
+<img src="assets/ux/mockups/mobile-landing.png" alt="Mock-up de la landing pública de Talki: móvil" width="320">
+
 ## 6.4. Applications UX/UI Design
 
 ## 6.5. Applications Prototyping
