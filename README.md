@@ -1994,6 +1994,104 @@ Los diagramas de componentes resumen el recorrido de la información entre capas
 
 ## 5.1. Bounded Context: Live Coaching
 
+Este contexto acompaña al estudiante durante el ensayo mediante transcripción, señales de apoyo y turnos de conversación. La sesión conserva su estado en Practice Session Management y su evaluación se obtiene en Scoring & Feedback.
+
+**Servicio o componente asociado:** live-coach-service.
+
+### 5.1.1. Domain Layer
+
+La capa de dominio define las reglas de conversación que diferencian una práctica rápida, una entrevista, una sustentación y un escenario contextualizado. Su responsabilidad es decidir cómo se prepara el ensayo según el modo elegido.
+
+**Domain Policies**
+
+SessionModeStrategy define las reglas comunes para preparar una conversación. QuickPracticeStrategy, InterviewStrategy, ThesisDefenseStrategy y ScenarioStrategy aplican las condiciones del modo elegido, como la orientación del diálogo y su duración sugerida. La identidad y el estado de la práctica se administran en Practice Session Management.
+
+**Domain Factories**
+
+SessionModeStrategyFactory crea la estrategia correspondiente al modo solicitado. LiveCoachOrchestrator utiliza esta fábrica para preparar las instrucciones de la conversación.
+
+**Elementos de Domain Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| SessionModeStrategy | Política de dominio | Define la preparación y los turnos de conversación de cada modo de práctica. | Domain |
+| SessionModeStrategyFactory | Domain Factory | Crea la estrategia correspondiente al modo solicitado por el estudiante. | Domain |
+| QuickPracticeStrategy, InterviewStrategy, ThesisDefenseStrategy y ScenarioStrategy | Estrategias | Aplican las reglas de práctica rápida, entrevista, sustentación y escenario contextualizado. | Domain |
+
+**Reglas principales**
+
+1. El modo elegido determina la estrategia de conversación.
+2. La captura de voz requiere permiso del dispositivo y consentimiento vigente.
+3. Al finalizar, la transcripción y las métricas se entregan al contexto responsable de la sesión.
+
+### 5.1.2. Interface Layer
+
+LiveCoachController recibe las solicitudes del cliente para consultar los modos, preparar el acceso a la conversación y finalizar el ensayo. Delega la preparación y el cierre a LiveCoachOrchestrator.
+
+**Controller y operaciones**
+
+| Operación | Responsabilidad |
+| --- | --- |
+| `GET /v1/coach/modes` | Presentar los modos de práctica disponibles. |
+| `POST /v1/coach/live-token?mode={mode}` | Solicitar una credencial temporal para el modo elegido. |
+| `POST /v1/coach/{sessionId}/finalize` | Recibir la evidencia del ensayo y solicitar su cierre. |
+
+**Datos de entrada y respuesta.** La preparación recibe el modo y, cuando corresponde, el identificador del escenario. LiveTokenResponse devuelve la credencial temporal, el modelo, la fecha de vencimiento y la duración sugerida. El cierre recibe el identificador de sesión, la transcripción y las métricas disponibles. La comprobación del propietario y del consentimiento forma parte de la integración prevista.
+
+### 5.1.3. Application Layer
+
+La capa de aplicación coordina la preparación y el cierre de la conversación. Selecciona las reglas del modo elegido y solicita los recursos de integración necesarios.
+
+**Commands**
+
+La preparación de la conversación solicita una credencial temporal para el modo y escenario elegidos. La finalización reúne la transcripción y las métricas para comunicar el cierre de la práctica.
+
+**Queries**
+
+La consulta de modos presenta las opciones que puede elegir el estudiante. LiveCoachController ofrece esta lectura; LiveCoachOrchestrator coordina la preparación y la finalización.
+
+**Elementos de Application Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| LiveCoachOrchestrator | Servicio de aplicación | Prepara las instrucciones del ensayo, solicita la credencial temporal y comunica su finalización. | Application |
+
+**Recorrido del caso de uso.** Al preparar una práctica, el orquestador obtiene la estrategia y solicita a GeminiTokenService una credencial temporal. Al finalizar, reúne la transcripción y las métricas y solicita su publicación. El diseño de recuperación añade la confirmación del cierre en Practice Session Management antes de continuar el análisis.
+
+### 5.1.4. Infrastructure Layer
+
+La capa de infraestructura gestiona la obtención de credenciales del proveedor y la publicación del cierre de la práctica.
+
+**Elementos de Infrastructure Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| GeminiTokenService | Servicio de integración | Solicita a Gemini una credencial temporal vinculada a las instrucciones del ensayo. | Infrastructure |
+| SessionFinalizedPublisher | Publicador de eventos | Comunica SessionLiveFinalizedEvent mediante RabbitMQ. | Infrastructure |
+| GeminiLiveClient | Adaptador propuesto | Representa la conexión de conversación dentro de la pasarela común de proveedores. | Infrastructure |
+
+El cliente utiliza la credencial temporal para el intercambio de voz. Live Coaching no necesita una base de negocio propia; la evidencia de cierre corresponde a Practice Session Management. La recuperación y la confirmación del cierre amplían el flujo de integración.
+
+### 5.1.5. Bounded Context Software Architecture Component Level Diagrams
+
+LiveCoachController recibe las acciones del cliente y las delega al orquestador. La fábrica selecciona la estrategia y GeminiTokenService prepara la credencial temporal. La finalización se comunica mediante SessionFinalizedPublisher; el diseño de recuperación incorpora su confirmación en Sessions.
+
+![Componentes de Live Coaching](assets/diagrams/tactical/01-live-coaching-components.png)
+
+### 5.1.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 5.1.6.1. Bounded Context Domain Layer Class Diagrams
+
+Las estrategias comparten una interfaz y el orquestador utiliza una fábrica para elegirlas. GeminiTokenService prepara la credencial temporal del proveedor. El modelo distingue esta preparación del intercambio de voz realizado por el cliente.
+
+![Clases de Live Coaching](assets/diagrams/tactical/01-live-coaching-classes.png)
+
+#### 5.1.6.2. Bounded Context Database Design Diagram
+
+Este contexto no requiere una base de datos propia. La transcripción y el resultado del cierre se conservan en los contextos responsables de sesiones y evaluación.
+
+![Persistencia de Live Coaching](assets/diagrams/tactical/01-live-coaching-database.png)
+
 ## 5.2. Bounded Context: Speech Analysis
 
 ## 5.3. Bounded Context: Scoring & Feedback
