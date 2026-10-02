@@ -65,10 +65,11 @@
 | 0.9 | 19/09/2026 | Equipo Thropic | Incorporación del avance de conclusiones y recomendaciones, bibliografía, anexos y evidencia de colaboración del TB1. |
 | 1.0 | 02/10/2026 | Edición asistida por Codex | Desarrollo del diseño táctico y UX del segundo hito de TB1; incorporación de modelos, diagramas, pantallas y prototipo web/móvil. Revisión del equipo y feedback docente pendientes. |
 | 1.1 | 02/10/2026 | Edición asistida por Codex | Ajuste de UX para conservar las pantallas del cliente Talki como base: retirada de seis mock-ups web duplicados, unificación visual de complementos y uso del cliente web como prototipo principal. |
-| 1.2 | 02/10/2026 | Edición asistida por Codex | Alineación de la tabla de colores y los complementos UX con los tokens de temas claro/oscuro y el componente Table del frontend Talki, versión d63e889. |
+| 1.2 | 02/10/2026 | Edición asistida por Codex | Alineación de la paleta de colores y las tablas de las pantallas complementarias con la identidad visual de Talki en sus temas claro y oscuro. |
 | 1.3 | 02/10/2026 | Edición asistida por Codex | Presentación de wireframes, mock-ups y estados críticos mediante descripción e imágenes web/móvil dentro del informe. |
 | 1.4 | 02/10/2026 | Edición asistida por Codex | Revisión editorial de los capítulos V y VI, sustitución de rayas largas y acceso directo a los diseños de la landing desde el catálogo. |
 | 1.5 | 02/10/2026 | Edición asistida por Codex | Revisión de la redacción de diseño: tipografía, colores, componentes, navegación y prototipado; aclaración de las descripciones de modelos de dominio. |
+| 1.6 | 02/10/2026 | Edición asistida por Codex | Justificación de la identidad visual y simplificación de la paleta por función de diseño, sin referencias a archivos CSS. |
 
 # Project Report Collaboration Insights
 
@@ -2542,45 +2543,32 @@ Las pantallas de acceso, inicio, Coach, sesiones y feedback del cliente web de T
 
 ## 6.1. Style Guidelines
 
+Las guías de estilo de Talki priorizan la claridad del contenido y la facilidad para iniciar una práctica, comprender el feedback y elegir una acción de mejora. La identidad visual mantiene criterios comunes de color, tipografía y composición en las versiones web y móvil.
+
 ### 6.1.1. General Style Guidelines
 
 **Personalidad y tono.** Talki se comunica con instrucciones breves y recomendaciones concretas. El lenguaje se centra en la práctica y la mejora: “ensayo”, “siguiente acción” y “volver a practicar”. Los mensajes de error explican qué ocurrió y cómo continuar. La puntuación se presenta como una referencia de desempeño, y el estudiante conserva el control del inicio, la pausa y el cierre de cada práctica.
 
-**Identidad visual.** La paleta de Talki utiliza fondos claros, texto azul oscuro y naranja para destacar las acciones principales. Esta combinación establece una jerarquía visual entre el contenido, los controles y las recomendaciones. El tema oscuro incorpora fondos profundos y un acento violeta. La siguiente tabla recoge los colores definidos en la [paleta del cliente web de Talki](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend/blob/d63e889a216d093a86bf24a2a328c18d0e610618/src/app/globals.css).
+**Identidad visual.** Para Talki se adopta una composición clara, con fondos suaves y bloques de contenido diferenciados. El criterio es dar prioridad a las tareas del estudiante: preparar un ensayo, revisar sus resultados y decidir cómo continuar. Los elementos de marca acompañan estas tareas sin competir con las métricas o las recomendaciones.
 
-| Elemento visual | Tema claro | Tema oscuro | Uso |
+**Paleta de colores.** El naranja se utiliza como color principal para destacar acciones como iniciar o repetir una práctica. Los fondos claros y las tarjetas blancas delimitan las secciones, mientras que el azul oscuro distingue el texto principal. Los tonos secundarios permiten reconocer ayudas, separadores y estados de interacción. El rojo identifica errores y acciones que requieren atención, acompañado siempre de un mensaje. En el tema oscuro se mantienen estas funciones visuales con fondos profundos, texto claro y un acento violeta.
+
+| Elemento | Tema claro | Tema oscuro | Aplicación en la interfaz |
 | --- | --- | --- | --- |
-| Fondo general | `#F7F8FC` | `#0F1117` | Fondo de página. |
-| Texto principal | `#0F172A` | `#E6E8EC` | Texto principal. |
-| Tarjetas | `#FFFFFF` | `#161A22` | Tarjetas y superficies. |
-| Texto de tarjetas | `#0F172A` | `#E6E8EC` | Texto dentro de tarjetas. |
-| Acción principal | `#F97316` | `#6C7CFF` | Acciones principales y selección. |
-| Texto de acción principal | `#FFFFFF` | `#0F1117` | Texto de acciones principales. |
-| Acción secundaria | `#F1F3F9` | `#1D2230` | Acciones y superficies secundarias. |
-| Texto de acción secundaria | `#0F172A` | `#E6E8EC` | Texto secundario sobre superficies. |
-| Fondo de apoyo | `#F1F3F9` | `#1D2230` | Fondos discretos y estados de tabla. |
-| Texto de apoyo | `#475569` | `#9AA4B2` | Descripción y texto de apoyo. |
-| Resaltado | `#F1F3F9` | `#1D2230` | Resaltado de navegación. |
-| Texto sobre resaltado | `#0F172A` | `#E6E8EC` | Texto sobre resaltado. |
-| Acción destructiva | `#EF4444` | `#E26D6D` | Acciones y estados destructivos. |
-| Texto de acción destructiva | `#FFFFFF` | `#0F1117` | Texto sobre color destructivo. |
-| Separadores | `#E2E8F0` | `#252A3A` | Bordes y separadores. |
-| Bordes de campos | `#E2E8F0` | `#252A3A` | Bordes de controles. |
-| Indicador de foco | `#F97316` | `#6C7CFF` | Foco de teclado. |
-| Gráfico: serie 1 | `#F97316` | `#6C7CFF` | Serie principal. |
-| Gráfico: serie 2 | `#ea7a12` | `#7B61FF` | Segunda serie. |
-| Gráfico: serie 3 | `#22C55E` | `#3DDC97` | Tercera serie. |
-| Gráfico: serie 4 | `#F59E0B` | `#F5C26B` | Cuarta serie. |
-| Gráfico: serie 5 | `#EF4444` | `#E26D6D` | Quinta serie. |
-| Fondo de navegación | `#FFFFFF` | `#0F1117` | Fondo de navegación lateral. |
-| Texto de navegación | `#0F172A` | `#E6E8EC` | Texto de navegación lateral. |
-| Selección de navegación | `#F97316` | `#6C7CFF` | Selección principal en navegación. |
-| Resaltado de navegación | `#F1F3F9` | `#1D2230` | Resaltado secundario en navegación. |
-| Separadores de navegación | `#E2E8F0` | `#252A3A` | Separadores de navegación. |
+| Color principal | `#F97316` | `#6C7CFF` | Botones principales, enlaces destacados y selección. |
+| Fondo general | `#F7F8FC` | `#0F1117` | Superficie sobre la que se organiza el contenido. |
+| Tarjetas | `#FFFFFF` | `#161A22` | Agrupación de métricas, formularios y recomendaciones. |
+| Texto principal | `#0F172A` | `#E6E8EC` | Títulos, contenido y etiquetas de controles. |
+| Texto de apoyo | `#475569` | `#9AA4B2` | Descripciones, ayudas y datos complementarios. |
+| Texto de botones principales | `#FFFFFF` | `#0F1117` | Identificación de la acción sobre el color principal. |
+| Superficies secundarias | `#F1F3F9` | `#1D2230` | Botones secundarios, filas resaltadas y navegación. |
+| Bordes y separadores | `#E2E8F0` | `#252A3A` | Delimitación de campos y bloques de contenido. |
+| Errores y acciones destructivas | `#EF4444` | `#E26D6D` | Avisos de error y controles de eliminación. |
+| Series complementarias de gráficos | `#ea7a12`, `#22C55E`, `#F59E0B`, `#EF4444` | `#7B61FF`, `#3DDC97`, `#F5C26B`, `#E26D6D` | Diferenciación de series, acompañadas de etiquetas. |
 
 **Organización visual.** Las tarjetas agrupan información relacionada, como las métricas de una sesión o una recomendación de práctica. Los bordes y las diferencias de fondo delimitan cada bloque. En escritorio, la navegación lateral mantiene disponibles los accesos a las principales tareas; en móvil, la distribución en una columna facilita la lectura y el uso de los controles.
 
-**Tipografía.** Geist es la familia principal para títulos, textos y controles de la interfaz. Geist Mono se reserva para información que requiere caracteres de ancho uniforme. La jerarquía entre títulos, subtítulos y texto de apoyo permite reconocer las secciones y localizar las acciones. Arial y Helvetica se consideran alternativas cuando la fuente principal no está disponible.
+**Tipografía.** Se elige Geist, una familia sin serifas, para mantener una presentación uniforme en títulos, textos y controles. Los cambios de tamaño y peso distinguen los encabezados del contenido y de las ayudas, facilitando el recorrido visual de cada pantalla. Geist Mono se reserva para datos que requieren caracteres de ancho uniforme. Arial y Helvetica se consideran alternativas cuando la fuente principal no está disponible.
 
 **Espaciado y formas.** La separación entre elementos sigue una escala de 4 px para mantener un orden consistente entre pantallas. Las tarjetas presentan esquinas redondeadas de 14 px y los botones de 10 px. Los márgenes y espacios internos distinguen los grupos de contenido y dejan suficiente separación entre controles.
 
