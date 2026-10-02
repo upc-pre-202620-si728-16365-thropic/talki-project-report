@@ -1,0 +1,17 @@
+classDiagram
+class AIIntegrationApplicationService {
+  <<Propuesto>>
+  +startConversation(request)
+}
+class AIProviderPort {
+  <<interface>>
+  +openLive(request)
+  +closeAndCollectTranscript()
+}
+class GeminiLiveClient {
+  <<Adaptador propuesto>>
+  +openLive(request)
+  +closeAndCollectTranscript() String
+}
+AIIntegrationApplicationService --> AIProviderPort : utiliza contrato
+AIProviderPort <|.. GeminiLiveClient : implementa

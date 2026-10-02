@@ -1,0 +1,7 @@
+flowchart TB
+  input["Interface: solicitud autorizada de integración"] --> app["Application: AIIntegrationApplicationService"]
+  app --> port["Domain: AIProviderPort"]
+  adapter["Infrastructure: GeminiLiveClient"] -. implementa .-> port
+  adapter --> provider["Gemini Live API"]
+  config["Infrastructure: configuración y credenciales protegidas"] --> adapter
+  note["Pasarela propuesta, sin base de material de práctica"] -.-> app
