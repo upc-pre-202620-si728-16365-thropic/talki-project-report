@@ -67,6 +67,8 @@
 
 | 1.1 | 02/10/2026 | Edición asistida por Codex | Ajuste de UX para conservar las pantallas del cliente Talki como base: retirada de seis mock-ups web duplicados, unificación visual de complementos y uso del cliente web como prototipo principal. |
 
+| 1.2 | 02/10/2026 | Edición asistida por Codex | Alineación de la tabla de colores y los complementos UX con los tokens de temas claro/oscuro y el componente Table del frontend Talki, versión d63e889. |
+
 # Project Report Collaboration Insights
 
 Repositorio del informe: [talki-project-report](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report)
@@ -2561,23 +2563,43 @@ El cliente web de Talki incluye pantallas de acceso, dashboard, Coach, sesiones 
 
 **Personalidad y tono.** Talki acompaña al estudiante con instrucciones breves y feedback concreto. Usa “práctica”, “ensayo” y “siguiente acción”; evita presentar el score como nota académica o el indicador de confianza como evaluación psicológica. Los errores explican la causa observable y el paso para recuperarse. El usuario mantiene el control del inicio, pausa, cierre y uso de sus datos.
 
-**Identidad.** La interfaz conserva la marca **Talki**, el identificador «T» sobre fondo negro y la jerarquía visual del cliente web. Los complementos aplican la misma base monocromática: blanco, negro y grises, tarjetas con bordes suaves y acciones principales negras.
+**Identidad.** La marca y la paleta se definen con los tokens del [frontend de Talki](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend/blob/d63e889a216d093a86bf24a2a328c18d0e610618/src/app/globals.css). El tema claro utiliza naranja como acción principal, fondos claros y texto azul oscuro; el tema oscuro utiliza fondo profundo y acento violeta. El cliente declara el tema claro como predeterminado. Los complementos aplican ese tema; los valores del tema oscuro quedan documentados para mantener consistencia.
 
-| Token | Valor | Uso |
-| --- | --- | --- |
-| `primary` | `#0A0A0A` | Acción principal, selección y series de gráficos. |
-| `primary-soft` | `#F5F5F5` | Fondo de selección y avisos informativos. |
-| `ink` | `#171717` | Títulos y texto principal. |
-| `muted` | `#737373` | Texto secundario, etiquetas y explicaciones. |
-| `accent-neutral` | `#404040` | Recomendaciones y señales de mejora. |
-| `canvas` / `surface` | `#FAFAFA` / `#FFFFFF` | Fondo general y tarjetas. |
-| `line` | `#E5E5E5` | Separación visual decorativa; los controles usan borde más oscuro. |
-| `danger` | `#B42336` | Eliminación y confirmaciones destructivas. |
-| `warning` | `#865000` sobre `#FFF3DF` | Desconexión, datos insuficientes y purga pendiente. |
+| Token CSS | Tema claro | Tema oscuro | Uso |
+| --- | --- | --- | --- |
+| `--background` | `#F7F8FC` | `#0F1117` | Fondo de página. |
+| `--foreground` | `#0F172A` | `#E6E8EC` | Texto principal. |
+| `--card` | `#FFFFFF` | `#161A22` | Tarjetas y superficies. |
+| `--card-foreground` | `#0F172A` | `#E6E8EC` | Texto dentro de tarjetas. |
+| `--primary` | `#F97316` | `#6C7CFF` | Acciones principales y selección. |
+| `--primary-foreground` | `#FFFFFF` | `#0F1117` | Texto de acciones principales. |
+| `--secondary` | `#F1F3F9` | `#1D2230` | Acciones y superficies secundarias. |
+| `--secondary-foreground` | `#0F172A` | `#E6E8EC` | Texto secundario sobre superficies. |
+| `--muted` | `#F1F3F9` | `#1D2230` | Fondos discretos y estados de tabla. |
+| `--muted-foreground` | `#475569` | `#9AA4B2` | Descripción y texto de apoyo. |
+| `--accent` | `#F1F3F9` | `#1D2230` | Resaltado de navegación. |
+| `--accent-foreground` | `#0F172A` | `#E6E8EC` | Texto sobre resaltado. |
+| `--destructive` | `#EF4444` | `#E26D6D` | Acciones y estados destructivos. |
+| `--destructive-foreground` | `#FFFFFF` | `#0F1117` | Texto sobre color destructivo. |
+| `--border` | `#E2E8F0` | `#252A3A` | Bordes y separadores. |
+| `--input` | `#E2E8F0` | `#252A3A` | Bordes de controles. |
+| `--ring` | `#F97316` | `#6C7CFF` | Foco de teclado. |
+| `--chart-1` | `#F97316` | `#6C7CFF` | Serie principal. |
+| `--chart-2` | `#ea7a12` | `#7B61FF` | Segunda serie. |
+| `--chart-3` | `#22C55E` | `#3DDC97` | Tercera serie. |
+| `--chart-4` | `#F59E0B` | `#F5C26B` | Cuarta serie. |
+| `--chart-5` | `#EF4444` | `#E26D6D` | Quinta serie. |
+| `--sidebar` | `#FFFFFF` | `#0F1117` | Fondo de navegación lateral. |
+| `--sidebar-foreground` | `#0F172A` | `#E6E8EC` | Texto de navegación lateral. |
+| `--sidebar-primary` | `#F97316` | `#6C7CFF` | Selección principal en navegación. |
+| `--sidebar-accent` | `#F1F3F9` | `#1D2230` | Resaltado secundario en navegación. |
+| `--sidebar-border` | `#E2E8F0` | `#252A3A` | Separadores de navegación. |
 
-**Base visual de Talki.** El frontend aplica fondo blanco, texto negro/gris, tarjetas con borde suave y sidebar con Nueva sesión, Dashboard, Sesiones, Coach y Ranking. Esa es la referencia de continuidad del producto existente. Los complementos conservan esa paleta y esos controles para mantener continuidad entre las pantallas existentes y las propuestas.
+**Base visual de Talki.** Los componentes conservan tarjetas claras, bordes definidos y navegación lateral con Nueva sesión, Dashboard, Sesiones, Coach y Ranking. Las capturas existentes documentan sus pantallas; los complementos siguen los tokens de la versión actual del frontend.
 
-**Tipografía y ritmo.** Se propone una familia sans-serif del sistema, cuerpo de 16 px, interlineado 1.55 y títulos de 36/23/17 px en aplicación web. En móvil el título principal baja a 29 px. El tiempo de práctica usa una fuente monoespaciada. El espaciado utiliza pasos de 4/8 px, márgenes de 20 px en móvil y 38 px en escritorio; tarjetas con radio de 18 px y separación de 22 px. La portada puede usar un título mayor, sin trasladarlo a los formularios.
+**Tipografía y ritmo.** El cliente utiliza Geist y Geist Mono según `src/app/layout.tsx`, con alternativas Arial/Helvetica. El prototipo auxiliar utiliza Geist si está disponible y las alternativas del sistema. El token `--radius` es `0.625rem` (10 px); los componentes aplican sus variantes: tarjetas `rounded-xl` (14 px) y botones `rounded-lg` (10 px). El espaciado del diseño usa múltiplos de 4 px y las distribuciones web/móvil de 6.1.2.
+
+**Tablas de interfaz.** Se sigue [`src/components/ui/table.tsx`](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend/blob/d63e889a216d093a86bf24a2a328c18d0e610618/src/components/ui/table.tsx): texto de 14 px, cabecera de 40 px, celdas de 8 px de padding, encabezados alineados a la izquierda, separadores `--border` y desplazamiento horizontal dentro del contenedor. El estado hover usa `--muted` al 50 % y la selección usa `--muted`.
 
 **Componentes y estados.** Botón primario para continuar o practicar; secundario para volver, cancelar o consultar; acción destructiva con texto explícito y confirmación. Campos con etiqueta persistente, ayuda y validación próxima al control. Los chips combinan texto y color; los estados nunca dependen solo de verde/rojo. Un score ausente se muestra como “Sin evidencia”, no como cero. Cada recomendación separa observación, evidencia y acción.
 
