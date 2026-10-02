@@ -2,7 +2,7 @@
 
 Artefacto auxiliar de diseño del capítulo VI. El prototipo principal es el [cliente web de Talki](https://talki-frontend.vercel.app), que incluye acceso, dashboard, Coach, sesiones, grabación y feedback.
 
-En escritorio, esas seis vistas del auxiliar presentan sus capturas originales y un enlace al cliente web. Las capturas son estáticas. Los complementos interactivos cubren las pantallas y estados adicionales; la vista móvil es una propuesta de adaptación. Se mantiene la identidad del cliente: blanco, negro, grises, tarjetas suaves y botones negros.
+En escritorio, esas seis vistas del auxiliar presentan sus capturas originales y un enlace al cliente web. Las capturas son estáticas. Los complementos interactivos cubren las pantallas y estados adicionales; la vista móvil es una propuesta de adaptación. Los colores de `tokens.css` proceden de `src/app/globals.css` del frontend Talki, versión `d63e889a216d093a86bf24a2a328c18d0e610618`. El tema claro usa naranja `#F97316`, fondo `#F7F8FC` y texto `#0F172A`. El archivo conserva también los valores del tema oscuro. Los controles y tablas utilizan esos tokens.
 
 Abre `index.html` en un navegador o sirve la raíz del repositorio con:
 
