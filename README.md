@@ -3001,6 +3001,81 @@ Las pantallas de acceso, inicio, Coach, sesiones y feedback del cliente web de T
 
 ## 6.1. Style Guidelines
 
+Las guías de estilo de Talki priorizan la claridad del contenido y la facilidad para iniciar una práctica, comprender el feedback y elegir una acción de mejora. La identidad visual mantiene criterios comunes de color, tipografía y composición en las versiones web y móvil.
+
+### 6.1.1. General Style Guidelines
+
+**Branding e identidad visual**
+
+La identidad de Talki busca transmitir cercanía y confianza para que el estudiante pueda ensayar sus ideas y reconocer sus avances. El diseño da protagonismo a la práctica y al feedback mediante fondos suaves, bloques ordenados y acciones fáciles de identificar. La marca acompaña al estudiante durante la preparación, el ensayo y la revisión de sus resultados.
+
+**Typography**
+
+Geist se utiliza en títulos, textos y controles por su apariencia clara y su facilidad de lectura en pantalla. El tamaño y el peso diferencian los encabezados, el contenido y las ayudas. Geist Mono se reserva para datos que necesitan alineación uniforme. La jerarquía tipográfica permite reconocer primero la información principal y después sus detalles.
+
+| Uso | Criterio de diseño |
+| --- | --- |
+| Títulos de página y sección | Mayor tamaño y peso para reconocer la tarea y los grupos de contenido. |
+| Texto de lectura | Peso regular y separación entre líneas para leer instrucciones y recomendaciones. |
+| Etiquetas y botones | Texto breve con peso suficiente para identificar controles y acciones. |
+| Datos alineados | Geist Mono cuando la alineación facilita revisar valores; el resto del contenido conserva Geist. |
+| Ayudas y mensajes | Jerarquía secundaria con contraste legible, junto al control al que se refieren. |
+
+**Colors**
+
+El naranja destaca las acciones principales, como empezar o repetir una práctica, y aporta energía a la experiencia. Los fondos claros y las tarjetas blancas separan los grupos de información, mientras el azul oscuro facilita la lectura del contenido. El rojo señala errores o acciones de eliminación y siempre aparece acompañado de un mensaje. En el tema oscuro, los fondos profundos y el acento violeta conservan la misma jerarquía de acciones y contenido.
+
+| Elemento | Tema claro | Tema oscuro | Aplicación en la interfaz |
+| --- | --- | --- | --- |
+| Color principal | `#F97316` | `#6C7CFF` | Botones principales, enlaces destacados y selección. |
+| Fondo general | `#F7F8FC` | `#0F1117` | Superficie sobre la que se organiza el contenido. |
+| Tarjetas | `#FFFFFF` | `#161A22` | Agrupación de métricas, formularios y recomendaciones. |
+| Texto principal | `#0F172A` | `#E6E8EC` | Títulos, contenido y etiquetas de controles. |
+| Texto de apoyo | `#475569` | `#9AA4B2` | Descripciones, ayudas y datos complementarios. |
+| Texto de botones principales | `#FFFFFF` | `#0F1117` | Identificación de la acción sobre el color principal. |
+| Superficies secundarias | `#F1F3F9` | `#1D2230` | Botones secundarios, filas resaltadas y navegación. |
+| Bordes y separadores | `#E2E8F0` | `#252A3A` | Delimitación de campos y bloques de contenido. |
+| Errores y acciones destructivas | `#EF4444` | `#E26D6D` | Avisos de error y controles de eliminación. |
+| Series complementarias de gráficos | `#ea7a12`, `#22C55E`, `#F59E0B`, `#EF4444` | `#7B61FF`, `#3DDC97`, `#F5C26B`, `#E26D6D` | Diferenciación de series, acompañadas de etiquetas. |
+
+**Spacing y composición**
+
+El espaciado separa las tareas y evita que las métricas, las recomendaciones y los controles compitan entre sí. Los márgenes se mantienen uniformes y los elementos relacionados se agrupan en tarjetas. Las formas redondeadas aportan continuidad entre formularios, reportes y botones. En escritorio se aprovecha el ancho para comparar información; en móvil se mantiene una secuencia de lectura en una columna.
+
+**Tono de comunicación**
+
+Talki utiliza un lenguaje respetuoso, cercano y centrado en la mejora. Las instrucciones son breves y las recomendaciones proponen una acción concreta. Expresiones como “Empezar a practicar”, “Revisar feedback” y “Volver a intentar” permiten reconocer qué hacer a continuación. La puntuación orienta la práctica y se acompaña de evidencia; los mensajes evitan atribuir capacidades o emociones que no puedan observarse.
+
+**Iconografía y componentes**
+
+Los íconos apoyan acciones como practicar, consultar sesiones y revisar el progreso, acompañados de etiquetas claras. Las tarjetas reúnen información relacionada y las tablas facilitan comparar prácticas mediante encabezados visibles y separadores discretos. Los botones principales destacan la siguiente acción; las opciones de volver o cancelar tienen menor énfasis. Eliminar una sesión requiere una confirmación explícita.
+
+**Estados y accesibilidad**
+
+Las etiquetas permanecen visibles en los formularios y los errores aparecen junto al dato que debe corregirse. Los estados combinan texto y color; “Sin evidencia” explica cuándo no puede evaluarse una dimensión. El diseño contempla navegación por teclado, foco visible y controles fáciles de seleccionar. La revisión del contraste y la interacción con tecnologías de asistencia se realizará sobre la aplicación integrada.
+
+### 6.1.2. Web, Mobile and Devices Style Guidelines
+
+Talki mantiene los mismos colores, lenguaje y secuencia de tareas en web y móvil. La distribución se adapta al espacio disponible para que preparar una práctica y revisar su feedback resulte comprensible en ambos entornos.
+
+**Estructura y navegación**
+
+| Aspecto | Web de escritorio | Aplicación móvil propuesta |
+| --- | --- | --- |
+| Organización | Menú lateral, cabecera y área principal. | Una columna y barra inferior con acceso a las tareas frecuentes. |
+| Preparación | Campos agrupados y avance por pasos. | Campos apilados y acción de continuar al final del paso. |
+| Práctica | Cronómetro, transcripción y controles visibles en una misma área. | Cronómetro y controles primero; transcripción debajo. |
+| Feedback | Resumen, dimensiones y recomendaciones en bloques paralelos. | Resumen y detalle en una secuencia de lectura. |
+| Historial | Listado con filtros y acceso al detalle. | Filas compactas y filtros adaptados al ancho de pantalla. |
+
+**Tipografía y elementos visuales**
+
+Los títulos, ayudas y etiquetas mantienen su jerarquía al cambiar de dispositivo. Las tarjetas delimitan las métricas y recomendaciones. Los gráficos acompañan sus valores con nombres y unidades. Las tablas conservan los encabezados; si requieren más ancho, el desplazamiento se limita a su área. Los diseños se presentan en anchos de 1440 px para escritorio y 390 px para móvil.
+
+**Interacción**
+
+Las acciones de pausar y finalizar se diferencian para evitar cierres involuntarios. Antes de practicar se comprueba el micrófono y se solicita el consentimiento de procesamiento. Si se interrumpe la conexión, la interfaz permite explorar la recuperación o el cierre parcial. Los avisos de error explican cómo continuar sin perder el contexto de la tarea. Las consultas y acciones de privacidad conservan los mismos límites de acceso en ambos entornos.
+
 ## 6.2. Information Architecture
 
 ## 6.3. Landing Page UI Design
