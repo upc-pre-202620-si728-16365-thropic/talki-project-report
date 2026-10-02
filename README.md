@@ -64,10 +64,10 @@
 | 0.8 | 19/09/2026 | Chi Cruzatt, Kevin Jorge | Desarrollo de la sección 4.3 (Software Architecture) y elaboración de los diagramas System Landscape, Context Level, Container Level y Deployment. |
 | 0.9 | 19/09/2026 | Equipo Thropic | Incorporación del avance de conclusiones y recomendaciones, bibliografía, anexos y evidencia de colaboración del TB1. |
 | 1.0 | 02/10/2026 | Edición asistida por Codex | Desarrollo del diseño táctico y UX del segundo hito de TB1; incorporación de modelos, diagramas, pantallas y prototipo web/móvil. Revisión del equipo y feedback docente pendientes. |
-
 | 1.1 | 02/10/2026 | Edición asistida por Codex | Ajuste de UX para conservar las pantallas del cliente Talki como base: retirada de seis mock-ups web duplicados, unificación visual de complementos y uso del cliente web como prototipo principal. |
-
 | 1.2 | 02/10/2026 | Edición asistida por Codex | Alineación de la tabla de colores y los complementos UX con los tokens de temas claro/oscuro y el componente Table del frontend Talki, versión d63e889. |
+
+| 1.3 | 02/10/2026 | Edición asistida por Codex | Presentación de wireframes, mock-ups y estados críticos mediante descripción e imágenes web/móvil dentro del informe. |
 
 # Project Report Collaboration Insights
 
@@ -2691,48 +2691,290 @@ La vista de tutor evita navegación hacia historial o cuenta del propietario. Un
 
 La estructura prioriza propuesta de valor, acción de registro, pasos del servicio, beneficios por segmento, planes propuestos y formulario de consulta. El reporte de muestra se identifica como ejemplo. No se fabrican testimonios: US03 se implementará cuando existan testimonios autorizados y verificables.
 
-![Wireframe web de la landing](assets/ux/wireframes/web-landing.png)
+**Web**
 
-![Wireframe móvil de la landing](assets/ux/wireframes/mobile-landing.png)
+<img src="assets/ux/wireframes/web-landing.png" alt="Wireframe de la landing pública de Talki — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/wireframes/mobile-landing.png" alt="Wireframe de la landing pública de Talki — móvil" width="320">
 
 ### 6.3.2. Landing Page Mock-up
 
 La portada presenta “Ensaya tus ideas. Hazlas escuchar.” y una muestra de feedback, con CTA principal “Empezar a practicar”. El bloque de planes mantiene precio/límites por definir para no anunciar funciones o condiciones todavía no validadas. El formulario confirma una consulta de prueba; la integración de contacto real queda para implementación.
 
-![Mock-up web de la landing](assets/ux/mockups/web-landing.png)
+**Web**
 
-![Mock-up móvil de la landing](assets/ux/mockups/mobile-landing.png)
+<img src="assets/ux/mockups/web-landing.png" alt="Mock-up de la landing pública de Talki — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/mockups/mobile-landing.png" alt="Mock-up de la landing pública de Talki — móvil" width="320">
 
 ## 6.4. Applications UX/UI Design
 
 ### 6.4.1. Applications Wireframes
 
-Los wireframes mantienen estructura, etiquetas y rutas del prototipo, con escala de grises, bordes planos y sin énfasis de marca. Se exportan las 18 pantallas en web y móvil. El catálogo ofrece el artefacto correspondiente a cada tarea.
+Los wireframes presentan la estructura de las pantallas, sus etiquetas y sus rutas, con escala de grises y bordes planos. Cada pantalla incluye una descripción y las vistas web y móvil. La landing pública (L01, US01–US04) se presenta en la sección 6.3.1.
 
-| ID | Pantalla | Historias relacionadas | Wireframe web | Wireframe móvil |
-| --- | --- | --- | --- | --- |
-| L01 | Landing pública | US01–US04 | [Ver](assets/ux/wireframes/web-landing.png) | [Ver](assets/ux/wireframes/mobile-landing.png) |
-| A01 | Registro | US05 | [Ver](assets/ux/wireframes/web-register.png) | [Ver](assets/ux/wireframes/mobile-register.png) |
-| A02 | Acceso | US06 | [Ver](assets/ux/wireframes/web-login.png) | [Ver](assets/ux/wireframes/mobile-login.png) |
-| A03 | Recuperación | US07 | [Ver](assets/ux/wireframes/web-recovery.png) | [Ver](assets/ux/wireframes/mobile-recovery.png) |
-| P01 | Perfil y segmento | US08, US23, US24 | [Ver](assets/ux/wireframes/web-profile.png) | [Ver](assets/ux/wireframes/mobile-profile.png) |
-| H01 | Inicio | US09, US20, US21, US35 | [Ver](assets/ux/wireframes/web-dashboard.png) | [Ver](assets/ux/wireframes/mobile-dashboard.png) |
-| S01 | Configuración y material | US09–US11, US24, US25, US30 | [Ver](assets/ux/wireframes/web-setup.png) | [Ver](assets/ux/wireframes/mobile-setup.png) |
-| S02 | Audio y consentimiento | US29, TS01 | [Ver](assets/ux/wireframes/web-microphone.png) | [Ver](assets/ux/wireframes/mobile-microphone.png) |
-| S03 | Práctica en vivo | US12–US14, US31, US34, US38 | [Ver](assets/ux/wireframes/web-live.png) | [Ver](assets/ux/wireframes/mobile-live.png) |
-| S04 | Estado del análisis | US37 | [Ver](assets/ux/wireframes/web-processing.png) | [Ver](assets/ux/wireframes/mobile-processing.png) |
-| R01 | Reporte y evidencia | US15–US19, US26 | [Ver](assets/ux/wireframes/web-report.png) | [Ver](assets/ux/wireframes/mobile-report.png) |
-| H02 | Historial y búsqueda | US20 | [Ver](assets/ux/wireframes/web-history.png) | [Ver](assets/ux/wireframes/mobile-history.png) |
-| G01 | Tendencias | US21 | [Ver](assets/ux/wireframes/web-progress.png) | [Ver](assets/ux/wireframes/mobile-progress.png) |
-| G02 | Comparación | US22 | [Ver](assets/ux/wireframes/web-compare.png) | [Ver](assets/ux/wireframes/mobile-compare.png) |
-| G03 | Plan adaptativo | US36 | [Ver](assets/ux/wireframes/web-plan.png) | [Ver](assets/ux/wireframes/mobile-plan.png) |
-| D01 | Compartición, exportación y borrado | US27, US32, US33 | [Ver](assets/ux/wireframes/web-privacy.png) | [Ver](assets/ux/wireframes/mobile-privacy.png) |
-| T01 | Reporte de tutor | US32 | [Ver](assets/ux/wireframes/web-shared.png) | [Ver](assets/ux/wireframes/mobile-shared.png) |
-| N01 | Preferencias de contacto | Soporte transversal | [Ver](assets/ux/wireframes/web-preferences.png) | [Ver](assets/ux/wireframes/mobile-preferences.png) |
+| ID | Pantalla | Historias relacionadas |
+| --- | --- | --- |
+| L01 | Landing pública | US01–US04 |
+| A01 | Registro | US05 |
+| A02 | Acceso | US06 |
+| A03 | Recuperación | US07 |
+| P01 | Perfil y segmento | US08, US23, US24 |
+| H01 | Inicio | US09, US20, US21, US35 |
+| S01 | Configuración y material | US09–US11, US24, US25, US30 |
+| S02 | Audio y consentimiento | US29, TS01 |
+| S03 | Práctica en vivo | US12–US14, US31, US34, US38 |
+| S04 | Estado del análisis | US37 |
+| R01 | Reporte y evidencia | US15–US19, US26 |
+| H02 | Historial y búsqueda | US20 |
+| G01 | Tendencias | US21 |
+| G02 | Comparación | US22 |
+| G03 | Plan adaptativo | US36 |
+| D01 | Compartición, exportación y borrado | US27, US32, US33 |
+| T01 | Reporte de tutor | US32 |
+| N01 | Preferencias de contacto | Soporte transversal |
 
-![Wireframe web de configuración de práctica](assets/ux/wireframes/web-setup.png)
+#### A01 — Registro
 
-![Wireframe móvil de preparación de audio y consentimiento](assets/ux/wireframes/mobile-microphone.png)
+El formulario reúne nombre, correo y contraseña, junto con la aceptación de las condiciones de uso. El acceso a una cuenta existente permanece disponible desde la misma pantalla.
+
+**Historias relacionadas:** US05.
+
+**Web**
+
+<img src="assets/ux/wireframes/web-register.png" alt="Wireframe de registro — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/wireframes/mobile-register.png" alt="Wireframe de registro — móvil" width="320">
+
+#### A02 — Acceso
+
+La pantalla permite ingresar con correo y contraseña y ofrece acceso al registro y a la recuperación de la cuenta.
+
+**Historias relacionadas:** US06.
+
+**Web**
+
+<img src="assets/ux/wireframes/web-login.png" alt="Wireframe de acceso — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/wireframes/mobile-login.png" alt="Wireframe de acceso — móvil" width="320">
+
+#### A03 — Recuperación
+
+El usuario introduce su correo para solicitar instrucciones de recuperación. La confirmación evita revelar si la dirección pertenece a una cuenta registrada.
+
+**Historias relacionadas:** US07.
+
+**Web**
+
+<img src="assets/ux/wireframes/web-recovery.png" alt="Wireframe de recuperación — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/wireframes/mobile-recovery.png" alt="Wireframe de recuperación — móvil" width="320">
+
+#### P01 — Perfil y segmento
+
+El perfil permite elegir el segmento del estudiante y su objetivo de práctica. Estas preferencias orientan los ejercicios y recomendaciones posteriores.
+
+**Historias relacionadas:** US08, US23, US24.
+
+**Web**
+
+<img src="assets/ux/wireframes/web-profile.png" alt="Wireframe de perfil y segmento — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/wireframes/mobile-profile.png" alt="Wireframe de perfil y segmento — móvil" width="320">
+
+#### H01 — Inicio
+
+El inicio reúne el resumen de actividad y los accesos a las prácticas. La vista web muestra métricas, rachas y estado de servicios; la adaptación móvil prioriza la siguiente práctica y las sesiones recientes.
+
+**Historias relacionadas:** US09, US20, US21, US35.
+
+**Web**
+
+<img src="assets/ux/wireframes/web-dashboard.png" alt="Wireframe de inicio — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/wireframes/mobile-dashboard.png" alt="Wireframe de inicio — móvil" width="320">
+
+#### S01 — Configuración y material
+
+La configuración define el escenario, la duración y la meta del ensayo. La adaptación móvil incorpora el material contextual opcional antes de continuar con la preparación de audio.
+
+**Historias relacionadas:** US09–US11, US24, US25, US30.
+
+**Web**
+
+<img src="assets/ux/wireframes/web-setup.png" alt="Wireframe de configuración y material — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/wireframes/mobile-setup.png" alt="Wireframe de configuración y material — móvil" width="320">
+
+#### S02 — Audio y consentimiento
+
+La preparación presenta la comprobación del micrófono y el consentimiento para procesar voz. El inicio de la práctica requiere completar ambas condiciones.
+
+**Historias relacionadas:** US29, TS01.
+
+**Web**
+
+<img src="assets/ux/wireframes/web-microphone.png" alt="Wireframe de audio y consentimiento — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/wireframes/mobile-microphone.png" alt="Wireframe de audio y consentimiento — móvil" width="320">
+
+#### S03 — Práctica en vivo
+
+La práctica reúne el tiempo de sesión, la transcripción y los controles de captura. La adaptación móvil organiza las señales de acompañamiento junto con las acciones de pausa y finalización.
+
+**Historias relacionadas:** US12–US14, US31, US34, US38.
+
+**Web**
+
+<img src="assets/ux/wireframes/web-live.png" alt="Wireframe de práctica en vivo — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/wireframes/mobile-live.png" alt="Wireframe de práctica en vivo — móvil" width="320">
+
+#### S04 — Estado del análisis
+
+El estado del análisis informa que la sesión se está procesando y permite consultar el reporte cuando esté disponible. Un fallo conserva el contexto y ofrece reintentar.
+
+**Historias relacionadas:** US37.
+
+**Web**
+
+<img src="assets/ux/wireframes/web-processing.png" alt="Wireframe de estado del análisis — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/wireframes/mobile-processing.png" alt="Wireframe de estado del análisis — móvil" width="320">
+
+#### R01 — Reporte y evidencia
+
+El reporte reúne el resultado de la práctica y su feedback. La adaptación móvil presenta dimensiones, evidencia y acciones para orientar el siguiente ensayo.
+
+**Historias relacionadas:** US15–US19, US26.
+
+**Web**
+
+<img src="assets/ux/wireframes/web-report.png" alt="Wireframe de reporte y evidencia — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/wireframes/mobile-report.png" alt="Wireframe de reporte y evidencia — móvil" width="320">
+
+#### H02 — Historial y búsqueda
+
+El historial reúne las sesiones del usuario y el acceso a sus reportes. La adaptación móvil incorpora búsqueda por título y filtro por modo de práctica.
+
+**Historias relacionadas:** US20.
+
+**Web**
+
+<img src="assets/ux/wireframes/web-history.png" alt="Wireframe de historial y búsqueda — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/wireframes/mobile-history.png" alt="Wireframe de historial y búsqueda — móvil" width="320">
+
+#### G01 — Tendencias
+
+La vista de tendencias organiza los resultados de varias prácticas para revisar la evolución del desempeño y acceder a una comparación.
+
+**Historias relacionadas:** US21.
+
+**Web**
+
+<img src="assets/ux/wireframes/web-progress.png" alt="Wireframe de tendencias — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/wireframes/mobile-progress.png" alt="Wireframe de tendencias — móvil" width="320">
+
+#### G02 — Comparación
+
+La comparación permite elegir dos sesiones y revisar sus diferencias. Si el modo o la versión de rúbrica no son compatibles, la interfaz explica la causa.
+
+**Historias relacionadas:** US22.
+
+**Web**
+
+<img src="assets/ux/wireframes/web-compare.png" alt="Wireframe de comparación — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/wireframes/mobile-compare.png" alt="Wireframe de comparación — móvil" width="320">
+
+#### G03 — Plan adaptativo
+
+El plan adaptativo convierte una recomendación en un ejercicio concreto con meta y duración. El usuario puede registrar su avance y preparar la siguiente práctica.
+
+**Historias relacionadas:** US36.
+
+**Web**
+
+<img src="assets/ux/wireframes/web-plan.png" alt="Wireframe de plan adaptativo — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/wireframes/mobile-plan.png" alt="Wireframe de plan adaptativo — móvil" width="320">
+
+#### D01 — Compartición, exportación y borrado
+
+La pantalla reúne permisos de acceso temporal, revocación de enlaces, exportación y eliminación de una sesión. La confirmación de borrado distingue el bloqueo de acceso de la purga física pendiente.
+
+**Historias relacionadas:** US27, US32, US33.
+
+**Web**
+
+<img src="assets/ux/wireframes/web-privacy.png" alt="Wireframe de compartición, exportación y borrado — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/wireframes/mobile-privacy.png" alt="Wireframe de compartición, exportación y borrado — móvil" width="320">
+
+#### T01 — Reporte de tutor
+
+El tutor consulta un reporte compartido con acceso de lectura. La pantalla identifica la vigencia del permiso y evita ofrecer navegación hacia la cuenta o el historial del propietario.
+
+**Historias relacionadas:** US32.
+
+**Web**
+
+<img src="assets/ux/wireframes/web-shared.png" alt="Wireframe de reporte de tutor — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/wireframes/mobile-shared.png" alt="Wireframe de reporte de tutor — móvil" width="320">
+
+#### N01 — Preferencias de contacto
+
+Las preferencias permiten controlar los mensajes opcionales de contacto. Los avisos necesarios para la seguridad y el funcionamiento de la cuenta se explican por separado.
+
+**Historias relacionadas:** Soporte transversal.
+
+**Web**
+
+<img src="assets/ux/wireframes/web-preferences.png" alt="Wireframe de preferencias de contacto — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/wireframes/mobile-preferences.png" alt="Wireframe de preferencias de contacto — móvil" width="320">
 
 ### 6.4.2. Applications Wireflow Diagrams
 
@@ -2755,77 +2997,305 @@ El wireflow relaciona las pantallas del catálogo con las acciones del recorrido
 
 ### 6.4.3. Applications Mock-ups
 
-#### Pantallas del cliente web de Talki
+Los mock-ups presentan el aspecto visual de cada pantalla con sus vistas web y móvil. Acceso, inicio, Coach, grabación, reporte e historial muestran capturas del cliente web Next.js/React de Talki; las demás vistas web y las adaptaciones móviles son propuestas de diseño. Los valores ilustran funcionalidades y no constituyen resultados de validación de este hito. La landing pública se presenta en la sección 6.3.2.
 
-Estas imágenes muestran el cliente Next.js/React de Talki. Los valores de las pantallas ilustran sus funcionalidades y no constituyen resultados de validación de este hito.
+#### A01 — Registro
 
-| Pantalla | Captura | Referencia funcional |
-| --- | --- | --- |
-| Acceso | [Ver](assets/reused-202601/frontend/01-login.png) | Registro/acceso mediante Identity y BFF. |
-| Dashboard | [Ver](assets/reused-202601/frontend/02-dashboard.png) | Métricas, rachas y salud de servicios. |
-| Live Coach | [Ver](assets/reused-202601/frontend/03-coach.png) | Modos y configuración de práctica. |
-| Sesiones | [Ver](assets/reused-202601/frontend/04-sessions.png) | Historial y detalle. |
-| Feedback de Coach | [Ver](assets/reused-202601/frontend/07-coach-ai-feedback.png) | Resumen, muletillas, ritmo y fluidez. |
-| Grabación de sesión | [Ver](assets/reused-202601/frontend/08-session-recording.png) | Captura y transcripción. |
-| Feedback de sesión | [Ver](assets/reused-202601/frontend/09-session-ai-feedback.png) | Reporte persistido de una práctica. |
+El formulario reúne nombre, correo y contraseña, junto con la aceptación de las condiciones de uso. El acceso a una cuenta existente permanece disponible desde la misma pantalla.
 
-![Dashboard de Talki](assets/reused-202601/frontend/02-dashboard.png)
+**Web**
 
-![Live Coach de Talki](assets/reused-202601/frontend/03-coach.png)
+<img src="assets/ux/mockups/web-register.png" alt="Mock-up de registro — web" width="900">
 
-![Feedback de sesión de Talki](assets/reused-202601/frontend/09-session-ai-feedback.png)
+**Móvil**
 
-#### Pantallas complementarias y adaptación móvil
+<img src="assets/ux/mockups/mobile-register.png" alt="Mock-up de registro — móvil" width="320">
 
+#### A02 — Acceso
 
-El catálogo combina las capturas del cliente web con propuestas para las pantallas faltantes. Las seis vistas web ya documentadas remiten a sus capturas originales; las doce restantes cubren landing, registro, recuperación, perfil, consentimiento, análisis, progreso, comparación, plan, privacidad, tutor y preferencias. Las dieciocho vistas móviles proponen una distribución adaptada con la misma identidad visual; no acreditan una aplicación móvil implementada.
+La pantalla permite ingresar con correo y contraseña y ofrece acceso al registro y a la recuperación de la cuenta.
 
-| ID | Pantalla | Captura web / propuesta complementaria | Propuesta móvil |
-| --- | --- | --- | --- |
-| L01 | Landing pública | [Ver](assets/ux/mockups/web-landing.png) | [Ver](assets/ux/mockups/mobile-landing.png) |
-| A01 | Registro | [Ver](assets/ux/mockups/web-register.png) | [Ver](assets/ux/mockups/mobile-register.png) |
-| A02 | Acceso | [Ver](assets/reused-202601/frontend/01-login.png) | [Ver](assets/ux/mockups/mobile-login.png) |
-| A03 | Recuperación | [Ver](assets/ux/mockups/web-recovery.png) | [Ver](assets/ux/mockups/mobile-recovery.png) |
-| P01 | Perfil y segmento | [Ver](assets/ux/mockups/web-profile.png) | [Ver](assets/ux/mockups/mobile-profile.png) |
-| H01 | Inicio | [Ver](assets/reused-202601/frontend/02-dashboard.png) | [Ver](assets/ux/mockups/mobile-dashboard.png) |
-| S01 | Configuración y material | [Ver](assets/reused-202601/frontend/03-coach.png) | [Ver](assets/ux/mockups/mobile-setup.png) |
-| S02 | Audio y consentimiento | [Ver](assets/ux/mockups/web-microphone.png) | [Ver](assets/ux/mockups/mobile-microphone.png) |
-| S03 | Práctica en vivo | [Ver](assets/reused-202601/frontend/08-session-recording.png) | [Ver](assets/ux/mockups/mobile-live.png) |
-| S04 | Estado del análisis | [Ver](assets/ux/mockups/web-processing.png) | [Ver](assets/ux/mockups/mobile-processing.png) |
-| R01 | Reporte y evidencia | [Ver](assets/reused-202601/frontend/09-session-ai-feedback.png) | [Ver](assets/ux/mockups/mobile-report.png) |
-| H02 | Historial y búsqueda | [Ver](assets/reused-202601/frontend/04-sessions.png) | [Ver](assets/ux/mockups/mobile-history.png) |
-| G01 | Tendencias | [Ver](assets/ux/mockups/web-progress.png) | [Ver](assets/ux/mockups/mobile-progress.png) |
-| G02 | Comparación | [Ver](assets/ux/mockups/web-compare.png) | [Ver](assets/ux/mockups/mobile-compare.png) |
-| G03 | Plan adaptativo | [Ver](assets/ux/mockups/web-plan.png) | [Ver](assets/ux/mockups/mobile-plan.png) |
-| D01 | Compartición, exportación y borrado | [Ver](assets/ux/mockups/web-privacy.png) | [Ver](assets/ux/mockups/mobile-privacy.png) |
-| T01 | Reporte de tutor | [Ver](assets/ux/mockups/web-shared.png) | [Ver](assets/ux/mockups/mobile-shared.png) |
-| N01 | Preferencias de contacto | [Ver](assets/ux/mockups/web-preferences.png) | [Ver](assets/ux/mockups/mobile-preferences.png) |
+**Web**
 
-![Inicio de la aplicación web](assets/reused-202601/frontend/02-dashboard.png)
+<img src="assets/reused-202601/frontend/01-login.png" alt="Mock-up de acceso — web" width="900">
 
-![Configuración web de práctica con material contextual](assets/reused-202601/frontend/03-coach.png)
+**Móvil**
 
-![Práctica móvil con cronómetro, señales y controles](assets/ux/mockups/mobile-live.png)
+<img src="assets/ux/mockups/mobile-login.png" alt="Mock-up de acceso — móvil" width="320">
 
-![Reporte web con dimensiones, versiones y evidencia](assets/reused-202601/frontend/09-session-ai-feedback.png)
+#### A03 — Recuperación
 
-![Reporte móvil con acciones de mejora](assets/ux/mockups/mobile-report.png)
+El usuario introduce su correo para solicitar instrucciones de recuperación. La confirmación evita revelar si la dirección pertenece a una cuenta registrada.
 
-![Historial móvil](assets/ux/mockups/mobile-history.png)
+**Web**
 
-![Privacidad web con compartición, revocación y borrado](assets/ux/mockups/web-privacy.png)
+<img src="assets/ux/mockups/web-recovery.png" alt="Mock-up de recuperación — web" width="900">
 
-Los estados críticos disponen de capturas adicionales:
+**Móvil**
 
-| Estado | Artefacto móvil | Implicación de diseño |
-| --- | --- | --- |
-| Permiso denegado | [Ver](assets/ux/mockups/mobile-permission-denied.png) | No habilitar inicio; explicar recuperación. |
-| Desconexión | [Ver](assets/ux/mockups/mobile-disconnected.png) | Mostrar checkpoint y elección de reanudar/cierre parcial. |
-| Fallo del análisis | [Ver](assets/ux/mockups/mobile-analysis-failed.png) | Reintentar el mismo job, evitando duplicado. |
-| Evidencia insuficiente | [Ver](assets/ux/mockups/mobile-insufficient-evidence.png) | Score global ausente y dimensiones sin soporte identificadas. |
-| Comparación incompatible | [Ver](assets/ux/mockups/mobile-incompatible-comparison.png) | Explicar modo/versión diferente; no mostrar diferencia numérica. |
-| Enlace revocado | [Ver](assets/ux/mockups/mobile-revoked-link.png) | No mostrar contenido del reporte. |
-| Purga pendiente | [Ver](assets/ux/mockups/mobile-purge-pending.png) | Diferenciar acceso bloqueado de borrado físico completado. |
+<img src="assets/ux/mockups/mobile-recovery.png" alt="Mock-up de recuperación — móvil" width="320">
+
+#### P01 — Perfil y segmento
+
+El perfil permite elegir el segmento del estudiante y su objetivo de práctica. Estas preferencias orientan los ejercicios y recomendaciones posteriores.
+
+**Web**
+
+<img src="assets/ux/mockups/web-profile.png" alt="Mock-up de perfil y segmento — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/mockups/mobile-profile.png" alt="Mock-up de perfil y segmento — móvil" width="320">
+
+#### H01 — Inicio
+
+El inicio reúne el resumen de actividad y los accesos a las prácticas. La vista web muestra métricas, rachas y estado de servicios; la adaptación móvil prioriza la siguiente práctica y las sesiones recientes.
+
+**Web**
+
+<img src="assets/reused-202601/frontend/02-dashboard.png" alt="Mock-up de inicio — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/mockups/mobile-dashboard.png" alt="Mock-up de inicio — móvil" width="320">
+
+#### S01 — Configuración y material
+
+La configuración define el escenario, la duración y la meta del ensayo. La adaptación móvil incorpora el material contextual opcional antes de continuar con la preparación de audio.
+
+**Web**
+
+<img src="assets/reused-202601/frontend/03-coach.png" alt="Mock-up de configuración y material — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/mockups/mobile-setup.png" alt="Mock-up de configuración y material — móvil" width="320">
+
+#### S02 — Audio y consentimiento
+
+La preparación presenta la comprobación del micrófono y el consentimiento para procesar voz. El inicio de la práctica requiere completar ambas condiciones.
+
+**Web**
+
+<img src="assets/ux/mockups/web-microphone.png" alt="Mock-up de audio y consentimiento — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/mockups/mobile-microphone.png" alt="Mock-up de audio y consentimiento — móvil" width="320">
+
+#### S03 — Práctica en vivo
+
+La práctica reúne el tiempo de sesión, la transcripción y los controles de captura. La adaptación móvil organiza las señales de acompañamiento junto con las acciones de pausa y finalización.
+
+**Web**
+
+<img src="assets/reused-202601/frontend/08-session-recording.png" alt="Mock-up de práctica en vivo — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/mockups/mobile-live.png" alt="Mock-up de práctica en vivo — móvil" width="320">
+
+#### S04 — Estado del análisis
+
+El estado del análisis informa que la sesión se está procesando y permite consultar el reporte cuando esté disponible. Un fallo conserva el contexto y ofrece reintentar.
+
+**Web**
+
+<img src="assets/ux/mockups/web-processing.png" alt="Mock-up de estado del análisis — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/mockups/mobile-processing.png" alt="Mock-up de estado del análisis — móvil" width="320">
+
+#### R01 — Reporte y evidencia
+
+El reporte reúne el resultado de la práctica y su feedback. La adaptación móvil presenta dimensiones, evidencia y acciones para orientar el siguiente ensayo.
+
+**Web**
+
+<img src="assets/reused-202601/frontend/09-session-ai-feedback.png" alt="Mock-up de reporte y evidencia — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/mockups/mobile-report.png" alt="Mock-up de reporte y evidencia — móvil" width="320">
+
+#### H02 — Historial y búsqueda
+
+El historial reúne las sesiones del usuario y el acceso a sus reportes. La adaptación móvil incorpora búsqueda por título y filtro por modo de práctica.
+
+**Web**
+
+<img src="assets/reused-202601/frontend/04-sessions.png" alt="Mock-up de historial y búsqueda — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/mockups/mobile-history.png" alt="Mock-up de historial y búsqueda — móvil" width="320">
+
+#### G01 — Tendencias
+
+La vista de tendencias organiza los resultados de varias prácticas para revisar la evolución del desempeño y acceder a una comparación.
+
+**Web**
+
+<img src="assets/ux/mockups/web-progress.png" alt="Mock-up de tendencias — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/mockups/mobile-progress.png" alt="Mock-up de tendencias — móvil" width="320">
+
+#### G02 — Comparación
+
+La comparación permite elegir dos sesiones y revisar sus diferencias. Si el modo o la versión de rúbrica no son compatibles, la interfaz explica la causa.
+
+**Web**
+
+<img src="assets/ux/mockups/web-compare.png" alt="Mock-up de comparación — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/mockups/mobile-compare.png" alt="Mock-up de comparación — móvil" width="320">
+
+#### G03 — Plan adaptativo
+
+El plan adaptativo convierte una recomendación en un ejercicio concreto con meta y duración. El usuario puede registrar su avance y preparar la siguiente práctica.
+
+**Web**
+
+<img src="assets/ux/mockups/web-plan.png" alt="Mock-up de plan adaptativo — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/mockups/mobile-plan.png" alt="Mock-up de plan adaptativo — móvil" width="320">
+
+#### D01 — Compartición, exportación y borrado
+
+La pantalla reúne permisos de acceso temporal, revocación de enlaces, exportación y eliminación de una sesión. La confirmación de borrado distingue el bloqueo de acceso de la purga física pendiente.
+
+**Web**
+
+<img src="assets/ux/mockups/web-privacy.png" alt="Mock-up de compartición, exportación y borrado — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/mockups/mobile-privacy.png" alt="Mock-up de compartición, exportación y borrado — móvil" width="320">
+
+#### T01 — Reporte de tutor
+
+El tutor consulta un reporte compartido con acceso de lectura. La pantalla identifica la vigencia del permiso y evita ofrecer navegación hacia la cuenta o el historial del propietario.
+
+**Web**
+
+<img src="assets/ux/mockups/web-shared.png" alt="Mock-up de reporte de tutor — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/mockups/mobile-shared.png" alt="Mock-up de reporte de tutor — móvil" width="320">
+
+#### N01 — Preferencias de contacto
+
+Las preferencias permiten controlar los mensajes opcionales de contacto. Los avisos necesarios para la seguridad y el funcionamiento de la cuenta se explican por separado.
+
+**Web**
+
+<img src="assets/ux/mockups/web-preferences.png" alt="Mock-up de preferencias de contacto — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/mockups/mobile-preferences.png" alt="Mock-up de preferencias de contacto — móvil" width="320">
+
+#### Detalle del feedback de Coach
+
+El feedback de Coach presenta el resumen del ensayo, las muletillas detectadas y las observaciones sobre ritmo y fluidez.
+
+<img src="assets/reused-202601/frontend/07-coach-ai-feedback.png" alt="Feedback de Coach de Talki con resumen y observaciones" width="900">
+
+#### Estados críticos de interacción
+
+Las siguientes vistas muestran la respuesta de la interfaz ante permisos, conexión, análisis, compatibilidad y control de acceso. Cada estado incluye su presentación web y móvil.
+
+##### Permiso denegado
+
+La interfaz mantiene deshabilitado el inicio de la práctica y explica cómo habilitar el micrófono para volver a comprobarlo.
+
+**Web**
+
+<img src="assets/ux/mockups/web-permission-denied.png" alt="Permiso denegado — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/mockups/mobile-permission-denied.png" alt="Permiso denegado — móvil" width="320">
+
+##### Desconexión
+
+La interfaz informa la interrupción, conserva el checkpoint y permite elegir entre reanudar la conexión o finalizar con un resultado parcial.
+
+**Web**
+
+<img src="assets/ux/mockups/web-disconnected.png" alt="Desconexión — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/mockups/mobile-disconnected.png" alt="Desconexión — móvil" width="320">
+
+##### Fallo del análisis
+
+El mensaje ofrece reintentar sobre el mismo análisis, evitando crear un procesamiento duplicado.
+
+**Web**
+
+<img src="assets/ux/mockups/web-analysis-failed.png" alt="Fallo del análisis — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/mockups/mobile-analysis-failed.png" alt="Fallo del análisis — móvil" width="320">
+
+##### Evidencia insuficiente
+
+El reporte omite el score global y señala las dimensiones sin evidencia suficiente, junto con una acción para volver a practicar.
+
+**Web**
+
+<img src="assets/ux/mockups/web-insufficient-evidence.png" alt="Evidencia insuficiente — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/mockups/mobile-insufficient-evidence.png" alt="Evidencia insuficiente — móvil" width="320">
+
+##### Comparación incompatible
+
+La interfaz explica la diferencia de modo o versión de rúbrica y solicita elegir sesiones compatibles antes de mostrar variaciones numéricas.
+
+**Web**
+
+<img src="assets/ux/mockups/web-incompatible-comparison.png" alt="Comparación incompatible — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/mockups/mobile-incompatible-comparison.png" alt="Comparación incompatible — móvil" width="320">
+
+##### Enlace revocado
+
+La vista informa que el recurso no está disponible y bloquea el contenido del reporte compartido.
+
+**Web**
+
+<img src="assets/ux/mockups/web-revoked-link.png" alt="Enlace revocado — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/mockups/mobile-revoked-link.png" alt="Enlace revocado — móvil" width="320">
+
+##### Purga pendiente
+
+La confirmación distingue el acceso ya bloqueado de la eliminación física todavía pendiente de completar.
+
+**Web**
+
+<img src="assets/ux/mockups/web-purge-pending.png" alt="Purga pendiente — web" width="900">
+
+**Móvil**
+
+<img src="assets/ux/mockups/mobile-purge-pending.png" alt="Purga pendiente — móvil" width="320">
 
 ### 6.4.4. Applications User Flow Diagrams
 
