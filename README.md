@@ -2601,6 +2601,106 @@ share_grants almacena el reporte, propietario, hash del enlace y fechas de vigen
 
 ## 5.7. Bounded Context: Gamification
 
+Este contexto reconoce la constancia del estudiante mediante rachas y logros. Los reconocimientos se calculan a partir de prácticas válidas y respetan la decisión del estudiante sobre su participación pública.
+
+**Servicio o componente asociado:** gamification-service.
+
+### 5.7.1. Domain Layer
+
+La capa de dominio representa la continuidad de las prácticas y los reconocimientos del estudiante. Las reglas de racha y experiencia se evalúan sobre las sesiones que cumplen las condiciones de validez.
+
+**Aggregate Root**
+
+UserStreak conserva la racha actual, la mejor racha y la experiencia acumulada del estudiante. Las evaluaciones de práctica permiten actualizar estas medidas de continuidad.
+
+**Entities**
+
+Achievement representa un reconocimiento obtenido por el estudiante. Su registro como entidad forma parte de la ampliación del diseño; la comunicación de un logro se origina al comprobar sus condiciones.
+
+**Elementos de Domain Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| UserStreak | Aggregate Root | Representa la continuidad de las prácticas y la experiencia acumulada. | Domain |
+| Achievement | Entity (diseño propuesto) | Registra un logro obtenido por el estudiante. | Domain |
+
+**Reglas principales**
+
+1. Solo las prácticas válidas contribuyen a las rachas y los logros.
+2. Una misma sesión no incrementa la experiencia dos veces.
+3. El cálculo diario de la racha considera la zona horaria del estudiante.
+
+### 5.7.2. Interface Layer
+
+GamificationController permite consultar las rachas y el ranking. Los cambios de experiencia y logros se originan en los eventos de evaluación.
+
+**Controller y operaciones**
+
+| Operación o contrato | Responsabilidad |
+| --- | --- |
+| `GET /v1/gamification/streaks/{userId}` | Consultar racha actual, mejor racha y experiencia acumulada. |
+| `GET /v1/gamification/leaderboard` | Consultar el listado de participantes del ranking. |
+| `scoring.completed` | Activar la actualización de rachas y reconocimientos. |
+| `achievement.unlocked` | Comunicar el logro obtenido. |
+
+**Datos de respuesta.** La racha presenta el estudiante y sus valores de continuidad y experiencia. El ranking utiliza información resumida de sus participantes. La participación pública opcional y la autorización de consultas personales se incorporan en la ampliación del diseño.
+
+### 5.7.3. Application Layer
+
+La capa de aplicación coordina la actualización de rachas y la evaluación de logros. Una misma práctica debe producir una única actualización del reconocimiento.
+
+**Actualización por eventos**
+
+Una evaluación completada activa la actualización de la racha y la experiencia. El flujo comprueba los logros obtenidos y solicita su comunicación.
+
+**Queries**
+
+Las lecturas presentan la racha de un estudiante y el ranking. La participación pública opcional y el control de sesiones ya procesadas forman parte de la ampliación del diseño.
+
+**Elementos de Application Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| Actualización de racha y experiencia | Caso de uso | Aplica las reglas de continuidad y experiencia a UserStreak. | Application |
+| Evaluación de logros | Caso de uso | Comprueba las condiciones de reconocimiento y solicita su comunicación. | Application |
+
+**Recorrido del caso de uso.** La evaluación completada identifica al estudiante y la práctica. El flujo valida su contribución a la racha, actualiza la experiencia y comprueba los logros. El diseño ampliado añade el veredicto de práctica válida, la zona horaria y el registro de sesiones ya procesadas.
+
+### 5.7.4. Infrastructure Layer
+
+La capa de infraestructura conserva las rachas y conecta la evaluación con los reconocimientos mediante RabbitMQ.
+
+**Elementos de Infrastructure Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| UserStreakRepository | Repositorio | Conserva las rachas y la experiencia en PostgreSQL. | Infrastructure |
+| ScoringCompletedConsumer | Consumidor de eventos | Recibe la evaluación que origina la actualización de reconocimientos. | Infrastructure |
+| AchievementUnlockedPublisher | Publicador de eventos | Comunica el logro obtenido a Notifications. | Infrastructure |
+| Registro de Achievement | Persistencia propuesta | Conserva los logros y las sesiones que los originaron. | Infrastructure |
+
+La ampliación añade el control de sesiones ya procesadas y las reglas versionadas de reconocimiento. La consulta pública respeta la decisión de participación del estudiante.
+
+### 5.7.5. Bounded Context Software Architecture Component Level Diagrams
+
+La evaluación recibida actualiza la racha y, cuando se cumple una condición, origina un logro. AchievementUnlockedPublisher comunica ese reconocimiento a Notifications. Su registro como entidad forma parte de la ampliación del diseño.
+
+![Componentes de Gamification](assets/diagrams/tactical/07-gamification-components.png)
+
+### 5.7.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 5.7.6.1. Bounded Context Domain Layer Class Diagrams
+
+UserStreak conserva la racha y la experiencia del usuario, mientras que Achievement identifica cada reconocimiento. El consumidor coordina sus actualizaciones y comunica los logros obtenidos.
+
+![Clases de Gamification](assets/diagrams/tactical/07-gamification-classes.png)
+
+#### 5.7.6.2. Bounded Context Database Design Diagram
+
+user_streaks y achievements se relacionan por usuario dentro de la misma base. La ampliación propone identificar los logros por usuario, código y versión de regla para evitar duplicados.
+
+![Persistencia de Gamification](assets/diagrams/tactical/07-gamification-database.png)
+
 ## 5.8. Bounded Context: Identity & Access
 
 ## 5.9. Bounded Context: AI Provider Gateway
