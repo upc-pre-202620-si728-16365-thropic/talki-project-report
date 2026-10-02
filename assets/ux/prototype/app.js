@@ -111,5 +111,4 @@ app.addEventListener('click',e=>{
 });
 window.addEventListener('hashchange',()=>render(location.hash.slice(1)));
 window.matchMedia('(max-width: 700px)').addEventListener('change',()=>render(demo.screen,false));
-document.getElementById('reset-demo').onclick=()=>{location.href=location.pathname+(params.get('view')==='wireframe'?'?view=wireframe':'')+'#privacy';location.reload();};
 render(location.hash.slice(1)||params.get('screen')||'privacy',false);

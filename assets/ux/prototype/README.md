@@ -16,7 +16,7 @@ Visita `http://localhost:8000/assets/ux/prototype/`. El HTML en GitHub muestra c
 - Vista móvil: ventana de 390 px; navegación inferior a ≤ 700 px.
 - Wireframe: `index.html?view=wireframe`.
 - Pantalla directa: hash `#setup`, `#microphone`, `#live`, `#report`, `#privacy`, etc.
-- Reiniciar recorrido: botón superior; restaura datos de ejemplo.
+- Recargar la página restaura los datos de ejemplo.
 
 La vista inicial es privacidad. Para preparar una práctica, abre `#setup` y pulsa **Explorar material contextual**; en móvil se muestra directamente la propuesta de configuración. En audio, pulsa **Simular prueba correcta** y marca el consentimiento para habilitar **Iniciar práctica**. Puedes pausar, reanudar, simular desconexión y confirmar el cierre. En análisis, elige reporte disponible, fallo o evidencia insuficiente. En privacidad, crea un acceso de ejemplo, consulta como tutor, revoca y verifica que ya no se muestre el reporte. La eliminación requiere confirmación y permanece como purga pendiente.
 
