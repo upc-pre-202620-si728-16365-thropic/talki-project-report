@@ -65,6 +65,8 @@
 | 0.9 | 19/09/2026 | Equipo Thropic | Incorporación del avance de conclusiones y recomendaciones, bibliografía, anexos y evidencia de colaboración del TB1. |
 | 1.0 | 02/10/2026 | Edición asistida por Codex | Desarrollo del diseño táctico y UX del segundo hito de TB1; incorporación de modelos, diagramas, pantallas y prototipo web/móvil. Revisión del equipo y feedback docente pendientes. |
 
+| 1.1 | 02/10/2026 | Edición asistida por Codex | Ajuste de UX para conservar las pantallas del cliente Talki como base: retirada de seis mock-ups web duplicados, unificación visual de complementos y uso del cliente web como prototipo principal. |
+
 # Project Report Collaboration Insights
 
 Repositorio del informe: [talki-project-report](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report)
@@ -2549,9 +2551,9 @@ N/A: el servicio es stateless. Un ledger técnico de envíos/preferencias es una
 
 # Capítulo VI: Solution UX Design
 
-El diseño UX convierte los escenarios To-Be de Valeria (ciclos 1–5) y Rodrigo (ciclos 6–10) en una experiencia de práctica: preparar → comprobar → ensayar → comprender → repetir. Se incluyen **web de escritorio y aplicación móvil** con las mismas reglas de privacidad, estados y contratos. La base web existente es Next.js sobre React; el cliente móvil Flutter de 4.3 se diseña con navegación y distribución propias; el prototipo HTML permite evaluar ambas vistas, sin afirmar que ya existe una aplicación Flutter implementada.
+El diseño UX convierte los escenarios To-Be de Valeria (ciclos 1–5) y Rodrigo (ciclos 6–10) en una experiencia de práctica: preparar → comprobar → ensayar → comprender → repetir. Se incluyen **web de escritorio y aplicación móvil** con las mismas reglas de privacidad, estados y contratos. El cliente web Next.js/React de Talki es la referencia principal de las pantallas y del recorrido navegable. El diseño móvil de 4.3 adapta esa identidad a una distribución propia; las pantallas móviles y los flujos adicionales son propuestas pendientes de integración.
 
-El cliente web de Talki incluye pantallas de acceso, dashboard, Coach, sesiones y feedback. Los wireframes, mock-ups móviles y pantallas complementarias desarrollan las capacidades propuestas del diseño. Los nombres de personas, transcripciones, puntuaciones y tendencias de sus pantallas son **datos ficticios de demostración**, no nuevos resultados de entrevistas, pruebas de usabilidad o análisis de voz. Las imágenes se generan desde el mismo prototipo para mantener consistencia entre pantallas y estados.
+El cliente web de Talki incluye pantallas de acceso, dashboard, Coach, sesiones y feedback. Se mantienen sus capturas como base, sin crear otro mock-up web para esas vistas. Los wireframes describen la estructura; los mock-ups móviles y las pantallas faltantes desarrollan las capacidades propuestas del diseño. Los nombres de personas, transcripciones, puntuaciones y tendencias de sus pantallas son **datos ficticios de demostración**, no nuevos resultados de entrevistas, pruebas de usabilidad o análisis de voz. Los complementos y estados propuestos se capturan desde el prototipo auxiliar, siguiendo el estilo del cliente web.
 
 ## 6.1. Style Guidelines
 
@@ -2559,21 +2561,21 @@ El cliente web de Talki incluye pantallas de acceso, dashboard, Coach, sesiones 
 
 **Personalidad y tono.** Talki acompaña al estudiante con instrucciones breves y feedback concreto. Usa “práctica”, “ensayo” y “siguiente acción”; evita presentar el score como nota académica o el indicador de confianza como evaluación psicológica. Los errores explican la causa observable y el paso para recuperarse. El usuario mantiene el control del inicio, pausa, cierre y uso de sus datos.
 
-**Identidad.** Se conserva el [isotipo existente de Talki](assets/images/logos/talki-logo.png). La composición `talki.` y la siguiente paleta de interfaz son una propuesta para este hito: el gradiente del isotipo identifica la marca y los colores sólidos facilitan lectura, estados y acciones. No se declara un nuevo manual de marca validado.
+**Identidad.** La interfaz conserva la marca **Talki**, el identificador «T» sobre fondo negro y la jerarquía visual del cliente web. Los complementos aplican la misma base monocromática: blanco, negro y grises, tarjetas con bordes suaves y acciones principales negras.
 
 | Token | Valor | Uso |
 | --- | --- | --- |
-| `primary` | `#1749B5` | Acción principal, selección y series de gráficos. |
-| `primary-soft` | `#EAF0FF` | Fondo de selección y avisos informativos. |
-| `ink` | `#14223B` | Títulos y texto principal. |
-| `muted` | `#536177` | Texto secundario, etiquetas y explicaciones. |
-| `teal` | `#08766B` | Recomendaciones y señales de mejora. |
-| `canvas` / `surface` | `#F4F6FB` / `#FFFFFF` | Fondo general y tarjetas. |
-| `line` | `#DCE2EC` | Separación visual decorativa; los controles usan borde más oscuro. |
+| `primary` | `#0A0A0A` | Acción principal, selección y series de gráficos. |
+| `primary-soft` | `#F5F5F5` | Fondo de selección y avisos informativos. |
+| `ink` | `#171717` | Títulos y texto principal. |
+| `muted` | `#737373` | Texto secundario, etiquetas y explicaciones. |
+| `accent-neutral` | `#404040` | Recomendaciones y señales de mejora. |
+| `canvas` / `surface` | `#FAFAFA` / `#FFFFFF` | Fondo general y tarjetas. |
+| `line` | `#E5E5E5` | Separación visual decorativa; los controles usan borde más oscuro. |
 | `danger` | `#B42336` | Eliminación y confirmaciones destructivas. |
 | `warning` | `#865000` sobre `#FFF3DF` | Desconexión, datos insuficientes y purga pendiente. |
 
-**Base visual de Talki.** El frontend aplica fondo blanco, texto negro/gris, tarjetas con borde suave y sidebar con Nueva sesión, Dashboard, Sesiones, Coach y Ranking. Esa es la referencia de continuidad del producto existente. La paleta azul/teal descrita arriba corresponde únicamente a los complementos de diseño, pendientes de revisión; su integración debe evaluarse sobre el frontend existente.
+**Base visual de Talki.** El frontend aplica fondo blanco, texto negro/gris, tarjetas con borde suave y sidebar con Nueva sesión, Dashboard, Sesiones, Coach y Ranking. Esa es la referencia de continuidad del producto existente. Los complementos conservan esa paleta y esos controles para mantener continuidad entre las pantallas existentes y las propuestas.
 
 **Tipografía y ritmo.** Se propone una familia sans-serif del sistema, cuerpo de 16 px, interlineado 1.55 y títulos de 36/23/17 px en aplicación web. En móvil el título principal baja a 29 px. El tiempo de práctica usa una fuente monoespaciada. El espaciado utiliza pasos de 4/8 px, márgenes de 20 px en móvil y 38 px en escritorio; tarjetas con radio de 18 px y separación de 22 px. La portada puede usar un título mayor, sin trasladarlo a los formularios.
 
@@ -2657,7 +2659,7 @@ La búsqueda del prototipo aplica título y modo sobre datos ficticios locales. 
 
 ### 6.2.5. Navigation Systems
 
-La navegación global contiene cinco destinos estables. Dentro de Practicar, un stepper muestra Configurar → Audio y privacidad → Practicar. Las pantallas de reporte tienen accesos contextuales a Repetir, Plan y Compartir. Volver a configuración conserva las elecciones del borrador; salir de una práctica activa o finalizar exige confirmar consecuencias.
+El cliente web conserva Nueva sesión, Dashboard, Sesiones, Coach y Ranking. Los complementos ofrecen accesos a progreso, perfil y privacidad según la tarea. Dentro de Practicar, un stepper muestra Configurar → Audio y privacidad → Practicar. Las pantallas de reporte tienen accesos contextuales a Repetir, Plan y Compartir. Volver a configuración conserva las elecciones del borrador; salir de una práctica activa o finalizar exige confirmar consecuencias.
 
 La vista de tutor evita navegación hacia historial o cuenta del propietario. Un enlace revocado/expirado muestra una respuesta uniforme de recurso no disponible. En móvil, la barra inferior no tapa el último contenido o las acciones; en escritorio, la sidebar mantiene el destino seleccionado. La carga del estado y los avisos de error deben conservar el contexto, sin regresar al inicio inesperadamente.
 
@@ -2751,25 +2753,25 @@ Estas imágenes muestran el cliente Next.js/React de Talki. Los valores de las p
 
 ![Feedback de sesión de Talki](assets/reused-202601/frontend/09-session-ai-feedback.png)
 
-#### Complementos de diseño para el formato actual
+#### Pantallas complementarias y adaptación móvil
 
 
-Los mock-ups aplican tipografía, paleta, jerarquía, controles y estados del sistema. Se incluyen 18 pantallas por plataforma y variaciones de error/privacidad. La UI de móvil cubre el recorrido completo, incluyendo historial, progreso, perfil y controles de datos, además de la pantalla de práctica.
+El catálogo combina las capturas del cliente web con propuestas para las pantallas faltantes. Las seis vistas web ya documentadas remiten a sus capturas originales; las doce restantes cubren landing, registro, recuperación, perfil, consentimiento, análisis, progreso, comparación, plan, privacidad, tutor y preferencias. Las dieciocho vistas móviles proponen una distribución adaptada con la misma identidad visual; no acreditan una aplicación móvil implementada.
 
-| ID | Pantalla | Mock-up web | Mock-up móvil |
+| ID | Pantalla | Captura web / propuesta complementaria | Propuesta móvil |
 | --- | --- | --- | --- |
 | L01 | Landing pública | [Ver](assets/ux/mockups/web-landing.png) | [Ver](assets/ux/mockups/mobile-landing.png) |
 | A01 | Registro | [Ver](assets/ux/mockups/web-register.png) | [Ver](assets/ux/mockups/mobile-register.png) |
-| A02 | Acceso | [Ver](assets/ux/mockups/web-login.png) | [Ver](assets/ux/mockups/mobile-login.png) |
+| A02 | Acceso | [Ver](assets/reused-202601/frontend/01-login.png) | [Ver](assets/ux/mockups/mobile-login.png) |
 | A03 | Recuperación | [Ver](assets/ux/mockups/web-recovery.png) | [Ver](assets/ux/mockups/mobile-recovery.png) |
 | P01 | Perfil y segmento | [Ver](assets/ux/mockups/web-profile.png) | [Ver](assets/ux/mockups/mobile-profile.png) |
-| H01 | Inicio | [Ver](assets/ux/mockups/web-dashboard.png) | [Ver](assets/ux/mockups/mobile-dashboard.png) |
-| S01 | Configuración y material | [Ver](assets/ux/mockups/web-setup.png) | [Ver](assets/ux/mockups/mobile-setup.png) |
+| H01 | Inicio | [Ver](assets/reused-202601/frontend/02-dashboard.png) | [Ver](assets/ux/mockups/mobile-dashboard.png) |
+| S01 | Configuración y material | [Ver](assets/reused-202601/frontend/03-coach.png) | [Ver](assets/ux/mockups/mobile-setup.png) |
 | S02 | Audio y consentimiento | [Ver](assets/ux/mockups/web-microphone.png) | [Ver](assets/ux/mockups/mobile-microphone.png) |
-| S03 | Práctica en vivo | [Ver](assets/ux/mockups/web-live.png) | [Ver](assets/ux/mockups/mobile-live.png) |
+| S03 | Práctica en vivo | [Ver](assets/reused-202601/frontend/08-session-recording.png) | [Ver](assets/ux/mockups/mobile-live.png) |
 | S04 | Estado del análisis | [Ver](assets/ux/mockups/web-processing.png) | [Ver](assets/ux/mockups/mobile-processing.png) |
-| R01 | Reporte y evidencia | [Ver](assets/ux/mockups/web-report.png) | [Ver](assets/ux/mockups/mobile-report.png) |
-| H02 | Historial y búsqueda | [Ver](assets/ux/mockups/web-history.png) | [Ver](assets/ux/mockups/mobile-history.png) |
+| R01 | Reporte y evidencia | [Ver](assets/reused-202601/frontend/09-session-ai-feedback.png) | [Ver](assets/ux/mockups/mobile-report.png) |
+| H02 | Historial y búsqueda | [Ver](assets/reused-202601/frontend/04-sessions.png) | [Ver](assets/ux/mockups/mobile-history.png) |
 | G01 | Tendencias | [Ver](assets/ux/mockups/web-progress.png) | [Ver](assets/ux/mockups/mobile-progress.png) |
 | G02 | Comparación | [Ver](assets/ux/mockups/web-compare.png) | [Ver](assets/ux/mockups/mobile-compare.png) |
 | G03 | Plan adaptativo | [Ver](assets/ux/mockups/web-plan.png) | [Ver](assets/ux/mockups/mobile-plan.png) |
@@ -2777,13 +2779,13 @@ Los mock-ups aplican tipografía, paleta, jerarquía, controles y estados del si
 | T01 | Reporte de tutor | [Ver](assets/ux/mockups/web-shared.png) | [Ver](assets/ux/mockups/mobile-shared.png) |
 | N01 | Preferencias de contacto | [Ver](assets/ux/mockups/web-preferences.png) | [Ver](assets/ux/mockups/mobile-preferences.png) |
 
-![Inicio de la aplicación web](assets/ux/mockups/web-dashboard.png)
+![Inicio de la aplicación web](assets/reused-202601/frontend/02-dashboard.png)
 
-![Configuración web de práctica con material contextual](assets/ux/mockups/web-setup.png)
+![Configuración web de práctica con material contextual](assets/reused-202601/frontend/03-coach.png)
 
 ![Práctica móvil con cronómetro, señales y controles](assets/ux/mockups/mobile-live.png)
 
-![Reporte web con dimensiones, versiones y evidencia](assets/ux/mockups/web-report.png)
+![Reporte web con dimensiones, versiones y evidencia](assets/reused-202601/frontend/09-session-ai-feedback.png)
 
 ![Reporte móvil con acciones de mejora](assets/ux/mockups/mobile-report.png)
 
@@ -2825,21 +2827,21 @@ Los estados críticos disponen de capturas adicionales:
 
 ## 6.5. Applications Prototyping
 
-**Cliente web de Talki:** la [aplicación web](https://talki-frontend.vercel.app) y su [repositorio Next.js](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend) incluyen autenticación, sesiones, Coach y feedback. La URL pública respondió HTTP 200 durante la revisión. La comprobación de disponibilidad no acredita pruebas autenticadas ni validación del backend. Los cambios de diseño móvil y privacidad requieren integración.
+**Prototipo principal — cliente web de Talki:** la [aplicación web](https://talki-frontend.vercel.app) y su [repositorio Next.js](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend) incluyen autenticación, sesiones, Coach y feedback. La URL pública respondió HTTP 200 durante la revisión. La comprobación de disponibilidad no acredita pruebas autenticadas ni validación del backend. Los cambios de diseño móvil y privacidad requieren integración.
 
-**Prototipo complementario del diseño:**
+**Prototipo auxiliar — pantallas y estados complementarios:**
 
-El [prototipo navegable](assets/ux/prototype/index.html) contiene los wireframes y mock-ups en una fuente común, sin dependencias externas. **GitHub muestra su código; para interactuar se debe descargar/clonar el repositorio y abrir el HTML en un navegador.** También puede servirse localmente desde la raíz con `python3 -m http.server 8000` y abrir `http://localhost:8000/assets/ux/prototype/`. Reducir la ventana a 390 px permite explorar móvil; añadir `?view=wireframe` activa la vista de estructura.
+El [prototipo auxiliar](assets/ux/prototype/index.html#privacy) permite revisar consentimiento, recuperación, análisis, comparación, plan, compartición, revocación y eliminación con datos ficticios. En escritorio, acceso, dashboard, Coach, grabación, reporte e historial muestran las capturas del cliente web y un enlace para abrir Talki. Las capturas son referencias estáticas; sus funciones se recorren en el cliente web principal. La vista móvil presenta propuestas adaptadas a la misma identidad visual. **GitHub muestra su código; para interactuar se debe descargar/clonar el repositorio y abrir el HTML en un navegador.** También puede servirse localmente desde la raíz con `python3 -m http.server 8000` y abrir `http://localhost:8000/assets/ux/prototype/`. Reducir la ventana a 390 px permite explorar móvil; añadir `?view=wireframe` activa la vista de estructura.
 
 | Recorrido de demostración | Acciones disponibles |
 | --- | --- |
-| Primera práctica | Landing → registro → perfil → inicio → configurar → simular prueba de audio y consentir → iniciar → pausar/reanudar → confirmar cierre → simular reporte disponible → consultar evidencia → repetir. |
-| Simulación avanzada | Elegir entrevista/sustentación, seleccionar material de prueba, quitarlo, llegar a práctica y revisar pregunta contextual de ejemplo. No se lee ni envía el archivo. |
+| Base existente | Abrir Talki para recorrer acceso, dashboard, Coach, sesiones, grabación y feedback. Las capturas de referencia conservan estas vistas en el prototipo auxiliar. |
+| Preparación complementaria | Desde Coach, explorar material contextual, elegir configuración de ejemplo y comprobar audio/consentimiento. El archivo no se lee ni se envía. |
 | Recuperación | Simular permiso denegado; simular desconexión y reanudar; simular fallo del análisis y reintentar sobre el mismo estado. |
 | Progreso | Consultar historial, buscar por título/modo, revisar tendencia ficticia, comparar versiones compatibles y seleccionar opción incompatible. |
 | Control de datos | Crear permiso de ejemplo, abrir vista de tutor, revocar y comprobar bloqueo; exportar reporte de ejemplo; confirmar eliminación y observar purga pendiente. |
 
-**Fidelidad y límites.** Navegación, formularios, selección, confirmaciones, filtros y estados son interactivos. No hay autenticación real, llamadas a IA, captura de micrófono, backend, correo, pagos ni purga física. El score, timer, transcript y gráfico son fixtures visibles; el usuario activa los cambios de estado de análisis para explorar resultados. El prototipo mantiene el recorrido en memoria y reiniciarlo restaura los ejemplos. Estos límites separan evaluación de interacción de validación funcional del producto.
+**Fidelidad y límites del prototipo auxiliar.** Los formularios, confirmaciones y estados complementarios son interactivos; las capturas de referencia del cliente web son estáticas. No hay autenticación real, llamadas a IA, captura de micrófono, backend, correo, pagos ni purga física. El score, timer, transcript y gráfico son fixtures visibles; el usuario activa los cambios de estado de análisis para explorar resultados. El prototipo mantiene el recorrido en memoria y reiniciarlo restaura los ejemplos. Estos límites separan evaluación de interacción de validación funcional del producto.
 
 **Plan de evaluación de UX.** Se propone observar a participantes de ambos segmentos realizando primera práctica, simulación contextualizada y revocación/eliminación. Se registrarán éxito por tarea, tiempo de inicio, errores, comprensión del feedback y control de privacidad, con autorización y sin exponer material personal. QAS-USA-01 fija como meta inicial que al menos 90 % inicie una sesión válida en ≤ 3 minutos sin asistencia; aquí no se reporta ese resultado como obtenido. Los hallazgos reales, entrevistas de validación y evaluación heurística corresponderán al capítulo VII cuando se ejecuten.
 

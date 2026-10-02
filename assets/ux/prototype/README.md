@@ -1,6 +1,8 @@
-# Prototipo UX de Talki
+# Complementos UX de Talki
 
-Artefacto de diseño del capítulo VI para el segundo hito de TB1, semana 7.
+Artefacto auxiliar de diseño del capítulo VI. El prototipo principal es el [cliente web de Talki](https://talki-frontend.vercel.app), que incluye acceso, dashboard, Coach, sesiones, grabación y feedback.
+
+En escritorio, esas seis vistas del auxiliar presentan sus capturas originales y un enlace al cliente web. Las capturas son estáticas. Los complementos interactivos cubren las pantallas y estados adicionales; la vista móvil es una propuesta de adaptación. Se mantiene la identidad del cliente: blanco, negro, grises, tarjetas suaves y botones negros.
 
 Abre `index.html` en un navegador o sirve la raíz del repositorio con:
 
@@ -16,8 +18,8 @@ Visita `http://localhost:8000/assets/ux/prototype/`. El HTML en GitHub muestra c
 - Pantalla directa: hash `#setup`, `#microphone`, `#live`, `#report`, `#privacy`, etc.
 - Reiniciar recorrido: botón superior; restaura datos de ejemplo.
 
-Explora el flujo de registro, perfil y práctica. En audio, pulsa **Simular prueba correcta** y marca el consentimiento para habilitar **Iniciar práctica**. Puedes pausar, reanudar, simular desconexión y confirmar el cierre. En análisis, elige reporte disponible, fallo o evidencia insuficiente. En privacidad, crea un acceso de ejemplo, consulta como tutor, revoca y verifica que ya no se muestre el reporte. La eliminación requiere confirmación y permanece como purga pendiente.
+La vista inicial es privacidad. Para preparar una práctica, abre `#setup` y pulsa **Explorar material contextual**; en móvil se muestra directamente la propuesta de configuración. En audio, pulsa **Simular prueba correcta** y marca el consentimiento para habilitar **Iniciar práctica**. Puedes pausar, reanudar, simular desconexión y confirmar el cierre. En análisis, elige reporte disponible, fallo o evidencia insuficiente. En privacidad, crea un acceso de ejemplo, consulta como tutor, revoca y verifica que ya no se muestre el reporte. La eliminación requiere confirmación y permanece como purga pendiente.
 
 Los datos, nombres de personas, transcripción, puntuaciones, gráfico y cronómetro son ficticios. No hay autenticación real, IA, micrófono, backend, correo, cobro o purga física. El archivo de material solo se valida por nombre/tamaño, no se lee ni envía. El estado del recorrido vive en memoria; no se guardan datos personales. Las rutas directas ayudan a revisar pantallas y no representan autorización de un producto en producción.
 
-Los wireframes usan las mismas pantallas y navegación con estilo de estructura en escala de grises. Las capturas se encuentran en `../wireframes/` y `../mockups/`. Los flujos editables están en `../../diagrams/ux/`.
+Los wireframes describen las estructuras de pantallas y navegación en escala de grises. Las seis capturas web existentes no se vuelven a generar como mock-ups. Las capturas se encuentran en `../wireframes/` y `../mockups/`. Los flujos editables están en `../../diagrams/ux/`.

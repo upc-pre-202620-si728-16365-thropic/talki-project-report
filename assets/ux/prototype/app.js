@@ -5,17 +5,17 @@ if (params.get('view') === 'wireframe') document.body.classList.add('wireframe')
 const app = document.getElementById('app');
 const demo = {screen:'landing', title:'Mi próxima exposición', mode:'Exposición', duration:5, segment:'Ciclos 1–5', goal:'Reducir muletillas', mic:false, consent:false, paused:false, disconnected:false, muted:false, completed:false, analysisFailed:false, insufficient:false, deleted:false, shared:false, revoked:false, material:'', optionalEmail:true, planDone:false};
 const screenNames = {landing:'Inicio público',register:'Crear cuenta',login:'Iniciar sesión',recovery:'Recuperar acceso',dashboard:'Inicio',profile:'Perfil',setup:'Nueva práctica',microphone:'Preparar audio',live:'Práctica en vivo',processing:'Estado del análisis',report:'Reporte',history:'Historial',progress:'Progreso',compare:'Comparar sesiones',plan:'Plan de práctica',privacy:'Privacidad y acceso',shared:'Reporte compartido',preferences:'Notificaciones'};
-const nav = [['dashboard','◫','Inicio'],['setup','＋','Practicar'],['history','◷','Historial'],['progress','↗','Progreso'],['profile','○','Perfil']];
+const nav = [['dashboard','◫','Dashboard'],['setup','＋','Nueva sesión'],['history','◷','Sesiones'],['progress','↗','Progreso'],['profile','○','Perfil']];
 const escapeHtml = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const button = (label,action,style='') => `<button type="button" data-action="${action}" class="${style}">${label}</button>`;
 const goButton = (label,screen,style='') => button(label,`go:${screen}`,style);
-const brand = () => `<a class="brand" href="#landing"><img class="brand-icon" src="../../images/logos/talki-logo.png" alt="">talki<span style="color:var(--primary)">.</span></a>`;
+const brand = () => `<a class="brand" href="#landing"><span class="brand-icon" aria-hidden="true">T</span>Talki</a>`;
 const field = (label,name,type='text',value='',extra='') => `<div class="field"><label for="${name}">${label}</label><input id="${name}" name="${name}" type="${type}" value="${escapeHtml(value)}" ${extra}></div>`;
 const head = (title,subtitle,actions='') => `<div class="page-title"><div><div class="eyebrow">Tu espacio de práctica</div><h1 tabindex="-1">${title}</h1><p>${subtitle}</p></div><div class="actions">${actions}</div></div>`;
 const note = text => `<div class="notice">${text}</div>`;
 const dimensions = (partial=false) => ['Fluidez','Claridad','Volumen','Vocabulario','Confianza estimada'].map((name,i)=>`<div class="dimension"><div class="flex-between"><span>${name}</span><strong>${partial && i>1?'Sin evidencia':[76,84,81,73,79][i]+'/100'}</strong></div><div class="dimension-track"><i style="width:${partial&&i>1?0:[76,84,81,73,79][i]}%"></i></div></div>`).join('');
 const wave = () => `<div class="wave" aria-hidden="true">${Array.from({length:48},(_,i)=>`<i style="height:${15+Math.abs(Math.sin(i*1.8))*65+Math.abs(Math.cos(i*.4))*25}px"></i>`).join('')}</div>`;
-const chart = () => `<svg class="chart" viewBox="0 0 560 220" role="img" aria-label="Ejemplo ficticio: puntuaciones 65, 71, 68, 76 y 79. No representa resultados reales."><g stroke="#dce2ec"><path d="M45 30H535M45 80H535M45 130H535M45 180H535"/></g><g><text x="12" y="34">90</text><text x="12" y="84">80</text><text x="12" y="134">70</text><text x="12" y="184">60</text></g><path d="M55 155L170 125L285 140L400 100L520 85L520 180L55 180Z" fill="#eaf0ff"/><path d="M55 155L170 125L285 140L400 100L520 85" fill="none" stroke="#1749b5" stroke-width="3"/><g fill="#1749b5">${[[55,155],[170,125],[285,140],[400,100],[520,85]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="5"/>`).join('')}</g><g><text x="44" y="208">S1</text><text x="159" y="208">S2</text><text x="274" y="208">S3</text><text x="389" y="208">S4</text><text x="509" y="208">S5</text></g></svg>`;
+const chart = () => `<svg class="chart" viewBox="0 0 560 220" role="img" aria-label="Ejemplo ficticio: puntuaciones 65, 71, 68, 76 y 79. No representa resultados reales."><g stroke="#e5e5e5"><path d="M45 30H535M45 80H535M45 130H535M45 180H535"/></g><g><text x="12" y="34">90</text><text x="12" y="84">80</text><text x="12" y="134">70</text><text x="12" y="184">60</text></g><path d="M55 155L170 125L285 140L400 100L520 85L520 180L55 180Z" fill="#f5f5f5"/><path d="M55 155L170 125L285 140L400 100L520 85" fill="none" stroke="#0a0a0a" stroke-width="3"/><g fill="#0a0a0a">${[[55,155],[170,125],[285,140],[400,100],[520,85]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="5"/>`).join('')}</g><g><text x="44" y="208">S1</text><text x="159" y="208">S2</text><text x="274" y="208">S3</text><text x="389" y="208">S4</text><text x="509" y="208">S5</text></g></svg>`;
 function sessionRows(){
   if(demo.deleted) return `<div class="empty"><h3>La sesión fue retirada</h3><p>El acceso queda bloqueado. La purga física está pendiente de confirmación en este ejemplo.</p>${goButton('Crear una práctica','setup')}</div>`;
   return [['Exposición: proyecto de curso','Exposición · 5 min · Ejemplo ficticio','79'],['Presentación de idea','Pitch · 3 min · Ejemplo ficticio','76'],['Ensayo inicial','Exposición · 5 min · Ejemplo ficticio','68']].map(([title,meta,score])=>`<div class="session-row"><div><h3>${title}</h3><p>${meta}</p><span class="tag">Reporte disponible</span></div><div class="actions"><strong>${score}</strong>${goButton('Ver reporte','report','secondary')}</div></div>`).join('');
@@ -44,6 +44,25 @@ const screens = {
  shared:()=>publicShell(`<section class="section"><h1 tabindex="-1">${demo.deleted||demo.revoked||!demo.shared?'Enlace no disponible':'Reporte compartido · Solo lectura'}</h1>${demo.deleted||demo.revoked||!demo.shared?'<div class="notice warning">El enlace no existe, fue revocado o expiró. No se muestra información del reporte.</div>':`<div class="card"><span class="pill">Ejemplo ficticio · Acceso limitado</span><h2 style="margin-top:18px">Exposición: proyecto de curso</h2><div class="score-large">79<small>/100</small></div><p>Rúbrica v1.0 · Análisis v1.0 · Vigencia de ejemplo: 24 horas</p><div class="suggestion"><h3>Siguiente acción de ejemplo</h3><p>Dejar una pausa breve al cerrar cada argumento.</p></div><p style="margin-top:20px">No puedes editar ni consultar otras sesiones.</p></div>`}${goButton('Volver a privacidad','privacy','secondary')}</section>`),
  preferences:()=>shell(head('Tus notificaciones','Decide si quieres recibir avisos opcionales. Los mensajes de seguridad tienen otra finalidad.')+`<section class="card"><label class="check"><input id="optional-email" type="checkbox" ${demo.optionalEmail?'checked':''}><span>Recibir avisos opcionales de reportes y práctica por correo.</span></label>${note('Verificación de cuenta y recuperación de acceso son mensajes transaccionales. Ningún correo de reporte debe incluir transcript, score o documentos privados.')}<p>Esta preferencia se mantiene solo mientras exploras el prototipo.</p></section>`)
 };
+// En escritorio, las pantallas ya disponibles usan sus capturas originales.
+// La vista móvil y los wireframes son propuestas de distribución; no una app nativa publicada.
+const referenceScreens = {
+ login: ['01-login.png', 'Acceso de Talki', () => goButton('Explorar complementos', 'privacy', 'secondary')],
+ dashboard: ['02-dashboard.png', 'Dashboard de Talki', () => goButton('Configurar sesión', 'setup') + goButton('Privacidad y acceso', 'privacy', 'secondary')],
+ setup: ['03-coach.png', 'Live Coach de Talki', () => button('Explorar material contextual', 'extend-setup') + goButton('Preparar audio y consentimiento', 'microphone', 'secondary')],
+ live: ['08-session-recording.png', 'Grabación de una sesión de Talki', () => button('Explorar desconexión', 'disconnect', 'secondary') + button('Explorar cierre y análisis', 'finish')],
+ report: ['09-session-ai-feedback.png', 'Feedback de sesión de Talki', () => goButton('Compartir o eliminar', 'privacy') + goButton('Comparar sesiones', 'compare', 'secondary')],
+ history: ['04-sessions.png', 'Sesiones de Talki', () => goButton('Consultar feedback', 'report') + goButton('Comparar sesiones', 'compare', 'secondary')]
+};
+for (const [id, [file, title, actions]] of Object.entries(referenceScreens)) {
+ const proposedView = screens[id];
+ screens[id] = () => {
+  const variant = (id === 'setup' && demo.extensionSetup) || (id === 'live' && demo.disconnected) || (id === 'report' && (demo.insufficient || demo.deleted)) || (id === 'history' && demo.deleted);
+  if (innerWidth <= 700 || document.body.classList.contains('wireframe') || variant) return proposedView();
+  return `<main id="content" class="reference-view"><h1 tabindex="-1">${title}</h1><p class="reference-note">Captura de referencia del cliente web. Para utilizar sus funciones, abre Talki. Las acciones de abajo permiten explorar los complementos de diseño con datos ficticios.</p><div class="reference-tools"><a class="button" href="https://talki-frontend.vercel.app" target="_blank" rel="noopener noreferrer">Abrir Talki</a>${actions()}</div><img class="reference-image" src="../../reused-202601/frontend/${file}" alt="${title}"><div class="reference-tools">${goButton('Volver a los complementos', 'privacy', 'secondary')}</div></main>`;
+ };
+}
+
 let toastTimer;
 function toast(message){const el=document.getElementById('toast');el.textContent=message;el.hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.hidden=true,5500);}
 function render(screen,focus=true){demo.screen=screens[screen]?screen:'landing';app.innerHTML=screens[demo.screen]();document.title=`Talki · ${screenNames[demo.screen]}`;wireForms();if(focus){window.scrollTo(0,0);app.querySelector('h1')?.focus({preventScroll:true});}}
@@ -69,6 +88,7 @@ function wireForms(){
 app.addEventListener('click',e=>{
  const control=e.target.closest('[data-action]');if(!control)return;const action=control.dataset.action;
  if(action.startsWith('go:'))return go(action.slice(3));
+ if(action==='extend-setup'){demo.extensionSetup=true;render('setup');return;}
  if(action==='remove-material'){demo.material='';render(demo.screen,false);}
  if(action==='mic-ok'){demo.mic=true;render('microphone',false);toast('Nivel de entrada simulado correcto.');}
  if(action==='mic-denied'){demo.mic=false;render('microphone',false);document.getElementById('mic-state').textContent='Permiso denegado: habilita micrófono desde los permisos del dispositivo y vuelve a probar.';}
@@ -90,5 +110,6 @@ app.addEventListener('click',e=>{
  if(action==='logout')confirmation('¿Cerrar sesión?',demo.screen==='live'?'Hay una práctica activa en la demostración. Confirma antes de salir.':'Se cerrará el recorrido de ejemplo.',()=>go('login'));
 });
 window.addEventListener('hashchange',()=>render(location.hash.slice(1)));
-document.getElementById('reset-demo').onclick=()=>{location.href=location.pathname+(params.get('view')==='wireframe'?'?view=wireframe':'')+'#landing';location.reload();};
-render(location.hash.slice(1)||params.get('screen')||'landing',false);
+window.matchMedia('(max-width: 700px)').addEventListener('change',()=>render(demo.screen,false));
+document.getElementById('reset-demo').onclick=()=>{location.href=location.pathname+(params.get('view')==='wireframe'?'?view=wireframe':'')+'#privacy';location.reload();};
+render(location.hash.slice(1)||params.get('screen')||'privacy',false);
