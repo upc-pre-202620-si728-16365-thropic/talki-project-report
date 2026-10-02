@@ -1,0 +1,18 @@
+erDiagram
+    APP_USERS ||--o{ REFRESH_TOKENS : owns
+    APP_USERS {
+        bigint id PK
+        varchar email UK
+        varchar password_hash
+        varchar username
+        varchar academic_segment
+        varchar role
+        timestamp created_at
+    }
+    REFRESH_TOKENS {
+        bigint id PK
+        bigint user_id FK
+        varchar token_hash UK
+        timestamp expires_at
+        boolean revoked
+    }

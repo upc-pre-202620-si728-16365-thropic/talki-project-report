@@ -2703,6 +2703,111 @@ user_streaks y achievements se relacionan por usuario dentro de la misma base. L
 
 ## 5.8. Bounded Context: Identity & Access
 
+Este contexto administra las cuentas y el acceso a Talki. También organiza la información del perfil y el registro verificable del consentimiento necesario para procesar voz.
+
+**Servicio o componente asociado:** identity-service.
+
+### 5.8.1. Domain Layer
+
+La capa de dominio representa la cuenta del estudiante y los roles reconocidos por Talki. El modelo de acceso distingue la identidad de la persona de las autorizaciones particulares sobre sus sesiones.
+
+**Aggregate Root**
+
+AppUser representa la cuenta del estudiante. Conserva su identificador, correo, contraseña protegida, nombre de usuario, segmento académico y rol.
+
+**Entities**
+
+RefreshToken se propone para registrar la vigencia y revocación de las credenciales de renovación. El consentimiento de voz requiere un registro adicional con su versión, alcance y momento de aceptación.
+
+**Enumerations**
+
+UserRole define los roles de acceso reconocidos por Talki. Las autorizaciones sobre una sesión se comprueban en el contexto responsable de esa práctica.
+
+**Elementos de Domain Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| AppUser | Aggregate Root | Representa la cuenta, los datos del estudiante y su rol. | Domain |
+| RefreshToken | Entity (diseño propuesto) | Permite renovar el acceso y registrar su revocación. | Domain |
+| UserRole | Enumeración | Define los roles de acceso reconocidos por la aplicación. | Domain |
+
+**Reglas principales**
+
+1. Cada cuenta utiliza un correo único y conserva la contraseña mediante un hash.
+2. La renovación sustituye el token anterior y el cierre de sesión permite revocarlo.
+3. El consentimiento identifica su versión, alcance y momento; se distingue de la aceptación de las condiciones de la cuenta.
+
+### 5.8.2. Interface Layer
+
+AuthController recibe las solicitudes de registro e inicio de sesión y las delega a AuthService. Las credenciales de entrada se distinguen de los datos públicos devueltos al cliente.
+
+**Controller y operaciones**
+
+| Operación | Responsabilidad |
+| --- | --- |
+| `POST /v1/auth/register` | Registrar la cuenta del estudiante. |
+| `POST /v1/auth/login` | Autenticar al estudiante y preparar su acceso. |
+
+**Datos de entrada y respuesta.** El registro recibe correo, contraseña, nombre de usuario y segmento académico. Devuelve el identificador y los datos públicos de la cuenta. El inicio de sesión recibe correo y contraseña y devuelve la credencial de acceso y su tipo. La contraseña y su hash no forman parte de la respuesta.
+
+**Ampliaciones de acceso.** La renovación, el cierre de sesión, la edición del perfil y la gestión de consentimiento requieren definir sus contratos. El registro de una cuenta comunica `user.registered` a los contextos interesados.
+
+### 5.8.3. Application Layer
+
+La capa de aplicación coordina el registro y la autenticación. Utiliza la cuenta del dominio, el almacenamiento y los servicios de seguridad para preparar el acceso del estudiante.
+
+**Commands**
+
+El registro crea una cuenta después de comprobar el correo y proteger la contraseña. El inicio de sesión verifica las credenciales y solicita un token de acceso. AuthService coordina ambas operaciones.
+
+**Commands propuestos**
+
+La renovación, el cierre de sesión y la gestión del consentimiento amplían el modelo de acceso. El consentimiento de voz conserva su autorización de manera independiente del registro de la cuenta.
+
+**Elementos de Application Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| AuthService | Servicio de aplicación | Comprueba el correo, protege la contraseña, registra la cuenta y valida las credenciales de acceso. | Application |
+| UserRegisteredEventPublisher | Puerto de publicación | Define la comunicación del registro a los contextos interesados. | Application |
+| Renovación y cierre de sesión | Casos de uso propuestos | Renuevan o revocan las credenciales de acceso. | Application |
+| Gestión de consentimiento | Caso de uso propuesto | Registra la versión, alcance y retiro de la autorización de procesamiento. | Application |
+
+### 5.8.4. Infrastructure Layer
+
+La capa de infraestructura implementa el almacenamiento de cuentas, la protección de contraseñas y la emisión de credenciales de acceso.
+
+**Elementos de Infrastructure Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| AppUserRepository | Repositorio | Conserva las cuentas en PostgreSQL y permite localizarlas por correo. | Infrastructure |
+| PasswordEncoder | Servicio de seguridad | Protege y verifica la contraseña sin conservar su valor original. | Infrastructure |
+| JwtTokenProvider | Servicio de seguridad | Genera la credencial de acceso del estudiante. | Infrastructure |
+| RabbitUserRegisteredPublisher | Publicador de eventos | Implementa UserRegisteredEventPublisher mediante RabbitMQ. | Infrastructure |
+
+Spring Security organiza las reglas de acceso. El cliente web utiliza el BFF y cookies protegidas; la adaptación móvil requiere almacenamiento seguro. La persistencia de renovación y consentimiento corresponde a las ampliaciones propuestas.
+
+### 5.8.5. Bounded Context Software Architecture Component Level Diagrams
+
+AuthController delega el registro y el acceso a AuthService. Los adaptadores de seguridad y persistencia permiten conservar la cuenta y preparar sus credenciales. El publicador comunica el registro; la renovación y el consentimiento son ampliaciones propuestas.
+
+![Componentes de Identity & Access](assets/diagrams/tactical/08-identity-access-components.png)
+
+### 5.8.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 5.8.6.1. Bounded Context Domain Layer Class Diagrams
+
+AppUser reúne los datos de la cuenta y se relaciona con UserRole. RefreshToken representa la ampliación propuesta para renovar el acceso y revocar esas credenciales al cerrar la sesión de cuenta.
+
+![Clases de Identity & Access](assets/diagrams/tactical/08-identity-access-classes.png)
+
+#### 5.8.6.2. Bounded Context Database Design Diagram
+
+app_users conserva el correo, nombre de usuario, segmento académico, contraseña protegida y rol. La tabla propuesta refresh_tokens se relaciona con la cuenta y conserva la vigencia y revocación de las credenciales. El correo y el hash del token tienen restricciones de unicidad; el registro versionado de consentimiento es una ampliación adicional.
+
+![Persistencia de Identity & Access](assets/diagrams/tactical/08-identity-access-database.png)
+
 ## 5.9. Bounded Context: AI Provider Gateway
 
 ## 5.10. Bounded Context: Notifications
