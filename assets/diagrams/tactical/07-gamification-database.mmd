@@ -1,0 +1,16 @@
+erDiagram
+    USER_STREAKS ||--o{ ACHIEVEMENTS : earns
+    USER_STREAKS {
+        bigint user_id PK
+        int current_streak_days
+        int longest_streak_days
+        int xp
+        timestamp last_session_at
+    }
+    ACHIEVEMENTS {
+        bigint id PK
+        bigint user_id FK
+        varchar code
+        varchar title
+        timestamp unlocked_at
+    }
