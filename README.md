@@ -3837,6 +3837,40 @@ El mensaje confirma que la sesión ya no puede consultarse e informa que la elim
 
 ## 6.5. Applications Prototyping
 
+**Cliente web de Talki.** La [aplicación web](https://talki-frontend.vercel.app) reúne las pantallas de acceso, sesiones, Coach y feedback. Su [repositorio](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend) documenta la implementación de referencia para el diseño web.
+
+**Prototipo de pantallas complementarias.**
+
+El [prototipo de diseño](assets/ux/prototype/index.html#privacy) permite explorar las propuestas de consentimiento, recuperación, análisis, comparación, plan de práctica y control de datos. En escritorio, las pantallas del cliente web se presentan mediante capturas de referencia; los complementos y la adaptación móvil ofrecen recorridos interactivos con datos de ejemplo. Para recorrerlo, se debe abrir el HTML en un navegador siguiendo las [instrucciones de ejecución](assets/ux/prototype/README.md).
+
+| Recorrido de demostración | Acciones disponibles |
+| --- | --- |
+| Cliente web | Consultar las pantallas de acceso, inicio, Coach, sesiones y feedback de Talki. |
+| Preparación | Elegir el escenario y las condiciones del ensayo, y explorar la comprobación de audio y el consentimiento. |
+| Recuperación | Explorar la respuesta a permisos denegados, desconexiones y fallos de análisis. |
+| Progreso | Consultar el historial de ejemplo, aplicar filtros y comparar sesiones compatibles. |
+| Control de datos | Explorar el acceso temporal del tutor, la revocación, la exportación y la solicitud de eliminación. |
+
+**Recorrido de interacción**
+
+El recorrido comienza con la configuración de la práctica, continúa con la preparación de audio y el ensayo, y termina con la revisión del feedback. Las siguientes pantallas permiten reconocer las etapas del diseño; el prototipo enlazado permite explorar las acciones y los estados complementarios.
+
+**Configuración de la práctica**
+
+<img src="assets/ux/mockups/mobile-setup.png" alt="Prototipado de Talki: configurar la práctica" width="320">
+
+**Práctica en vivo**
+
+<img src="assets/ux/mockups/mobile-live.png" alt="Prototipado de Talki: practicar en vivo" width="320">
+
+**Revisión del feedback**
+
+<img src="assets/ux/mockups/mobile-report.png" alt="Prototipado de Talki: revisar el feedback" width="320">
+
+**Alcance del prototipo.** Los formularios, las confirmaciones y los estados complementarios permiten evaluar la secuencia de tareas y la comprensión de los mensajes. Las puntuaciones, transcripciones y tendencias son datos de ejemplo. El prototipo simula la interacción sin conectarse a servicios de autenticación, análisis de voz o almacenamiento; la validación funcional corresponde a la aplicación integrada.
+
+**Evaluación prevista.** La revisión con estudiantes de ambos segmentos observará si pueden preparar una práctica, comprender su feedback y administrar el acceso a sus reportes. Se registrarán el éxito de las tareas, el tiempo de preparación y las dificultades encontradas. El objetivo de QAS-USA-01 es que al menos el 90 % inicie una sesión válida en tres minutos o menos sin asistencia. Los resultados se documentarán en el capítulo VII cuando se realice la evaluación.
+
 # Capítulo VII: Software Product Implementation, Validation & Deployment
 
 Este capítulo corresponde a los hitos posteriores de implementación y validación. Se conserva la estructura del formato oficial; este avance de semana 7 no presenta sprints ejecutados, pruebas de producto, despliegues, entrevistas de validación ni videos que todavía no existen. El prototipo UX de 6.5 es evidencia de diseño, no de un producto integrado. La siguiente estructura se completará con evidencia real en esos hitos.
