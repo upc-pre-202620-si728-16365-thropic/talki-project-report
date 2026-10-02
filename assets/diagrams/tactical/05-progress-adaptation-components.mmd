@@ -1,0 +1,10 @@
+flowchart TB
+  input["Interface: ProgressController"] --> query["Consulta del resumen"]
+  query --> repo["Infrastructure: UserProgressRepository"]
+  broker["RabbitMQ: scoring.completed"] --> consumer["Infrastructure: ScoringCompletedConsumer"]
+  consumer --> app["Application: actualizar progreso"]
+  app --> model["Domain: UserProgress"]
+  app --> repo
+  repo --> db["PostgreSQL: user_progress"]
+  proposal["Ampliación: UserProgressQueryService y SessionMetrics"] -.-> repo
+  proposal --> view["Comparación y plan adaptativo propuestos"]

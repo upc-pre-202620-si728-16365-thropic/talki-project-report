@@ -1,0 +1,39 @@
+classDiagram
+    class UserProgress {
+        +Long userId
+        +int totalSessions
+        +int totalMinutes
+        +double averageScore
+        +int bestScore
+        +int currentStreak
+        +recordSession(score, durationSeconds) void
+    }
+    class SessionMetrics {
+        <<Propuesto>>
+        +UUID id
+        +UUID sessionId
+        +Long userId
+        +String mode
+        +int durationSeconds
+        +Integer overall
+        +Integer fluency
+        +Integer clarity
+        +Integer volume
+        +Integer vocabulary
+        +Integer confidence
+        +String analysisVersion
+        +String rubricVersion
+        +Instant occurredAt
+    }
+    class ScoringCompletedConsumer {
+        +handle(ScoringCompletedEvent) void
+    }
+    class UserProgressQueryService {
+        <<Propuesto>>
+        +getDashboard(userId) UserProgressView
+        +compareSessions(a, b) ComparisonView
+    }
+    ScoringCompletedConsumer --> UserProgress : actualiza resumen
+    ScoringCompletedConsumer ..> SessionMetrics : registro propuesto
+    UserProgressQueryService ..> UserProgress : consulta
+    UserProgressQueryService ..> SessionMetrics : compara evidencia

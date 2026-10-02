@@ -2387,6 +2387,105 @@ sessions y session_feedback se relacionan mediante el identificador de sesión. 
 
 ## 5.5. Bounded Context: Progress & Adaptation
 
+Este contexto organiza el historial de desempeño del estudiante y permite revisar su evolución. La comparación de prácticas y el plan adaptativo se apoyan en resultados compatibles y evidencia disponible.
+
+**Servicio o componente asociado:** progress-service.
+
+### 5.5.1. Domain Layer
+
+La capa de dominio representa la evolución del estudiante a partir de sus prácticas. Distingue el resumen de actividad de la evidencia individual utilizada para comparar resultados.
+
+**Aggregate Root**
+
+UserProgress reúne la cantidad de sesiones, minutos de práctica, promedio y mejor puntuación del estudiante. La experiencia y las reglas de racha pertenecen a Gamification; el panel puede presentar la racha como información resumida, sin redefinir sus reglas.
+
+**Entities**
+
+SessionMetrics se propone para conservar las métricas y la versión de cada práctica. Estas evidencias permitirán comparar resultados compatibles y reconocer el origen de las recomendaciones.
+
+**Elementos de Domain Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| UserProgress | Aggregate Root | Reúne el resumen de actividad y desempeño de un estudiante. | Domain |
+| SessionMetrics | Entity (diseño propuesto) | Conserva las métricas de cada sesión incorporada al historial. | Domain |
+
+**Reglas principales**
+
+1. Cada evaluación se incorpora una sola vez al resumen de progreso.
+2. La comparación requiere sesiones del mismo estudiante con modos y versiones compatibles.
+3. Si no existe suficiente historial, se propone una práctica inicial en lugar de atribuir dificultades recurrentes.
+
+### 5.5.2. Interface Layer
+
+ProgressController ofrece la consulta del resumen de desempeño. La actualización del progreso se origina al recibir una evaluación completada y no mediante una modificación directa desde el cliente.
+
+**Controller y operaciones**
+
+| Operación o contrato | Responsabilidad |
+| --- | --- |
+| `GET /v1/progress/dashboard?userId={userId}` | Consultar el resumen de actividad y desempeño. |
+| `scoring.completed` | Recibir una evaluación para incorporar sus métricas al progreso. |
+| Comparación y plan adaptativo propuestos | Consultar prácticas compatibles y preparar ejercicios de mejora; sus contratos se definirán durante la integración. |
+
+**Datos de respuesta.** El panel reúne cantidad de sesiones, minutos de práctica, promedio, mejor puntuación y racha. Las propuestas de comparación incorporan las sesiones elegidas y la compatibilidad de sus versiones. Las consultas deben limitarse al estudiante autorizado.
+
+### 5.5.3. Application Layer
+
+La capa de aplicación coordina la incorporación de evaluaciones y la consulta del progreso. Las operaciones de escritura actualizan el resumen y las de lectura presentan la evolución al estudiante.
+
+**Actualización por eventos**
+
+ScoringCompletedEvent incorpora la puntuación y la duración de una práctica al resumen de UserProgress. El diseño ampliado registra la evidencia por sesión para evitar contribuciones duplicadas.
+
+**Queries**
+
+La consulta del panel recupera los totales y el desempeño del estudiante. UserProgressQueryService se propone para organizar esta lectura y la comparación de prácticas compatibles. El plan adaptativo es una ampliación que relacionará las recomendaciones con ejercicios de mejora.
+
+**Elementos de Application Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| Actualización del progreso | Caso de uso | Incorpora puntuación y duración al resumen de UserProgress. | Application |
+| UserProgressQueryService | Servicio de consulta propuesto | Organiza la lectura del panel y la comparación de prácticas compatibles. | Application |
+| Preparación del plan adaptativo | Caso de uso propuesto | Relaciona ejercicios con recomendaciones y sesiones que aportan evidencia. | Application |
+
+**Recorrido del caso de uso.** Una evaluación completada actualiza los totales y las métricas del estudiante. Las consultas obtienen el resumen y, en la ampliación, las evidencias por sesión. La comparación verifica el modo y la versión antes de presentar variaciones de desempeño.
+
+### 5.5.4. Infrastructure Layer
+
+La capa de infraestructura conserva el resumen de desempeño y recibe las evaluaciones completadas.
+
+**Elementos de Infrastructure Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| UserProgressRepository | Repositorio | Conserva UserProgress en PostgreSQL y lo consulta por estudiante. | Infrastructure |
+| ScoringCompletedConsumer | Consumidor de eventos | Recibe la evaluación y activa la actualización del progreso. | Infrastructure |
+| Persistencia de SessionMetrics | Ampliación propuesta | Conserva evidencia por sesión y versión para comparar prácticas. | Infrastructure |
+
+RabbitMQ comunica la evaluación y PostgreSQL almacena el resumen. La ampliación conserva resultados compatibles y retira la contribución de una práctica cuando se confirma su eliminación.
+
+### 5.5.5. Bounded Context Software Architecture Component Level Diagrams
+
+ProgressController consulta el resumen conservado por UserProgressRepository. ScoringCompletedConsumer recibe las evaluaciones y activa su actualización. UserProgressQueryService y SessionMetrics amplían el diseño para comparar prácticas y preparar el plan.
+
+![Componentes de Progress & Adaptation](assets/diagrams/tactical/05-progress-adaptation-components.png)
+
+### 5.5.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 5.5.6.1. Bounded Context Domain Layer Class Diagrams
+
+UserProgress reúne los totales y las puntuaciones resumidas del estudiante. SessionMetrics y UserProgressQueryService son ampliaciones propuestas: conservan evidencia por práctica y permiten consultar resultados compatibles. El modo, las dimensiones y las versiones sostienen las tendencias y la comparación presentadas en 6.4.
+
+![Clases de Progress & Adaptation](assets/diagrams/tactical/05-progress-adaptation-classes.png)
+
+#### 5.5.6.2. Bounded Context Database Design Diagram
+
+user_progress conserva los totales y puntuaciones resumidas del estudiante. La tabla propuesta session_metrics registra la sesión, modo, duración, dimensiones y versiones de análisis y rúbrica. La combinación de sesión y versiones debe ser única. La eliminación retira sus métricas y recalcula el resumen, manteniendo los puntos de experiencia bajo responsabilidad de Gamification.
+
+![Persistencia de Progress & Adaptation](assets/diagrams/tactical/05-progress-adaptation-database.png)
+
 ## 5.6. Bounded Context: Sharing & Retention
 
 ## 5.7. Bounded Context: Gamification
