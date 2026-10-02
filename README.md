@@ -2278,6 +2278,113 @@ La tabla score_results contiene la referencia a la sesión, el usuario, las dime
 
 ## 5.4. Bounded Context: Practice Session Management
 
+Este contexto administra la preparación y el ciclo de vida de cada práctica. Reúne la configuración del ensayo, sus estados y el feedback asociado, y determina si la práctica cumple las condiciones de validez.
+
+**Servicio o componente asociado:** session-service.
+
+### 5.4.1. Domain Layer
+
+La capa de dominio describe la práctica del estudiante, sus estados y la retroalimentación asociada. Las reglas de este modelo determinan cuándo puede iniciarse, cerrarse y consultarse una sesión.
+
+**Aggregate Root**
+
+Session es el punto de entrada al agregado de práctica. Conserva su identidad, propietario y estado, y controla los cambios de su ciclo de vida.
+
+**Entities**
+
+Feedback representa una retroalimentación vinculada a la práctica. Cada registro conserva su identidad y el contenido que el estudiante podrá revisar.
+
+**Value Objects**
+
+SessionUserContext reúne el identificador, correo, nombre de usuario y segmento académico del estudiante. SessionContextFacade adapta estos datos al lenguaje de sesiones, sin incorporar el modelo completo de cuentas.
+
+**Elementos de Domain Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| Session | Aggregate Root | Representa la práctica y controla sus cambios de estado. | Domain |
+| Feedback | Entity | Conserva la retroalimentación asociada a una sesión. | Domain |
+| SessionUserContext | Value Object | Representa la identidad del estudiante en el lenguaje de este contexto. | Domain |
+
+**Reglas principales**
+
+1. La sesión pertenece al estudiante autenticado y conserva esa relación durante todo el recorrido.
+2. El feedback se vincula a la sesión que lo originó.
+3. El inicio requiere las autorizaciones correspondientes y la finalización debe producir un único cierre.
+
+### 5.4.2. Interface Layer
+
+SessionController expone las operaciones de preparación, consulta y cierre de la práctica. Las solicitudes que modifican datos se delegan a SessionCommandService y las consultas a SessionQueryService.
+
+**Controller y operaciones**
+
+| Operación | Responsabilidad |
+| --- | --- |
+| `POST /v1/sessions` | Crear una práctica con su título, tipo y estudiante. |
+| `GET /v1/sessions?userId={userId}` | Consultar el listado de sesiones del estudiante. |
+| `GET /v1/sessions/{id}` | Consultar el detalle de una práctica. |
+| `POST /v1/sessions/{id}/finalize` | Solicitar el cierre de la práctica. |
+| `POST /v1/sessions/{id}/feedbacks` | Registrar retroalimentación asociada a la sesión. |
+| `GET /v1/sessions/{id}/feedbacks` | Consultar la retroalimentación de la práctica. |
+
+**Datos de entrada y respuesta.** CreateSessionRequest reúne título, tipo de sesión e identificador del estudiante. El registro de feedback recibe el tipo y el contenido. Las respuestas presentan la sesión o sus retroalimentaciones. En la ampliación del diseño, la identidad se obtiene del acceso autenticado y se verifica la pertenencia del recurso antes de devolverlo.
+
+### 5.4.3. Application Layer
+
+La capa de aplicación coordina las operaciones de escritura y lectura de una práctica. Mantiene separados los cambios del ciclo de vida de las consultas del estudiante.
+
+**Commands**
+
+Las operaciones de escritura crean una práctica, finalizan su ciclo y registran feedback. SessionCommandService define estas operaciones y SessionCommandServiceImpl las coordina con el dominio y los repositorios.
+
+**Queries**
+
+Las operaciones de lectura recuperan una sesión por identificador, las sesiones de un estudiante y las retroalimentaciones de una práctica. SessionQueryService y SessionQueryServiceImpl coordinan estas consultas. SessionContextFacade adapta la información de identidad a SessionUserContext.
+
+**Elementos de Application Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| SessionCommandService y SessionCommandServiceImpl | Contrato e implementación de comandos | Coordinan creación, cierre y registro de feedback. | Application |
+| SessionQueryService y SessionQueryServiceImpl | Contrato e implementación de consultas | Recuperan sesiones y retroalimentaciones. | Application |
+| SessionContextFacade | Adaptador de contexto | Traduce la identidad externa a SessionUserContext. | Application |
+
+**Ampliación del ciclo de práctica.** La preparación de material, la recuperación y la eliminación se incorporan como operaciones propuestas y deberán respetar las reglas de acceso de la sesión.
+### 5.4.4. Infrastructure Layer
+
+La capa de infraestructura implementa la persistencia de sesiones y feedback en PostgreSQL y recibe las actualizaciones de identidad necesarias para el contexto.
+
+**Elementos de Infrastructure Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| SessionRepository | Repositorio JPA | Conserva prácticas y permite consultarlas por identificador o estudiante. | Infrastructure |
+| FeedbackRepository | Repositorio JPA | Conserva las retroalimentaciones asociadas a una práctica. | Infrastructure |
+| AppUserRepository | Repositorio de proyección local | Recupera la identidad local que utiliza SessionContextFacade. | Infrastructure |
+| UserRegisteredConsumer | Consumidor de eventos | Recibe el registro de una cuenta para actualizar su representación local. | Infrastructure |
+
+Las relaciones entre sesión y feedback permanecen dentro del contexto. La ampliación del ciclo de vida incorpora recuperación, material y eliminación con sus reglas de acceso. SessionController pertenece a Interface Layer y delega la persistencia mediante los servicios de aplicación.
+
+### 5.4.5. Bounded Context Software Architecture Component Level Diagrams
+
+El controlador dirige las solicitudes a los servicios de comandos o consultas. Estos trabajan con Session y Feedback mediante repositorios y una adaptación de la identidad del usuario.
+
+![Componentes de Practice Session Management](assets/diagrams/tactical/04-practice-sessions-components.png)
+
+### 5.4.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 5.4.6.1. Bounded Context Domain Layer Class Diagrams
+
+Session contiene los registros de Feedback y consulta SessionUserContext para identificar al estudiante. Sus métodos reflejan las transiciones del ciclo de práctica.
+
+![Clases de Practice Session Management](assets/diagrams/tactical/04-practice-sessions-classes.png)
+
+#### 5.4.6.2. Bounded Context Database Design Diagram
+
+sessions y session_feedback se relacionan mediante el identificador de sesión. El usuario se conserva como referencia externa y structured_data permite almacenar feedback estructurado. El consentimiento, la configuración versionada y la marca de eliminación son ampliaciones propuestas.
+
+![Persistencia de Practice Session Management](assets/diagrams/tactical/04-practice-sessions-database.png)
+
 ## 5.5. Bounded Context: Progress & Adaptation
 
 ## 5.6. Bounded Context: Sharing & Retention

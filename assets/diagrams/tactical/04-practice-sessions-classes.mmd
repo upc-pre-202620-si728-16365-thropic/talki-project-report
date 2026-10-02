@@ -1,0 +1,29 @@
+classDiagram
+    class Session {
+        +UUID id
+        +Long userId
+        +String title
+        +SessionMode mode
+        +SessionState state
+        +Instant startedAt
+        +Instant finalizedAt
+        +start() void
+        +finalize() void
+        +markAsCompleted() void
+        +markAsAnalysisPending() void
+    }
+    class Feedback {
+        +UUID id
+        +UUID sessionId
+        +String content
+        +Instant createdAt
+    }
+    class SessionUserContext {
+        <<Value Object - ACL>>
+        +Long userId
+        +String email
+        +String username
+        +String academicSegment
+    }
+    Session "1" *-- "*" Feedback : intra-BC
+    Session ..> SessionUserContext : identidad adaptada por ACL
