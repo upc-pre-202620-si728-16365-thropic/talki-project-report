@@ -66,14 +66,14 @@
 | 1.0 | 02/10/2026 | Edición asistida por Codex | Desarrollo del diseño táctico y UX del segundo hito de TB1; incorporación de modelos, diagramas, pantallas y prototipo web/móvil. Revisión del equipo y feedback docente pendientes. |
 | 1.1 | 02/10/2026 | Edición asistida por Codex | Ajuste de UX para conservar las pantallas del cliente Talki como base: retirada de seis mock-ups web duplicados, unificación visual de complementos y uso del cliente web como prototipo principal. |
 | 1.2 | 02/10/2026 | Edición asistida por Codex | Alineación de la tabla de colores y los complementos UX con los tokens de temas claro/oscuro y el componente Table del frontend Talki, versión d63e889. |
-
 | 1.3 | 02/10/2026 | Edición asistida por Codex | Presentación de wireframes, mock-ups y estados críticos mediante descripción e imágenes web/móvil dentro del informe. |
+| 1.4 | 02/10/2026 | Edición asistida por Codex | Revisión editorial de los capítulos V y VI, sustitución de rayas largas y acceso directo a los diseños de la landing desde el catálogo. |
 
 # Project Report Collaboration Insights
 
 Repositorio del informe: [talki-project-report](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report)
 
-La evidencia de colaboración del TB1 se mantiene en GitHub mediante los commits, ramas y pull requests del repositorio. El detalle de responsabilidades y calificaciones asignadas por el Team Leader se encuentra en el [Informe de Participación — Startup Thropic](https://docs.google.com/document/d/1-tnKLS9I_qJD4kkLwBUQB8QqxdgXBQbJcZ0smvAn1KM/edit).
+La evidencia de colaboración del TB1 se mantiene en GitHub mediante los commits, ramas y pull requests del repositorio. El detalle de responsabilidades y calificaciones asignadas por el Team Leader se encuentra en el [Informe de Participación: Startup Thropic](https://docs.google.com/document/d/1-tnKLS9I_qJD4kkLwBUQB8QqxdgXBQbJcZ0smvAn1KM/edit).
 
 | Integrante | Aporte principal registrado en TB1 | Evidencia |
 | --- | --- | --- |
@@ -83,7 +83,7 @@ La evidencia de colaboración del TB1 se mantiene en GitHub mediante los commits
 | Werner Khalil Lang Nassi | Diseño estratégico basado en DDD. | Secciones 4.2–4.2.5. |
 | Kevin Jorge Chi Cruzatt | Software Architecture y sus cuatro diagramas. | Sección 4.3. |
 
-## Segundo hito de TB1 — semana 7
+## Segundo hito de TB1: semana 7
 
 Esta revisión incorpora capítulos V y VI y sus fuentes/artefactos en la rama `development`, creada desde el avance consolidado en `develop`. La edición se realizó con asistencia de Codex a solicitud de Alejandro. La revisión del equipo y la sustentación de este hito están pendientes; sus aportes se incorporarán al registro individual con la evidencia correspondiente. El feedback docente de los capítulos previos sigue pendiente de incorporación.
 
@@ -1037,7 +1037,7 @@ El lenguaje ubicuo (Ubiquitous Language) establece un vocabulario común y compa
 
 El *To-Be Scenario Mapping* representa la experiencia futura de los dos segmentos objetivo cuando incorporan Talki a su preparación académica y profesional. Los escenarios se construyen a partir de los hallazgos de las entrevistas: necesidad de practicar de manera autónoma, recibir retroalimentación objetiva, detectar muletillas, controlar volumen y silencios, cargar material propio y observar un progreso medible.
 
-### Segmento 1: Valeria Ríos — estudiantes de ciclos 1 al 5
+### Segmento 1: Valeria Ríos (estudiantes de ciclos 1 al 5)
 
 Valeria debe preparar una exposición académica, pero no dispone de un profesor o compañero que pueda escuchar todos sus ensayos. Con Talki puede configurar una práctica guiada, ensayar en un espacio privado y obtener recomendaciones concretas antes de exponer.
 
@@ -1051,7 +1051,7 @@ Valeria debe preparar una exposición académica, pero no dispone de un profesor
 | Reporte | Revisa los resultados al terminar. | Entrega un *Voice Coach Score*, hallazgos concretos, ejemplos del discurso y acciones prioritarias. | “Ahora sé qué hice mal y cómo corregirlo.” | Convertir métricas en recomendaciones accionables. |
 | Iteración | Repite la sesión enfocándose en un punto débil. | Compara la nueva sesión con la anterior y muestra evolución. | Motivación por progreso visible. | Ciclo corto de práctica, feedback y repetición. |
 
-### Segmento 2: Rodrigo Sánchez — estudiantes de ciclos 6 al 10
+### Segmento 2: Rodrigo Sánchez (estudiantes de ciclos 6 al 10)
 
 Rodrigo se prepara para una entrevista de prácticas o una sustentación ante jurado. Necesita un entorno más exigente, preguntas contextualizadas y un análisis que vaya más allá de la pronunciación. Talki le permite cargar material, simular el escenario y evaluar tanto la forma como la claridad de sus respuestas.
 
@@ -1263,7 +1263,7 @@ El Product Backlog conserva la identificación histórica del proyecto y añade 
 
 | Orden | ID | Título | Prioridad | SP | Dependencias | Entrega objetivo |
 |---:|---|---|:---:|---:|---|---|
-| 1 | US05 | Registrar una cuenta | Must | 5 | — | MVP |
+| 1 | US05 | Registrar una cuenta | Must | 5 | No aplica | MVP |
 | 2 | US06 | Iniciar sesión | Must | 5 | US05 | MVP |
 | 3 | US28 | Cerrar sesión | Must | 1 | US06 | MVP |
 | 4 | US09 | Crear una sesión | Must | 3 | US06 | MVP |
@@ -1297,10 +1297,10 @@ El Product Backlog conserva la identificación histórica del proyecto y añade 
 | 32 | US32 | Compartir temporalmente un reporte | Should | 5 | US15, US33 | Incremento 2 |
 | 33 | US35 | Mantener rachas y logros | Could | 5 | US20 | Incremento 3 |
 | 34 | US07 | Recuperar contraseña | Should | 3 | US05 | Incremento 3 |
-| 35 | US01 | Visualizar beneficios | Could | 2 | — | Incremento 3 |
-| 36 | US02 | Ver planes y precios | Could | 2 | — | Incremento 3 |
-| 37 | US03 | Ver testimonios | Could | 1 | — | Incremento 3 |
-| 38 | US04 | Enviar una consulta | Could | 2 | — | Incremento 3 |
+| 35 | US01 | Visualizar beneficios | Could | 2 | No aplica | Incremento 3 |
+| 36 | US02 | Ver planes y precios | Could | 2 | No aplica | Incremento 3 |
+| 37 | US03 | Ver testimonios | Could | 1 | No aplica | Incremento 3 |
+| 38 | US04 | Enviar una consulta | Could | 2 | No aplica | Incremento 3 |
 
 Las Technical Stories también son ítems del Product Backlog. Se ejecutan transversalmente desde el MVP y se mantienen visibles para que restricciones y decisiones de arquitectura sean planificables.
 
@@ -1308,10 +1308,10 @@ Las Technical Stories también son ítems del Product Backlog. Se ejecutan trans
 |---:|---|---|:---:|---:|---|---|
 | 39 | TS01 | Consentimiento verificable | Must | 3 | US29 | MVP |
 | 40 | TS02 | Audio efímero | Must | 3 | US12, US14 | MVP |
-| 41 | TS03 | Base tecnológica existente | Must | 5 | — | MVP |
-| 42 | TS04 | Trazabilidad versionada | Must | 3 | — | MVP |
+| 41 | TS03 | Base tecnológica existente | Must | 5 | No aplica | MVP |
+| 42 | TS04 | Trazabilidad versionada | Must | 3 | No aplica | MVP |
 | 43 | TS05 | Experiencia web en español | Must | 3 | US05, US09 | MVP |
-| 44 | TS06 | Presupuesto y plazo académico | Must | 2 | — | MVP |
+| 44 | TS06 | Presupuesto y plazo académico | Must | 2 | No aplica | MVP |
 
 ### Criterio de priorización
 
@@ -1503,7 +1503,7 @@ La siguiente matriz conserva la estructura de refinamiento ADD: cada fila conect
 | QAS-AVA-01 y QAS-OBS-01: caída y diagnóstico | BG-01, BG-05 | Disponibilidad, resiliencia, observabilidad | El proveedor no responde o soporte recibe una sesión fallida. | Proveedor IA o agente de soporte. | Sesión activa o producción. | Adaptador IA, orquestador, sesión, logs y trazas. | Evita cascada, conserva estado y correlaciona la causa. | Detección ≤ 10 s; componente identificado ≤ 15 min. | ¿Qué nivel de servicio ofrece el proveedor? | Desconexión prolongada; permitir cierre seguro o resultado parcial etiquetado. |
 | QAS-MOD-01 y QAS-INT-01: evolución | BG-04 | Modificabilidad, interoperabilidad | Se solicita el modo debate o un proveedor alterno. | Equipo de producto. | Evolución planificada. | Catálogo de modos, rúbricas, orquestador y adaptador IA. | Incorpora configuración/adaptador sin cambiar el ciclo central. | Modo ≤ 2 persona-días; proveedor equivalente ≤ 5 persona-días y suite contractual aprobada. | ¿Qué capacidades son realmente comunes entre proveedores? | Capacidades exclusivas; declararlas opcionales y aislar extensiones. |
 
-#### Refinamiento QAS-PER-01 — Latencia del coaching en vivo
+#### Refinamiento QAS-PER-01: Latencia del coaching en vivo
 
 | Elemento | Refinamiento |
 |---|---|
@@ -1514,7 +1514,7 @@ La siguiente matriz conserva la estructura de refinamiento ADD: cada fila conect
 | Verificación | Prueba de carga con la concurrencia objetivo aprobada para el piloto, audio simulado y medición p50/p95/p99; contrastar el objetivo inicial p95 ≤ 2 s y tasa de error < 1 %. |
 | Riesgo residual | Latencia variable del proveedor. Mitigación: timeout, circuit breaker, aviso de degradación y métricas separadas entre latencia interna y externa. |
 
-#### Refinamiento QAS-REL-01 — Idempotencia del pipeline
+#### Refinamiento QAS-REL-01: Idempotencia del pipeline
 
 | Elemento | Refinamiento |
 |---|---|
@@ -1525,7 +1525,7 @@ La siguiente matriz conserva la estructura de refinamiento ADD: cada fila conect
 | Verificación | Publicar el mismo evento diez veces, reiniciar consumidores durante el procesamiento y comprobar un único resultado por `session_id + analysis_version`. |
 | Riesgo residual | Eventos fuera de orden. Mitigación: versión, timestamp, máquina de estados y rechazo o espera de transiciones inválidas. |
 
-#### Refinamiento QAS-SEC-01 y QAS-PRI-01 — Seguridad y privacidad
+#### Refinamiento QAS-SEC-01 y QAS-PRI-01: Seguridad y privacidad
 
 | Elemento | Refinamiento |
 |---|---|
@@ -1536,7 +1536,7 @@ La siguiente matriz conserva la estructura de refinamiento ADD: cada fila conect
 | Verificación | Pruebas de autorización horizontal, acceso con otro usuario, revocación de enlace, eliminación propagada y revisión automatizada de PII/secretos en logs. |
 | Riesgo residual | El proveedor externo procesa voz durante la sesión. Mitigación: consentimiento informado, configuración contractual de no retención cuando exista y envío exclusivo de datos necesarios. |
 
-#### Refinamiento QAS-MOD-01 y QAS-INT-01 — Nuevos modos y proveedores
+#### Refinamiento QAS-MOD-01 y QAS-INT-01: Nuevos modos y proveedores
 
 | Elemento | Refinamiento |
 |---|---|
@@ -1547,7 +1547,7 @@ La siguiente matriz conserva la estructura de refinamiento ADD: cada fila conect
 | Verificación | Implementar un modo “debate” sin modificar el ciclo de sesión; sustituir el adaptador por un fake o segundo proveedor y ejecutar la misma suite contractual. |
 | Riesgo residual | Funciones exclusivas del proveedor no encajan en el contrato común. Mitigación: capacidades opcionales declaradas y extensiones aisladas. |
 
-#### Refinamiento QAS-AVA-01 y QAS-OBS-01 — Recuperación y diagnóstico
+#### Refinamiento QAS-AVA-01 y QAS-OBS-01: Recuperación y diagnóstico
 
 | Elemento | Refinamiento |
 |---|---|
@@ -1600,7 +1600,7 @@ El tablero se organizó sobre una línea de tiempo infinita (unbounded timeline)
 
 #### Fase 1: Inventario y ordenamiento de eventos de dominio
 
-El equipo partió de los momentos de mayor valor —obtener feedback del ensayo y ver progreso— y en paralelo escribió eventos de dominio en notas naranjas, primero sin orden y luego sobre la línea de tiempo. Los eventos se redactaron en español, en pasado y en lenguaje de negocio, conservando la equivalencia con el glosario de la sección 2.4. La siguiente tabla resume los eventos representativos por tramo del flujo:
+El equipo partió de los momentos de mayor valor, obtener feedback del ensayo y ver progreso, y en paralelo escribió eventos de dominio en notas naranjas, primero sin orden y luego sobre la línea de tiempo. Los eventos se redactaron en español, en pasado y en lenguaje de negocio, conservando la equivalencia con el glosario de la sección 2.4. La siguiente tabla resume los eventos representativos por tramo del flujo:
 
 | Tramo del flujo | Eventos de dominio identificados |
 |---|---|
@@ -1651,14 +1651,14 @@ Al cierre quedaron ordenados los eventos del flujo completo, el puente entre el 
 
 #### Técnica aplicada
 
-El equipo combinó dos de las técnicas propuestas: **look-for-pivotal-events** como método principal —porque los cinco eventos pivote delimitan con claridad los cambios de estado entre partes del proceso— y **start-with-value** como verificación, comprobando que las partes del dominio con mayor valor para el negocio (el coaching en vivo y el análisis del discurso con IA) quedaran dentro de fronteras propias y protegidas. La sesión de descubrimiento se realizó sobre el mismo tablero de Miro, duplicando el EventStorm consolidado para poder comparar los cambios progresivos; su duración fue menor a dos horas.
+El equipo combinó dos de las técnicas propuestas: **look-for-pivotal-events** como método principal, porque los cinco eventos pivote delimitan con claridad los cambios de estado entre partes del proceso, y **start-with-value** como verificación, comprobando que las partes del dominio con mayor valor para el negocio (el coaching en vivo y el análisis del discurso con IA) quedaran dentro de fronteras propias y protegidas. La sesión de descubrimiento se realizó sobre el mismo tablero de Miro, duplicando el EventStorm consolidado para poder comparar los cambios progresivos; su duración fue menor a dos horas.
 
 #### Proceso sobre el EventStorm
 
 1. **Marcado de eventos pivote.** Se rodearon los cinco eventos pivote y se preguntó, para cada uno: ¿qué partes del sistema deben reaccionar y con qué lenguaje propio?
 2. **Agrupación por políticas.** Cada política lila se adscribió al evento que la dispara, formando clusters naturales de eventos, comandos y reglas que cambian juntos.
 3. **Verificación de lenguaje consistente.** Dentro de cada cluster se comprobó que los términos se usaran con un solo significado. Cuando un término (por ejemplo, "sesión") significaba cosas distintas a ambos lados de una frontera, la frontera se mantuvo.
-4. **Verificación start-with-value.** Se confirmó que el núcleo de valor —analizar la oratoria y retroalimentarla— no quedara diluido en un contexto genérico de "IA".
+4. **Verificación start-with-value.** Se confirmó que el núcleo de valor, analizar la oratoria y retroalimentarla, no quedara diluido en un contexto genérico de "IA".
 5. **Trazado de fronteras candidatas.** Se dibujaron polígonos alrededor de cada cluster y se nombraron.
 6. **Crítica.** Se cuestionó cada frontera: ¿es fragmentación innecesaria para un equipo de cinco personas? ¿los clusters cambian por razones distintas?
 
@@ -1689,7 +1689,7 @@ La decisión deliberada fue **no** crear un contexto por cada tabla o entidad, y
 
 Para visualizar cómo deben colaborar los bounded contexts, el equipo aplicó **Domain Storytelling**: cada escenario se narra como una secuencia numerada de frases con la estructura *actor → actividad → objeto de trabajo*, y cada actividad se asigna al bounded context que la ejecuta. Las sesiones se realizaron sobre el tablero de Miro con la plantilla de Domain Storytelling (actores como figuras, actividades como flechas numeradas y objetos de trabajo como documentos); como alternativa de detalle, el equipo dispone del Domain Storytelling Tool (domainstorytelling.org), que exporta los mismos diagramas en formato intercambiable. Se modelaron tres casos que cubren los dos segmentos objetivo y el bloque de privacidad.
 
-#### DS-01: Primera práctica guiada (segmento 1 — Valeria)
+#### DS-01: Primera práctica guiada (segmento 1: Valeria)
 
 | # | Actor | Actividad | Objeto de trabajo | Bounded context ejecutor |
 |---:|---|---|---|---|
@@ -1707,7 +1707,7 @@ Para visualizar cómo deben colaborar los bounded contexts, el equipo aplicó **
 
 ![Domain Storytelling DS-01: colaboración de bounded contexts en la primera práctica guiada](assets/images/domain-storytelling/ds-01-primera-practica.png)
 
-#### DS-02: Simulación contextualizada (segmento 2 — Rodrigo)
+#### DS-02: Simulación contextualizada (segmento 2: Rodrigo)
 
 | # | Actor | Actividad | Objeto de trabajo | Bounded context ejecutor |
 |---:|---|---|---|---|
@@ -1742,7 +1742,7 @@ Los tres flujos confirmaron las fronteras: el material de contexto viaja de Prac
 
 ### 4.2.4. Bounded Context Canvases
 
-Cada canvas se elaboró siguiendo un proceso iterativo con seis pasos: (1) **Context Overview Definition** — propósito y clasificación estratégica; (2) **Business Rules Distillation & Ubiquitous Language Capture** — reglas de negocio esenciales y glosario propio; (3) **Capability Analysis** — capacidades que el contexto ofrece; (4) **Capability Layering**, cuando aplica — organización de capacidades en capas (núcleo, soporte, adaptación); (5) **Dependencies Capture** — de qué contextos depende y quiénes dependen de él; y (6) **Design Critique** — revisión crítica que validó o ajustó la frontera. Los canvas se presentan en orden de importancia para el negocio, empezando por el core.
+Cada canvas se elaboró siguiendo un proceso iterativo con seis pasos: (1) **Context Overview Definition**: propósito y clasificación estratégica; (2) **Business Rules Distillation & Ubiquitous Language Capture**: reglas de negocio esenciales y glosario propio; (3) **Capability Analysis**: capacidades que el contexto ofrece; (4) **Capability Layering**, cuando aplica: organización de capacidades en capas (núcleo, soporte, adaptación); (5) **Dependencies Capture**: de qué contextos depende y quiénes dependen de él; y (6) **Design Critique**: revisión crítica que validó o ajustó la frontera. Los canvas se presentan en orden de importancia para el negocio, empezando por el core.
 
 #### 1. Live Coaching (Coaching en Vivo)
 
@@ -1799,7 +1799,7 @@ Cada canvas se elaboró siguiendo un proceso iterativo con seis pasos: (1) **Con
 | Eventos publicados | `Borrador de Sesión Creado`, `Material de Contexto Cargado`, `Sesión Preparada`, `Sesión Recuperada`, veredicto de validez. |
 | Eventos consumidos | `Cuenta Registrada` / `Consentimiento Otorgado` (Identity & Access). |
 | Reglas de negocio | No se inicia sin consentimiento y prueba de audio; el borrador es cancelable; la validez se declara una vez y los consumidores la respetan (hot spot resuelto en 4.2.1). |
-| Dependencias | Aguas arriba: Identity & Access (Conformist). Aguas abajo: Live Coaching, Speech Analysis y Gamification (Customer/Supplier — consumen sus eventos). |
+| Dependencias | Aguas arriba: Identity & Access (Conformist). Aguas abajo: Live Coaching, Speech Analysis y Gamification (Customer/Supplier: consumen sus eventos). |
 | Crítica de diseño | La política de validez se mantiene aquí y se publica como hecho, evitando que análisis o gamificación reimplementen criterios divergentes. |
 
 #### 5. Progress & Adaptation (Progreso y Adaptación)
@@ -1853,7 +1853,7 @@ Cada canvas se elaboró siguiendo un proceso iterativo con seis pasos: (1) **Con
 | Lenguaje ubicuo | Cuenta, token de acceso, refresh rotativo, consentimiento verificable, propiedad del recurso. |
 | Capacidades clave | Registrar y verificar cuentas (US05); autenticar y revocar sesiones (US06, US28); gestionar perfil (US08); registrar consentimiento con versión aceptada (TS01); validar identidad y propiedad. |
 | Eventos publicados | `Cuenta Registrada`, `Consentimiento Otorgado`, `Consentimiento Revocado`. |
-| Eventos consumidos | — (es el origen de la cadena de confianza). |
+| Eventos consumidos | Ninguno; es el origen de la cadena de confianza. |
 | Reglas de negocio | Los errores de autenticación no revelan qué credencial falló; el consentimiento registra la versión aceptada y condiciona todo procesamiento posterior. |
 | Dependencias | Aguas arriba de todos: expone un Open Host Service de validación de identidad; los demás contextos son Conformist a su modelo de claims. |
 | Crítica de diseño | El consentimiento vive aquí como registro verificable (quién, qué, cuándo, versión); la ejecución de la privacidad (compartir, revocar, borrar) pertenece a Sharing & Retention. |
@@ -1931,7 +1931,7 @@ El equipo evaluó explícitamente un **Shared Kernel** de definiciones de métri
 
 #### Conclusión del context mapping
 
-El mapa resultante protege tres propiedades: (1) el **core** (Live Coaching, Speech Analysis, Scoring & Feedback) solo depende de contratos publicados y de una pasarela con Anti-Corruption Layer, nunca de detalles de proveedores ni de contextos genéricos; (2) la **privacidad** opera por eventos, de modo que revocar o eliminar no depende de la disponibilidad de otros contextos; y (3) la **evolución** —nuevos modos, rúbricas o proveedores— queda confinada a un contexto por tipo de cambio. Este mapa es el insumo directo de los diagramas C4 de la sección 4.3 y de la descomposición táctica del capítulo V.
+El mapa resultante protege tres propiedades: (1) el **core** (Live Coaching, Speech Analysis, Scoring & Feedback) solo depende de contratos publicados y de una pasarela con Anti-Corruption Layer, nunca de detalles de proveedores ni de contextos genéricos; (2) la **privacidad** opera por eventos, de modo que revocar o eliminar no depende de la disponibilidad de otros contextos; y (3) la **evolución**, que comprende nuevos modos, rúbricas o proveedores, queda confinada a un contexto por tipo de cambio. Este mapa es el insumo directo de los diagramas C4 de la sección 4.3 y de la descomposición táctica del capítulo V.
 
 ## 4.3. Software Architecture
 
@@ -2008,13 +2008,15 @@ com.thropic.talki.<service>/
 
 Interface traduce HTTP/eventos a casos de uso; Application orquesta; Domain define reglas; Infrastructure implementa puertos. DTO, JPA y SDK de IA no se propagan como modelo compartido entre contextos. PostgreSQL conserva ownership por servicio/contexto; los IDs externos son referencias lógicas, sin FK entre bases. Los servicios stateless no requieren una base de datos propia; la persistencia se asigna al contexto propietario.
 
+**Contratos y autorización.** Cada sección Interface Layer identifica las rutas, eventos o puertos del contexto. Las ampliaciones propuestas se concretarán mediante contratos versionados durante la integración. La identidad y el acceso a recursos se verifican en el servidor.
+
 **Compatibilidad de eventos.** Talki utiliza `user.registered`, `session.live.finalized`, `fillers.analyzed`, `scoring.completed` y `achievement.unlocked`. Su evolución debe añadir versión de esquema, análisis/rúbrica e IDs de correlación mediante contratos compatibles. ADD-05 exige cierre duradero/Outbox y deduplicación en los propietarios de resultado. La integración del broker compartido y las pruebas de calidad están pendientes de validación.
 
 ## 5.1. Bounded Context: Live Coaching
 
 **Base:** live-coach-service. **Trazabilidad:** US12–US14, US31, US34, US38; ADD-03, ADD-06, ADD-08, ADD-10, ADD-12; QAS-PER-01, QAS-AVA-01.
 
-Convertir la práctica autorizada en transcripción incremental, señales discretas y turnos de simulación, sin asumir las reglas de validez o la puntuación del ensayo.
+Este contexto convierte la práctica autorizada en transcripción incremental, señales de acompañamiento y turnos de simulación. Las reglas de validez y la puntuación corresponden a sus respectivos contextos.
 
 ### 5.1.1. Domain Layer
 
@@ -2031,8 +2033,6 @@ Convertir la práctica autorizada en transcripción incremental, señales discre
 | `GET /v1/coach/modes` | Consultar modos de práctica. |
 | `POST /v1/coach/live-token?mode=` | Obtener token efímero para el cliente Gemini Live. |
 | `POST /v1/coach/{id}/finalize` | Finalizar el flujo en vivo y generar session.live.finalized. |
-
-Las capacidades propuestas se concretarán mediante contratos versionados durante la integración. Identidad y propiedad se verifican en servidor, no se aceptan como permisos declarados por el cliente.
 
 ### 5.1.3. Application Layer
 
@@ -2068,7 +2068,7 @@ N/A: el servicio no tiene base propia. El resultado durable queda en session-ser
 
 **Base:** filler-detection-service. **Trazabilidad:** US16–US18, US37 y métricas de US15; ADD-04–ADD-08, ADD-10, ADD-14; QAS-PER-02, QAS-REL-01.
 
-Transformar evidencia autorizada en métricas reproducibles de discurso; no decide metas pedagógicas ni el Voice Coach Score.
+Este contexto transforma la evidencia autorizada en métricas reproducibles del discurso. La definición de metas pedagógicas y el cálculo del Voice Coach Score corresponden a otros contextos.
 
 ### 5.2.1. Domain Layer
 
@@ -2085,8 +2085,6 @@ Transformar evidencia autorizada en métricas reproducibles de discurso; no deci
 | `session.live.finalized` | Consumir transcript_gemini y métricas autorizadas del cierre. |
 | `fillers.analyzed` | Publicar conteo/distribución de muletillas y evidencia de análisis. |
 | `GET /actuator/health` | Consultar salud del servicio; el análisis se procesa mediante eventos. |
-
-Las capacidades propuestas se concretarán mediante contratos versionados durante la integración. Identidad y propiedad se verifican en servidor, no se aceptan como permisos declarados por el cliente.
 
 ### 5.2.3. Application Layer
 
@@ -2122,7 +2120,7 @@ N/A: las métricas viajan en fillers.analyzed. La nueva persistencia técnica de
 
 **Base:** scoring-service. **Trazabilidad:** US15, US19, US26, US37; ADD-05, ADD-07, ADD-11, ADD-14; C-09, QAS-REL-01.
 
-Convertir métricas en puntuación y recomendaciones trazables mediante una rúbrica explícita y versionada.
+Este contexto convierte las métricas del discurso en una puntuación y recomendaciones trazables mediante una rúbrica explícita y versionada.
 
 ### 5.3.1. Domain Layer
 
@@ -2139,8 +2137,6 @@ Convertir métricas en puntuación y recomendaciones trazables mediante una rúb
 | `fillers.analyzed` | Consumir métricas del análisis. |
 | `scoring.completed` | Publicar el score calculado para progreso y engagement. |
 | `GET /actuator/health` | Salud del servicio; no equivale a una consulta REST del reporte. |
-
-Las capacidades propuestas se concretarán mediante contratos versionados durante la integración. Identidad y propiedad se verifican en servidor, no se aceptan como permisos declarados por el cliente.
 
 ### 5.3.3. Application Layer
 
@@ -2176,7 +2172,7 @@ Esquema base: score_results, session_id único, user_id como referencia externa.
 
 **Base:** session-service. **Trazabilidad:** US09–US14, US23–US25, US29, US30, US34; ADD-03–ADD-05, ADD-09, ADD-11; QAS-AVA-01, QAS-USA-01.
 
-Ser autoridad del ciclo de vida, configuración, material autorizado y veredicto de validez de cada práctica.
+Este contexto administra el ciclo de vida de cada práctica, su configuración, el material autorizado y el veredicto de validez.
 
 ### 5.4.1. Domain Layer
 
@@ -2193,8 +2189,6 @@ Ser autoridad del ciclo de vida, configuración, material autorizado y veredicto
 | `GET /v1/sessions; POST /v1/sessions` | Consultar sesiones propias o crear una sesión. |
 | `GET /v1/sessions/{id}; POST /v1/sessions/{id}/finalize` | Consultar detalle y confirmar cierre. |
 | `GET /v1/sessions/{id}/feedbacks; POST /v1/sessions/{id}/feedbacks` | Consultar/registrar feedback asociado; el cliente utiliza tipos ai_*. |
-
-Las capacidades propuestas se concretarán mediante contratos versionados durante la integración. Identidad y propiedad se verifican en servidor, no se aceptan como permisos declarados por el cliente.
 
 ### 5.4.3. Application Layer
 
@@ -2230,7 +2224,7 @@ Esquema base: sessions y session_feedback, relación 1:N mediante session_id. us
 
 **Base:** progress-service. **Trazabilidad:** US20–US22, US24, US36; ADD-05, ADD-07, ADD-11; C-09, QAS-REL-01.
 
-Construir historial y tendencias longitudinales y proponer ejercicios justificados por evidencia compatible.
+Este contexto construye el historial y las tendencias de desempeño del estudiante. A partir de evidencia compatible, propone ejercicios para orientar sus siguientes prácticas.
 
 ### 5.5.1. Domain Layer
 
@@ -2247,8 +2241,6 @@ Construir historial y tendencias longitudinales y proponer ejercicios justificad
 | `GET /v1/progress/dashboard?userId` | Consultar dashboard; la autorización debe comprobar propiedad. |
 | `scoring.completed` | Actualizar proyección de métricas. |
 | `Comparación / plan adaptativo` | Casos de uso propuestos; rutas/versiones se fijarán al integrar US22/US36. |
-
-Las capacidades propuestas se concretarán mediante contratos versionados durante la integración. Identidad y propiedad se verifican en servidor, no se aceptan como permisos declarados por el cliente.
 
 ### 5.5.3. Application Layer
 
@@ -2284,7 +2276,7 @@ user_progress y session_metrics se relacionan dentro de la base del servicio; se
 
 **Base:** Modelo propuesto de Sharing & Retention. **Trazabilidad:** US27, US32, US33; TS02; ADD-08, ADD-09, ADD-13; QAS-SEC-01, QAS-PRI-01.
 
-Autorizar accesos temporales, exportaciones y eliminación coordinada sin duplicar la propiedad del reporte.
+Este contexto administra los accesos temporales, las exportaciones y la eliminación coordinada de recursos. Los reportes permanecen bajo responsabilidad de sus contextos propietarios.
 
 ### 5.6.1. Domain Layer
 
@@ -2303,8 +2295,6 @@ Autorizar accesos temporales, exportaciones y eliminación coordinada sin duplic
 | `GET /api/v1/shared-reports/{token}` | Validar permiso y devolver una vista de solo lectura del reporte. |
 | `POST /api/v1/reports/{reportId}/exports` | Exportar reporte autorizado con versiones. |
 | `POST /api/v1/sessions/{sessionId}/deletions; GET /api/v1/deletions/{requestId}` | Iniciar eliminación idempotente y consultar progreso. |
-
-Las capacidades propuestas se concretarán mediante contratos versionados durante la integración. Identidad y propiedad se verifican en servidor, no se aceptan como permisos declarados por el cliente.
 
 ### 5.6.3. Application Layer
 
@@ -2340,7 +2330,7 @@ UNIQUE(token_hash) y UNIQUE(request_id, context). session_id en deletion_request
 
 **Base:** gamification-service. **Trazabilidad:** US35; ADD-05, ADD-07, ADD-11; QAS-REL-01.
 
-Reconocer constancia e hitos comprobados, sin decidir la validez de una sesión o confundir logros con rendimiento clínico.
+Este contexto reconoce la constancia y los hitos comprobados del estudiante a partir de prácticas válidas. El veredicto de validez corresponde a Practice Session Management.
 
 ### 5.7.1. Domain Layer
 
@@ -2357,8 +2347,6 @@ Reconocer constancia e hitos comprobados, sin decidir la validez de una sesión 
 | `GET /v1/gamification/leaderboard` | Consultar ranking; la participación pública debe ser opcional. |
 | `GET /v1/gamification/streaks/{userId}` | Consultar racha bajo propiedad/autorización. |
 | `scoring.completed / achievement.unlocked` | Consumir resultado y publicar logro. |
-
-Las capacidades propuestas se concretarán mediante contratos versionados durante la integración. Identidad y propiedad se verifican en servidor, no se aceptan como permisos declarados por el cliente.
 
 ### 5.7.3. Application Layer
 
@@ -2394,7 +2382,7 @@ Tablas user_streaks y achievements, ambas bajo ownership del servicio. Se propon
 
 **Base:** identity-service. **Trazabilidad:** US05–US08, US23, US28, US29; TS01; ADD-02, ADD-09, ADD-13; QAS-SEC-01.
 
-Gestionar cuentas, perfil, autenticación y registro verificable de consentimiento; no ejecutar la purga de recursos de otros contextos.
+Este contexto gestiona las cuentas, el perfil, la autenticación y el registro verificable del consentimiento. La eliminación de recursos se coordina con sus contextos propietarios.
 
 ### 5.8.1. Domain Layer
 
@@ -2411,8 +2399,6 @@ Gestionar cuentas, perfil, autenticación y registro verificable de consentimien
 | `POST /v1/auth/register; POST /v1/auth/login` | Registro y autenticación. |
 | `Refresh / logout / perfil / consentimiento` | Capacidades del modelo; completar las extensiones de US08/US29/TS01 con versión explícita. |
 | `user.registered` | Hecho publicado para consumidores que necesitan identidad local. |
-
-Las capacidades propuestas se concretarán mediante contratos versionados durante la integración. Identidad y propiedad se verifican en servidor, no se aceptan como permisos declarados por el cliente.
 
 ### 5.8.3. Application Layer
 
@@ -2448,7 +2434,7 @@ app_users y refresh_tokens, relación local por user_id. email/token_hash único
 
 **Base:** GeminiLiveClient como adaptador de Live Coaching. **Trazabilidad:** Habilita US12, US17–US19, US30, US31, US38; TS02; ADD-06, ADD-08, ADD-10, ADD-12, ADD-14; QAS-INT-01, QAS-PER-01.
 
-Traducir el lenguaje canónico de Talki a proveedores de IA y aplicar límites técnicos, manteniendo prompts, resultados y fallos ajenos al modelo del dominio.
+Este contexto traduce los contratos de Talki a los proveedores de IA y aplica límites técnicos. Los adaptadores encapsulan los formatos de solicitudes, resultados y errores de cada proveedor.
 
 ### 5.9.1. Domain Layer
 
@@ -2465,8 +2451,6 @@ Traducir el lenguaje canónico de Talki a proveedores de IA y aplicar límites t
 | --- | --- |
 | `Puerto AIProviderPort` | Contrato interno de apertura/cierre e intercambio autorizado. |
 | `GeminiLiveClient / live-token` | Cliente de voz y token efímero; límites/consentimiento se aplican antes de invocar. |
-
-Las capacidades propuestas se concretarán mediante contratos versionados durante la integración. Identidad y propiedad se verifican en servidor, no se aceptan como permisos declarados por el cliente.
 
 ### 5.9.3. Application Layer
 
@@ -2502,7 +2486,7 @@ No se exige base propia. Secretos y configuración se administran fuera del domi
 
 **Base:** notification-service. **Trazabilidad:** Notifica resultados de US05, US07, US15, US32, US33; ADD-04, ADD-05, ADD-10, ADD-13; QAS-REL-01.
 
-Enviar mensajes transaccionales y opcionales derivados de hechos del dominio, sin ser dependencia síncrona de la práctica.
+Este contexto envía mensajes transaccionales y opcionales derivados de eventos del dominio. El envío se realiza de forma desacoplada para mantener la continuidad de la práctica.
 
 ### 5.10.1. Domain Layer
 
@@ -2518,8 +2502,6 @@ Enviar mensajes transaccionales y opcionales derivados de hechos del dominio, si
 | --- | --- |
 | `scoring.completed / achievement.unlocked` | Disparar avisos del resultado/logro. |
 | `WebSocket del cliente / proveedor de correo` | Salida desacoplada; las preferencias y avisos de privacidad amplían las capacidades del servicio. |
-
-Las capacidades propuestas se concretarán mediante contratos versionados durante la integración. Identidad y propiedad se verifican en servidor, no se aceptan como permisos declarados por el cliente.
 
 ### 5.10.3. Application Layer
 
@@ -2687,17 +2669,19 @@ La vista de tutor evita navegación hacia historial o cuenta del propietario. Un
 
 ## 6.3. Landing Page UI Design
 
+La landing pública (L01) presenta Talki a los estudiantes y reúne la propuesta de valor, los beneficios, los pasos de uso y el acceso al registro. A continuación se muestran su wireframe y su mock-up, cada uno en versiones web y móvil.
+
 ### 6.3.1. Landing Page Wireframe
 
 La estructura prioriza propuesta de valor, acción de registro, pasos del servicio, beneficios por segmento, planes propuestos y formulario de consulta. El reporte de muestra se identifica como ejemplo. No se fabrican testimonios: US03 se implementará cuando existan testimonios autorizados y verificables.
 
 **Web**
 
-<img src="assets/ux/wireframes/web-landing.png" alt="Wireframe de la landing pública de Talki — web" width="900">
+<img src="assets/ux/wireframes/web-landing.png" alt="Wireframe de la landing pública de Talki: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/wireframes/mobile-landing.png" alt="Wireframe de la landing pública de Talki — móvil" width="320">
+<img src="assets/ux/wireframes/mobile-landing.png" alt="Wireframe de la landing pública de Talki: móvil" width="320">
 
 ### 6.3.2. Landing Page Mock-up
 
@@ -2705,11 +2689,11 @@ La portada presenta “Ensaya tus ideas. Hazlas escuchar.” y una muestra de fe
 
 **Web**
 
-<img src="assets/ux/mockups/web-landing.png" alt="Mock-up de la landing pública de Talki — web" width="900">
+<img src="assets/ux/mockups/web-landing.png" alt="Mock-up de la landing pública de Talki: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/mockups/mobile-landing.png" alt="Mock-up de la landing pública de Talki — móvil" width="320">
+<img src="assets/ux/mockups/mobile-landing.png" alt="Mock-up de la landing pública de Talki: móvil" width="320">
 
 ## 6.4. Applications UX/UI Design
 
@@ -2719,7 +2703,7 @@ Los wireframes presentan la estructura de las pantallas, sus etiquetas y sus rut
 
 | ID | Pantalla | Historias relacionadas |
 | --- | --- | --- |
-| L01 | Landing pública | US01–US04 |
+| L01 | [Landing pública (ver 6.3.1)](#631-landing-page-wireframe) | US01–US04 |
 | A01 | Registro | US05 |
 | A02 | Acceso | US06 |
 | A03 | Recuperación | US07 |
@@ -2738,7 +2722,7 @@ Los wireframes presentan la estructura de las pantallas, sus etiquetas y sus rut
 | T01 | Reporte de tutor | US32 |
 | N01 | Preferencias de contacto | Soporte transversal |
 
-#### A01 — Registro
+#### A01: Registro
 
 El formulario reúne nombre, correo y contraseña, junto con la aceptación de las condiciones de uso. El acceso a una cuenta existente permanece disponible desde la misma pantalla.
 
@@ -2746,13 +2730,13 @@ El formulario reúne nombre, correo y contraseña, junto con la aceptación de l
 
 **Web**
 
-<img src="assets/ux/wireframes/web-register.png" alt="Wireframe de registro — web" width="900">
+<img src="assets/ux/wireframes/web-register.png" alt="Wireframe de registro: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/wireframes/mobile-register.png" alt="Wireframe de registro — móvil" width="320">
+<img src="assets/ux/wireframes/mobile-register.png" alt="Wireframe de registro: móvil" width="320">
 
-#### A02 — Acceso
+#### A02: Acceso
 
 La pantalla permite ingresar con correo y contraseña y ofrece acceso al registro y a la recuperación de la cuenta.
 
@@ -2760,13 +2744,13 @@ La pantalla permite ingresar con correo y contraseña y ofrece acceso al registr
 
 **Web**
 
-<img src="assets/ux/wireframes/web-login.png" alt="Wireframe de acceso — web" width="900">
+<img src="assets/ux/wireframes/web-login.png" alt="Wireframe de acceso: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/wireframes/mobile-login.png" alt="Wireframe de acceso — móvil" width="320">
+<img src="assets/ux/wireframes/mobile-login.png" alt="Wireframe de acceso: móvil" width="320">
 
-#### A03 — Recuperación
+#### A03: Recuperación
 
 El usuario introduce su correo para solicitar instrucciones de recuperación. La confirmación evita revelar si la dirección pertenece a una cuenta registrada.
 
@@ -2774,13 +2758,13 @@ El usuario introduce su correo para solicitar instrucciones de recuperación. La
 
 **Web**
 
-<img src="assets/ux/wireframes/web-recovery.png" alt="Wireframe de recuperación — web" width="900">
+<img src="assets/ux/wireframes/web-recovery.png" alt="Wireframe de recuperación: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/wireframes/mobile-recovery.png" alt="Wireframe de recuperación — móvil" width="320">
+<img src="assets/ux/wireframes/mobile-recovery.png" alt="Wireframe de recuperación: móvil" width="320">
 
-#### P01 — Perfil y segmento
+#### P01: Perfil y segmento
 
 El perfil permite elegir el segmento del estudiante y su objetivo de práctica. Estas preferencias orientan los ejercicios y recomendaciones posteriores.
 
@@ -2788,13 +2772,13 @@ El perfil permite elegir el segmento del estudiante y su objetivo de práctica. 
 
 **Web**
 
-<img src="assets/ux/wireframes/web-profile.png" alt="Wireframe de perfil y segmento — web" width="900">
+<img src="assets/ux/wireframes/web-profile.png" alt="Wireframe de perfil y segmento: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/wireframes/mobile-profile.png" alt="Wireframe de perfil y segmento — móvil" width="320">
+<img src="assets/ux/wireframes/mobile-profile.png" alt="Wireframe de perfil y segmento: móvil" width="320">
 
-#### H01 — Inicio
+#### H01: Inicio
 
 El inicio reúne el resumen de actividad y los accesos a las prácticas. La vista web muestra métricas, rachas y estado de servicios; la adaptación móvil prioriza la siguiente práctica y las sesiones recientes.
 
@@ -2802,13 +2786,13 @@ El inicio reúne el resumen de actividad y los accesos a las prácticas. La vist
 
 **Web**
 
-<img src="assets/ux/wireframes/web-dashboard.png" alt="Wireframe de inicio — web" width="900">
+<img src="assets/ux/wireframes/web-dashboard.png" alt="Wireframe de inicio: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/wireframes/mobile-dashboard.png" alt="Wireframe de inicio — móvil" width="320">
+<img src="assets/ux/wireframes/mobile-dashboard.png" alt="Wireframe de inicio: móvil" width="320">
 
-#### S01 — Configuración y material
+#### S01: Configuración y material
 
 La configuración define el escenario, la duración y la meta del ensayo. La adaptación móvil incorpora el material contextual opcional antes de continuar con la preparación de audio.
 
@@ -2816,13 +2800,13 @@ La configuración define el escenario, la duración y la meta del ensayo. La ada
 
 **Web**
 
-<img src="assets/ux/wireframes/web-setup.png" alt="Wireframe de configuración y material — web" width="900">
+<img src="assets/ux/wireframes/web-setup.png" alt="Wireframe de configuración y material: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/wireframes/mobile-setup.png" alt="Wireframe de configuración y material — móvil" width="320">
+<img src="assets/ux/wireframes/mobile-setup.png" alt="Wireframe de configuración y material: móvil" width="320">
 
-#### S02 — Audio y consentimiento
+#### S02: Audio y consentimiento
 
 La preparación presenta la comprobación del micrófono y el consentimiento para procesar voz. El inicio de la práctica requiere completar ambas condiciones.
 
@@ -2830,13 +2814,13 @@ La preparación presenta la comprobación del micrófono y el consentimiento par
 
 **Web**
 
-<img src="assets/ux/wireframes/web-microphone.png" alt="Wireframe de audio y consentimiento — web" width="900">
+<img src="assets/ux/wireframes/web-microphone.png" alt="Wireframe de audio y consentimiento: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/wireframes/mobile-microphone.png" alt="Wireframe de audio y consentimiento — móvil" width="320">
+<img src="assets/ux/wireframes/mobile-microphone.png" alt="Wireframe de audio y consentimiento: móvil" width="320">
 
-#### S03 — Práctica en vivo
+#### S03: Práctica en vivo
 
 La práctica reúne el tiempo de sesión, la transcripción y los controles de captura. La adaptación móvil organiza las señales de acompañamiento junto con las acciones de pausa y finalización.
 
@@ -2844,13 +2828,13 @@ La práctica reúne el tiempo de sesión, la transcripción y los controles de c
 
 **Web**
 
-<img src="assets/ux/wireframes/web-live.png" alt="Wireframe de práctica en vivo — web" width="900">
+<img src="assets/ux/wireframes/web-live.png" alt="Wireframe de práctica en vivo: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/wireframes/mobile-live.png" alt="Wireframe de práctica en vivo — móvil" width="320">
+<img src="assets/ux/wireframes/mobile-live.png" alt="Wireframe de práctica en vivo: móvil" width="320">
 
-#### S04 — Estado del análisis
+#### S04: Estado del análisis
 
 El estado del análisis informa que la sesión se está procesando y permite consultar el reporte cuando esté disponible. Un fallo conserva el contexto y ofrece reintentar.
 
@@ -2858,13 +2842,13 @@ El estado del análisis informa que la sesión se está procesando y permite con
 
 **Web**
 
-<img src="assets/ux/wireframes/web-processing.png" alt="Wireframe de estado del análisis — web" width="900">
+<img src="assets/ux/wireframes/web-processing.png" alt="Wireframe de estado del análisis: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/wireframes/mobile-processing.png" alt="Wireframe de estado del análisis — móvil" width="320">
+<img src="assets/ux/wireframes/mobile-processing.png" alt="Wireframe de estado del análisis: móvil" width="320">
 
-#### R01 — Reporte y evidencia
+#### R01: Reporte y evidencia
 
 El reporte reúne el resultado de la práctica y su feedback. La adaptación móvil presenta dimensiones, evidencia y acciones para orientar el siguiente ensayo.
 
@@ -2872,13 +2856,13 @@ El reporte reúne el resultado de la práctica y su feedback. La adaptación mó
 
 **Web**
 
-<img src="assets/ux/wireframes/web-report.png" alt="Wireframe de reporte y evidencia — web" width="900">
+<img src="assets/ux/wireframes/web-report.png" alt="Wireframe de reporte y evidencia: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/wireframes/mobile-report.png" alt="Wireframe de reporte y evidencia — móvil" width="320">
+<img src="assets/ux/wireframes/mobile-report.png" alt="Wireframe de reporte y evidencia: móvil" width="320">
 
-#### H02 — Historial y búsqueda
+#### H02: Historial y búsqueda
 
 El historial reúne las sesiones del usuario y el acceso a sus reportes. La adaptación móvil incorpora búsqueda por título y filtro por modo de práctica.
 
@@ -2886,13 +2870,13 @@ El historial reúne las sesiones del usuario y el acceso a sus reportes. La adap
 
 **Web**
 
-<img src="assets/ux/wireframes/web-history.png" alt="Wireframe de historial y búsqueda — web" width="900">
+<img src="assets/ux/wireframes/web-history.png" alt="Wireframe de historial y búsqueda: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/wireframes/mobile-history.png" alt="Wireframe de historial y búsqueda — móvil" width="320">
+<img src="assets/ux/wireframes/mobile-history.png" alt="Wireframe de historial y búsqueda: móvil" width="320">
 
-#### G01 — Tendencias
+#### G01: Tendencias
 
 La vista de tendencias organiza los resultados de varias prácticas para revisar la evolución del desempeño y acceder a una comparación.
 
@@ -2900,13 +2884,13 @@ La vista de tendencias organiza los resultados de varias prácticas para revisar
 
 **Web**
 
-<img src="assets/ux/wireframes/web-progress.png" alt="Wireframe de tendencias — web" width="900">
+<img src="assets/ux/wireframes/web-progress.png" alt="Wireframe de tendencias: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/wireframes/mobile-progress.png" alt="Wireframe de tendencias — móvil" width="320">
+<img src="assets/ux/wireframes/mobile-progress.png" alt="Wireframe de tendencias: móvil" width="320">
 
-#### G02 — Comparación
+#### G02: Comparación
 
 La comparación permite elegir dos sesiones y revisar sus diferencias. Si el modo o la versión de rúbrica no son compatibles, la interfaz explica la causa.
 
@@ -2914,13 +2898,13 @@ La comparación permite elegir dos sesiones y revisar sus diferencias. Si el mod
 
 **Web**
 
-<img src="assets/ux/wireframes/web-compare.png" alt="Wireframe de comparación — web" width="900">
+<img src="assets/ux/wireframes/web-compare.png" alt="Wireframe de comparación: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/wireframes/mobile-compare.png" alt="Wireframe de comparación — móvil" width="320">
+<img src="assets/ux/wireframes/mobile-compare.png" alt="Wireframe de comparación: móvil" width="320">
 
-#### G03 — Plan adaptativo
+#### G03: Plan adaptativo
 
 El plan adaptativo convierte una recomendación en un ejercicio concreto con meta y duración. El usuario puede registrar su avance y preparar la siguiente práctica.
 
@@ -2928,13 +2912,13 @@ El plan adaptativo convierte una recomendación en un ejercicio concreto con met
 
 **Web**
 
-<img src="assets/ux/wireframes/web-plan.png" alt="Wireframe de plan adaptativo — web" width="900">
+<img src="assets/ux/wireframes/web-plan.png" alt="Wireframe de plan adaptativo: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/wireframes/mobile-plan.png" alt="Wireframe de plan adaptativo — móvil" width="320">
+<img src="assets/ux/wireframes/mobile-plan.png" alt="Wireframe de plan adaptativo: móvil" width="320">
 
-#### D01 — Compartición, exportación y borrado
+#### D01: Compartición, exportación y borrado
 
 La pantalla reúne permisos de acceso temporal, revocación de enlaces, exportación y eliminación de una sesión. La confirmación de borrado distingue el bloqueo de acceso de la purga física pendiente.
 
@@ -2942,13 +2926,13 @@ La pantalla reúne permisos de acceso temporal, revocación de enlaces, exportac
 
 **Web**
 
-<img src="assets/ux/wireframes/web-privacy.png" alt="Wireframe de compartición, exportación y borrado — web" width="900">
+<img src="assets/ux/wireframes/web-privacy.png" alt="Wireframe de compartición, exportación y borrado: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/wireframes/mobile-privacy.png" alt="Wireframe de compartición, exportación y borrado — móvil" width="320">
+<img src="assets/ux/wireframes/mobile-privacy.png" alt="Wireframe de compartición, exportación y borrado: móvil" width="320">
 
-#### T01 — Reporte de tutor
+#### T01: Reporte de tutor
 
 El tutor consulta un reporte compartido con acceso de lectura. La pantalla identifica la vigencia del permiso y evita ofrecer navegación hacia la cuenta o el historial del propietario.
 
@@ -2956,13 +2940,13 @@ El tutor consulta un reporte compartido con acceso de lectura. La pantalla ident
 
 **Web**
 
-<img src="assets/ux/wireframes/web-shared.png" alt="Wireframe de reporte de tutor — web" width="900">
+<img src="assets/ux/wireframes/web-shared.png" alt="Wireframe de reporte de tutor: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/wireframes/mobile-shared.png" alt="Wireframe de reporte de tutor — móvil" width="320">
+<img src="assets/ux/wireframes/mobile-shared.png" alt="Wireframe de reporte de tutor: móvil" width="320">
 
-#### N01 — Preferencias de contacto
+#### N01: Preferencias de contacto
 
 Las preferencias permiten controlar los mensajes opcionales de contacto. Los avisos necesarios para la seguridad y el funcionamiento de la cuenta se explican por separado.
 
@@ -2970,11 +2954,11 @@ Las preferencias permiten controlar los mensajes opcionales de contacto. Los avi
 
 **Web**
 
-<img src="assets/ux/wireframes/web-preferences.png" alt="Wireframe de preferencias de contacto — web" width="900">
+<img src="assets/ux/wireframes/web-preferences.png" alt="Wireframe de preferencias de contacto: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/wireframes/mobile-preferences.png" alt="Wireframe de preferencias de contacto — móvil" width="320">
+<img src="assets/ux/wireframes/mobile-preferences.png" alt="Wireframe de preferencias de contacto: móvil" width="320">
 
 ### 6.4.2. Applications Wireflow Diagrams
 
@@ -2997,211 +2981,211 @@ El wireflow relaciona las pantallas del catálogo con las acciones del recorrido
 
 ### 6.4.3. Applications Mock-ups
 
-Los mock-ups presentan el aspecto visual de cada pantalla con sus vistas web y móvil. Acceso, inicio, Coach, grabación, reporte e historial muestran capturas del cliente web Next.js/React de Talki; las demás vistas web y las adaptaciones móviles son propuestas de diseño. Los valores ilustran funcionalidades y no constituyen resultados de validación de este hito. La landing pública se presenta en la sección 6.3.2.
+Los mock-ups presentan el aspecto visual de cada pantalla con sus vistas web y móvil. Acceso, inicio, Coach, grabación, reporte e historial muestran capturas del cliente web Next.js/React de Talki; las demás vistas web y las adaptaciones móviles son propuestas de diseño. Los valores ilustran funcionalidades y no constituyen resultados de validación de este hito. La [landing pública, con sus vistas web y móvil](#632-landing-page-mock-up), se presenta en la sección 6.3.2.
 
-#### A01 — Registro
+#### A01: Registro
 
 El formulario reúne nombre, correo y contraseña, junto con la aceptación de las condiciones de uso. El acceso a una cuenta existente permanece disponible desde la misma pantalla.
 
 **Web**
 
-<img src="assets/ux/mockups/web-register.png" alt="Mock-up de registro — web" width="900">
+<img src="assets/ux/mockups/web-register.png" alt="Mock-up de registro: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/mockups/mobile-register.png" alt="Mock-up de registro — móvil" width="320">
+<img src="assets/ux/mockups/mobile-register.png" alt="Mock-up de registro: móvil" width="320">
 
-#### A02 — Acceso
+#### A02: Acceso
 
 La pantalla permite ingresar con correo y contraseña y ofrece acceso al registro y a la recuperación de la cuenta.
 
 **Web**
 
-<img src="assets/reused-202601/frontend/01-login.png" alt="Mock-up de acceso — web" width="900">
+<img src="assets/reused-202601/frontend/01-login.png" alt="Mock-up de acceso: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/mockups/mobile-login.png" alt="Mock-up de acceso — móvil" width="320">
+<img src="assets/ux/mockups/mobile-login.png" alt="Mock-up de acceso: móvil" width="320">
 
-#### A03 — Recuperación
+#### A03: Recuperación
 
 El usuario introduce su correo para solicitar instrucciones de recuperación. La confirmación evita revelar si la dirección pertenece a una cuenta registrada.
 
 **Web**
 
-<img src="assets/ux/mockups/web-recovery.png" alt="Mock-up de recuperación — web" width="900">
+<img src="assets/ux/mockups/web-recovery.png" alt="Mock-up de recuperación: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/mockups/mobile-recovery.png" alt="Mock-up de recuperación — móvil" width="320">
+<img src="assets/ux/mockups/mobile-recovery.png" alt="Mock-up de recuperación: móvil" width="320">
 
-#### P01 — Perfil y segmento
+#### P01: Perfil y segmento
 
 El perfil permite elegir el segmento del estudiante y su objetivo de práctica. Estas preferencias orientan los ejercicios y recomendaciones posteriores.
 
 **Web**
 
-<img src="assets/ux/mockups/web-profile.png" alt="Mock-up de perfil y segmento — web" width="900">
+<img src="assets/ux/mockups/web-profile.png" alt="Mock-up de perfil y segmento: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/mockups/mobile-profile.png" alt="Mock-up de perfil y segmento — móvil" width="320">
+<img src="assets/ux/mockups/mobile-profile.png" alt="Mock-up de perfil y segmento: móvil" width="320">
 
-#### H01 — Inicio
+#### H01: Inicio
 
 El inicio reúne el resumen de actividad y los accesos a las prácticas. La vista web muestra métricas, rachas y estado de servicios; la adaptación móvil prioriza la siguiente práctica y las sesiones recientes.
 
 **Web**
 
-<img src="assets/reused-202601/frontend/02-dashboard.png" alt="Mock-up de inicio — web" width="900">
+<img src="assets/reused-202601/frontend/02-dashboard.png" alt="Mock-up de inicio: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/mockups/mobile-dashboard.png" alt="Mock-up de inicio — móvil" width="320">
+<img src="assets/ux/mockups/mobile-dashboard.png" alt="Mock-up de inicio: móvil" width="320">
 
-#### S01 — Configuración y material
+#### S01: Configuración y material
 
 La configuración define el escenario, la duración y la meta del ensayo. La adaptación móvil incorpora el material contextual opcional antes de continuar con la preparación de audio.
 
 **Web**
 
-<img src="assets/reused-202601/frontend/03-coach.png" alt="Mock-up de configuración y material — web" width="900">
+<img src="assets/reused-202601/frontend/03-coach.png" alt="Mock-up de configuración y material: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/mockups/mobile-setup.png" alt="Mock-up de configuración y material — móvil" width="320">
+<img src="assets/ux/mockups/mobile-setup.png" alt="Mock-up de configuración y material: móvil" width="320">
 
-#### S02 — Audio y consentimiento
+#### S02: Audio y consentimiento
 
 La preparación presenta la comprobación del micrófono y el consentimiento para procesar voz. El inicio de la práctica requiere completar ambas condiciones.
 
 **Web**
 
-<img src="assets/ux/mockups/web-microphone.png" alt="Mock-up de audio y consentimiento — web" width="900">
+<img src="assets/ux/mockups/web-microphone.png" alt="Mock-up de audio y consentimiento: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/mockups/mobile-microphone.png" alt="Mock-up de audio y consentimiento — móvil" width="320">
+<img src="assets/ux/mockups/mobile-microphone.png" alt="Mock-up de audio y consentimiento: móvil" width="320">
 
-#### S03 — Práctica en vivo
+#### S03: Práctica en vivo
 
 La práctica reúne el tiempo de sesión, la transcripción y los controles de captura. La adaptación móvil organiza las señales de acompañamiento junto con las acciones de pausa y finalización.
 
 **Web**
 
-<img src="assets/reused-202601/frontend/08-session-recording.png" alt="Mock-up de práctica en vivo — web" width="900">
+<img src="assets/reused-202601/frontend/08-session-recording.png" alt="Mock-up de práctica en vivo: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/mockups/mobile-live.png" alt="Mock-up de práctica en vivo — móvil" width="320">
+<img src="assets/ux/mockups/mobile-live.png" alt="Mock-up de práctica en vivo: móvil" width="320">
 
-#### S04 — Estado del análisis
+#### S04: Estado del análisis
 
 El estado del análisis informa que la sesión se está procesando y permite consultar el reporte cuando esté disponible. Un fallo conserva el contexto y ofrece reintentar.
 
 **Web**
 
-<img src="assets/ux/mockups/web-processing.png" alt="Mock-up de estado del análisis — web" width="900">
+<img src="assets/ux/mockups/web-processing.png" alt="Mock-up de estado del análisis: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/mockups/mobile-processing.png" alt="Mock-up de estado del análisis — móvil" width="320">
+<img src="assets/ux/mockups/mobile-processing.png" alt="Mock-up de estado del análisis: móvil" width="320">
 
-#### R01 — Reporte y evidencia
+#### R01: Reporte y evidencia
 
 El reporte reúne el resultado de la práctica y su feedback. La adaptación móvil presenta dimensiones, evidencia y acciones para orientar el siguiente ensayo.
 
 **Web**
 
-<img src="assets/reused-202601/frontend/09-session-ai-feedback.png" alt="Mock-up de reporte y evidencia — web" width="900">
+<img src="assets/reused-202601/frontend/09-session-ai-feedback.png" alt="Mock-up de reporte y evidencia: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/mockups/mobile-report.png" alt="Mock-up de reporte y evidencia — móvil" width="320">
+<img src="assets/ux/mockups/mobile-report.png" alt="Mock-up de reporte y evidencia: móvil" width="320">
 
-#### H02 — Historial y búsqueda
+#### H02: Historial y búsqueda
 
 El historial reúne las sesiones del usuario y el acceso a sus reportes. La adaptación móvil incorpora búsqueda por título y filtro por modo de práctica.
 
 **Web**
 
-<img src="assets/reused-202601/frontend/04-sessions.png" alt="Mock-up de historial y búsqueda — web" width="900">
+<img src="assets/reused-202601/frontend/04-sessions.png" alt="Mock-up de historial y búsqueda: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/mockups/mobile-history.png" alt="Mock-up de historial y búsqueda — móvil" width="320">
+<img src="assets/ux/mockups/mobile-history.png" alt="Mock-up de historial y búsqueda: móvil" width="320">
 
-#### G01 — Tendencias
+#### G01: Tendencias
 
 La vista de tendencias organiza los resultados de varias prácticas para revisar la evolución del desempeño y acceder a una comparación.
 
 **Web**
 
-<img src="assets/ux/mockups/web-progress.png" alt="Mock-up de tendencias — web" width="900">
+<img src="assets/ux/mockups/web-progress.png" alt="Mock-up de tendencias: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/mockups/mobile-progress.png" alt="Mock-up de tendencias — móvil" width="320">
+<img src="assets/ux/mockups/mobile-progress.png" alt="Mock-up de tendencias: móvil" width="320">
 
-#### G02 — Comparación
+#### G02: Comparación
 
 La comparación permite elegir dos sesiones y revisar sus diferencias. Si el modo o la versión de rúbrica no son compatibles, la interfaz explica la causa.
 
 **Web**
 
-<img src="assets/ux/mockups/web-compare.png" alt="Mock-up de comparación — web" width="900">
+<img src="assets/ux/mockups/web-compare.png" alt="Mock-up de comparación: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/mockups/mobile-compare.png" alt="Mock-up de comparación — móvil" width="320">
+<img src="assets/ux/mockups/mobile-compare.png" alt="Mock-up de comparación: móvil" width="320">
 
-#### G03 — Plan adaptativo
+#### G03: Plan adaptativo
 
 El plan adaptativo convierte una recomendación en un ejercicio concreto con meta y duración. El usuario puede registrar su avance y preparar la siguiente práctica.
 
 **Web**
 
-<img src="assets/ux/mockups/web-plan.png" alt="Mock-up de plan adaptativo — web" width="900">
+<img src="assets/ux/mockups/web-plan.png" alt="Mock-up de plan adaptativo: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/mockups/mobile-plan.png" alt="Mock-up de plan adaptativo — móvil" width="320">
+<img src="assets/ux/mockups/mobile-plan.png" alt="Mock-up de plan adaptativo: móvil" width="320">
 
-#### D01 — Compartición, exportación y borrado
+#### D01: Compartición, exportación y borrado
 
 La pantalla reúne permisos de acceso temporal, revocación de enlaces, exportación y eliminación de una sesión. La confirmación de borrado distingue el bloqueo de acceso de la purga física pendiente.
 
 **Web**
 
-<img src="assets/ux/mockups/web-privacy.png" alt="Mock-up de compartición, exportación y borrado — web" width="900">
+<img src="assets/ux/mockups/web-privacy.png" alt="Mock-up de compartición, exportación y borrado: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/mockups/mobile-privacy.png" alt="Mock-up de compartición, exportación y borrado — móvil" width="320">
+<img src="assets/ux/mockups/mobile-privacy.png" alt="Mock-up de compartición, exportación y borrado: móvil" width="320">
 
-#### T01 — Reporte de tutor
+#### T01: Reporte de tutor
 
 El tutor consulta un reporte compartido con acceso de lectura. La pantalla identifica la vigencia del permiso y evita ofrecer navegación hacia la cuenta o el historial del propietario.
 
 **Web**
 
-<img src="assets/ux/mockups/web-shared.png" alt="Mock-up de reporte de tutor — web" width="900">
+<img src="assets/ux/mockups/web-shared.png" alt="Mock-up de reporte de tutor: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/mockups/mobile-shared.png" alt="Mock-up de reporte de tutor — móvil" width="320">
+<img src="assets/ux/mockups/mobile-shared.png" alt="Mock-up de reporte de tutor: móvil" width="320">
 
-#### N01 — Preferencias de contacto
+#### N01: Preferencias de contacto
 
 Las preferencias permiten controlar los mensajes opcionales de contacto. Los avisos necesarios para la seguridad y el funcionamiento de la cuenta se explican por separado.
 
 **Web**
 
-<img src="assets/ux/mockups/web-preferences.png" alt="Mock-up de preferencias de contacto — web" width="900">
+<img src="assets/ux/mockups/web-preferences.png" alt="Mock-up de preferencias de contacto: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/mockups/mobile-preferences.png" alt="Mock-up de preferencias de contacto — móvil" width="320">
+<img src="assets/ux/mockups/mobile-preferences.png" alt="Mock-up de preferencias de contacto: móvil" width="320">
 
 #### Detalle del feedback de Coach
 
@@ -3219,11 +3203,11 @@ La interfaz mantiene deshabilitado el inicio de la práctica y explica cómo hab
 
 **Web**
 
-<img src="assets/ux/mockups/web-permission-denied.png" alt="Permiso denegado — web" width="900">
+<img src="assets/ux/mockups/web-permission-denied.png" alt="Permiso denegado: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/mockups/mobile-permission-denied.png" alt="Permiso denegado — móvil" width="320">
+<img src="assets/ux/mockups/mobile-permission-denied.png" alt="Permiso denegado: móvil" width="320">
 
 ##### Desconexión
 
@@ -3231,11 +3215,11 @@ La interfaz informa la interrupción, conserva el checkpoint y permite elegir en
 
 **Web**
 
-<img src="assets/ux/mockups/web-disconnected.png" alt="Desconexión — web" width="900">
+<img src="assets/ux/mockups/web-disconnected.png" alt="Desconexión: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/mockups/mobile-disconnected.png" alt="Desconexión — móvil" width="320">
+<img src="assets/ux/mockups/mobile-disconnected.png" alt="Desconexión: móvil" width="320">
 
 ##### Fallo del análisis
 
@@ -3243,11 +3227,11 @@ El mensaje ofrece reintentar sobre el mismo análisis, evitando crear un procesa
 
 **Web**
 
-<img src="assets/ux/mockups/web-analysis-failed.png" alt="Fallo del análisis — web" width="900">
+<img src="assets/ux/mockups/web-analysis-failed.png" alt="Fallo del análisis: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/mockups/mobile-analysis-failed.png" alt="Fallo del análisis — móvil" width="320">
+<img src="assets/ux/mockups/mobile-analysis-failed.png" alt="Fallo del análisis: móvil" width="320">
 
 ##### Evidencia insuficiente
 
@@ -3255,11 +3239,11 @@ El reporte omite el score global y señala las dimensiones sin evidencia suficie
 
 **Web**
 
-<img src="assets/ux/mockups/web-insufficient-evidence.png" alt="Evidencia insuficiente — web" width="900">
+<img src="assets/ux/mockups/web-insufficient-evidence.png" alt="Evidencia insuficiente: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/mockups/mobile-insufficient-evidence.png" alt="Evidencia insuficiente — móvil" width="320">
+<img src="assets/ux/mockups/mobile-insufficient-evidence.png" alt="Evidencia insuficiente: móvil" width="320">
 
 ##### Comparación incompatible
 
@@ -3267,11 +3251,11 @@ La interfaz explica la diferencia de modo o versión de rúbrica y solicita eleg
 
 **Web**
 
-<img src="assets/ux/mockups/web-incompatible-comparison.png" alt="Comparación incompatible — web" width="900">
+<img src="assets/ux/mockups/web-incompatible-comparison.png" alt="Comparación incompatible: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/mockups/mobile-incompatible-comparison.png" alt="Comparación incompatible — móvil" width="320">
+<img src="assets/ux/mockups/mobile-incompatible-comparison.png" alt="Comparación incompatible: móvil" width="320">
 
 ##### Enlace revocado
 
@@ -3279,11 +3263,11 @@ La vista informa que el recurso no está disponible y bloquea el contenido del r
 
 **Web**
 
-<img src="assets/ux/mockups/web-revoked-link.png" alt="Enlace revocado — web" width="900">
+<img src="assets/ux/mockups/web-revoked-link.png" alt="Enlace revocado: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/mockups/mobile-revoked-link.png" alt="Enlace revocado — móvil" width="320">
+<img src="assets/ux/mockups/mobile-revoked-link.png" alt="Enlace revocado: móvil" width="320">
 
 ##### Purga pendiente
 
@@ -3291,27 +3275,27 @@ La confirmación distingue el acceso ya bloqueado de la eliminación física tod
 
 **Web**
 
-<img src="assets/ux/mockups/web-purge-pending.png" alt="Purga pendiente — web" width="900">
+<img src="assets/ux/mockups/web-purge-pending.png" alt="Purga pendiente: web" width="900">
 
 **Móvil**
 
-<img src="assets/ux/mockups/mobile-purge-pending.png" alt="Purga pendiente — móvil" width="320">
+<img src="assets/ux/mockups/mobile-purge-pending.png" alt="Purga pendiente: móvil" width="320">
 
 ### 6.4.4. Applications User Flow Diagrams
 
-**UF-01 — Primera práctica guiada (Valeria).** Registro/acceso, segmento y meta, configuración, audio/consentimiento, ensayo y siguiente acción. No se permite que un error de permiso se interprete como una práctica válida.
+**UF-01: Primera práctica guiada (Valeria).** Registro/acceso, segmento y meta, configuración, audio/consentimiento, ensayo y siguiente acción. No se permite que un error de permiso se interprete como una práctica válida.
 
 ![User flow de primera práctica](assets/diagrams/ux/first-practice-flow.png)
 
 [Fuente editable de UF-01](assets/diagrams/ux/first-practice-flow.mmd)
 
-**UF-02 — Simulación contextualizada (Rodrigo).** Entrevista/sustentación, material autorizado opcional, turnos de conversación, recuperación de canal y feedback contextual. El material no se publica en enlaces de tutor.
+**UF-02: Simulación contextualizada (Rodrigo).** Entrevista/sustentación, material autorizado opcional, turnos de conversación, recuperación de canal y feedback contextual. El material no se publica en enlaces de tutor.
 
 ![User flow de práctica avanzada](assets/diagrams/ux/advanced-practice-flow.png)
 
 [Fuente editable de UF-02](assets/diagrams/ux/advanced-practice-flow.mmd)
 
-**UF-03 — Compartición y eliminación.** Crear permiso con vigencia, consultar como tutor, revocar y solicitar eliminación. La UI conserva “purga pendiente” hasta confirmación de todos los contextos propietarios.
+**UF-03: Compartición y eliminación.** Crear permiso con vigencia, consultar como tutor, revocar y solicitar eliminación. La UI conserva “purga pendiente” hasta confirmación de todos los contextos propietarios.
 
 ![User flow de privacidad](assets/diagrams/ux/privacy-flow.png)
 
@@ -3319,9 +3303,9 @@ La confirmación distingue el acceso ya bloqueado de la eliminación física tod
 
 ## 6.5. Applications Prototyping
 
-**Prototipo principal — cliente web de Talki:** la [aplicación web](https://talki-frontend.vercel.app) y su [repositorio Next.js](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend) incluyen autenticación, sesiones, Coach y feedback. La URL pública respondió HTTP 200 durante la revisión. La comprobación de disponibilidad no acredita pruebas autenticadas ni validación del backend. Los cambios de diseño móvil y privacidad requieren integración.
+**Prototipo principal: cliente web de Talki:** la [aplicación web](https://talki-frontend.vercel.app) y su [repositorio Next.js](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend) incluyen autenticación, sesiones, Coach y feedback. La URL pública respondió HTTP 200 durante la revisión. La comprobación de disponibilidad no acredita pruebas autenticadas ni validación del backend. Los cambios de diseño móvil y privacidad requieren integración.
 
-**Prototipo auxiliar — pantallas y estados complementarios:**
+**Prototipo auxiliar: pantallas y estados complementarios:**
 
 El [prototipo auxiliar](assets/ux/prototype/index.html#privacy) permite revisar consentimiento, recuperación, análisis, comparación, plan, compartición, revocación y eliminación con datos ficticios. En escritorio, acceso, dashboard, Coach, grabación, reporte e historial muestran las capturas del cliente web y un enlace para abrir Talki. Las capturas son referencias estáticas; sus funciones se recorren en el cliente web principal. La vista móvil presenta propuestas adaptadas a la misma identidad visual. **GitHub muestra su código; para interactuar se debe descargar/clonar el repositorio y abrir el HTML en un navegador.** También puede servirse localmente desde la raíz con `python3 -m http.server 8000` y abrir `http://localhost:8000/assets/ux/prototype/`. Reducir la ventana a 390 px permite explorar móvil; añadir `?view=wireframe` activa la vista de estructura.
 
@@ -3447,7 +3431,7 @@ Thropic. (2026). *Talki: Project report* [Repositorio de GitHub, versión 2cfa37
 | Anexo | Descripción | Enlace o ubicación |
 | --- | --- | --- |
 | A | Grabaciones y evidencias de entrevistas de ambos segmentos. | [Carpeta de entrevistas](https://drive.google.com/drive/folders/1IwH1aTzPJ2Y5cYJS3yqF8UM4eHfprvLE?usp=sharing) |
-| B | Informe de participación del equipo para TB1. | [Informe de Participación — Startup Thropic](https://docs.google.com/document/d/1-tnKLS9I_qJD4kkLwBUQB8QqxdgXBQbJcZ0smvAn1KM/edit) |
+| B | Informe de participación del equipo para TB1. | [Informe de Participación: Startup Thropic](https://docs.google.com/document/d/1-tnKLS9I_qJD4kkLwBUQB8QqxdgXBQbJcZ0smvAn1KM/edit) |
 | C | Evidencias de colaboración: commits, ramas y pull requests. | [Repositorio del informe](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report) |
 | D | Diagramas de Software Architecture. | `assets/images/DiagramsUML/` |
 | E | Diseño táctico por contexto: componentes, clases, datos/servicios stateless y fuentes Mermaid. | `assets/diagrams/tactical/`, `assets/design/reuse-manifest.json` |
