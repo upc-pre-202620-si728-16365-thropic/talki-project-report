@@ -3078,6 +3078,111 @@ Las acciones de pausar y finalizar se diferencian para evitar cierres involuntar
 
 ## 6.2. Information Architecture
 
+### 6.2.1. Organization Systems
+
+La información se organiza por tareas: practicar, consultar el historial, revisar el progreso y administrar el perfil. La primera práctica sigue una secuencia guiada. La landing presenta el servicio a nuevos usuarios, mientras que las sesiones y los reportes se consultan desde el espacio personal del estudiante. El tutor accede únicamente al reporte que se le ha compartido.
+
+![Arquitectura de información de Talki](assets/diagrams/ux/information-architecture.png)
+
+| Espacio | Contenido y criterio de organización |
+| --- | --- |
+| Público | Beneficios por segmento, proceso de práctica, planes propuestos, consulta y acceso. No muestra información privada. |
+| Inicio | Próxima acción, ejemplos de actividad y accesos a práctica e historial. |
+| Practicar | Modo, duración, meta, enfoque, material opcional, prueba de audio y consentimiento. Orden secuencial. |
+| Historial | Sesiones propias por fecha, título, modo y estado; acceso al reporte y a acciones de privacidad. |
+| Progreso | Tendencias por dimensiones y versiones compatibles; comparación y plan de ejercicios. |
+| Perfil | Segmento, metas, datos opcionales, preferencias de contacto y control de datos. |
+| Tutor | Solo reporte permitido, fecha/versión y vigencia; no incluye otras sesiones, configuración ni edición. |
+
+### 6.2.2. Labeling Systems
+
+El sistema de etiquetado utiliza el vocabulario de las tareas del estudiante. Los nombres de secciones y botones se mantienen entre web y móvil, y los estados explican qué ocurre con una práctica.
+
+**Principios de etiquetado**
+
+Las acciones comienzan con verbos, como “Iniciar práctica”, “Compartir reporte” y “Eliminar sesión”. Los mensajes evitan términos de infraestructura y ofrecen una forma de continuar. El indicador de estado combina una etiqueta con apoyo visual.
+
+**Etiquetas de tareas y estados**
+
+| Etiqueta visible | Significado y límite |
+| --- | --- |
+| Nueva práctica | Preparar el ensayo antes de activar el micrófono. |
+| Audio y privacidad | Comprobar entrada y autorizar procesamiento; el permiso del dispositivo y el consentimiento son distintos. |
+| Pausar / Reanudar | Interrumpir temporalmente el ensayo o continuar desde el punto conservado. |
+| Finalizar práctica | Confirmar cierre e iniciar análisis; no se confunde con pausar. |
+| En análisis / Falló / Reporte disponible | Indicar si el análisis está en curso, requiere reintento o dispone de un reporte. |
+| Voice Coach Score | Resumen del desempeño obtenido según los criterios de evaluación de la práctica. |
+| Sin evidencia / Resultado parcial | Informar que la práctica no aporta datos suficientes para evaluar una parte del desempeño. |
+| Compartir reporte / Revocar enlace | Permitir o retirar la lectura temporal de un reporte. |
+| Eliminar sesión / Purga pendiente | Retirar el acceso a la sesión e informar que la eliminación de sus datos sigue en curso. |
+
+Las etiquetas utilizan el vocabulario definido en la sección 2.4 y priorizan expresiones breves en español. “Voice Coach Score” se acompaña de una explicación cuando aparece por primera vez.
+
+### 6.2.3. SEO Tags and Meta Tags
+
+La landing incorpora un título y una descripción orientados a explicar el servicio en los resultados de búsqueda. Las páginas de cuenta, las sesiones y los reportes compartidos se excluyen de la indexación mediante `noindex`; su acceso requiere, además, la autorización correspondiente. El prototipo de diseño se mantiene fuera de la indexación.
+
+Metadatos propuestos para la landing:
+
+```html
+<html lang="es">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Talki | Practica exposiciones y entrevistas en español</title>
+<meta name="description" content="Prepara exposiciones, entrevistas y sustentaciones con práctica guiada, feedback con evidencia y control de tus datos.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Talki | Haz escuchar tus ideas">
+<meta property="og:description" content="Ensaya, comprende tu desempeño y elige tu siguiente acción de mejora.">
+```
+
+La dirección canónica y la imagen de vista previa se definirán al publicar la landing. Los títulos jerárquicos, las descripciones de imágenes y los enlaces comprensibles apoyan la navegación y la presentación del contenido. El mapa del sitio incluirá las páginas públicas.
+
+### 6.2.4. Searching Systems
+
+La búsqueda permite encontrar una práctica anterior y volver a su reporte sin recorrer todo el historial. Las consultas se limitan a las sesiones del estudiante y mantienen el mismo vocabulario del resto de la interfaz.
+
+**Búsqueda en el historial**
+
+El estudiante busca por título y utiliza los filtros de modo, fecha y estado. Cada resultado muestra el nombre de la práctica, la fecha, la duración y la puntuación disponible. Seleccionar una sesión abre su detalle y la retroalimentación asociada.
+
+**Selección para comparar**
+
+La propuesta de comparación permite elegir dos prácticas y revisar si corresponden a modos y versiones compatibles. Si no pueden compararse, el mensaje explica el motivo y solicita cambiar la selección antes de presentar diferencias numéricas.
+
+**Resultados vacíos y errores**
+
+Cuando no existen coincidencias, la interfaz informa el resultado y ofrece limpiar los filtros. Un error de carga muestra un mensaje distinto y permite volver a intentarlo. El prototipo permite explorar la búsqueda por título y el filtro de modo con datos de ejemplo.
+
+### 6.2.5. Navigation Systems
+
+La navegación permite pasar de la preparación del ensayo a la práctica y luego a la revisión del feedback. Cada plataforma conserva accesos visibles a las tareas frecuentes y utiliza la misma secuencia de preparación.
+
+**Aplicación web**
+
+| Elemento de navegación | Descripción |
+| --- | --- |
+| Menú lateral | Reúne los accesos del cliente a Nueva sesión, Dashboard, Sesiones, Coach y Ranking. Las propuestas añaden progreso, perfil y privacidad. |
+| Preparación por pasos | Ordena configuración, comprobación de audio y consentimiento antes de iniciar. |
+| Acciones del reporte | Permiten volver a practicar y, en las propuestas complementarias, consultar un plan o compartir el resultado. |
+| Selección visible | Destaca la sección actual y mantiene disponible la acción de volver. |
+
+**Aplicación móvil propuesta**
+
+| Elemento de navegación | Descripción |
+| --- | --- |
+| Barra inferior | Ofrece acceso a Inicio, Practicar, Historial, Progreso y Perfil. |
+| Navegación jerárquica | Desde Historial se abre una práctica y después su reporte. |
+| Acciones de práctica | Diferencia pausar, reanudar y finalizar. |
+| Confirmaciones y recuperación | Confirma el cierre de una práctica activa y conserva el contexto al mostrar un error. |
+
+**Landing page y vista compartida**
+
+| Espacio | Descripción |
+| --- | --- |
+| Landing pública | Reúne enlaces a beneficios, pasos de uso, planes y contacto, con una acción destacada de registro. |
+| Vista del tutor | Permite leer únicamente el reporte autorizado. Si el enlace caduca o se revoca, informa que ya no está disponible. |
+
+Volver a la configuración conserva las elecciones previas. Los mensajes de error indican la acción que permite continuar y el cierre de una práctica activa requiere confirmación.
+
 ## 6.3. Landing Page UI Design
 
 ## 6.4. Applications UX/UI Design
