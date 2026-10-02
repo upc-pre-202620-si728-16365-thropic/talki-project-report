@@ -2181,6 +2181,101 @@ El contexto no conserva una copia del reporte. Sus métricas se comunican median
 
 ## 5.3. Bounded Context: Scoring & Feedback
 
+Este contexto convierte las métricas del discurso en una evaluación y recomendaciones para el estudiante. La puntuación se interpreta según una rúbrica definida y la evidencia disponible.
+
+**Servicio o componente asociado:** scoring-service.
+
+### 5.3.1. Domain Layer
+
+La capa de dominio reúne los conceptos que permiten convertir la evidencia de una práctica en una evaluación interpretable. El cálculo de la puntuación se mantiene separado de la recepción de eventos y del almacenamiento.
+
+**Aggregate Root**
+
+ScoreResult identifica la evaluación de una práctica y conserva su relación con la sesión y el estudiante. Reúne la puntuación y el momento del cálculo; el modelo ampliado añade las versiones de análisis y rúbrica para interpretar el resultado histórico.
+
+**Value Objects**
+
+VoiceScore agrupa las dimensiones de fluidez, claridad, volumen, vocabulario y confianza estimada. Sus valores describen el desempeño obtenido en la evaluación.
+
+**Domain Services**
+
+ScoreCalculator aplica los criterios de puntuación sobre las métricas disponibles. La ampliación del diseño permite identificar una dimensión sin evidencia y conservar la versión de la rúbrica utilizada.
+
+**Elementos de Domain Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| ScoreResult | Aggregate Root | Identifica la evaluación de una sesión, su propietario y el momento de cálculo. | Domain |
+| VoiceScore | Value Object | Agrupa las dimensiones de fluidez, claridad, volumen, vocabulario y confianza estimada. | Domain |
+| ScoreCalculator | Domain Service | Aplica los criterios de cálculo sobre las métricas recibidas. | Domain |
+
+**Reglas principales**
+
+1. Cada dimensión utiliza una escala de 0 a 100 cuando existe evidencia suficiente.
+2. La evaluación debe conservar la versión del análisis y la rúbrica utilizada.
+3. Recibir nuevamente un mismo análisis debe conservar un único resultado para esa versión.
+
+### 5.3.2. Interface Layer
+
+La evaluación se activa al recibir el evento `fillers.analyzed`. FillerAnalyzedEvent conserva la referencia de la sesión y las métricas necesarias para el cálculo.
+
+**Entrada y salida del contexto.** FillerAnalyzedConsumer recibe el análisis y activa la evaluación. Al concluir, ScoringCompletedEvent comunica la puntuación por dimensión, el resumen global y los datos de la práctica mediante `scoring.completed`.
+
+**Consulta del reporte propuesta.** La consulta del resultado deberá comprobar que el estudiante pueda acceder a la sesión. El contrato de lectura y su representación se definirán durante la integración. La versión de rúbrica y los resultados sin evidencia se incorporan a la representación propuesta del reporte.
+
+### 5.3.3. Application Layer
+
+La capa de aplicación coordina el cálculo, el registro y la comunicación de una evaluación. Utiliza el servicio de dominio para calcular la puntuación y conserva el resultado antes de comunicarlo.
+
+**Procesamiento de eventos**
+
+La evaluación comienza con FillerAnalyzedEvent. El flujo comprueba si existe un resultado para la sesión, solicita el cálculo, conserva ScoreResult y comunica ScoringCompletedEvent.
+
+**Queries propuestas**
+
+La lectura del reporte recuperará la evaluación para un estudiante autorizado. Su contrato se definirá durante la integración y deberá presentar la versión de la rúbrica y las dimensiones sin evidencia.
+
+**Elementos de Application Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| Evaluación de la práctica | Caso de uso | Solicita el cálculo a ScoreCalculator con las métricas del análisis. | Application |
+| Registro y comunicación del resultado | Caso de uso | Conserva ScoreResult y solicita la publicación de ScoringCompletedEvent. | Application |
+
+### 5.3.4. Infrastructure Layer
+
+La capa de infraestructura recibe las métricas, conserva las evaluaciones y comunica los resultados a los contextos interesados.
+
+**Elementos de Infrastructure Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| FillerAnalyzedConsumer | Consumidor de eventos | Recibe las métricas y activa el flujo de evaluación. | Infrastructure |
+| ScoreResultRepository | Repositorio | Conserva y consulta evaluaciones en PostgreSQL. | Infrastructure |
+| ScoringCompletedPublisher | Publicador de eventos | Comunica la evaluación completada mediante RabbitMQ. | Infrastructure |
+
+La persistencia base conserva una evaluación por sesión. El diseño ampliado identifica los resultados por sesión y versión y registra la rúbrica utilizada. La entrega del reporte deberá comprobar el permiso sobre la práctica.
+
+### 5.3.5. Bounded Context Software Architecture Component Level Diagrams
+
+Las métricas recibidas se entregan al calculador y el resultado se conserva antes de comunicar scoring.completed. Las consultas recuperan la evaluación autorizada para su presentación en el reporte.
+
+![Componentes de Scoring & Feedback](assets/diagrams/tactical/03-scoring-feedback-components.png)
+
+### 5.3.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 5.3.6.1. Bounded Context Domain Layer Class Diagrams
+
+ScoreResult contiene VoiceScore y, en el modelo ampliado, las versiones de análisis y rúbrica. ScoreCalculator aplica los criterios de puntuación y el consumidor coordina el procesamiento del evento. Las dimensiones sin evidencia admiten un valor ausente en lugar de asignarles cero.
+
+![Clases de Scoring & Feedback](assets/diagrams/tactical/03-scoring-feedback-classes.png)
+
+#### 5.3.6.2. Bounded Context Database Design Diagram
+
+La tabla score_results contiene la referencia a la sesión, el usuario, las dimensiones evaluadas y la fecha de cálculo. El esquema ampliado incorpora las versiones de análisis y rúbrica. La combinación de sesión y ambas versiones debe ser única; las dimensiones sin evidencia admiten valores nulos y se presentan como “Sin evidencia”.
+
+![Persistencia de Scoring & Feedback](assets/diagrams/tactical/03-scoring-feedback-database.png)
+
 ## 5.4. Bounded Context: Practice Session Management
 
 ## 5.5. Bounded Context: Progress & Adaptation

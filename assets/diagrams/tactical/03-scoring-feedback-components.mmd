@@ -1,0 +1,11 @@
+flowchart TB
+  input["Contrato de entrada: fillers.analyzed"] --> listener["Infrastructure: FillerAnalyzedConsumer"]
+  listener --> app["Application: evaluar y registrar resultado"]
+  app --> calculator["Domain: ScoreCalculator"]
+  calculator --> score["Domain: ScoreResult y VoiceScore"]
+  app --> repo["Infrastructure: ScoreResultRepository"]
+  score --> repo
+  repo --> db["PostgreSQL: score_results"]
+  app --> pub["Infrastructure: ScoringCompletedPublisher"]
+  pub --> broker["RabbitMQ: scoring.completed"]
+  broker --> next["Progress, Gamification y Notifications"]
