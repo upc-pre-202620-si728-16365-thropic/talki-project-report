@@ -1,9 +1,9 @@
 flowchart TB
-    input["Interface: REST / consumidor Sesión Finalizada"] --> app["SessionLiveFinalizedConsumer"]
-    app --> domain["Domain: FillerDetector + FillerResult"]
-    app --> port["Puerto: AnalysisResultPort"]
-    adapter["Infrastructure: adaptador de filler-detection-service"] -. implementa .-> port
-    adapter --> resource["Persistencia privada o salida del servicio"]
-    app --> integration["Puerto de integracion / eventos"]
-    infrastructure["Adaptador autorizado HTTP, WebSocket o RabbitMQ"] -. implementa .-> integration
-    infrastructure --> external["Live Coaching / AI Provider Gateway"]
+  input["Interface: evento session.live.finalized"] --> app["Application: SessionLiveFinalizedConsumer"]
+  app --> detector["Domain: FillerDetector"]
+  detector --> result["Domain: FillerResult"]
+  app --> publisher["Application: FillerAnalyzedPublisher"]
+  result --> publisher
+  publisher --> broker["Infrastructure: RabbitMQ"]
+  broker --> scoring["Scoring & Feedback: conservar y evaluar resultado"]
+  note["Sin base de datos propia"] -.-> app

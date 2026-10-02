@@ -1,9 +1,12 @@
 flowchart TB
-    input["Interface: REST / recibos de purga"] --> app["PrivacyApplicationService"]
-    app --> domain["Domain: ShareGrant + DeletionRequest"]
-    app --> port["Puerto: PrivacyRepository"]
-    adapter["Infrastructure: adaptador de Sharing & Retention"] -. implementa .-> port
-    adapter --> resource["Persistencia privada o salida del servicio"]
-    app --> integration["Puerto de integracion / eventos"]
-    infrastructure["Adaptador autorizado HTTP, WebSocket o RabbitMQ"] -. implementa .-> integration
-    infrastructure --> external["Scoring / Sessions / contextos propietarios"]
+  input["Interface: compartir, revocar, exportar y eliminar"] --> sharing["Application: casos de uso de compartir y exportar"]
+  input --> deletion["Application: solicitud y seguimiento de eliminación"]
+  sharing --> grant["Domain: ShareGrant"]
+  deletion --> request["Domain: DeletionRequest y PurgeReceipt"]
+  grant --> repo["Infrastructure: repositorios de permisos y solicitudes"]
+  request --> repo
+  repo --> db["PostgreSQL: permisos, solicitudes y confirmaciones"]
+  deletion --> broker["Infrastructure: RabbitMQ"]
+  broker --> owners["Contextos propietarios: eliminar y confirmar"]
+  owners --> deletion
+  note["Modelo propuesto"] -.-> input

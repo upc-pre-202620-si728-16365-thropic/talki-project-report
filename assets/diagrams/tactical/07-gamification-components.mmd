@@ -1,9 +1,8 @@
 flowchart TB
-    input["Interface: REST / consumidor Veredicto de Validez"] --> app["ScoringCompletedConsumer de Gamification"]
-    app --> domain["Domain: UserStreak + Achievement"]
-    app --> port["Puerto: UserStreakRepository"]
-    adapter["Infrastructure: adaptador de gamification-service"] -. implementa .-> port
-    adapter --> resource["Persistencia privada o salida del servicio"]
-    app --> integration["Puerto de integracion / eventos"]
-    infrastructure["Adaptador autorizado HTTP, WebSocket o RabbitMQ"] -. implementa .-> integration
-    infrastructure --> external["Practice Session Management / Progress"]
+  input["Interface: consultas de racha y ranking / evaluación completada"] --> app["Application: ScoringCompletedConsumer"]
+  app --> model["Domain: UserStreak y Achievement"]
+  model --> repo["Infrastructure: persistencia de reconocimientos"]
+  repo --> db["PostgreSQL: user_streaks y achievements"]
+  app --> publisher["Application: AchievementUnlockedPublisher"]
+  publisher --> broker["Infrastructure: RabbitMQ"]
+  broker --> notices["Notifications: aviso del logro"]

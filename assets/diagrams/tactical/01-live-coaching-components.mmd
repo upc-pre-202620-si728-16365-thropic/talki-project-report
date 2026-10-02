@@ -1,9 +1,9 @@
 flowchart TB
-    input["Interface: WebSocket / eventos de privacidad"] --> app["LiveCoachOrchestrator"]
-    app --> domain["Domain: LiveCoachOrchestrator + SessionModeStrategy"]
-    app --> port["Puerto: SessionStatePort"]
-    adapter["Infrastructure: adaptador de live-coach-service"] -. implementa .-> port
-    adapter --> resource["Persistencia privada o salida del servicio"]
-    app --> integration["Puerto de integracion / eventos"]
-    infrastructure["Adaptador autorizado HTTP, WebSocket o RabbitMQ"] -. implementa .-> integration
-    infrastructure --> external["AI Provider Gateway / Sessions"]
+  input["Interface: modos, acceso temporal y cierre"] --> app["Application: LiveCoachOrchestrator"]
+  app --> factory["Application: SessionModeStrategyFactory"]
+  factory --> strategy["Domain: SessionModeStrategy y estrategias de práctica"]
+  app --> client["Infrastructure: GeminiLiveClient"]
+  client --> provider["Gemini Live / pasarela de integración propuesta"]
+  app --> events["Infrastructure: publicación RabbitMQ"]
+  events --> sessions["Practice Session Management: conservar cierre"]
+  note["Sin base de datos propia"] -.-> app

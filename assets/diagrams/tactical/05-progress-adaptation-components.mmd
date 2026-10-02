@@ -1,9 +1,9 @@
 flowchart TB
-    input["Interface: REST / consumidor Reporte Disponible"] --> app["UserProgressQueryService / ScoringCompletedConsumer"]
-    app --> domain["Domain: UserProgress + SessionMetrics"]
-    app --> port["Puerto: UserProgressRepository"]
-    adapter["Infrastructure: adaptador de progress-service"] -. implementa .-> port
-    adapter --> resource["Persistencia privada o salida del servicio"]
-    app --> integration["Puerto de integracion / eventos"]
-    infrastructure["Adaptador autorizado HTTP, WebSocket o RabbitMQ"] -. implementa .-> integration
-    infrastructure --> external["Scoring & Feedback"]
+  input["Interface: consultas de progreso y scoring.completed"] --> consume["Application: ScoringCompletedConsumer"]
+  input --> queries["Application: UserProgressQueryService"]
+  consume --> model["Domain: UserProgress y SessionMetrics"]
+  model --> repo["Infrastructure: persistencia de progreso"]
+  queries --> repo
+  repo --> db["PostgreSQL: user_progress y session_metrics"]
+  broker["Infrastructure: RabbitMQ"] --> consume
+  queries --> view["Resumen, comparación y plan adaptativo propuesto"]

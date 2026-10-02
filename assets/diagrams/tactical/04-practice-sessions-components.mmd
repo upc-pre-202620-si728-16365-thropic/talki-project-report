@@ -1,9 +1,9 @@
 flowchart TB
-    input["Interface: REST / consentimiento / control Live"] --> app["SessionCommandService / SessionQueryService"]
-    app --> domain["Domain: Session + SessionUserContext"]
-    app --> port["Puerto: SessionRepository / FeedbackRepository"]
-    adapter["Infrastructure: adaptador de session-service"] -. implementa .-> port
-    adapter --> resource["Persistencia privada o salida del servicio"]
-    app --> integration["Puerto de integracion / eventos"]
-    infrastructure["Adaptador autorizado HTTP, WebSocket o RabbitMQ"] -. implementa .-> integration
-    infrastructure --> external["Identity / Live Coaching / almacenamiento privado"]
+  input["Interface: SessionController / REST"] --> commands["Application: SessionCommandService"]
+  input --> queries["Application: SessionQueryService"]
+  commands --> session["Domain: Session y Feedback"]
+  commands --> facade["Application: SessionContextFacade"]
+  facade --> user["Domain: SessionUserContext"]
+  session --> repo["Infrastructure: repositorios JPA"]
+  queries --> repo
+  repo --> db["PostgreSQL: sessions y session_feedback"]
