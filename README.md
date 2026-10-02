@@ -2094,6 +2094,91 @@ Este contexto no requiere una base de datos propia. La transcripción y el resul
 
 ## 5.2. Bounded Context: Speech Analysis
 
+Este contexto analiza la transcripción autorizada de una práctica y obtiene métricas del discurso, como el conteo y la proporción de muletillas. Estos resultados sirven como entrada para la evaluación posterior.
+
+**Servicio o componente asociado:** filler-detection-service.
+
+### 5.2.1. Domain Layer
+
+La capa de dominio representa el análisis de muletillas sobre la transcripción de una práctica. Separa las reglas de detección del transporte de mensajes y de la evaluación global del desempeño.
+
+**Domain Services**
+
+FillerDetector identifica las expresiones consideradas muletillas y calcula sus apariciones en la transcripción. Esta responsabilidad permite modificar los criterios de detección sin cambiar el transporte de mensajes.
+
+**Resultado del análisis**
+
+FillerResult representa el resultado propuesto en el modelo de diseño: conteo total, distribución por expresión y proporción. La transcripción y las métricas acústicas recibidas forman parte de la evidencia de la sesión.
+
+**Elementos de Domain Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| FillerDetector | Domain Service | Aplica las reglas de detección de muletillas sobre la transcripción. | Domain |
+| FillerResult | Resultado de análisis (diseño propuesto) | Reúne el total de muletillas, su distribución por tipo y su proporción. | Domain |
+
+**Reglas principales**
+
+1. El análisis utiliza únicamente la evidencia autorizada de la sesión.
+2. Las métricas de muletillas se distinguen de la puntuación global.
+3. El volumen y otras dimensiones acústicas requieren información de audio; una transcripción por sí sola no permite medirlas.
+
+### 5.2.2. Interface Layer
+
+Este contexto recibe la evidencia mediante eventos de integración. No necesita un controlador REST para ejecutar el análisis de muletillas.
+
+**Contrato de entrada.** SessionLiveFinalizedEvent identifica la sesión y el estudiante, e incluye la transcripción, la duración y las métricas disponibles. SessionLiveFinalizedConsumer recibe el mensaje `session.live.finalized` y activa el caso de uso de análisis.
+
+**Contrato de salida.** FillerAnalyzedEvent reúne el conteo total, la distribución por expresión, la cantidad de palabras y las métricas recibidas de la práctica. El evento `fillers.analyzed` permite continuar con Scoring & Feedback. Los consumidores y publicadores concretos se describen en Infrastructure Layer.
+
+### 5.2.3. Application Layer
+
+La capa de aplicación coordina el análisis de la evidencia recibida. El caso de uso utiliza las reglas de FillerDetector y prepara el resultado que necesita el contexto de evaluación.
+
+**Procesamiento de eventos**
+
+La recepción de SessionLiveFinalizedEvent inicia el análisis de la transcripción. La coordinación entrega el texto a FillerDetector, reúne las métricas obtenidas y prepara FillerAnalyzedEvent. Estas operaciones se describen como casos de uso; el consumidor concreto activa el flujo desde la infraestructura.
+
+**Elementos de Application Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| Análisis de transcripción | Caso de uso | Identifica muletillas y obtiene el conteo por expresión y la cantidad de palabras. | Application |
+| Preparación del resultado | Caso de uso | Relaciona las métricas con la sesión y solicita la publicación de FillerAnalyzedEvent. | Application |
+
+### 5.2.4. Infrastructure Layer
+
+La capa de infraestructura conecta el análisis con los demás contextos mediante RabbitMQ. Los adaptadores de mensajería transportan la evidencia y el resultado.
+
+**Elementos de Infrastructure Layer**
+
+| Nombre | Tipo | Descripción | Capa |
+| --- | --- | --- | --- |
+| SessionLiveFinalizedConsumer | Consumidor de eventos | Recibe el cierre de práctica y activa el análisis. | Infrastructure |
+| FillerAnalyzedPublisher | Publicador de eventos | Comunica el resultado a Scoring & Feedback. | Infrastructure |
+
+El análisis de muletillas no mantiene una base propia. FillerDetector procesa la transcripción y el resultado conserva la referencia de sesión. El diseño ampliado de 4.2 incorpora métricas acústicas y análisis contextual mediante evidencia autorizada y adaptadores especializados. También requiere comunicar la versión, el estado y los fallos del análisis para permitir los reintentos de US37.
+
+### 5.2.5. Bounded Context Software Architecture Component Level Diagrams
+
+El diagrama presenta el recorrido del análisis de muletillas: el consumidor recibe la sesión finalizada, solicita la detección y entrega el resultado al publicador. Las ampliaciones acústicas y contextuales requieren sus propios adaptadores; el cálculo de la puntuación permanece en Scoring & Feedback.
+
+![Componentes de Speech Analysis](assets/diagrams/tactical/02-speech-analysis-components.png)
+
+### 5.2.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 5.2.6.1. Bounded Context Domain Layer Class Diagrams
+
+FillerDetector produce FillerResult. El consumidor y el publicador coordinan la entrada y salida de este resultado sin modificar las reglas de detección.
+
+![Clases de Speech Analysis](assets/diagrams/tactical/02-speech-analysis-classes.png)
+
+#### 5.2.6.2. Bounded Context Database Design Diagram
+
+El contexto no conserva una copia del reporte. Sus métricas se comunican mediante fillers.analyzed y se almacenan con el resultado de evaluación. El registro técnico de reintentos se definirá durante la integración.
+
+![Persistencia de Speech Analysis](assets/diagrams/tactical/02-speech-analysis-database.png)
+
 ## 5.3. Bounded Context: Scoring & Feedback
 
 ## 5.4. Bounded Context: Practice Session Management
