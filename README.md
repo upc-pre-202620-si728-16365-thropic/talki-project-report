@@ -131,7 +131,7 @@ La coautoría registrada en los commits del segundo hito corresponde al reparto 
 
 ## Segundo hito de TB1: semana 7
 
-Esta revisión incorpora los capítulos V y VI y sus artefactos en la rama `develop`, que reúne el avance consolidado del informe. La edición se realizó con asistencia de Codex a solicitud de Alejandro. La revisión del equipo y la sustentación de este hito están pendientes; sus aportes se incorporarán al registro individual con la evidencia correspondiente. Se incorporan las correcciones documentales del feedback Hito1_Thropic_Talki; quedan pendientes los datos de entrevistas y los materiales audiovisuales identificados en el control de correcciones del anexo K.
+Esta revisión incorpora los capítulos V y VI y sus artefactos en la rama `develop`, que reúne el avance consolidado del informe. La edición se realizó con asistencia de Codex a solicitud de Alejandro. La revisión del equipo y la sustentación de este hito están pendientes; sus aportes se incorporarán al registro individual con la evidencia correspondiente. Se incorporan las correcciones documentales del primer hito.
 
 # Contenido
 
@@ -326,9 +326,6 @@ Esta revisión incorpora los capítulos V y VI y sus artefactos en la rama `deve
 - [Video About-the-Team](#video-about-the-team)
 - [Bibliografía](#bibliografía)
 - [Anexos](#anexos)
-  - [Videos de Exposiciones](#videos-de-exposiciones)
-  - [Control de correcciones del primer hito](#control-de-correcciones-del-primer-hito)
-  - [Nomenclatura de materiales](#nomenclatura-de-materiales)
 
 <div style="page-break-after: always;"></div>
 
@@ -4063,43 +4060,3 @@ Thropic. (2026). *Talki: Project report* [Repositorio de GitHub, versión 2cfa37
 | H | Wireframes y mock-ups web/móvil, incluyendo estados de error y privacidad. | `assets/ux/wireframes/`, `assets/ux/mockups/` |
 | I | Prototipo UX navegable, con datos ficticios y modo wireframe. | [HTML](assets/ux/prototype/index.html), [instrucciones](assets/ux/prototype/README.md) |
 | J | Activos técnicos y registro de versiones de Talki. | `assets/reused-202601/`, [registro de procedencia](assets/design/reuse-manifest.json) |
-| K | Control de correcciones del primer hito y preparación de materiales de entrega. | Apartados siguientes. |
-
-## Videos de Exposiciones
-
-| Entrega | Material | Estado | Enlace |
-| --- | --- | --- | --- |
-| TB1, primer hito | Video de exposición con los artefactos del hito. | Pendiente de grabación/publicación, según confirmación del equipo. | Pendiente. |
-| TB1, segundo hito: semana 7 | Video de exposición de las correcciones y del diseño táctico/UX requerido. | Pendiente. | Pendiente. |
-| Video About-the-Team | Presentación individual de los cinco integrantes. | Pendiente de grabación/publicación. | Pendiente. |
-
-El video de exposición debe comenzar con la presentación a cámara de cada integrante. Después debe mostrar los artefactos en las herramientas indicadas por el curso, incluyendo System Landscape y los diez Bounded Context Canvases, además de los diagramas tácticos y los diseños UX del hito correspondiente. Las diapositivas apoyan la explicación, pero no sustituyen la demostración de los artefactos.
-
-## Control de correcciones del primer hito
-
-La revisión se basa en el documento de feedback docente `Hito1_Thropic_Talki.docx`. Los estados siguientes describen cambios documentales y evidencias pendientes, sin acreditar una validación posterior del profesor.
-
-| Observación | Tratamiento en esta versión | Estado |
-| --- | --- | --- |
-| Edad, distrito y apellidos de entrevistados. | Jennifer Bazan y Gian Guerra corregidos; distritos El Agustino y Surco confirmados por el equipo. | Pendientes las seis edades y los distritos de Belén, Isabel, Juan Alejandro y Jorge. |
-| Matriz de tareas confundida con funciones de la app. | Actividades de preparación oral, frecuencia relatada e interpretación cualitativa con referencia a las entrevistas. | Corregido documentalmente en 2.3.2. |
-| Varios criterios Gherkin por User Story. | Tres escenarios por cada una de las 38 historias: principal, alternativo y excepción. | Corregido documentalmente en 3.2. |
-| Technical Stories con rol Developer y contratos. | Seis historias técnicas con peticiones/respuestas o confirmaciones de eventos; restricciones conservadas en ADD. | Corregido documentalmente en 3.2 y 3.4. |
-| Prioridad de negocio, landing desde Sprint 1 y escala 1, 2, 3, 5, 8. | Ensayo/feedback encabezan el backlog; US01–US04 previstas en Sprint 1; US31 y US38 reestimadas preliminarmente a 8. | Corregido documentalmente; refinamiento del equipo pendiente. |
-| C4 consistente con ADD/DDD y relaciones explicadas. | Diez contextos, broker, workers, voz WSS, tutor y correo propuesto; protocolos y responsabilidades identificados. | Corregido documentalmente en 4.3. |
-| Clases de Domain Layer y vistas de componentes. | UML de componentes por capas; clases de dominio separadas de adaptadores y coordinación. | Corregido documentalmente en el capítulo V. |
-| Capturas de analíticos y commits de integrantes. | Capturas reales de GitHub con alcance de la rama y commits del primer hito. | Incorporado en Collaboration Insights. |
-| Videos, presentación individual y demostración en herramientas. | Anexo Videos de Exposiciones y About-the-Team con estados explícitos. | Pendiente de grabación/publicación. |
-| Keynote: nombres, apellidos y carrera sin superposición. | Se verificará la diapositiva del equipo antes de exportar la presentación de este curso. | Pendiente de disponer del Keynote correspondiente. |
-| Nomenclatura de archivos. | Nombres exigidos consignados en la tabla siguiente. | Pendiente de exportar y revisar los archivos finales. |
-
-## Nomenclatura de materiales
-
-| Material | Nombre base indicado en el feedback |
-| --- | --- |
-| Informe | `TF_1ASI0728_202620_TF` |
-| Presentación | `TF_1ASI0728_202620_KEYNOTE` |
-| Informe de participación | `TF_1ASI0728_202620_PERFORMANCE` |
-| Video de exposición | `TF_1ASI0728_202620_VIDEO` |
-
-Se añadirá la extensión correspondiente al formato solicitado al exportar cada archivo. Este registro de nombres no acredita que los materiales estén generados o enviados a Blackboard.
