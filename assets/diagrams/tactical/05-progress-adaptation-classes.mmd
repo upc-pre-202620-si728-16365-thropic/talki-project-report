@@ -25,15 +25,5 @@ classDiagram
         +String rubricVersion
         +Instant occurredAt
     }
-    class ScoringCompletedConsumer {
-        +handle(ScoringCompletedEvent) void
-    }
-    class UserProgressQueryService {
-        <<Propuesto>>
-        +getDashboard(userId) UserProgressView
-        +compareSessions(a, b) ComparisonView
-    }
-    ScoringCompletedConsumer --> UserProgress : actualiza resumen
-    ScoringCompletedConsumer ..> SessionMetrics : registro propuesto
-    UserProgressQueryService ..> UserProgress : consulta
-    UserProgressQueryService ..> SessionMetrics : compara evidencia
+
+    UserProgress "1" --> "0..*" SessionMetrics : evidencia compatible propuesta

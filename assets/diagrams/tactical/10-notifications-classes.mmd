@@ -1,17 +1,8 @@
 classDiagram
-    class ScoreNotificationConsumer {
-        +handle(ScoringCompletedEvent) void
-    }
-    class AchievementNotificationConsumer {
-        +handle(AchievementUnlockedEvent) void
-    }
+
     class NotificationPushService {
         <<interface>>
         +push(Long userId, String message) void
     }
-    class WebSocketPushAdapter {
-        <<Propuesto>>
-    }
-    NotificationPushService <|.. WebSocketPushAdapter
-    ScoreNotificationConsumer --> NotificationPushService
-    AchievementNotificationConsumer --> NotificationPushService
+
+    note for NotificationPushService "Contrato de dominio propuesto"

@@ -1,0 +1,41 @@
+@startuml
+skinparam defaultFontName Arial
+skinparam dpi 130
+skinparam sequenceMessageAlign center
+skinparam maxMessageSize 250
+title DS-03: secuencia de compartición, revocación y eliminación
+actor Estudiante as student
+participant "Sharing & Retention" as sharing
+actor "Tutor" as tutor
+participant "Scoring & Feedback" as scoring
+participant "Contextos propietarios\nde los datos" as owners
+participant "Notifications" as notifications
+student -> sharing : 1. Solicita compartir reporte\nObjeto: solicitud de enlace
+sharing -> sharing : 2. Crea acceso temporal con expiración\nObjeto: enlace temporal
+sharing --> student : Enlace temporal
+student --> tutor : Comparte el enlace autorizado
+tutor -> sharing : 3. Abre enlace y solicita vista de solo lectura
+sharing -> sharing : Valida permiso y vigencia
+sharing -> scoring : Consulta reporte publicado autorizado
+scoring --> sharing : Reporte
+sharing --> tutor : Vista de solo lectura
+student -> sharing : 4. Revoca acceso\nObjeto: orden de revocación
+sharing -> sharing : 5. Invalida enlace inmediatamente
+sharing ->> notifications : Acceso Revocado\nObjeto: evento de privacidad
+student -> sharing : 6. Solicita eliminar sesión\nObjeto: orden de eliminación
+sharing -> sharing : Bloquea nuevos accesos y registra seguimiento
+sharing ->> owners : 7. Propaga órdenes de purga
+note right of owners
+Sessions: evidencia y sesión.
+Scoring: evaluación.
+Progress: métricas y resumen.
+Gamification: rachas y logros.
+end note
+owners -->> sharing : Confirman purga o actualización
+sharing ->> notifications : Datos Purgados
+notifications -->> student : 8. Informa resultado de la acción
+note over student, notifications
+Diseño propuesto. Las flechas abiertas representan publicación o entrega asíncrona de eventos.
+La revocación bloquea el acceso antes de la entrega del aviso.
+end note
+@enduml

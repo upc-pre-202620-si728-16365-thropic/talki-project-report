@@ -1,0 +1,57 @@
+@startuml
+skinparam defaultFontName Arial
+skinparam defaultFontSize 15
+skinparam shadowing false
+skinparam componentStyle uml2
+skinparam backgroundColor white
+skinparam componentBackgroundColor #EAF0FF
+skinparam componentBorderColor #1749B5
+skinparam ArrowColor #536177
+skinparam packageBackgroundColor #F7F9FD
+skinparam dpi 130
+title
+UML Component Diagram: Gamification
+Descomposición en Gamification Service (Java / Spring Boot)
+end title
+queue "RabbitMQ:\nscoring.completed" as broker <<Externo>> #EEEEEE
+database "PostgreSQL:\nuser_streaks" as db <<Externo>> #EEEEEE
+queue "RabbitMQ:\nachievement.unlocked /\nNotifications" as notices <<Externo>> #EEEEEE
+package "Bounded Context:\nGamification" {
+  package "Interface Layer" {
+    component "Interface:\nGamificationController\n[Java / Spring Boot]" as input
+  }
+  package "Application Layer" {
+    component "Consulta de rachas\ny ranking\n[Java / Spring Boot]" as query
+    component "Application:\nactualizar racha\ny evaluar logros\n[Java / Spring Boot]" as app
+  }
+  package "Domain Layer" {
+    component "Domain:\nUserStreak\n[Java / Spring Boot]" as model
+  }
+  package "Infrastructure Layer" {
+    component "Infrastructure:\nUserStreakRepository\n[Java / Spring Boot]" as repo
+    component "Infrastructure:\nScoringCompletedConsumer\n[Java / Spring Boot]" as consumer
+    component "Infrastructure:\nAchievementUnlockedPublisher\n[Java / Spring Boot]" as pub
+  }
+}
+input --> query : solicita racha o ranking / Java
+query --> repo : consulta rachas / Java
+broker --> consumer : eventos / AMQP
+consumer --> app : activa reglas por sesión válida / Java
+app --> model : calcula racha y experiencia / Java
+app --> repo : conserva racha / Java
+repo --> db : persistencia / SQL
+app --> pub : solicita publicación de logro / Java
+pub --> notices : eventos / AMQP
+note bottom
+Ampliación: entidad y registro de Achievement
+end note
+legend bottom
+Icono UML: componente; círculo: interfaz.
+Flecha continua: interacción dirigida.
+Relación a interfaz: contrato proporcionado.
+Externo: fuera del proceso representado.
+Propuesto: ampliación pendiente.
+Los casos de uso nombran responsabilidades de diseño;
+no acreditan nuevas clases ni servicios desplegados.
+endlegend
+@enduml

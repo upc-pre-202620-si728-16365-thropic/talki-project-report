@@ -1,0 +1,57 @@
+@startuml
+skinparam defaultFontName Arial
+skinparam defaultFontSize 15
+skinparam shadowing false
+skinparam componentStyle uml2
+skinparam backgroundColor white
+skinparam componentBackgroundColor #EAF0FF
+skinparam componentBorderColor #1749B5
+skinparam ArrowColor #536177
+skinparam packageBackgroundColor #F7F9FD
+skinparam dpi 130
+skinparam nodesep 35
+skinparam ranksep 50
+title
+UML Deployment Diagram: Talki
+Topología propuesta para el piloto; sin evidencia de despliegue
+end title
+node "Dispositivo del estudiante / tutor" {
+  artifact "Navegador\nCliente React" as browser
+  artifact "App Flutter\nPropuesta" as mobile
+}
+cloud "Vercel: hosting web propuesto" {
+  node "Frontend" as frontend
+}
+cloud "Railway: servicios propuestos" {
+  node "API Gateway / BFF" as gateway
+  node "Procesos Spring Boot" as services {
+    artifact "Identity / Sessions\nLive Coaching" as core
+    artifact "Workers\nSpeech Analysis / Scoring" as workers
+    artifact "Progress / Gamification\nNotifications" as support
+    artifact "Sharing / AI Gateway\nAmpliaciones propuestas" as extension
+  }
+  queue "RabbitMQ\nColas, reintentos y fallos" as broker
+}
+cloud "Supabase: datos propuestos" {
+  database "PostgreSQL\nEsquemas privados por contexto" as pg
+}
+cloud "Servicios externos" {
+  node "Gemini Live" as ai
+  node "Proveedor de correo\nPor seleccionar" as mail
+}
+browser --> frontend : descarga cliente / HTTPS
+browser --> gateway : operaciones / HTTPS-JSON
+mobile --> gateway : operaciones / HTTPS-JSON
+gateway --> services : enrutamiento / HTTPS-JSON
+services --> broker : publica eventos / AMQP
+broker --> services : entrega eventos / AMQP
+services --> pg : datos propios / PostgreSQL-TLS
+services --> ai : credencial efímera / HTTPS
+browser -[norank]-> ai : voz autorizada / WSS
+services --> mail : avisos / HTTPS-SMTP-TLS propuesto
+legend bottom
+Nodo: entorno de ejecución. Artefacto: unidad alojada.
+Flecha: comunicación dirigida; etiqueta: propósito y protocolo.
+Ubicación y proveedores propuestos, no despliegue ejecutado.
+endlegend
+@enduml

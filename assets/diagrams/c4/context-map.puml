@@ -1,0 +1,51 @@
+@startuml
+skinparam defaultFontName Arial
+skinparam dpi 130
+skinparam packageStyle rectangle
+skinparam linetype polyline
+skinparam nodesep 40
+skinparam ranksep 45
+skinparam componentStyle uml2
+skinparam component {
+ BackgroundColor #EAF0FF
+ BorderColor #1749B5
+}
+top to bottom direction
+title Context Map de Talki: colaboración principal entre contextos DDD
+component "Gemini Live API" as gemini <<Proveedor externo>>
+component "Live Coaching" as liveCoaching <<Bounded Context>>
+component "Speech Analysis" as speechAnalysis <<Bounded Context>>
+component "Scoring & Feedback" as scoring <<Bounded Context>>
+component "Practice Session Management" as session <<Bounded Context>>
+component "Progress & Adaptation" as progress <<Bounded Context>>
+component "Sharing & Retention" as sharing <<Bounded Context>>
+component "Gamification" as gamification <<Bounded Context>>
+component "Identity & Access" as identity <<Bounded Context>>
+component "AI Provider Gateway" as aiGateway <<Bounded Context>>
+component "Notifications" as notifications <<Bounded Context>>
+session --> liveCoaching : Sesión preparada y veredicto de\nvalidez (Customer/Supplier + PL)
+liveCoaching --> speechAnalysis : Sesión Finalizada con transcripción\nconsolidada (Customer/Supplier)
+speechAnalysis --> scoring : Esquema versionado de métricas\n(Customer/Supplier + PL)
+scoring --> progress : Evaluación completada:\nscoring.completed (Customer/Supplier +\nPL)
+scoring --> sharing : Reportes publicados\n(Customer/Supplier)
+liveCoaching --> aiGateway : Voz en vivo y simulación\n(Customer/Supplier)
+speechAnalysis --> aiGateway : Análisis de discurso\n(Customer/Supplier)
+aiGateway --> gemini : Contrato canónico traducido al\nproveedor (Anti-Corruption Layer)
+scoring --> gamification : Evaluación completada:\nscoring.completed (Conformist)
+sharing --> notifications : Acceso Revocado / Datos Purgados\n(Eventos publicados)
+scoring --> notifications : Reporte Disponible: scoring.completed\n(Evento publicado)
+gamification --> notifications : Logro Concedido: achievement.unlocked\n(Evento publicado)
+note right of identity
+OHS + Published Language para todos los contextos.
+Cada consumidor valida claims y propiedad del recurso.
+end note
+legend bottom
+Los componentes representan fronteras estratégicas de contexto.
+Las flechas indican contratos entre contextos, no conexiones de despliegue.
+Core: Live Coaching, Speech Analysis y Scoring. Supporting: Sessions, Progress, Sharing y Gamification.
+Generic: Identity, AI Provider Gateway y Notifications.
+El veredicto de validez de Sessions acompaña la evaluación consumida por Gamification.
+La coordinación de purga se muestra en la figura de privacidad siguiente.
+Privacidad, pasarela y nuevos canales incluyen capacidades propuestas.
+endlegend
+@enduml

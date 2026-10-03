@@ -1,4 +1,4 @@
-// Talki — Context Map (Strategic DDD, TB1)
+// Talki - Context Map (Strategic DDD, TB1)
 // Referencia: README.md, sección 4.2.5.
 //
 // Cómo renderizar:
@@ -10,7 +10,7 @@
 // Exportar la vista "ContextMap" y guardarla como:
 //   assets/images/context-mapping/context-map.png
 
-workspace "Talki" "Context map — bounded contexts y patrones DDD (TB1)" {
+workspace "Talki" "Context map - bounded contexts y patrones DDD (TB1)" {
 
     model {
         // Proveedor externo
@@ -52,7 +52,7 @@ workspace "Talki" "Context map — bounded contexts y patrones DDD (TB1)" {
             aiGateway = softwareSystem "AI Provider Gateway" "Contrato canónico de IA y aislamiento de proveedores (Anti-Corruption Layer)." {
                 tags "Bounded Context"
             }
-            notifications = softwareSystem "Notifications" "Notificaciones por correo a partir de hechos publicados por otros contextos." {
+            notifications = softwareSystem "Notifications" "Avisos en la aplicación y correo propuesto a partir de evaluaciones, logros y hechos de privacidad." {
                 tags "Bounded Context"
             }
         }
@@ -74,7 +74,7 @@ workspace "Talki" "Context map — bounded contexts y patrones DDD (TB1)" {
         // Núcleo
         liveCoaching -> speechAnalysis "Sesión Finalizada con transcripción consolidada (Customer/Supplier)"
         speechAnalysis -> scoring "Esquema versionado de métricas (Customer/Supplier + PL)"
-        scoring -> progress "Reporte Disponible (Customer/Supplier)"
+        scoring -> progress "Evaluación completada: scoring.completed (Customer/Supplier + PL)"
         scoring -> sharing "Reportes publicados (Customer/Supplier)"
 
         // Pasarela de IA
@@ -83,15 +83,18 @@ workspace "Talki" "Context map — bounded contexts y patrones DDD (TB1)" {
         aiGateway -> gemini "Contrato canónico traducido al proveedor (Anti-Corruption Layer)"
 
         // Progreso y gamificación
-        progress -> gamification "Hechos de práctica válida (Conformist)"
+        scoring -> gamification "Evaluación completada: scoring.completed (Conformist)"
 
         // Privacidad
-        sharing -> speechAnalysis "Órdenes de eliminación propagadas (Customer/Supplier)"
+        sharing -> session "Purga de evidencia y sesiones (Customer/Supplier + PL)"
+        sharing -> scoring "Purga de evaluaciones (Customer/Supplier + PL)"
+        sharing -> gamification "Recalcula rachas y logros tras eliminación (Customer/Supplier + PL)"
         sharing -> progress "Órdenes de eliminación propagadas (Customer/Supplier)"
         sharing -> notifications "Acceso Revocado / Datos Purgados (Eventos publicados)"
 
         // Notificaciones
-        scoring -> notifications "Reporte Disponible (Evento publicado)"
+        scoring -> notifications "Reporte Disponible: scoring.completed (Evento publicado)"
+        gamification -> notifications "Logro Concedido: achievement.unlocked (Evento publicado)"
         identity -> notifications "Cuenta Registrada (Evento publicado)"
     }
 

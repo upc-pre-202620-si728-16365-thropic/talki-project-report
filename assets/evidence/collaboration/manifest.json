@@ -1,0 +1,36 @@
+{
+  "captured_on": "2026-10-02",
+  "timezone": "America/Lima",
+  "repository": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report",
+  "scope_note": "Contributors de GitHub corresponde a main. Historial y commits complementarios consultados en develop. Coautoría del segundo hito es reparto de revisión pendiente.",
+  "captures": [
+    {
+      "file": "github-contributors-main-20261002.jpg",
+      "source_url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/graphs/contributors"
+    },
+    {
+      "file": "github-commits-develop-20261002.jpg",
+      "source_url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commits/develop/"
+    },
+    {
+      "file": "commit-eduardo.jpg",
+      "source_url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/2bdb3017ae4799ec8e55b56c86cbaa0c1de18c58"
+    },
+    {
+      "file": "commit-manuel.jpg",
+      "source_url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/25285e781945fde3575f80b021ad794c2c4822e3"
+    },
+    {
+      "file": "commit-alejandro.jpg",
+      "source_url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/40003d1d6af89de404d59ceb16d22f0e4b0b1464"
+    },
+    {
+      "file": "commit-werner.jpg",
+      "source_url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/bb379c3595f2b85027c4db8eea77eff9841ccb4d"
+    },
+    {
+      "file": "commit-kevin.jpg",
+      "source_url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/c3a8b2a740ee4d68092e836678812f322d64f696"
+    }
+  ]
+}

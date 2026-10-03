@@ -16,9 +16,10 @@
       "kind": "adapted_source_model",
       "model_files": [
         "assets/diagrams/tactical/01-live-coaching-classes.mmd",
-        "assets/diagrams/tactical/01-live-coaching-database.mmd"
+        "assets/diagrams/tactical/01-live-coaching-database.mmd",
+        "assets/diagrams/tactical/01-live-coaching-components.puml"
       ],
-      "model_note": "Diagrama de clases actualizado con LiveCoachOrchestrator, GeminiTokenService y SessionFinalizedPublisher; conserva las estrategias de modo de práctica."
+      "model_note": "Estrategias de práctica y fábrica en UML de dominio; LiveCoachOrchestrator, GeminiTokenService y SessionFinalizedPublisher en UML de componentes."
     },
     {
       "section": "5.2",
@@ -27,9 +28,10 @@
       "kind": "adapted_source_model",
       "model_files": [
         "assets/diagrams/tactical/02-speech-analysis-classes.mmd",
-        "assets/diagrams/tactical/02-speech-analysis-database.mmd"
+        "assets/diagrams/tactical/02-speech-analysis-database.mmd",
+        "assets/diagrams/tactical/02-speech-analysis-components.puml"
       ],
-      "model_note": "Resultado FillerResult identificado como propuesta de diseño."
+      "model_note": "Resultado FillerResult identificado como propuesta de diseño. Vista UML de clases limitada al dominio; componentes y adaptadores separados en la vista UML de componentes."
     },
     {
       "section": "5.3",
@@ -38,9 +40,10 @@
       "kind": "adapted_source_model",
       "model_files": [
         "assets/diagrams/tactical/03-scoring-feedback-classes.mmd",
-        "assets/diagrams/tactical/03-scoring-feedback-database.mmd"
+        "assets/diagrams/tactical/03-scoring-feedback-database.mmd",
+        "assets/diagrams/tactical/03-scoring-feedback-components.puml"
       ],
-      "model_note": "Modelo ampliado con versiones de análisis y rúbrica y dimensiones que admiten ausencia de evidencia."
+      "model_note": "Modelo ampliado con versiones de análisis y rúbrica y dimensiones que admiten ausencia de evidencia. Vista UML de clases limitada al dominio; componentes y adaptadores separados en la vista UML de componentes."
     },
     {
       "section": "5.4",
@@ -49,9 +52,10 @@
       "kind": "adapted_source_model",
       "model_files": [
         "assets/diagrams/tactical/04-practice-sessions-classes.mmd",
-        "assets/diagrams/tactical/04-practice-sessions-database.mmd"
+        "assets/diagrams/tactical/04-practice-sessions-database.mmd",
+        "assets/diagrams/tactical/04-practice-sessions-components.puml"
       ],
-      "model_note": "SessionUserContext alineado con la identidad local adaptada por SessionContextFacade."
+      "model_note": "SessionUserContext alineado con la identidad local adaptada por SessionContextFacade. Vista UML de clases limitada al dominio; componentes y adaptadores separados en la vista UML de componentes."
     },
     {
       "section": "5.5",
@@ -60,9 +64,10 @@
       "kind": "adapted_source_model",
       "model_files": [
         "assets/diagrams/tactical/05-progress-adaptation-classes.mmd",
-        "assets/diagrams/tactical/05-progress-adaptation-database.mmd"
+        "assets/diagrams/tactical/05-progress-adaptation-database.mmd",
+        "assets/diagrams/tactical/05-progress-adaptation-components.puml"
       ],
-      "model_note": "Totales y puntuaciones de progreso separados de la experiencia de Gamification; métricas versionadas para comparación propuesta."
+      "model_note": "Totales y puntuaciones de progreso separados de la experiencia de Gamification; métricas versionadas para comparación propuesta. Vista UML de clases limitada al dominio; componentes y adaptadores separados en la vista UML de componentes."
     },
     {
       "section": "5.6",
@@ -71,8 +76,10 @@
       "kind": "adaptation",
       "model_files": [
         "assets/diagrams/tactical/06-sharing-retention-classes.mmd",
-        "assets/diagrams/tactical/06-sharing-retention-database.mmd"
-      ]
+        "assets/diagrams/tactical/06-sharing-retention-database.mmd",
+        "assets/diagrams/tactical/06-sharing-retention-components.puml"
+      ],
+      "model_note": "Vista UML de clases limitada al dominio; componentes y adaptadores separados en la vista UML de componentes."
     },
     {
       "section": "5.7",
@@ -81,9 +88,10 @@
       "kind": "adapted_source_model",
       "model_files": [
         "assets/diagrams/tactical/07-gamification-classes.mmd",
-        "assets/diagrams/tactical/07-gamification-database.mmd"
+        "assets/diagrams/tactical/07-gamification-database.mmd",
+        "assets/diagrams/tactical/07-gamification-components.puml"
       ],
-      "model_note": "Achievement identificado como entidad propuesta."
+      "model_note": "Achievement identificado como entidad propuesta. Vista UML de clases limitada al dominio; componentes y adaptadores separados en la vista UML de componentes."
     },
     {
       "section": "5.8",
@@ -92,9 +100,10 @@
       "kind": "adapted_source_model",
       "model_files": [
         "assets/diagrams/tactical/08-identity-access-classes.mmd",
-        "assets/diagrams/tactical/08-identity-access-database.mmd"
+        "assets/diagrams/tactical/08-identity-access-database.mmd",
+        "assets/diagrams/tactical/08-identity-access-components.puml"
       ],
-      "model_note": "Datos de cuenta alineados con username y academicSegment; renovación identificada como propuesta."
+      "model_note": "Datos de cuenta alineados con username y academicSegment; renovación identificada como propuesta. Vista UML de clases limitada al dominio; componentes y adaptadores separados en la vista UML de componentes."
     },
     {
       "section": "5.9",
@@ -103,8 +112,10 @@
       "kind": "adaptation",
       "model_files": [
         "assets/diagrams/tactical/09-ai-provider-gateway-classes.mmd",
-        "assets/diagrams/tactical/09-ai-provider-gateway-database.mmd"
-      ]
+        "assets/diagrams/tactical/09-ai-provider-gateway-database.mmd",
+        "assets/diagrams/tactical/09-ai-provider-gateway-components.puml"
+      ],
+      "model_note": "Vista UML de clases limitada al dominio; componentes y adaptadores separados en la vista UML de componentes."
     },
     {
       "section": "5.10",
@@ -113,9 +124,10 @@
       "kind": "adapted_source_model",
       "model_files": [
         "assets/diagrams/tactical/10-notifications-classes.mmd",
-        "assets/diagrams/tactical/10-notifications-database.mmd"
+        "assets/diagrams/tactical/10-notifications-database.mmd",
+        "assets/diagrams/tactical/10-notifications-components.puml"
       ],
-      "model_note": "Adaptador de entrega identificado como propuesta; vista de persistencia centrada en avisos al estudiante y seguimiento futuro."
+      "model_note": "Adaptador de entrega identificado como propuesta; vista de persistencia centrada en avisos al estudiante y seguimiento futuro. Vista UML de clases limitada al dominio; componentes y adaptadores separados en la vista UML de componentes."
     }
   ],
   "copied_assets": [

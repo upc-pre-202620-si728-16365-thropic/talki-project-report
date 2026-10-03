@@ -1,0 +1,55 @@
+@startuml
+skinparam defaultFontName Arial
+skinparam defaultFontSize 15
+skinparam shadowing false
+skinparam componentStyle uml2
+skinparam backgroundColor white
+skinparam componentBackgroundColor #EAF0FF
+skinparam componentBorderColor #1749B5
+skinparam ArrowColor #536177
+skinparam packageBackgroundColor #F7F9FD
+skinparam dpi 130
+title
+UML Component Diagram: Practice Session Management
+Descomposición en Session Service (Java / Spring Boot)
+end title
+database "PostgreSQL:\nsesiones\ny feedback" as db <<Externo>> #EEEEEE
+package "Bounded Context:\nPractice Session Management" {
+  package "Interface Layer" {
+    component "Interface:\nSessionController /\nCreateSessionRequest\n[Java / Spring Boot]" as input
+  }
+  package "Application Layer" {
+    component "Application:\nSessionCommandServiceImpl\n[Java / Spring Boot]" as commands
+    component "Application:\nSessionQueryServiceImpl\n[Java / Spring Boot]" as queries
+    component "Application:\nSessionContextFacade\n[Java / Spring Boot]" as facade
+  }
+  package "Domain Layer" {
+    component "Domain:\nSession\ny Feedback\n[Java / Spring Boot]" as session
+    component "Domain:\nSessionUserContext\n[Java / Spring Boot]" as user
+  }
+  package "Infrastructure Layer" {
+    component "Infrastructure:\nSessionRepository\ny FeedbackRepository\n[Java / Spring Boot]" as repo
+    component "Infrastructure:\nUserRegisteredConsumer\n[Java / Spring Boot]" as consumer
+    component "Infrastructure:\nAppUserRepository /\nproyección local\n[Java / Spring Boot]" as users
+  }
+}
+input --> commands : solicita crear o finalizar / Java
+input --> queries : consulta sesiones y feedback / Java
+commands --> session : aplica ciclo de vida / Java
+commands --> facade : adapta identidad de la petición / Java
+facade --> user : obtiene identidad local / Java
+commands --> repo : conserva cambios del ensayo / Java
+queries --> repo : recupera recursos autorizados / Java
+repo --> db : persistencia / SQL
+consumer --> users : actualiza proyección de usuario / Java
+facade --> users : consulta identidad proyectada / Java
+legend bottom
+Icono UML: componente; círculo: interfaz.
+Flecha continua: interacción dirigida.
+Relación a interfaz: contrato proporcionado.
+Externo: fuera del proceso representado.
+Propuesto: ampliación pendiente.
+Los casos de uso nombran responsabilidades de diseño;
+no acreditan nuevas clases ni servicios desplegados.
+endlegend
+@enduml
