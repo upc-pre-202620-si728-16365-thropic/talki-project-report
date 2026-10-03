@@ -92,7 +92,7 @@ La evidencia de colaboración del TB1 se mantiene en GitHub mediante los commits
 
 ## Segundo hito de TB1: semana 7
 
-Esta revisión incorpora capítulos V y VI y sus fuentes/artefactos en la rama `development`, creada desde el avance consolidado en `develop`. La edición se realizó con asistencia de Codex a solicitud de Alejandro. La revisión del equipo y la sustentación de este hito están pendientes; sus aportes se incorporarán al registro individual con la evidencia correspondiente. El feedback docente de los capítulos previos sigue pendiente de incorporación.
+Esta revisión incorpora los capítulos V y VI y sus artefactos en la rama `develop`, que reúne el avance consolidado del informe. La edición se realizó con asistencia de Codex a solicitud de Alejandro. La revisión del equipo y la sustentación de este hito están pendientes; sus aportes se incorporarán al registro individual con la evidencia correspondiente. El feedback docente de los capítulos previos sigue pendiente de incorporación.
 
 # Contenido
 
