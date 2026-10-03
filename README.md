@@ -75,6 +75,7 @@
 | 1.9 | 02/10/2026 | Edición asistida por Codex | Desarrollo de las explicaciones de cada capa, identificación de controladores y contratos, organización de repositorios y adaptadores, guías de estilo y navegación por plataforma y wireflows con pantallas web y móvil. |
 | 1.10 | 02/10/2026 | Edición asistida por Codex | Organización de Domain Layer por tipo de elemento, separación de comandos, consultas y coordinación de eventos, tablas de capas uniformes y rotulado de figuras web/móvil. |
 | 1.11 | 02/10/2026 | Edición asistida por Codex | Retirada de enlaces de fuentes editables, revisión de congruencia entre modelos y explicaciones, ajuste de datos de progreso y cuenta, y relación de las pantallas con el diseño táctico. |
+| 1.12 | 02/10/2026 | Edición asistida por Codex | Incorporación de las correcciones documentales del feedback Hito1: tareas de usuario, escenarios Gherkin, contratos técnicos, backlog, C4 y clases UML de dominio. Datos de entrevistas y evidencias audiovisuales pendientes de confirmación. |
 
 # Project Report Collaboration Insights
 
@@ -90,9 +91,47 @@ La evidencia de colaboración del TB1 se mantiene en GitHub mediante los commits
 | Werner Khalil Lang Nassi | Diseño estratégico basado en DDD. | Secciones 4.2–4.2.5. |
 | Kevin Jorge Chi Cruzatt | Software Architecture y sus cuatro diagramas. | Sección 4.3. |
 
+### Evidencias de colaboración
+
+Las capturas se consultaron el 02/10/2026. El gráfico de Contributors corresponde a `main` y excluye merges: en esa vista GitHub muestra siete commits de Alejandro. Su alcance no incluye el avance consolidado en `develop`; por eso se complementa con el historial de esa rama y con commits identificables de los cinco integrantes del primer hito.
+
+![Analíticos de GitHub: Contributors sobre main](assets/evidence/collaboration/github-contributors-main-20261002.jpg)
+
+![Historial de commits en develop](assets/evidence/collaboration/github-commits-develop-20261002.jpg)
+
+| Integrante | Commit del primer hito | Contenido registrado |
+| --- | --- | --- |
+| Eduardo Gael Rivera Sosa | [2bdb301](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/2bdb3017ae4799ec8e55b56c86cbaa0c1de18c58) | Startup, Lean UX y entrevistas. |
+| Manuel Ignacio Tumi Oliden | [25285e7](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/25285e781945fde3575f80b021ad794c2c4822e3) | Competidores y needfinding. |
+| Alejandro Daniel Oroncoy Almeyda | [40003d1](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/40003d1d6af89de404d59ceb16d22f0e4b0b1464) | Requisitos y ADD. |
+| Werner Khalil Lang Nassi | [bb379c3](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/bb379c3595f2b85027c4db8eea77eff9841ccb4d) | Diseño estratégico DDD. |
+| Kevin Jorge Chi Cruzatt | [c3a8b2a](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/c3a8b2a740ee4d68092e836678812f322d64f696) | Diagramas de arquitectura. |
+
+**Eduardo: Startup, Lean UX y entrevistas.**
+
+![Commit de Eduardo](assets/evidence/collaboration/commit-eduardo.jpg)
+
+**Manuel: competidores y needfinding.**
+
+![Commit de Manuel](assets/evidence/collaboration/commit-manuel.jpg)
+
+**Alejandro: requisitos y ADD.**
+
+![Commit de Alejandro](assets/evidence/collaboration/commit-alejandro.jpg)
+
+**Werner: diseño estratégico DDD.**
+
+![Commit de Werner](assets/evidence/collaboration/commit-werner.jpg)
+
+**Kevin: diagramas de arquitectura.**
+
+![Commit de Kevin](assets/evidence/collaboration/commit-kevin.jpg)
+
+La coautoría registrada en los commits del segundo hito corresponde al reparto de revisión asignado. La revisión individual continúa pendiente y se acreditará con sus correcciones y sustentación; los metadatos de Git no reemplazan esa evidencia.
+
 ## Segundo hito de TB1: semana 7
 
-Esta revisión incorpora los capítulos V y VI y sus artefactos en la rama `develop`, que reúne el avance consolidado del informe. La edición se realizó con asistencia de Codex a solicitud de Alejandro. La revisión del equipo y la sustentación de este hito están pendientes; sus aportes se incorporarán al registro individual con la evidencia correspondiente. El feedback docente de los capítulos previos sigue pendiente de incorporación.
+Esta revisión incorpora los capítulos V y VI y sus artefactos en la rama `develop`, que reúne el avance consolidado del informe. La edición se realizó con asistencia de Codex a solicitud de Alejandro. La revisión del equipo y la sustentación de este hito están pendientes; sus aportes se incorporarán al registro individual con la evidencia correspondiente. Se incorporan las correcciones documentales del feedback Hito1_Thropic_Talki; quedan pendientes los datos de entrevistas y los materiales audiovisuales identificados en el control de correcciones del anexo K.
 
 # Contenido
 
@@ -287,6 +326,9 @@ Esta revisión incorpora los capítulos V y VI y sus artefactos en la rama `deve
 - [Video About-the-Team](#video-about-the-team)
 - [Bibliografía](#bibliografía)
 - [Anexos](#anexos)
+  - [Videos de Exposiciones](#videos-de-exposiciones)
+  - [Control de correcciones del primer hito](#control-de-correcciones-del-primer-hito)
+  - [Nomenclatura de materiales](#nomenclatura-de-materiales)
 
 <div style="page-break-after: always;"></div>
 
@@ -704,21 +746,23 @@ El objetivo de las entrevistas es comprender las necesidades, frustraciones y h�
 
 ### 2.2.2. Registro de entrevistas
 
+La ficha conserva las capturas, enlaces y tiempos disponibles. La edad, el distrito y los apellidos indicados como pendientes requieren confirmación con los entrevistados; no se deducen a partir de su universidad o ciclo.
+
 **Segmento #1: Estudiantes universitarios de ciclos 1 al 5**
 
 | Número de entrevista | Datos del entrevistado | Evidencia de entrevista |
 |---|---|---|
-| 1 | **Nombre:** Belén Ordoñez <br> **Universidad:** PUCP <br> **Ciclo:** 5to <br> **Carrera:** Comunicación para el Desarrollo <br><br> **Resumen:** Estudiante de quinto ciclo en la PUCP cuya carrera gira en torno a presentaciones orales: la mayoría de sus evaluaciones son exposiciones de proyectos. Recuerda haberse puesto nerviosa en su primera exposición universitaria. Su principal problema es que el volumen de su voz va disminuyendo conforme avanza en la presentación. Ha sufrido "black outs" durante exposiciones, terminando sin recordar lo que dijo. No conocía la existencia de herramientas digitales para mejorar la oratoria. Actualmente pide a amigos que la escuchen antes de exponer. Se sentiría más cómoda recibiendo retroalimentación de una IA por su mayor honestidad y franqueza. Estaría dispuesta a pagar entre 2 y 5 dólares mensuales por una app que realmente funcione. | ![Evidencia](assets/images/interviews/Entrevista-Talki-Segmento1-1.jpeg) [📂 Ver entrevista](https://drive.google.com/drive/folders/1IwH1aTzPJ2Y5cYJS3yqF8UM4eHfprvLE?usp=sharing) <br> `00:00:00 a 00:06:12` |
-| 2 | **Nombre:** Isabel Rodriguez <br> **Universidad:** Universidad de Lima <br> **Ciclo:** 5to <br> **Carrera:** Arquitectura <br><br> **Resumen:** Isabel estudia Arquitectura en la Universidad de Lima y tiene exposiciones prácticamente todas las semanas, especialmente resúmenes de talleres los viernes. Su primera experiencia expositiva fue buena en general, aunque reconoce que hubiera sido mejor con más dominio del curso. Los puntos que más necesita trabajar son el nerviosismo y la ampliación de vocabulario, pues tiende a repetir siempre las mismas palabras. Se prepara con una bitácora personal y revisando sus diapositivas el día anterior. Usa ChatGPT para preparar contenido, aunque de forma general. Olvida información relevante por el apuro de terminar la exposición rápido. Le parece muy interesante recibir retroalimentación de una IA por el ahorro de tiempo. Estaría dispuesta a pagar hasta 5 dólares mensuales, aunque querría comparar precios antes de decidir. | ![Evidencia](assets/images/interviews/Entrevista-Talki-Segmento1-2.jpeg) [📂 Ver entrevista](https://drive.google.com/drive/folders/1IwH1aTzPJ2Y5cYJS3yqF8UM4eHfprvLE?usp=sharing) <br> `00:06:13 a 00:13:29` |
-| 3 | **Nombre:** Juan Alejandro Elías López <br> **Universidad:** UPC <br> **Ciclo:** 4to <br> **Carrera:** Ingeniería de Software <br><br> **Resumen:** Juan Alejandro ya tenía experiencia en exposiciones desde la secundaria, por lo que su primera presentación universitaria no le generó nerviosismo. Considera que exponer es divertido. El aspecto que más necesita mejorar es la fluidez, especialmente en exposiciones finales de alta importancia donde el nerviosismo sí lo afecta. Se prepara escribiendo su guión a mano y memorizándolo en partes a lo largo de varios días, dedicando aproximadamente 2 horas diarias. Nunca ha sentido que una exposición no reflejara lo que sabía. No ha usado herramientas digitales para mejorar su oratoria. Estaría dispuesto a grabarse como nueva forma de práctica autónoma. Estaría abierto tanto a retroalimentación de IA como de un tutor humano, y el precio que pagaría dependería de las funcionalidades concretas que ofrezca la aplicación. | ![Evidencia](assets/images/interviews/Entrevista-Talki-Segmento1-3.jpeg) [📂 Ver entrevista](https://drive.google.com/drive/folders/1IwH1aTzPJ2Y5cYJS3yqF8UM4eHfprvLE?usp=sharing) <br> `00:12:30 a 00:19:18` |
+| 1 | **Nombre:** Belén Ordoñez <br> **Edad:** Pendiente de confirmar <br> **Distrito:** Pendiente de confirmar <br> **Universidad:** PUCP <br> **Ciclo:** 5to <br> **Carrera:** Comunicación para el Desarrollo <br><br> **Resumen:** Estudiante de quinto ciclo en la PUCP cuya carrera gira en torno a presentaciones orales: la mayoría de sus evaluaciones son exposiciones de proyectos. Recuerda haberse puesto nerviosa en su primera exposición universitaria. Su principal problema es que el volumen de su voz va disminuyendo conforme avanza en la presentación. Ha sufrido "black outs" durante exposiciones, terminando sin recordar lo que dijo. No conocía la existencia de herramientas digitales para mejorar la oratoria. Actualmente pide a amigos que la escuchen antes de exponer. Se sentiría más cómoda recibiendo retroalimentación de una IA por su mayor honestidad y franqueza. Estaría dispuesta a pagar entre 2 y 5 dólares mensuales por una app que realmente funcione. | ![Evidencia](assets/images/interviews/Entrevista-Talki-Segmento1-1.jpeg) [📂 Ver entrevista](https://drive.google.com/drive/folders/1IwH1aTzPJ2Y5cYJS3yqF8UM4eHfprvLE?usp=sharing) <br> `00:00:00 a 00:06:12` |
+| 2 | **Nombre:** Isabel Rodriguez <br> **Edad:** Pendiente de confirmar <br> **Distrito:** Pendiente de confirmar <br> **Universidad:** Universidad de Lima <br> **Ciclo:** 5to <br> **Carrera:** Arquitectura <br><br> **Resumen:** Isabel estudia Arquitectura en la Universidad de Lima y tiene exposiciones prácticamente todas las semanas, especialmente resúmenes de talleres los viernes. Su primera experiencia expositiva fue buena en general, aunque reconoce que hubiera sido mejor con más dominio del curso. Los puntos que más necesita trabajar son el nerviosismo y la ampliación de vocabulario, pues tiende a repetir siempre las mismas palabras. Se prepara con una bitácora personal y revisando sus diapositivas el día anterior. Usa ChatGPT para preparar contenido, aunque de forma general. Olvida información relevante por el apuro de terminar la exposición rápido. Le parece muy interesante recibir retroalimentación de una IA por el ahorro de tiempo. Estaría dispuesta a pagar hasta 5 dólares mensuales, aunque querría comparar precios antes de decidir. | ![Evidencia](assets/images/interviews/Entrevista-Talki-Segmento1-2.jpeg) [📂 Ver entrevista](https://drive.google.com/drive/folders/1IwH1aTzPJ2Y5cYJS3yqF8UM4eHfprvLE?usp=sharing) <br> `00:06:13 a 00:13:29` |
+| 3 | **Nombre:** Juan Alejandro Elías López <br> **Edad:** Pendiente de confirmar <br> **Distrito:** Pendiente de confirmar <br> **Universidad:** UPC <br> **Ciclo:** 4to <br> **Carrera:** Ingeniería de Software <br><br> **Resumen:** Juan Alejandro ya tenía experiencia en exposiciones desde la secundaria, por lo que su primera presentación universitaria no le generó nerviosismo. Considera que exponer es divertido. El aspecto que más necesita mejorar es la fluidez, especialmente en exposiciones finales de alta importancia donde el nerviosismo sí lo afecta. Se prepara escribiendo su guión a mano y memorizándolo en partes a lo largo de varios días, dedicando aproximadamente 2 horas diarias. Nunca ha sentido que una exposición no reflejara lo que sabía. No ha usado herramientas digitales para mejorar su oratoria. Estaría dispuesto a grabarse como nueva forma de práctica autónoma. Estaría abierto tanto a retroalimentación de IA como de un tutor humano, y el precio que pagaría dependería de las funcionalidades concretas que ofrezca la aplicación. | ![Evidencia](assets/images/interviews/Entrevista-Talki-Segmento1-3.jpeg) [📂 Ver entrevista](https://drive.google.com/drive/folders/1IwH1aTzPJ2Y5cYJS3yqF8UM4eHfprvLE?usp=sharing) <br> `00:12:30 a 00:19:18` |
 
 **Segmento #2: Estudiantes universitarios de ciclos 6 al 10**
 
 | Número de entrevista | Datos del entrevistado | Evidencia de entrevista |
 |---|---|---|
-| 4 | **Nombre:** Gianger <br> **Universidad:** University of the People (EE.UU., modalidad remota) <br> **Ciclo:** 6to <br> **Carrera:** Computer Science <br><br> **Resumen:** Gianger estudia de forma remota en una universidad estadounidense y tiene una trayectoria oral variada: monografías, proyectos de software, debates, simulaciones de entrevistas y entrevistas reales de trabajo. Reconoce una mejora enorme desde sus inicios, impulsada principalmente por la experiencia laboral. Antes hablaba muy rápido y usaba muletillas constantemente. Hoy la presión aparece principalmente al presentar ante jefes o personas con mayor jerarquía. Se prepara con "chuletillas", guías de oratoria y autograbaciones para identificar puntos débiles. Vivió en carne propia cómo la mala comunicación le jugó en contra en una entrevista con una empresa española en inglés. Ha probado la herramienta "Speak", pero le falta feedback de contenido y manejo de silencios. Los análisis que más le aportarían son el manejo de silencios y la variedad de vocabulario. Ve una app con IA para simular sustentaciones y entrevistas como extremadamente útil, y prefiere un modelo híbrido con checkpoints periódicos con un tutor. | ![Evidencia](assets/images/interviews/Entrevista-Talki-Segmento2-1.jpeg) [📂 Ver entrevista](https://drive.google.com/drive/folders/1IwH1aTzPJ2Y5cYJS3yqF8UM4eHfprvLE?usp=sharing) <br> `00:19:19 a 00:31:47` |
-| 5 | **Nombre:** Jennifer <br> **Universidad:** Universidad Privada del Norte <br> **Ciclo:** 7mo <br> **Carrera:** Administración y Marketing <br><br> **Resumen:** Jennifer ha enfrentado sustentaciones de trabajos, exposiciones de proyectos, entrevistas y presentaciones ante jurados a lo largo de su carrera. Reconoce que su comunicación oral ha mejorado notablemente gracias a la práctica constante: en los primeros ciclos le costaba organizar sus ideas y se ponía nerviosa, hoy habla con mayor claridad y seguridad. Los escenarios que aún le generan estrés son las presentaciones ante un jurado y las entrevistas de prácticas, donde siente una evaluación más directa. Se prepara investigando el tema, organizando ideas, practicando frente al espejo o grabándose, y anticipando posibles preguntas. Ha vivido situaciones donde los nervios le hicieron olvidar ideas clave, afectando la claridad de su mensaje. No ha usado aplicaciones especializadas; solo grabaciones básicas con el celular o Zoom. El análisis que considera más valioso es el de fluidez y claridad de ideas. Ve muy útil una app con IA para practicar en un entorno realista con retroalimentación específica. Prefiere un uso híbrido: práctica autónoma combinada con orientación de un tutor o profesor. | ![Evidencia](assets/images/interviews/Entrevista-Talki-Segmento2-2.jpeg) [📂 Ver entrevista](https://drive.google.com/drive/folders/1IwH1aTzPJ2Y5cYJS3yqF8UM4eHfprvLE?usp=sharing) <br> `00:31:47 a 00:39:18` |
-| 6 | **Nombre:** Jorge Sinyun González <br> **Universidad:** Universidad Peruana de Ciencias Aplicadas (UPC) <br> **Ciclo:** 7mo a 8vo <br> **Carrera:** Ingeniería de Software <br><br> **Resumen:** Jorge identifica las presentaciones ante audiencias o profesores como su mayor dificultad, ya que la inseguridad al cometer errores y los nervios visibles pueden afectar directamente su nota. Siente que su comunicación ha mejorado en la medida que domina mejor los temas del curso, pero como habilidad pura de oratoria el avance ha sido leve. Se prepara revisando los requerimientos, tomando notas de apoyo y usando NotebookLM para generar preguntas y practicar respuestas. Tuvo un caso negativo en el curso de Agile Frameworks, donde tuvo que mirar constantemente las diapositivas por no dominar el flujo del tema, algo que el profesor notó y comentó. Practica hablando solo frente a la presentación o usando el método del espejo, y ha buscado apps de práctica de lenguaje sin encontrar una específica para oratoria. El análisis que considera más valioso es el de claridad de ideas, porque evidencia dominio del tema ante la audiencia. Ve la app con IA como extremadamente útil, especialmente si permite cargar el material propio para detectar puntos débiles de contenido y vocalización. Prefiere el modo autónomo por privacidad y comodidad, aunque reconoce el valor del feedback docente. | ![Evidencia](assets/images/interviews/Entrevista-Talki-Segmento2-3.jpeg) [📂 Ver entrevista](https://drive.google.com/drive/folders/1IwH1aTzPJ2Y5cYJS3yqF8UM4eHfprvLE?usp=sharing) <br> `00:39:18 a 00:47:18` |
+| 4 | **Nombre:** Gian Guerra <br> **Edad:** Pendiente de confirmar <br> **Distrito:** Surco <br> **Universidad:** University of the People (EE.UU., modalidad remota) <br> **Ciclo:** 6to <br> **Carrera:** Computer Science <br><br> **Resumen:** Gian Guerra estudia de forma remota en una universidad estadounidense y tiene una trayectoria oral variada: monografías, proyectos de software, debates, simulaciones de entrevistas y entrevistas reales de trabajo. Reconoce una mejora enorme desde sus inicios, impulsada principalmente por la experiencia laboral. Antes hablaba muy rápido y usaba muletillas constantemente. Hoy la presión aparece principalmente al presentar ante jefes o personas con mayor jerarquía. Se prepara con "chuletillas", guías de oratoria y autograbaciones para identificar puntos débiles. Vivió en carne propia cómo la mala comunicación le jugó en contra en una entrevista con una empresa española en inglés. Ha probado la herramienta "Speak", pero le falta feedback de contenido y manejo de silencios. Los análisis que más le aportarían son el manejo de silencios y la variedad de vocabulario. Ve una app con IA para simular sustentaciones y entrevistas como extremadamente útil, y prefiere un modelo híbrido con checkpoints periódicos con un tutor. | ![Evidencia](assets/images/interviews/Entrevista-Talki-Segmento2-1.jpeg) [📂 Ver entrevista](https://drive.google.com/drive/folders/1IwH1aTzPJ2Y5cYJS3yqF8UM4eHfprvLE?usp=sharing) <br> `00:19:19 a 00:31:47` |
+| 5 | **Nombre:** Jennifer Bazan <br> **Edad:** Pendiente de confirmar <br> **Distrito:** El Agustino <br> **Universidad:** Universidad Privada del Norte <br> **Ciclo:** 7mo <br> **Carrera:** Administración y Marketing <br><br> **Resumen:** Jennifer Bazan ha enfrentado sustentaciones de trabajos, exposiciones de proyectos, entrevistas y presentaciones ante jurados a lo largo de su carrera. Reconoce que su comunicación oral ha mejorado notablemente gracias a la práctica constante: en los primeros ciclos le costaba organizar sus ideas y se ponía nerviosa, hoy habla con mayor claridad y seguridad. Los escenarios que aún le generan estrés son las presentaciones ante un jurado y las entrevistas de prácticas, donde siente una evaluación más directa. Se prepara investigando el tema, organizando ideas, practicando frente al espejo o grabándose, y anticipando posibles preguntas. Ha vivido situaciones donde los nervios le hicieron olvidar ideas clave, afectando la claridad de su mensaje. No ha usado aplicaciones especializadas; solo grabaciones básicas con el celular o Zoom. El análisis que considera más valioso es el de fluidez y claridad de ideas. Ve muy útil una app con IA para practicar en un entorno realista con retroalimentación específica. Prefiere un uso híbrido: práctica autónoma combinada con orientación de un tutor o profesor. | ![Evidencia](assets/images/interviews/Entrevista-Talki-Segmento2-2.jpeg) [📂 Ver entrevista](https://drive.google.com/drive/folders/1IwH1aTzPJ2Y5cYJS3yqF8UM4eHfprvLE?usp=sharing) <br> `00:31:47 a 00:39:18` |
+| 6 | **Nombre:** Jorge Sinyun González <br> **Edad:** Pendiente de confirmar <br> **Distrito:** Pendiente de confirmar <br> **Universidad:** Universidad Peruana de Ciencias Aplicadas (UPC) <br> **Ciclo:** 7mo a 8vo <br> **Carrera:** Ingeniería de Software <br><br> **Resumen:** Jorge identifica las presentaciones ante audiencias o profesores como su mayor dificultad, ya que la inseguridad al cometer errores y los nervios visibles pueden afectar directamente su nota. Siente que su comunicación ha mejorado en la medida que domina mejor los temas del curso, pero como habilidad pura de oratoria el avance ha sido leve. Se prepara revisando los requerimientos, tomando notas de apoyo y usando NotebookLM para generar preguntas y practicar respuestas. Tuvo un caso negativo en el curso de Agile Frameworks, donde tuvo que mirar constantemente las diapositivas por no dominar el flujo del tema, algo que el profesor notó y comentó. Practica hablando solo frente a la presentación o usando el método del espejo, y ha buscado apps de práctica de lenguaje sin encontrar una específica para oratoria. El análisis que considera más valioso es el de claridad de ideas, porque evidencia dominio del tema ante la audiencia. Ve la app con IA como extremadamente útil, especialmente si permite cargar el material propio para detectar puntos débiles de contenido y vocalización. Prefiere el modo autónomo por privacidad y comodidad, aunque reconoce el valor del feedback docente. | ![Evidencia](assets/images/interviews/Entrevista-Talki-Segmento2-3.jpeg) [📂 Ver entrevista](https://drive.google.com/drive/folders/1IwH1aTzPJ2Y5cYJS3yqF8UM4eHfprvLE?usp=sharing) <br> `00:39:18 a 00:47:18` |
 
 ### 2.2.3. Análisis de entrevistas
 
@@ -775,7 +819,7 @@ Estudia Ingeniería de Software en la UPC y está en cuarto ciclo. Ya venía con
 
 **Segmento #2: Estudiantes universitarios de ciclos avanzados (6to al 10mo ciclo)**
 
-**Gianger (Computer Science, University of the People EE.UU., 6to ciclo)**
+**Gian Guerra (Computer Science, University of the People EE.UU., 6to ciclo)**
 
 Estudiante peruano radicado en Lima que cursa Computer Science de forma remota en una universidad estadounidense (University of the People), se encuentra en sexto ciclo. Aunque su universidad es extranjera, se incluye en el estudio porque representa el caso de universitarios peruanos que complementan su formación local con programas internacionales 100% online y que enfrentan retos adicionales de comunicación oral en contextos bilingües, un perfil cada vez más frecuente en el mercado laboral tecnológico peruano. Ha tenido evaluaciones orales variadas: monografías, proyectos de software, debates y simulaciones de entrevistas, además de entrevistas reales de trabajo. Reconoce que su comunicación oral ha mejorado enormemente desde sus inicios universitarios, principalmente gracias al mundo laboral. Antes hablaba muy rápido, llenaba los silencios y usaba muletillas constantemente. Actualmente, los escenarios que aún le generan presión son las presentaciones ante jefes o personas con mayor jerarquía. Se prepara haciendo "chuletillas" (resúmenes de ideas principales), consultando guías de oratoria y grabándose para identificar sus puntos débiles. Ha reconocido que la mala comunicación le jugó en contra en sus primeras entrevistas de trabajo, especialmente una con una empresa española en inglés. Ha probado la herramienta digital "Speak", que le da feedback sobre pronunciación, entonación y relación de palabras, aunque no sobre contenido ni manejo de silencios. Considera que lo más valioso sería una app que analice silencios y variedad de vocabulario, dos de sus puntos más débiles. Ve una aplicación con IA para simular sustentaciones y entrevistas como "extremadamente útil", con feedback sobre gestos, pronunciación, muletillas y claridad de ideas. Prefiere un esquema híbrido: IA autónoma con checkpoints periódicos con un tutor humano.
 
@@ -789,7 +833,7 @@ Estudiante peruano radicado en Lima que cursa Computer Science de forma remota e
 - Necesita mejorar **manejo de silencios y variedad de vocabulario**.
 - Ve la app con IA como **extremadamente útil**; prefiere modelo **híbrido** (IA + tutor).
 
-**Jennifer (Administración y Marketing, Universidad Privada del Norte, 7mo ciclo)**
+**Jennifer Bazan (Administración y Marketing, Universidad Privada del Norte, 7mo ciclo)**
 
 Estudia Administración y Marketing en la Universidad Privada del Norte y se encuentra en séptimo ciclo. Ha enfrentado sustentaciones de trabajos, exposiciones de proyectos, entrevistas y presentaciones ante jurados. Reconoce que su comunicación oral ha mejorado bastante desde los primeros ciclos, cuando le costaba organizar sus ideas y se ponía nerviosa. La práctica constante le ha dado mayor claridad y seguridad. Los escenarios que aún le generan estrés son las presentaciones ante un jurado y las entrevistas de prácticas, donde siente una presión y evaluación más directa. Se prepara investigando bien el tema, organizando ideas, practicando frente al espejo o grabándose, y anticipando posibles preguntas. Ha experimentado que los nervios le han hecho olvidar ideas en momentos clave, afectando la claridad de su mensaje. No ha usado aplicaciones especializadas; solo se ha grabado con el celular o por Zoom. El análisis que considera más valioso es el de fluidez y claridad de ideas, como aspectos clave para mejorar su comunicación. Ve muy útil una app con IA que simule sustentaciones y entrevistas con retroalimentación específica, porque le permitiría practicar en un entorno más realista. Le gustaría utilizarla tanto de forma autónoma como compartiendo resultados con un tutor o profesor para recibir orientación adicional.
 
@@ -829,9 +873,9 @@ Las fichas individuales anteriores recogen la evidencia bruta de cada entrevista
 
 - **6 de 6** entrevistados consideran que una aplicación con IA especializada en oratoria sería "útil" o "extremadamente útil" para su preparación personal.
 - **6 de 6** no han encontrado una aplicación digital enfocada específicamente en oratoria en español; las que conocen (Speak, ChatGPT, NotebookLM, grabadoras nativas) cubren partes del problema pero no el feedback completo.
-- **5 de 6** reconocen que los nervios o la ansiedad los han llevado a olvidar contenido, perder fluidez o bajar el volumen durante una presentación importante (Belén, Isabel, Jennifer, Jorge, Juan Alejandro en exposiciones de alta importancia).
-- **5 de 6** valoran recibir retroalimentación objetiva y directa, ya sea porque la IA es percibida como más honesta (Belén) o porque les ahorra tiempo frente al feedback de pares (Isabel, Jennifer).
-- **4 de 6** se graban o están dispuestos a grabarse como método de práctica autónoma (Gianger, Jennifer, Juan Alejandro dispuesto, Jorge con su propio material).
+- **5 de 6** reconocen que los nervios o la ansiedad los han llevado a olvidar contenido, perder fluidez o bajar el volumen durante una presentación importante (Belén, Isabel, Jennifer Bazan, Jorge, Juan Alejandro en exposiciones de alta importancia).
+- **5 de 6** valoran recibir retroalimentación objetiva y directa, ya sea porque la IA es percibida como más honesta (Belén) o porque les ahorra tiempo frente al feedback de pares (Isabel, Jennifer Bazan).
+- **4 de 6** se graban o están dispuestos a grabarse como método de práctica autónoma (Gian Guerra, Jennifer Bazan, Juan Alejandro dispuesto, Jorge con su propio material).
 
 **Divergencias por segmento:**
 
@@ -882,109 +926,20 @@ Estudiante universitario de 23 años, residente en Lima, Perú, cursando los cic
 
 ### 2.3.2. User Task Matrix
 
-<table>
-  <thead>
-    <tr>
-      <th rowspan="2">Tareas</th>
-      <th colspan="2">Valeria Ríos (Ciclos iniciales)</th>
-      <th colspan="2">Rodrigo Sánchez (Ciclos avanzados)</th>
-    </tr>
-    <tr>
-      <th>Frecuencia</th>
-      <th>Importancia</th>
-      <th>Frecuencia</th>
-      <th>Importancia</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Grabarse practicando una exposición</td>
-      <td>Raramente</td>
-      <td>Alta</td>
-      <td>Casi siempre</td>
-      <td>Muy alta</td>
-    </tr>
-    <tr>
-      <td>Recibir retroalimentación sobre su oratoria</td>
-      <td>A veces</td>
-      <td>Muy alta</td>
-      <td>Casi siempre</td>
-      <td>Muy alta</td>
-    </tr>
-    <tr>
-      <td>Practicar simulaciones de exposiciones</td>
-      <td>A veces</td>
-      <td>Alta</td>
-      <td>Siempre</td>
-      <td>Muy alta</td>
-    </tr>
-    <tr>
-      <td>Practicar simulaciones de entrevistas de trabajo</td>
-      <td>Nunca</td>
-      <td>Media</td>
-      <td>Casi siempre</td>
-      <td>Muy alta</td>
-    </tr>
-    <tr>
-      <td>Identificar muletillas y palabras repetidas</td>
-      <td>Raramente</td>
-      <td>Alta</td>
-      <td>Casi siempre</td>
-      <td>Alta</td>
-    </tr>
-    <tr>
-      <td>Analizar volumen y claridad de voz</td>
-      <td>A veces</td>
-      <td>Muy alta</td>
-      <td>A veces</td>
-      <td>Alta</td>
-    </tr>
-    <tr>
-      <td>Revisar historial de sesiones de práctica</td>
-      <td>Raramente</td>
-      <td>Media</td>
-      <td>Casi siempre</td>
-      <td>Alta</td>
-    </tr>
-    <tr>
-      <td>Compartir resultados con un tutor o profesor</td>
-      <td>A veces</td>
-      <td>Media</td>
-      <td>A veces</td>
-      <td>Alta</td>
-    </tr>
-    <tr>
-      <td>Cargar material propio para practicar</td>
-      <td>Raramente</td>
-      <td>Media</td>
-      <td>Casi siempre</td>
-      <td>Muy alta</td>
-    </tr>
-    <tr>
-      <td>Consultar tips y guías de oratoria</td>
-      <td>A veces</td>
-      <td>Alta</td>
-      <td>A veces</td>
-      <td>Media</td>
-    </tr>
-  </tbody>
-</table>
+La matriz describe actividades de preparación oral que los estudiantes pueden realizar con o sin Talki. Las personas sintetizan las entrevistas de 2.2; la frecuencia se expresa según las situaciones relatadas y la importancia es una interpretación cualitativa de sus necesidades. No representa una medición estadística del segmento.
 
-Las tareas más frecuentes para los perfiles de usuario en Talki muestran diferencias claras según el ciclo académico y las metas de cada uno. Valeria Ríos, como estudiante de ciclos iniciales, interactúa principalmente con las funciones de grabación, análisis de volumen de voz y recepción de retroalimentación general, considerándolas cruciales para superar su inseguridad al exponer. En contraste, Rodrigo Sánchez, estudiante avanzado con experiencia laboral, utiliza la plataforma de forma más estratégica y constante, priorizando las simulaciones de entrevistas de trabajo, la carga de material propio y el seguimiento de su historial de sesiones, actividades que realiza con alta frecuencia y considera muy importantes para su desarrollo profesional. Ambos perfiles coinciden en el valor de practicar simulaciones de exposiciones y recibir retroalimentación sobre su oratoria, aunque Rodrigo las ejecuta con mayor regularidad y profundidad.
+| Tarea del estudiante | Valeria: frecuencia relatada | Valeria: importancia interpretada | Rodrigo: frecuencia relatada | Rodrigo: importancia interpretada | Sustento en las entrevistas |
+| --- | --- | --- | --- | --- | --- |
+| Organizar ideas y escribir un guion o notas de apoyo. | Antes de exposiciones. | Alta. | Antes de sustentaciones y entrevistas. | Muy alta. | Juan Alejandro escribe su guion; Isabel utiliza una bitácora; Gian Guerra y Jorge preparan notas. |
+| Ensayar en voz alta frente al espejo o las diapositivas. | Frecuencia no cuantificada. | Alta. | Antes de presentaciones exigentes. | Muy alta. | Jennifer Bazan y Jorge describen el ensayo frente al espejo o la presentación. |
+| Pedir a un compañero que escuche el ensayo y opine. | Antes de algunas exposiciones. | Muy alta. | Frecuencia no cuantificada. | Alta. | Belén pide a amigos que la escuchen; Jennifer Bazan valora la orientación de un tutor. |
+| Grabarse y escuchar el ensayo para identificar dificultades. | Sin hábito confirmado; disposición a probarlo. | Alta. | Como preparación autónoma. | Alta. | Juan Alejandro expresa disposición a grabarse; Gian Guerra y Jennifer Bazan utilizan grabaciones. |
+| Detectar repeticiones, silencios o dificultades de fluidez al repasar el discurso. | Frecuencia no cuantificada. | Alta. | Durante la preparación de presentaciones. | Muy alta. | Isabel identifica vocabulario repetido; Juan Alejandro señala fluidez; Gian Guerra quiere mejorar silencios. |
+| Revisar el material y comprobar que explica las ideas principales. | Antes de exposiciones del curso. | Alta. | Antes de sustentaciones y presentaciones. | Muy alta. | Isabel revisa diapositivas; Jorge señala el dominio del contenido y la claridad de ideas. |
+| Anticipar preguntas y preparar respuestas para entrevistas o jurados. | Sin experiencia laboral confirmada en el perfil. | Media. | Antes de entrevistas y sustentaciones. | Muy alta. | Jennifer Bazan anticipa preguntas; Jorge genera preguntas con NotebookLM; Gian Guerra relata entrevistas laborales. |
+| Buscar consejos de oratoria y aplicarlos en un ensayo. | Frecuencia no cuantificada. | Alta. | Cuando identifica una dificultad. | Alta. | Gian Guerra consulta guías; los demás describen métodos propios y búsqueda de herramientas. |
 
-Coincidencias:
-- Ambos consideran de muy alta importancia recibir retroalimentación sobre su oratoria, aunque Rodrigo lo hace con mayor frecuencia.
-
-- Comparten una actitud positiva hacia la práctica de simulaciones de exposiciones, siendo una tarea central para los dos perfiles.
-
-- Las funciones de identificación de muletillas y análisis de claridad de voz tienen importancia alta para ambos, aunque con distinta frecuencia de uso.
-
-Diferencias:
-- Valeria prioriza el análisis de volumen y claridad de voz como su necesidad más urgente, mientras que Rodrigo enfoca su atención en el manejo de silencios, la variedad de vocabulario y la preparación para entrevistas laborales.
-
-- Rodrigo utiliza con mucha mayor frecuencia la carga de material propio y el historial de sesiones, tareas que Valeria realiza raramente por encontrarse en etapas más básicas de práctica.
-
-- Las simulaciones de entrevistas de trabajo son de muy alta importancia y frecuencia para Rodrigo, mientras que para Valeria tienen una importancia media y nunca las ha practicado aún, dado que su foco está en las exposiciones académicas.
+Ambos perfiles necesitan ordenar sus ideas, ensayar y reconocer qué deben mejorar antes de una evaluación. En los ciclos iniciales predomina la seguridad para exponer y mantener fluidez; en los avanzados se añade la preparación de respuestas ante jurados o empleadores. Estas tareas justifican los escenarios de práctica y feedback del capítulo III y los recorridos de preparación, ensayo y revisión del capítulo VI.
 
 ### 2.3.3. Empathy Mapping
 
@@ -1130,59 +1085,154 @@ Los criterios de aceptación se especifican como escenarios **Dado–Cuando–En
 | US32 | Compartir temporalmente un reporte | Como estudiante, quiero dar acceso limitado a un tutor para recibir orientación adicional. | El enlace tiene expiración y revocación; no expone otras sesiones; el tutor no puede modificar datos. |
 | US33 | Revocar consentimiento y eliminar datos | Como estudiante, quiero retirar permisos o eliminar sesiones para conservar control de mi información. | La revocación impide nuevos accesos; el borrado cambia el estado inmediatamente y activa la purga; queda evidencia de auditoría. |
 
-Las siguientes **Technical Stories** representan restricciones sin interacción directa de usuario final. Se priorizan y verifican igual que las User Stories, en vez de ocultarlas como decisiones de implementación.
+Las **Technical Stories** definen servicios y contratos que consumen clientes u otros servicios. Su actor es Developer y sus criterios especifican peticiones, respuestas o confirmaciones de mensajes. Las restricciones de privacidad, plataforma, presupuesto y versionado permanecen identificadas como C-02 a C-09 en ADD.
 
-| ID | Título | Technical Story | Criterio de aceptación Given–When–Then |
-|---|---|---|---|
-| TS01 | Consentimiento verificable | Como equipo, necesitamos registrar consentimiento antes de procesar voz o material para cumplir la política de privacidad del piloto. | **Given** una sesión sin consentimiento, **When** se intenta iniciarla, **Then** el sistema la bloquea y registra la versión aceptada al consentir. |
-| TS02 | Audio efímero | Como equipo, necesitamos no persistir audio crudo por defecto para minimizar exposición y costo. | **Given** una sesión finalizada sin consentimiento adicional, **When** vence su ventana temporal, **Then** no queda audio crudo accesible. |
-| TS03 | Base tecnológica existente | Como equipo, necesitamos mantener compatibilidad con Spring Boot, PostgreSQL y RabbitMQ para evolucionar el trabajo previo. | **Given** un servicio nuevo, **When** se integra al piloto, **Then** usa contratos compatibles con la base técnica acordada. |
-| TS04 | Trazabilidad versionada | Como equipo, necesitamos versionar código, contratos, rúbricas y análisis en GitHub para que sean revisables. | **Given** un cambio de contrato o rúbrica, **When** se integra, **Then** queda identificado por versión y revisión de Pull Request. |
-| TS05 | Experiencia web en español | Como equipo, necesitamos entregar el piloto web en español para el segmento definido. | **Given** un navegador moderno con micrófono disponible, **When** un estudiante abre Talki, **Then** puede completar el flujo en español sin requerir una app nativa. |
-| TS06 | Presupuesto y plazo académico | Como equipo, necesitamos operar dentro del presupuesto y calendario del curso para entregar un piloto viable. | **Given** una alternativa arquitectónica, **When** se evalúa, **Then** se descarta si excede el presupuesto o el plazo acordado. |
+Las rutas existentes se toman de las interfaces descritas en el capítulo V. Los códigos de respuesta, controles de autorización, idempotencia y contratos ampliados son requisitos del diseño que deberán verificarse durante la implementación; esta tabla no acredita pruebas ejecutadas ni endpoints nuevos desplegados.
+
+| ID | Título | Technical Story | Contrato y alcance |
+| --- | --- | --- | --- |
+| TS01 | API de sesiones | Como Developer, quiero exponer creación y consulta de sesiones para que el cliente gestione ensayos mediante un contrato estable. | API de sesiones: POST y GET /v1/sessions; GET /v1/sessions/{id}. |
+| TS02 | Contrato de coaching en vivo | Como Developer, quiero obtener credenciales efímeras y confirmar el cierre para integrar la conversación de voz sin exponer credenciales permanentes. | POST /v1/coach/live-token y POST /v1/coach/{sessionId}/finalize; cliente a Gemini Live por WSS. |
+| TS03 | Pipeline de análisis idempotente | Como Developer, quiero procesar eventos de cierre y publicar resultados versionados para obtener feedback sin duplicar evaluaciones. | RabbitMQ: session.live.finalized, fillers.analyzed y scoring.completed; ACK, reintentos y cola de fallos. |
+| TS04 | Consulta de reportes versionados | Como Developer, quiero un contrato de consulta de feedback para que el cliente distinga resultados completos, parciales y pendientes. | Consulta HTTP/JSON propuesta en Scoring & Feedback; ruta pública por definir en implementación. |
+| TS05 | API de progreso | Como Developer, quiero consultar el resumen de progreso para que el cliente presente evolución a partir de sesiones válidas. | GET /v1/progress/dashboard?userId; comparación versionada como ampliación. |
+| TS06 | API de compartición y eliminación | Como Developer, quiero contratos de permisos temporales y purga para controlar acceso y eliminación entre contextos. | APIs propuestas de Sharing & Retention en 5.6; eventos de revocación, purga y confirmación. |
+
+| Historia | Escenario | Given | When | Then |
+| --- | --- | --- | --- | --- |
+| TS01 | Principal | una solicitud autenticada con título y modo válidos | se envía POST /v1/sessions | responde 201 con identificador y estado de la sesión. |
+| TS01 | Alternativo / error | el solicitante no es propietario del recurso | se envía GET /v1/sessions/{id} | responde 403 sin entregar datos de otro estudiante. |
+| TS02 | Principal | el modo es válido y hay consentimiento | se solicita una credencial mediante POST /v1/coach/live-token | responde 200 con token temporal, modelo, vigencia y duración máxima. |
+| TS02 | Alternativo / error | la credencial efímera venció | el cliente intenta abrir el canal WSS de voz | la conexión es rechazada y se requiere una nueva credencial autorizada. |
+| TS03 | Principal | llega un evento de cierre válido no procesado | el worker analiza y registra el resultado | publica el evento de salida y confirma el mensaje después de completar la operación. |
+| TS03 | Alternativo / error | el mismo identificador de evento vuelve a recibirse | el worker lo procesa | reconoce el duplicado sin crear otro reporte; un fallo transitorio reintenta y un fallo persistente queda en la cola de fallos. |
+| TS04 | Principal | el propietario consulta una evaluación disponible | envía la petición de consulta de reporte | responde 200 con sesión, versiones de rúbrica y análisis, métricas y limitaciones. |
+| TS04 | Alternativo / error | el trabajo aún no termina | consulta el mismo reporte | responde 202 con el estado de procesamiento y no fabrica una puntuación. |
+| TS05 | Principal | el solicitante está autorizado y tiene sesiones válidas | envía GET /v1/progress/dashboard con su userId | responde 200 con totales, promedio y mejor puntuación. |
+| TS05 | Alternativo / error | se solicita progreso de un usuario ajeno sin permiso | se envía la consulta | responde 403 sin exponer su historial. |
+| TS06 | Principal | el propietario solicita eliminación | se recibe la petición autorizada de borrado | responde 202 con identificador y estado pendiente; bloquea el acceso antes de confirmar la purga física. |
+| TS06 | Alternativo / error | un enlace fue revocado o venció | se solicita el reporte compartido | responde 403 sin entregar contenido ni habilitar acceso a otras sesiones. |
 
 ### Escenarios de aceptación
 
-| Historia | Dado | Cuando | Entonces |
-|---|---|---|---|
-| US01 | el visitante abre la landing page | consulta beneficios | ve beneficios diferenciados y accesibles por segmento. |
-| US02 | el visitante consulta planes | selecciona un plan | ve precio, límites y funcionalidades reales. |
-| US03 | existe un testimonio autorizado | el visitante lo consulta | ve segmento sin datos personales innecesarios. |
-| US04 | el visitante completa el formulario | envía una consulta válida | recibe confirmación y los datos se usan solo para responder. |
-| US05 | el correo no está registrado | completa registro válido | se crea una cuenta única y se solicita verificación. |
-| US06 | el estudiante ingresa credenciales | intenta iniciar sesión | accede con datos válidos sin revelar qué credencial falló. |
-| US07 | el estudiante solicita recuperación | usa el enlace recibido | restablece una vez dentro de su vigencia. |
-| US08 | el estudiante edita su perfil | guarda cambios válidos | se actualizan futuras recomendaciones. |
-| US09 | el estudiante autenticado inicia una práctica | registra título y objetivo | se crea un borrador cancelable. |
-| US10 | existe un borrador | el estudiante elige un modo | Talki explica criterios y configura el reporte. |
-| US11 | existe un borrador | define una duración válida | el cronómetro la muestra y avisa sin bloquear. |
-| US12 | hay permisos de micrófono | inicia la práctica | se captura audio y aparece transcripción incremental. |
-| US13 | la práctica está activa o pausada | pausa o reanuda | conserva estado, cronómetro y transcripción sin duplicados. |
-| US14 | la práctica está activa | confirma finalización | guarda un estado único e inicia análisis. |
-| US15 | el análisis tiene evidencia suficiente | finaliza procesamiento | entrega puntuación, fortalezas y oportunidades. |
-| US16 | existe una transcripción | consulta muletillas | ve tipo, conteo y evidencia. |
-| US17 | existe transcripción y contexto autorizado | consulta palabras clave | distingue términos usados y sugeridos. |
-| US18 | existe una recomendación léxica | el estudiante la consulta | recibe alternativas apropiadas al contexto. |
-| US19 | el análisis está listo | consulta una sugerencia | ve evidencia y una acción priorizada. |
-| US20 | el estudiante tiene sesiones | abre historial | ve solo recursos propios, ordenados correctamente. |
-| US21 | existen sesiones compatibles | consulta progreso | ve métricas con versión y período. |
-| US22 | selecciona dos sesiones compatibles | las compara | ve cambios y evidencia sin sobredimensionarlos. |
-| US23 | el estudiante selecciona su ciclo | guarda el segmento | cambian recomendaciones sin bloquear funciones. |
-| US24 | el estudiante define una meta | la guarda | el reporte relaciona recomendaciones con ella. |
-| US25 | el estudiante selecciona un área | inicia análisis | prioriza esa métrica sin ocultar alertas críticas. |
-| US26 | existe evidencia de práctica | recibe feedback | la explicación se adapta a su segmento. |
-| US27 | el estudiante es propietario | exporta un reporte | recibe fecha, versiones y solo datos autorizados. |
-| US28 | existe una sesión autenticada | el estudiante cierra sesión | se revoca refresh token y se eliminan credenciales locales. |
-| US29 | aún no hay consentimiento | prueba audio o inicia | Talki bloquea captura hasta consentimiento y validación. |
-| US30 | el estudiante selecciona un archivo | lo adjunta | valida formato y tamaño, y permite eliminarlo. |
-| US31 | el estudiante avanzado inicia simulación | responde preguntas | la IA respeta turnos, tiempo y material autorizado. |
-| US32 | el propietario comparte un reporte | crea o revoca enlace | el acceso es temporal, limitado y revocable. |
-| US33 | el propietario solicita revocación o borrado | confirma la acción | se bloquean accesos y se activa purga auditable. |
-| US34 | ocurre una desconexión | vuelve a la práctica | conserva estado válido y ofrece reanudar o cierre parcial. |
-| US35 | existe una sesión válida | alcanza un hito | concede el logro una sola vez. |
-| US36 | existe historial suficiente | solicita un plan | recibe ejercicios justificados por errores recurrentes. |
-| US37 | el análisis falla recuperablemente | consulta estado o reintenta | ve estado y evita reportes duplicados. |
-| US38 | el estudiante habla durante práctica | recibe una señal | obtiene coaching silenciable sin interrumpir captura. |
+Cada historia tiene un escenario principal y dos escenarios alternativos o de error. Dado, Cuando y Entonces corresponden a Given, When y Then de Gherkin. Son condiciones de aceptación del diseño; la ejecución de pruebas se documentará en el capítulo VII.
+
+| Historia | Escenario | Dado | Cuando | Entonces |
+| --- | --- | --- | --- | --- |
+| US01 | Principal | el visitante abre la landing page | consulta beneficios | ve beneficios diferenciados y accesibles por segmento. |
+| US01 | Alternativo | el visitante accede desde un móvil | consulta los beneficios | el contenido se adapta sin ocultar información de ningún segmento. |
+| US01 | Excepción | el contenido de beneficios no carga | intenta consultarlo | se informa el problema y se ofrece volver a cargar. |
+| US02 | Principal | el visitante consulta planes | selecciona un plan | ve precio, límites y funcionalidades reales. |
+| US02 | Alternativo | el visitante cambia de plan | consulta otra alternativa | ve el precio y límites de esa alternativa sin contratar automáticamente. |
+| US02 | Excepción | un plan no tiene precio confirmado | consulta sus condiciones | se indica que requiere consulta y no se inventa un importe. |
+| US03 | Principal | existe un testimonio autorizado | el visitante lo consulta | ve segmento sin datos personales innecesarios. |
+| US03 | Alternativo | no hay testimonios autorizados | consulta la sección | ve una explicación sin testimonios ficticios. |
+| US03 | Excepción | se retira la autorización de un testimonio | se actualiza la landing | el testimonio deja de publicarse. |
+| US04 | Principal | el visitante completa el formulario | envía una consulta válida | recibe confirmación y los datos se usan solo para responder. |
+| US04 | Alternativo | faltan campos obligatorios o el correo es inválido | envía la consulta | se indican los campos por corregir y se conserva el texto. |
+| US04 | Excepción | el servicio de contacto falla | envía una consulta válida | se informa que no fue enviada y permite reintentar. |
+| US05 | Principal | el correo no está registrado | completa registro válido | se crea una cuenta única y se solicita verificación. |
+| US05 | Alternativo | el correo ya está registrado | envía el registro | no se crea una cuenta duplicada y se ofrece acceso o recuperación. |
+| US05 | Excepción | la contraseña no cumple las reglas | envía el formulario | se explica la regla incumplida sin crear la cuenta. |
+| US06 | Principal | el estudiante ingresa credenciales | intenta iniciar sesión | accede con datos válidos sin revelar qué credencial falló. |
+| US06 | Alternativo | las credenciales son incorrectas | intenta acceder | recibe un mensaje general sin revelar qué dato falló. |
+| US06 | Excepción | se excede el límite de intentos configurado | intenta autenticarse nuevamente | el acceso se limita temporalmente y se informa cómo continuar. |
+| US07 | Principal | el estudiante solicita recuperación | usa el enlace recibido | restablece una vez dentro de su vigencia. |
+| US07 | Alternativo | el enlace de recuperación venció o ya fue utilizado | intenta restablecer la contraseña | se rechaza el enlace y se permite solicitar otro. |
+| US07 | Excepción | el correo solicitado no está registrado | solicita recuperación | recibe la misma confirmación general sin revelar cuentas existentes. |
+| US08 | Principal | el estudiante edita su perfil | guarda cambios válidos | se actualizan futuras recomendaciones. |
+| US08 | Alternativo | el perfil contiene un ciclo fuera del rango admitido | guarda los cambios | se explica el error y se conserva el perfil anterior. |
+| US08 | Excepción | el guardado falla por desconexión | edita su perfil | se informa que los cambios no se confirmaron y se conservan para reintentar. |
+| US09 | Principal | el estudiante autenticado inicia una práctica | registra título y objetivo | se crea un borrador cancelable. |
+| US09 | Alternativo | el título está vacío o excede el límite definido | crea un ensayo | se solicita corregirlo sin generar un borrador inválido. |
+| US09 | Excepción | la creación falla por desconexión | reintenta la misma solicitud | se recupera la sesión confirmada o se crea una sola sesión. |
+| US10 | Principal | existe un borrador | el estudiante elige un modo | Talki explica criterios y configura el reporte. |
+| US10 | Alternativo | el estudiante cambia de modo antes del inicio | confirma la selección | se actualizan los criterios y el contexto del ensayo. |
+| US10 | Excepción | el modo solicitado no está disponible | intenta seleccionarlo | se explica la limitación y se ofrecen modos disponibles. |
+| US11 | Principal | existe un borrador | define una duración válida | el cronómetro la muestra y avisa sin bloquear. |
+| US11 | Alternativo | la duración es menor o mayor que los límites informados | guarda la configuración | se indica el rango permitido sin iniciar una práctica inválida. |
+| US11 | Excepción | la práctica alcanza la duración objetivo | continúa hablando | se muestra un aviso y conserva el control del cierre. |
+| US12 | Principal | hay permisos de micrófono | inicia la práctica | se captura audio y aparece transcripción incremental. |
+| US12 | Alternativo | el navegador deniega el micrófono | intenta iniciar | se bloquea la captura y se explica cómo conceder permiso. |
+| US12 | Excepción | la conexión se pierde durante la captura | continúa la práctica | se informa la interrupción y se conserva el último estado confirmado. |
+| US13 | Principal | la práctica está activa o pausada | pausa o reanuda | conserva estado, cronómetro y transcripción sin duplicados. |
+| US13 | Alternativo | la práctica ya está pausada | solicita pausar otra vez | permanece pausada sin duplicar acciones ni tiempo. |
+| US13 | Excepción | la reanudación falla por desconexión | solicita continuar | permanece en el último estado confirmado y se ofrece recuperación. |
+| US14 | Principal | la práctica está activa | confirma finalización | guarda un estado único e inicia análisis. |
+| US14 | Alternativo | el estudiante cancela la confirmación de cierre | vuelve al ensayo | la práctica conserva su estado y no inicia el análisis. |
+| US14 | Excepción | la misma finalización se solicita dos veces | se procesa el cierre | se mantiene una única finalización y un único trabajo de análisis. |
+| US15 | Principal | el análisis tiene evidencia suficiente | finaliza procesamiento | entrega puntuación, fortalezas y oportunidades. |
+| US15 | Alternativo | la muestra no tiene evidencia suficiente | solicita el reporte | se identifica el resultado parcial y las dimensiones sin evidencia. |
+| US15 | Excepción | el análisis falla | consulta su reporte | ve el estado fallido y la opción de reintentar cuando sea recuperable. |
+| US16 | Principal | existe una transcripción | consulta muletillas | ve tipo, conteo y evidencia. |
+| US16 | Alternativo | no se detectan muletillas en la transcripción | consulta el resultado | ve conteo cero sin afirmar que su oratoria sea perfecta. |
+| US16 | Excepción | la transcripción está incompleta | consulta muletillas | el reporte señala el alcance parcial y no extrapola conteos. |
+| US17 | Principal | existe transcripción y contexto autorizado | consulta palabras clave | distingue términos usados y sugeridos. |
+| US17 | Alternativo | una palabra sugerida no aparece en el discurso | consulta palabras clave | se identifica como sugerencia y no como término pronunciado. |
+| US17 | Excepción | el material adjunto no fue autorizado | solicita el análisis temático | no se utiliza ese material y se explica la limitación. |
+| US18 | Principal | existe una recomendación léxica | el estudiante la consulta | recibe alternativas apropiadas al contexto. |
+| US18 | Alternativo | el discurso contiene terminología especializada correcta | consulta alternativas | se conserva su significado y se diferencia una sugerencia de un error. |
+| US18 | Excepción | no hay evidencia suficiente para recomendar un cambio | solicita alternativas | se explica la limitación sin inventar ejemplos del discurso. |
+| US19 | Principal | el análisis está listo | consulta una sugerencia | ve evidencia y una acción priorizada. |
+| US19 | Alternativo | varias sugerencias corresponden al mismo fragmento | consulta recomendaciones | se agrupan y priorizan acciones sin duplicarlas. |
+| US19 | Excepción | no existe evidencia que respalde una sugerencia | se prepara el reporte | la sugerencia se omite y no se atribuye al estudiante. |
+| US20 | Principal | el estudiante tiene sesiones | abre historial | ve solo recursos propios, ordenados correctamente. |
+| US20 | Alternativo | el estudiante no tiene sesiones | abre el historial | ve un estado vacío y una opción para crear su primer ensayo. |
+| US20 | Excepción | intenta abrir una sesión de otro propietario | solicita el recurso | se deniega el acceso sin exponer contenido. |
+| US21 | Principal | existen sesiones compatibles | consulta progreso | ve métricas con versión y período. |
+| US21 | Alternativo | solo hay una sesión compatible | consulta progreso | ve la medición disponible sin afirmar una tendencia. |
+| US21 | Excepción | las métricas pertenecen a rúbricas distintas | consulta evolución | se separan por versión y se informa la incompatibilidad. |
+| US22 | Principal | selecciona dos sesiones compatibles | las compara | ve cambios y evidencia sin sobredimensionarlos. |
+| US22 | Alternativo | las sesiones tienen modos o rúbricas incompatibles | intenta compararlas | se explica la incompatibilidad sin calcular variaciones engañosas. |
+| US22 | Excepción | una sesión carece de una dimensión evaluada | compara resultados | esa dimensión aparece sin evidencia y no se sustituye por cero. |
+| US23 | Principal | el estudiante selecciona su ciclo | guarda el segmento | cambian recomendaciones sin bloquear funciones. |
+| US23 | Alternativo | el estudiante cambia de ciclo | actualiza su segmento | se adaptan futuras recomendaciones sin cambiar reportes históricos. |
+| US23 | Excepción | el ciclo no pertenece al rango admitido | guarda la selección | se solicita corregirlo sin bloquear otras funciones. |
+| US24 | Principal | el estudiante define una meta | la guarda | el reporte relaciona recomendaciones con ella. |
+| US24 | Alternativo | el estudiante modifica una meta | guarda el cambio | los siguientes reportes utilizan la meta actual y conservan el historial. |
+| US24 | Excepción | la meta está vacía o no es verificable | intenta guardarla | se orienta a redactar una meta concreta sin registrar una inválida. |
+| US25 | Principal | el estudiante selecciona un área | inicia análisis | prioriza esa métrica sin ocultar alertas críticas. |
+| US25 | Alternativo | el estudiante elige más de un enfoque permitido | confirma la preparación | el reporte identifica las áreas seleccionadas. |
+| US25 | Excepción | aparece una alerta crítica fuera del enfoque | consulta el resultado | la alerta permanece visible junto a las métricas priorizadas. |
+| US26 | Principal | existe evidencia de práctica | recibe feedback | la explicación se adapta a su segmento. |
+| US26 | Alternativo | el estudiante actualiza su segmento | realiza una nueva práctica | recibe una explicación apropiada al segmento vigente. |
+| US26 | Excepción | el segmento no está definido | consulta feedback | recibe una explicación general sin inferir su ciclo. |
+| US27 | Principal | el estudiante es propietario | exporta un reporte | recibe fecha, versiones y solo datos autorizados. |
+| US27 | Alternativo | el reporte contiene una dimensión sin evidencia | exporta el archivo | la limitación se conserva en el documento. |
+| US27 | Excepción | la generación del archivo falla | solicita exportación | se informa el fallo sin entregar un archivo incompleto como válido. |
+| US28 | Principal | existe una sesión autenticada | el estudiante cierra sesión | se revoca refresh token y se eliminan credenciales locales. |
+| US28 | Alternativo | existe una práctica en curso | solicita cerrar sesión | se advierte antes de perder acceso al ensayo. |
+| US28 | Excepción | se intenta renovar con un refresh token revocado | solicita otra credencial | la renovación se rechaza y requiere nuevo acceso. |
+| US29 | Principal | aún no hay consentimiento | prueba audio o inicia | Talki bloquea captura hasta consentimiento y validación. |
+| US29 | Alternativo | hay permiso de micrófono pero no consentimiento | intenta iniciar | se bloquea el procesamiento de voz hasta aceptar las condiciones. |
+| US29 | Excepción | la prueba no detecta señal de entrada | verifica el micrófono | se ofrecen instrucciones y no se marca la prueba como exitosa. |
+| US30 | Principal | el estudiante selecciona un archivo | lo adjunta | valida formato y tamaño, y permite eliminarlo. |
+| US30 | Alternativo | el archivo excede el tamaño o usa un formato no permitido | intenta adjuntarlo | se informa el motivo y no se incorpora al contexto. |
+| US30 | Excepción | el estudiante retira un material antes de la práctica | confirma eliminarlo | el material deja de estar autorizado para esa práctica. |
+| US31 | Principal | el estudiante avanzado inicia simulación | responde preguntas | la IA respeta turnos, tiempo y material autorizado. |
+| US31 | Alternativo | el estudiante decide terminar la simulación | confirma el cierre | la IA deja de preguntar y se conserva la evidencia autorizada. |
+| US31 | Excepción | la IA pierde conexión o recibe material insuficiente | solicita una nueva pregunta | se informa la limitación sin inventar datos del CV o proyecto. |
+| US32 | Principal | el propietario comparte un reporte | crea o revoca enlace | el acceso es temporal, limitado y revocable. |
+| US32 | Alternativo | el enlace compartido venció | el tutor abre el reporte | se deniega el acceso y no se muestran otras sesiones. |
+| US32 | Excepción | el propietario revoca un enlace activo | el tutor vuelve a solicitar el recurso | la autorización se rechaza de inmediato. |
+| US33 | Principal | el propietario solicita revocación o borrado | confirma la acción | se bloquean accesos y se activa purga auditable. |
+| US33 | Alternativo | el propietario retira consentimiento | se intenta iniciar nuevo procesamiento | la solicitud se bloquea aunque una purga previa siga pendiente. |
+| US33 | Excepción | un contexto no confirma la purga física | consulta el estado de eliminación | el acceso sigue bloqueado y el estado figura pendiente. |
+| US34 | Principal | ocurre una desconexión | vuelve a la práctica | conserva estado válido y ofrece reanudar o cierre parcial. |
+| US34 | Alternativo | el estado confirmado permite reanudar | se restablece la conexión | la práctica continúa desde ese estado sin duplicar transcripción. |
+| US34 | Excepción | la recuperación no es posible | vuelve al ensayo | se ofrece cierre parcial y se indica qué evidencia quedó disponible. |
+| US35 | Principal | existe una sesión válida | alcanza un hito | concede el logro una sola vez. |
+| US35 | Alternativo | el evento de una sesión ya fue contabilizado | se vuelve a recibir | no se incrementa otra vez la racha ni se duplica el logro. |
+| US35 | Excepción | la sesión es inválida o insuficiente según las reglas | se evalúa el hito | no concede progreso y explica el criterio aplicable. |
+| US36 | Principal | existe historial suficiente | solicita un plan | recibe ejercicios justificados por errores recurrentes. |
+| US36 | Alternativo | el historial no es suficiente | solicita un plan adaptativo | recibe un punto de partida general identificado como tal. |
+| US36 | Excepción | el historial contiene versiones incompatibles | se recalcula el plan | solo se utilizan mediciones compatibles y se explica la selección. |
+| US37 | Principal | el análisis falla recuperablemente | consulta estado o reintenta | ve estado y evita reportes duplicados. |
+| US37 | Alternativo | el análisis permanece en cola | consulta el estado | ve que está pendiente sin presentarlo como un reporte listo. |
+| US37 | Excepción | el mismo trabajo se reintenta más de una vez | se completa el procesamiento | se conserva un único resultado por sesión y versión. |
+| US38 | Principal | el estudiante habla durante práctica | recibe una señal | obtiene coaching silenciable sin interrumpir captura. |
+| US38 | Alternativo | el estudiante silencia las señales | continúa hablando | la captura continúa sin avisos del coach. |
+| US38 | Excepción | no hay evidencia acústica o la latencia supera el umbral | se intenta generar una señal | se omite la señal no sustentada y se informa la limitación sin bloquear el ensayo. |
 
 ## 3.3. Impact Mapping
 
@@ -1266,63 +1316,67 @@ La siguiente trazabilidad complementa el diagrama y asegura que cada meta SMART 
 
 ## 3.4. Product Backlog
 
-El Product Backlog conserva la identificación histórica del proyecto y añade las historias US29–US38. La priorización combina MoSCoW con *story points* como estimación relativa; estos valores deberán refinarse durante el Sprint Planning. El orden numérico prioriza la entrega de valor visible para el usuario; las Technical Stories son habilitadores transversales del MVP y se calendarizan junto con las historias de las que dependen.
+El orden expresa el valor para validar Talki: completar un ensayo, obtener feedback útil y comunicar la propuesta del producto. No es una secuencia de implementación. Las dependencias se resuelven en Sprint Planning junto con los contratos técnicos y las salvaguardas de acceso y privacidad.
+
+Las estimaciones preliminares utilizan únicamente **1, 2, 3, 5 y 8 story points**. El equipo deberá refinarlas antes de comprometer un sprint. El primer sprint contempla US01–US04 de la landing; los testimonios solo se publicarán con autorización y, si no existen, se presentará el estado vacío previsto en US03.
 
 | Orden | ID | Título | Prioridad | SP | Dependencias | Entrega objetivo |
-|---:|---|---|:---:|---:|---|---|
-| 1 | US05 | Registrar una cuenta | Must | 5 | No aplica | MVP |
-| 2 | US06 | Iniciar sesión | Must | 5 | US05 | MVP |
-| 3 | US28 | Cerrar sesión | Must | 1 | US06 | MVP |
-| 4 | US09 | Crear una sesión | Must | 3 | US06 | MVP |
-| 5 | US10 | Seleccionar tipo de sesión | Must | 3 | US09 | MVP |
-| 6 | US23 | Seleccionar segmento académico | Must | 2 | US05 | MVP |
-| 7 | US29 | Verificar micrófono y consentimiento | Must | 5 | US09 | MVP |
-| 8 | US12 | Iniciar grabación y transcripción | Must | 8 | US09, US29 | MVP |
-| 9 | US13 | Pausar y reanudar | Should | 3 | US12 | MVP |
-| 10 | US14 | Finalizar y guardar | Must | 3 | US12 | MVP |
-| 11 | US38 | Recibir coaching en tiempo cercano al real | Must | 13 | US12 | MVP |
-| 12 | US15 | Recibir feedback general | Must | 8 | US14 | MVP |
-| 13 | US16 | Analizar muletillas | Should | 5 | US14 | MVP |
-| 14 | US19 | Recibir sugerencias por sección | Should | 5 | US15 | MVP |
-| 15 | US26 | Recibir recomendaciones por segmento | Must | 5 | US15, US23 | MVP |
-| 16 | US37 | Consultar estado y reintentar análisis | Must | 5 | US14, US15 | MVP |
-| 17 | US20 | Consultar historial | Should | 3 | US06, US15 | MVP |
-| 18 | US33 | Revocar consentimiento y eliminar datos | Must | 8 | US06, US20 | MVP |
-| 19 | US34 | Recuperar una sesión interrumpida | Must | 8 | US12, US14 | MVP |
-| 20 | US08 | Editar perfil | Must | 3 | US06 | Incremento 2 |
-| 21 | US11 | Configurar duración objetivo | Should | 2 | US09 | Incremento 2 |
-| 22 | US24 | Establecer metas | Could | 3 | US08 | Incremento 2 |
-| 23 | US25 | Seleccionar áreas de enfoque | Could | 3 | US09 | Incremento 2 |
-| 24 | US30 | Cargar material de contexto | Should | 8 | US09 | Incremento 2 |
-| 25 | US31 | Simular entrevista o sustentación | Should | 13 | US10, US30, US38 | Incremento 2 |
-| 26 | US17 | Analizar palabras clave | Should | 5 | US14, US30 | Incremento 2 |
-| 27 | US18 | Mejorar el léxico | Could | 5 | US17 | Incremento 2 |
-| 28 | US21 | Ver progreso | Should | 5 | US20 | Incremento 2 |
-| 29 | US22 | Comparar sesiones | Could | 5 | US20, US21 | Incremento 2 |
-| 30 | US36 | Recibir un plan adaptativo | Should | 8 | US19, US21, US22 | Incremento 2 |
-| 31 | US27 | Exportar transcripción y feedback | Could | 3 | US15 | Incremento 2 |
-| 32 | US32 | Compartir temporalmente un reporte | Should | 5 | US15, US33 | Incremento 2 |
-| 33 | US35 | Mantener rachas y logros | Could | 5 | US20 | Incremento 3 |
-| 34 | US07 | Recuperar contraseña | Should | 3 | US05 | Incremento 3 |
-| 35 | US01 | Visualizar beneficios | Could | 2 | No aplica | Incremento 3 |
-| 36 | US02 | Ver planes y precios | Could | 2 | No aplica | Incremento 3 |
-| 37 | US03 | Ver testimonios | Could | 1 | No aplica | Incremento 3 |
-| 38 | US04 | Enviar una consulta | Could | 2 | No aplica | Incremento 3 |
+| ---: | --- | --- | :---: | ---: | --- | --- |
+| 1 | US09 | Crear una sesión | Must | 3 | US06 | MVP |
+| 2 | US12 | Iniciar grabación y transcripción | Must | 8 | US09, US29 | MVP |
+| 3 | US14 | Finalizar y guardar | Must | 3 | US12 | MVP |
+| 4 | US15 | Recibir feedback general | Must | 8 | US14 | MVP |
+| 5 | US01 | Visualizar beneficios | Must | 2 | No aplica | MVP / Sprint 1 |
+| 6 | US02 | Ver planes y precios | Must | 2 | No aplica | MVP / Sprint 1 |
+| 7 | US03 | Ver testimonios | Must | 1 | No aplica | MVP / Sprint 1 |
+| 8 | US04 | Enviar una consulta | Must | 2 | No aplica | MVP / Sprint 1 |
+| 9 | US38 | Recibir coaching en tiempo cercano al real | Must | 8 | US12 | MVP |
+| 10 | US16 | Analizar muletillas | Should | 5 | US14 | MVP |
+| 11 | US19 | Recibir sugerencias por sección | Should | 5 | US15 | MVP |
+| 12 | US26 | Recibir recomendaciones por segmento | Must | 5 | US15, US23 | MVP |
+| 13 | US37 | Consultar estado y reintentar análisis | Must | 5 | US14, US15 | MVP |
+| 14 | US20 | Consultar historial | Should | 3 | US06, US15 | MVP |
+| 15 | US29 | Verificar micrófono y consentimiento | Must | 5 | US09 | MVP |
+| 16 | US34 | Recuperar una sesión interrumpida | Must | 8 | US12, US14 | MVP |
+| 17 | US33 | Revocar consentimiento y eliminar datos | Must | 8 | US06, US20 | MVP |
+| 18 | US10 | Seleccionar tipo de sesión | Must | 3 | US09 | MVP |
+| 19 | US23 | Seleccionar segmento académico | Must | 2 | US05 | MVP |
+| 20 | US05 | Registrar una cuenta | Must | 5 | No aplica | MVP |
+| 21 | US06 | Iniciar sesión | Must | 5 | US05 | MVP |
+| 22 | US28 | Cerrar sesión | Must | 1 | US06 | MVP |
+| 23 | US13 | Pausar y reanudar | Should | 3 | US12 | MVP |
+| 24 | US08 | Editar perfil | Must | 3 | US06 | Incremento 2 |
+| 25 | US11 | Configurar duración objetivo | Should | 2 | US09 | Incremento 2 |
+| 26 | US24 | Establecer metas | Could | 3 | US08 | Incremento 2 |
+| 27 | US25 | Seleccionar áreas de enfoque | Could | 3 | US09 | Incremento 2 |
+| 28 | US30 | Cargar material de contexto | Should | 8 | US09 | Incremento 2 |
+| 29 | US31 | Simular entrevista o sustentación | Should | 8 | US10, US30, US38 | Incremento 2 |
+| 30 | US17 | Analizar palabras clave | Should | 5 | US14, US30 | Incremento 2 |
+| 31 | US18 | Mejorar el léxico | Could | 5 | US17 | Incremento 2 |
+| 32 | US21 | Ver progreso | Should | 5 | US20 | Incremento 2 |
+| 33 | US22 | Comparar sesiones | Could | 5 | US20, US21 | Incremento 2 |
+| 34 | US36 | Recibir un plan adaptativo | Should | 8 | US19, US21, US22 | Incremento 2 |
+| 35 | US27 | Exportar transcripción y feedback | Could | 3 | US15 | Incremento 2 |
+| 36 | US32 | Compartir temporalmente un reporte | Should | 5 | US15, US33 | Incremento 2 |
+| 37 | US35 | Mantener rachas y logros | Could | 5 | US20 | Incremento 3 |
+| 38 | US07 | Recuperar contraseña | Should | 3 | US05 | Incremento 3 |
 
-Las Technical Stories también son ítems del Product Backlog. Se ejecutan transversalmente desde el MVP y se mantienen visibles para que restricciones y decisiones de arquitectura sean planificables.
+Los contratos técnicos se planifican con las historias que habilitan. Su orden en la tabla permite identificarlos sin sustituir la prioridad de negocio.
 
 | Orden | ID | Título | Prioridad | SP | Dependencias | Entrega objetivo |
-|---:|---|---|:---:|---:|---|---|
-| 39 | TS01 | Consentimiento verificable | Must | 3 | US29 | MVP |
-| 40 | TS02 | Audio efímero | Must | 3 | US12, US14 | MVP |
-| 41 | TS03 | Base tecnológica existente | Must | 5 | No aplica | MVP |
-| 42 | TS04 | Trazabilidad versionada | Must | 3 | No aplica | MVP |
-| 43 | TS05 | Experiencia web en español | Must | 3 | US05, US09 | MVP |
-| 44 | TS06 | Presupuesto y plazo académico | Must | 2 | No aplica | MVP |
+| ---: | --- | --- | :---: | ---: | --- | --- |
+| 39 | TS01 | API de sesiones | Must | 3 | US09, US20 | MVP / Sprint 1 |
+| 40 | TS02 | Contrato de coaching en vivo | Must | 8 | US12, US14, US29, US38 | MVP / Sprint 1 |
+| 41 | TS03 | Pipeline de análisis idempotente | Must | 8 | TS02, US15, US37 | MVP / Sprint 1 |
+| 42 | TS04 | Consulta de reportes versionados | Must | 5 | TS03, US15, US20, US37 | MVP / Sprint 1 |
+| 43 | TS05 | API de progreso | Must | 5 | TS03, US21, US22 | Incremento 2 |
+| 44 | TS06 | API de compartición y eliminación | Must | 8 | US32, US33 | MVP (eliminación) / Incremento 2 (compartición) |
+
+US31 y US38 se reestiman a 8 puntos considerando las interfaces de voz y los contratos de análisis como habilitadores separados (TS02 y TS03). La estimación deberá revisarse con el equipo: si supera la capacidad de un sprint, se dividirá por comportamiento verificable antes de comprometerla. No implica que esas capacidades estén implementadas.
 
 ### Criterio de priorización
 
-- El orden se determina primero por el **valor de negocio para validar el piloto** (practicar, obtener retroalimentación accionable y repetir con confianza), no por el orden técnico de implementación. Por ello, autenticación y seguridad aparecen solamente cuando habilitan ese flujo y su privacidad.
+- El orden se determina primero por el **valor de negocio para validar el piloto** (practicar, obtener retroalimentación accionable y repetir con confianza), no por el orden técnico de implementación. Por ello, el ensayo y su feedback encabezan el backlog; autenticación y seguridad se calendarizan como dependencias y salvaguardas de ese flujo.
 - **Must:** conforma el circuito mínimo de valor y las salvaguardas necesarias para operar: acceso → preparación → práctica → análisis → feedback → historial, privacidad y recuperación.
 - **Should:** incrementa contextualización, profundidad del entrenamiento, adaptación y colaboración.
 - **Could:** fortalece engagement, adquisición y conveniencia, pero no bloquea la validación inicial.
@@ -1419,7 +1473,7 @@ Cada escenario incluye fuente, estímulo, entorno, artefacto, respuesta y medida
 | C-08 | El usuario debe consentir el procesamiento de voz y material cargado. | Ninguna sesión puede comenzar sin permisos; la revocación y eliminación deben formar parte del diseño. |
 | C-09 | Los reportes históricos deben indicar la versión de la rúbrica y del análisis. | Evita comparar resultados producidos con criterios incompatibles y permite reproducibilidad. |
 
-**Precisión de ADD:** la disponibilidad inicial de Gemini Live (C-01) se trata como una condición del piloto, no como una razón para acoplar el dominio al proveedor. La decisión de integración se compara explícitamente en 4.1.4; las restricciones C-02 a C-09 se implementan mediante TS01–TS06 y las historias de consentimiento, borrado y trazabilidad.
+**Precisión de ADD:** la disponibilidad inicial de Gemini Live (C-01) se trata como una condición del piloto, no como una razón para acoplar el dominio al proveedor. La decisión de integración se compara explícitamente en 4.1.4; las restricciones C-02 a C-09 se implementan mediante los contratos técnicos de 3.2 y las historias de consentimiento, borrado y trazabilidad.
 
 ### 4.1.3. Architectural Drivers Backlog
 
@@ -1442,14 +1496,14 @@ Los candidatos se priorizan con dos dimensiones: importancia para stakeholders e
 | 13 | AD-F07 | Funcional | Mantener historial, comparación y recomendaciones adaptativas. | H/M | PF-07. |
 | 14 | AD-Q07 | Calidad | Reducir fricción para iniciar una primera sesión válida. | H/M | QAS-USA-01. |
 | 15 | AD-C01 | Restricción | Usar la integración de voz disponible para el piloto, encapsulada tras una interfaz interna. | Restricción | C-01. |
-| 16 | AD-C02 | Restricción | No persistir audio crudo por defecto. | Restricción | C-02, TS02. |
-| 17 | AD-C03 | Restricción | Entregar una experiencia web en español. | Restricción | C-03, TS05. |
-| 18 | AD-C04 | Restricción | Reutilizar Spring Boot, PostgreSQL y RabbitMQ. | Restricción | C-04, TS03. |
-| 19 | AD-C05 | Restricción | Mantener una solución realizable por cinco estudiantes durante el semestre. | Restricción | C-05, TS06. |
-| 20 | AD-C06 | Restricción | Operar con presupuesto limitado y servicios cloud administrados. | Restricción | C-06, TS06. |
-| 21 | AD-C07 | Restricción | Versionar código y documentación mediante GitHub y Pull Requests. | Restricción | C-07, TS04. |
-| 22 | AD-C08 | Restricción | Obtener consentimiento antes de procesar voz o material cargado. | Restricción | C-08, TS01. |
-| 23 | AD-C09 | Restricción | Versionar rúbricas y análisis en los reportes históricos. | Restricción | C-09, TS04. |
+| 16 | AD-C02 | Restricción | No persistir audio crudo por defecto. | Restricción | C-02. |
+| 17 | AD-C03 | Restricción | Entregar una experiencia web en español. | Restricción | C-03. |
+| 18 | AD-C04 | Restricción | Reutilizar Spring Boot, PostgreSQL y RabbitMQ. | Restricción | C-04. |
+| 19 | AD-C05 | Restricción | Mantener una solución realizable por cinco estudiantes durante el semestre. | Restricción | C-05, C-06. |
+| 20 | AD-C06 | Restricción | Operar con presupuesto limitado y servicios cloud administrados. | Restricción | C-05, C-06. |
+| 21 | AD-C07 | Restricción | Versionar código y documentación mediante GitHub y Pull Requests. | Restricción | C-07, C-09. |
+| 22 | AD-C08 | Restricción | Obtener consentimiento antes de procesar voz o material cargado. | Restricción | C-08. |
+| 23 | AD-C09 | Restricción | Versionar rúbricas y análisis en los reportes históricos. | Restricción | C-07, C-09. |
 
 ### 4.1.4. Architectural Design Decisions
 
@@ -1628,7 +1682,7 @@ El equipo marcó como **eventos pivote** aquellos que implican un cambio de esta
 
 | Evento pivote | Por qué es pivotal |
 |---|---|
-| `Consentimiento Otorgado` | Antes de él no puede procesarse voz ni material; condiciona todo el pipeline y materializa TS01. |
+| `Consentimiento Otorgado` | Antes de él no puede procesarse voz ni material; condiciona todo el pipeline y materializa C-08. |
 | `Grabación Iniciada` | Abre el mundo en vivo: captura, transcripción incremental y señales de coaching con presupuesto de latencia. |
 | `Sesión Finalizada` | Cierra el mundo en vivo y activa la cadena asíncrona de análisis; exige idempotencia (QAS-REL-01). |
 | `Reporte Disponible` | Momento en que el sistema entrega el valor central; habilita progreso, comparación y compartición. |
@@ -1679,10 +1733,10 @@ La primera pasada produjo seis candidatos; la revisión de crítica separó la p
 | **Practice Session Management** (Gestión de Sesiones de Práctica) | Preparación completa, ciclo de estados, validez, material de contexto, recuperación (US09–US14, US23–US25, US30, US34). | **Supporting.** Habilita el core sin ser diferenciador. | Su máquina de estados y su política de validez son propias y estables. |
 | **Progress & Adaptation** (Progreso y Adaptación) | `Progreso Actualizado`, comparación de sesiones, `Plan Adaptativo Generado` (US20–US22, US36). | **Supporting.** Sostiene el hábito. | Requiere modelo de lectura y versionado de métricas propio. |
 | **Gamification** (Gamificación) | `Racha Actualizada`, `Logro Concedido`; reglas de validez para contar sesiones. | **Supporting.** Engagement. | Mecánicas de juego con lenguaje propio (streaks, logros) y alta tasa de experimentación. |
-| **Identity & Access** (Identidad y Acceso) | `Cuenta Registrada`, autenticación, perfil, registro verificable de consentimiento (US05–US08, US28, TS01). | **Generic.** Resuelto con patrones conocidos. | No diferencia al producto; se requiere alta confiabilidad y un contrato de identidad estable. |
+| **Identity & Access** (Identidad y Acceso) | `Cuenta Registrada`, autenticación, perfil, registro verificable de consentimiento (US05–US08, US28, C-08). | **Generic.** Resuelto con patrones conocidos. | No diferencia al producto; se requiere alta confiabilidad y un contrato de identidad estable. |
 | **Sharing & Retention** (Compartición y Retención) | `Reporte Exportado`, `Enlace Temporal Creado`, `Acceso Revocado`, `Eliminación Solicitada` (US27, US32, US33). | **Supporting.** Confianza y colaboración. | PF-08 y QAS-PRI-01 exigen un único dueño de compartición, revocación y retención. |
 | **AI Provider Gateway** (Pasarela de Proveedores de IA) | Contrato canónico hacia Gemini Live; aislamiento de proveedor y de sus capacidades exclusivas. | **Generic.** Capacidad técnica externa. | C-01 y QAS-INT-01: sustituir o agregar proveedores con cambios localizados. |
-| **Notifications** (Notificaciones) | Consumo de `Reporte Disponible`, `Acceso Revocado`, eventos de cuenta; envío por correo. | **Generic.** Utilitario. | Solo reacciona a hechos ya publicados por otros contextos. |
+| **Notifications** (Notificaciones) | Consumo de evaluación y logros; avisos en la aplicación y ampliación por correo para cuenta y privacidad. | **Generic.** Utilitario. | Solo reacciona a hechos ya publicados por otros contextos. |
 
 ![Primera pasada de Candidate Context Discovery: clusters y fronteras candidatas sobre el EventStorm duplicado](assets/images/candidate-contexts/cc-01-fronteras-candidatas.png)
 
@@ -1708,7 +1762,7 @@ Para visualizar cómo deben colaborar los bounded contexts, el equipo aplicó **
 | 8 | Speech Analysis | Calcula métricas (muletillas, silencios, volumen, vocabulario) | Métricas de discurso | Speech Analysis |
 | 9 | Scoring & Feedback | Genera puntuación, sugerencias priorizadas y explicación por segmento | Reporte | Scoring & Feedback |
 | 10 | Progress & Adaptation | Actualiza progreso y compara con sesiones previas | Panel de progreso | Progress & Adaptation |
-| 11 | Estudiante | Consulta el reporte y elige una acción de mejora | Reporte, plan de acción | Speech Analysis (consulta) / Scoring & Feedback |
+| 11 | Estudiante | Consulta el reporte y elige una acción de mejora | Reporte, plan de acción | Scoring & Feedback (reporte publicado) |
 
 ![Domain Storytelling DS-01: colaboración de bounded contexts en la primera práctica guiada](assets/images/domain-storytelling/ds-01-primera-practica.png)
 
@@ -1738,10 +1792,10 @@ Para visualizar cómo deben colaborar los bounded contexts, el equipo aplicó **
 | 4 | Estudiante | Revoca el acceso | Orden de revocación | Sharing & Retention |
 | 5 | Sharing & Retention | Invalida el enlace de inmediato y publica `Acceso Revocado` | Evento de revocación | Sharing & Retention → Notifications |
 | 6 | Estudiante | Solicita eliminar una sesión | Orden de eliminación | Sharing & Retention |
-| 7 | Sharing & Retention | Propaga la eliminación lógica a los contextos dueños de los datos | Órdenes de purga | Sharing & Retention → Speech Analysis / Progress & Adaptation |
+| 7 | Sharing & Retention | Propaga la eliminación lógica a los contextos dueños de los datos | Órdenes de purga | Sharing & Retention → Practice Session Management / Scoring & Feedback / Progress & Adaptation / Gamification |
 | 8 | Notifications | Informa al usuario el resultado de la acción | Notificación | Notifications |
 
-![Domain Storytelling DS-03: compartición temporal, revocación y eliminación bajo control del propietario](assets/images/domain-storytelling/ds-03-compartir-revocar.png)
+![Secuencia de colaboración DS-03: compartición temporal, revocación y eliminación bajo control del propietario](assets/diagrams/c4/privacy-story-sequence.png)
 
 Los tres flujos confirmaron las fronteras: el material de contexto viaja de Practice Session Management hacia la pasarela sin que Live Coaching conozca su formato interno y el consentimiento actúa como compuerta previa a la captura. Sharing & Retention invalida el permiso antes de responder a la revocación; después comunica el cambio por eventos a los demás contextos, manteniendo el bloqueo de nuevas consultas independiente de la entrega de avisos.
 
@@ -1775,7 +1829,7 @@ Cada canvas se elaboró siguiendo un proceso iterativo con seis pasos: (1) **Con
 | Eventos publicados | `Análisis Iniciado`, `Métricas de Discurso Calculadas`, `Análisis Fallido`. |
 | Eventos consumidos | `Sesión Finalizada` (Live Coaching), material autorizado (Practice Session Management). |
 | Reglas de negocio | Un único resultado por `session_id + analysis_version` (idempotencia, ADD-05); una sesión sin evidencia suficiente se marca como tal sin fabricar conclusiones; el procesamiento usa solo material autorizado. |
-| Dependencias | Aguas arriba: Live Coaching (Customer/Supplier vía lenguaje publicado). Hacia AI Provider Gateway: Customer/Supplier. Aguas abajo: Scoring & Feedback (publica métricas), Sharing & Retention (expone reportes). |
+| Dependencias | Aguas arriba: Live Coaching (Customer/Supplier vía lenguaje publicado). Hacia AI Provider Gateway: Customer/Supplier. Aguas abajo: Scoring & Feedback (recibe las métricas y conserva el reporte). Speech Analysis no conserva una copia de negocio del reporte. |
 | Capas de capacidades | Ingesta y consolidación; enriquecimiento lingüístico y acústico; cómputo de métricas versionadas. |
 | Crítica de diseño | Se evaluó un Shared Kernel de definiciones de métricas con Scoring & Feedback; se rechazó en favor de un lenguaje publicado versionado (C-09) para preservar autonomía de despliegue. |
 
@@ -1790,7 +1844,7 @@ Cada canvas se elaboró siguiendo un proceso iterativo con seis pasos: (1) **Con
 | Eventos publicados | `Puntuación Generada`, `Sugerencias Priorizadas Generadas`, `Reporte Disponible`. |
 | Eventos consumidos | `Métricas de Discurso Calculadas` (Speech Analysis), `Análisis Fallido`. |
 | Reglas de negocio | Todo resultado indica versión de rúbrica y de análisis (C-09); las sugerencias referencian evidencia del discurso; la validez de la sesión la declara Practice Session Management, no este contexto. |
-| Dependencias | Aguas arriba: Speech Analysis (Customer/Supplier). Aguas abajo: Progress & Adaptation y Sharing & Retention (consumen el reporte publicado). |
+| Dependencias | Aguas arriba: Speech Analysis (Customer/Supplier). Aguas abajo: Progress & Adaptation y Gamification (consumen la evaluación), Sharing & Retention (consulta el reporte publicado) y Notifications (recibe el aviso de disponibilidad). |
 | Crítica de diseño | La separación respecto de Speech Analysis fue la principal decisión de la crítica: rúbricas y pedagogía cambian por razones distintas que el procesamiento acústico-lingüístico. |
 
 #### 4. Practice Session Management (Gestión de Sesiones de Práctica)
@@ -1818,7 +1872,7 @@ Cada canvas se elaboró siguiendo un proceso iterativo con seis pasos: (1) **Con
 | Eventos publicados | `Progreso Actualizado`, `Plan Adaptativo Generado`. |
 | Eventos consumidos | `Reporte Disponible`, `Puntuación Generada` (Scoring & Feedback), `Sesión Finalizada` (para comparabilidad). |
 | Reglas de negocio | Solo se comparan sesiones compatibles por versión de rúbrica y análisis; los cambios pequeños no se sobredimensionan; el plan explica por qué recomienda cada ejercicio. |
-| Dependencias | Aguas arriba: Scoring & Feedback (Customer/Supplier). Aguas abajo: Gamification (publica hechos de práctica válida). |
+| Dependencias | Aguas arriba: Scoring & Feedback (Customer/Supplier). La evaluación recibida permite consolidar el progreso. Gamification recibe la misma evaluación desde Scoring & Feedback y aplica sus propias reglas de racha. |
 | Crítica de diseño | Se evaluó mover el plan adaptativo a Scoring & Feedback; se rechazó porque depende del historial longitudinal que este contexto posee. |
 
 #### 6. Sharing & Retention (Compartición y Retención)
@@ -1828,11 +1882,11 @@ Cada canvas se elaboró siguiendo un proceso iterativo con seis pasos: (1) **Con
 | Clasificación estratégica | Supporting subdomain. Dueño de la confianza: compartición controlada y cumplimiento de retención. |
 | Propósito | Exportar reportes, crear accesos temporales revocables y propagar la eliminación de datos bajo control exclusivo del propietario. |
 | Lenguaje ubicuo | Enlace temporal, expiración, revocación, eliminación lógica, purga, política de retención. |
-| Capacidades clave | Exportar transcripción y feedback (US27); crear y revocar enlaces (US32); iniciar eliminación y purga auditable (US33); administrar la política de retención (TS02). |
+| Capacidades clave | Exportar transcripción y feedback (US27); crear y revocar enlaces (US32); iniciar eliminación y purga auditable (US33); administrar la política de retención (C-02). |
 | Eventos publicados | `Reporte Exportado`, `Enlace Temporal Creado`, `Acceso Revocado`, `Eliminación Solicitada`, `Datos Purgados`. |
 | Eventos consumidos | `Reporte Disponible` (para saber qué es compartible), veredicto de validez. |
 | Reglas de negocio | Un enlace revocado deja de otorgar acceso de inmediato (QAS-PRI-01); el borrado lógico se completa en minutos y la purga física según política; la auditoría no registra contenido privado. |
-| Dependencias | Aguas arriba: Speech Analysis y Scoring & Feedback (Customer/Supplier para obtener reportes). Aguas abajo: Notifications (publica hechos de privacidad). |
+| Dependencias | Aguas arriba: Scoring & Feedback (Customer/Supplier para consultar el reporte publicado). Aguas abajo: los contextos propietarios de datos reciben órdenes de purga; Notifications recibe los hechos de privacidad. |
 | Crítica de diseño | Concentrar compartición, revocación y retención en un solo contexto evita criterios de privacidad dispersos; se descartó repartir estas capacidades entre los contextos dueños de los datos. |
 
 #### 7. Gamification (Gamificación)
@@ -1844,9 +1898,9 @@ Cada canvas se elaboró siguiendo un proceso iterativo con seis pasos: (1) **Con
 | Lenguaje ubicuo | Racha, logro, nivel, hito, práctica válida. |
 | Capacidades clave | Actualizar rachas; conceder logros una sola vez (US35); exponer el estado de engagement. |
 | Eventos publicados | `Racha Actualizada`, `Logro Concedido`. |
-| Eventos consumidos | Hechos de práctica válida (Practice Session Management, Progress & Adaptation). |
+| Eventos consumidos | Evaluación completada (Scoring & Feedback), junto con la validez declarada por Practice Session Management. |
 | Reglas de negocio | Las sesiones inválidas no cuentan; cada logro se concede una sola vez; compartir un logro es opcional. |
-| Dependencias | Aguas arriba: Practice Session Management y Progress & Adaptation (Conformist a sus hechos publicados). |
+| Dependencias | Aguas arriba: Scoring & Feedback y Practice Session Management (Conformist a la evaluación y al veredicto de validez publicados). Aguas abajo: Notifications recibe los logros. |
 | Crítica de diseño | Se evaluó fusionar con Progress & Adaptation; se rechazó: la gamificación experimenta mecánicas con alta frecuencia, mientras el progreso exige estabilidad histórica. |
 
 #### 8. Identity & Access (Identidad y Acceso)
@@ -1856,7 +1910,7 @@ Cada canvas se elaboró siguiendo un proceso iterativo con seis pasos: (1) **Con
 | Clasificación estratégica | Generic subdomain. Resuelto con patrones estándar, alta exigencia de confiabilidad. |
 | Propósito | Autenticar usuarios, gestionar cuentas y perfil, y emitir tokens de corta duración y consentimientos verificables. |
 | Lenguaje ubicuo | Cuenta, token de acceso, refresh rotativo, consentimiento verificable, propiedad del recurso. |
-| Capacidades clave | Registrar y verificar cuentas (US05); autenticar y revocar sesiones (US06, US28); gestionar perfil (US08); registrar consentimiento con versión aceptada (TS01); validar identidad y propiedad. |
+| Capacidades clave | Registrar y verificar cuentas (US05); autenticar y revocar sesiones (US06, US28); gestionar perfil (US08); registrar consentimiento con versión aceptada (C-08); validar identidad y propiedad. |
 | Eventos publicados | `Cuenta Registrada`, `Consentimiento Otorgado`, `Consentimiento Revocado`. |
 | Eventos consumidos | Ninguno; es el origen de la cadena de confianza. |
 | Reglas de negocio | Los errores de autenticación no revelan qué credencial falló; el consentimiento registra la versión aceptada y condiciona todo procesamiento posterior. |
@@ -1882,11 +1936,11 @@ Cada canvas se elaboró siguiendo un proceso iterativo con seis pasos: (1) **Con
 | Sección | Contenido |
 |---|---|
 | Clasificación estratégica | Generic subdomain. Utilitario puro, reacciona a hechos publicados. |
-| Propósito | Informar a los usuarios los hechos relevantes (reporte disponible, revocaciones, eventos de cuenta) por correo electrónico. |
+| Propósito | Informar a los usuarios los hechos relevantes (reporte disponible, revocaciones, eventos de cuenta) mediante avisos en la aplicación y correo electrónico propuesto. |
 | Lenguaje ubicuo | Notificación, plantilla, destinatario, preferencia de contacto. |
-| Capacidades clave | Enviar notificaciones por correo con plantillas versionadas; respetar preferencias de contacto. |
+| Capacidades clave | Entregar avisos autenticados en la aplicación; ampliar la entrega por correo con plantillas versionadas y preferencias de contacto. |
 | Eventos publicados | Hechos de entrega para observabilidad. |
-| Eventos consumidos | `Reporte Disponible`, `Acceso Revocado`, `Datos Purgados`, `Cuenta Registrada`. |
+| Eventos consumidos | `Reporte Disponible`, `Logro Concedido` y, como ampliación, `Acceso Revocado`, `Datos Purgados`, `Cuenta Registrada`. |
 | Reglas de negocio | Ninguna notificación incluye contenido de reporte en el cuerpo del correo; los enlaces referencian accesos controlados por Sharing & Retention. |
 | Dependencias | Aguas arriba: múltiples contextos mediante el lenguaje publicado de eventos (colaboración por eventos). |
 | Crítica de diseño | Mantenerlo como contexto propio y consumidor pasivo evita que cada dominio incorpore envío de correos; se descartó un shared service embebido en otros contextos. |
@@ -1923,15 +1977,19 @@ El equipo evaluó explícitamente un **Shared Kernel** de definiciones de métri
 | Practice Session Management | Live Coaching, Speech Analysis, Gamification | Customer/Supplier + Published Language | Eventos de ciclo de vida y veredicto de validez versionados | El ciclo de sesión alimenta al resto; los consumidores se adaptan al contrato publicado. |
 | Live Coaching | Speech Analysis | Customer/Supplier | Evento `Sesión Finalizada` con transcripción consolidada versionada | El análisis consume el cierre; el formato de transcripción pertenece a quien la produce. |
 | Speech Analysis | Scoring & Feedback | Customer/Supplier + Published Language | Esquema versionado de métricas de discurso | Consistencia entre versiones sin Shared Kernel (C-09). |
-| Scoring & Feedback | Progress & Adaptation, Sharing & Retention | Customer/Supplier | Evento `Reporte Disponible` y reporte publicado | El reporte es el objeto de trabajo de progreso y compartición. |
+| Scoring & Feedback | Progress & Adaptation, Gamification, Sharing & Retention | Customer/Supplier + Published Language | Evaluación completada (`scoring.completed`) y consulta del reporte publicado | Progreso y gamificación reciben la evaluación; compartición referencia el reporte conservado por Scoring. |
 | Live Coaching, Speech Analysis | AI Provider Gateway | Customer/Supplier sobre Open Host Service | Contrato canónico de capacidades de IA | Ambos contextos consumen el mismo contrato; la conmutación de proveedor es transparente. |
 | AI Provider Gateway | Gemini Live API (externo) | **Anti-Corruption Layer** | Adaptador de proveedor + negociación de capacidades | Impide que el modelo del proveedor contamine el lenguaje del dominio (ADD-06, QAS-INT-01). |
-| Practice Session Management, Progress & Adaptation | Gamification | **Conformist** | Hechos de práctica válida publicados | La gamificación se adapta a los hechos; no negocia contratos propios. |
-| Speech Analysis, Scoring & Feedback | Sharing & Retention | Customer/Supplier | Consulta de reportes publicados | La compartición no duplica reportes; referencia los existentes. |
-| Sharing & Retention | Speech Analysis, Progress & Adaptation | Customer/Supplier | Órdenes de eliminación propagadas | La purga respeta el ownership de datos de cada contexto. |
+| Practice Session Management, Scoring & Feedback | Gamification | **Conformist** | Veredicto de validez y evaluación completada | La gamificación respeta la validez de la sesión y calcula rachas/logros a partir de la evaluación recibida. |
+| Scoring & Feedback | Sharing & Retention | Customer/Supplier | Consulta de reportes publicados | La compartición no duplica reportes; referencia los existentes. |
+| Sharing & Retention | Practice Session Management, Scoring & Feedback, Progress & Adaptation, Gamification | Customer/Supplier + Published Language | Órdenes de purga y confirmaciones | La eliminación de evidencia, evaluaciones, progreso y rachas respeta la propiedad de datos de cada contexto. |
 | Múltiples contextos | Notifications | Colaboración por eventos (Published Language) | Eventos de dominio versionados en el bus | Notifications no aparece como dependencia síncrona de nadie. |
 
 ![Context map final de Talki con patrones DDD entre bounded contexts](assets/images/context-mapping/context-map.png)
+
+![Coordinación de privacidad y confirmaciones de purga entre contextos](assets/diagrams/c4/privacy-context-map.png)
+
+Los nombres de negocio de los canvases se concretan en los contratos técnicos: `Sesión Finalizada` corresponde a `session.live.finalized`, las métricas iniciales a `fillers.analyzed`, la evaluación disponible a `scoring.completed` y el logro a `achievement.unlocked`. Los eventos de consentimiento, privacidad y ampliación de canales siguen siendo requisitos del diseño.
 
 #### Conclusión del context mapping
 
@@ -1939,37 +1997,50 @@ El mapa resultante protege tres propiedades: (1) el **core** (Live Coaching, Spe
 
 ## 4.3. Software Architecture
 
+Las vistas C4 describen la arquitectura objetivo de Talki y mantienen los diez bounded contexts definidos en DDD. El diseño distingue los límites del sistema, los procesos que pueden desplegarse y sus componentes internos. Cada relación identifica su propósito y, cuando comunica procesos distintos, el protocolo previsto. Las ampliaciones se rotulan como propuestas; los diagramas no constituyen evidencia de servicios desplegados.
+
 ### 4.3.1. System Landscape Diagram
 
-El siguiente diagrama presenta el alcance de Talki y sus actores principales: estudiantes de ciclos iniciales y superiores que utilizan la plataforma para practicar y mejorar su comunicación oral.
+El paisaje sitúa Talki en el ecosistema de preparación oral. Los estudiantes de ciclos iniciales utilizan el sistema para ensayar exposiciones; los de ciclos avanzados lo emplean para entrevistas y sustentaciones. El tutor o profesor consulta únicamente un reporte compartido con permiso vigente. Gemini Live participa en la conversación de voz y la transcripción; el proveedor de correo propuesto apoyará la recuperación de cuenta y los avisos de privacidad.
 
-![System Landscape de Talki](assets/images/DiagramsUML/system_landscape.png)
+![System Landscape de Talki](assets/diagrams/c4/system-landscape.png)
 
 ### 4.3.2. Context Level Diagrams
 
-El diagrama de contexto detalla las personas y sistemas de software que se comunican directamente con Talki, especificando el propósito de cada interacción a alto nivel.
+La frontera de Talki agrupa las capacidades de práctica, feedback, progreso y control de la información. Los usuarios interactúan por HTTPS. La integración de voz prepara una credencial efímera por HTTPS y establece el canal WSS desde el cliente hacia Gemini Live. El correo es una dependencia propuesta cuyo proveedor y mecanismo de entrega deberán configurarse. No se representan clases ni bases de datos internas en esta vista de contexto.
 
-![Diagrama de Contexto de Talki](assets/images/DiagramsUML/context.png)
+![C4 System Context de Talki](assets/diagrams/c4/system-context.png)
 
 ### 4.3.3. Container Level Diagrams
 
-El diagrama de contenedores descompone a Talki en sus bloques desplegables (aplicaciones, servicios y almacenes de datos), mostrando cómo se comunican entre sí para entregar la funcionalidad del sistema.
+El cliente web ofrece el recorrido de preparación y revisión; el cliente Flutter es una ampliación móvil. La arquitectura objetivo propone un API Gateway/BFF para enrutar operaciones y aplicar políticas comunes. Los servicios se organizan por responsabilidad de contexto: Identity & Access, Practice Session Management, Live Coaching, Speech Analysis, Scoring & Feedback, Progress & Adaptation, Sharing & Retention, Gamification, AI Provider Gateway y Notifications.
 
-Para el segundo hito se refina la vista inicial: se mantiene React/Flutter y los módulos Java, se representa RabbitMQ y se explicita ownership de datos por contexto. Compartir infraestructura PostgreSQL no permite acceso a tablas de otro contexto. La agrupación de paquetes no obliga a desplegar diez procesos desde el piloto.
+RabbitMQ conecta el procesamiento asíncrono: Live Coaching publica `session.live.finalized`, Speech Analysis produce `fillers.analyzed` y Scoring & Feedback publica `scoring.completed` después de conservar la evaluación. Progress y Gamification consumen ese resultado; Notifications recibe eventos de evaluación y logro. El broker incorpora confirmaciones, reintentos y una cola de fallos como requisitos del diseño. La voz sigue el canal cliente–Gemini Live por WSS, evitando presentar el broker como transporte de audio.
 
-![Diagrama de Contenedores refinado de Talki](assets/diagrams/tactical/container-refinement.png)
+![C4 Container Diagram de Talki](assets/diagrams/c4/containers.png)
 
-[Vista del primer hito](assets/images/DiagramsUML/conainer.png)
+| Contenedor / contexto | Responsabilidad | Datos propios | Sección táctica |
+| --- | --- | --- | --- |
+| Live Coaching | Selección de modo, credencial temporal y cierre de conversación. | Sin base de negocio propia. | 5.1 |
+| Speech Analysis Worker | Detección de muletillas y producción de métricas. | Sin copia propia del reporte. | 5.2 |
+| Scoring & Feedback Worker | Evaluación y consulta de resultados; consulta pública ampliada. | Evaluaciones y versiones. | 5.3 |
+| Practice Session Management | Preparación, ciclo de vida y evidencia de la práctica. | Sesiones, feedback y proyección local de identidad. | 5.4 |
+| Progress & Adaptation | Resumen y comparación de evolución; comparación ampliada. | Progreso y métricas propuestas por sesión. | 5.5 |
+| Sharing & Retention, propuesto | Acceso temporal, exportación y eliminación coordinada. | Permisos, solicitudes de purga y confirmaciones. | 5.6 |
+| Gamification | Rachas y logros por práctica válida. | Rachas y registro propuesto de logros. | 5.7 |
+| Identity & Access | Cuenta, credenciales, perfil y consentimiento ampliado. | Usuarios y registros de acceso/consentimiento propuestos. | 5.8 |
+| AI Provider Gateway, propuesto | Contrato de integración y aislamiento del proveedor. | Sin base de material de práctica. | 5.9 |
+| Notifications | Consumo de eventos y entrega propuesta de avisos. | Sin base de negocio propia. | 5.10 |
+
+Los almacenes de la figura agrupan infraestructura PostgreSQL, no propiedad compartida de tablas. Cada contexto accede únicamente a su esquema y comunica cambios mediante contratos o eventos. Las implementaciones disponibles agrupan algunas responsabilidades en servicios existentes; la separación del diagrama es la arquitectura objetivo de ADD, que deberá concretarse y verificarse en implementación. La pasarela de IA, Sharing, la entrega de avisos y las ampliaciones de consulta siguen siendo propuestas.
 
 ### 4.3.4. Deployment Diagrams
 
-El diagrama de despliegue representa la infraestructura sobre la que se ejecutan los contenedores de Talki, indicando los nodos de ejecución y la ubicación de cada componente en el entorno productivo.
+El despliegue UML propone hosting del cliente web en Vercel, procesos Spring Boot y RabbitMQ en Railway, y PostgreSQL con TLS en Supabase. El navegador ejecuta la conversación con Gemini Live mediante WSS. Las peticiones de negocio utilizan HTTPS/JSON y los eventos internos utilizan AMQP. El acceso a datos respeta los esquemas de cada contexto aunque compartan infraestructura administrada.
 
-La vista refinada es un **despliegue propuesto**, no evidencia de infraestructura en ejecución. Incluye RabbitMQ en el entorno Railway, HTTPS/WSS para ambos clientes y conexión PostgreSQL con TLS a Supabase. El almacenamiento de material y proveedor de correo se muestran como adaptadores pendientes de configurar. Firebase no se asume como dependencia del flujo: su uso requiere una decisión posterior específica.
+![UML Deployment Diagram de Talki](assets/diagrams/c4/deployment.png)
 
-![Diagrama de Despliegue refinado de Talki](assets/diagrams/tactical/deployment-refinement.png)
-
-[Vista del primer hito](assets/images/DiagramsUML/deploy.png)
+La vista identifica nodos de ejecución y artefactos alojados; no acredita una configuración productiva existente. Antes del despliegue se verificarán disponibilidad de servicios, credenciales, cifrado, límites de consumo y entrega de correo. El proveedor de correo permanece por seleccionar.
 
 # Capítulo V: Tactical-Level Software Design
 
@@ -1981,6 +2052,8 @@ Cada contexto mantiene una responsabilidad de negocio. Los servicios pueden agru
 
 ## Organización por capas
 
+Las vistas de componentes utilizan notación UML: componentes, interfaces, paquetes de capas y relaciones dirigidas. Los diagramas de clases UML se limitan al dominio de cada contexto; controladores, orquestadores, consumidores, repositorios y adaptadores se muestran en sus capas mediante la vista de componentes. Las vistas de datos utilizan entidades, claves y relaciones de persistencia; los contextos sin base propia explican dónde reside la información.
+
 | Capa | Responsabilidad |
 | --- | --- |
 | Domain Layer | Representa los conceptos del negocio y sus reglas. |
@@ -1990,7 +2063,7 @@ Cada contexto mantiene una responsabilidad de negocio. Los servicios pueden agru
 
 Los datos permanecen bajo responsabilidad del contexto que los administra. Las relaciones internas se conservan en su propia base y los identificadores de otros contextos se utilizan como referencias. Los servicios que procesan información sin almacenarla permanentemente no requieren una base de negocio propia.
 
-Los diagramas de componentes resumen el recorrido de la información entre capas. Las relaciones etiquetadas como “implementa” identifican el adaptador que cumple un contrato de integración.
+Los diagramas de componentes resumen el recorrido de la información entre capas. Las relaciones etiquetadas como “realiza contrato” identifican el adaptador que cumple un contrato de integración.
 
 ## 5.1. Bounded Context: Live Coaching
 
@@ -2082,7 +2155,7 @@ LiveCoachController recibe las acciones del cliente y las delega al orquestador.
 
 #### 5.1.6.1. Bounded Context Domain Layer Class Diagrams
 
-Las estrategias comparten una interfaz y el orquestador utiliza una fábrica para elegirlas. GeminiTokenService prepara la credencial temporal del proveedor. El modelo distingue esta preparación del intercambio de voz realizado por el cliente.
+El diagrama UML de dominio representa SessionModeStrategy, sus cuatro implementaciones y la fábrica que selecciona el modo. La realización de la interfaz se distingue de la dependencia de la fábrica. El orquestador, el adaptador de Gemini y el publicador pertenecen a otras capas y se representan en el diagrama de componentes.
 
 ![Clases de Live Coaching](assets/diagrams/tactical/01-live-coaching-classes.png)
 
@@ -2169,7 +2242,7 @@ El diagrama presenta el recorrido del análisis de muletillas: el consumidor rec
 
 #### 5.2.6.1. Bounded Context Domain Layer Class Diagrams
 
-FillerDetector produce FillerResult. El consumidor y el publicador coordinan la entrada y salida de este resultado sin modificar las reglas de detección.
+El diagrama UML de dominio muestra la dependencia de FillerDetector respecto de FillerResult, identificado como resultado propuesto. El consumidor de RabbitMQ y el publicador quedan en Infrastructure y se representan en la vista de componentes.
 
 ![Clases de Speech Analysis](assets/diagrams/tactical/02-speech-analysis-classes.png)
 
@@ -2266,7 +2339,7 @@ Las métricas recibidas se entregan al calculador y el resultado se conserva ant
 
 #### 5.3.6.1. Bounded Context Domain Layer Class Diagrams
 
-ScoreResult contiene VoiceScore y, en el modelo ampliado, las versiones de análisis y rúbrica. ScoreCalculator aplica los criterios de puntuación y el consumidor coordina el procesamiento del evento. Las dimensiones sin evidencia admiten un valor ausente en lugar de asignarles cero.
+ScoreResult contiene VoiceScore y, en el modelo ampliado, las versiones de análisis y rúbrica. ScoreCalculator aplica los criterios de puntuación. La composición relaciona ScoreResult con VoiceScore; el consumidor del evento pertenece a Infrastructure y aparece en componentes. Las dimensiones sin evidencia admiten un valor ausente en lugar de asignarles cero.
 
 ![Clases de Scoring & Feedback](assets/diagrams/tactical/03-scoring-feedback-classes.png)
 
@@ -2476,7 +2549,7 @@ ProgressController consulta el resumen conservado por UserProgressRepository. Sc
 
 #### 5.5.6.1. Bounded Context Domain Layer Class Diagrams
 
-UserProgress reúne los totales y las puntuaciones resumidas del estudiante. SessionMetrics y UserProgressQueryService son ampliaciones propuestas: conservan evidencia por práctica y permiten consultar resultados compatibles. El modo, las dimensiones y las versiones sostienen las tendencias y la comparación presentadas en 6.4.
+UserProgress reúne los totales y las puntuaciones resumidas del estudiante. SessionMetrics es una ampliación propuesta que conserva evidencia por práctica compatible con el resumen del mismo usuario. UserProgressQueryService pertenece a Application y se representa en componentes. El modo, las dimensiones y las versiones sostienen las tendencias y la comparación presentadas en 6.4.
 
 ![Clases de Progress & Adaptation](assets/diagrams/tactical/05-progress-adaptation-classes.png)
 
@@ -2691,7 +2764,7 @@ La evaluación recibida actualiza la racha y, cuando se cumple una condición, o
 
 #### 5.7.6.1. Bounded Context Domain Layer Class Diagrams
 
-UserStreak conserva la racha y la experiencia del usuario, mientras que Achievement identifica cada reconocimiento. El consumidor coordina sus actualizaciones y comunica los logros obtenidos.
+UserStreak conserva la racha y la experiencia del usuario, mientras que Achievement identifica cada reconocimiento. La asociación agrupa los logros del mismo usuario; Achievement se identifica como ampliación propuesta. El consumidor y el publicador de eventos se representan en componentes, fuera del dominio.
 
 ![Clases de Gamification](assets/diagrams/tactical/07-gamification-classes.png)
 
@@ -2880,7 +2953,7 @@ El servicio de integración utiliza AIProviderPort y la infraestructura proporci
 
 #### 5.9.6.1. Bounded Context Domain Layer Class Diagrams
 
-AIIntegrationApplicationService utiliza AIProviderPort y GeminiLiveClient implementa las operaciones del contrato propuesto. El adaptador pertenece a infraestructura y permite sustituir al proveedor sin cambiar el modelo de práctica.
+El diagrama UML de dominio contiene únicamente AIProviderPort, la interfaz propuesta de integración. AIIntegrationApplicationService y GeminiLiveClient pertenecen a Application e Infrastructure y su dependencia y realización se muestran en componentes. El puerto permite sustituir al proveedor sin cambiar las reglas de la práctica.
 
 ![Clases de AI Provider Gateway](assets/diagrams/tactical/09-ai-provider-gateway-classes.png)
 
@@ -2966,7 +3039,7 @@ Los consumidores reciben los eventos de evaluación o logro. La integración pro
 
 #### 5.10.6.1. Bounded Context Domain Layer Class Diagrams
 
-Los consumidores actúan como adaptadores de entrada de eventos. NotificationPushService define el contrato de envío propuesto y WebSocketPushAdapter representa su implementación de canal. El diagrama resume esas colaboraciones.
+El dominio de Notifications se limita al puerto propuesto NotificationPushService. El diagrama UML conserva esa interfaz; los consumidores de eventos y el adaptador WebSocket aparecen en componentes porque pertenecen a Infrastructure. No se añade una entidad de negocio que el contexto no necesita.
 
 ![Clases de Notifications](assets/diagrams/tactical/10-notifications-classes.png)
 
@@ -2982,15 +3055,15 @@ La siguiente tabla relaciona cada contexto con las historias de usuario, decisio
 
 | Contexto | Requisitos y decisiones relacionados |
 | --- | --- |
-| 5.1. Live Coaching | US12–US14, US31, US34, US38; ADD-03, ADD-06, ADD-08, ADD-10, ADD-12; QAS-PER-01, QAS-AVA-01 |
-| 5.2. Speech Analysis | US16–US18, US37 y métricas de US15; ADD-04–ADD-08, ADD-10, ADD-14; QAS-PER-02, QAS-REL-01 |
-| 5.3. Scoring & Feedback | US15, US19, US26, US37; ADD-05, ADD-07, ADD-11, ADD-14; C-09, QAS-REL-01 |
-| 5.4. Practice Session Management | US09–US14, US23–US25, US29, US30, US34; ADD-03–ADD-05, ADD-09, ADD-11; QAS-AVA-01, QAS-USA-01 |
-| 5.5. Progress & Adaptation | US20–US22, US24, US36; ADD-05, ADD-07, ADD-11; C-09, QAS-REL-01 |
-| 5.6. Sharing & Retention | US27, US32, US33; TS02; ADD-08, ADD-09, ADD-13; QAS-SEC-01, QAS-PRI-01 |
+| 5.1. Live Coaching | TS02; US12–US14, US31, US34, US38; ADD-03, ADD-06, ADD-08, ADD-10, ADD-12; QAS-PER-01, QAS-AVA-01 |
+| 5.2. Speech Analysis | TS03; US16–US18, US37 y métricas de US15; ADD-04–ADD-08, ADD-10, ADD-14; QAS-PER-02, QAS-REL-01 |
+| 5.3. Scoring & Feedback | TS03, TS04; US15, US19, US26, US37; ADD-05, ADD-07, ADD-11, ADD-14; C-09, QAS-REL-01 |
+| 5.4. Practice Session Management | TS01; US09–US14, US23–US25, US29, US30, US34; ADD-03–ADD-05, ADD-09, ADD-11; QAS-AVA-01, QAS-USA-01 |
+| 5.5. Progress & Adaptation | TS05; US20–US22, US24, US36; ADD-05, ADD-07, ADD-11; C-09, QAS-REL-01 |
+| 5.6. Sharing & Retention | TS06; US27, US32, US33; C-02; ADD-08, ADD-09, ADD-13; QAS-SEC-01, QAS-PRI-01 |
 | 5.7. Gamification | US35; ADD-05, ADD-07, ADD-11; QAS-REL-01 |
-| 5.8. Identity & Access | US05–US08, US23, US28, US29; TS01; ADD-02, ADD-09, ADD-13; QAS-SEC-01 |
-| 5.9. AI Provider Gateway | Habilita US12, US17–US19, US30, US31, US38; TS02; ADD-06, ADD-08, ADD-10, ADD-12, ADD-14; QAS-INT-01, QAS-PER-01 |
+| 5.8. Identity & Access | US05–US08, US23, US28, US29; C-08; ADD-02, ADD-09, ADD-13; QAS-SEC-01 |
+| 5.9. AI Provider Gateway | Habilita US12, US17–US19, US30, US31, US38; C-02; ADD-06, ADD-08, ADD-10, ADD-12, ADD-14; QAS-INT-01, QAS-PER-01 |
 | 5.10. Notifications | Avisos de evaluación y logro: US15, US35. Ampliaciones de cuenta y privacidad: US05, US07, US32, US33; ADD-04, ADD-05, ADD-10, ADD-13; QAS-REL-01 |
 
 # Capítulo VI: Solution UX Design
@@ -3238,7 +3311,7 @@ Los wireframes presentan la estructura de las pantallas, sus etiquetas y sus rut
 | P01 | Perfil y segmento | US08, US23, US24 |
 | H01 | Inicio | US09, US20, US21, US35 |
 | S01 | Configuración y material | US09–US11, US24, US25, US30 |
-| S02 | Audio y consentimiento | US29, TS01 |
+| S02 | Audio y consentimiento | US29, C-08 |
 | S03 | Práctica en vivo | US12–US14, US31, US34, US38 |
 | S04 | Estado del análisis | US37 |
 | R01 | Reporte y evidencia | US15–US19, US26 |
@@ -3338,7 +3411,7 @@ La configuración agrupa el título, modo, duración y meta del ensayo. El mater
 
 La estructura diferencia la comprobación del micrófono del consentimiento para procesar voz. El estado de audio, la información de autorización y la acción de iniciar práctica se presentan en una misma secuencia.
 
-**Historias relacionadas:** US29, TS01.
+**Historias relacionadas:** US29, C-08.
 
 **Wireframe de audio y consentimiento (web)**
 
@@ -3944,7 +4017,7 @@ Con el segundo hito de semana 7, esa base se extiende a diseño táctico y UX:
 
 # Video About-the-Team
 
-El video se incorporará en el hito que lo requiera. Este avance no agrega un enlace de grabación inexistente.
+Pendiente de grabación y publicación. El feedback del primer hito solicita esta evidencia: cada integrante deberá presentarse hablando a cámara, con nombre, apellidos y carrera. El equipo confirmó que el video aún no existe; su enlace se incorporará cuando esté disponible.
 
 # Bibliografía
 
@@ -3983,10 +4056,50 @@ Thropic. (2026). *Talki: Project report* [Repositorio de GitHub, versión 2cfa37
 | A | Grabaciones y evidencias de entrevistas de ambos segmentos. | [Carpeta de entrevistas](https://drive.google.com/drive/folders/1IwH1aTzPJ2Y5cYJS3yqF8UM4eHfprvLE?usp=sharing) |
 | B | Informe de participación del equipo para TB1. | [Informe de Participación: Startup Thropic](https://docs.google.com/document/d/1-tnKLS9I_qJD4kkLwBUQB8QqxdgXBQbJcZ0smvAn1KM/edit) |
 | C | Evidencias de colaboración: commits, ramas y pull requests. | [Repositorio del informe](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report) |
-| D | Diagramas de Software Architecture. | `assets/images/DiagramsUML/` |
-| E | Diseño táctico por contexto: componentes, clases, datos/servicios stateless y fuentes Mermaid. | `assets/diagrams/tactical/`, `assets/design/reuse-manifest.json` |
-| F | Vistas de contenedores y despliegue refinadas para el curso actual. | `assets/diagrams/tactical/container-refinement.*`, `deployment-refinement.*` |
+| D | Vistas C4 de Landscape, Context y Containers, y despliegue UML de la arquitectura objetivo. | `assets/diagrams/c4/` |
+| E | Diseño táctico por contexto: componentes, clases, datos y contextos sin base propia. | `assets/diagrams/tactical/`, `assets/design/reuse-manifest.json` |
+| F | Vistas de contenedores y despliegue refinadas para el curso actual. | `assets/diagrams/c4/containers.*`, `deployment.*` |
 | G | Arquitectura de información, wireflow y tres user flows. | `assets/diagrams/ux/` |
 | H | Wireframes y mock-ups web/móvil, incluyendo estados de error y privacidad. | `assets/ux/wireframes/`, `assets/ux/mockups/` |
 | I | Prototipo UX navegable, con datos ficticios y modo wireframe. | [HTML](assets/ux/prototype/index.html), [instrucciones](assets/ux/prototype/README.md) |
 | J | Activos técnicos y registro de versiones de Talki. | `assets/reused-202601/`, [registro de procedencia](assets/design/reuse-manifest.json) |
+| K | Control de correcciones del primer hito y preparación de materiales de entrega. | Apartados siguientes. |
+
+## Videos de Exposiciones
+
+| Entrega | Material | Estado | Enlace |
+| --- | --- | --- | --- |
+| TB1, primer hito | Video de exposición con los artefactos del hito. | Pendiente de grabación/publicación, según confirmación del equipo. | Pendiente. |
+| TB1, segundo hito: semana 7 | Video de exposición de las correcciones y del diseño táctico/UX requerido. | Pendiente. | Pendiente. |
+| Video About-the-Team | Presentación individual de los cinco integrantes. | Pendiente de grabación/publicación. | Pendiente. |
+
+El video de exposición debe comenzar con la presentación a cámara de cada integrante. Después debe mostrar los artefactos en las herramientas indicadas por el curso, incluyendo System Landscape y los diez Bounded Context Canvases, además de los diagramas tácticos y los diseños UX del hito correspondiente. Las diapositivas apoyan la explicación, pero no sustituyen la demostración de los artefactos.
+
+## Control de correcciones del primer hito
+
+La revisión se basa en el documento de feedback docente `Hito1_Thropic_Talki.docx`. Los estados siguientes describen cambios documentales y evidencias pendientes, sin acreditar una validación posterior del profesor.
+
+| Observación | Tratamiento en esta versión | Estado |
+| --- | --- | --- |
+| Edad, distrito y apellidos de entrevistados. | Jennifer Bazan y Gian Guerra corregidos; distritos El Agustino y Surco confirmados por el equipo. | Pendientes las seis edades y los distritos de Belén, Isabel, Juan Alejandro y Jorge. |
+| Matriz de tareas confundida con funciones de la app. | Actividades de preparación oral, frecuencia relatada e interpretación cualitativa con referencia a las entrevistas. | Corregido documentalmente en 2.3.2. |
+| Varios criterios Gherkin por User Story. | Tres escenarios por cada una de las 38 historias: principal, alternativo y excepción. | Corregido documentalmente en 3.2. |
+| Technical Stories con rol Developer y contratos. | Seis historias técnicas con peticiones/respuestas o confirmaciones de eventos; restricciones conservadas en ADD. | Corregido documentalmente en 3.2 y 3.4. |
+| Prioridad de negocio, landing desde Sprint 1 y escala 1, 2, 3, 5, 8. | Ensayo/feedback encabezan el backlog; US01–US04 previstas en Sprint 1; US31 y US38 reestimadas preliminarmente a 8. | Corregido documentalmente; refinamiento del equipo pendiente. |
+| C4 consistente con ADD/DDD y relaciones explicadas. | Diez contextos, broker, workers, voz WSS, tutor y correo propuesto; protocolos y responsabilidades identificados. | Corregido documentalmente en 4.3. |
+| Clases de Domain Layer y vistas de componentes. | UML de componentes por capas; clases de dominio separadas de adaptadores y coordinación. | Corregido documentalmente en el capítulo V. |
+| Capturas de analíticos y commits de integrantes. | Capturas reales de GitHub con alcance de la rama y commits del primer hito. | Incorporado en Collaboration Insights. |
+| Videos, presentación individual y demostración en herramientas. | Anexo Videos de Exposiciones y About-the-Team con estados explícitos. | Pendiente de grabación/publicación. |
+| Keynote: nombres, apellidos y carrera sin superposición. | Se verificará la diapositiva del equipo antes de exportar la presentación de este curso. | Pendiente de disponer del Keynote correspondiente. |
+| Nomenclatura de archivos. | Nombres exigidos consignados en la tabla siguiente. | Pendiente de exportar y revisar los archivos finales. |
+
+## Nomenclatura de materiales
+
+| Material | Nombre base indicado en el feedback |
+| --- | --- |
+| Informe | `TF_1ASI0728_202620_TF` |
+| Presentación | `TF_1ASI0728_202620_KEYNOTE` |
+| Informe de participación | `TF_1ASI0728_202620_PERFORMANCE` |
+| Video de exposición | `TF_1ASI0728_202620_VIDEO` |
+
+Se añadirá la extensión correspondiente al formato solicitado al exportar cada archivo. Este registro de nombres no acredita que los materiales estén generados o enviados a Blackboard.

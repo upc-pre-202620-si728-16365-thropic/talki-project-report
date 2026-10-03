@@ -1,0 +1,56 @@
+@startuml
+skinparam defaultFontName Arial
+skinparam defaultFontSize 15
+skinparam shadowing false
+skinparam componentStyle uml2
+skinparam backgroundColor white
+skinparam componentBackgroundColor #EAF0FF
+skinparam componentBorderColor #1749B5
+skinparam ArrowColor #536177
+skinparam packageBackgroundColor #F7F9FD
+skinparam dpi 130
+title
+UML Component Diagram: Live Coaching
+Descomposición en Live Coach Service (Java / Spring Boot)
+end title
+component "Gemini:\ncredencial temporal" as provider <<Externo>> #EEEEEE
+component "Cliente:\nconversación de voz" as client <<Externo>> #EEEEEE
+component "Speech Analysis:\nprocesar cierre" as next <<Externo>> #EEEEEE
+package "Bounded Context:\nLive Coaching" {
+  package "Interface Layer" {
+    component "Interface:\nLiveCoachController\ny LiveTokenResponse\n[Java / Spring Boot]" as input
+  }
+  package "Application Layer" {
+    component "Application:\nLiveCoachOrchestrator\n[Java / Spring Boot]" as app
+  }
+  package "Domain Layer" {
+    component "Selección:\nSessionModeStrategyFactory\n[Java / Spring Boot]" as factory
+    component "Domain:\nSessionModeStrategy\ny estrategias de práctica\n[Java / Spring Boot]" as strategy
+  }
+  package "Infrastructure Layer" {
+    component "Infrastructure:\nGeminiTokenService\n[Java / Spring Boot]" as token
+    component "Infrastructure:\nSessionFinalizedPublisher /\nRabbitMQ\n[Java / Spring Boot]" as events
+  }
+}
+input --> app : solicita preparación y cierre / Java
+app --> factory : selecciona el modo / Java
+factory --> strategy : obtiene estrategia de práctica / Java
+app --> token : prepara credencial efímera / Java
+token --> provider : solicita credencial efímera / HTTPS
+client --> provider : conversación de voz / WSS
+app --> events : publica cierre / Java
+events --> next : eventos / AMQP
+note bottom
+Ampliación: confirmar cierre en Sessions
+Sin base de datos propia
+end note
+legend bottom
+Icono UML: componente; círculo: interfaz.
+Flecha continua: interacción dirigida.
+Relación a interfaz: contrato proporcionado.
+Externo: fuera del proceso representado.
+Propuesto: ampliación pendiente.
+Los casos de uso nombran responsabilidades de diseño;
+no acreditan nuevas clases ni servicios desplegados.
+endlegend
+@enduml

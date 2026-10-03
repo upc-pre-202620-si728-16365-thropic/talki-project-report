@@ -1,0 +1,57 @@
+@startuml
+skinparam defaultFontName Arial
+skinparam defaultFontSize 15
+skinparam shadowing false
+skinparam componentStyle uml2
+skinparam backgroundColor white
+skinparam componentBackgroundColor #EAF0FF
+skinparam componentBorderColor #1749B5
+skinparam ArrowColor #536177
+skinparam packageBackgroundColor #F7F9FD
+skinparam dpi 130
+title
+UML Component Diagram: Sharing & Retention
+Descomposición en Sharing Service propuesto (Java / Spring Boot)
+end title
+database "PostgreSQL:\npermisos, solicitudes\ny confirmaciones" as db <<Externo>> #EEEEEE
+queue "Infrastructure:\nRabbitMQ" as broker <<Externo>> #EEEEEE
+component "Contextos propietarios:\neliminar\ny confirmar" as owners <<Externo>> #EEEEEE
+package "Bounded Context:\nSharing & Retention" {
+  package "Interface Layer" {
+    component "Interface:\ncompartir, revocar, exportar\ny eliminar\n[Java / Spring Boot]" as input <<Propuesto>>
+  }
+  package "Application Layer" {
+    component "Application:\ncasos de uso de compartir\ny exportar\n[Java / Spring Boot]" as sharing <<Propuesto>>
+    component "Application:\nsolicitud\ny seguimiento de eliminación\n[Java / Spring Boot]" as deletion <<Propuesto>>
+  }
+  package "Domain Layer" {
+    component "Domain:\nShareGrant\n[Java / Spring Boot]" as grant <<Propuesto>>
+    component "Domain:\nDeletionRequest\ny PurgeReceipt\n[Java / Spring Boot]" as request <<Propuesto>>
+  }
+  package "Infrastructure Layer" {
+    component "Infrastructure:\nrepositorios de permisos\ny solicitudes\n[Java / Spring Boot]" as repo <<Propuesto>>
+  }
+}
+input --> sharing : solicita permiso o exportación / Java
+input --> deletion : solicita borrado o estado de purga / Java
+sharing --> grant : define vigencia y alcance / Java
+deletion --> request : registra solicitud y confirmaciones / Java
+sharing --> repo : conserva permisos / Java
+deletion --> repo : conserva solicitud y confirmaciones / Java
+repo --> db : persistencia / SQL
+deletion --> broker : eventos / AMQP
+broker --> owners : eventos / AMQP
+owners --> deletion : contrato entre contextos
+note bottom
+Modelo propuesto
+end note
+legend bottom
+Icono UML: componente; círculo: interfaz.
+Flecha continua: interacción dirigida.
+Relación a interfaz: contrato proporcionado.
+Externo: fuera del proceso representado.
+Propuesto: ampliación pendiente.
+Los casos de uso nombran responsabilidades de diseño;
+no acreditan nuevas clases ni servicios desplegados.
+endlegend
+@enduml

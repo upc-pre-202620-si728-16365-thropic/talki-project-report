@@ -1,0 +1,51 @@
+@startuml
+skinparam defaultFontName Arial
+skinparam defaultFontSize 15
+skinparam shadowing false
+skinparam componentStyle uml2
+skinparam backgroundColor white
+skinparam componentBackgroundColor #EAF0FF
+skinparam componentBorderColor #1749B5
+skinparam ArrowColor #536177
+skinparam packageBackgroundColor #F7F9FD
+skinparam dpi 130
+title
+UML Component Diagram: Notifications
+Descomposición en Notifications Service (Java / Spring Boot)
+end title
+queue "RabbitMQ:\nevaluación completada\ny logro obtenido" as broker <<Externo>> #EEEEEE
+component "Cliente de Talki:\nmostrar aviso" as user <<Externo>> #EEEEEE
+component "Ampliación:\neventos de cuenta, revocación\ny eliminación" as privacy <<Externo>> #EEEEEE
+package "Bounded Context:\nNotifications" {
+  package "Application Layer" {
+    component "Application propuesta:\npreparar\ny despachar aviso\n[Java / Spring Boot]" as app <<Propuesto>>
+  }
+  package "Domain Layer" {
+    interface "Domain propuesto:\nNotificationPushService" as port <<Propuesto>>
+  }
+  package "Infrastructure Layer" {
+    component "Infrastructure:\nScoreNotificationConsumer\ny AchievementNotificationConsumer\n[Java / Spring Boot]" as consumers
+    component "Infrastructure propuesta:\nWebSocketPushAdapter\n[Java / Spring Boot]" as adapter <<Propuesto>>
+    component "Adaptador de correo propuesto\n[Java / Spring Boot]" as email <<Propuesto>>
+  }
+}
+broker --> consumers : eventos / AMQP
+consumers --> app : activa preparación del aviso / Java
+app --> port : solicita entregar mensaje / Java
+adapter ..|> port : realiza contrato
+adapter --> user : aviso / WSS propuesto
+email ..|> port : realiza contrato
+privacy --> app : contrato entre contextos
+note bottom
+Sin base de negocio propia
+end note
+legend bottom
+Icono UML: componente; círculo: interfaz.
+Flecha continua: interacción dirigida.
+Relación a interfaz: contrato proporcionado.
+Externo: fuera del proceso representado.
+Propuesto: ampliación pendiente.
+Los casos de uso nombran responsabilidades de diseño;
+no acreditan nuevas clases ni servicios desplegados.
+endlegend
+@enduml

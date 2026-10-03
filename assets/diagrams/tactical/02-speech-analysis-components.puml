@@ -1,0 +1,51 @@
+@startuml
+skinparam defaultFontName Arial
+skinparam defaultFontSize 15
+skinparam shadowing false
+skinparam componentStyle uml2
+skinparam backgroundColor white
+skinparam componentBackgroundColor #EAF0FF
+skinparam componentBorderColor #1749B5
+skinparam ArrowColor #536177
+skinparam packageBackgroundColor #F7F9FD
+skinparam dpi 130
+title
+UML Component Diagram: Speech Analysis
+Descomposición en Analysis Worker (Java / Spring Boot)
+end title
+queue "Contrato de entrada:\nsession.live.finalized" as input <<Externo>> #EEEEEE
+queue "RabbitMQ:\nfillers.analyzed" as broker <<Externo>> #EEEEEE
+component "Scoring & Feedback\nConservar\ny evaluar" as scoring <<Externo>> #EEEEEE
+package "Bounded Context:\nSpeech Analysis" {
+  package "Application Layer" {
+    component "Application:\ncaso de uso de análisis\n[Java / Spring Boot]" as app
+  }
+  package "Domain Layer" {
+    component "Domain:\nFillerDetector\n[Java / Spring Boot]" as detector
+    component "Modelo de resultado:\nFillerResult\n[Java / Spring Boot]" as result <<Propuesto>>
+  }
+  package "Infrastructure Layer" {
+    component "Infrastructure:\nSessionLiveFinalizedConsumer\n[Java / Spring Boot]" as listener
+    component "Infrastructure:\nFillerAnalyzedPublisher\n[Java / Spring Boot]" as publisher
+  }
+}
+input --> listener : eventos / AMQP
+listener --> app : activa análisis del cierre / Java
+app --> detector : solicita detección de muletillas / Java
+detector --> result : produce resultado de detección / Java
+app --> publisher : solicita publicación de métricas / Java
+publisher --> broker : eventos / AMQP
+broker --> scoring : eventos / AMQP
+note bottom
+Sin base de datos propia
+end note
+legend bottom
+Icono UML: componente; círculo: interfaz.
+Flecha continua: interacción dirigida.
+Relación a interfaz: contrato proporcionado.
+Externo: fuera del proceso representado.
+Propuesto: ampliación pendiente.
+Los casos de uso nombran responsabilidades de diseño;
+no acreditan nuevas clases ni servicios desplegados.
+endlegend
+@enduml

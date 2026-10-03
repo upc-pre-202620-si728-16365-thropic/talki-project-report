@@ -16,12 +16,5 @@ classDiagram
         +String title
         +Instant unlockedAt
     }
-    class ScoringCompletedConsumer {
-        +handle(ScoringCompletedEvent) void
-    }
-    class AchievementUnlockedPublisher {
-        +publish(AchievementUnlockedEvent) void
-    }
-    ScoringCompletedConsumer --> UserStreak : updates
-    ScoringCompletedConsumer --> Achievement : creates
-    ScoringCompletedConsumer --> AchievementUnlockedPublisher
+
+    UserStreak "1" --> "0..*" Achievement : hitos del mismo usuario

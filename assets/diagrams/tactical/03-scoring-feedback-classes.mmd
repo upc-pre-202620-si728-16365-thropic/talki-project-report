@@ -21,9 +21,6 @@ classDiagram
     class ScoreCalculator {
         +calculate(FillerAnalyzedEvent) VoiceScore
     }
-    class FillerAnalyzedConsumer {
-        +handle(FillerAnalyzedEvent) void
-    }
-    ScoreResult *-- VoiceScore : embedded
-    FillerAnalyzedConsumer --> ScoreCalculator
-    FillerAnalyzedConsumer --> ScoreResult : persists
+
+    ScoreResult "1" *-- "1" VoiceScore : puntuación
+    ScoreCalculator ..> VoiceScore : calcula

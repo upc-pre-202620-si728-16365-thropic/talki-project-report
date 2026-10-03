@@ -1,0 +1,32 @@
+@startuml
+skinparam defaultFontName Arial
+skinparam dpi 130
+skinparam componentStyle uml2
+skinparam linetype polyline
+skinparam ranksep 70
+skinparam nodesep 60
+skinparam componentBackgroundColor #EAF0FF
+skinparam componentBorderColor #1749B5
+left to right direction
+title Privacidad: coordinación de purga entre bounded contexts
+component "Sharing & Retention" as sharing
+component "Practice Session\nManagement" as sessions
+component "Scoring & Feedback" as scoring
+component "Progress & Adaptation" as progress
+component "Gamification" as game
+component "Notifications" as notifications
+sharing --> sessions : Elimina evidencia y sesión\nCustomer/Supplier + PL
+sharing --> scoring : Elimina evaluación\nCustomer/Supplier + PL
+sharing --> progress : Retira métricas y recalcula resumen\nCustomer/Supplier + PL
+sharing --> game : Recalcula rachas y logros\nCustomer/Supplier + PL
+sessions ..> sharing : Confirma purga
+scoring ..> sharing : Confirma purga
+progress ..> sharing : Confirma purga
+game ..> sharing : Confirma actualización
+sharing --> notifications : Acceso Revocado / Datos Purgados\nPublished Language
+legend bottom
+Diseño propuesto de contratos asíncronos y confirmaciones por eventos.
+Cada contexto elimina sus datos; Sharing controla acceso y seguimiento.
+Speech Analysis procesa métricas sin conservar una base de reportes propia.
+endlegend
+@enduml

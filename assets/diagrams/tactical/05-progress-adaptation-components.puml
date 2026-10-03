@@ -1,0 +1,54 @@
+@startuml
+skinparam defaultFontName Arial
+skinparam defaultFontSize 15
+skinparam shadowing false
+skinparam componentStyle uml2
+skinparam backgroundColor white
+skinparam componentBackgroundColor #EAF0FF
+skinparam componentBorderColor #1749B5
+skinparam ArrowColor #536177
+skinparam packageBackgroundColor #F7F9FD
+skinparam dpi 130
+title
+UML Component Diagram: Progress & Adaptation
+Descomposición en Progress Service (Java / Spring Boot)
+end title
+queue "RabbitMQ:\nscoring.completed" as broker <<Externo>> #EEEEEE
+database "PostgreSQL:\nuser_progress" as db <<Externo>> #EEEEEE
+package "Bounded Context:\nProgress & Adaptation" {
+  package "Interface Layer" {
+    component "Interface:\nProgressController\n[Java / Spring Boot]" as input
+  }
+  package "Application Layer" {
+    component "Consulta del resumen\n[Java / Spring Boot]" as query
+    component "Application:\nactualizar progreso\n[Java / Spring Boot]" as app
+    component "Comparación\ny plan adaptativo propuestos\n[Java / Spring Boot]" as view <<Propuesto>>
+  }
+  package "Domain Layer" {
+    component "Domain:\nUserProgress\n[Java / Spring Boot]" as model
+  }
+  package "Infrastructure Layer" {
+    component "Infrastructure:\nUserProgressRepository\n[Java / Spring Boot]" as repo
+    component "Infrastructure:\nScoringCompletedConsumer\n[Java / Spring Boot]" as consumer
+  }
+}
+input --> query : solicita resumen de progreso / Java
+query --> repo : consulta resumen propio / Java
+broker --> consumer : eventos / AMQP
+consumer --> app : activa actualización de progreso / Java
+app --> model : actualiza totales y puntuación / Java
+app --> repo : conserva resumen de progreso / Java
+repo --> db : persistencia / SQL
+note bottom
+Ampliación: UserProgressQueryService y SessionMetrics
+end note
+legend bottom
+Icono UML: componente; círculo: interfaz.
+Flecha continua: interacción dirigida.
+Relación a interfaz: contrato proporcionado.
+Externo: fuera del proceso representado.
+Propuesto: ampliación pendiente.
+Los casos de uso nombran responsabilidades de diseño;
+no acreditan nuevas clases ni servicios desplegados.
+endlegend
+@enduml
