@@ -751,7 +751,7 @@ El objetivo de las entrevistas es comprender las necesidades, frustraciones y h�
 
 ### 2.2.2. Registro de entrevistas
 
-La ficha conserva las capturas, enlaces y tiempos disponibles. La edad, el distrito y los apellidos indicados como pendientes requieren confirmación con los entrevistados; no se deducen a partir de su universidad o ciclo.
+La ficha conserva las capturas, enlaces y tiempos publicados. Los enlaces identifican la carpeta de evidencias; falta identificar el archivo exacto de cada entrevista. Los intervalos de Isabel y Juan Alejandro se solapan en el registro actual y requieren comprobación contra la grabación antes de usarlos como tiempos definitivos. La edad, el distrito y los apellidos indicados como pendientes requieren confirmación con los entrevistados; no se deducen a partir de su universidad o ciclo.
 
 **Segmento #1: Estudiantes universitarios de ciclos 1 al 5**
 
@@ -779,7 +779,7 @@ La ficha conserva las capturas, enlaces y tiempos disponibles. La edad, el distr
 
 **Belén Ordoñez (PUCP, 5to ciclo)**
 
-Estudia Comunicación para el Desarrollo en la PUCP y se encuentra en su primer año de carrera. Las presentaciones son muy frecuentes en su carrera: la mayoría de las evaluaciones son exposiciones de proyectos, ya que hay pocos exámenes escritos. Recuerda haberse puesto nerviosa en su primera exposición universitaria. Su principal problema es que el volumen de su voz va bajando a medida que avanza la presentación, al punto de que ya no la escuchan. Se prepara intentando dominar el contenido del tema, aunque reconoce que hay cosas "fuera de su control". Ha experimentado "black outs" durante exposiciones: termina sin recordar lo que dijo, y solo después nota lo que le faltó. No conocía la existencia de aplicaciones para mejorar la oratoria. Le gustaría grabarse, aunque le cuesta escuchar su propia voz; actualmente pide a amigos que la escuchen y le den feedback. Se sentiría más cómoda recibiendo retroalimentación de una IA que de una persona, porque considera que la IA es más directa y honesta. Estaría dispuesta a usar una aplicación de pago entre 2 y 5 dólares mensuales, siempre que sea realmente buena.
+Estudia Comunicación para el Desarrollo en la PUCP y se encuentra en quinto ciclo. Las presentaciones son muy frecuentes en su carrera: la mayoría de las evaluaciones son exposiciones de proyectos, ya que hay pocos exámenes escritos. Recuerda haberse puesto nerviosa en su primera exposición universitaria. Su principal problema es que el volumen de su voz va bajando a medida que avanza la presentación, al punto de que ya no la escuchan. Se prepara intentando dominar el contenido del tema, aunque reconoce que hay cosas "fuera de su control". Ha experimentado "black outs" durante exposiciones: termina sin recordar lo que dijo, y solo después nota lo que le faltó. No conocía la existencia de aplicaciones para mejorar la oratoria. Le gustaría grabarse, aunque le cuesta escuchar su propia voz; actualmente pide a amigos que la escuchen y le den feedback. Se sentiría más cómoda recibiendo retroalimentación de una IA que de una persona, porque considera que la IA es más directa y honesta. Estaría dispuesta a usar una aplicación de pago entre 2 y 5 dólares mensuales, siempre que sea realmente buena.
 
 **Puntos clave:**
 - Exposiciones muy frecuentes (evaluación principal en su carrera).
@@ -870,42 +870,39 @@ Estudia Ingeniería de Software en la UPC y se encuentra entre el séptimo y oct
 
 ---
 
-**Síntesis cruzada de hallazgos**
+**Síntesis de hallazgos por segmento**
 
-Las fichas individuales anteriores recogen la evidencia bruta de cada entrevistado. A continuación se presentan los patrones convergentes y divergentes identificados al cruzar los seis casos, con el objetivo de extraer insights accionables para el diseño de Talki.
+La matriz siguiente resume lo relatado en las fichas de 2.2.2 y en el análisis individual. “No consta” indica ausencia de evidencia en ese registro; no equivale a una respuesta negativa. Los conteos se limitan a tres entrevistados por segmento y no representan a toda la población universitaria.
 
-**Patrones convergentes (aplican a ambos segmentos):**
+| Entrevistado | Dificultad o necesidad relatada | Preparación con grabación | Uso digital relatado | Relación esperada con el feedback de IA |
+| --- | --- | --- | --- | --- |
+| Belén Ordoñez, S1 | Pérdida de volumen y olvidos durante exposiciones. | Disposición a probarla, con incomodidad al escucharse. | No conocía aplicaciones de oratoria. | Prefiere feedback directo; percibe la IA como más honesta. |
+| Isabel Rodriguez, S1 | Nerviosismo, vocabulario repetitivo y apuro. | Disposición a grabarse para autocorregirse. | ChatGPT para preparar contenido. | Valora el posible ahorro de tiempo. |
+| Juan Alejandro Elías López, S1 | Fluidez en exposiciones de alta importancia. | Disposición a probarla. | No ha usado herramientas de práctica oral. | Acepta IA y tutor humano; precio sujeto a funciones. |
+| Gian Guerra, S2 | Silencios, vocabulario y presión ante jerarquías. | Se graba para reconocer dificultades. | Speak para pronunciación y entonación. | Simulación útil con checkpoints de tutor. |
+| Jennifer Bazan, S2 | Claridad y fluidez bajo presión de jurados. | Grabaciones con celular/Zoom. | No ha usado una aplicación especializada. | Práctica autónoma y orientación adicional de tutor. |
+| Jorge Sinyun González, S2 | Claridad del contenido e inseguridad ante audiencia. | No consta grabación; ensaya frente al espejo y las diapositivas. | NotebookLM para preguntas y preparación. | Prefiere autonomía por privacidad; reconoce valor del docente. |
 
-- **6 de 6** entrevistados consideran que una aplicación con IA especializada en oratoria sería "útil" o "extremadamente útil" para su preparación personal.
-- **6 de 6** no han encontrado una aplicación digital enfocada específicamente en oratoria en español; las que conocen (Speak, ChatGPT, NotebookLM, grabadoras nativas) cubren partes del problema pero no el feedback completo.
-- **5 de 6** reconocen que los nervios o la ansiedad los han llevado a olvidar contenido, perder fluidez o bajar el volumen durante una presentación importante (Belén, Isabel, Jennifer Bazan, Jorge, Juan Alejandro en exposiciones de alta importancia).
-- **5 de 6** valoran recibir retroalimentación objetiva y directa, ya sea porque la IA es percibida como más honesta (Belén) o porque les ahorra tiempo frente al feedback de pares (Isabel, Jennifer Bazan).
-- **4 de 6** se graban o están dispuestos a grabarse como método de práctica autónoma (Gian Guerra, Jennifer Bazan, Juan Alejandro dispuesto, Jorge con su propio material).
+| Hallazgo operativo | Segmento 1, n=3 | Segmento 2, n=3 | Interpretación de diseño |
+| --- | --- | --- | --- |
+| Acepta o valora feedback de IA, sin medir su eficacia. | 3/3 (100 %): Belén, Isabel y Juan Alejandro. | 3/3 (100 %): Gian, Jennifer y Jorge. | Probar recomendaciones comprensibles; no asumir imparcialidad ni mejora demostrada. |
+| Usa herramientas digitales de preparación o práctica. | 1/3 (33,3 %): Isabel. | 2/3 (66,7 %): Gian y Jorge. | Facilitar inicio guiado y ofrecer escenarios de mayor detalle. Las grabadoras de Jennifer se registran aparte para no confundir aplicaciones especializadas con captura. |
+| Usa grabaciones para prepararse. | 0/3 (0 %): no se documenta un hábito actual; los tres muestran disposición. | 2/3 (66,7 %): Gian y Jennifer; en Jorge no consta. | Diferenciar disposición declarada de comportamiento observado. Ofrecer audio y consentimiento claros. |
+| Está dispuesto a probar grabación o ya la utiliza. | 3/3 (100 %): Belén, Isabel y Juan Alejandro. | 2/3 (66,7 %): Gian y Jennifer; en Jorge no consta. | Cinco casos sustentan la hipótesis de práctica autónoma; no se atribuye el sexto por practicar frente al espejo. |
+| Expresa interés en combinar IA y tutor. | 1/3 (33,3 %): Juan Alejandro. | 2/3 (66,7 %): Gian y Jennifer. | Compartición opcional y controlada; Jorge prioriza autonomía, sin rechazar orientación docente. |
+| Declara un precio numérico de referencia. | 2/3 (66,7 %): Belén, USD 2–5; Isabel, hasta USD 5. | 0/3 (0 %): no consta monto en las fichas. | El precio debe investigarse; no concluir que el segmento avanzado pagará más. |
 
-**Divergencias por segmento:**
+**Diferencias relevantes para el diseño**
 
-| Dimensión | Segmento 1 (ciclos 1 al 5) | Segmento 2 (ciclos 6 al 10) |
-|---|---|---|
-| Problema principal | Volumen, nerviosismo agudo, black outs, vocabulario repetitivo | Fluidez profesional, manejo de silencios, inseguridad ante jerarquías |
-| Contexto de presentación | Exposiciones académicas frecuentes (semanales) | Sustentaciones, jurados, entrevistas laborales reales |
-| Madurez oral percibida | Principiantes que buscan ganar confianza | Intermedios que buscan pulir un nivel ya existente |
-| Herramientas usadas | Prácticamente ninguna | Speak, NotebookLM, grabaciones personales |
-| Modelo de feedback preferido | Autónomo con IA (por honestidad y costo) | Híbrido (IA más checkpoints con tutor) |
-| Disposición a pagar | USD 2 a 5 (S/ 7 a S/ 19) | Mayor, justificada por retorno profesional |
+En el primer segmento, el ensayo guiado debe ayudar a ordenar el discurso y revisar aspectos concretos como volumen, fluidez y repetición de palabras. En el segundo, la propuesta debe permitir ensayar preguntas contextualizadas, revisar silencios y justificar argumentos. Los modos siguen disponibles para ambos segmentos; la etapa académica orienta las ayudas y no restringe funciones.
 
-**Implicaciones para el diseño de Talki:**
+**Implicaciones y límites**
 
-1. **MVP debe cubrir feedback de voz básico en español** (volumen, fluidez, muletillas, vocabulario), validado por los seis entrevistados como brecha universal.
-2. **El análisis por segmento debe adaptar profundidad y foco**: para el Segmento 1, ejercicios guiados y métricas simples; para el Segmento 2, simulador de entrevistas y análisis de silencios.
-3. **La IA como juez imparcial es una ventaja competitiva validada**: cinco de seis entrevistados prefieren o aceptan feedback de IA por su objetividad, lo que reduce la fricción social que enfrentan con amigos o profesores.
-4. **El modelo freemium con precio estudiantil es viable**: el rango de disposición a pagar se alinea con el plan Premium de S/ 15 a S/ 25 (ver nota siguiente).
-5. **La opción híbrida (IA más tutor) debe considerarse para una fase posterior**, ya que dos entrevistados del Segmento 2 la prefieren explícitamente, aunque no es bloqueante para el MVP.
-
----
-
-**Nota sobre la disposición a pagar**
-
-Las entrevistadas del Segmento 1 (Belén e Isabel) expresaron su disposición a pagar un rango aproximado de **USD 2 a 5 mensuales** por una aplicación que realmente funcione. Considerando el tipo de cambio promedio de referencia (S/ 3.70 por USD), este rango equivale a **S/ 7 a S/ 19 mensuales**. El plan Premium Estudiantil de Talki, definido en la sección 1.2.2.2, en **S/ 15 a S/ 25 mensuales**, se encuentra dentro o muy cerca del techo indicado por las usuarias, lo que sugiere una aceptabilidad razonable del precio propuesto. Para el Segmento 2 (Rodrigo Sánchez y similares), la disposición a pagar es mayor por el retorno profesional esperado (entrevistas, ascensos, primer empleo), lo que habilita el tramo superior del rango y justifica mantener la horquilla S/ 15 a S/ 25 como precio de referencia.
+1. Las entrevistas sustentan necesidades de práctica y una aceptación inicial del feedback de IA; no validan el funcionamiento de Talki ni su eficacia para mejorar la comunicación.
+2. La percepción de honestidad expresada por Belén es un hallazgo individual. No demuestra que un modelo de IA sea imparcial; el reporte debe presentar evidencia, limitaciones y dimensiones no evaluables.
+3. Compartir con un tutor debe ser opcional, temporal y limitado al reporte autorizado. La preferencia de autonomía de Jorge exige conservar un recorrido privado completo.
+4. Los montos de Belén e Isabel son referencias exploratorias en USD. El rango propuesto de S/ 15–25 se mantiene como hipótesis de negocio, pendiente de evaluar con precios explícitos y una muestra más amplia. No se usa una persona de diseño como evidencia de disposición a pagar.
+5. Para validar la propuesta se observarán tareas de preparación, comprensión del feedback y control de acceso en ambos segmentos. No se atribuyen resultados de esas pruebas antes de realizarlas.
 
 ## 2.3. Needfinding
 
