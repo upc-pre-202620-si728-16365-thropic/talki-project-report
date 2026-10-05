@@ -2943,7 +2943,7 @@ UserStreak conserva la racha actual, la mejor racha y la experiencia acumulada d
 
 **Entities**
 
-Achievement representa un reconocimiento obtenido por el estudiante. Su registro como entidad forma parte de la ampliación del diseño; la comunicación de un logro se origina al comprobar sus condiciones.
+Achievement representa un reconocimiento obtenido por el estudiante. PracticeContribution identifica las sesiones válidas ya contabilizadas; Achievement registra la versión de regla y la práctica que originó el logro.
 
 **Elementos de Domain Layer**
 
@@ -2957,6 +2957,16 @@ Achievement representa un reconocimiento obtenido por el estudiante. Su registro
 1. Solo las prácticas válidas contribuyen a las rachas y los logros.
 2. Una misma sesión no incrementa la experiencia dos veces.
 3. El cálculo diario de la racha considera la zona horaria del estudiante.
+
+**Atributos y operaciones del modelo de dominio**
+
+Los atributos se encapsulan; las operaciones públicas expresan las reglas del contexto. Las interfaces y enumeraciones se distinguen en el UML. Este modelo especifica el diseño objetivo del TP.
+
+| Elemento | Atributos o valores | Operaciones públicas |
+| --- | --- | --- |
+| UserStreak | Long userId<br>int currentStreakDays<br>int longestStreakDays<br>int xp<br>String timeZone<br>boolean publicRanking<br>Instant lastSessionAt | recordValidSession(Instant occurredAt, int xpDelta) void<br>setPublicRanking(boolean enabled) void |
+| Achievement | UUID id<br>Long userId<br>UUID originSessionId<br>String code<br>String title<br>String ruleVersion<br>Instant unlockedAt | Consulta mediante el agregado o servicio responsable. |
+| PracticeContribution | UUID sessionId<br>Long userId<br>String ruleVersion<br>int xpDelta<br>Instant occurredAt<br>boolean valid | Consulta mediante el agregado o servicio responsable. |
 
 ### 5.7.2. Interface Layer
 
@@ -2989,10 +2999,18 @@ Las lecturas presentan la racha de un estudiante y el ranking. La participación
 
 | Nombre | Tipo | Descripción | Capa |
 | --- | --- | --- | --- |
-| Actualización de racha y experiencia | Caso de uso | Aplica las reglas de continuidad y experiencia a UserStreak. | Application |
-| Evaluación de logros | Caso de uso | Comprueba las condiciones de reconocimiento y solicita su comunicación. | Application |
+| RecordGamificationHandler | Event Handler | Aplica las reglas de continuidad y experiencia a UserStreak. | Application |
+| AchievementRuleService | Servicio de dominio | Comprueba las condiciones de reconocimiento y solicita su comunicación. | Application |
 
 **Recorrido del caso de uso.** La evaluación completada identifica al estudiante y la práctica. El flujo valida su contribución a la racha, actualiza la experiencia y comprueba los logros. El diseño ampliado añade el veredicto de práctica válida, la zona horaria y el registro de sesiones ya procesadas.
+
+**Contratos de coordinación**
+
+| Clase o grupo de clases | Responsabilidad | Operaciones previstas |
+| --- | --- | --- |
+| RecordGamificationHandler / GamificationQueryService | Registra contribuciones únicas y organiza consultas. | recordValidSession(event); queryStreak(userId); queryLeaderboard() |
+
+Los handlers validan la petición o el evento antes de ejecutar cambios. Los puertos de repositorio y de integración son contratos; los adaptadores de Infrastructure realizan esos contratos. Los nombres describen clases previstas para implementar el diseño, sin afirmar que estén desplegadas.
 
 ### 5.7.4. Infrastructure Layer
 
@@ -3005,13 +3023,21 @@ La capa de infraestructura conserva las rachas y conecta la evaluación con los 
 | UserStreakRepository | Repositorio | Conserva las rachas y la experiencia en PostgreSQL. | Infrastructure |
 | ScoringCompletedConsumer | Consumidor de eventos | Recibe la evaluación que origina la actualización de reconocimientos. | Infrastructure |
 | AchievementUnlockedPublisher | Publicador de eventos | Comunica el logro obtenido a Notifications. | Infrastructure |
-| Registro de Achievement | Persistencia propuesta | Conserva los logros y las sesiones que los originaron. | Infrastructure |
+| AchievementRepository y PracticeContributionRepository | Repositorios | Conserva los logros y las sesiones que los originaron. | Infrastructure |
 
-La ampliación añade el control de sesiones ya procesadas y las reglas versionadas de reconocimiento. La consulta pública respeta la decisión de participación del estudiante.
+PracticeContributionRepository aplica unicidad por sesión para que un nuevo análisis no otorgue XP otra vez. AchievementRepository aplica unicidad por usuario, código y versión de regla. UserStreak conserva zona horaria y publicRanking; GamificationQueryService limita el ranking a quienes optaron por participar.
 
 ### 5.7.5. Bounded Context Software Architecture Component Level Diagrams
 
-La evaluación recibida actualiza la racha y, cuando se cumple una condición, origina un logro. AchievementUnlockedPublisher comunica ese reconocimiento a Notifications. Su registro como entidad forma parte de la ampliación del diseño.
+Esta vista C4 descompone el container de Gamification definido en 4.3.3. Los elementos externos se sitúan fuera de su frontera; las relaciones indican responsabilidad y protocolo. Las clases siguientes colaboran en los componentes del proceso y mantienen la separación de capas.
+
+| Clases agrupadas en el componente | Capa | Responsabilidad |
+| --- | --- | --- |
+| GamificationController | Interface | Expone racha y ranking voluntario. |
+| RecordGamificationHandler / GamificationQueryService | Application | Registra contribuciones únicas y organiza consultas. |
+| UserStreak / Achievement / PracticeContribution / AchievementRuleService | Domain | Aplica validez, zona horaria y reglas versionadas. |
+| UserStreakRepository / AchievementRepository / PracticeContributionRepository | Infrastructure | Conserva progreso lúdico sin duplicar XP. |
+| ScoringCompletedConsumer / AchievementUnlockedPublisher | Infrastructure | Recibe práctica evaluada y comunica logros. |
 
 ![Componentes de Gamification](assets/diagrams/tactical/07-gamification-components.png)
 
@@ -3019,7 +3045,7 @@ La evaluación recibida actualiza la racha y, cuando se cumple una condición, o
 
 #### 5.7.6.1. Bounded Context Domain Layer Class Diagrams
 
-UserStreak conserva la racha y la experiencia del usuario, mientras que Achievement identifica cada reconocimiento. La asociación agrupa los logros del mismo usuario; Achievement se identifica como ampliación propuesta. El consumidor y el publicador de eventos se representan en componentes, fuera del dominio.
+UserStreak conserva la racha y la experiencia del usuario, mientras que Achievement identifica cada reconocimiento. La asociación agrupa los logros del mismo usuario; Achievement se identifica como ampliación propuesta. El consumidor y el publicador de eventos se representan en componentes, fuera del dominio. PracticeContribution identifica las prácticas ya contabilizadas.
 
 ![Clases de Gamification](assets/diagrams/tactical/07-gamification-classes.png)
 
@@ -3028,6 +3054,17 @@ UserStreak conserva la racha y la experiencia del usuario, mientras que Achievem
 user_streaks y achievements se relacionan por usuario dentro de la misma base. La ampliación propone identificar los logros por usuario, código y versión de regla para evitar duplicados.
 
 ![Persistencia de Gamification](assets/diagrams/tactical/07-gamification-database.png)
+
+**Restricciones de persistencia**
+
+| Objeto | Restricción y relación con las reglas |
+| --- | --- |
+| ACHIEVEMENTS | UNIQUE(user_id, code, rule_version); origin_session_id referencia externa. El registro identifica qué práctica produjo el reconocimiento. |
+| PRACTICE_CONTRIBUTIONS | PK session_id impide incrementar XP otra vez al reevaluar una práctica. xp_delta ≥ 0 y solo valid=true contribuye a la racha. |
+| USER_STREAKS | CHECK contadores y XP ≥ 0; time_zone es una zona IANA. public_ranking=false por defecto; solo participantes voluntarios figuran en ranking. |
+
+La unicidad compuesta se documenta en esta tabla porque comprende varios campos; las marcas PK/FK/UK del diagrama identifican claves simples. Inbox y outbox son registros técnicos del esquema privado: eventId es único en inbox y el despacho confirma la salida después del commit local. No se crean FKs hacia otros contextos.
+
 
 ## 5.8. Bounded Context: Identity & Access
 

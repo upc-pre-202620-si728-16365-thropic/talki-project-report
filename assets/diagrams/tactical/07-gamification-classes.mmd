@@ -1,20 +1,36 @@
 classDiagram
-    class UserStreak {
-        +Long userId
-        +int currentStreakDays
-        +int longestStreakDays
-        +int xp
-        +Instant lastSessionAt
-        +incrementOrReset(Instant) void
-        +addXp(int delta) void
-    }
-    class Achievement {
-        <<Propuesto>>
-        +Long id
-        +Long userId
-        +String code
-        +String title
-        +Instant unlockedAt
-    }
-
-    UserStreak "1" --> "0..*" Achievement : hitos del mismo usuario
+ direction LR
+class UserStreak {
+  <<AggregateRoot>>
+  -Long userId
+  -int currentStreakDays
+  -int longestStreakDays
+  -int xp
+  -String timeZone
+  -boolean publicRanking
+  -Instant lastSessionAt
+  +recordValidSession(Instant occurredAt, int xpDelta) void
+  +setPublicRanking(boolean enabled) void
+}
+class Achievement {
+  <<Entity>>
+  -UUID id
+  -Long userId
+  -UUID originSessionId
+  -String code
+  -String title
+  -String ruleVersion
+  -Instant unlockedAt
+}
+class PracticeContribution {
+  <<Entity>>
+  -UUID sessionId
+  -Long userId
+  -String ruleVersion
+  -int xpDelta
+  -Instant occurredAt
+  -boolean valid
+}
+UserStreak "1" --> "0..*" Achievement : logros del usuario
+UserStreak "1" --> "0..*" PracticeContribution : prácticas contabilizadas
+Achievement ..> PracticeContribution : origen

@@ -1,16 +1,29 @@
 erDiagram
-    USER_STREAKS ||--o{ ACHIEVEMENTS : earns
+    USER_STREAKS ||--o{ ACHIEVEMENTS : logros
+    USER_STREAKS ||--o{ PRACTICE_CONTRIBUTIONS : contribuciones
     USER_STREAKS {
         bigint user_id PK
         int current_streak_days
         int longest_streak_days
         int xp
+        varchar time_zone
+        boolean public_ranking
         timestamp last_session_at
     }
     ACHIEVEMENTS {
-        bigint id PK
+        uuid id PK
         bigint user_id FK
+        uuid origin_session_id
         varchar code
         varchar title
+        varchar rule_version
         timestamp unlocked_at
+    }
+    PRACTICE_CONTRIBUTIONS {
+        uuid session_id PK
+        bigint user_id FK
+        varchar rule_version
+        int xp_delta
+        boolean valid
+        timestamp occurred_at
     }

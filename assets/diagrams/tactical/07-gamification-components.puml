@@ -1,57 +1,27 @@
 @startuml
+!include <C4/C4_Component>
 skinparam defaultFontName Arial
-skinparam defaultFontSize 15
-skinparam shadowing false
-skinparam componentStyle uml2
-skinparam backgroundColor white
-skinparam componentBackgroundColor #EAF0FF
-skinparam componentBorderColor #1749B5
-skinparam ArrowColor #536177
-skinparam packageBackgroundColor #F7F9FD
-skinparam dpi 130
-title
-UML Component Diagram: Gamification
-Descomposición en Gamification Service (Java / Spring Boot)
-end title
-queue "RabbitMQ:\nscoring.completed" as broker <<Externo>> #EEEEEE
-database "PostgreSQL:\nuser_streaks" as db <<Externo>> #EEEEEE
-queue "RabbitMQ:\nachievement.unlocked /\nNotifications" as notices <<Externo>> #EEEEEE
-package "Bounded Context:\nGamification" {
-  package "Interface Layer" {
-    component "Interface:\nGamificationController\n[Java / Spring Boot]" as input
-  }
-  package "Application Layer" {
-    component "Consulta de rachas\ny ranking\n[Java / Spring Boot]" as query
-    component "Application:\nactualizar racha\ny evaluar logros\n[Java / Spring Boot]" as app
-  }
-  package "Domain Layer" {
-    component "Domain:\nUserStreak\n[Java / Spring Boot]" as model
-  }
-  package "Infrastructure Layer" {
-    component "Infrastructure:\nUserStreakRepository\n[Java / Spring Boot]" as repo
-    component "Infrastructure:\nScoringCompletedConsumer\n[Java / Spring Boot]" as consumer
-    component "Infrastructure:\nAchievementUnlockedPublisher\n[Java / Spring Boot]" as pub
-  }
+skinparam dpi 150
+LAYOUT_TOP_DOWN()
+title C4 Component Diagram: Gamification
+Container(bff, "API Gateway / BFF", "HTTPS / JSON", "Fuera del container representado")
+ContainerQueue(bus, "Broker de eventos", "RabbitMQ / AMQP", "Fuera del container representado")
+ContainerDb(db, "Esquema privado del contexto", "PostgreSQL / TLS", "Fuera del container representado")
+Container_Boundary(scope, "Gamification: proceso Java / Spring Boot") {
+  Component(api, "GamificationController", "Java / Spring Boot", "Interface: Expone racha y ranking voluntario")
+  Component(app, "RecordGamificationHandler / GamificationQueryService", "Java / Spring Boot", "Application: Registra contribuciones únicas y organiza consultas")
+  Component(rules, "UserStreak / Achievement / PracticeContribution / AchievementRuleService", "Java / Spring Boot", "Domain: Aplica validez, zona horaria y reglas versionadas")
+  Component(repo, "UserStreakRepository / AchievementRepository / PracticeContributionRepository", "Java / Spring Boot", "Infrastructure: Conserva progreso lúdico sin duplicar XP")
+  Component(messaging, "ScoringCompletedConsumer / AchievementUnlockedPublisher", "Java / Spring Boot", "Infrastructure: Recibe práctica evaluada y comunica logros")
 }
-input --> query : solicita racha o ranking / Java
-query --> repo : consulta rachas / Java
-broker --> consumer : eventos / AMQP
-consumer --> app : activa reglas por sesión válida / Java
-app --> model : calcula racha y experiencia / Java
-app --> repo : conserva racha / Java
-repo --> db : persistencia / SQL
-app --> pub : solicita publicación de logro / Java
-pub --> notices : eventos / AMQP
-note bottom
-Ampliación: entidad y registro de Achievement
-end note
-legend bottom
-Icono UML: componente; círculo: interfaz.
-Flecha continua: interacción dirigida.
-Relación a interfaz: contrato proporcionado.
-Externo: fuera del proceso representado.
-Propuesto: ampliación pendiente.
-Los casos de uso nombran responsabilidades de diseño;
-no acreditan nuevas clases ni servicios desplegados.
-endlegend
+Rel(api, app, "Delega caso de uso", "Java")
+Rel(messaging, app, "Entrega evento validado", "Java")
+Rel(app, rules, "Aplica reglas de dominio", "Java")
+Rel(app, repo, "Lee y confirma datos del contexto", "Java")
+Rel(app, messaging, "Registra salida o confirmación", "Java")
+Rel(bff, api, "Consulta rachas y ranking", "HTTPS / JSON")
+Rel(bus, messaging, "Entrega scoring.completed y deletion.requested", "AMQP")
+Rel(messaging, bus, "Publica logro o confirma purga", "AMQP")
+Rel(repo, db, "Persiste reconocimiento y contribuciones", "SQL / TLS")
+SHOW_LEGEND()
 @enduml
