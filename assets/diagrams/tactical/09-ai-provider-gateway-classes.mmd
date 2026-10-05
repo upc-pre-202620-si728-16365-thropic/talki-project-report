@@ -1,9 +1,24 @@
 classDiagram
-
+ direction LR
 class AIProviderPort {
   <<interface>>
-  +openLive(request)
-  +closeAndCollectTranscript()
+  +issueCredential(LivePreparation request) LiveCredential
+  +supports(String mode) boolean
 }
-
-    note for AIProviderPort "Contrato de dominio propuesto"
+class LivePreparation {
+  <<ValueObject>>
+  -UUID sessionId
+  -String mode
+  -String authorizedInstructions
+  -String conversationLocale
+  -int durationSeconds
+}
+class LiveCredential {
+  <<ValueObject>>
+  -String ephemeralToken
+  -String provider
+  -String model
+  -Instant expiresAt
+}
+AIProviderPort ..> LivePreparation : recibe
+AIProviderPort ..> LiveCredential : devuelve

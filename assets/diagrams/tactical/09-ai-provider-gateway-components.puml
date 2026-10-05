@@ -1,49 +1,23 @@
 @startuml
+!include <C4/C4_Component>
 skinparam defaultFontName Arial
-skinparam defaultFontSize 15
-skinparam shadowing false
-skinparam componentStyle uml2
-skinparam backgroundColor white
-skinparam componentBackgroundColor #EAF0FF
-skinparam componentBorderColor #1749B5
-skinparam ArrowColor #536177
-skinparam packageBackgroundColor #F7F9FD
-skinparam dpi 130
-title
-UML Component Diagram: AI Provider Gateway
-Descomposición en AI Gateway propuesto (Java / Spring Boot)
-end title
-component "Gemini Live API" as provider <<Externo>> #EEEEEE
-package "Bounded Context:\nAI Provider Gateway" {
-  package "Interface Layer" {
-    component "Interface:\nsolicitud autorizada de integración\n[Java / Spring Boot]" as input <<Propuesto>>
-  }
-  package "Application Layer" {
-    component "Application:\nAIIntegrationApplicationService\n[Java / Spring Boot]" as app <<Propuesto>>
-  }
-  package "Domain Layer" {
-    interface "Domain:\nAIProviderPort" as port <<Propuesto>>
-  }
-  package "Infrastructure Layer" {
-    component "Infrastructure:\nGeminiLiveClient\n[Java / Spring Boot]" as adapter <<Propuesto>>
-    component "Infrastructure:\nconfiguración\ny credenciales protegidas\n[Java / Spring Boot]" as config <<Propuesto>>
-  }
+skinparam dpi 150
+LAYOUT_TOP_DOWN()
+title C4 Component Diagram: AI Provider Gateway
+System_Ext(gemini, "Gemini Live", "API de credenciales; voz directa cliente")
+Container(live, "Live Coaching", "Java / Spring Boot", "Fuera del container representado")
+Container_Boundary(scope, "AI Provider Gateway: proceso Java / Spring Boot") {
+  Component(api, "AIProviderGatewayController", "Java / Spring Boot", "Interface: Recibe contrato interno de credenciales")
+  Component(app, "AIIntegrationApplicationService", "Java / Spring Boot", "Application: Comprueba capacidad y selecciona proveedor")
+  Component(rules, "AIProviderPort / LivePreparation / LiveCredential", "Java / Spring Boot", "Domain: Define preparación independiente del proveedor")
+  Component(adapter, "GeminiLiveClient", "Java / Spring Boot", "Infrastructure: Emite credencial efímera por HTTPS")
+  Component(config, "ProviderConfiguration", "Java / Spring Boot", "Infrastructure: Obtiene secretos y capacidades de configuración protegida")
 }
-input --> app : solicita integración autorizada / Java
-app --> port : solicita apertura o cierre / Java
-adapter ..|> port : realiza contrato
-adapter --> provider : credencial o voz / HTTPS-WSS
-config --> adapter : proporciona configuración protegida / Java
-note bottom
-Pasarela propuesta, sin base de material de práctica
-end note
-legend bottom
-Icono UML: componente; círculo: interfaz.
-Flecha continua: interacción dirigida.
-Relación a interfaz: contrato proporcionado.
-Externo: fuera del proceso representado.
-Propuesto: ampliación pendiente.
-Los casos de uso nombran responsabilidades de diseño;
-no acreditan nuevas clases ni servicios desplegados.
-endlegend
+Rel(api, app, "Delega caso de uso", "Java")
+Rel(app, rules, "Aplica reglas de dominio", "Java")
+Rel(app, adapter, "Solicita credencial al proveedor", "Java")
+Rel(app, config, "Obtiene configuración protegida", "Java")
+Rel(live, api, "Solicita preparación de credencial", "HTTPS / JSON")
+Rel(adapter, gemini, "Obtiene credencial efímera", "HTTPS")
+SHOW_LEGEND()
 @enduml

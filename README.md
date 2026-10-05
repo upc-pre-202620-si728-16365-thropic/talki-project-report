@@ -3225,13 +3225,13 @@ La capa de dominio propuesta define el contrato que debe cumplir una integració
 
 **Integration Port**
 
-AIProviderPort define, en el diseño propuesto, las operaciones de apertura y cierre de la conversación y la obtención de la transcripción. Este contrato permite expresar las capacidades que Talki necesita sin depender de la API de un proveedor. Las sesiones y evaluaciones permanecen bajo responsabilidad de sus respectivos contextos.
+AIProviderPort define, en el diseño propuesto, las preparación de una credencial efímera para una conversación autorizada. Este contrato permite expresar las capacidades que Talki necesita sin depender de la API de un proveedor. Las sesiones y evaluaciones permanecen bajo responsabilidad de sus respectivos contextos.
 
 **Elementos de Domain Layer**
 
 | Nombre | Tipo | Descripción | Capa |
 | --- | --- | --- | --- |
-| AIProviderPort | Puerto de integración (diseño propuesto) | Define las operaciones de apertura, intercambio y cierre de la conversación con un proveedor. | Domain |
+| AIProviderPort | Puerto de integración (diseño propuesto) | Define issueCredential y supports; no transporta el audio del estudiante. | Domain |
 
 **Reglas principales**
 
@@ -3240,27 +3240,45 @@ AIProviderPort define, en el diseño propuesto, las operaciones de apertura y ci
 3. Los errores se traducen a respuestas que el resto de Talki pueda interpretar y recuperar.
 4. Los registros técnicos evitan conservar audio, material personal y solicitudes completas.
 
+**Atributos y operaciones del modelo de dominio**
+
+Los atributos se encapsulan; las operaciones públicas expresan las reglas del contexto. Las interfaces y enumeraciones se distinguen en el UML. Este modelo especifica el diseño objetivo del TP.
+
+| Elemento | Atributos o valores | Operaciones públicas |
+| --- | --- | --- |
+| AIProviderPort | Sin estado propio. | issueCredential(LivePreparation request) LiveCredential<br>supports(String mode) boolean |
+| LivePreparation | UUID sessionId<br>String mode<br>String authorizedInstructions<br>String conversationLocale<br>int durationSeconds | Consulta mediante el agregado o servicio responsable. |
+| LiveCredential | String ephemeralToken<br>String provider<br>String model<br>Instant expiresAt | Consulta mediante el agregado o servicio responsable. |
+
 ### 5.9.2. Interface Layer
 
 La pasarela propuesta ofrece un contrato interno a Live Coaching. No expone una API pública adicional para el estudiante.
 
-**Contrato de integración.** AIProviderPort recibe la solicitud de conversación autorizada y define las operaciones de apertura y cierre. Los datos comunes incluyen el modo de práctica, las instrucciones del escenario y las condiciones del intercambio.
+**Contrato de integración.** `POST /internal/v1/live-credentials` recibe sessionId, modo, instrucciones autorizadas, idioma y duración. AIProviderGatewayController delega en AIIntegrationApplicationService, que utiliza AIProviderPort.issueCredential. Los datos comunes incluyen el modo de práctica, las instrucciones del escenario y las condiciones del intercambio.
 
-**Representación de la respuesta.** La pasarela devuelve los datos necesarios para continuar la conversación y traduce las respuestas y los errores del proveedor. La emisión de la credencial temporal permanece vinculada al flujo de preparación de Live Coaching; las credenciales permanentes no se entregan al cliente.
+**Representación de la respuesta.** La pasarela devuelve los datos necesarios para continuar la conversación y traduce las respuestas y los errores del proveedor. Devuelve 201 con ephemeralToken, provider, model y expiresAt, o 422 si el modo no es compatible y 503 si el proveedor no responde. Solo Live Coaching puede invocar esta API mediante autenticación entre servicios. Las credenciales permanentes no se entregan al cliente.
 
 ### 5.9.3. Application Layer
 
-La capa de aplicación propuesta coordina la selección del proveedor y la ejecución de la conversación mediante un contrato común.
+La capa de aplicación propuesta coordina la selección del proveedor y la emisión de credenciales efímeras mediante un contrato común.
 
 **Coordinación de la integración**
 
-AIIntegrationApplicationService se propone para comprobar las capacidades requeridas por una práctica, seleccionar el adaptador y solicitar la conversación mediante AIProviderPort. El servicio devuelve la respuesta o el error al contexto que inició la solicitud.
+AIIntegrationApplicationService se propone para comprobar las capacidades requeridas por una práctica, seleccionar el adaptador y solicitar la credencial mediante AIProviderPort. El servicio devuelve la respuesta o el error al contexto que inició la solicitud.
 
 **Elementos de Application Layer**
 
 | Nombre | Tipo | Descripción | Capa |
 | --- | --- | --- | --- |
 | AIIntegrationApplicationService | Servicio de aplicación propuesto | Comprueba las capacidades requeridas, selecciona el adaptador y coordina la solicitud autorizada. | Application |
+
+**Contratos de coordinación**
+
+| Clase o grupo de clases | Responsabilidad | Operaciones previstas |
+| --- | --- | --- |
+| AIIntegrationApplicationService | Comprueba capacidad y selecciona proveedor. | prepare(LivePreparation) LiveCredential |
+
+Los handlers validan la petición o el evento antes de ejecutar cambios. Los puertos de repositorio y de integración son contratos; los adaptadores de Infrastructure realizan esos contratos. Los nombres describen clases previstas para implementar el diseño, sin afirmar que estén desplegadas.
 
 ### 5.9.4. Infrastructure Layer
 
@@ -3270,14 +3288,22 @@ La capa de infraestructura propuesta contiene los adaptadores que conocen las AP
 
 | Nombre | Tipo | Descripción | Capa |
 | --- | --- | --- | --- |
-| GeminiLiveClient | Adaptador propuesto | Implementa AIProviderPort para el intercambio con Gemini Live. | Infrastructure |
+| GeminiLiveClient | Adaptador propuesto | Implementa AIProviderPort.issueCredential mediante HTTPS con Gemini; traduce los errores del proveedor. | Infrastructure |
 | Configuración del proveedor | Configuración de integración | Protege las credenciales y determina las capacidades disponibles. | Infrastructure |
 
-La emisión de credenciales temporales utiliza GeminiTokenService en Live Coaching. La pasarela común se integrará para mantener las diferencias de cada proveedor en su adaptador. No requiere almacenar el audio ni el material personal de la práctica.
+AIProviderGatewayClient, en Live Coaching, llama a esta pasarela por HTTPS. GeminiLiveClient reside únicamente aquí y solicita la credencial temporal. El cliente web/móvil conversa directamente con Gemini mediante WSS; esta pasarela no abre ni cierra ese canal y no recopila la transcripción. El cierre y su evidencia vuelven a Live Coaching y Sessions.
 
 ### 5.9.5. Bounded Context Software Architecture Component Level Diagrams
 
-El servicio de integración utiliza AIProviderPort y la infraestructura proporciona GeminiLiveClient como adaptador. El proveedor externo queda fuera del modelo de negocio de Talki.
+Esta vista C4 descompone el container de AI Provider Gateway definido en 4.3.3. Los elementos externos se sitúan fuera de su frontera; las relaciones indican responsabilidad y protocolo. Las clases siguientes colaboran en los componentes del proceso y mantienen la separación de capas.
+
+| Clases agrupadas en el componente | Capa | Responsabilidad |
+| --- | --- | --- |
+| AIProviderGatewayController | Interface | Recibe contrato interno de credenciales. |
+| AIIntegrationApplicationService | Application | Comprueba capacidad y selecciona proveedor. |
+| AIProviderPort / LivePreparation / LiveCredential | Domain | Define preparación independiente del proveedor. |
+| GeminiLiveClient | Infrastructure | Emite credencial efímera por HTTPS. |
+| ProviderConfiguration | Infrastructure | Obtiene secretos y capacidades de configuración protegida. |
 
 ![Componentes de AI Provider Gateway](assets/diagrams/tactical/09-ai-provider-gateway-components.png)
 
@@ -3285,7 +3311,7 @@ El servicio de integración utiliza AIProviderPort y la infraestructura proporci
 
 #### 5.9.6.1. Bounded Context Domain Layer Class Diagrams
 
-El diagrama UML de dominio contiene únicamente AIProviderPort, la interfaz propuesta de integración. AIIntegrationApplicationService y GeminiLiveClient pertenecen a Application e Infrastructure y su dependencia y realización se muestran en componentes. El puerto permite sustituir al proveedor sin cambiar las reglas de la práctica.
+El diagrama UML de dominio contiene AIProviderPort y los valores LivePreparation y LiveCredential. AIIntegrationApplicationService y GeminiLiveClient pertenecen a Application e Infrastructure y su dependencia y realización se muestran en componentes. El puerto permite sustituir al proveedor sin cambiar las reglas de la práctica.
 
 ![Clases de AI Provider Gateway](assets/diagrams/tactical/09-ai-provider-gateway-classes.png)
 
