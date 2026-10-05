@@ -3503,10 +3503,10 @@ El naranja destaca las acciones principales, como empezar o repetir una práctic
 | Tarjetas | `#FFFFFF` | `#161A22` | Agrupación de métricas, formularios y recomendaciones. |
 | Texto principal | `#0F172A` | `#E6E8EC` | Títulos, contenido y etiquetas de controles. |
 | Texto de apoyo | `#475569` | `#9AA4B2` | Descripciones, ayudas y datos complementarios. |
-| Texto de botones principales | `#FFFFFF` | `#0F1117` | Identificación de la acción sobre el color principal. |
+| Texto de botones principales | `#0F172A` | `#0F1117` | Identificación de la acción sobre el color principal. |
 | Superficies secundarias | `#F1F3F9` | `#1D2230` | Botones secundarios, filas resaltadas y navegación. |
 | Bordes y separadores | `#E2E8F0` | `#252A3A` | Delimitación de campos y bloques de contenido. |
-| Errores y acciones destructivas | `#EF4444` | `#E26D6D` | Avisos de error y controles de eliminación. |
+| Errores y acciones destructivas | `#B91C1C` | `#E26D6D` | Avisos de error y controles de eliminación. |
 | Series complementarias de gráficos | `#ea7a12`, `#22C55E`, `#F59E0B`, `#EF4444` | `#7B61FF`, `#3DDC97`, `#F5C26B`, `#E26D6D` | Diferenciación de series, acompañadas de etiquetas. |
 
 **Spacing y composición**
@@ -3523,7 +3523,13 @@ Los íconos apoyan acciones como practicar, consultar sesiones y revisar el prog
 
 **Estados y accesibilidad**
 
-Las etiquetas permanecen visibles en los formularios y los errores aparecen junto al dato que debe corregirse. Los estados combinan texto y color; “Sin evidencia” explica cuándo no puede evaluarse una dimensión. El diseño contempla navegación por teclado, foco visible y controles fáciles de seleccionar. La revisión del contraste y la interacción con tecnologías de asistencia se realizará sobre la aplicación integrada.
+Las etiquetas permanecen visibles en los formularios y los errores aparecen junto al dato que debe corregirse. Los estados combinan texto y color; “Sin evidencia” explica cuándo no puede evaluarse una dimensión. El diseño contempla navegación por teclado, foco visible y controles fáciles de seleccionar. Los controles principales combinan naranja #F97316 con texto azul oscuro #0F172A; el naranja no se usa como texto pequeño sobre blanco. Los enlaces de acción utilizan #9A3412. Estas combinaciones se verifican en la lámina siguiente; la evaluación completa de teclado y tecnologías de asistencia se realizará sobre la aplicación integrada.
+
+**Muestras de identidad, jerarquía y controles**
+
+La lámina ilustra la paleta por función, la escala de lectura y los estados principales. El naranja se conserva como identidad, mientras que la combinación de texto y fondo protege la legibilidad de las acciones.
+
+<img src="assets/ux/style-guidelines.png" alt="Paleta, tipografía y controles de Talki con combinaciones de contraste" width="900">
 
 ### 6.1.2. Web, Mobile and Devices Style Guidelines
 
