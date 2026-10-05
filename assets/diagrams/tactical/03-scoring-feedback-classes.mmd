@@ -1,26 +1,38 @@
 classDiagram
-    class ScoreResult {
-        <<Modelo ampliado>>
-        +String analysisVersion
-        +String rubricVersion
-        +UUID id
-        +UUID sessionId
-        +Long userId
-        +VoiceScore score
-        +Instant computedAt
-    }
-    class VoiceScore {
-        <<Value Object>>
-        +Integer fluency
-        +Integer clarity
-        +Integer volume
-        +Integer vocabulary
-        +Integer confidence
-        +overall() Integer
-    }
-    class ScoreCalculator {
-        +calculate(FillerAnalyzedEvent) VoiceScore
-    }
-
-    ScoreResult "1" *-- "1" VoiceScore : puntuación
-    ScoreCalculator ..> VoiceScore : calcula
+ direction LR
+class ScoreResult {
+  <<AggregateRoot>>
+  -UUID id
+  -UUID sessionId
+  -Long userId
+  -String analysisVersion
+  -String rubricVersion
+  -VoiceScore score
+  -List~String~ recommendations
+  -Instant computedAt
+  +hasEvidence() boolean
+}
+class VoiceScore {
+  <<ValueObject>>
+  -Integer fluency
+  -Integer clarity
+  -Integer volume
+  -Integer vocabulary
+  -Integer confidence
+  +overall() Integer
+}
+class EvaluationEvidence {
+  <<ValueObject>>
+  -UUID sessionId
+  -String analysisVersion
+  -Map~String,double~ metrics
+  -List~String~ availableDimensions
+  -List~String~ limitations
+  -List~String~ contextualFindings
+}
+class ScoreCalculator {
+  +calculate(EvaluationEvidence evidence, String rubricVersion) VoiceScore
+}
+ScoreResult "1" *-- "1" VoiceScore : dimensiones
+ScoreCalculator ..> EvaluationEvidence : interpreta
+ScoreCalculator ..> VoiceScore : calcula

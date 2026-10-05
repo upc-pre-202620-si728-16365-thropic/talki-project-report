@@ -1,52 +1,36 @@
 @startuml
+!include <C4/C4_Component>
 skinparam defaultFontName Arial
-skinparam defaultFontSize 15
-skinparam shadowing false
-skinparam componentStyle uml2
-skinparam backgroundColor white
-skinparam componentBackgroundColor #EAF0FF
-skinparam componentBorderColor #1749B5
-skinparam ArrowColor #536177
-skinparam packageBackgroundColor #F7F9FD
-skinparam dpi 130
-title
-UML Component Diagram: Scoring & Feedback
-Descomposición en Scoring Worker (Java / Spring Boot)
-end title
-queue "Contrato de entrada:\nfillers.analyzed" as input <<Externo>> #EEEEEE
-database "PostgreSQL:\nscore_results" as db <<Externo>> #EEEEEE
-queue "RabbitMQ:\nscoring.completed" as broker <<Externo>> #EEEEEE
-component "Progress, Gamification\ny Notifications" as next <<Externo>> #EEEEEE
-package "Bounded Context:\nScoring & Feedback" {
-  package "Application Layer" {
-    component "Application:\nevaluar\ny registrar resultado\n[Java / Spring Boot]" as app
-  }
-  package "Domain Layer" {
-    component "Domain:\nScoreCalculator\n[Java / Spring Boot]" as calculator
-    component "Domain:\nScoreResult\ny VoiceScore\n[Java / Spring Boot]" as score
-  }
-  package "Infrastructure Layer" {
-    component "Infrastructure:\nFillerAnalyzedConsumer\n[Java / Spring Boot]" as listener
-    component "Infrastructure:\nScoreResultRepository\n[Java / Spring Boot]" as repo
-    component "Infrastructure:\nScoringCompletedPublisher\n[Java / Spring Boot]" as pub
-  }
+skinparam dpi 150
+LAYOUT_TOP_DOWN()
+title C4 Component Diagram: Scoring & Feedback
+Container(analysis, "Speech Analysis Worker", "Java / Spring Boot", "Fuera del container representado")
+Container(bff, "API Gateway / BFF", "HTTPS / JSON", "Fuera del container representado")
+ContainerQueue(bus, "Broker de eventos", "RabbitMQ / AMQP", "Fuera del container representado")
+ContainerDb(db, "Esquema privado del contexto", "PostgreSQL / TLS", "Fuera del container representado")
+Container(sessions, "Practice Session Management", "Java / Spring Boot", "Fuera del container representado")
+Container_Boundary(scope, "Scoring & Feedback: proceso Java / Spring Boot") {
+  Component(consumer, "FillerAnalyzedConsumer", "Java / Spring Boot", "Infrastructure: Adapta el evento de análisis")
+  Component(api, "ReportController", "Java / Spring Boot", "Interface: Ofrece reporte, estado y solicitud de reintento")
+  Component(app, "EvaluatePracticeHandler / ReportQueryHandler", "Java / Spring Boot", "Application: Evalúa, registra y recupera resultados autorizados")
+  Component(rules, "ScoreCalculator / ScoreResult / VoiceScore", "Java / Spring Boot", "Domain: Calcula dimensiones respaldadas por evidencia")
+  Component(repo, "ScoreResultRepository / ScoringOutbox", "Java / Spring Boot", "Infrastructure: Mantiene unicidad por sesión y versiones")
+  Component(publisher, "ScoringCompletedPublisher", "Java / Spring Boot", "Infrastructure: Despacha evaluación confirmada")
+  Component(sessionClient, "SessionAccessClient", "Java / Spring Boot", "Infrastructure: Comprueba acceso y eliminación")
+  Component(analysisClient, "AnalysisJobClient", "Java / Spring Boot", "Infrastructure: Consulta estado y solicita reintento")
 }
-input --> listener : eventos / AMQP
-listener --> app : activa evaluación / Java
-app --> calculator : solicita puntuación / Java
-calculator --> score : produce VoiceScore / Java
-app --> repo : conserva evaluación / Java
-repo --> db : persistencia / SQL
-app --> pub : solicita publicación del resultado / Java
-pub --> broker : eventos / AMQP
-broker --> next : eventos / AMQP
-legend bottom
-Icono UML: componente; círculo: interfaz.
-Flecha continua: interacción dirigida.
-Relación a interfaz: contrato proporcionado.
-Externo: fuera del proceso representado.
-Propuesto: ampliación pendiente.
-Los casos de uso nombran responsabilidades de diseño;
-no acreditan nuevas clases ni servicios desplegados.
-endlegend
+Rel(api, app, "Delega caso de uso", "Java")
+Rel(consumer, app, "Entrega evento validado", "Java")
+Rel(app, rules, "Aplica reglas de dominio", "Java")
+Rel(app, repo, "Lee y confirma datos del contexto", "Java")
+Rel(app, sessionClient, "Comprueba sesión y cierre", "Java")
+Rel(app, analysisClient, "Consulta o reintenta análisis", "Java")
+Rel(app, publisher, "Registra salida para despacho", "Java")
+Rel(bus, consumer, "Entrega fillers.analyzed", "AMQP")
+Rel(bff, api, "Consulta reporte y estado", "HTTPS / JSON")
+Rel(repo, db, "Conserva resultado y outbox", "SQL / TLS")
+Rel(publisher, bus, "Publica scoring.completed", "AMQP")
+Rel(sessionClient, sessions, "Verifica acceso a la sesión", "HTTPS / JSON")
+Rel(analysisClient, analysis, "Consulta job o pide reintento", "HTTPS / JSON")
+SHOW_LEGEND()
 @enduml

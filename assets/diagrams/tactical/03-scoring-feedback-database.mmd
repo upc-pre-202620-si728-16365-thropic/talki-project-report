@@ -1,4 +1,5 @@
 erDiagram
+
     SCORE_RESULTS {
         uuid id PK
         uuid session_id
@@ -10,5 +11,6 @@ erDiagram
         int volume
         int vocabulary
         int confidence
+        jsonb recommendations
         timestamp computed_at
     }

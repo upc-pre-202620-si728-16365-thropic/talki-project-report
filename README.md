@@ -2365,9 +2365,20 @@ ScoreCalculator aplica los criterios de puntuación sobre las métricas disponib
 
 **Reglas principales**
 
-1. Cada dimensión utiliza una escala de 0 a 100 cuando existe evidencia suficiente.
+1. Cada dimensión utiliza una escala de 0 a 100 cuando existe evidencia suficiente. La puntuación global promedia solo las dimensiones evaluables y devuelve ausencia de valor si no hay ninguna; el reporte identifica su cobertura y limitaciones.
 2. La evaluación debe conservar la versión del análisis y la rúbrica utilizada.
 3. Recibir nuevamente un mismo análisis debe conservar un único resultado para esa versión.
+
+**Atributos y operaciones del modelo de dominio**
+
+Los atributos se encapsulan; las operaciones públicas expresan las reglas del contexto. Las interfaces y enumeraciones se distinguen en el UML. Este modelo especifica el diseño objetivo del TP.
+
+| Elemento | Atributos o valores | Operaciones públicas |
+| --- | --- | --- |
+| ScoreResult | UUID id<br>UUID sessionId<br>Long userId<br>String analysisVersion<br>String rubricVersion<br>VoiceScore score<br>List~String~ recommendations<br>Instant computedAt | hasEvidence() boolean |
+| VoiceScore | Integer fluency<br>Integer clarity<br>Integer volume<br>Integer vocabulary<br>Integer confidence | overall() Integer |
+| EvaluationEvidence | UUID sessionId<br>String analysisVersion<br>Map~String,double~ metrics<br>List~String~ availableDimensions<br>List~String~ limitations<br>List~String~ contextualFindings | Consulta mediante el agregado o servicio responsable. |
+| ScoreCalculator | Sin estado propio. | calculate(EvaluationEvidence evidence, String rubricVersion) VoiceScore |
 
 ### 5.3.2. Interface Layer
 
@@ -2375,7 +2386,9 @@ La evaluación se activa al recibir el evento `fillers.analyzed`. FillerAnalyzed
 
 **Entrada y salida del contexto.** FillerAnalyzedConsumer recibe el análisis y activa la evaluación. Al concluir, ScoringCompletedEvent comunica la puntuación por dimensión, el resumen global y los datos de la práctica mediante `scoring.completed`.
 
-**Consulta del reporte propuesta.** La consulta del resultado deberá comprobar que el estudiante pueda acceder a la sesión. El contrato de lectura y su representación se definirán durante la integración. La versión de rúbrica y los resultados sin evidencia se incorporan a la representación propuesta del reporte.
+**Consulta del reporte.** ReportController expone `GET /v1/reports/{sessionId}`. ReportQueryHandler consulta Sessions para comprobar propiedad y ausencia de eliminación. Devuelve 200 con reportId, sessionId, analysisVersion, rubricVersion, dimensiones, evidencia y recomendaciones; 202 con analysisState si aún no existe resultado; 404 si la práctica no está disponible para el solicitante. Un fallo de análisis devuelve un estado recuperable, sin puntuación fabricada. `POST /v1/reports/{sessionId}/analysis-retries` solicita un reintento sobre el mismo AnalysisJob y devuelve 202 con jobId y estado.
+
+**Lectura interna para compartir.** `GET /internal/v1/reports/{reportId}` se limita al servicio Sharing & Retention autenticado. Recibe una autorización validada con ownerId, sessionId y scope; Scoring comprueba que coincida con el reporte y que la sesión siga disponible. Devuelve solo la proyección permitida; el material contextual queda excluido. El token del enlace se resuelve en Sharing y no sustituye estas comprobaciones.
 
 ### 5.3.3. Application Layer
 
@@ -2385,16 +2398,24 @@ La capa de aplicación coordina el cálculo, el registro y la comunicación de u
 
 La evaluación comienza con FillerAnalyzedEvent. El flujo comprueba si existe un resultado para la sesión, solicita el cálculo, conserva ScoreResult y comunica ScoringCompletedEvent.
 
-**Queries propuestas**
+**Queries del diseño objetivo**
 
-La lectura del reporte recuperará la evaluación para un estudiante autorizado. Su contrato se definirá durante la integración y deberá presentar la versión de la rúbrica y las dimensiones sin evidencia.
+La lectura del reporte recuperará la evaluación para un estudiante autorizado. ReportQueryHandler aplica el contrato de 5.3.2 y presenta las versiones y dimensiones sin evidencia.
 
 **Elementos de Application Layer**
 
 | Nombre | Tipo | Descripción | Capa |
 | --- | --- | --- | --- |
-| Evaluación de la práctica | Caso de uso | Solicita el cálculo a ScoreCalculator con las métricas del análisis. | Application |
-| Registro y comunicación del resultado | Caso de uso | Conserva ScoreResult y solicita la publicación de ScoringCompletedEvent. | Application |
+| EvaluatePracticeHandler | Event Handler | Solicita el cálculo a ScoreCalculator con las métricas del análisis. | Application |
+| ReportQueryHandler | Query Handler | Recupera la evaluación autorizada y su estado; EvaluatePracticeHandler conserva ScoreResult y solicita ScoringCompletedEvent. | Application |
+
+**Contratos de coordinación**
+
+| Clase o grupo de clases | Responsabilidad | Operaciones previstas |
+| --- | --- | --- |
+| EvaluatePracticeHandler / ReportQueryHandler | Evalúa, registra y recupera resultados autorizados. | handle(FillerAnalyzedEvent); query(sessionId, requester) |
+
+Los handlers validan la petición o el evento antes de ejecutar cambios. Los puertos de repositorio y de integración son contratos; los adaptadores de Infrastructure realizan esos contratos. Los nombres describen clases previstas para implementar el diseño, sin afirmar que estén desplegadas.
 
 ### 5.3.4. Infrastructure Layer
 
@@ -2408,11 +2429,22 @@ La capa de infraestructura recibe las métricas, conserva las evaluaciones y com
 | ScoreResultRepository | Repositorio | Conserva y consulta evaluaciones en PostgreSQL. | Infrastructure |
 | ScoringCompletedPublisher | Publicador de eventos | Comunica la evaluación completada mediante RabbitMQ. | Infrastructure |
 
-La persistencia base conserva una evaluación por sesión. El diseño ampliado identifica los resultados por sesión y versión y registra la rúbrica utilizada. La entrega del reporte deberá comprobar el permiso sobre la práctica.
+ScoreResultRepository conserva una evaluación por sesión, analysisVersion y rubricVersion, con una restricción única compuesta. La transacción registra el resultado y la salida en outbox antes de confirmar el evento recibido. SessionAccessClient comprueba autorización y eliminación para las consultas.
 
 ### 5.3.5. Bounded Context Software Architecture Component Level Diagrams
 
-Las métricas recibidas se entregan al calculador y el resultado se conserva antes de comunicar scoring.completed. Las consultas recuperan la evaluación autorizada para su presentación en el reporte.
+Esta vista C4 descompone el container de Scoring & Feedback definido en 4.3.3. Los elementos externos se sitúan fuera de su frontera; las relaciones indican responsabilidad y protocolo. Las clases siguientes colaboran en los componentes del proceso y mantienen la separación de capas.
+
+| Clases agrupadas en el componente | Capa | Responsabilidad |
+| --- | --- | --- |
+| FillerAnalyzedConsumer | Infrastructure | Adapta el evento de análisis. |
+| ReportController | Interface | Ofrece reporte, estado y solicitud de reintento. |
+| EvaluatePracticeHandler / ReportQueryHandler | Application | Evalúa, registra y recupera resultados autorizados. |
+| ScoreCalculator / ScoreResult / VoiceScore | Domain | Calcula dimensiones respaldadas por evidencia. |
+| ScoreResultRepository / ScoringOutbox | Infrastructure | Mantiene unicidad por sesión y versiones. |
+| ScoringCompletedPublisher | Infrastructure | Despacha evaluación confirmada. |
+| SessionAccessClient | Infrastructure | Comprueba acceso y eliminación. |
+| AnalysisJobClient | Infrastructure | Consulta estado y solicita reintento. |
 
 ![Componentes de Scoring & Feedback](assets/diagrams/tactical/03-scoring-feedback-components.png)
 
@@ -2429,6 +2461,15 @@ ScoreResult contiene VoiceScore y, en el modelo ampliado, las versiones de anál
 La tabla score_results contiene la referencia a la sesión, el usuario, las dimensiones evaluadas y la fecha de cálculo. El esquema ampliado incorpora las versiones de análisis y rúbrica. La combinación de sesión y ambas versiones debe ser única; las dimensiones sin evidencia admiten valores nulos y se presentan como “Sin evidencia”.
 
 ![Persistencia de Scoring & Feedback](assets/diagrams/tactical/03-scoring-feedback-database.png)
+
+**Restricciones de persistencia**
+
+| Objeto | Restricción y relación con las reglas |
+| --- | --- |
+| SCORE_RESULTS | UNIQUE(session_id, analysis_version, rubric_version). Dimensiones nulas cuando no existe evidencia; CHECK entre 0 y 100 para valores presentes. Las recomendaciones conservan la referencia a la evidencia utilizada. |
+
+La unicidad compuesta se documenta en esta tabla porque comprende varios campos; las marcas PK/FK/UK del diagrama identifican claves simples. Inbox y outbox son registros técnicos del esquema privado: eventId es único en inbox y el despacho confirma la salida después del commit local. No se crean FKs hacia otros contextos.
+
 
 ## 5.4. Bounded Context: Practice Session Management
 
