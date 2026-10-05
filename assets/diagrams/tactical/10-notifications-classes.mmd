@@ -1,8 +1,39 @@
 classDiagram
-
-    class NotificationPushService {
-        <<interface>>
-        +push(Long userId, String message) void
-    }
-
-    note for NotificationPushService "Contrato de dominio propuesto"
+ direction LR
+class Notification {
+  <<AggregateRoot>>
+  -UUID id
+  -UUID originEventId
+  -UUID sessionId
+  -Long userId
+  -String templateCode
+  -String destinationPath
+  -String channel
+  -DeliveryState state
+  -int attempts
+  +markDelivered() void
+  +markFailed() void
+  +scheduleRetry() void
+}
+class DeliveryState {
+  <<enumeration>>
+  PENDING
+  DELIVERED
+  RETRYING
+  FAILED
+  CANCELLED
+}
+class NotificationPreference {
+  <<AggregateRoot>>
+  -Long userId
+  -boolean optionalEmail
+  -boolean inApp
+  +update(boolean email, boolean inApp) void
+}
+class NotificationPushService {
+  <<interface>>
+  +push(Notification notification) boolean
+}
+Notification --> DeliveryState : estado
+NotificationPushService ..> Notification : entrega
+Notification ..> NotificationPreference : respeta preferencias

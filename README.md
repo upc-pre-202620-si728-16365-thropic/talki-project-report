@@ -3333,7 +3333,7 @@ La capa de dominio propuesta define la entrega de avisos al estudiante sin depen
 
 **Output Port**
 
-NotificationPushService representa el contrato propuesto para entregar un aviso al estudiante. El contenido se origina a partir de una evaluación o un logro y evita incluir la evidencia privada de la práctica. La entrega se describe mediante un puerto y un adaptador de canal; su historial persistente requeriría ampliar el modelo.
+NotificationPushService representa el contrato propuesto para entregar un aviso al estudiante. El contenido se origina a partir de una evaluación, un logro o una acción de cuenta/privacidad y evita incluir la evidencia privada de la práctica. La entrega se describe mediante un puerto y un adaptador de canal; Notification conserva originEventId, canal, intentos y estado; NotificationPreference mantiene las preferencias de entrega.
 
 **Elementos de Domain Layer**
 
@@ -3347,11 +3347,24 @@ NotificationPushService representa el contrato propuesto para entregar un aviso 
 2. Los mensajes evitan exponer transcripciones, puntuaciones o material personal.
 3. Los avisos opcionales respetan las preferencias del estudiante; los mensajes de seguridad siguen sus reglas transaccionales.
 
+**Atributos y operaciones del modelo de dominio**
+
+Los atributos se encapsulan; las operaciones públicas expresan las reglas del contexto. Las interfaces y enumeraciones se distinguen en el UML. Este modelo especifica el diseño objetivo del TP.
+
+| Elemento | Atributos o valores | Operaciones públicas |
+| --- | --- | --- |
+| Notification | UUID id<br>UUID originEventId<br>UUID sessionId (opcional)<br>Long userId<br>String templateCode<br>String destinationPath<br>String channel<br>DeliveryState state<br>int attempts | markDelivered() void<br>markFailed() void<br>scheduleRetry() void |
+| DeliveryState | PENDING<br>DELIVERED<br>RETRYING<br>FAILED<br>CANCELLED | Consulta mediante el agregado o servicio responsable. |
+| NotificationPreference | Long userId<br>boolean optionalEmail<br>boolean inApp | update(boolean email, boolean inApp) void |
+| NotificationPushService | Sin estado propio. | push(Notification notification) boolean |
+
 ### 5.10.2. Interface Layer
 
 Este contexto recibe los eventos que originan avisos al estudiante. No necesita que el cliente solicite directamente el envío de una notificación.
 
-**Contratos de entrada.** ScoringCompletedEvent permite reconocer que una evaluación terminó. AchievementUnlockedEvent identifica el logro obtenido. Los eventos `scoring.completed` y `achievement.unlocked` conservan la referencia del destinatario y del hecho que origina el aviso. La ampliación prevista en 4.2 incorpora eventos de cuenta, revocación de acceso y eliminación de datos; sus contratos y consumidores se definirán durante la integración.
+**Contratos de entrada.** ScoringCompletedEvent permite reconocer que una evaluación terminó. AchievementUnlockedEvent identifica el logro obtenido. Los eventos `scoring.completed` y `achievement.unlocked` conservan la referencia del destinatario y del hecho que origina el aviso. Los contratos `user.registered`, `share.revoked` y `deletion.completed` identifican destinatario y referencia de la acción; NotificationEventConsumer los transforma en avisos de cuenta o privacidad. El material privado y los tokens no se incluyen en estos mensajes.
+
+**Preferencias del estudiante.** NotificationPreferenceController expone `GET /v1/notifications/preferences` (200) y `PATCH /v1/notifications/preferences` (200 con optionalEmail e inApp actualizados). La identidad se deriva de la autenticación. Desactivar avisos opcionales no suprime comunicaciones imprescindibles de acceso o privacidad; el consentimiento de contacto y el canal se verifican antes de cada envío.
 
 **Entrega propuesta.** El mensaje permite al estudiante reconocer el aviso y acceder a su reporte o logro. WebSocketPushAdapter y el proveedor de correo son canales propuestos; su disponibilidad y las preferencias de contacto se comprobarán antes del envío.
 
@@ -3367,10 +3380,18 @@ Los eventos de evaluación y logro identifican al destinatario y el tipo de avis
 
 | Nombre | Tipo | Descripción | Capa |
 | --- | --- | --- | --- |
-| Aviso de evaluación disponible | Caso de uso | Prepara un mensaje que permita acceder al resultado de la práctica. | Application |
-| Aviso de logro obtenido | Caso de uso | Prepara el reconocimiento que corresponde al evento recibido. | Application |
-| Avisos de cuenta y privacidad | Casos de uso propuestos | Informan sobre acciones de cuenta, revocación y eliminación según los flujos de 4.2. | Application |
-| Despacho del aviso | Caso de uso propuesto | Comprueba las preferencias y solicita la entrega mediante NotificationPushService. | Application |
+| DispatchNotificationHandler | Event Handler | Prepara un mensaje que permita acceder al resultado de la práctica. | Application |
+| NotificationTemplateService | Servicio de aplicación | Prepara el reconocimiento que corresponde al evento recibido. | Application |
+| NotificationPreferenceService | Servicio de aplicación | Informan sobre acciones de cuenta, revocación y eliminación según los flujos de 4.2. | Application |
+| NotificationRetryHandler | Command Handler | Comprueba las preferencias y solicita la entrega mediante NotificationPushService. | Application |
+
+**Contratos de coordinación**
+
+| Clase o grupo de clases | Responsabilidad | Operaciones previstas |
+| --- | --- | --- |
+| DispatchNotificationHandler / NotificationTemplateService / NotificationPreferenceService / NotificationRetryHandler | Prepara contenido, respeta preferencias y coordina reintento. | dispatch(event); updatePreferences(userId); retry(notificationId) |
+
+Los handlers validan la petición o el evento antes de ejecutar cambios. Los puertos de repositorio y de integración son contratos; los adaptadores de Infrastructure realizan esos contratos. Los nombres describen clases previstas para implementar el diseño, sin afirmar que estén desplegadas.
 
 ### 5.10.4. Infrastructure Layer
 
@@ -3389,7 +3410,16 @@ Los consumidores base registran la intención de notificar. La entrega efectiva,
 
 ### 5.10.5. Bounded Context Software Architecture Component Level Diagrams
 
-Los consumidores reciben los eventos de evaluación o logro. La integración propuesta incorpora los avisos de cuenta y privacidad y coordina la preparación del mensaje. NotificationPushService define su entrega mediante WebSocketPushAdapter o un canal de correo.
+Esta vista C4 descompone el container de Notifications definido en 4.3.3. Los elementos externos se sitúan fuera de su frontera; las relaciones indican responsabilidad y protocolo. Las clases siguientes colaboran en los componentes del proceso y mantienen la separación de capas.
+
+| Clases agrupadas en el componente | Capa | Responsabilidad |
+| --- | --- | --- |
+| NotificationEventConsumer | Infrastructure | Recibe eventos de evaluación, logro, cuenta y privacidad. |
+| NotificationPreferenceController | Interface | Expone preferencias del destinatario. |
+| DispatchNotificationHandler / NotificationTemplateService / NotificationPreferenceService / NotificationRetryHandler | Application | Prepara contenido, respeta preferencias y coordina reintento. |
+| Notification / NotificationPreference / NotificationPushService | Domain | Mantiene estado y contrato de entrega. |
+| NotificationRepository / NotificationPreferenceRepository | Infrastructure | Registra avisos únicos, intentos y preferencias. |
+| WebSocketPushAdapter / EmailNotificationAdapter | Infrastructure | Entrega aviso sin evidencia privada. |
 
 ![Componentes de Notifications](assets/diagrams/tactical/10-notifications-components.png)
 
@@ -3397,15 +3427,25 @@ Los consumidores reciben los eventos de evaluación o logro. La integración pro
 
 #### 5.10.6.1. Bounded Context Domain Layer Class Diagrams
 
-El dominio de Notifications se limita al puerto propuesto NotificationPushService. El diagrama UML conserva esa interfaz; los consumidores de eventos y el adaptador WebSocket aparecen en componentes porque pertenecen a Infrastructure. No se añade una entidad de negocio que el contexto no necesita.
+Notification mantiene la identidad del aviso, su origen y DeliveryState. NotificationPreference conserva las decisiones de contacto. NotificationPushService define la entrega independiente del canal; los consumidores y adaptadores WebSocket/correo pertenecen a Infrastructure y se representan en componentes.
 
 ![Clases de Notifications](assets/diagrams/tactical/10-notifications-classes.png)
 
 #### 5.10.6.2. Bounded Context Database Design Diagram
 
-El contexto no requiere una base de negocio propia. El registro de envíos y preferencias se definirá si se incorpora un canal de correo con seguimiento persistente.
+notifications registra avisos sin evidencia privada y notification_preferences conserva las preferencias del usuario. La unicidad por originEventId, usuario y canal impide duplicar la creación del aviso. Un resultado de entrega incierto requiere reintento controlado; no se promete entrega exactamente una vez en un canal externo. El acceso al reporte sigue requiriendo autorización.
 
 ![Persistencia de Notifications](assets/diagrams/tactical/10-notifications-database.png)
+
+**Restricciones de persistencia**
+
+| Objeto | Restricción y relación con las reglas |
+| --- | --- |
+| NOTIFICATIONS | UNIQUE(origin_event_id, user_id, channel), attempts ≥ 0, estado según DeliveryState. destination_path es una ruta del cliente, no un token ni una transcripción. session_id opcional permite purgar referencias al ensayo tras deletion.requested. |
+| NOTIFICATION_PREFERENCES | PK user_id; optional_email=false por defecto. Los avisos transaccionales de seguridad se distinguen de los opcionales. Se consulta la preferencia al entregar y reintentar. |
+
+La unicidad compuesta se documenta en esta tabla porque comprende varios campos; las marcas PK/FK/UK del diagrama identifican claves simples. Inbox y outbox son registros técnicos del esquema privado: eventId es único en inbox y el despacho confirma la salida después del commit local. No se crean FKs hacia otros contextos.
+
 
 ## Trazabilidad del diseño táctico
 

@@ -1,4 +1,19 @@
-flowchart LR
-  service["notification-service"] --> client["Avisos al estudiante por canal propuesto"]
-  note["Sin base de negocio propia"] -.-> service
-  tracking["Seguimiento de entregas: ampliación propuesta"] -.-> service
+erDiagram
+
+    NOTIFICATIONS {
+        uuid id PK
+        uuid origin_event_id
+        uuid session_id
+        bigint user_id
+        varchar template_code
+        varchar destination_path
+        varchar channel
+        varchar state
+        int attempts
+        timestamp delivered_at
+    }
+    NOTIFICATION_PREFERENCES {
+        bigint user_id PK
+        boolean optional_email
+        boolean in_app
+    }
