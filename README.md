@@ -81,6 +81,7 @@
 | 1.15 | 05/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Organización del Student Outcome según el formato del ejemplo: TB1 y TP dentro de cada criterio, con acciones por integrante y conclusiones de ambas entregas. |
 | 1.16 | 05/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Revisión del tono del Student Outcome: redacción en primera persona y distinción entre documentación realizada, revisión asignada y sustentación pendiente. |
 | 1.17 | 05/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Corrección integral del TP: modelos UML, componentes C4, contratos, persistencia, trazabilidad IV–VI, wireflows por objetivo, guías visuales, metadatos, internacionalización propuesta y síntesis de entrevistas. Actualización del Student Outcome y preparación de evidencias; revisión individual y materiales audiovisuales pendientes. |
+| 1.18 | 05/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Reorganización de la información de colaboración: evidencias de GitHub en Project Report Collaboration Insights, aportes en Student Outcome e informe de participación en Anexos. Retirada de tablas y explicaciones duplicadas. |
 
 La edición de las versiones 1.0–1.12 fue realizada por Alejandro Daniel Oroncoy Almeyda. Los demás nombres corresponden a los coautores registrados en los commits del avance, asociados en esta tabla por las secciones correspondientes. La revisión individual de esos integrantes continúa pendiente.
 
@@ -88,17 +89,7 @@ La edición de las versiones 1.0–1.12 fue realizada por Alejandro Daniel Oronc
 
 Repositorio del informe: [talki-project-report](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report)
 
-La evidencia de colaboración del TB1 se mantiene en GitHub mediante los commits, ramas y pull requests del repositorio. El detalle de responsabilidades y calificaciones asignadas por el Team Leader se encuentra en el [Informe de Participación: Startup Thropic](https://docs.google.com/document/d/1-tnKLS9I_qJD4kkLwBUQB8QqxdgXBQbJcZ0smvAn1KM/edit).
-
-| Integrante | Aporte principal registrado en TB1 | Evidencia |
-| --- | --- | --- |
-| Eduardo Gael Rivera Sosa | Capítulo I y entrevistas. | Commits y secciones 1.1–1.3 y 2.2. |
-| Manuel Ignacio Tumi Oliden | Competidores, needfinding y lenguaje ubicuo. | Secciones 2.1, 2.3 y 2.4. |
-| Alejandro Daniel Oroncoy Almeyda | Especificación de requisitos y ADD. | Secciones 3.1–4.1.5. |
-| Werner Khalil Lang Nassi | Diseño estratégico basado en DDD. | Secciones 4.2–4.2.5. |
-| Kevin Jorge Chi Cruzatt | Software Architecture y sus cuatro diagramas. | Sección 4.3. |
-
-### Evidencias de colaboración
+A continuación se presentan los analíticos de colaboración y commits del repositorio del informe en GitHub.
 
 Las capturas se consultaron el 02/10/2026. El gráfico de Contributors corresponde a `main` y excluye merges: en esa vista GitHub muestra siete commits de Alejandro. Su alcance no incluye el avance consolidado en `develop`; por eso se complementa con el historial de esa rama y con commits identificables de los cinco integrantes del primer hito.
 
@@ -134,23 +125,7 @@ Las capturas se consultaron el 02/10/2026. El gráfico de Contributors correspon
 
 ![Commit de Kevin](assets/evidence/collaboration/commit-kevin.jpg)
 
-La coautoría registrada en los commits del TP corresponde al reparto de revisión asignado. La revisión individual continúa pendiente y se acreditará con sus correcciones y sustentación; los metadatos de Git no reemplazan esa evidencia.
-
-## Trabajo Parcial (TP): semana 7
-
-Esta revisión incorpora los capítulos V y VI y sus artefactos en la rama `develop`, que reúne el avance consolidado del informe. La edición se realizó con asistencia de Codex a solicitud de Alejandro. La revisión del equipo y la sustentación del TP están pendientes; sus aportes se incorporarán al registro individual con la evidencia correspondiente. Se incorporan las correcciones documentales del primer hito.
-
-### Revisión individual del TP
-
-| Integrante | Secciones asignadas para revisión | Estado y evidencia disponible |
-| --- | --- | --- |
-| Eduardo Gael Rivera Sosa | 6.1, 6.2 y 6.3: estilo, organización y landing. | Revisión individual pendiente. |
-| Manuel Ignacio Tumi Oliden | 5.2, 5.3 y 5.5: análisis, evaluación y progreso. | Revisión individual pendiente. |
-| Alejandro Daniel Oroncoy Almeyda | 5.1, 5.4 y 5.9; consolidación y correcciones del informe. | Correcciones documentadas en el historial de develop y registro 1.17. Sustentación pendiente. |
-| Werner Khalil Lang Nassi | 5.6, 5.7 y 5.8: privacidad, reconocimientos y acceso. | Revisión individual pendiente. |
-| Kevin Jorge Chi Cruzatt | 5.10, 6.4 y 6.5: avisos, interacción y prototipado. | Revisión individual pendiente. |
-
-La evidencia nueva del TP se consulta en el [historial de develop](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commits/develop/). Las capturas anteriores corresponden al TB1; no se presentan como analíticos actualizados del TP. Cada revisión posterior identificará decisiones y correcciones concretas antes de actualizar los aportes individuales.
+El avance actualizado del informe se consulta en el [historial de develop](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commits/develop/). Las capturas anteriores documentan el TB1; no representan los analíticos del TP.
 
 # Contenido
 
