@@ -3597,21 +3597,46 @@ Las etiquetas utilizan el vocabulario definido en la sección 2.4 y priorizan ex
 
 ### 6.2.3. SEO Tags and Meta Tags
 
-La landing incorpora un título y una descripción orientados a explicar el servicio en los resultados de búsqueda. Las páginas de cuenta, las sesiones y los reportes compartidos se excluyen de la indexación mediante `noindex`; su acceso requiere, además, la autorización correspondiente. El prototipo de diseño se mantiene fuera de la indexación.
+Los metadatos explican el servicio en las páginas públicas. El contenido privado se excluye de indexación, además de mantener autorización real en sus servicios. Los valores siguientes son propuestas de publicación; no afirman que exista una ficha de tienda ni un dominio definitivo.
 
-Metadatos propuestos para la landing:
+| Página web | Title | Description | Keywords | Author | Robots |
+| --- | --- | --- | --- | --- | --- |
+| Landing | Talki: Practice presentations and interviews | Prepare presentations, interviews and defenses with guided practice, evidence-based feedback and control of your data. | public speaking, presentation practice, university students, interview rehearsal | Thropic | index, follow |
+| Términos | Talki: Terms of use | Purpose, limitations, responsible use and access conditions for Talki. | Talki terms, responsible AI, data control | Thropic | index, follow |
+| Acceso y recuperación | Talki: Account access | Access or recover your private practice space. | Talki account | Thropic | noindex, nofollow |
+| Inicio, historial y progreso | Talki: Your practice space | Review your own practice sessions and compatible feedback. | practice history, progress | Thropic | noindex, nofollow |
+| Reporte personal o compartido | Talki: Practice report | View a report within its authorized scope. | practice feedback | Thropic | noindex, nofollow |
+| Prototipo UX | Talki: UX prototype | Explore the proposed navigation with sample data. | Talki prototype | Thropic | noindex, nofollow |
 
-```html
-<html lang="es">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Talki | Practica exposiciones y entrevistas en español</title>
-<meta name="description" content="Prepara exposiciones, entrevistas y sustentaciones con práctica guiada, feedback con evidencia y control de tus datos.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Talki | Haz escuchar tus ideas">
-<meta property="og:description" content="Ensaya, comprende tu desempeño y elige tu siguiente acción de mejora.">
-```
+Cada página pública incluye charset UTF-8, viewport adaptable y lang según la variante publicada (en-US o es-419). Open Graph de landing utiliza tipo website, título “Talki: Make your ideas heard” y descripción “Rehearse, understand your feedback and choose your next step”. La URL canónica y la imagen de vista previa se definirán con el dominio real; no se inventan direcciones. Las páginas privadas no ofrecen vista previa de sus reportes.
 
-La dirección canónica y la imagen de vista previa se definirán al publicar la landing. Los títulos jerárquicos, las descripciones de imágenes y los enlaces comprensibles apoyan la navegación y la presentación del contenido. El mapa del sitio incluirá las páginas públicas.
+**ASO de la aplicación móvil propuesta**
+
+| Campo | en_US | es_419 |
+| --- | --- | --- |
+| App Title | Talki: Speaking Practice | Talki: Práctica oral |
+| Subtitle | Rehearse and review your feedback | Ensaya y revisa tu feedback |
+| Keywords | speaking, presentation, interview, rehearsal, university | oratoria, exposición, entrevista, ensayo, universidad |
+| Description | Prepare presentations and interviews through guided practice. Review evidence-based feedback and choose what to share. | Prepara exposiciones y entrevistas con práctica guiada. Revisa feedback acompañado de evidencia y decide qué compartir. |
+
+La publicación futura ajustará el campo de keywords y sus límites a la tienda elegida. Los textos describen funciones propuestas y no prometen eficacia medida.
+
+**Internacionalización de la experiencia**
+
+El diseño de producto define en_US como idioma de interfaz predeterminado y es_419 como alternativa. Un selector visible conserva la preferencia del estudiante en el perfil; cambiar de idioma no modifica la práctica ni sus versiones. El idioma de la conversación se elige aparte en S01: practicar en español no obliga a que la interfaz esté en español.
+
+| Elemento de diseño | en_US | es_419 |
+| --- | --- | --- |
+| Acción principal | Start practicing | Empezar a practicar |
+| Historial | Practice history | Historial de prácticas |
+| Consentimiento | I authorize voice processing for this practice | Autorizo el procesamiento de voz para esta práctica |
+| Dimensión sin soporte | Insufficient evidence | Sin evidencia suficiente |
+| Estado de eliminación | Access blocked; deletion in progress | Acceso bloqueado; eliminación en curso |
+| Footer | Terms of use / Privacy | Términos de uso / Privacidad |
+
+Fechas y números siguen la configuración regional; los estados de API utilizan códigos estables y mensajes localizables. Las muestras actuales del recorrido principal se muestran en español para la explicación del informe. La lámina bilingüe siguiente ilustra la variante inglesa predeterminada y el selector previsto; el prototipo principal aún no incorpora todo el catálogo traducido. No se acredita una implementación i18n completa antes de integrarla.
+
+<img src="assets/ux/i18n-design.png" alt="Diseño de interfaz inglesa predeterminada y variante latinoamericana de Talki" width="900">
 
 ### 6.2.4. Searching Systems
 
