@@ -1096,8 +1096,8 @@ Las rutas existentes se toman de las interfaces descritas en el capítulo V. Los
 | TS01 | API de sesiones | Como Developer, quiero exponer creación y consulta de sesiones para que el cliente gestione ensayos mediante un contrato estable. | API de sesiones: POST y GET /v1/sessions; GET /v1/sessions/{id}. |
 | TS02 | Contrato de coaching en vivo | Como Developer, quiero obtener credenciales efímeras y confirmar el cierre para integrar la conversación de voz sin exponer credenciales permanentes. | POST /v1/coach/live-token y POST /v1/coach/{sessionId}/finalize; cliente a Gemini Live por WSS. |
 | TS03 | Pipeline de análisis idempotente | Como Developer, quiero procesar eventos de cierre y publicar resultados versionados para obtener feedback sin duplicar evaluaciones. | RabbitMQ: session.live.finalized, fillers.analyzed y scoring.completed; ACK, reintentos y cola de fallos. |
-| TS04 | Consulta de reportes versionados | Como Developer, quiero un contrato de consulta de feedback para que el cliente distinga resultados completos, parciales y pendientes. | Consulta HTTP/JSON propuesta en Scoring & Feedback; ruta pública por definir en implementación. |
-| TS05 | API de progreso | Como Developer, quiero consultar el resumen de progreso para que el cliente presente evolución a partir de sesiones válidas. | GET /v1/progress/dashboard?userId; comparación versionada como ampliación. |
+| TS04 | Consulta de reportes versionados | Como Developer, quiero un contrato de consulta de feedback para que el cliente distinga resultados completos, parciales y pendientes. | `GET /v1/reports/{sessionId}`; 200 con versiones/métricas/limitaciones, 202 con analysisState y 404 para recursos no disponibles al solicitante. |
+| TS05 | API de progreso | Como Developer, quiero consultar el resumen de progreso para que el cliente presente evolución a partir de sesiones válidas. | GET /v1/progress/dashboard; GET /v1/progress/comparisons?left={id}&right={id}; contratos de 5.5. |
 | TS06 | API de compartición y eliminación | Como Developer, quiero contratos de permisos temporales y purga para controlar acceso y eliminación entre contextos. | APIs propuestas de Sharing & Retention en 5.6; eventos de revocación, purga y confirmación. |
 
 | Historia | Escenario | Given | When | Then |
@@ -1108,11 +1108,11 @@ Las rutas existentes se toman de las interfaces descritas en el capítulo V. Los
 | TS02 | Alternativo / error | la credencial efímera venció | el cliente intenta abrir el canal WSS de voz | la conexión es rechazada y se requiere una nueva credencial autorizada. |
 | TS03 | Principal | llega un evento de cierre válido no procesado | el worker analiza y registra el resultado | publica el evento de salida y confirma el mensaje después de completar la operación. |
 | TS03 | Alternativo / error | el mismo identificador de evento vuelve a recibirse | el worker lo procesa | reconoce el duplicado sin crear otro reporte; un fallo transitorio reintenta y un fallo persistente queda en la cola de fallos. |
-| TS04 | Principal | el propietario consulta una evaluación disponible | envía la petición de consulta de reporte | responde 200 con sesión, versiones de rúbrica y análisis, métricas y limitaciones. |
+| TS04 | Principal | el propietario consulta una evaluación disponible | envía GET /v1/reports/{sessionId} | responde 200 con sesión, versiones de rúbrica y análisis, métricas y limitaciones. |
 | TS04 | Alternativo / error | el trabajo aún no termina | consulta el mismo reporte | responde 202 con el estado de procesamiento y no fabrica una puntuación. |
-| TS05 | Principal | el solicitante está autorizado y tiene sesiones válidas | envía GET /v1/progress/dashboard con su userId | responde 200 con totales, promedio y mejor puntuación. |
+| TS05 | Principal | el solicitante está autorizado y tiene sesiones válidas | envía GET /v1/progress/dashboard con modo y versiones compatibles | responde 200 con totales y puntuaciones comparables; la identidad proviene del acceso autenticado. |
 | TS05 | Alternativo / error | se solicita progreso de un usuario ajeno sin permiso | se envía la consulta | responde 403 sin exponer su historial. |
-| TS06 | Principal | el propietario solicita eliminación | se recibe la petición autorizada de borrado | responde 202 con identificador y estado pendiente; bloquea el acceso antes de confirmar la purga física. |
+| TS06 | Principal | el propietario solicita eliminación | se recibe la petición autorizada de borrado | confirma el bloqueo en Sessions y responde 202 con requestId y ACCESS_BLOCKED; completa la purga al recibir las confirmaciones esperadas. |
 | TS06 | Alternativo / error | un enlace fue revocado o venció | se solicita el reporte compartido | responde 403 sin entregar contenido ni habilitar acceso a otras sesiones. |
 
 ### Escenarios de aceptación
