@@ -1,51 +1,28 @@
 @startuml
+!include <C4/C4_Component>
 skinparam defaultFontName Arial
-skinparam defaultFontSize 15
-skinparam shadowing false
-skinparam componentStyle uml2
-skinparam backgroundColor white
-skinparam componentBackgroundColor #EAF0FF
-skinparam componentBorderColor #1749B5
-skinparam ArrowColor #536177
-skinparam packageBackgroundColor #F7F9FD
-skinparam dpi 130
-title
-UML Component Diagram: Speech Analysis
-Descomposición en Analysis Worker (Java / Spring Boot)
-end title
-queue "Contrato de entrada:\nsession.live.finalized" as input <<Externo>> #EEEEEE
-queue "RabbitMQ:\nfillers.analyzed" as broker <<Externo>> #EEEEEE
-component "Scoring & Feedback\nConservar\ny evaluar" as scoring <<Externo>> #EEEEEE
-package "Bounded Context:\nSpeech Analysis" {
-  package "Application Layer" {
-    component "Application:\ncaso de uso de análisis\n[Java / Spring Boot]" as app
-  }
-  package "Domain Layer" {
-    component "Domain:\nFillerDetector\n[Java / Spring Boot]" as detector
-    component "Modelo de resultado:\nFillerResult\n[Java / Spring Boot]" as result <<Propuesto>>
-  }
-  package "Infrastructure Layer" {
-    component "Infrastructure:\nSessionLiveFinalizedConsumer\n[Java / Spring Boot]" as listener
-    component "Infrastructure:\nFillerAnalyzedPublisher\n[Java / Spring Boot]" as publisher
-  }
+skinparam dpi 150
+LAYOUT_TOP_DOWN()
+title C4 Component Diagram: Speech Analysis
+ContainerQueue(bus, "Broker de eventos", "RabbitMQ / AMQP", "Fuera del container representado")
+ContainerDb(db, "Esquema privado del contexto", "PostgreSQL / TLS", "Fuera del container representado")
+Container(scoring, "Scoring & Feedback Worker", "Java / Spring Boot", "Fuera del container representado")
+Container_Boundary(scope, "Speech Analysis: proceso Java / Spring Boot") {
+  Component(consumer, "SessionLiveFinalizedConsumer", "Java / Spring Boot", "Infrastructure: Recibe el contrato AMQP y confirma tras commit")
+  Component(app, "AnalyzeSpeechHandler", "Java / Spring Boot", "Application: Coordina análisis y reintento sobre el mismo job")
+  Component(rules, "AnalysisJob / FillerDetector / AcousticEvidenceAnalyzer / ContextualEvidenceAnalyzer", "Java / Spring Boot", "Domain: Controla estado y analiza evidencia acústica/contextual")
+  Component(api, "AnalysisJobController", "Java / Spring Boot", "Interface: Consulta estado y solicita reintento interno")
+  Component(repo, "AnalysisJobRepository / AnalysisResultOutbox", "Java / Spring Boot", "Infrastructure: Conserva job y resultado durable")
+  Component(publisher, "FillerAnalyzedPublisher", "Java / Spring Boot", "Infrastructure: Despacha métricas confirmadas por RabbitMQ")
 }
-input --> listener : eventos / AMQP
-listener --> app : activa análisis del cierre / Java
-app --> detector : solicita detección de muletillas / Java
-detector --> result : produce resultado de detección / Java
-app --> publisher : solicita publicación de métricas / Java
-publisher --> broker : eventos / AMQP
-broker --> scoring : eventos / AMQP
-note bottom
-Sin base de datos propia
-end note
-legend bottom
-Icono UML: componente; círculo: interfaz.
-Flecha continua: interacción dirigida.
-Relación a interfaz: contrato proporcionado.
-Externo: fuera del proceso representado.
-Propuesto: ampliación pendiente.
-Los casos de uso nombran responsabilidades de diseño;
-no acreditan nuevas clases ni servicios desplegados.
-endlegend
+Rel(api, app, "Delega caso de uso", "Java")
+Rel(consumer, app, "Entrega evento validado", "Java")
+Rel(app, rules, "Aplica reglas de dominio", "Java")
+Rel(app, repo, "Lee y confirma datos del contexto", "Java")
+Rel(app, publisher, "Registra salida para despacho", "Java")
+Rel(bus, consumer, "Entrega session.live.finalized", "AMQP")
+Rel(scoring, api, "Consulta job o solicita reintento", "HTTPS / JSON")
+Rel(repo, db, "Conserva job y outbox", "SQL / TLS")
+Rel(publisher, bus, "Publica fillers.analyzed", "AMQP")
+SHOW_LEGEND()
 @enduml

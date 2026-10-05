@@ -1,13 +1,72 @@
 classDiagram
-
-    class FillerDetector {
-        +detect(String transcript) FillerResult
-    }
-    class FillerResult {
-        <<Propuesto>>
-        +int totalFillers
-        +Map byType
-        +double fillerRatio
-    }
-
-    FillerDetector --> FillerResult
+ direction LR
+class AnalysisJob {
+  <<AggregateRoot>>
+  -UUID id
+  -UUID sessionId
+  -Long userId
+  -String analysisVersion
+  -AnalysisState state
+  -int attempts
+  -Instant updatedAt
+  +start() void
+  +complete(SpeechAnalysisResult result) void
+  +fail(String reason) void
+  +retry() void
+}
+class AnalysisState {
+  <<enumeration>>
+  PENDING
+  RUNNING
+  COMPLETED
+  FAILED
+  CANCELLED
+}
+class FillerDetector {
+  +detect(String transcript) FillerResult
+}
+class FillerResult {
+  <<ValueObject>>
+  -int totalWords
+  -int totalFillers
+  -Map~String,int~ byType
+  -double fillerRatio
+  +hasEvidence() boolean
+}
+AnalysisJob --> AnalysisState : estado
+AnalysisJob "1" *-- "0..1" SpeechAnalysisResult : resultado
+FillerDetector ..> FillerResult : calcula
+class AuthorizedSpeechEvidence {
+  <<ValueObject>>
+  -String transcript
+  -Map~String,double~ acousticFeatures
+  -String authorizedContext
+  -String goal
+  -int confirmedDurationSeconds
+}
+class SpeechAnalysisResult {
+  <<ValueObject>>
+  -Map~String,double~ acousticMetrics
+  -List~String~ availableDimensions
+  -List~String~ limitations
+}
+class ContextualFinding {
+  <<ValueObject>>
+  -String term
+  -boolean spoken
+  -String evidenceFragment
+  -String suggestedAlternative
+  -String reason
+}
+class AcousticEvidenceAnalyzer {
+  +analyze(AuthorizedSpeechEvidence evidence) SpeechAnalysisResult
+}
+class ContextualEvidenceAnalyzer {
+  +analyze(AuthorizedSpeechEvidence evidence) List~ContextualFinding~
+}
+SpeechAnalysisResult "1" *-- "1" FillerResult : muletillas
+SpeechAnalysisResult "1" *-- "0..*" ContextualFinding : hallazgos contextuales
+AcousticEvidenceAnalyzer ..> AuthorizedSpeechEvidence : utiliza señales disponibles
+AcousticEvidenceAnalyzer ..> SpeechAnalysisResult : calcula métricas con soporte
+ContextualEvidenceAnalyzer ..> AuthorizedSpeechEvidence : interpreta contexto autorizado
+ContextualEvidenceAnalyzer ..> ContextualFinding : distingue uso y sugerencia

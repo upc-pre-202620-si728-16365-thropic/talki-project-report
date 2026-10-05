@@ -1,3 +1,13 @@
-flowchart LR
-  service["filler-detection-service"] --> output["Eventos / resultado hacia contexto propietario"]
-  note["Servicio stateless sin base propia"] -.-> service
+erDiagram
+
+    ANALYSIS_JOBS {
+        uuid id PK
+        uuid session_id
+        bigint user_id
+        varchar analysis_version
+        varchar state
+        int attempts
+        jsonb result
+        varchar failure_code
+        timestamp updated_at
+    }

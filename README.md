@@ -2213,7 +2213,7 @@ FillerDetector identifica las expresiones consideradas muletillas y calcula sus 
 
 **Resultado del análisis**
 
-FillerResult representa el resultado propuesto en el modelo de diseño: conteo total, distribución por expresión y proporción. La transcripción y las métricas acústicas recibidas forman parte de la evidencia de la sesión.
+FillerResult representa el resultado del diseño: cantidad de palabras, conteo de muletillas, distribución por expresión y proporción. La transcripción y las métricas acústicas recibidas forman parte de la evidencia de la sesión. AnalysisJob identifica el análisis y sus transiciones; FillerResult incluye totalWords para interpretar la proporción y reconocer la falta de evidencia.
 
 **Elementos de Domain Layer**
 
@@ -2228,13 +2228,36 @@ FillerResult representa el resultado propuesto en el modelo de diseño: conteo t
 2. Las métricas de muletillas se distinguen de la puntuación global.
 3. El volumen y otras dimensiones acústicas requieren información de audio; una transcripción por sí sola no permite medirlas.
 
+**Atributos y operaciones del modelo de dominio**
+
+Los atributos se encapsulan; las operaciones públicas expresan las reglas del contexto. Las interfaces y enumeraciones se distinguen en el UML. Este modelo especifica el diseño objetivo del TP.
+
+| Elemento | Atributos o valores | Operaciones públicas |
+| --- | --- | --- |
+| AnalysisJob | UUID id<br>UUID sessionId<br>Long userId<br>String analysisVersion<br>AnalysisState state<br>int attempts<br>Instant updatedAt | start() void<br>complete(SpeechAnalysisResult result) void<br>fail(String reason) void<br>retry() void |
+| AnalysisState | PENDING<br>RUNNING<br>COMPLETED<br>FAILED<br>CANCELLED | Consulta mediante el agregado o servicio responsable. |
+| FillerDetector | Sin estado propio. | detect(String transcript) FillerResult |
+| FillerResult | int totalWords<br>int totalFillers<br>Map~String,int~ byType<br>double fillerRatio | hasEvidence() boolean |
+
+**Evidencia acústica y contextual**
+
+AuthorizedSpeechEvidence separa transcripción, señales acústicas disponibles, contexto autorizado, meta y duración confirmada. AcousticEvidenceAnalyzer calcula solo métricas respaldadas por señales de audio; si faltan, registra la limitación en lugar de estimar volumen desde texto. ContextualEvidenceAnalyzer compara términos del discurso y del contexto autorizado: cada ContextualFinding distingue palabra pronunciada, fragmento fuente, alternativa sugerida y motivo. Las reglas preservan terminología especializada y omiten recomendaciones sin soporte. SpeechAnalysisResult agrupa estos hallazgos y FillerResult, además de dimensiones disponibles y limitaciones.
+
+| Elemento | Atributos | Operación o relación |
+| --- | --- | --- |
+| AuthorizedSpeechEvidence | transcript, acousticFeatures, authorizedContext, goal, confirmedDurationSeconds. | Entrada de los analizadores; solo incluye material autorizado. |
+| AcousticEvidenceAnalyzer | Sin estado propio. | analyze(AuthorizedSpeechEvidence): SpeechAnalysisResult. |
+| ContextualEvidenceAnalyzer | Sin estado propio. | analyze(AuthorizedSpeechEvidence): lista de ContextualFinding. |
+| ContextualFinding | term, spoken, evidenceFragment, suggestedAlternative, reason. | Resultado inmutable; spoken=false identifica sugerencia, sin atribuirla al discurso. |
+| SpeechAnalysisResult | acousticMetrics, availableDimensions, limitations. | Contiene un FillerResult y cero o más hallazgos contextuales. |
+
 ### 5.2.2. Interface Layer
 
 Este contexto recibe la evidencia mediante eventos de integración. No necesita un controlador REST para ejecutar el análisis de muletillas.
 
-**Contrato de entrada.** SessionLiveFinalizedEvent identifica la sesión y el estudiante, e incluye la transcripción, la duración y las métricas disponibles. SessionLiveFinalizedConsumer recibe el mensaje `session.live.finalized` y activa el caso de uso de análisis.
+**Contrato de entrada.** SessionLiveFinalizedEvent identifica la sesión y el estudiante, e incluye la transcripción, la duración y las métricas disponibles. SessionLiveFinalizedConsumer es el adaptador AMQP de Infrastructure y delega el mensaje `session.live.finalized` en AnalyzeSpeechHandler de Application.
 
-**Contrato de salida.** FillerAnalyzedEvent reúne el conteo total, la distribución por expresión, la cantidad de palabras y las métricas recibidas de la práctica. El evento `fillers.analyzed` permite continuar con Scoring & Feedback. Los consumidores y publicadores concretos se describen en Infrastructure Layer.
+**Contrato de salida.** FillerAnalyzedEvent conserva su nombre de integración, pero reúne SpeechAnalysisResult: conteo, distribución por expresión, cantidad de palabras, métricas disponibles, hallazgos contextuales, referencias de evidencia y limitaciones. El evento `fillers.analyzed` permite continuar con Scoring & Feedback. Los consumidores y publicadores concretos se describen en Infrastructure Layer.
 
 ### 5.2.3. Application Layer
 
@@ -2242,14 +2265,22 @@ La capa de aplicación coordina el análisis de la evidencia recibida. El caso d
 
 **Procesamiento de eventos**
 
-La recepción de SessionLiveFinalizedEvent inicia el análisis de la transcripción. La coordinación entrega el texto a FillerDetector, reúne las métricas obtenidas y prepara FillerAnalyzedEvent. Estas operaciones se describen como casos de uso; el consumidor concreto activa el flujo desde la infraestructura.
+La recepción de SessionLiveFinalizedEvent inicia el análisis de la transcripción. La coordinación entrega el texto a FillerDetector, reúne las métricas obtenidas y prepara FillerAnalyzedEvent. AnalyzeSpeechHandler registra AnalysisJob, aplica los tres analizadores y solicita la publicación de SpeechAnalysisResult; el consumidor concreto activa el flujo desde la infraestructura.
 
 **Elementos de Application Layer**
 
 | Nombre | Tipo | Descripción | Capa |
 | --- | --- | --- | --- |
-| Análisis de transcripción | Caso de uso | Identifica muletillas y obtiene el conteo por expresión y la cantidad de palabras. | Application |
-| Preparación del resultado | Caso de uso | Relaciona las métricas con la sesión y solicita la publicación de FillerAnalyzedEvent. | Application |
+| AnalyzeSpeechHandler | Command Handler | Identifica muletillas y obtiene el conteo por expresión y la cantidad de palabras. | Application |
+| AnalysisResultPublisherPort | Puerto de salida | Relaciona las métricas con la sesión y solicita la publicación de FillerAnalyzedEvent. | Application |
+
+**Contratos de coordinación**
+
+| Clase o grupo de clases | Responsabilidad | Operaciones previstas |
+| --- | --- | --- |
+| AnalyzeSpeechHandler | Coordina análisis acústico/contextual y reintento sobre el mismo job. | handle(SessionLiveFinalizedEvent); retry(jobId) |
+
+Los handlers validan la petición o el evento antes de ejecutar cambios. Los puertos de repositorio y de integración son contratos; los adaptadores de Infrastructure realizan esos contratos. Los nombres describen clases previstas para implementar el diseño, sin afirmar que estén desplegadas.
 
 ### 5.2.4. Infrastructure Layer
 
@@ -2262,11 +2293,20 @@ La capa de infraestructura conecta el análisis con los demás contextos mediant
 | SessionLiveFinalizedConsumer | Consumidor de eventos | Recibe el cierre de práctica y activa el análisis. | Infrastructure |
 | FillerAnalyzedPublisher | Publicador de eventos | Comunica el resultado a Scoring & Feedback. | Infrastructure |
 
-El análisis de muletillas no mantiene una base propia. FillerDetector procesa la transcripción y el resultado conserva la referencia de sesión. El diseño ampliado de 4.2 incorpora métricas acústicas y análisis contextual mediante evidencia autorizada y adaptadores especializados. También requiere comunicar la versión, el estado y los fallos del análisis para permitir los reintentos de US37.
+El análisis no conserva un reporte de negocio propio, pero mantiene AnalysisJob y su salida durable en un esquema privado. FillerDetector procesa la transcripción y el resultado conserva la referencia de sesión. AcousticEvidenceAnalyzer y ContextualEvidenceAnalyzer especifican el análisis acústico y contextual de 4.2 sobre AuthorizedSpeechEvidence. Los resultados se agrupan en SpeechAnalysisResult; no se utiliza material sin autorización. AnalysisJob registra versión, estado e intentos para los reintentos de US37. AnalysisJobRepository y AnalysisResultOutbox almacenan el estado y la salida de forma atómica; el dispatcher publica y confirma el resultado.
 
 ### 5.2.5. Bounded Context Software Architecture Component Level Diagrams
 
-El diagrama presenta el recorrido del análisis de muletillas: el consumidor recibe la sesión finalizada, solicita la detección y entrega el resultado al publicador. Las ampliaciones acústicas y contextuales requieren sus propios adaptadores; el cálculo de la puntuación permanece en Scoring & Feedback.
+Esta vista C4 descompone el container de Speech Analysis definido en 4.3.3. Los elementos externos se sitúan fuera de su frontera; las relaciones indican responsabilidad y protocolo. Las clases siguientes colaboran en los componentes del proceso y mantienen la separación de capas.
+
+| Clases agrupadas en el componente | Capa | Responsabilidad |
+| --- | --- | --- |
+| SessionLiveFinalizedConsumer | Infrastructure | Recibe el contrato AMQP y confirma tras commit. |
+| AnalyzeSpeechHandler | Application | Coordina análisis acústico/contextual y reintento sobre el mismo job. |
+| AnalysisJob / FillerDetector / AcousticEvidenceAnalyzer / ContextualEvidenceAnalyzer | Domain | Controla estado, métricas y hallazgos respaldados por evidencia. |
+| AnalysisJobController | Interface | Consulta estado y solicita reintento interno. |
+| AnalysisJobRepository / AnalysisResultOutbox | Infrastructure | Conserva job y resultado durable. |
+| FillerAnalyzedPublisher | Infrastructure | Despacha métricas confirmadas por RabbitMQ. |
 
 ![Componentes de Speech Analysis](assets/diagrams/tactical/02-speech-analysis-components.png)
 
@@ -2274,15 +2314,24 @@ El diagrama presenta el recorrido del análisis de muletillas: el consumidor rec
 
 #### 5.2.6.1. Bounded Context Domain Layer Class Diagrams
 
-El diagrama UML de dominio muestra la dependencia de FillerDetector respecto de FillerResult, identificado como resultado propuesto. El consumidor de RabbitMQ y el publicador quedan en Infrastructure y se representan en la vista de componentes.
+El diagrama UML relaciona AnalysisJob con su estado y resultado; FillerDetector calcula FillerResult. El consumidor de RabbitMQ y el publicador quedan en Infrastructure y se representan en la vista de componentes.
 
 ![Clases de Speech Analysis](assets/diagrams/tactical/02-speech-analysis-classes.png)
 
 #### 5.2.6.2. Bounded Context Database Design Diagram
 
-El contexto no conserva una copia del reporte. Sus métricas se comunican mediante fillers.analyzed y se almacenan con el resultado de evaluación. El registro técnico de reintentos se definirá durante la integración.
+El contexto no conserva una copia del reporte. Sus métricas se comunican mediante fillers.analyzed y se almacenan con el resultado de evaluación. AnalysisJob y su outbox se conservan en un esquema técnico privado. La combinación sesión/versión evita trabajos duplicados y permite consultar estado y reintentar sin crear otra evaluación.
 
 ![Persistencia de Speech Analysis](assets/diagrams/tactical/02-speech-analysis-database.png)
+
+**Restricciones de persistencia**
+
+| Objeto | Restricción y relación con las reglas |
+| --- | --- |
+| ANALYSIS_JOBS | UNIQUE(session_id, analysis_version); attempts ≥ 0. Estados PENDING, RUNNING, COMPLETED, FAILED y CANCELLED. El resultado nulo indica que aún no hay métricas confirmadas. |
+
+La unicidad compuesta se documenta en esta tabla porque comprende varios campos; las marcas PK/FK/UK del diagrama identifican claves simples. Inbox y outbox son registros técnicos del esquema privado: eventId es único en inbox y el despacho confirma la salida después del commit local. No se crean FKs hacia otros contextos.
+
 
 ## 5.3. Bounded Context: Scoring & Feedback
 
