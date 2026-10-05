@@ -19,7 +19,7 @@
         "assets/diagrams/tactical/01-live-coaching-database.mmd",
         "assets/diagrams/tactical/01-live-coaching-components.puml"
       ],
-      "model_note": "Estrategias de práctica y fábrica en UML de dominio; LiveCoachOrchestrator, GeminiTokenService y SessionFinalizedPublisher en UML de componentes."
+      "model_note": "Modelo de diseño objetivo del TP: clases UML de dominio y componentes C4 dentro del container; contratos, datos y restricciones especificados. No acredita implementación desplegada."
     },
     {
       "section": "5.2",
@@ -31,7 +31,7 @@
         "assets/diagrams/tactical/02-speech-analysis-database.mmd",
         "assets/diagrams/tactical/02-speech-analysis-components.puml"
       ],
-      "model_note": "Resultado FillerResult identificado como propuesta de diseño. Vista UML de clases limitada al dominio; componentes y adaptadores separados en la vista UML de componentes."
+      "model_note": "Modelo de diseño objetivo del TP: clases UML de dominio y componentes C4 dentro del container; contratos, datos y restricciones especificados. No acredita implementación desplegada."
     },
     {
       "section": "5.3",
@@ -43,7 +43,7 @@
         "assets/diagrams/tactical/03-scoring-feedback-database.mmd",
         "assets/diagrams/tactical/03-scoring-feedback-components.puml"
       ],
-      "model_note": "Modelo ampliado con versiones de análisis y rúbrica y dimensiones que admiten ausencia de evidencia. Vista UML de clases limitada al dominio; componentes y adaptadores separados en la vista UML de componentes."
+      "model_note": "Modelo de diseño objetivo del TP: clases UML de dominio y componentes C4 dentro del container; contratos, datos y restricciones especificados. No acredita implementación desplegada."
     },
     {
       "section": "5.4",
@@ -55,7 +55,7 @@
         "assets/diagrams/tactical/04-practice-sessions-database.mmd",
         "assets/diagrams/tactical/04-practice-sessions-components.puml"
       ],
-      "model_note": "SessionUserContext alineado con la identidad local adaptada por SessionContextFacade. Vista UML de clases limitada al dominio; componentes y adaptadores separados en la vista UML de componentes."
+      "model_note": "Modelo de diseño objetivo del TP: clases UML de dominio y componentes C4 dentro del container; contratos, datos y restricciones especificados. No acredita implementación desplegada."
     },
     {
       "section": "5.5",
@@ -67,7 +67,7 @@
         "assets/diagrams/tactical/05-progress-adaptation-database.mmd",
         "assets/diagrams/tactical/05-progress-adaptation-components.puml"
       ],
-      "model_note": "Totales y puntuaciones de progreso separados de la experiencia de Gamification; métricas versionadas para comparación propuesta. Vista UML de clases limitada al dominio; componentes y adaptadores separados en la vista UML de componentes."
+      "model_note": "Modelo de diseño objetivo del TP: clases UML de dominio y componentes C4 dentro del container; contratos, datos y restricciones especificados. No acredita implementación desplegada."
     },
     {
       "section": "5.6",
@@ -79,7 +79,7 @@
         "assets/diagrams/tactical/06-sharing-retention-database.mmd",
         "assets/diagrams/tactical/06-sharing-retention-components.puml"
       ],
-      "model_note": "Vista UML de clases limitada al dominio; componentes y adaptadores separados en la vista UML de componentes."
+      "model_note": "Modelo de diseño objetivo del TP: clases UML de dominio y componentes C4 dentro del container; contratos, datos y restricciones especificados. No acredita implementación desplegada."
     },
     {
       "section": "5.7",
@@ -91,7 +91,7 @@
         "assets/diagrams/tactical/07-gamification-database.mmd",
         "assets/diagrams/tactical/07-gamification-components.puml"
       ],
-      "model_note": "Achievement identificado como entidad propuesta. Vista UML de clases limitada al dominio; componentes y adaptadores separados en la vista UML de componentes."
+      "model_note": "Modelo de diseño objetivo del TP: clases UML de dominio y componentes C4 dentro del container; contratos, datos y restricciones especificados. No acredita implementación desplegada."
     },
     {
       "section": "5.8",
@@ -103,7 +103,7 @@
         "assets/diagrams/tactical/08-identity-access-database.mmd",
         "assets/diagrams/tactical/08-identity-access-components.puml"
       ],
-      "model_note": "Datos de cuenta alineados con username y academicSegment; renovación identificada como propuesta. Vista UML de clases limitada al dominio; componentes y adaptadores separados en la vista UML de componentes."
+      "model_note": "Modelo de diseño objetivo del TP: clases UML de dominio y componentes C4 dentro del container; contratos, datos y restricciones especificados. No acredita implementación desplegada."
     },
     {
       "section": "5.9",
@@ -115,7 +115,7 @@
         "assets/diagrams/tactical/09-ai-provider-gateway-database.mmd",
         "assets/diagrams/tactical/09-ai-provider-gateway-components.puml"
       ],
-      "model_note": "Vista UML de clases limitada al dominio; componentes y adaptadores separados en la vista UML de componentes."
+      "model_note": "Modelo de diseño objetivo del TP: clases UML de dominio y componentes C4 dentro del container; contratos, datos y restricciones especificados. No acredita implementación desplegada."
     },
     {
       "section": "5.10",
@@ -127,7 +127,7 @@
         "assets/diagrams/tactical/10-notifications-database.mmd",
         "assets/diagrams/tactical/10-notifications-components.puml"
       ],
-      "model_note": "Adaptador de entrega identificado como propuesta; vista de persistencia centrada en avisos al estudiante y seguimiento futuro. Vista UML de clases limitada al dominio; componentes y adaptadores separados en la vista UML de componentes."
+      "model_note": "Modelo de diseño objetivo del TP: clases UML de dominio y componentes C4 dentro del container; contratos, datos y restricciones especificados. No acredita implementación desplegada."
     }
   ],
   "copied_assets": [
@@ -201,5 +201,11 @@
       "destination": "assets/reused-202601/frontend/09-session-ai-feedback.png",
       "sha256": "35056fce7017887a893c850ba2756080427abe1c94f9967a8065be179bc83c0b"
     }
-  ]
+  ],
+  "design_revision": {
+    "date": "2026-10-05",
+    "components": "C4",
+    "domain_classes": "UML",
+    "scope": "Diseño objetivo de diez contextos; evidencia de implementación no incluida."
+  }
 }
