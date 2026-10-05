@@ -1,29 +1,46 @@
 classDiagram
-    class UserProgress {
-        +Long userId
-        +int totalSessions
-        +int totalMinutes
-        +double averageScore
-        +int bestScore
-        +int currentStreak
-        +recordSession(score, durationSeconds) void
-    }
-    class SessionMetrics {
-        <<Propuesto>>
-        +UUID id
-        +UUID sessionId
-        +Long userId
-        +String mode
-        +int durationSeconds
-        +Integer overall
-        +Integer fluency
-        +Integer clarity
-        +Integer volume
-        +Integer vocabulary
-        +Integer confidence
-        +String analysisVersion
-        +String rubricVersion
-        +Instant occurredAt
-    }
-
-    UserProgress "1" --> "0..*" SessionMetrics : evidencia compatible propuesta
+ direction LR
+class UserProgress {
+  <<AggregateRoot>>
+  -Long userId
+  -int totalSessions
+  -int totalMinutes
+  +recordSession(SessionMetrics evidence) void
+  +removeSession(UUID sessionId) void
+  +average(String mode, String analysisVersion, String rubricVersion) Double
+  +best(String mode, String analysisVersion, String rubricVersion) Integer
+}
+class SessionMetrics {
+  <<Entity>>
+  -UUID id
+  -UUID sessionId
+  -Long userId
+  -String mode
+  -int durationSeconds
+  -Map~String,Integer~ scores
+  -String analysisVersion
+  -String rubricVersion
+  -Instant occurredAt
+  +isCompatibleWith(SessionMetrics other) boolean
+}
+class AdaptivePlan {
+  <<AggregateRoot>>
+  -UUID id
+  -Long userId
+  -String ruleVersion
+  -List~UUID~ evidenceIds
+  -Instant createdAt
+  +completeExercise(UUID exerciseId) void
+}
+class PracticeExercise {
+  <<Entity>>
+  -UUID id
+  -String goal
+  -String instruction
+  -int durationSeconds
+  -boolean completed
+  +complete() void
+}
+UserProgress "1" --> "0..*" SessionMetrics : resume evidencia propia
+AdaptivePlan "1" *-- "1..*" PracticeExercise : ejercicios
+AdaptivePlan ..> SessionMetrics : referencia evidencia compatible

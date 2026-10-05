@@ -1,54 +1,26 @@
 @startuml
+!include <C4/C4_Component>
 skinparam defaultFontName Arial
-skinparam defaultFontSize 15
-skinparam shadowing false
-skinparam componentStyle uml2
-skinparam backgroundColor white
-skinparam componentBackgroundColor #EAF0FF
-skinparam componentBorderColor #1749B5
-skinparam ArrowColor #536177
-skinparam packageBackgroundColor #F7F9FD
-skinparam dpi 130
-title
-UML Component Diagram: Progress & Adaptation
-Descomposición en Progress Service (Java / Spring Boot)
-end title
-queue "RabbitMQ:\nscoring.completed" as broker <<Externo>> #EEEEEE
-database "PostgreSQL:\nuser_progress" as db <<Externo>> #EEEEEE
-package "Bounded Context:\nProgress & Adaptation" {
-  package "Interface Layer" {
-    component "Interface:\nProgressController\n[Java / Spring Boot]" as input
-  }
-  package "Application Layer" {
-    component "Consulta del resumen\n[Java / Spring Boot]" as query
-    component "Application:\nactualizar progreso\n[Java / Spring Boot]" as app
-    component "Comparación\ny plan adaptativo propuestos\n[Java / Spring Boot]" as view <<Propuesto>>
-  }
-  package "Domain Layer" {
-    component "Domain:\nUserProgress\n[Java / Spring Boot]" as model
-  }
-  package "Infrastructure Layer" {
-    component "Infrastructure:\nUserProgressRepository\n[Java / Spring Boot]" as repo
-    component "Infrastructure:\nScoringCompletedConsumer\n[Java / Spring Boot]" as consumer
-  }
+skinparam dpi 150
+LAYOUT_TOP_DOWN()
+title C4 Component Diagram: Progress & Adaptation
+Container(bff, "API Gateway / BFF", "HTTPS / JSON", "Fuera del container representado")
+ContainerQueue(bus, "Broker de eventos", "RabbitMQ / AMQP", "Fuera del container representado")
+ContainerDb(db, "Esquema privado del contexto", "PostgreSQL / TLS", "Fuera del container representado")
+Container_Boundary(scope, "Progress & Adaptation: proceso Java / Spring Boot") {
+  Component(api, "ProgressController", "Java / Spring Boot", "Interface: Expone dashboard, comparación y plan")
+  Component(app, "RecordProgressHandler / UserProgressQueryService / BuildAdaptivePlanHandler", "Java / Spring Boot", "Application: Actualiza historial, compara evidencia y prepara ejercicios")
+  Component(rules, "UserProgress / SessionMetrics / AdaptivePlan", "Java / Spring Boot", "Domain: Preserva compatibilidad y referencias de evidencia")
+  Component(repo, "UserProgressRepository / SessionMetricsRepository / AdaptivePlanRepository", "Java / Spring Boot", "Infrastructure: Conserva resultados, planes y ejercicios")
+  Component(consumer, "ScoringCompletedConsumer", "Java / Spring Boot", "Infrastructure: Recibe evaluación y delega actualización")
 }
-input --> query : solicita resumen de progreso / Java
-query --> repo : consulta resumen propio / Java
-broker --> consumer : eventos / AMQP
-consumer --> app : activa actualización de progreso / Java
-app --> model : actualiza totales y puntuación / Java
-app --> repo : conserva resumen de progreso / Java
-repo --> db : persistencia / SQL
-note bottom
-Ampliación: UserProgressQueryService y SessionMetrics
-end note
-legend bottom
-Icono UML: componente; círculo: interfaz.
-Flecha continua: interacción dirigida.
-Relación a interfaz: contrato proporcionado.
-Externo: fuera del proceso representado.
-Propuesto: ampliación pendiente.
-Los casos de uso nombran responsabilidades de diseño;
-no acreditan nuevas clases ni servicios desplegados.
-endlegend
+Rel(api, app, "Delega caso de uso", "Java")
+Rel(consumer, app, "Entrega evento validado", "Java")
+Rel(app, rules, "Aplica reglas de dominio", "Java")
+Rel(app, repo, "Lee y confirma datos del contexto", "Java")
+Rel(bff, api, "Consulta progreso o modifica plan", "HTTPS / JSON")
+Rel(bus, consumer, "Entrega scoring.completed y deletion.requested", "AMQP")
+Rel(consumer, bus, "Confirma purga local", "AMQP")
+Rel(repo, db, "Lee y actualiza historial/planes", "SQL / TLS")
+SHOW_LEGEND()
 @enduml

@@ -2648,11 +2648,11 @@ La capa de dominio representa la evolución del estudiante a partir de sus prác
 
 **Aggregate Root**
 
-UserProgress reúne la cantidad de sesiones, minutos de práctica, promedio y mejor puntuación del estudiante. La experiencia y las reglas de racha pertenecen a Gamification; el panel puede presentar la racha como información resumida, sin redefinir sus reglas.
+UserProgress conserva cantidades de sesiones y minutos. El promedio y la mejor puntuación se derivan de SessionMetrics según modo y versiones seleccionados, en lugar de guardar una media que mezcle rúbricas. La experiencia y las reglas de racha pertenecen a Gamification; el panel puede presentar la racha como información resumida, sin redefinir sus reglas.
 
 **Entities**
 
-SessionMetrics se propone para conservar las métricas y la versión de cada práctica. Estas evidencias permitirán comparar resultados compatibles y reconocer el origen de las recomendaciones.
+SessionMetrics conserva las métricas y versiones de cada práctica. AdaptivePlan referencia esas evidencias y reúne PracticeExercise, con objetivo, instrucciones, duración y avance.
 
 **Elementos de Domain Layer**
 
@@ -2667,6 +2667,17 @@ SessionMetrics se propone para conservar las métricas y la versión de cada pr�
 2. La comparación requiere sesiones del mismo estudiante con modos y versiones compatibles.
 3. Si no existe suficiente historial, se propone una práctica inicial en lugar de atribuir dificultades recurrentes.
 
+**Atributos y operaciones del modelo de dominio**
+
+Los atributos se encapsulan; las operaciones públicas expresan las reglas del contexto. Las interfaces y enumeraciones se distinguen en el UML. Este modelo especifica el diseño objetivo del TP.
+
+| Elemento | Atributos o valores | Operaciones públicas |
+| --- | --- | --- |
+| UserProgress | Long userId<br>int totalSessions<br>int totalMinutes | recordSession(SessionMetrics evidence) void<br>removeSession(UUID sessionId) void<br>average(String mode, String analysisVersion, String rubricVersion) Double<br>best(String mode, String analysisVersion, String rubricVersion) Integer |
+| SessionMetrics | UUID id<br>UUID sessionId<br>Long userId<br>String mode<br>int durationSeconds<br>Map~String,Integer~ scores<br>String analysisVersion<br>String rubricVersion<br>Instant occurredAt | isCompatibleWith(SessionMetrics other) boolean |
+| AdaptivePlan | UUID id<br>Long userId<br>String ruleVersion<br>List~UUID~ evidenceIds<br>Instant createdAt | completeExercise(UUID exerciseId) void |
+| PracticeExercise | UUID id<br>String goal<br>String instruction<br>int durationSeconds<br>boolean completed | complete() void |
+
 ### 5.5.2. Interface Layer
 
 ProgressController ofrece la consulta del resumen de desempeño. La actualización del progreso se origina al recibir una evaluación completada y no mediante una modificación directa desde el cliente.
@@ -2677,7 +2688,7 @@ ProgressController ofrece la consulta del resumen de desempeño. La actualizaci�
 | --- | --- |
 | `GET /v1/progress/dashboard?userId={userId}` | Consultar el resumen de actividad y desempeño. |
 | `scoring.completed` | Recibir una evaluación para incorporar sus métricas al progreso. |
-| Comparación y plan adaptativo propuestos | Consultar prácticas compatibles y preparar ejercicios de mejora; sus contratos se definirán durante la integración. |
+| `GET /v1/progress/comparisons?left={id}&right={id}` y `POST /v1/progress/plans` | Comparar evidencia propia compatible y generar un plan con referencias a las prácticas utilizadas. |
 
 **Datos de respuesta.** El panel reúne cantidad de sesiones, minutos de práctica, promedio, mejor puntuación y racha. Las propuestas de comparación incorporan las sesiones elegidas y la compatibilidad de sus versiones. Las consultas deben limitarse al estudiante autorizado.
 
@@ -2691,17 +2702,25 @@ ScoringCompletedEvent incorpora la puntuación y la duración de una práctica a
 
 **Queries**
 
-La consulta del panel recupera los totales y el desempeño del estudiante. UserProgressQueryService se propone para organizar esta lectura y la comparación de prácticas compatibles. El plan adaptativo es una ampliación que relacionará las recomendaciones con ejercicios de mejora.
+La consulta del panel recupera los totales y el desempeño del estudiante. UserProgressQueryService se propone para organizar esta lectura y la comparación de prácticas compatibles. BuildAdaptivePlanHandler relaciona recomendaciones y evidencia con AdaptivePlan y PracticeExercise; `PATCH /v1/progress/plans/{planId}/exercises/{exerciseId}` registra el avance del ejercicio.
 
 **Elementos de Application Layer**
 
 | Nombre | Tipo | Descripción | Capa |
 | --- | --- | --- | --- |
-| Actualización del progreso | Caso de uso | Incorpora puntuación y duración al resumen de UserProgress. | Application |
+| RecordProgressHandler | Event Handler | Incorpora puntuación y duración al resumen de UserProgress. | Application |
 | UserProgressQueryService | Servicio de consulta propuesto | Organiza la lectura del panel y la comparación de prácticas compatibles. | Application |
-| Preparación del plan adaptativo | Caso de uso propuesto | Relaciona ejercicios con recomendaciones y sesiones que aportan evidencia. | Application |
+| BuildAdaptivePlanHandler | Command Handler | Relaciona ejercicios con recomendaciones y sesiones que aportan evidencia. | Application |
 
 **Recorrido del caso de uso.** Una evaluación completada actualiza los totales y las métricas del estudiante. Las consultas obtienen el resumen y, en la ampliación, las evidencias por sesión. La comparación verifica el modo y la versión antes de presentar variaciones de desempeño.
+
+**Contratos de coordinación**
+
+| Clase o grupo de clases | Responsabilidad | Operaciones previstas |
+| --- | --- | --- |
+| RecordProgressHandler / UserProgressQueryService / BuildAdaptivePlanHandler | Actualiza historial, compara evidencia y prepara ejercicios. | record(event); compare(left, right); buildPlan(evidenceIds) |
+
+Los handlers validan la petición o el evento antes de ejecutar cambios. Los puertos de repositorio y de integración son contratos; los adaptadores de Infrastructure realizan esos contratos. Los nombres describen clases previstas para implementar el diseño, sin afirmar que estén desplegadas.
 
 ### 5.5.4. Infrastructure Layer
 
@@ -2713,13 +2732,21 @@ La capa de infraestructura conserva el resumen de desempeño y recibe las evalua
 | --- | --- | --- | --- |
 | UserProgressRepository | Repositorio | Conserva UserProgress en PostgreSQL y lo consulta por estudiante. | Infrastructure |
 | ScoringCompletedConsumer | Consumidor de eventos | Recibe la evaluación y activa la actualización del progreso. | Infrastructure |
-| Persistencia de SessionMetrics | Ampliación propuesta | Conserva evidencia por sesión y versión para comparar prácticas. | Infrastructure |
+| SessionMetricsRepository y AdaptivePlanRepository | Repositorios | Conserva evidencia por sesión y versión para comparar prácticas. | Infrastructure |
 
 RabbitMQ comunica la evaluación y PostgreSQL almacena el resumen. La ampliación conserva resultados compatibles y retira la contribución de una práctica cuando se confirma su eliminación.
 
 ### 5.5.5. Bounded Context Software Architecture Component Level Diagrams
 
-ProgressController consulta el resumen conservado por UserProgressRepository. ScoringCompletedConsumer recibe las evaluaciones y activa su actualización. UserProgressQueryService y SessionMetrics amplían el diseño para comparar prácticas y preparar el plan.
+Esta vista C4 descompone el container de Progress & Adaptation definido en 4.3.3. Los elementos externos se sitúan fuera de su frontera; las relaciones indican responsabilidad y protocolo. Las clases siguientes colaboran en los componentes del proceso y mantienen la separación de capas.
+
+| Clases agrupadas en el componente | Capa | Responsabilidad |
+| --- | --- | --- |
+| ProgressController | Interface | Expone dashboard, comparación y plan. |
+| RecordProgressHandler / UserProgressQueryService / BuildAdaptivePlanHandler | Application | Actualiza historial, compara evidencia y prepara ejercicios. |
+| UserProgress / SessionMetrics / AdaptivePlan | Domain | Preserva compatibilidad y referencias de evidencia. |
+| UserProgressRepository / SessionMetricsRepository / AdaptivePlanRepository | Infrastructure | Conserva resultados, planes y ejercicios. |
+| ScoringCompletedConsumer | Infrastructure | Recibe evaluación y delega actualización. |
 
 ![Componentes de Progress & Adaptation](assets/diagrams/tactical/05-progress-adaptation-components.png)
 
@@ -2727,15 +2754,26 @@ ProgressController consulta el resumen conservado por UserProgressRepository. Sc
 
 #### 5.5.6.1. Bounded Context Domain Layer Class Diagrams
 
-UserProgress reúne los totales y las puntuaciones resumidas del estudiante. SessionMetrics es una ampliación propuesta que conserva evidencia por práctica compatible con el resumen del mismo usuario. UserProgressQueryService pertenece a Application y se representa en componentes. El modo, las dimensiones y las versiones sostienen las tendencias y la comparación presentadas en 6.4.
+UserProgress reúne los totales y deriva puntuaciones resumidas de evidencia compatible. SessionMetrics conserva evidencia por práctica compatible con el resumen del mismo usuario; AdaptivePlan contiene sus ejercicios. UserProgressQueryService pertenece a Application y se representa en componentes. El modo, las dimensiones y las versiones sostienen las tendencias y la comparación presentadas en 6.4.
 
 ![Clases de Progress & Adaptation](assets/diagrams/tactical/05-progress-adaptation-classes.png)
 
 #### 5.5.6.2. Bounded Context Database Design Diagram
 
-user_progress conserva los totales y puntuaciones resumidas del estudiante. La tabla propuesta session_metrics registra la sesión, modo, duración, dimensiones y versiones de análisis y rúbrica. La combinación de sesión y versiones debe ser única. La eliminación retira sus métricas y recalcula el resumen, manteniendo los puntos de experiencia bajo responsabilidad de Gamification.
+user_progress conserva los totales de prácticas y minutos; las puntuaciones resumidas se derivan por modo y versiones desde session_metrics. La tabla propuesta session_metrics registra la sesión, modo, duración, dimensiones y versiones de análisis y rúbrica. La combinación de sesión y versiones debe ser única. La eliminación retira sus métricas y recalcula el resumen, manteniendo los puntos de experiencia bajo responsabilidad de Gamification.
 
 ![Persistencia de Progress & Adaptation](assets/diagrams/tactical/05-progress-adaptation-database.png)
+
+**Restricciones de persistencia**
+
+| Objeto | Restricción y relación con las reglas |
+| --- | --- |
+| SESSION_METRICS | UNIQUE(session_id, analysis_version, rubric_version). Cada dimensión presente cumple 0–100. user_id referencia USER_PROGRESS en el mismo esquema; session_id es referencia externa. Se comparan mismo usuario, modo y versiones. |
+| USER_PROGRESS | Los conteos se recalculan por session_id distinto; promedios y mejores resultados se presentan por versiones compatibles, excluyendo valores sin evidencia. |
+| ADAPTIVE_PLANS / PRACTICE_EXERCISES | evidence_ids referencia registros locales existentes; FK plan_id interna. Un plan sin historial suficiente propone práctica inicial y no atribuye debilidades recurrentes. |
+
+La unicidad compuesta se documenta en esta tabla porque comprende varios campos; las marcas PK/FK/UK del diagrama identifican claves simples. Inbox y outbox son registros técnicos del esquema privado: eventId es único en inbox y el despacho confirma la salida después del commit local. No se crean FKs hacia otros contextos.
+
 
 ## 5.6. Bounded Context: Sharing & Retention
 
