@@ -1,57 +1,33 @@
 @startuml
+!include <C4/C4_Component>
 skinparam defaultFontName Arial
-skinparam defaultFontSize 15
-skinparam shadowing false
-skinparam componentStyle uml2
-skinparam backgroundColor white
-skinparam componentBackgroundColor #EAF0FF
-skinparam componentBorderColor #1749B5
-skinparam ArrowColor #536177
-skinparam packageBackgroundColor #F7F9FD
-skinparam dpi 130
-title
-UML Component Diagram: Sharing & Retention
-Descomposición en Sharing Service propuesto (Java / Spring Boot)
-end title
-database "PostgreSQL:\npermisos, solicitudes\ny confirmaciones" as db <<Externo>> #EEEEEE
-queue "Infrastructure:\nRabbitMQ" as broker <<Externo>> #EEEEEE
-component "Contextos propietarios:\neliminar\ny confirmar" as owners <<Externo>> #EEEEEE
-package "Bounded Context:\nSharing & Retention" {
-  package "Interface Layer" {
-    component "Interface:\ncompartir, revocar, exportar\ny eliminar\n[Java / Spring Boot]" as input <<Propuesto>>
-  }
-  package "Application Layer" {
-    component "Application:\ncasos de uso de compartir\ny exportar\n[Java / Spring Boot]" as sharing <<Propuesto>>
-    component "Application:\nsolicitud\ny seguimiento de eliminación\n[Java / Spring Boot]" as deletion <<Propuesto>>
-  }
-  package "Domain Layer" {
-    component "Domain:\nShareGrant\n[Java / Spring Boot]" as grant <<Propuesto>>
-    component "Domain:\nDeletionRequest\ny PurgeReceipt\n[Java / Spring Boot]" as request <<Propuesto>>
-  }
-  package "Infrastructure Layer" {
-    component "Infrastructure:\nrepositorios de permisos\ny solicitudes\n[Java / Spring Boot]" as repo <<Propuesto>>
-  }
+skinparam dpi 150
+LAYOUT_TOP_DOWN()
+title C4 Component Diagram: Sharing & Retention
+Container(bff, "API Gateway / BFF", "HTTPS / JSON", "Fuera del container representado")
+ContainerQueue(bus, "Broker de eventos", "RabbitMQ / AMQP", "Fuera del container representado")
+ContainerDb(db, "Esquema privado del contexto", "PostgreSQL / TLS", "Fuera del container representado")
+Container(scoring, "Scoring & Feedback Worker", "Java / Spring Boot", "Fuera del container representado")
+Container(sessions, "Practice Session Management", "Java / Spring Boot", "Fuera del container representado")
+Container_Boundary(scope, "Sharing & Retention: proceso Java / Spring Boot") {
+  Component(api, "ShareController / DeletionController / ExportController", "Java / Spring Boot", "Interface: Recibe solicitudes de privacidad y lectura compartida")
+  Component(app, "CreateShareGrantHandler / ResolveSharedReportHandler / RevokeShareHandler / RequestDeletionHandler / CollectPurgeReceiptHandler / ExportReportHandler", "Java / Spring Boot", "Application: Autoriza consultas y coordina permisos, exportación y purga")
+  Component(rules, "ShareGrant / DeletionRequest / PurgeReceipt", "Java / Spring Boot", "Domain: Controla vigencia, bloqueo y confirmaciones")
+  Component(repo, "ShareGrantRepository / DeletionRequestRepository", "Java / Spring Boot", "Infrastructure: Conserva hashes, solicitudes y confirmaciones")
+  Component(messaging, "DeletionPublisher / PurgeReceiptConsumer", "Java / Spring Boot", "Infrastructure: Solicita purga y recibe confirmaciones")
+  Component(clients, "SessionAccessClient / AuthorizedReportClient", "Java / Spring Boot", "Infrastructure: Bloquea sesión y recupera únicamente el reporte autorizado")
 }
-input --> sharing : solicita permiso o exportación / Java
-input --> deletion : solicita borrado o estado de purga / Java
-sharing --> grant : define vigencia y alcance / Java
-deletion --> request : registra solicitud y confirmaciones / Java
-sharing --> repo : conserva permisos / Java
-deletion --> repo : conserva solicitud y confirmaciones / Java
-repo --> db : persistencia / SQL
-deletion --> broker : eventos / AMQP
-broker --> owners : eventos / AMQP
-owners --> deletion : contrato entre contextos
-note bottom
-Modelo propuesto
-end note
-legend bottom
-Icono UML: componente; círculo: interfaz.
-Flecha continua: interacción dirigida.
-Relación a interfaz: contrato proporcionado.
-Externo: fuera del proceso representado.
-Propuesto: ampliación pendiente.
-Los casos de uso nombran responsabilidades de diseño;
-no acreditan nuevas clases ni servicios desplegados.
-endlegend
+Rel(api, app, "Delega caso de uso", "Java")
+Rel(messaging, app, "Entrega evento validado", "Java")
+Rel(app, rules, "Aplica reglas de dominio", "Java")
+Rel(app, repo, "Lee y confirma datos del contexto", "Java")
+Rel(app, clients, "Comprueba acceso y recupera reporte", "Java")
+Rel(app, messaging, "Registra salida o confirmación", "Java")
+Rel(bff, api, "Comparte, revoca, exporta o elimina", "HTTPS / JSON")
+Rel(repo, db, "Conserva permisos y solicitudes", "SQL / TLS")
+Rel(messaging, bus, "Publica deletion.requested", "AMQP")
+Rel(bus, messaging, "Entrega purge.completed", "AMQP")
+Rel(clients, sessions, "Verifica propiedad y bloquea acceso", "HTTPS / JSON")
+Rel(clients, scoring, "Consulta reporte autorizado", "HTTPS / JSON")
+SHOW_LEGEND()
 @enduml

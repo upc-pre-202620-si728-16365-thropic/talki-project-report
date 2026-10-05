@@ -1,28 +1,43 @@
 classDiagram
+ direction LR
 class ShareGrant {
-  +UUID id
-  +UUID reportId
-  +Long ownerId
-  +String tokenHash
-  +Date expiresAt
-  +Date revokedAt
-  +isAccessible(now)
-  +revoke()
+  <<AggregateRoot>>
+  -UUID id
+  -UUID reportId
+  -UUID sessionId
+  -Long ownerId
+  -String tokenHash
+  -String scope
+  -Instant expiresAt
+  -Instant revokedAt
+  +isAccessible(Instant now, boolean deleted) boolean
+  +revoke(Instant now) void
 }
 class DeletionRequest {
-  +UUID id
-  +UUID sessionId
-  +Long ownerId
-  +DeletionState state
-  +Date deadline
-  +registerReceipt(context)
-  +complete()
+  <<AggregateRoot>>
+  -UUID id
+  -UUID sessionId
+  -Long ownerId
+  -DeletionState state
+  -Set~String~ expectedContexts
+  -Instant deadline
+  +registerReceipt(PurgeReceipt receipt) void
+  +isComplete() boolean
+}
+class DeletionState {
+  <<enumeration>>
+  REQUESTED
+  ACCESS_BLOCKED
+  PURGING
+  COMPLETED
+  RETRY_REQUIRED
 }
 class PurgeReceipt {
-  +UUID id
-  +String context
-  +Date completedAt
-  +acknowledge()
+  <<Entity>>
+  -UUID id
+  -String context
+  -Instant completedAt
 }
-DeletionRequest "1" *-- "0..*" PurgeReceipt : confirma
-ShareGrant ..> DeletionRequest : bloqueado por tombstone
+DeletionRequest "1" *-- "0..*" PurgeReceipt : confirmaciones
+DeletionRequest --> DeletionState : estado
+ShareGrant ..> DeletionRequest : bloquea acceso por sesión

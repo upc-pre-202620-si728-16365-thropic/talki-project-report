@@ -2808,6 +2808,17 @@ PurgeReceipt registra la confirmación de eliminación enviada por cada contexto
 3. Solicitar la eliminación bloquea el acceso al recurso; la eliminación física concluye cuando se reciben las confirmaciones requeridas.
 4. La exportación incluye únicamente información autorizada del reporte.
 
+**Atributos y operaciones del modelo de dominio**
+
+Los atributos se encapsulan; las operaciones públicas expresan las reglas del contexto. Las interfaces y enumeraciones se distinguen en el UML. Este modelo especifica el diseño objetivo del TP.
+
+| Elemento | Atributos o valores | Operaciones públicas |
+| --- | --- | --- |
+| ShareGrant | UUID id<br>UUID reportId<br>UUID sessionId<br>Long ownerId<br>String tokenHash<br>String scope<br>Instant expiresAt<br>Instant revokedAt | isAccessible(Instant now, boolean deleted) boolean<br>revoke(Instant now) void |
+| DeletionRequest | UUID id<br>UUID sessionId<br>Long ownerId<br>DeletionState state<br>Set~String~ expectedContexts<br>Instant deadline | registerReceipt(PurgeReceipt receipt) void<br>isComplete() boolean |
+| DeletionState | REQUESTED<br>ACCESS_BLOCKED<br>PURGING<br>COMPLETED<br>RETRY_REQUIRED | Consulta mediante el agregado o servicio responsable. |
+| PurgeReceipt | UUID id<br>String context<br>Instant completedAt | Consulta mediante el agregado o servicio responsable. |
+
 ### 5.6.2. Interface Layer
 
 Los controladores propuestos reciben las solicitudes de compartir, revocar, exportar y eliminar. Su responsabilidad es identificar al solicitante, validar la estructura de los datos y delegar el caso de uso correspondiente.
@@ -2833,7 +2844,7 @@ La capa de aplicación propuesta coordina la creación de permisos, la consulta 
 
 La creación de un permiso, su revocación y la solicitud de eliminación modifican el estado de ShareGrant o DeletionRequest. La recepción de una confirmación actualiza el avance de la eliminación.
 
-**Queries propuestas**
+**Queries del diseño objetivo**
 
 La lectura compartida comprueba la vigencia del permiso antes de recuperar la vista autorizada del reporte. La exportación prepara únicamente la información que puede consultar el solicitante.
 
@@ -2854,6 +2865,14 @@ Los manejadores propuestos separan cada operación y reúnen las comprobaciones 
 
 **Recorrido del caso de uso.** Compartir genera un permiso temporal; consultar verifica su vigencia y revocación. Eliminar bloquea nuevas consultas y solicita el retiro de los datos a cada contexto responsable. La solicitud se completa cuando se reúnen las confirmaciones esperadas.
 
+**Contratos de coordinación**
+
+| Clase o grupo de clases | Responsabilidad | Operaciones previstas |
+| --- | --- | --- |
+| CreateShareGrantHandler / ResolveSharedReportHandler / RevokeShareHandler / RequestDeletionHandler / CollectPurgeReceiptHandler / ExportReportHandler | Autoriza consultas y coordina permisos, exportación y purga. | createGrant(reportId, expiry); revoke(id); resolve(token); delete(sessionId); collect(receipt); export(reportId) |
+
+Los handlers validan la petición o el evento antes de ejecutar cambios. Los puertos de repositorio y de integración son contratos; los adaptadores de Infrastructure realizan esos contratos. Los nombres describen clases previstas para implementar el diseño, sin afirmar que estén desplegadas.
+
 ### 5.6.4. Infrastructure Layer
 
 La capa de infraestructura propuesta conserva los permisos y solicitudes y comunica la eliminación a los contextos propietarios de los datos.
@@ -2870,7 +2889,16 @@ Los enlaces se conservan mediante un hash. Si no puede comprobarse la vigencia d
 
 ### 5.6.5. Bounded Context Software Architecture Component Level Diagrams
 
-Las solicitudes de compartir, revocar, exportar y eliminar se coordinan mediante casos de uso separados. Los repositorios conservan los permisos y las confirmaciones permiten seguir el avance de la eliminación.
+Esta vista C4 descompone el container de Sharing & Retention definido en 4.3.3. Los elementos externos se sitúan fuera de su frontera; las relaciones indican responsabilidad y protocolo. Las clases siguientes colaboran en los componentes del proceso y mantienen la separación de capas.
+
+| Clases agrupadas en el componente | Capa | Responsabilidad |
+| --- | --- | --- |
+| ShareController / DeletionController / ExportController | Interface | Recibe solicitudes de privacidad y lectura compartida. |
+| CreateShareGrantHandler / ResolveSharedReportHandler / RevokeShareHandler / RequestDeletionHandler / CollectPurgeReceiptHandler / ExportReportHandler | Application | Autoriza consultas y coordina permisos, exportación y purga. |
+| ShareGrant / DeletionRequest / PurgeReceipt | Domain | Controla vigencia, bloqueo y confirmaciones. |
+| ShareGrantRepository / DeletionRequestRepository | Infrastructure | Conserva hashes, solicitudes y confirmaciones. |
+| DeletionPublisher / PurgeReceiptConsumer | Infrastructure | Solicita purga y recibe confirmaciones. |
+| SessionAccessClient / AuthorizedReportClient | Infrastructure | Bloquea sesión y recupera únicamente el reporte autorizado. |
 
 ![Componentes de Sharing & Retention](assets/diagrams/tactical/06-sharing-retention-components.png)
 
@@ -2878,7 +2906,7 @@ Las solicitudes de compartir, revocar, exportar y eliminar se coordinan mediante
 
 #### 5.6.6.1. Bounded Context Domain Layer Class Diagrams
 
-ShareGrant administra la vigencia del acceso. DeletionRequest reúne los registros PurgeReceipt y conserva el estado de la eliminación hasta recibir las confirmaciones necesarias.
+ShareGrant administra vigencia y alcance del acceso. DeletionRequest reúne PurgeReceipt, los contextos esperados y DeletionState. La solicitud avanza desde REQUESTED hasta COMPLETED; si falta una confirmación queda PURGING o RETRY_REQUIRED.
 
 ![Clases de Sharing & Retention](assets/diagrams/tactical/06-sharing-retention-classes.png)
 
@@ -2887,6 +2915,17 @@ ShareGrant administra la vigencia del acceso. DeletionRequest reúne los registr
 share_grants almacena el reporte, propietario, hash del enlace y fechas de vigencia y revocación. deletion_requests registra la solicitud de eliminación y purge_receipts sus confirmaciones. Los registros deben evitar permisos o confirmaciones duplicados. Este esquema corresponde al diseño propuesto.
 
 ![Persistencia de Sharing & Retention](assets/diagrams/tactical/06-sharing-retention-database.png)
+
+**Restricciones de persistencia**
+
+| Objeto | Restricción y relación con las reglas |
+| --- | --- |
+| SHARE_GRANTS | token_hash único; expires_at posterior a creación. Scope limitado al reporte. session_id permite bloquear todos los permisos al eliminar; no se guarda el token en claro. |
+| DELETION_REQUESTS | UNIQUE(session_id), para una solicitud activa de eliminación. expected_contexts conserva los destinatarios que deberán confirmar; estados definidos en UML. |
+| PURGE_RECEIPTS | UNIQUE(request_id, context), FK request_id local. Confirmaciones repetidas no completan dos veces la solicitud. |
+
+La unicidad compuesta se documenta en esta tabla porque comprende varios campos; las marcas PK/FK/UK del diagrama identifican claves simples. Inbox y outbox son registros técnicos del esquema privado: eventId es único en inbox y el despacho confirma la salida después del commit local. No se crean FKs hacia otros contextos.
+
 
 ## 5.7. Bounded Context: Gamification
 

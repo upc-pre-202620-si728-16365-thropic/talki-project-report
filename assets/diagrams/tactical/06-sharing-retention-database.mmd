@@ -1,23 +1,26 @@
 erDiagram
-  share_grants {
-    uuid id PK
-    uuid report_id
-    bigint owner_id
-    string token_hash UK
-    timestamp expires_at
-    timestamp revoked_at
-  }
-  deletion_requests {
-    uuid id PK
-    uuid session_id
-    bigint owner_id
-    string state
-    timestamp deadline
-  }
-  purge_receipts {
-    uuid id PK
-    uuid request_id FK
-    string context
-    timestamp completed_at
-  }
-  deletion_requests ||--o{ purge_receipts : confirma
+    DELETION_REQUESTS ||--o{ PURGE_RECEIPTS : confirma
+    SHARE_GRANTS {
+        uuid id PK
+        uuid report_id
+        uuid session_id
+        bigint owner_id
+        varchar token_hash UK
+        varchar scope
+        timestamp expires_at
+        timestamp revoked_at
+    }
+    DELETION_REQUESTS {
+        uuid id PK
+        uuid session_id
+        bigint owner_id
+        varchar state
+        jsonb expected_contexts
+        timestamp deadline
+    }
+    PURGE_RECEIPTS {
+        uuid id PK
+        uuid request_id FK
+        varchar context
+        timestamp completed_at
+    }
