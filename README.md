@@ -4399,15 +4399,15 @@ El mensaje confirma que la sesión ya no puede consultarse e informa que la elim
 
 ## 6.5. Applications Prototyping
 
-**Cliente web de Talki.** La [aplicación web](https://talki-frontend.vercel.app) reúne las pantallas de acceso, sesiones, Coach y feedback. Su [repositorio](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend) documenta la implementación de referencia para el diseño web.
+**Prototipo web y móvil de Talki.** El prototipo de diseño permite recorrer preparación, práctica, análisis, historial, comparación, plan y privacidad en ambos tamaños de pantalla. El [cliente web de Talki](https://talki-frontend.vercel.app) se conserva como referencia de pantallas; su enlace no acredita que estén disponibles los servicios de esta arquitectura objetivo.
 
-**Prototipo de pantallas complementarias.**
+**Acceso al prototipo de diseño.**
 
-El [prototipo de diseño](assets/ux/prototype/index.html#privacy) permite explorar las propuestas de consentimiento, recuperación, análisis, comparación, plan de práctica y control de datos. En escritorio, las pantallas del cliente web se presentan mediante capturas de referencia; los complementos y la adaptación móvil ofrecen recorridos interactivos con datos de ejemplo. Para recorrerlo, se debe abrir el HTML en un navegador siguiendo las [instrucciones de ejecución](assets/ux/prototype/README.md).
+El [prototipo de diseño](assets/ux/prototype/index.html#privacy) permite explorar las propuestas de consentimiento, recuperación, análisis, comparación, plan de práctica y control de datos. El recorrido predeterminado es interactivo en escritorio y móvil. La variante `?reference=1` conserva las capturas del cliente para comparación visual; esas capturas son estáticas y se distinguen del recorrido demostrable. Para recorrerlo, se debe abrir el HTML en un navegador siguiendo las [instrucciones de ejecución](assets/ux/prototype/README.md).
 
 | Recorrido de demostración | Acciones disponibles |
 | --- | --- |
-| Cliente web | Consultar las pantallas de acceso, inicio, Coach, sesiones y feedback de Talki. |
+| Web y móvil | Explorar las mismas tareas de configuración, práctica, reporte, historial y control de datos. |
 | Preparación | Elegir el escenario y las condiciones del ensayo, y explorar la comprobación de audio y el consentimiento. |
 | Recuperación | Explorar la respuesta a permisos denegados, desconexiones y fallos de análisis. |
 | Progreso | Consultar el historial de ejemplo, aplicar filtros y comparar sesiones compatibles. |
@@ -4430,6 +4430,8 @@ El recorrido comienza con la configuración de la práctica, continúa con la pr
 <img src="assets/ux/mockups/mobile-report.png" alt="Prototipado de Talki: revisar el feedback" width="320">
 
 **Alcance del prototipo.** Los formularios, las confirmaciones y los estados complementarios permiten evaluar la secuencia de tareas y la comprensión de los mensajes. Las puntuaciones, transcripciones y tendencias son datos de ejemplo. El prototipo simula la interacción sin conectarse a servicios de autenticación, análisis de voz o almacenamiento; la validación funcional corresponde a la aplicación integrada.
+
+**Evidencia audiovisual del prototipo.** La captura y el enlace Microsoft Stream por aplicación están pendientes de grabación/publicación. El recorrido local está disponible para revisión; no sustituye esa evidencia solicitada por el formato.
 
 **Evaluación prevista.** La revisión con estudiantes de ambos segmentos observará si pueden preparar una práctica, comprender su feedback y administrar el acceso a sus reportes. Se registrarán el éxito de las tareas, el tiempo de preparación y las dificultades encontradas. El objetivo de QAS-USA-01 es que al menos el 90 % inicie una sesión válida en tres minutos o menos sin asistencia. Los resultados se documentarán en el capítulo VII cuando se realice la evaluación.
 

@@ -1,25 +1,16 @@
-# Complementos UX de Talki
+# Prototipo UX de Talki
 
-Artefacto auxiliar de diseño del capítulo VI. El prototipo principal es el [cliente web de Talki](https://talki-frontend.vercel.app), que incluye acceso, dashboard, Coach, sesiones, grabación y feedback.
+Recorrido de diseño para web y móvil del capítulo VI, con datos de ejemplo. Las interacciones son simuladas y el estado vive en memoria; no solicita micrófono ni conecta servicios, IA o almacenamiento. El archivo opcional solo se valida por nombre/tamaño y no se lee ni envía.
 
-En escritorio, esas seis vistas del auxiliar presentan sus capturas originales y un enlace al cliente web. Las capturas son estáticas. Los complementos interactivos cubren las pantallas y estados adicionales; la vista móvil es una propuesta de adaptación. Los colores de `tokens.css` proceden de `src/app/globals.css` del frontend Talki, versión `d63e889a216d093a86bf24a2a328c18d0e610618`. El tema claro usa naranja `#F97316`, fondo `#F7F8FC` y texto `#0F172A`. El archivo conserva también los valores del tema oscuro. Los controles y tablas utilizan esos tokens.
+Sirve la raíz del repositorio con `python3 -m http.server 8000` y visita `http://localhost:8000/assets/ux/prototype/`. El enlace HTML en GitHub muestra código, por lo que se debe abrir localmente o mediante un servidor estático.
 
-Abre `index.html` en un navegador o sirve la raíz del repositorio con:
+- Vista predeterminada: interacción web; a 390 px se adapta a móvil.
+- `?view=wireframe`: estructura en escala de grises.
+- `?reference=1`: conserva las seis capturas web del cliente como referencia visual estática.
+- Hashes: `#setup`, `#microphone`, `#live`, `#processing`, `#report`, `#history`, `#compare`, `#plan`, `#privacy`, `#shared`, `#terms`.
 
-```sh
-python3 -m http.server 8000
-```
+En preparación, completa título/meta, selecciona modo y continúa. Comprueba el audio simulado y acepta el consentimiento para iniciar. Pausa o simula desconexión, reanuda y confirma el cierre. En análisis, explora fallo/reintento o un reporte parcial. En historial, filtra y compara; las versiones incompatibles se bloquean. El plan permite marcar un ejercicio y volver a practicar. En privacidad, comparte, consulta como tutor, revoca y confirma eliminación; se distingue el bloqueo de acceso de la purga pendiente. Recargar reinicia los datos.
 
-Visita `http://localhost:8000/assets/ux/prototype/`. El HTML en GitHub muestra código, no ejecuta la aplicación. No requiere instalación de paquetes o conexión a servicios externos.
+Los términos propuestos se acceden desde los footers públicos y de aplicación. El recorrido principal se presenta en español. El diseño bilingüe de en_US/es_419 se ilustra aparte en el informe; la integración del catálogo completo de traducciones y servicios está pendiente. La captura y publicación de las demostraciones por aplicación en Microsoft Stream también están pendientes.
 
-- Vista web: ventana de escritorio; mock-ups exportados a 1440 px.
-- Vista móvil: ventana de 390 px; navegación inferior a ≤ 700 px.
-- Wireframe: `index.html?view=wireframe`.
-- Pantalla directa: hash `#setup`, `#microphone`, `#live`, `#report`, `#privacy`, etc.
-- Recargar la página restaura los datos de ejemplo.
-
-La vista inicial es privacidad. Para preparar una práctica, abre `#setup` y pulsa **Explorar material contextual**; en móvil se muestra directamente la propuesta de configuración. En audio, pulsa **Simular prueba correcta** y marca el consentimiento para habilitar **Iniciar práctica**. Puedes pausar, reanudar, simular desconexión y confirmar el cierre. En análisis, elige reporte disponible, fallo o evidencia insuficiente. En privacidad, crea un acceso de ejemplo, consulta como tutor, revoca y verifica que ya no se muestre el reporte. La eliminación requiere confirmación y permanece como purga pendiente.
-
-Los datos, nombres de personas, transcripción, puntuaciones, gráfico y cronómetro son ficticios. No hay autenticación real, IA, micrófono, backend, correo, cobro o purga física. El archivo de material solo se valida por nombre/tamaño, no se lee ni envía. El estado del recorrido vive en memoria; no se guardan datos personales. Las rutas directas ayudan a revisar pantallas y no representan autorización de un producto en producción.
-
-Los wireframes describen las estructuras de pantallas y navegación en escala de grises. Las seis capturas web existentes no se vuelven a generar como mock-ups. Las capturas se encuentran en `../wireframes/` y `../mockups/`. Los flujos editables están en `../../diagrams/ux/`.
+El naranja #F97316 mantiene la marca; sus controles usan texto #0F172A. Los enlaces usan #9A3412 y el foco permanece visible. Las capturas originales se preservan como referencias del cliente; las pantallas de propuesta reflejan los ajustes de accesibilidad.

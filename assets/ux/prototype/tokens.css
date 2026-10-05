@@ -1,5 +1,6 @@
 /* Tokens de Talki. Fuente: https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend/blob/d63e889a216d093a86bf24a2a328c18d0e610618/src/app/globals.css */
 :root {
+  --action-text: #9A3412;
   --background: #F7F8FC;
   --foreground: #0F172A;
   --card: #FFFFFF;
@@ -7,18 +8,18 @@
   --popover: #FFFFFF;
   --popover-foreground: #0F172A;
   --primary: #F97316;
-  --primary-foreground: #FFFFFF;
+  --primary-foreground: #0F172A;
   --secondary: #F1F3F9;
   --secondary-foreground: #0F172A;
   --muted: #F1F3F9;
   --muted-foreground: #475569;
   --accent: #F1F3F9;
   --accent-foreground: #0F172A;
-  --destructive: #EF4444;
+  --destructive: #B91C1C;
   --destructive-foreground: #FFFFFF;
   --border: #E2E8F0;
   --input: #E2E8F0;
-  --ring: #F97316;
+  --ring: #9A3412;
   --chart-1: #F97316;
   --chart-2: #ea7a12;
   --chart-3: #22C55E;
@@ -28,13 +29,14 @@
   --sidebar: #FFFFFF;
   --sidebar-foreground: #0F172A;
   --sidebar-primary: #F97316;
-  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-primary-foreground: #0F172A;
   --sidebar-accent: #F1F3F9;
   --sidebar-accent-foreground: #0F172A;
   --sidebar-border: #E2E8F0;
   --sidebar-ring: #F97316;
 }
 .dark {
+  --action-text: #6C7CFF;
   --background: #0F1117;
   --foreground: #E6E8EC;
   --card: #161A22;
