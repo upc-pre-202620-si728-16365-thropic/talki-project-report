@@ -1676,7 +1676,7 @@ El equipo partió de los momentos de mayor valor, obtener feedback del ensayo y 
 
 #### Fase 2: Comandos, actores, políticas y sistemas externos
 
-Sobre los eventos, el equipo agregó los comandos que los originan, los actores que los emiten y las políticas que reaccionan en cadena. Esta fase hizo visible el contraste entre dos mundos que conviven en Talki: el **mundo síncrono en vivo** (comandos del estudiante que producen señales de coaching con restricción de latencia) y el **mundo asíncrono posterior** (cadena de políticas que transforma `Sesión Finalizada` en `Reporte Disponible`). También se marcaron los sistemas externos: Gemini Live API alimenta tanto la conversación en vivo como parte del procesamiento posterior, siempre detrás de un adaptador.
+Sobre los eventos, el equipo agregó los comandos que los originan, los actores que los emiten y las políticas que reaccionan en cadena. Esta fase hizo visible el contraste entre dos mundos que conviven en Talki: el **mundo síncrono en vivo** (comandos del estudiante que producen señales de coaching con restricción de latencia) y el **mundo asíncrono posterior** (cadena de políticas que transforma `Sesión Finalizada` en `Reporte Disponible`). También se marcaron los sistemas externos: Gemini Live API sostiene la conversación y la transcripción en vivo. El procesamiento posterior utiliza la evidencia autorizada reunida al cierre; una futura capacidad externa de análisis requerirá ampliar explícitamente el contrato de la pasarela.
 
 #### Fase 3: Eventos pivote y hot spots
 
@@ -1698,7 +1698,7 @@ Las zonas en disputa se registraron como *hot spots* rosados y se resolvieron o 
 | ¿Quién decide si una sesión es válida para puntuar? | La política de validez pertenece al ciclo de sesión; el análisis y la gamificación solo consumen el veredicto. |
 | ¿Dónde vive el consentimiento? | Se registra una vez con la identidad y se propaga como estado verificable; no se consulta en línea en cada captura. |
 | ¿Qué pasa si Gemini Live no responde a mitad de la sesión? | Degradación explícita: conservar estado confirmado, ofrecer cierre seguro o resultado parcial etiquetado (QAS-AVA-01). |
-| ¿Cómo evitamos reportes duplicados por reintentos del bus? | Clave de idempotencia `session_id + analysis_version` en todos los consumidores (ADD-05). |
+| ¿Cómo evitamos reportes duplicados por reintentos del bus? | Cada consumidor registra eventId. Analysis usa sesión/versión de análisis; Scoring añade versión de rúbrica; progreso conserva versiones y gamificación cuenta una sola contribución por sesión (ADD-05). |
 
 ![Fase 3 de EventStorming: eventos pivote marcados y hot spots discutidos sobre el tablero](assets/images/eventstorming/es-02-pivotal-events-hotspots.png)
 
@@ -1760,13 +1760,13 @@ Para visualizar cómo deben colaborar los bounded contexts, el equipo aplicó **
 | 4 | Estudiante | Inicia la práctica | Sesión activa | Practice Session Management → Live Coaching |
 | 5 | Live Coaching | Transcribe en vivo y emite señales de ritmo, volumen y pausas | Transcripción incremental, señales | Live Coaching (con AI Provider Gateway) |
 | 6 | Estudiante | Finaliza y confirma | Sesión finalizada | Practice Session Management |
-| 7 | Live Coaching | Publica `Sesión Finalizada` con la transcripción consolidada | Evento de cierre | Live Coaching → Speech Analysis |
+| 7 | Practice Session Management | Confirma la evidencia recibida de Live Coaching y publica `Sesión Finalizada` | Evento de cierre y veredicto de validez | Practice Session Management → Speech Analysis |
 | 8 | Speech Analysis | Calcula métricas (muletillas, silencios, volumen, vocabulario) | Métricas de discurso | Speech Analysis |
 | 9 | Scoring & Feedback | Genera puntuación, sugerencias priorizadas y explicación por segmento | Reporte | Scoring & Feedback |
 | 10 | Progress & Adaptation | Actualiza progreso y compara con sesiones previas | Panel de progreso | Progress & Adaptation |
 | 11 | Estudiante | Consulta el reporte y elige una acción de mejora | Reporte, plan de acción | Scoring & Feedback (reporte publicado) |
 
-![Domain Storytelling DS-01: colaboración de bounded contexts en la primera práctica guiada](assets/images/domain-storytelling/ds-01-primera-practica.png)
+![Domain Storytelling DS-01: colaboración de bounded contexts en la primera práctica guiada](assets/diagrams/c4/practice-story-sequence.png)
 
 #### DS-02: Simulación contextualizada (segmento 2: Rodrigo)
 
@@ -1777,12 +1777,12 @@ Para visualizar cómo deben colaborar los bounded contexts, el equipo aplicó **
 | 3 | Live Coaching | Solicita la contextualización del simulador | Configuración de simulación | Live Coaching → AI Provider Gateway |
 | 4 | AI Provider Gateway | Traduce el contrato canónico al proveedor y contextualiza con material autorizado | Sesión de simulación con Gemini Live | AI Provider Gateway (ACL hacia Gemini) |
 | 5 | Estudiante | Responde preguntas y repreguntas por voz | Turnos de conversación | Live Coaching |
-| 6 | Live Coaching | Mantiene turnos, tiempos y métricas; cierra la simulación | Transcripción consolidada | Live Coaching |
+| 6 | Live Coaching | Reúne la evidencia autorizada y solicita a Sessions confirmar el cierre | Transcripción consolidada, cierre y veredicto de validez | Live Coaching → Practice Session Management |
 | 7 | Speech Analysis | Evalúa claridad de respuestas con el contexto autorizado | Métricas y cobertura temática | Speech Analysis |
 | 8 | Scoring & Feedback | Genera reporte por competencia con evidencia trazable | Reporte avanzado | Scoring & Feedback |
 | 9 | Notifications | Notifica que el reporte está disponible | Notificación | Notifications |
 
-![Domain Storytelling DS-02: simulación contextualizada con material autorizado](assets/images/domain-storytelling/ds-02-simulacion-contextualizada.png)
+![Domain Storytelling DS-02: simulación contextualizada con material autorizado](assets/diagrams/c4/contextual-story-sequence.png)
 
 #### DS-03: Compartir y revocar un reporte (colaboración con tutor)
 
@@ -1794,12 +1794,12 @@ Para visualizar cómo deben colaborar los bounded contexts, el equipo aplicó **
 | 4 | Estudiante | Revoca el acceso | Orden de revocación | Sharing & Retention |
 | 5 | Sharing & Retention | Invalida el enlace de inmediato y publica `Acceso Revocado` | Evento de revocación | Sharing & Retention → Notifications |
 | 6 | Estudiante | Solicita eliminar una sesión | Orden de eliminación | Sharing & Retention |
-| 7 | Sharing & Retention | Propaga la eliminación lógica a los contextos dueños de los datos | Órdenes de purga | Sharing & Retention → Practice Session Management / Scoring & Feedback / Progress & Adaptation / Gamification |
+| 7 | Sharing & Retention | Confirma el bloqueo en Sessions y después solicita la purga de los datos | Bloqueo de acceso, órdenes y confirmaciones de purga | Sessions, Speech Analysis, Scoring, Progress, Gamification y Notifications |
 | 8 | Notifications | Informa al usuario el resultado de la acción | Notificación | Notifications |
 
 ![Secuencia de colaboración DS-03: compartición temporal, revocación y eliminación bajo control del propietario](assets/diagrams/c4/privacy-story-sequence.png)
 
-Los tres flujos confirmaron las fronteras: el material de contexto viaja de Practice Session Management hacia la pasarela sin que Live Coaching conozca su formato interno y el consentimiento actúa como compuerta previa a la captura. Sharing & Retention invalida el permiso antes de responder a la revocación; después comunica el cambio por eventos a los demás contextos, manteniendo el bloqueo de nuevas consultas independiente de la entrega de avisos.
+Los tres flujos confirmaron las fronteras: Sessions entrega a Live Coaching un resumen del material autorizado; Live incorpora ese resumen en las instrucciones de preparación enviadas a la pasarela y el consentimiento actúa como compuerta previa a la captura. Sharing & Retention invalida el permiso antes de responder a la revocación; después comunica el cambio por eventos a los demás contextos, manteniendo el bloqueo de nuevas consultas independiente de la entrega de avisos.
 
 ### 4.2.4. Bounded Context Canvases
 
@@ -1813,10 +1813,10 @@ Cada canvas se elaboró siguiendo un proceso iterativo con seis pasos: (1) **Con
 | Propósito | Sostener la interacción por voz en tiempo cercano al real: capturar audio, transcribir incrementalmente, conducir simulaciones y emitir señales de coaching sin interrumpir el discurso. |
 | Lenguaje ubicuo | Señal de coaching, transcripción incremental, turno de conversación, repregunta, fragmento de audio, canal en vivo. |
 | Capacidades clave | Gestionar el canal en vivo (WebSocket); transcribir incrementalmente; generar señales de ritmo/volumen/pausas; conducir la simulación con turnos y tiempos; consolidar la transcripción al cierre. |
-| Eventos publicados | `Grabación Iniciada`, `Transcripción Incrementada`, `Señal de Coaching Emitida`, `Sesión Finalizada` (con transcripción consolidada). |
+| Hechos producidos | `Grabación Iniciada`, `Transcripción Incrementada` y `Señal de Coaching Emitida` durante el recorrido. Live entrega la evidencia de cierre a Sessions; Sessions publica `Sesión Finalizada` después de confirmarla. |
 | Eventos consumidos | `Sesión Preparada` (Practice Session Management), `Consentimiento Otorgado` (Identity & Access). |
 | Reglas de negocio | Ninguna captura sin consentimiento válido y prueba de audio; las señales pueden silenciarse pero nunca bloquean la captura; la finalización ocurre una sola vez por sesión. |
-| Dependencias | Aguas arriba: Practice Session Management (Customer/Supplier), Identity & Access (Conformist). Aguas abajo: Speech Analysis (publica el cierre). Hacia AI Provider Gateway: Customer/Supplier. |
+| Dependencias | Aguas arriba: Practice Session Management (Customer/Supplier), Identity & Access (Conformist). Entrega evidencia a Practice Session Management para el cierre durable. Hacia AI Provider Gateway: Customer/Supplier para preparar la credencial. |
 | Capas de capacidades | Núcleo de tiempo real (canal, señales); soporte de conversación (simulación); adaptación (pasarela de IA). |
 | Crítica de diseño | Se evaluó separar "captura" y "conversación de simulación"; se rechazó para el piloto por compartir restricciones de latencia y equipo; se documenta como posible partición futura si escala la concurrencia. |
 
@@ -1825,13 +1825,13 @@ Cada canvas se elaboró siguiendo un proceso iterativo con seis pasos: (1) **Con
 | Sección | Contenido |
 |---|---|
 | Clasificación estratégica | Core domain. Núcleo del valor de conocimiento: convertir el discurso en métricas confiables. |
-| Propósito | Procesar la transcripción consolidada y producir métricas de fluidez, claridad, volumen, vocabulario y confianza, con detección de muletillas, manejo de silencios y palabras clave. |
+| Propósito | Procesar la transcripción consolidada y la evidencia acústica/contextual disponible. Producir métricas y hallazgos de fluidez, claridad, volumen y vocabulario; no inferir volumen o confianza solo del texto ni generar dimensiones sin soporte. |
 | Lenguaje ubicuo | Métrica de discurso, muletilla, proporción de silencios, estabilidad de volumen, riqueza léxica, versión de análisis, evidencia. |
 | Capacidades clave | Iniciar y procesar el análisis; calcular métricas dimensionales; identificar muletillas y palabras clave; consultar estado y reintentar (US37); versionar cada ejecución de análisis. |
 | Eventos publicados | `Análisis Iniciado`, `Métricas de Discurso Calculadas`, `Análisis Fallido`. |
-| Eventos consumidos | `Sesión Finalizada` (Live Coaching), material autorizado (Practice Session Management). |
+| Eventos consumidos | `Sesión Finalizada` (Practice Session Management), con evidencia y contexto autorizados. |
 | Reglas de negocio | Un único resultado por `session_id + analysis_version` (idempotencia, ADD-05); una sesión sin evidencia suficiente se marca como tal sin fabricar conclusiones; el procesamiento usa solo material autorizado. |
-| Dependencias | Aguas arriba: Live Coaching (Customer/Supplier vía lenguaje publicado). Hacia AI Provider Gateway: Customer/Supplier. Aguas abajo: Scoring & Feedback (recibe las métricas y conserva el reporte). Speech Analysis no conserva una copia de negocio del reporte. |
+| Dependencias | Aguas arriba: Practice Session Management (Customer/Supplier vía lenguaje publicado). Aguas abajo: Scoring & Feedback (recibe las métricas y conserva el reporte). Speech Analysis no conserva una copia de negocio del reporte. |
 | Capas de capacidades | Ingesta y consolidación; enriquecimiento lingüístico y acústico; cómputo de métricas versionadas. |
 | Crítica de diseño | Se evaluó un Shared Kernel de definiciones de métricas con Scoring & Feedback; se rechazó en favor de un lenguaje publicado versionado (C-09) para preservar autonomía de despliegue. |
 
@@ -1857,7 +1857,7 @@ Cada canvas se elaboró siguiendo un proceso iterativo con seis pasos: (1) **Con
 | Propósito | Crear, configurar, validar y cerrar sesiones de práctica; administrar el material de contexto y declarar la validez de cada sesión. |
 | Lenguaje ubicuo | Borrador de sesión, modo de práctica (pitch, exposición, entrevista, sustentación), duración objetivo, área de enfoque, material autorizado, sesión válida. |
 | Capacidades clave | Crear borrador y configurar sesión; validar micrófono y consentimiento previos (US29); recibir y autorizar material (US30); gestionar estados (pausa, reanudación, recuperación US34); declarar validez para puntuación. |
-| Eventos publicados | `Borrador de Sesión Creado`, `Material de Contexto Cargado`, `Sesión Preparada`, `Sesión Recuperada`, veredicto de validez. |
+| Eventos publicados | `Borrador de Sesión Creado`, `Material de Contexto Cargado`, `Sesión Preparada`, `Sesión Recuperada`, `Sesión Finalizada` y veredicto de validez. |
 | Eventos consumidos | `Cuenta Registrada` / `Consentimiento Otorgado` (Identity & Access). |
 | Reglas de negocio | No se inicia sin consentimiento y prueba de audio; el borrador es cancelable; la validez se declara una vez y los consumidores la respetan (hot spot resuelto en 4.2.1). |
 | Dependencias | Aguas arriba: Identity & Access (Conformist). Aguas abajo: Live Coaching, Speech Analysis y Gamification (Customer/Supplier: consumen sus eventos). |
@@ -1924,13 +1924,13 @@ Cada canvas se elaboró siguiendo un proceso iterativo con seis pasos: (1) **Con
 | Sección | Contenido |
 |---|---|
 | Clasificación estratégica | Generic subdomain. Capacidad técnica que aísla al dominio del proveedor externo (C-01). |
-| Propósito | Ofrecer un contrato canónico de capacidades de IA (voz en vivo, análisis, contextualización) y traducirlo a proveedores concretos, iniciando por Gemini Live. |
+| Propósito | Preparar credenciales efímeras e instrucciones autorizadas mediante un contrato independiente del proveedor, iniciando por Gemini Live. La voz viaja directamente entre cliente y proveedor; la pasarela no transporta audio ni ejecuta el análisis posterior. |
 | Lenguaje ubicuo | Contrato canónico, capacidad declarada, adaptador de proveedor, Anti-Corruption Layer. |
 | Capacidades clave | Negociar capacidades del proveedor; traducir contratos; medir latencia y disponibilidad por proveedor; conmutar proveedor por configuración. |
 | Eventos publicados | Hechos de operación (proveedor degradado, disponible) para observabilidad. |
-| Eventos consumidos | Solicitudes de Live Coaching y Speech Analysis. |
+| Peticiones recibidas | Preparación interna de credenciales desde Live Coaching. |
 | Reglas de negocio | Solo el material autorizado sale hacia el proveedor; las capacidades exclusivas de un proveedor se declaran opcionales y no contaminan el contrato común (QAS-INT-01). |
-| Dependencias | Aguas arriba: Live Coaching y Speech Analysis (Customer/Supplier sobre su lenguaje publicado). Aguas abajo: Gemini Live API mediante Anti-Corruption Layer. |
+| Dependencias | Colabora con Live Coaching mediante un contrato interno de preparación. Aguas abajo: Gemini Live API mediante Anti-Corruption Layer. |
 | Crítica de diseño | Se evaluó que cada contexto integre al proveedor por su cuenta; se rechazó porque duplicaría traducción, límites de consumo y controles de privacidad. |
 
 #### 10. Notifications (Notificaciones)
@@ -1977,17 +1977,17 @@ El equipo evaluó explícitamente un **Shared Kernel** de definiciones de métri
 |---|---|---|---|---|
 | Identity & Access | Todos los contextos | Open Host Service + Published Language; downstream **Conformist** | Tokens firmados y claims de consentimiento; API de validación estable | Ningún contexto reinventa identidad ni consentimiento; adoptan el modelo de claims tal cual. |
 | Practice Session Management | Live Coaching, Speech Analysis, Gamification | Customer/Supplier + Published Language | Eventos de ciclo de vida y veredicto de validez versionados | El ciclo de sesión alimenta al resto; los consumidores se adaptan al contrato publicado. |
-| Live Coaching | Speech Analysis | Customer/Supplier | Evento `Sesión Finalizada` con transcripción consolidada versionada | El análisis consume el cierre; el formato de transcripción pertenece a quien la produce. |
+| Live Coaching | Practice Session Management | Customer/Supplier | Evidencia autorizada y petición idempotente de cierre | Sessions confirma el cambio y su outbox antes de entregar el evento al análisis. |
 | Speech Analysis | Scoring & Feedback | Customer/Supplier + Published Language | Esquema versionado de métricas de discurso | Consistencia entre versiones sin Shared Kernel (C-09). |
 | Scoring & Feedback | Progress & Adaptation, Gamification, Sharing & Retention | Customer/Supplier + Published Language | Evaluación completada (`scoring.completed`) y consulta del reporte publicado | Progreso y gamificación reciben la evaluación; compartición referencia el reporte conservado por Scoring. |
-| Live Coaching, Speech Analysis | AI Provider Gateway | Customer/Supplier sobre Open Host Service | Contrato canónico de capacidades de IA | Ambos contextos consumen el mismo contrato; la conmutación de proveedor es transparente. |
+| AI Provider Gateway | Live Coaching | Open Host Service + Published Language, relación Customer/Supplier | Preparación de credencial, capacidad del modo y vigencia | La pasarela ofrece el contrato estable; Live es su consumidor y mantiene separada la voz WSS del cierre de Sessions. |
 | AI Provider Gateway | Gemini Live API (externo) | **Anti-Corruption Layer** | Adaptador de proveedor + negociación de capacidades | Impide que el modelo del proveedor contamine el lenguaje del dominio (ADD-06, QAS-INT-01). |
 | Practice Session Management, Scoring & Feedback | Gamification | **Conformist** | Veredicto de validez y evaluación completada | La gamificación respeta la validez de la sesión y calcula rachas/logros a partir de la evaluación recibida. |
 | Scoring & Feedback | Sharing & Retention | Customer/Supplier | Consulta de reportes publicados | La compartición no duplica reportes; referencia los existentes. |
-| Sharing & Retention | Practice Session Management, Scoring & Feedback, Progress & Adaptation, Gamification | Customer/Supplier + Published Language | Órdenes de purga y confirmaciones | La eliminación de evidencia, evaluaciones, progreso y rachas respeta la propiedad de datos de cada contexto. |
+| Sharing & Retention | Practice Session Management, Speech Analysis, Scoring & Feedback, Progress & Adaptation, Gamification, Notifications | Customer/Supplier + Published Language | Órdenes de purga y confirmaciones | La eliminación de evidencia, evaluaciones, progreso y rachas respeta la propiedad de datos de cada contexto. |
 | Múltiples contextos | Notifications | Colaboración por eventos (Published Language) | Eventos de dominio versionados en el bus | Notifications no aparece como dependencia síncrona de nadie. |
 
-![Context map final de Talki con patrones DDD entre bounded contexts](assets/images/context-mapping/context-map.png)
+![Context map final de Talki con patrones DDD entre bounded contexts](assets/diagrams/c4/context-map.png)
 
 ![Coordinación de privacidad y confirmaciones de purga entre contextos](assets/diagrams/c4/privacy-context-map.png)
 
@@ -1995,7 +1995,7 @@ Los nombres de negocio de los canvases se concretan en los contratos técnicos: 
 
 #### Conclusión del context mapping
 
-El mapa resultante protege tres propiedades: (1) el **core** (Live Coaching, Speech Analysis, Scoring & Feedback) solo depende de contratos publicados y de una pasarela con Anti-Corruption Layer, nunca de detalles de proveedores ni de contextos genéricos; (2) la **privacidad** opera por eventos, de modo que revocar o eliminar no depende de la disponibilidad de otros contextos; y (3) la **evolución**, que comprende nuevos modos, rúbricas o proveedores, queda confinada a un contexto por tipo de cambio. Este mapa es el insumo directo de los diagramas C4 de la sección 4.3 y de la descomposición táctica del capítulo V.
+El mapa resultante protege tres propiedades: (1) el **core** (Live Coaching, Speech Analysis, Scoring & Feedback) solo depende de contratos publicados y de una pasarela con Anti-Corruption Layer, nunca de detalles de proveedores ni de contextos genéricos; (2) la **privacidad** revoca permisos localmente y exige confirmar el bloqueo en Sessions antes de aceptar una eliminación; la purga posterior se coordina por eventos y confirmaciones; y (3) la **evolución**, que comprende nuevos modos, rúbricas o proveedores, queda confinada a un contexto por tipo de cambio. Este mapa es el insumo directo de los diagramas C4 de la sección 4.3 y de la descomposición táctica del capítulo V.
 
 ## 4.3. Software Architecture
 
@@ -2015,24 +2015,24 @@ La frontera de Talki agrupa las capacidades de práctica, feedback, progreso y c
 
 ### 4.3.3. Container Level Diagrams
 
-El cliente web ofrece el recorrido de preparación y revisión; el cliente Flutter es una ampliación móvil. La arquitectura objetivo propone un API Gateway/BFF para enrutar operaciones y aplicar políticas comunes. Los servicios se organizan por responsabilidad de contexto: Identity & Access, Practice Session Management, Live Coaching, Speech Analysis, Scoring & Feedback, Progress & Adaptation, Sharing & Retention, Gamification, AI Provider Gateway y Notifications.
+El cliente web ofrece el recorrido de preparación y revisión; el cliente Flutter es una ampliación móvil. Para la aplicación de este curso se seleccionan Angular, TypeScript y Angular Material, conforme al enunciado; la landing utiliza HTML5, CSS3 y JavaScript. Las pantallas de Talki conservan su identidad visual y son referencias UX, no evidencia de que la implementación Angular esté terminada. La adopción móvil cross-platform con Flutter es una propuesta que deberá justificar cobertura y distribución antes de implementar. La arquitectura objetivo propone un API Gateway/BFF para enrutar operaciones y aplicar políticas comunes. Los servicios se organizan por responsabilidad de contexto: Identity & Access, Practice Session Management, Live Coaching, Speech Analysis, Scoring & Feedback, Progress & Adaptation, Sharing & Retention, Gamification, AI Provider Gateway y Notifications.
 
-RabbitMQ conecta el procesamiento asíncrono: Live Coaching publica `session.live.finalized`, Speech Analysis produce `fillers.analyzed` y Scoring & Feedback publica `scoring.completed` después de conservar la evaluación. Progress y Gamification consumen ese resultado; Notifications recibe eventos de evaluación y logro. El broker incorpora confirmaciones, reintentos y una cola de fallos como requisitos del diseño. La voz sigue el canal cliente–Gemini Live por WSS, evitando presentar el broker como transporte de audio.
+RabbitMQ conecta el procesamiento asíncrono: Practice Session Management publica `session.live.finalized` después de confirmar el cierre recibido de Live Coaching, Speech Analysis produce `fillers.analyzed` y Scoring & Feedback publica `scoring.completed` después de conservar la evaluación. Progress y Gamification consumen ese resultado; Notifications recibe eventos de evaluación y logro. El broker incorpora confirmaciones, reintentos y una cola de fallos como requisitos del diseño. La voz sigue el canal cliente–Gemini Live por WSS, evitando presentar el broker como transporte de audio.
 
 ![C4 Container Diagram de Talki](assets/diagrams/c4/containers.png)
 
 | Contenedor / contexto | Responsabilidad | Datos propios | Sección táctica |
 | --- | --- | --- | --- |
 | Live Coaching | Selección de modo, credencial temporal y cierre de conversación. | Sin base de negocio propia. | 5.1 |
-| Speech Analysis Worker | Detección de muletillas y producción de métricas. | Sin copia propia del reporte. | 5.2 |
-| Scoring & Feedback Worker | Evaluación y consulta de resultados; consulta pública ampliada. | Evaluaciones y versiones. | 5.3 |
-| Practice Session Management | Preparación, ciclo de vida y evidencia de la práctica. | Sesiones, feedback y proyección local de identidad. | 5.4 |
-| Progress & Adaptation | Resumen y comparación de evolución; comparación ampliada. | Progreso y métricas propuestas por sesión. | 5.5 |
+| Speech Analysis Worker | Análisis de evidencia lingüística, acústica y contextual disponible; estado y reintento. | Jobs y salida durable; sin copia del reporte de negocio. | 5.2 |
+| Scoring & Feedback Worker | Evaluación y consulta de resultados por el propietario o mediante acceso temporal autorizado. | Evaluaciones y versiones. | 5.3 |
+| Practice Session Management | Preparación, ciclo de vida y evidencia de la práctica. | Sesiones, configuración, material autorizado, feedback y outbox de cierre. | 5.4 |
+| Progress & Adaptation | Resumen, comparación y planes de mejora. | Progreso, métricas por sesión, planes y ejercicios. | 5.5 |
 | Sharing & Retention, propuesto | Acceso temporal, exportación y eliminación coordinada. | Permisos, solicitudes de purga y confirmaciones. | 5.6 |
-| Gamification | Rachas y logros por práctica válida. | Rachas y registro propuesto de logros. | 5.7 |
-| Identity & Access | Cuenta, credenciales, perfil y consentimiento ampliado. | Usuarios y registros de acceso/consentimiento propuestos. | 5.8 |
+| Gamification | Rachas y logros por práctica válida. | Rachas, logros versionados y contribuciones únicas. | 5.7 |
+| Identity & Access | Cuenta, credenciales, perfil y consentimiento. | Usuarios, tokens, recuperación y consentimiento versionado. | 5.8 |
 | AI Provider Gateway, propuesto | Contrato de integración y aislamiento del proveedor. | Sin base de material de práctica. | 5.9 |
-| Notifications | Consumo de eventos y entrega propuesta de avisos. | Sin base de negocio propia. | 5.10 |
+| Notifications | Consumo de eventos y entrega de avisos. | Avisos, intentos y preferencias. | 5.10 |
 
 Los almacenes de la figura agrupan infraestructura PostgreSQL, no propiedad compartida de tablas. Cada contexto accede únicamente a su esquema y comunica cambios mediante contratos o eventos. Las implementaciones disponibles agrupan algunas responsabilidades en servicios existentes; la separación del diagrama es la arquitectura objetivo de ADD, que deberá concretarse y verificarse en implementación. La pasarela de IA, Sharing, la entrega de avisos y las ampliaciones de consulta siguen siendo propuestas.
 

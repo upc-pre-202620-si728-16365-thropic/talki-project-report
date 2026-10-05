@@ -68,29 +68,29 @@ workspace "Talki" "Context map - bounded contexts y patrones DDD (TB1)" {
 
         // Practice Session Management
         session -> liveCoaching "Sesión preparada y veredicto de validez (Customer/Supplier + PL)"
-        session -> speechAnalysis "Ciclo de vida y validez de la sesión (Customer/Supplier + PL)"
+        session -> speechAnalysis "Sesión Finalizada y veredicto desde outbox (Customer/Supplier + PL)"
         session -> gamification "Hechos de práctica válida (Conformist)"
 
         // Núcleo
-        liveCoaching -> speechAnalysis "Sesión Finalizada con transcripción consolidada (Customer/Supplier)"
+        liveCoaching -> session "Evidencia autorizada para cierre (Customer/Supplier)"
         speechAnalysis -> scoring "Esquema versionado de métricas (Customer/Supplier + PL)"
         scoring -> progress "Evaluación completada: scoring.completed (Customer/Supplier + PL)"
         scoring -> sharing "Reportes publicados (Customer/Supplier)"
 
         // Pasarela de IA
-        liveCoaching -> aiGateway "Voz en vivo y simulación (Customer/Supplier)"
-        speechAnalysis -> aiGateway "Análisis de discurso (Customer/Supplier)"
+        liveCoaching -> aiGateway "Preparación de credencial efímera (Customer/Supplier)"
         aiGateway -> gemini "Contrato canónico traducido al proveedor (Anti-Corruption Layer)"
 
         // Progreso y gamificación
         scoring -> gamification "Evaluación completada: scoring.completed (Conformist)"
 
         // Privacidad
-        sharing -> session "Purga de evidencia y sesiones (Customer/Supplier + PL)"
+        sharing -> session "Bloqueo confirmado y purga de evidencia (Customer/Supplier + PL)"
+        sharing -> speechAnalysis "Purga de jobs y resultados técnicos (Customer/Supplier + PL)"
         sharing -> scoring "Purga de evaluaciones (Customer/Supplier + PL)"
         sharing -> gamification "Recalcula rachas y logros tras eliminación (Customer/Supplier + PL)"
         sharing -> progress "Órdenes de eliminación propagadas (Customer/Supplier)"
-        sharing -> notifications "Acceso Revocado / Datos Purgados (Eventos publicados)"
+        sharing -> notifications "Purga de referencias y hechos de privacidad (Eventos publicados)"
 
         // Notificaciones
         scoring -> notifications "Reporte Disponible: scoring.completed (Evento publicado)"

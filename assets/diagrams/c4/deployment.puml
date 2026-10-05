@@ -16,7 +16,7 @@ UML Deployment Diagram: Talki
 Topología propuesta para el piloto; sin evidencia de despliegue
 end title
 node "Dispositivo del estudiante / tutor" {
-  artifact "Navegador\nCliente React" as browser
+  artifact "Navegador\nCliente Angular" as browser
   artifact "App Flutter\nPropuesta" as mobile
 }
 cloud "Vercel: hosting web propuesto" {

@@ -1,0 +1,39 @@
+@startuml
+skinparam defaultFontName Arial
+skinparam dpi 140
+skinparam sequenceMessageAlign center
+skinparam maxMessageSize 180
+title DS-01: primera práctica guiada y cierre confirmado
+actor Estudiante as student
+participant "Identity & Access" as identity
+participant "Practice Session Management" as sessions
+participant "Live Coaching" as live
+participant "AI Provider Gateway" as ai
+participant "Speech Analysis" as analysis
+participant "Scoring & Feedback" as scoring
+participant "Progress & Adaptation" as progress
+student -> identity : 1. Registra cuenta y consentimiento
+student -> sessions : 2. Configura borrador de práctica
+student -> sessions : 3. Confirma prueba de audio
+sessions -> identity : Verifica consentimiento vigente
+student -> live : 4. Solicita iniciar su práctica
+live -> sessions : Verifica sesión propia y preparada
+live -> ai : Solicita credencial e instrucciones autorizadas
+ai --> live : Credencial efímera
+live --> student : Configuración para conexión WSS al proveedor
+student -> live : 5. Reúne turnos y señales del recorrido
+student -> live : 6. Confirma cierre y entrega evidencia
+live -> sessions : Evidencia autorizada, closureId y checkpoint
+sessions -> sessions : Confirma evidencia, validez y outbox
+sessions ->> analysis : 7. Publica session.live.finalized
+analysis -> analysis : 8. Analiza evidencia disponible
+analysis ->> scoring : fillers.analyzed con versiones y limitaciones
+scoring -> scoring : 9. Registra evaluación respaldada
+scoring ->> progress : 10. scoring.completed
+student -> scoring : 11. Consulta reporte propio
+scoring --> student : Reporte y recomendaciones
+note over student, ai
+La voz viaja por WSS directamente entre cliente y Gemini.
+Las llamadas dibujadas representan coordinación; el cierre durable pertenece a Sessions.
+end note
+@enduml

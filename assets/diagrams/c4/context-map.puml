@@ -24,12 +24,12 @@ component "Identity & Access" as identity <<Bounded Context>>
 component "AI Provider Gateway" as aiGateway <<Bounded Context>>
 component "Notifications" as notifications <<Bounded Context>>
 session --> liveCoaching : Sesión preparada y veredicto de\nvalidez (Customer/Supplier + PL)
-liveCoaching --> speechAnalysis : Sesión Finalizada con transcripción\nconsolidada (Customer/Supplier)
+liveCoaching --> session : Evidencia autorizada para cierre\n(Customer/Supplier)
+session --> speechAnalysis : Sesión Finalizada desde outbox\n(Customer/Supplier + PL)
 speechAnalysis --> scoring : Esquema versionado de métricas\n(Customer/Supplier + PL)
 scoring --> progress : Evaluación completada:\nscoring.completed (Customer/Supplier +\nPL)
 scoring --> sharing : Reportes publicados\n(Customer/Supplier)
-liveCoaching --> aiGateway : Voz en vivo y simulación\n(Customer/Supplier)
-speechAnalysis --> aiGateway : Análisis de discurso\n(Customer/Supplier)
+liveCoaching --> aiGateway : Preparación de credencial efímera\n(Customer/Supplier)
 aiGateway --> gemini : Contrato canónico traducido al\nproveedor (Anti-Corruption Layer)
 scoring --> gamification : Evaluación completada:\nscoring.completed (Conformist)
 sharing --> notifications : Acceso Revocado / Datos Purgados\n(Eventos publicados)

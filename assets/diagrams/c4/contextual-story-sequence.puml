@@ -1,0 +1,33 @@
+@startuml
+skinparam defaultFontName Arial
+skinparam dpi 140
+skinparam sequenceMessageAlign center
+skinparam maxMessageSize 180
+title DS-02: simulación contextualizada y evidencia autorizada
+actor Estudiante as student
+participant "Practice Session Management" as sessions
+participant "Live Coaching" as live
+participant "AI Provider Gateway" as ai
+participant "Speech Analysis" as analysis
+participant "Scoring & Feedback" as scoring
+participant "Notifications" as notices
+student -> sessions : 1. Carga material propio autorizado
+sessions -> sessions : 2. Valida formato y tamaño; conserva referencia
+live -> sessions : 3. Consulta configuración y resumen autorizado
+live -> ai : Prepara modo, objetivo e instrucciones
+ai --> live : 4. Credencial efímera y capacidad del proveedor
+live --> student : Preparación de conexión de voz
+student -> live : 5. Reúne turnos autorizados de la simulación
+live -> sessions : 6. Solicita cierre con evidencia consolidada
+sessions -> sessions : Confirma evidencia y veredicto con outbox
+sessions ->> analysis : session.live.finalized
+analysis -> analysis : 7. Analiza discurso y contexto disponibles
+analysis ->> scoring : Resultado versionado con limitaciones
+scoring -> scoring : 8. Prepara reporte con evidencia
+scoring ->> notices : scoring.completed
+notices --> student : 9. Aviso de disponibilidad
+note over student, ai
+El archivo no se comparte con el tutor ni viaja completo en eventos.
+Cliente y Gemini intercambian voz por WSS con la credencial efímera.
+end note
+@enduml

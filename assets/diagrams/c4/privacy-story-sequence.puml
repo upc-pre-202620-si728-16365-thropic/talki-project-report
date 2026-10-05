@@ -8,6 +8,7 @@ actor Estudiante as student
 participant "Sharing & Retention" as sharing
 actor "Tutor" as tutor
 participant "Scoring & Feedback" as scoring
+participant "Practice Session Management" as sessions
 participant "Contextos propietarios\nde los datos" as owners
 participant "Notifications" as notifications
 student -> sharing : 1. Solicita compartir reporte\nObjeto: solicitud de enlace
@@ -23,13 +24,18 @@ student -> sharing : 4. Revoca acceso\nObjeto: orden de revocación
 sharing -> sharing : 5. Invalida enlace inmediatamente
 sharing ->> notifications : Acceso Revocado\nObjeto: evento de privacidad
 student -> sharing : 6. Solicita eliminar sesión\nObjeto: orden de eliminación
-sharing -> sharing : Bloquea nuevos accesos y registra seguimiento
+sharing -> sharing : Registra solicitud y revoca permisos temporales
+sharing -> sessions : Solicita bloqueo idempotente por requestId
+sessions --> sharing : Confirma ACCESS_BLOCKED
+sharing --> student : 202: acceso bloqueado, purga en curso
 sharing ->> owners : 7. Propaga órdenes de purga
 note right of owners
 Sessions: evidencia y sesión.
+Analysis: jobs y resultados técnicos.
 Scoring: evaluación.
 Progress: métricas y resumen.
 Gamification: rachas y logros.
+Notifications: referencias al ensayo.
 end note
 owners -->> sharing : Confirman purga o actualización
 sharing ->> notifications : Datos Purgados
