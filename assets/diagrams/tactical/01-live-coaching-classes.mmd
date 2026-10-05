@@ -1,20 +1,40 @@
 classDiagram
-
-    class SessionModeStrategyFactory {
-        +create(mode) SessionModeStrategy
-    }
-    class SessionModeStrategy {
-        <<interface>>
-        +buildSystemPrompt(scenarioId) String
-        +maxDurationMinutes() int
-    }
-    class QuickPracticeStrategy
-    class InterviewStrategy
-    class ThesisDefenseStrategy
-    class ScenarioStrategy
-
-    SessionModeStrategy <|.. QuickPracticeStrategy
-    SessionModeStrategy <|.. InterviewStrategy
-    SessionModeStrategy <|.. ThesisDefenseStrategy
-    SessionModeStrategy <|.. ScenarioStrategy
-    SessionModeStrategyFactory --> SessionModeStrategy
+ direction LR
+class SessionModeStrategyFactory {
+  +create(String mode) SessionModeStrategy
+}
+class SessionModeStrategy {
+  <<interface>>
+  +buildSystemPrompt(PracticeContext context) String
+  +maxDurationMinutes() int
+}
+class PracticeContext {
+  <<ValueObject>>
+  -UUID sessionId
+  -String goal
+  -String scenario
+  -String authorizedMaterialSummary
+  -String conversationLocale
+}
+class QuickPracticeStrategy {
+  +buildSystemPrompt(PracticeContext context) String
+  +maxDurationMinutes() int
+}
+class InterviewStrategy {
+  +buildSystemPrompt(PracticeContext context) String
+  +maxDurationMinutes() int
+}
+class ThesisDefenseStrategy {
+  +buildSystemPrompt(PracticeContext context) String
+  +maxDurationMinutes() int
+}
+class ScenarioStrategy {
+  +buildSystemPrompt(PracticeContext context) String
+  +maxDurationMinutes() int
+}
+SessionModeStrategy <|.. QuickPracticeStrategy : realiza
+SessionModeStrategy <|.. InterviewStrategy : realiza
+SessionModeStrategy <|.. ThesisDefenseStrategy : realiza
+SessionModeStrategy <|.. ScenarioStrategy : realiza
+SessionModeStrategyFactory ..> SessionModeStrategy : crea
+SessionModeStrategy ..> PracticeContext : prepara instrucciones

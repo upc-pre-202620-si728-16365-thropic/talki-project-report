@@ -1,56 +1,29 @@
 @startuml
+!include <C4/C4_Component>
 skinparam defaultFontName Arial
-skinparam defaultFontSize 15
-skinparam shadowing false
-skinparam componentStyle uml2
-skinparam backgroundColor white
-skinparam componentBackgroundColor #EAF0FF
-skinparam componentBorderColor #1749B5
-skinparam ArrowColor #536177
-skinparam packageBackgroundColor #F7F9FD
-skinparam dpi 130
-title
-UML Component Diagram: Live Coaching
-Descomposición en Live Coach Service (Java / Spring Boot)
-end title
-component "Gemini:\ncredencial temporal" as provider <<Externo>> #EEEEEE
-component "Cliente:\nconversación de voz" as client <<Externo>> #EEEEEE
-component "Speech Analysis:\nprocesar cierre" as next <<Externo>> #EEEEEE
-package "Bounded Context:\nLive Coaching" {
-  package "Interface Layer" {
-    component "Interface:\nLiveCoachController\ny LiveTokenResponse\n[Java / Spring Boot]" as input
-  }
-  package "Application Layer" {
-    component "Application:\nLiveCoachOrchestrator\n[Java / Spring Boot]" as app
-  }
-  package "Domain Layer" {
-    component "Selección:\nSessionModeStrategyFactory\n[Java / Spring Boot]" as factory
-    component "Domain:\nSessionModeStrategy\ny estrategias de práctica\n[Java / Spring Boot]" as strategy
-  }
-  package "Infrastructure Layer" {
-    component "Infrastructure:\nGeminiTokenService\n[Java / Spring Boot]" as token
-    component "Infrastructure:\nSessionFinalizedPublisher /\nRabbitMQ\n[Java / Spring Boot]" as events
-  }
+skinparam dpi 150
+LAYOUT_TOP_DOWN()
+title C4 Component Diagram: Live Coaching
+Container(ai, "AI Provider Gateway", "Java / Spring Boot", "Fuera del container representado")
+Container(bff, "API Gateway / BFF", "HTTPS / JSON", "Fuera del container representado")
+Container(identity, "Identity & Access", "Java / Spring Boot", "Fuera del container representado")
+Container(sessions, "Practice Session Management", "Java / Spring Boot", "Fuera del container representado")
+Container_Boundary(scope, "Live Coaching: proceso Java / Spring Boot") {
+  Component(api, "LiveCoachController / LiveTokenResponse", "Java / Spring Boot", "Interface: Valida preparación y cierre del ensayo")
+  Component(app, "LiveCoachOrchestrator", "Java / Spring Boot", "Application: Comprueba sesión/consentimiento y coordina credencial/cierre")
+  Component(rules, "SessionModeStrategyFactory / estrategias", "Java / Spring Boot", "Domain: Prepara instrucciones según modo y contexto")
+  Component(aiClient, "AIProviderGatewayClient", "Java / Spring Boot", "Infrastructure: Solicita credencial por API interna")
+  Component(sessionClient, "SessionClosureClient / SessionAccessClient", "Java / Spring Boot", "Infrastructure: Comprueba sesión y confirma evidencia de cierre")
+  Component(consentClient, "ConsentVerificationClient", "Java / Spring Boot", "Infrastructure: Consulta autorización vigente")
 }
-input --> app : solicita preparación y cierre / Java
-app --> factory : selecciona el modo / Java
-factory --> strategy : obtiene estrategia de práctica / Java
-app --> token : prepara credencial efímera / Java
-token --> provider : solicita credencial efímera / HTTPS
-client --> provider : conversación de voz / WSS
-app --> events : publica cierre / Java
-events --> next : eventos / AMQP
-note bottom
-Ampliación: confirmar cierre en Sessions
-Sin base de datos propia
-end note
-legend bottom
-Icono UML: componente; círculo: interfaz.
-Flecha continua: interacción dirigida.
-Relación a interfaz: contrato proporcionado.
-Externo: fuera del proceso representado.
-Propuesto: ampliación pendiente.
-Los casos de uso nombran responsabilidades de diseño;
-no acreditan nuevas clases ni servicios desplegados.
-endlegend
+Rel(api, app, "Delega caso de uso", "Java")
+Rel(app, rules, "Aplica reglas de dominio", "Java")
+Rel(app, aiClient, "Solicita credencial efímera", "Java")
+Rel(app, sessionClient, "Comprueba sesión y cierre", "Java")
+Rel(app, consentClient, "Verifica consentimiento", "Java")
+Rel(bff, api, "Prepara ensayo y entrega cierre", "HTTPS / JSON")
+Rel(aiClient, ai, "Solicita credencial efímera", "HTTPS / JSON")
+Rel(sessionClient, sessions, "Verifica sesión y confirma cierre", "HTTPS / JSON")
+Rel(consentClient, identity, "Verifica consentimiento vigente", "HTTPS / JSON")
+SHOW_LEGEND()
 @enduml

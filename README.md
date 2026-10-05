@@ -2099,6 +2099,20 @@ SessionModeStrategyFactory crea la estrategia correspondiente al modo solicitado
 2. La captura de voz requiere permiso del dispositivo y consentimiento vigente.
 3. Al finalizar, la transcripción y las métricas se entregan al contexto responsable de la sesión.
 
+**Atributos y operaciones del modelo de dominio**
+
+Los atributos se encapsulan; las operaciones públicas expresan las reglas del contexto. Las interfaces y enumeraciones se distinguen en el UML. Este modelo especifica el diseño objetivo del TP.
+
+| Elemento | Atributos o valores | Operaciones públicas |
+| --- | --- | --- |
+| SessionModeStrategyFactory | Sin estado propio. | create(String mode) SessionModeStrategy |
+| SessionModeStrategy | Sin estado propio. | buildSystemPrompt(PracticeContext context) String<br>maxDurationMinutes() int |
+| PracticeContext | UUID sessionId<br>String goal<br>String scenario<br>String authorizedMaterialSummary<br>String conversationLocale | Consulta mediante el agregado o servicio responsable. |
+| QuickPracticeStrategy | Sin estado propio. | buildSystemPrompt(PracticeContext context) String<br>maxDurationMinutes() int |
+| InterviewStrategy | Sin estado propio. | buildSystemPrompt(PracticeContext context) String<br>maxDurationMinutes() int |
+| ThesisDefenseStrategy | Sin estado propio. | buildSystemPrompt(PracticeContext context) String<br>maxDurationMinutes() int |
+| ScenarioStrategy | Sin estado propio. | buildSystemPrompt(PracticeContext context) String<br>maxDurationMinutes() int |
+
 ### 5.1.2. Interface Layer
 
 LiveCoachController recibe las solicitudes del cliente para consultar los modos, preparar el acceso a la conversación y finalizar el ensayo. Delega la preparación y el cierre a LiveCoachOrchestrator.
@@ -2111,7 +2125,7 @@ LiveCoachController recibe las solicitudes del cliente para consultar los modos,
 | `POST /v1/coach/live-token?mode={mode}` | Solicitar una credencial temporal para el modo elegido. |
 | `POST /v1/coach/{sessionId}/finalize` | Recibir la evidencia del ensayo y solicitar su cierre. |
 
-**Datos de entrada y respuesta.** La preparación recibe el modo y, cuando corresponde, el identificador del escenario. LiveTokenResponse devuelve la credencial temporal, el modelo, la fecha de vencimiento y la duración sugerida. El cierre recibe el identificador de sesión, la transcripción y las métricas disponibles. La comprobación del propietario y del consentimiento forma parte de la integración prevista.
+**Datos de entrada y respuesta.** La preparación recibe el modo y, cuando corresponde, el identificador del escenario. LiveTokenResponse devuelve la credencial temporal, el modelo, la fecha de vencimiento y la duración sugerida. El cierre recibe el identificador de sesión, la transcripción y las métricas disponibles. Antes de emitir la credencial, el orquestador verifica propiedad de la sesión y consentimiento vigente mediante los contratos internos de Sessions e Identity. El token expira y no permite preparar otra sesión.
 
 ### 5.1.3. Application Layer
 
@@ -2131,7 +2145,15 @@ La consulta de modos presenta las opciones que puede elegir el estudiante. LiveC
 | --- | --- | --- | --- |
 | LiveCoachOrchestrator | Servicio de aplicación | Prepara las instrucciones del ensayo, solicita la credencial temporal y comunica su finalización. | Application |
 
-**Recorrido del caso de uso.** Al preparar una práctica, el orquestador obtiene la estrategia y solicita a GeminiTokenService una credencial temporal. Al finalizar, reúne la transcripción y las métricas y solicita su publicación. El diseño de recuperación añade la confirmación del cierre en Practice Session Management antes de continuar el análisis.
+**Recorrido del caso de uso.** Al preparar una práctica, el orquestador obtiene la estrategia y solicita a AIProviderGatewayClient una credencial temporal. Al finalizar, reúne la transcripción y las métricas y solicita a Sessions la confirmación del cierre. El cierre se envía a Practice Session Management con closureId: ese contexto conserva la evidencia y el evento de salida en la misma transacción antes de activar el análisis.
+
+**Contratos de coordinación**
+
+| Clase o grupo de clases | Responsabilidad | Operaciones previstas |
+| --- | --- | --- |
+| LiveCoachOrchestrator | Comprueba sesión/consentimiento y coordina credencial/cierre. | prepare(sessionId, mode); finalize(sessionId, closureId, evidence) |
+
+Los handlers validan la petición o el evento antes de ejecutar cambios. Los puertos de repositorio y de integración son contratos; los adaptadores de Infrastructure realizan esos contratos. Los nombres describen clases previstas para implementar el diseño, sin afirmar que estén desplegadas.
 
 ### 5.1.4. Infrastructure Layer
 
@@ -2141,15 +2163,23 @@ La capa de infraestructura gestiona la obtención de credenciales del proveedor 
 
 | Nombre | Tipo | Descripción | Capa |
 | --- | --- | --- | --- |
-| GeminiTokenService | Servicio de integración | Solicita a Gemini una credencial temporal vinculada a las instrucciones del ensayo. | Infrastructure |
-| SessionFinalizedPublisher | Publicador de eventos | Comunica SessionLiveFinalizedEvent mediante RabbitMQ. | Infrastructure |
-| GeminiLiveClient | Adaptador propuesto | Representa la conexión de conversación dentro de la pasarela común de proveedores. | Infrastructure |
+| AIProviderGatewayClient | Adaptador HTTP | Solicita una credencial temporal a AI Provider Gateway; el proveedor queda aislado en esa pasarela. | Infrastructure |
+| SessionClosureClient | Adaptador de cierre | Confirma el cierre con Sessions; ese contexto publica SessionLiveFinalizedEvent mediante su outbox. | Infrastructure |
 
-El cliente utiliza la credencial temporal para el intercambio de voz. Live Coaching no necesita una base de negocio propia; la evidencia de cierre corresponde a Practice Session Management. La recuperación y la confirmación del cierre amplían el flujo de integración.
+El cliente utiliza la credencial temporal para el intercambio de voz. Live Coaching no necesita una base de negocio propia; la evidencia de cierre corresponde a Practice Session Management. La recuperación utiliza checkpointId; el cierre se confirma en Sessions antes de continuar con el análisis.
 
 ### 5.1.5. Bounded Context Software Architecture Component Level Diagrams
 
-LiveCoachController recibe las acciones del cliente y las delega al orquestador. La fábrica selecciona la estrategia y GeminiTokenService prepara la credencial temporal. La finalización se comunica mediante SessionFinalizedPublisher; el diseño de recuperación incorpora su confirmación en Sessions.
+Esta vista C4 descompone el container de Live Coaching definido en 4.3.3. Los elementos externos se sitúan fuera de su frontera; las relaciones indican responsabilidad y protocolo. Las clases siguientes colaboran en los componentes del proceso y mantienen la separación de capas.
+
+| Clases agrupadas en el componente | Capa | Responsabilidad |
+| --- | --- | --- |
+| LiveCoachController / LiveTokenResponse | Interface | Valida preparación y cierre del ensayo. |
+| LiveCoachOrchestrator | Application | Comprueba sesión/consentimiento y coordina credencial/cierre. |
+| SessionModeStrategyFactory / estrategias | Domain | Prepara instrucciones según modo y contexto. |
+| AIProviderGatewayClient | Infrastructure | Solicita credencial por API interna. |
+| SessionClosureClient / SessionAccessClient | Infrastructure | Comprueba sesión y confirma evidencia de cierre. |
+| ConsentVerificationClient | Infrastructure | Consulta autorización vigente. |
 
 ![Componentes de Live Coaching](assets/diagrams/tactical/01-live-coaching-components.png)
 
@@ -2157,7 +2187,7 @@ LiveCoachController recibe las acciones del cliente y las delega al orquestador.
 
 #### 5.1.6.1. Bounded Context Domain Layer Class Diagrams
 
-El diagrama UML de dominio representa SessionModeStrategy, sus cuatro implementaciones y la fábrica que selecciona el modo. La realización de la interfaz se distingue de la dependencia de la fábrica. El orquestador, el adaptador de Gemini y el publicador pertenecen a otras capas y se representan en el diagrama de componentes.
+El diagrama UML de dominio representa SessionModeStrategy, sus cuatro implementaciones y la fábrica que selecciona el modo. La realización de la interfaz se distingue de la dependencia de la fábrica. PracticeContext contiene solo el contexto autorizado para preparar instrucciones. El orquestador y los clientes de AI Gateway, Sessions e Identity pertenecen a otras capas y se representan en componentes.
 
 ![Clases de Live Coaching](assets/diagrams/tactical/01-live-coaching-classes.png)
 
