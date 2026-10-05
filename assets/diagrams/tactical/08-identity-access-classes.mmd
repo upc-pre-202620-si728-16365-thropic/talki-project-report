@@ -1,25 +1,50 @@
 classDiagram
-    class AppUser {
-        +Long id
-        +String email
-        +String passwordHash
-        +String username
-        +String academicSegment
-        +UserRole role
-        +Instant createdAt
-    }
-    class UserRole {
-        <<enumeration>>
-        STUDENT
-        ADMIN
-    }
-    class RefreshToken {
-        <<Propuesto>>
-        +Long id
-        +Long userId
-        +String tokenHash
-        +Instant expiresAt
-        +boolean revoked
-    }
-    AppUser "1" *-- "*" RefreshToken : owns
-    AppUser --> UserRole : has
+ direction LR
+class AppUser {
+  <<AggregateRoot>>
+  -Long id
+  -String email
+  -String passwordHash
+  -String username
+  -String academicSegment
+  -String interfaceLocale
+  -UserRole role
+  -Instant createdAt
+  +updateProfile(String username, String segment, String locale) void
+}
+class UserRole {
+  <<enumeration>>
+  STUDENT
+  ADMIN
+}
+class RefreshToken {
+  <<Entity>>
+  -UUID id
+  -String tokenHash
+  -Instant expiresAt
+  -Instant revokedAt
+  +isValid(Instant now) boolean
+  +revoke(Instant now) void
+}
+class VoiceConsent {
+  <<Entity>>
+  -UUID id
+  -String policyVersion
+  -String scope
+  -Instant acceptedAt
+  -Instant withdrawnAt
+  +isActive(String requiredVersion) boolean
+  +withdraw(Instant now) void
+}
+class PasswordResetRequest {
+  <<Entity>>
+  -UUID id
+  -String tokenHash
+  -Instant expiresAt
+  -Instant usedAt
+  +consume(Instant now) void
+}
+AppUser "1" *-- "0..*" RefreshToken : renovación
+AppUser "1" *-- "0..*" VoiceConsent : historial de consentimiento
+AppUser "1" *-- "0..*" PasswordResetRequest : recuperación
+AppUser --> UserRole : rol

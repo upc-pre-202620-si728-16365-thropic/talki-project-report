@@ -1,55 +1,29 @@
 @startuml
+!include <C4/C4_Component>
 skinparam defaultFontName Arial
-skinparam defaultFontSize 15
-skinparam shadowing false
-skinparam componentStyle uml2
-skinparam backgroundColor white
-skinparam componentBackgroundColor #EAF0FF
-skinparam componentBorderColor #1749B5
-skinparam ArrowColor #536177
-skinparam packageBackgroundColor #F7F9FD
-skinparam dpi 130
-title
-UML Component Diagram: Identity & Access
-Descomposición en User Service (Java / Spring Boot)
-end title
-database "PostgreSQL:\napp_users" as db <<Externo>> #EEEEEE
-queue "RabbitMQ:\nuser.registered" as others <<Externo>> #EEEEEE
-package "Bounded Context:\nIdentity & Access" {
-  package "Interface Layer" {
-    component "Interface:\nAuthController\n[Java / Spring Boot]" as input
-  }
-  package "Application Layer" {
-    component "Application:\nAuthService\n[Java / Spring Boot]" as app
-    interface "Application:\nUserRegisteredEventPublisher" as port
-  }
-  package "Domain Layer" {
-    component "Domain:\nAppUser\ny UserRole\n[Java / Spring Boot]" as model
-  }
-  package "Infrastructure Layer" {
-    component "Infrastructure:\nPasswordEncoder\ny JwtTokenProvider\n[Java / Spring Boot]" as security
-    component "Infrastructure:\nAppUserRepository\n[Java / Spring Boot]" as repo
-    component "Infrastructure:\nRabbitUserRegisteredPublisher\n[Java / Spring Boot]" as adapter
-  }
+skinparam dpi 150
+LAYOUT_TOP_DOWN()
+title C4 Component Diagram: Identity & Access
+Container(bff, "API Gateway / BFF", "HTTPS / JSON", "Fuera del container representado")
+ContainerQueue(bus, "Broker de eventos", "RabbitMQ / AMQP", "Fuera del container representado")
+ContainerDb(db, "Esquema privado del contexto", "PostgreSQL / TLS", "Fuera del container representado")
+Container(sessions, "Practice Session Management", "Java / Spring Boot", "Fuera del container representado")
+Container_Boundary(scope, "Identity & Access: proceso Java / Spring Boot") {
+  Component(api, "AuthController / ProfileController / VoiceConsentController", "Java / Spring Boot", "Interface: Recibe acceso, perfil, recuperación y consentimiento")
+  Component(app, "AuthService / TokenSessionService / ConsentCommandService / PasswordRecoveryService", "Java / Spring Boot", "Application: Coordina cuenta, tokens y autorizaciones")
+  Component(rules, "AppUser / RefreshToken / VoiceConsent / PasswordResetRequest", "Java / Spring Boot", "Domain: Mantiene identidad y vigencia/retiro/consumo")
+  Component(repo, "AppUserRepository / RefreshTokenRepository / VoiceConsentRepository / PasswordResetRepository", "Java / Spring Boot", "Infrastructure: Conserva registros privados de cuenta")
+  Component(security, "PasswordEncoder / JwtTokenProvider", "Java / Spring Boot", "Infrastructure: Protege contraseña y firma acceso")
+  Component(publisher, "RabbitUserRegisteredPublisher / AccountNoticePublisher", "Java / Spring Boot", "Infrastructure: Despacha avisos de cuenta sin secretos")
 }
-input --> app : solicita registro o acceso / Java
-app --> model : aplica reglas de cuenta / Java
-app --> security : verifica contraseña y prepara token / Java
-app --> repo : consulta o conserva usuario / Java
-repo --> db : persistencia / SQL
-app --> port : solicita publicar cuenta registrada / Java
-adapter ..|> port : realiza contrato
-adapter --> others : eventos / AMQP
-note bottom
-Ampliación: RefreshToken y registro de consentimiento
-end note
-legend bottom
-Icono UML: componente; círculo: interfaz.
-Flecha continua: interacción dirigida.
-Relación a interfaz: contrato proporcionado.
-Externo: fuera del proceso representado.
-Propuesto: ampliación pendiente.
-Los casos de uso nombran responsabilidades de diseño;
-no acreditan nuevas clases ni servicios desplegados.
-endlegend
+Rel(api, app, "Delega caso de uso", "Java")
+Rel(app, rules, "Aplica reglas de dominio", "Java")
+Rel(app, repo, "Lee y confirma datos del contexto", "Java")
+Rel(app, security, "Protege contraseña y acceso", "Java")
+Rel(app, publisher, "Registra salida para despacho", "Java")
+Rel(bff, api, "Solicita acceso y perfil", "HTTPS / JSON")
+Rel(sessions, api, "Verifica consentimiento vigente", "HTTPS / JSON")
+Rel(repo, db, "Lee y conserva cuenta/tokens/consentimiento", "SQL / TLS")
+Rel(publisher, bus, "Publica registro y aviso de cuenta", "AMQP")
+SHOW_LEGEND()
 @enduml

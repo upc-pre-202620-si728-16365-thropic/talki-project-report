@@ -1,18 +1,36 @@
 erDiagram
-    APP_USERS ||--o{ REFRESH_TOKENS : owns
+    APP_USERS ||--o{ REFRESH_TOKENS : renueva
+    APP_USERS ||--o{ VOICE_CONSENTS : autoriza
+    APP_USERS ||--o{ PASSWORD_RESET_REQUESTS : recupera
     APP_USERS {
         bigint id PK
         varchar email UK
         varchar password_hash
         varchar username
         varchar academic_segment
+        varchar interface_locale
         varchar role
         timestamp created_at
     }
     REFRESH_TOKENS {
-        bigint id PK
+        uuid id PK
         bigint user_id FK
         varchar token_hash UK
         timestamp expires_at
-        boolean revoked
+        timestamp revoked_at
+    }
+    VOICE_CONSENTS {
+        uuid id PK
+        bigint user_id FK
+        varchar policy_version
+        varchar scope
+        timestamp accepted_at
+        timestamp withdrawn_at
+    }
+    PASSWORD_RESET_REQUESTS {
+        uuid id PK
+        bigint user_id FK
+        varchar token_hash UK
+        timestamp expires_at
+        timestamp used_at
     }

@@ -3082,11 +3082,11 @@ AppUser representa la cuenta del estudiante. Conserva su identificador, correo, 
 
 **Entities**
 
-RefreshToken se propone para registrar la vigencia y revocación de las credenciales de renovación. El consentimiento de voz requiere un registro adicional con su versión, alcance y momento de aceptación.
+RefreshToken se propone para registrar la vigencia y revocación de las credenciales de renovación. VoiceConsent registra versión, alcance, aceptación y retiro. PasswordResetRequest conserva hash y vencimiento del enlace de recuperación.
 
 **Enumerations**
 
-UserRole define los roles de acceso reconocidos por Talki. Las autorizaciones sobre una sesión se comprueban en el contexto responsable de esa práctica.
+UserRole define los roles de acceso reconocidos por Talki. Las autorizaciones sobre una sesión se comprueban en el contexto responsable de esa práctica. VoiceConsent conserva policyVersion, scope, acceptedAt y withdrawnAt; PasswordResetRequest admite un token de un solo uso con vencimiento.
 
 **Elementos de Domain Layer**
 
@@ -3102,6 +3102,18 @@ UserRole define los roles de acceso reconocidos por Talki. Las autorizaciones so
 2. La renovación sustituye el token anterior y el cierre de sesión permite revocarlo.
 3. El consentimiento identifica su versión, alcance y momento; se distingue de la aceptación de las condiciones de la cuenta.
 
+**Atributos y operaciones del modelo de dominio**
+
+Los atributos se encapsulan; las operaciones públicas expresan las reglas del contexto. Las interfaces y enumeraciones se distinguen en el UML. Este modelo especifica el diseño objetivo del TP.
+
+| Elemento | Atributos o valores | Operaciones públicas |
+| --- | --- | --- |
+| AppUser | Long id<br>String email<br>String passwordHash<br>String username<br>String academicSegment<br>String interfaceLocale<br>UserRole role<br>Instant createdAt | updateProfile(String username, String segment, String locale) void |
+| UserRole | STUDENT<br>ADMIN | Consulta mediante el agregado o servicio responsable. |
+| RefreshToken | UUID id<br>String tokenHash<br>Instant expiresAt<br>Instant revokedAt | isValid(Instant now) boolean<br>revoke(Instant now) void |
+| VoiceConsent | UUID id<br>String policyVersion<br>String scope<br>Instant acceptedAt<br>Instant withdrawnAt | isActive(String requiredVersion) boolean<br>withdraw(Instant now) void |
+| PasswordResetRequest | UUID id<br>String tokenHash<br>Instant expiresAt<br>Instant usedAt | consume(Instant now) void |
+
 ### 5.8.2. Interface Layer
 
 AuthController recibe las solicitudes de registro e inicio de sesión y las delega a AuthService. Las credenciales de entrada se distinguen de los datos públicos devueltos al cliente.
@@ -3115,7 +3127,7 @@ AuthController recibe las solicitudes de registro e inicio de sesión y las dele
 
 **Datos de entrada y respuesta.** El registro recibe correo, contraseña, nombre de usuario y segmento académico. Devuelve el identificador y los datos públicos de la cuenta. El inicio de sesión recibe correo y contraseña y devuelve la credencial de acceso y su tipo. La contraseña y su hash no forman parte de la respuesta.
 
-**Ampliaciones de acceso.** La renovación, el cierre de sesión, la edición del perfil y la gestión de consentimiento requieren definir sus contratos. El registro de una cuenta comunica `user.registered` a los contextos interesados.
+**Contratos de acceso y consentimiento.** `POST /v1/auth/refresh` rota el token; `POST /v1/auth/logout` lo revoca; `PATCH /v1/users/me` modifica perfil e idioma de interfaz; `POST /v1/auth/password-reset-requests` responde 202 sin revelar si existe el correo; `POST /v1/auth/password-resets` consume el token de recuperación. `POST /v1/users/me/voice-consents` registra versión y alcance; `DELETE /v1/users/me/voice-consents/{id}` registra su retiro; `GET /internal/v1/users/{id}/voice-consent` permite verificar la autorización entre servicios autenticados. El registro de una cuenta comunica `user.registered` a los contextos interesados.
 
 ### 5.8.3. Application Layer
 
@@ -3135,8 +3147,16 @@ La renovación, el cierre de sesión y la gestión del consentimiento amplían e
 | --- | --- | --- | --- |
 | AuthService | Servicio de aplicación | Comprueba el correo, protege la contraseña, registra la cuenta y valida las credenciales de acceso. | Application |
 | UserRegisteredEventPublisher | Puerto de publicación | Define la comunicación del registro a los contextos interesados. | Application |
-| Renovación y cierre de sesión | Casos de uso propuestos | Renuevan o revocan las credenciales de acceso. | Application |
-| Gestión de consentimiento | Caso de uso propuesto | Registra la versión, alcance y retiro de la autorización de procesamiento. | Application |
+| TokenSessionService | Servicio de aplicación | Renuevan o revocan las credenciales de acceso. | Application |
+| ConsentCommandService | Servicio de aplicación | Registra la versión, alcance y retiro de la autorización de procesamiento. | Application |
+
+**Contratos de coordinación**
+
+| Clase o grupo de clases | Responsabilidad | Operaciones previstas |
+| --- | --- | --- |
+| AuthService / TokenSessionService / ConsentCommandService / PasswordRecoveryService | Coordina cuenta, tokens y autorizaciones. | register(request); login(credentials); rotate(token); consent(version, scope); resetPassword(token) |
+
+Los handlers validan la petición o el evento antes de ejecutar cambios. Los puertos de repositorio y de integración son contratos; los adaptadores de Infrastructure realizan esos contratos. Los nombres describen clases previstas para implementar el diseño, sin afirmar que estén desplegadas.
 
 ### 5.8.4. Infrastructure Layer
 
@@ -3151,11 +3171,20 @@ La capa de infraestructura implementa el almacenamiento de cuentas, la protecci�
 | JwtTokenProvider | Servicio de seguridad | Genera la credencial de acceso del estudiante. | Infrastructure |
 | RabbitUserRegisteredPublisher | Publicador de eventos | Implementa UserRegisteredEventPublisher mediante RabbitMQ. | Infrastructure |
 
-Spring Security organiza las reglas de acceso. El cliente web utiliza el BFF y cookies protegidas; la adaptación móvil requiere almacenamiento seguro. La persistencia de renovación y consentimiento corresponde a las ampliaciones propuestas.
+Spring Security organiza las reglas de acceso. El cliente web utiliza el BFF y cookies protegidas; la adaptación móvil requiere almacenamiento seguro. RefreshTokenRepository, VoiceConsentRepository y PasswordResetRepository mantienen vigencia, retiro y consumo de tokens. PasswordRecoveryService solicita correo mediante Notifications, sin publicar secretos en los eventos.
 
 ### 5.8.5. Bounded Context Software Architecture Component Level Diagrams
 
-AuthController delega el registro y el acceso a AuthService. Los adaptadores de seguridad y persistencia permiten conservar la cuenta y preparar sus credenciales. El publicador comunica el registro; la renovación y el consentimiento son ampliaciones propuestas.
+Esta vista C4 descompone el container de Identity & Access definido en 4.3.3. Los elementos externos se sitúan fuera de su frontera; las relaciones indican responsabilidad y protocolo. Las clases siguientes colaboran en los componentes del proceso y mantienen la separación de capas.
+
+| Clases agrupadas en el componente | Capa | Responsabilidad |
+| --- | --- | --- |
+| AuthController / ProfileController / VoiceConsentController | Interface | Recibe acceso, perfil, recuperación y consentimiento. |
+| AuthService / TokenSessionService / ConsentCommandService / PasswordRecoveryService | Application | Coordina cuenta, tokens y autorizaciones. |
+| AppUser / RefreshToken / VoiceConsent / PasswordResetRequest | Domain | Mantiene identidad y vigencia/retiro/consumo. |
+| AppUserRepository / RefreshTokenRepository / VoiceConsentRepository / PasswordResetRepository | Infrastructure | Conserva registros privados de cuenta. |
+| PasswordEncoder / JwtTokenProvider | Infrastructure | Protege contraseña y firma acceso. |
+| RabbitUserRegisteredPublisher / AccountNoticePublisher | Infrastructure | Despacha avisos de cuenta sin secretos. |
 
 ![Componentes de Identity & Access](assets/diagrams/tactical/08-identity-access-components.png)
 
@@ -3163,15 +3192,26 @@ AuthController delega el registro y el acceso a AuthService. Los adaptadores de 
 
 #### 5.8.6.1. Bounded Context Domain Layer Class Diagrams
 
-AppUser reúne los datos de la cuenta y se relaciona con UserRole. RefreshToken representa la ampliación propuesta para renovar el acceso y revocar esas credenciales al cerrar la sesión de cuenta.
+AppUser reúne cuenta, idioma de interfaz y UserRole. Contiene tokens de renovación, consentimiento versionado y solicitudes de recuperación de un solo uso. El retiro y la revocación conservan fecha para interpretar su vigencia.
 
 ![Clases de Identity & Access](assets/diagrams/tactical/08-identity-access-classes.png)
 
 #### 5.8.6.2. Bounded Context Database Design Diagram
 
-app_users conserva el correo, nombre de usuario, segmento académico, contraseña protegida y rol. La tabla propuesta refresh_tokens se relaciona con la cuenta y conserva la vigencia y revocación de las credenciales. El correo y el hash del token tienen restricciones de unicidad; el registro versionado de consentimiento es una ampliación adicional.
+app_users conserva el correo, nombre de usuario, segmento académico, contraseña protegida y rol. La tabla propuesta refresh_tokens se relaciona con la cuenta y conserva la vigencia y revocación de las credenciales. El correo y el hash del token tienen restricciones de unicidad; voice_consents y password_reset_requests se relacionan con la cuenta; el retiro de consentimiento conserva el historial y no se confunde con eliminación de sesiones.
 
 ![Persistencia de Identity & Access](assets/diagrams/tactical/08-identity-access-database.png)
+
+**Restricciones de persistencia**
+
+| Objeto | Restricción y relación con las reglas |
+| --- | --- |
+| APP_USERS | email único normalizado; contraseña protegida mediante hash; interface_locale restringido a en_US/es_419 y en_US por defecto. |
+| REFRESH_TOKENS / PASSWORD_RESET_REQUESTS | Hashes únicos y vencimiento obligatorio. Renovar revoca el token anterior; recuperar consume el enlace una sola vez. Nunca se devuelve password_hash. |
+| VOICE_CONSENTS | UNIQUE(user_id, policy_version, scope), con aceptación y retiro explícitos. Cambiar la versión requiere nueva aceptación; retirar bloquea nuevas prácticas, sin borrar por sí solo el historial. |
+
+La unicidad compuesta se documenta en esta tabla porque comprende varios campos; las marcas PK/FK/UK del diagrama identifican claves simples. Inbox y outbox son registros técnicos del esquema privado: eventId es único en inbox y el despacho confirma la salida después del commit local. No se crean FKs hacia otros contextos.
+
 
 ## 5.9. Bounded Context: AI Provider Gateway
 
