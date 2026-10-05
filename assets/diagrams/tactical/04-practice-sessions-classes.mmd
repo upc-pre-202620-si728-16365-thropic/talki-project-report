@@ -1,29 +1,98 @@
 classDiagram
-    class Session {
-        +UUID id
-        +Long userId
-        +String title
-        +SessionMode mode
-        +SessionState state
-        +Instant startedAt
-        +Instant finalizedAt
-        +start() void
-        +finalize() void
-        +markAsCompleted() void
-        +markAsAnalysisPending() void
-    }
-    class Feedback {
-        +UUID id
-        +UUID sessionId
-        +String content
-        +Instant createdAt
-    }
-    class SessionUserContext {
-        <<Value Object - ACL>>
-        +Long userId
-        +String email
-        +String username
-        +String academicSegment
-    }
-    Session "1" *-- "*" Feedback : intra-BC
-    Session ..> SessionUserContext : identidad adaptada por ACL
+ direction LR
+class Session {
+  <<AggregateRoot>>
+  -UUID id
+  -Long userId
+  -String title
+  -SessionMode mode
+  -SessionState state
+  -PracticeConfiguration configuration
+  -ConsentSnapshot consent
+  -UUID checkpointId
+  -PracticeEvidence evidence
+  -boolean valid
+  -String validityRuleVersion
+  -Instant startedAt
+  -Instant finalizedAt
+  -Instant deletedAt
+  +start(ConsentSnapshot consent) void
+  +pause(UUID checkpointId) void
+  +resume(UUID checkpointId) void
+  +finalize(UUID closureId, PracticeEvidence evidence) void
+  +markAsCompleted() void
+  +markAsAnalysisPending() void
+  +markAsAnalysisFailed() void
+  +declareValidity(int confirmedDurationSeconds, boolean hasEvidence) boolean
+  +markAsDeleted() void
+}
+class SessionMode {
+  <<enumeration>>
+  QUICK_PRACTICE
+  INTERVIEW
+  THESIS_DEFENSE
+  SCENARIO
+}
+class SessionState {
+  <<enumeration>>
+  DRAFT
+  ACTIVE
+  PAUSED
+  ANALYSIS_PENDING
+  ANALYSIS_FAILED
+  COMPLETED
+  DELETED
+}
+class PracticeConfiguration {
+  <<ValueObject>>
+  -String goal
+  -int durationSeconds
+  -String scenario
+  -String conversationLocale
+  -String version
+}
+class ConsentSnapshot {
+  <<ValueObject>>
+  -UUID consentId
+  -String policyVersion
+  -String scope
+  -Instant checkedAt
+}
+class PracticeMaterial {
+  <<Entity>>
+  -UUID id
+  -String mediaType
+  -long sizeBytes
+  -String storageKey
+  -boolean authorized
+  +isAllowed() boolean
+}
+class Feedback {
+  <<Entity>>
+  -UUID id
+  -String content
+  -String rubricVersion
+  -Instant createdAt
+}
+class SessionUserContext {
+  <<ValueObject>>
+  -Long userId
+  -String academicSegment
+}
+Session "1" *-- "1" PracticeConfiguration : configuración
+Session "1" *-- "0..1" ConsentSnapshot : autorización verificada
+Session "1" *-- "0..1" PracticeMaterial : material opcional
+Session "1" *-- "0..*" Feedback : feedback
+Session --> SessionMode : modo
+Session --> SessionState : estado
+Session ..> SessionUserContext : identidad adaptada
+
+class PracticeEvidence {
+  <<ValueObject>>
+  -String transcript
+  -Map~String,double~ acousticMetrics
+  -String authorizedMaterialSummary
+  -int confirmedDurationSeconds
+  -Instant observedAt
+}
+Session "1" *-- "0..1" PracticeEvidence : cierre autorizado

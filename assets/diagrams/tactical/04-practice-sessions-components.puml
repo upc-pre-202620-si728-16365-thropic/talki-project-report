@@ -1,55 +1,43 @@
 @startuml
+!include <C4/C4_Component>
 skinparam defaultFontName Arial
-skinparam defaultFontSize 15
-skinparam shadowing false
-skinparam componentStyle uml2
-skinparam backgroundColor white
-skinparam componentBackgroundColor #EAF0FF
-skinparam componentBorderColor #1749B5
-skinparam ArrowColor #536177
-skinparam packageBackgroundColor #F7F9FD
-skinparam dpi 130
-title
-UML Component Diagram: Practice Session Management
-Descomposición en Session Service (Java / Spring Boot)
-end title
-database "PostgreSQL:\nsesiones\ny feedback" as db <<Externo>> #EEEEEE
-package "Bounded Context:\nPractice Session Management" {
-  package "Interface Layer" {
-    component "Interface:\nSessionController /\nCreateSessionRequest\n[Java / Spring Boot]" as input
-  }
-  package "Application Layer" {
-    component "Application:\nSessionCommandServiceImpl\n[Java / Spring Boot]" as commands
-    component "Application:\nSessionQueryServiceImpl\n[Java / Spring Boot]" as queries
-    component "Application:\nSessionContextFacade\n[Java / Spring Boot]" as facade
-  }
-  package "Domain Layer" {
-    component "Domain:\nSession\ny Feedback\n[Java / Spring Boot]" as session
-    component "Domain:\nSessionUserContext\n[Java / Spring Boot]" as user
-  }
-  package "Infrastructure Layer" {
-    component "Infrastructure:\nSessionRepository\ny FeedbackRepository\n[Java / Spring Boot]" as repo
-    component "Infrastructure:\nUserRegisteredConsumer\n[Java / Spring Boot]" as consumer
-    component "Infrastructure:\nAppUserRepository /\nproyección local\n[Java / Spring Boot]" as users
-  }
+skinparam dpi 150
+LAYOUT_TOP_DOWN()
+title C4 Component Diagram: Practice Session Management
+Container(bff, "API Gateway / BFF", "HTTPS / JSON", "Fuera del container representado")
+ContainerQueue(bus, "Broker de eventos", "RabbitMQ / AMQP", "Fuera del container representado")
+ContainerDb(db, "Esquema privado del contexto", "PostgreSQL / TLS", "Fuera del container representado")
+Container(identity, "Identity & Access", "Java / Spring Boot", "Fuera del container representado")
+ContainerDb(store, "Material privado", "Almacenamiento de objetos", "Fuera del container representado")
+Container(live, "Live Coaching", "Java / Spring Boot", "Fuera del container representado")
+Container(scoring, "Scoring & Feedback", "Java / Spring Boot", "Fuera del container representado")
+Container(sharing, "Sharing & Retention", "Java / Spring Boot", "Fuera del container representado")
+Container_Boundary(scope, "Practice Session Management: proceso Java / Spring Boot") {
+  Component(api, "SessionController", "Java / Spring Boot", "Interface: Recibe preparación, consultas, material y cierre")
+  Component(app, "SessionCommandService / SessionQueryService", "Java / Spring Boot", "Application: Coordina escritura y consulta de prácticas")
+  Component(acl, "SessionContextFacade", "Java / Spring Boot", "Application: Adapta identidad externa al lenguaje de sesión")
+  Component(rules, "Session / PracticeEvidence / Feedback / configuración / material", "Java / Spring Boot", "Domain: Controla estados, evidencia y límites del ensayo")
+  Component(repo, "SessionRepository / FeedbackRepository / MaterialRepository", "Java / Spring Boot", "Infrastructure: Conserva evidencia y referencias de material privado")
+  Component(storage, "PrivateMaterialStorageAdapter", "Java / Spring Boot", "Infrastructure: Almacena o purga el archivo autorizado")
+  Component(messaging, "UserRegisteredConsumer / SessionFinalizedPublisher", "Java / Spring Boot", "Infrastructure: Actualiza proyección y despacha cierre confirmado")
+  Component(consentClient, "ConsentVerificationClient", "Java / Spring Boot", "Infrastructure: Verifica consentimiento de Identity")
 }
-input --> commands : solicita crear o finalizar / Java
-input --> queries : consulta sesiones y feedback / Java
-commands --> session : aplica ciclo de vida / Java
-commands --> facade : adapta identidad de la petición / Java
-facade --> user : obtiene identidad local / Java
-commands --> repo : conserva cambios del ensayo / Java
-queries --> repo : recupera recursos autorizados / Java
-repo --> db : persistencia / SQL
-consumer --> users : actualiza proyección de usuario / Java
-facade --> users : consulta identidad proyectada / Java
-legend bottom
-Icono UML: componente; círculo: interfaz.
-Flecha continua: interacción dirigida.
-Relación a interfaz: contrato proporcionado.
-Externo: fuera del proceso representado.
-Propuesto: ampliación pendiente.
-Los casos de uso nombran responsabilidades de diseño;
-no acreditan nuevas clases ni servicios desplegados.
-endlegend
+Rel(api, app, "Delega caso de uso", "Java")
+Rel(messaging, app, "Entrega evento validado", "Java")
+Rel(app, rules, "Aplica reglas de dominio", "Java")
+Rel(app, repo, "Lee y confirma datos del contexto", "Java")
+Rel(app, consentClient, "Verifica consentimiento", "Java")
+Rel(app, storage, "Gestiona material autorizado", "Java")
+Rel(app, acl, "Adapta identidad externa", "Java")
+Rel(app, messaging, "Registra salida o confirmación", "Java")
+Rel(live, api, "Comprueba sesión y confirma cierre", "HTTPS / JSON")
+Rel(scoring, api, "Verifica acceso al reporte", "HTTPS / JSON")
+Rel(sharing, api, "Confirma bloqueo y pertenencia", "HTTPS / JSON")
+Rel(bff, api, "Crea o consulta práctica", "HTTPS / JSON")
+Rel(repo, db, "Persiste sesión y outbox", "SQL / TLS")
+Rel(storage, store, "Almacena o elimina material", "HTTPS")
+Rel(bus, messaging, "Entrega user.registered y deletion.requested", "AMQP")
+Rel(messaging, bus, "Publica cierre y confirmación de purga", "AMQP")
+Rel(consentClient, identity, "Comprueba autorización actual", "HTTPS / JSON")
+SHOW_LEGEND()
 @enduml

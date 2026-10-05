@@ -2507,6 +2507,26 @@ SessionUserContext reúne el identificador, correo, nombre de usuario y segmento
 2. El feedback se vincula a la sesión que lo originó.
 3. El inicio requiere las autorizaciones correspondientes y la finalización debe producir un único cierre.
 
+**Atributos y operaciones del modelo de dominio**
+
+Los atributos se encapsulan; las operaciones públicas expresan las reglas del contexto. Las interfaces y enumeraciones se distinguen en el UML. Este modelo especifica el diseño objetivo del TP.
+
+| Elemento | Atributos o valores | Operaciones públicas |
+| --- | --- | --- |
+| Session | UUID id<br>Long userId<br>String title<br>SessionMode mode<br>SessionState state<br>PracticeConfiguration configuration<br>ConsentSnapshot consent<br>UUID checkpointId<br>PracticeEvidence evidence<br>boolean valid<br>String validityRuleVersion<br>Instant startedAt<br>Instant finalizedAt<br>Instant deletedAt | start(ConsentSnapshot consent) void<br>pause(UUID checkpointId) void<br>resume(UUID checkpointId) void<br>finalize(UUID closureId, PracticeEvidence evidence) void<br>markAsCompleted() void<br>markAsAnalysisPending() void<br>markAsAnalysisFailed() void<br>declareValidity(int confirmedDurationSeconds, boolean hasEvidence) boolean<br>markAsDeleted() void |
+| PracticeEvidence | String transcript<br>Map~String,double~ acousticMetrics<br>String authorizedMaterialSummary<br>int confirmedDurationSeconds<br>Instant observedAt | Se conserva al cierre; métricas y resumen son opcionales y requieren autorización. |
+| SessionMode | QUICK_PRACTICE<br>INTERVIEW<br>THESIS_DEFENSE<br>SCENARIO | Consulta mediante el agregado o servicio responsable. |
+| SessionState | DRAFT<br>ACTIVE<br>PAUSED<br>ANALYSIS_PENDING<br>ANALYSIS_FAILED<br>COMPLETED<br>DELETED | Consulta mediante el agregado o servicio responsable. |
+| PracticeConfiguration | String goal<br>int durationSeconds<br>String scenario<br>String conversationLocale<br>String version | Consulta mediante el agregado o servicio responsable. |
+| ConsentSnapshot | UUID consentId<br>String policyVersion<br>String scope<br>Instant checkedAt | Consulta mediante el agregado o servicio responsable. |
+| PracticeMaterial | UUID id<br>String mediaType<br>long sizeBytes<br>String storageKey<br>boolean authorized | isAllowed() boolean |
+| Feedback | UUID id<br>String content<br>String rubricVersion<br>Instant createdAt | Consulta mediante el agregado o servicio responsable. |
+| SessionUserContext | Long userId<br>String academicSegment | Consulta mediante el agregado o servicio responsable. |
+
+**Veredicto de práctica válida.** Session conserva valid y validityRuleVersion. Para la regla propuesta v1.0, la práctica debe pertenecer al estudiante, haber iniciado con consentimiento comprobado, tener duración confirmada positiva y evidencia autorizada no vacía. Una finalización sin evidencia no contribuye a XP ni rachas. Una dimensión no evaluable no invalida automáticamente una práctica que sí cumple esas condiciones. El veredicto se publica junto al cierre y acompaña los contratos de análisis/evaluación: los consumidores no lo recalculan con reglas propias.
+
+**Correspondencia de modos.** QUICK_PRACTICE identifica el ensayo de una exposición; INTERVIEW, una entrevista; THESIS_DEFENSE, una sustentación; SCENARIO, un escenario configurable como pitch. El rótulo visible no cambia el identificador de modo utilizado para comparar resultados.
+
 ### 5.4.2. Interface Layer
 
 SessionController expone las operaciones de preparación, consulta y cierre de la práctica. Las solicitudes que modifican datos se delegan a SessionCommandService y las consultas a SessionQueryService.
@@ -2515,14 +2535,19 @@ SessionController expone las operaciones de preparación, consulta y cierre de l
 
 | Operación | Responsabilidad |
 | --- | --- |
-| `POST /v1/sessions` | Crear una práctica con su título, tipo y estudiante. |
-| `GET /v1/sessions?userId={userId}` | Consultar el listado de sesiones del estudiante. |
+| `POST /v1/sessions` | Crear una práctica con título, modo, meta, duración e idioma; userId se deriva del acceso autenticado. |
+| `GET /v1/sessions` | Consultar las sesiones del estudiante autenticado, con filtros de fecha y modo. |
 | `GET /v1/sessions/{id}` | Consultar el detalle de una práctica. |
-| `POST /v1/sessions/{id}/finalize` | Solicitar el cierre de la práctica. |
+| `POST /v1/sessions/{id}/finalize` | Confirmar el cierre autorizado con closureId y evidencia; responder 202 durante el análisis. |
+| `PATCH /v1/sessions/{id}/configuration` | Modificar meta, escenario, duración o idioma mientras la sesión sea un borrador propio. |
+| `POST /v1/sessions/{id}/materials` / `DELETE /v1/sessions/{id}/materials/{materialId}` | Asociar o retirar el archivo propio autorizado, después de comprobar formato y tamaño. |
+| `POST /v1/sessions/{id}/pause` / `POST /v1/sessions/{id}/resume` | Confirmar o recuperar un checkpoint propio; rechazar transiciones incompatibles con 409. |
+| `GET /internal/v1/sessions/{id}/access` | Proporcionar a servicios autenticados la pertenencia y el estado de acceso, sin devolver la evidencia privada. |
+| `POST /internal/v1/sessions/{id}/access-blocks` | Confirmar el bloqueo idempotente por requestId solicitado por Sharing antes de la purga. |
 | `POST /v1/sessions/{id}/feedbacks` | Registrar retroalimentación asociada a la sesión. |
 | `GET /v1/sessions/{id}/feedbacks` | Consultar la retroalimentación de la práctica. |
 
-**Datos de entrada y respuesta.** CreateSessionRequest reúne título, tipo de sesión e identificador del estudiante. El registro de feedback recibe el tipo y el contenido. Las respuestas presentan la sesión o sus retroalimentaciones. En la ampliación del diseño, la identidad se obtiene del acceso autenticado y se verifica la pertenencia del recurso antes de devolverlo.
+**Datos de entrada y respuesta.** CreateSessionRequest reúne título, modo y PracticeConfiguration. Los controles de acceso toman la identidad de la autenticación, no de un userId arbitrario. Las respuestas presentan estado y configuración; la evidencia privada solo se entrega en el alcance autorizado. El cierre confirma un PracticeEvidence y publica sus versiones. Los códigos 403/404 impiden acceder a recursos ajenos o eliminados; 409 identifica una transición incompatible.
 
 ### 5.4.3. Application Layer
 
@@ -2544,7 +2569,16 @@ Las operaciones de lectura recuperan una sesión por identificador, las sesiones
 | SessionQueryService y SessionQueryServiceImpl | Contrato e implementación de consultas | Recuperan sesiones y retroalimentaciones. | Application |
 | SessionContextFacade | Adaptador de contexto | Traduce la identidad externa a SessionUserContext. | Application |
 
-**Ampliación del ciclo de práctica.** La preparación de material, la recuperación y la eliminación se incorporan como operaciones propuestas y deberán respetar las reglas de acceso de la sesión.
+**Ampliación del ciclo de práctica.** PracticeConfiguration registra meta, duración, escenario, idioma de conversación y versión. PracticeMaterial admite PDF, TXT o PPTX de hasta 10 MB, con autorización del estudiante y una clave de almacenamiento privado. ConsentSnapshot conserva la comprobación del consentimiento; Identity mantiene el registro autoritativo. Pausa/reanudación utiliza checkpointId y la eliminación marca deletedAt antes de solicitar purga.
+**Contratos de coordinación**
+
+| Clase o grupo de clases | Responsabilidad | Operaciones previstas |
+| --- | --- | --- |
+| SessionCommandService / SessionQueryService | Coordina escritura y consulta de prácticas. | create(configuration); finalize(closure); query(id, requester) |
+| SessionContextFacade | Adapta identidad externa al lenguaje de sesión. | create(configuration); finalize(closure); query(id, requester) |
+
+Los handlers validan la petición o el evento antes de ejecutar cambios. Los puertos de repositorio y de integración son contratos; los adaptadores de Infrastructure realizan esos contratos. Los nombres describen clases previstas para implementar el diseño, sin afirmar que estén desplegadas.
+
 ### 5.4.4. Infrastructure Layer
 
 La capa de infraestructura implementa la persistencia de sesiones y feedback en PostgreSQL y recibe las actualizaciones de identidad necesarias para el contexto.
@@ -2562,7 +2596,18 @@ Las relaciones entre sesión y feedback permanecen dentro del contexto. La ampli
 
 ### 5.4.5. Bounded Context Software Architecture Component Level Diagrams
 
-El controlador dirige las solicitudes a los servicios de comandos o consultas. Estos trabajan con Session y Feedback mediante repositorios y una adaptación de la identidad del usuario.
+Esta vista C4 descompone el container de Practice Session Management definido en 4.3.3. Los elementos externos se sitúan fuera de su frontera; las relaciones indican responsabilidad y protocolo. Las clases siguientes colaboran en los componentes del proceso y mantienen la separación de capas.
+
+| Clases agrupadas en el componente | Capa | Responsabilidad |
+| --- | --- | --- |
+| SessionController | Interface | Recibe preparación, consultas, material y cierre. |
+| SessionCommandService / SessionQueryService | Application | Coordina escritura y consulta de prácticas. |
+| SessionContextFacade | Application | Adapta identidad externa al lenguaje de sesión. |
+| Session / PracticeEvidence / Feedback / configuración / material | Domain | Controla estados, evidencia y límites del ensayo. |
+| SessionRepository / FeedbackRepository / MaterialRepository | Infrastructure | Conserva evidencia y referencias de material privado. |
+| PrivateMaterialStorageAdapter | Infrastructure | Almacena o purga el archivo autorizado. |
+| UserRegisteredConsumer / SessionFinalizedPublisher | Infrastructure | Actualiza proyección y despacha cierre confirmado. |
+| ConsentVerificationClient | Infrastructure | Verifica consentimiento de Identity. |
 
 ![Componentes de Practice Session Management](assets/diagrams/tactical/04-practice-sessions-components.png)
 
@@ -2570,15 +2615,26 @@ El controlador dirige las solicitudes a los servicios de comandos o consultas. E
 
 #### 5.4.6.1. Bounded Context Domain Layer Class Diagrams
 
-Session contiene los registros de Feedback y consulta SessionUserContext para identificar al estudiante. Sus métodos reflejan las transiciones del ciclo de práctica.
+Session contiene configuración, comprobación del consentimiento, material opcional y feedback. SessionMode y SessionState enumeran sus valores. SessionUserContext adapta la identidad externa; las operaciones controlan pausa, recuperación, cierre y eliminación.
 
 ![Clases de Practice Session Management](assets/diagrams/tactical/04-practice-sessions-classes.png)
 
 #### 5.4.6.2. Bounded Context Database Design Diagram
 
-sessions y session_feedback se relacionan mediante el identificador de sesión. El usuario se conserva como referencia externa y structured_data permite almacenar feedback estructurado. El consentimiento, la configuración versionada y la marca de eliminación son ampliaciones propuestas.
+sessions y session_feedback se relacionan mediante el identificador de sesión. El usuario se conserva como referencia externa y structured_data permite almacenar feedback estructurado. La configuración, el consentimiento verificado, closureId, checkpointId y deletedAt forman parte del diseño de datos. El material se referencia mediante una clave privada; no se guarda su contenido en el registro de eventos.
 
 ![Persistencia de Practice Session Management](assets/diagrams/tactical/04-practice-sessions-database.png)
+
+**Restricciones de persistencia**
+
+| Objeto | Restricción y relación con las reglas |
+| --- | --- |
+| SESSIONS | closure_id único por sesión; un cierre confirmado no acepta otro cierre. valid y validity_rule_version conservan el veredicto publicado por Sessions. mode/state pertenecen a las enumeraciones UML. configuration conserva la versión y un tiempo positivo. evidence es nula antes del cierre y contiene únicamente transcripción/métricas/contexto autorizados después de confirmarlo. deleted_at bloquea consultas. |
+| PRACTICE_MATERIALS | UNIQUE(session_id), para un archivo opcional por práctica. CHECK size_bytes entre 1 y 10 MB. Solo PDF/TXT/PPTX autorizados. La clave apunta a almacenamiento privado; la eliminación incluye ese objeto. |
+| SESSION_FEEDBACK | FK session_id dentro del contexto; rubric_version identifica la interpretación del registro. |
+
+La unicidad compuesta se documenta en esta tabla porque comprende varios campos; las marcas PK/FK/UK del diagrama identifican claves simples. Inbox y outbox son registros técnicos del esquema privado: eventId es único en inbox y el despacho confirma la salida después del commit local. No se crean FKs hacia otros contextos.
+
 
 ## 5.5. Bounded Context: Progress & Adaptation
 

@@ -1,18 +1,36 @@
 erDiagram
-    SESSIONS ||--o{ SESSION_FEEDBACK : has
+    SESSIONS ||--o{ SESSION_FEEDBACK : contiene
+    SESSIONS ||--o| PRACTICE_MATERIALS : material_opcional
     SESSIONS {
         uuid id PK
         bigint user_id
         varchar title
         varchar mode
         varchar state
+        jsonb configuration
+        jsonb consent_snapshot
+        jsonb evidence
+        uuid closure_id
+        uuid checkpoint_id
+        boolean valid
+        varchar validity_rule_version
         timestamp started_at
         timestamp finalized_at
+        timestamp deleted_at
     }
     SESSION_FEEDBACK {
         uuid id PK
         uuid session_id FK
         text content
+        varchar rubric_version
         jsonb structured_data
         timestamp created_at
+    }
+    PRACTICE_MATERIALS {
+        uuid id PK
+        uuid session_id FK
+        varchar media_type
+        bigint size_bytes
+        varchar storage_key
+        boolean authorized
     }
