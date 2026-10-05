@@ -3719,11 +3719,11 @@ Las pantallas representan las operaciones descritas en el capítulo V. La siguie
 
 | Pantallas y tarea | Contextos relacionados |
 | --- | --- |
-| A01–A03, P01: cuenta, acceso, recuperación y perfil | Identity & Access (5.8); la recuperación y las ampliaciones del perfil forman parte del diseño propuesto. |
+| A01–A03, P01: cuenta, acceso, recuperación y perfil | Identity & Access (5.8), con cuenta, tokens, recuperación, idioma y consentimiento especificados. |
 | S01–S02: configurar la práctica, preparar audio y autorizar el procesamiento | Practice Session Management (5.4), con Identity & Access (5.8) para el consentimiento. |
 | S03: practicar, pausar, reanudar y finalizar | Live Coaching (5.1) y Practice Session Management (5.4); AI Provider Gateway (5.9) es la pasarela propuesta. |
 | S04, R01: seguir el análisis y revisar el reporte | Speech Analysis (5.2) obtiene métricas y Scoring & Feedback (5.3) calcula la evaluación. |
-| H01–H02, G01–G03: consultar actividad, historial, tendencias y plan | Practice Session Management (5.4) aporta el historial, Progress & Adaptation (5.5) reúne el progreso y Gamification (5.7) aporta rachas y logros. La comparación y el plan son ampliaciones propuestas. |
+| H01–H02, G01–G03: consultar actividad, historial, tendencias y plan | Practice Session Management (5.4) aporta el historial, Progress & Adaptation (5.5) reúne el progreso y Gamification (5.7) aporta rachas y logros. La comparación y el plan se especifican en los modelos y contratos de 5.5. |
 | D01, T01: compartir, exportar, revocar y eliminar | Sharing & Retention (5.6), en colaboración con los contextos propietarios de los datos. |
 | N01: administrar preferencias de contacto | Notifications (5.10); la entrega por canal y el seguimiento son funciones propuestas. |
 
@@ -4020,6 +4020,58 @@ El siguiente diagrama resume las decisiones de acceso, consentimiento y recupera
 | Elegir el siguiente ejercicio | Revisar una recomendación, consultar el plan y preparar una nueva práctica. | R01 → G03 → S01 |
 | Comparar el desempeño | Elegir dos sesiones desde el historial. La interfaz comprueba su compatibilidad antes de presentar diferencias. | H02 → G02 |
 | Compartir un reporte | Crear un permiso temporal y consultar la vista de lectura del tutor. Revocar el permiso bloquea nuevas consultas. | R01 → D01 → T01 |
+
+**Objetivos y wireflows complementarios**
+
+El recorrido de primera práctica anterior corresponde a UG-01: preparar, ensayar y revisar feedback (Valeria; US09–US19). Los siguientes wireflows desarrollan los demás objetivos de las personas. Cada figura conecta pantallas y estados, y sus notas explican alternativas y condiciones. Las flechas indican la secuencia numerada; las ramificaciones descritas conservan el contexto de la tarea.
+
+**UG-00: Acceder al espacio privado y configurar el perfil.** Persona: Valeria y Rodrigo. Historias relacionadas: US05–US08, US23, US28.
+
+Si se olvida la contraseña: A02 → A03 Recuperar acceso → A02. Los errores de acceso se muestran junto al formulario; la recuperación no revela si existe una cuenta.
+
+<img src="assets/diagrams/ux/wireflow-access-web.png" alt="UG-00: wireflow web para acceder al espacio privado y configurar el perfil" width="900">
+
+<img src="assets/diagrams/ux/wireflow-access-mobile.png" alt="UG-00: wireflow mobile para acceder al espacio privado y configurar el perfil" width="900">
+
+**UG-02: Ensayar una entrevista o sustentación con material autorizado.** Persona: Rodrigo. Historias relacionadas: US30, US31, US34, US38.
+
+Si se deniega micrófono, permanecer en S02. Tras desconexión, reanudar desde checkpoint o confirmar cierre parcial. El material personal queda fuera del reporte compartido.
+
+<img src="assets/diagrams/ux/wireflow-contextual-web.png" alt="UG-02: wireflow web para ensayar una entrevista o sustentación con material autorizado" width="900">
+
+<img src="assets/diagrams/ux/wireflow-contextual-mobile.png" alt="UG-02: wireflow mobile para ensayar una entrevista o sustentación con material autorizado" width="900">
+
+**UG-03: Encontrar dos prácticas y comparar evidencia compatible.** Persona: Valeria y Rodrigo. Historias relacionadas: US20–US22, US24, US36.
+
+El estado incompatible bloquea la diferencia numérica y solicita cambiar la selección. Sin coincidencias, limpiar filtros; sin historial suficiente, preparar una práctica inicial.
+
+<img src="assets/diagrams/ux/wireflow-compare-web.png" alt="UG-03: wireflow web para encontrar dos prácticas y comparar evidencia compatible" width="900">
+
+<img src="assets/diagrams/ux/wireflow-compare-mobile.png" alt="UG-03: wireflow mobile para encontrar dos prácticas y comparar evidencia compatible" width="900">
+
+**UG-04: Aplicar una recomendación mediante un ejercicio de práctica.** Persona: Valeria y Rodrigo. Historias relacionadas: US21, US22, US36.
+
+Cada ejercicio identifica objetivo y evidencia fuente compatible. Marcar avance no demuestra mejora de habilidad. Sin historial se propone práctica inicial, sin atribuir un patrón recurrente.
+
+<img src="assets/diagrams/ux/wireflow-plan-web.png" alt="UG-04: wireflow web para aplicar una recomendación mediante un ejercicio de práctica" width="900">
+
+<img src="assets/diagrams/ux/wireflow-plan-mobile.png" alt="UG-04: wireflow mobile para aplicar una recomendación mediante un ejercicio de práctica" width="900">
+
+**UG-05: Compartir de forma limitada y retirar acceso o eliminar.** Persona: Valeria y Rodrigo. Historias relacionadas: US27, US32, US33.
+
+La rama de exportación sale de D01 y respeta el alcance autorizado. Revocar no elimina la sesión ni recupera copias. Eliminar exige confirmación: acceso bloqueado y purga pendiente hasta recibir confirmaciones.
+
+<img src="assets/diagrams/ux/wireflow-privacy-web.png" alt="UG-05: wireflow web para compartir de forma limitada y retirar acceso o eliminar" width="900">
+
+<img src="assets/diagrams/ux/wireflow-privacy-mobile.png" alt="UG-05: wireflow mobile para compartir de forma limitada y retirar acceso o eliminar" width="900">
+
+**UG-06: Comprender la propuesta y elegir registro o consulta.** Persona: Nuevo estudiante. Historias relacionadas: US01–US04.
+
+La landing también permite iniciar una consulta y acceder a privacidad y términos. Los testimonios solo se incorporan con autorización y evidencia; no se inventan para completar la pantalla.
+
+<img src="assets/diagrams/ux/wireflow-landing-web.png" alt="UG-06: wireflow web para comprender la propuesta y elegir registro o consulta" width="900">
+
+<img src="assets/diagrams/ux/wireflow-landing-mobile.png" alt="UG-06: wireflow mobile para comprender la propuesta y elegir registro o consulta" width="900">
 
 ### 6.4.3. Applications Mock-ups
 
@@ -4336,6 +4388,14 @@ El mensaje confirma que la sesión ya no puede consultarse e informa que la elim
 **UF-03: Compartición y eliminación.** El estudiante crea un acceso temporal para un tutor y puede revocarlo desde la misma sección. Si solicita eliminar la sesión, esta deja de estar disponible y se muestra “Purga pendiente” mientras concluye la eliminación de sus datos.
 
 ![User flow de privacidad](assets/diagrams/ux/privacy-flow.png)
+
+**UF-04: Buscar y comparar prácticas.** El estudiante filtra su historial, selecciona dos sesiones y comprueba su compatibilidad. Si no coinciden modo o versiones, cambia la selección antes de interpretar diferencias.
+
+![User flow de comparación](assets/diagrams/ux/comparison-flow.png)
+
+**UF-05: Aplicar un plan.** El estudiante parte de una recomendación sustentada, revisa un ejercicio y prepara un nuevo ensayo. Sin historial suficiente se propone una práctica inicial; completar el ejercicio no acredita mejora medida.
+
+![User flow de plan](assets/diagrams/ux/plan-flow.png)
 
 ## 6.5. Applications Prototyping
 

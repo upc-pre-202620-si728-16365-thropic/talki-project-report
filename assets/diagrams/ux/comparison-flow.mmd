@@ -1,0 +1,10 @@
+flowchart TD
+ A[Historial propio] --> B[Buscar y filtrar]
+ B --> C{Hay resultados?}
+ C -- No --> D[Limpiar filtros o preparar primera práctica]
+ C -- Sí --> E[Elegir dos sesiones]
+ E --> F{Mismo usuario, modo y versiones?}
+ F -- No --> G[Mostrar motivo y cambiar selección]
+ G --> E
+ F -- Sí --> H[Comparar dimensiones con evidencia]
+ H --> I[Consultar reporte fuente o elegir ejercicio]

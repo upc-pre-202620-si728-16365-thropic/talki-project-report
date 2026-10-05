@@ -1,0 +1,10 @@
+flowchart TD
+ A[Consultar reporte y progreso] --> B{Hay evidencia suficiente compatible?}
+ B -- No --> C[Proponer práctica inicial]
+ B -- Sí --> D[Identificar patrón y sesiones fuente]
+ D --> E[Revisar ejercicio, objetivo y duración]
+ E --> F[Registrar avance del ejercicio]
+ F --> G[Preparar y autorizar ensayo]
+ C --> G
+ G --> H[Practicar y revisar nueva evidencia]
+ H --> I[Sin afirmar mejora antes de medirla]
