@@ -82,6 +82,7 @@
 | 1.16 | 05/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Revisión del tono del Student Outcome: redacción en primera persona y distinción entre documentación realizada, revisión asignada y sustentación pendiente. |
 | 1.17 | 05/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Corrección integral del TP: modelos UML, componentes C4, contratos, persistencia, trazabilidad IV–VI, wireflows por objetivo, guías visuales, metadatos, internacionalización propuesta y síntesis de entrevistas. Actualización del Student Outcome y preparación de evidencias; revisión individual y materiales audiovisuales pendientes. |
 | 1.18 | 05/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Reorganización de la información de colaboración: evidencias de GitHub en Project Report Collaboration Insights, aportes en Student Outcome e informe de participación en Anexos. Retirada de tablas y explicaciones duplicadas. |
+| 1.19 | 05/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Revisión de congruencia del feedback: idioma de interfaz y conversación, materiales y voz móvil en despliegue, evidencia conservada del reporte, confirmaciones de purga y presentación de rúbricas y puntuaciones parciales. |
 
 La edición de las versiones 1.0–1.12 fue realizada por Alejandro Daniel Oroncoy Almeyda. Los demás nombres corresponden a los coautores registrados en los commits del avance, asociados en esta tabla por las secciones correspondientes. La revisión individual de esos integrantes continúa pendiente.
 
@@ -4357,7 +4358,7 @@ El mensaje explica que el análisis no pudo completarse y ofrece una acción par
 
 ##### Evidencia insuficiente
 
-El reporte indica qué dimensiones no pueden evaluarse y ofrece una acción para volver a practicar. La puntuación global se muestra únicamente cuando existe evidencia suficiente.
+El reporte distingue las dimensiones evaluables de las que no tienen soporte y ofrece volver a practicar. La puntuación global promedia solo las dimensiones evaluables e indica cuántas la sustentan; cuando ninguna puede evaluarse, muestra «Sin evidencia». Una puntuación parcial no se compara como si tuviera la misma cobertura que una completa.
 
 **Evidencia insuficiente (web)**
 
