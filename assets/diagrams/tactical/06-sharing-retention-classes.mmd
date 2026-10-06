@@ -23,6 +23,7 @@ class DeletionRequest {
   -Instant deadline
   +registerReceipt(PurgeReceipt receipt) void
   +isComplete() boolean
+  +requireRetry(Instant now) void
 }
 class DeletionState {
   <<enumeration>>

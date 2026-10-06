@@ -2125,7 +2125,7 @@ LiveCoachController recibe las solicitudes del cliente para consultar los modos,
 | `POST /v1/coach/live-token?mode={mode}` | Solicitar una credencial temporal para el modo elegido. |
 | `POST /v1/coach/{sessionId}/finalize` | Recibir la evidencia del ensayo y solicitar su cierre. |
 
-**Datos de entrada y respuesta.** La preparación recibe el modo y, cuando corresponde, el identificador del escenario. LiveTokenResponse devuelve la credencial temporal, el modelo, la fecha de vencimiento y la duración sugerida. El cierre recibe el identificador de sesión, la transcripción y las métricas disponibles. Antes de emitir la credencial, el orquestador verifica propiedad de la sesión y consentimiento vigente mediante los contratos internos de Sessions e Identity. El token expira y no permite preparar otra sesión.
+**Datos de entrada y respuesta.** La preparación recibe sessionId y el modo elegido, además del escenario cuando corresponde. Live comprueba que la sesión pertenece al solicitante, que su configuración coincide con el modo pedido y que existe consentimiento vigente antes de emitir una credencial. LiveTokenResponse devuelve la credencial temporal, el modelo, la fecha de vencimiento y la duración sugerida. El cierre recibe el identificador de sesión, la transcripción y las métricas disponibles. El token expira y no permite preparar otra sesión.
 
 ### 5.1.3. Application Layer
 
@@ -2272,13 +2272,14 @@ La recepción de SessionLiveFinalizedEvent inicia el análisis de la transcripci
 | Nombre | Tipo | Descripción | Capa |
 | --- | --- | --- | --- |
 | AnalyzeSpeechHandler | Command Handler | Identifica muletillas y obtiene el conteo por expresión y la cantidad de palabras. | Application |
+| PurgeAnalysisHandler | Event Handler | Retira el job y sus resultados y registra la confirmación local de eliminación. | Application |
 | AnalysisResultPublisherPort | Puerto de salida | Relaciona las métricas con la sesión y solicita la publicación de FillerAnalyzedEvent. | Application |
 
 **Contratos de coordinación**
 
 | Clase o grupo de clases | Responsabilidad | Operaciones previstas |
 | --- | --- | --- |
-| AnalyzeSpeechHandler | Coordina análisis acústico/contextual y reintento sobre el mismo job. | handle(SessionLiveFinalizedEvent); retry(jobId) |
+| AnalyzeSpeechHandler / PurgeAnalysisHandler | Coordina análisis, reintento y retirada de evidencia del contexto. | handle(SessionLiveFinalizedEvent); retry(jobId); handle(DeletionRequestedEvent) |
 
 Los handlers validan la petición o el evento antes de ejecutar cambios. Los puertos de repositorio y de integración son contratos; los adaptadores de Infrastructure realizan esos contratos. Los nombres describen clases previstas para implementar el diseño, sin afirmar que estén desplegadas.
 
@@ -2292,8 +2293,11 @@ La capa de infraestructura conecta el análisis con los demás contextos mediant
 | --- | --- | --- | --- |
 | SessionLiveFinalizedConsumer | Consumidor de eventos | Recibe el cierre de práctica y activa el análisis. | Infrastructure |
 | FillerAnalyzedPublisher | Publicador de eventos | Comunica el resultado a Scoring & Feedback. | Infrastructure |
+| DeletionRequestedConsumer / PurgeReceiptPublisher | Adaptadores de privacidad | Reciben la solicitud de eliminación y confirman la purga local. | Infrastructure |
 
 El análisis no conserva un reporte de negocio propio, pero mantiene AnalysisJob y su salida durable en un esquema privado. FillerDetector procesa la transcripción y el resultado conserva la referencia de sesión. AcousticEvidenceAnalyzer y ContextualEvidenceAnalyzer especifican el análisis acústico y contextual de 4.2 sobre AuthorizedSpeechEvidence. Los resultados se agrupan en SpeechAnalysisResult; no se utiliza material sin autorización. AnalysisJob registra versión, estado e intentos para los reintentos de US37. AnalysisJobRepository y AnalysisResultOutbox almacenan el estado y la salida de forma atómica; el dispatcher publica y confirma el resultado.
+
+DeletionRequestedConsumer delega en PurgeAnalysisHandler, que retira el job y sus resultados autorizados. La operación confirma su estado local antes de que PurgeReceiptPublisher comunique purge.completed con requestId y el nombre del contexto. Se aplica el control de eventos tardíos definido en Contratos y garantías de integración.
 
 ### 5.2.5. Bounded Context Software Architecture Component Level Diagrams
 
@@ -2301,12 +2305,12 @@ Esta vista C4 descompone el container de Speech Analysis definido en 4.3.3. Los 
 
 | Clases agrupadas en el componente | Capa | Responsabilidad |
 | --- | --- | --- |
-| SessionLiveFinalizedConsumer | Infrastructure | Recibe el contrato AMQP y confirma tras commit. |
-| AnalyzeSpeechHandler | Application | Coordina análisis acústico/contextual y reintento sobre el mismo job. |
+| SessionLiveFinalizedConsumer / DeletionRequestedConsumer | Infrastructure | Recibe el contrato AMQP y confirma tras commit. |
+| AnalyzeSpeechHandler / PurgeAnalysisHandler | Application | Coordina análisis, reintento y purga. |
 | AnalysisJob / FillerDetector / AcousticEvidenceAnalyzer / ContextualEvidenceAnalyzer | Domain | Controla estado, métricas y hallazgos respaldados por evidencia. |
 | AnalysisJobController | Interface | Consulta estado y solicita reintento interno. |
 | AnalysisJobRepository / AnalysisResultOutbox | Infrastructure | Conserva job y resultado durable. |
-| FillerAnalyzedPublisher | Infrastructure | Despacha métricas confirmadas por RabbitMQ. |
+| FillerAnalyzedPublisher / PurgeReceiptPublisher | Infrastructure | Despacha métricas o confirmación de purga. |
 
 ![Componentes de Speech Analysis](assets/diagrams/tactical/02-speech-analysis-components.png)
 
@@ -2345,7 +2349,7 @@ La capa de dominio reúne los conceptos que permiten convertir la evidencia de u
 
 **Aggregate Root**
 
-ScoreResult identifica la evaluación de una práctica y conserva su relación con la sesión y el estudiante. Reúne la puntuación y el momento del cálculo; el modelo ampliado añade las versiones de análisis y rúbrica para interpretar el resultado histórico.
+ScoreResult identifica la evaluación de una práctica y conserva su relación con la sesión y el estudiante. Reúne la puntuación, el momento del cálculo y una copia de la evidencia autorizada utilizada, con sus dimensiones disponibles y limitaciones. Las versiones de análisis y rúbrica permiten interpretar el resultado histórico.
 
 **Value Objects**
 
@@ -2361,11 +2365,12 @@ ScoreCalculator aplica los criterios de puntuación sobre las métricas disponib
 | --- | --- | --- | --- |
 | ScoreResult | Aggregate Root | Identifica la evaluación de una sesión, su propietario y el momento de cálculo. | Domain |
 | VoiceScore | Value Object | Agrupa las dimensiones de fluidez, claridad, volumen, vocabulario y confianza estimada. | Domain |
+| EvaluationEvidence / ContextualFinding | Value Objects | Conservan las métricas, cobertura, limitaciones y fragmentos que sustentan la evaluación. | Domain |
 | ScoreCalculator | Domain Service | Aplica los criterios de cálculo sobre las métricas recibidas. | Domain |
 
 **Reglas principales**
 
-1. Cada dimensión utiliza una escala de 0 a 100 cuando existe evidencia suficiente. La puntuación global promedia solo las dimensiones evaluables y devuelve ausencia de valor si no hay ninguna; el reporte identifica su cobertura y limitaciones.
+1. Cada dimensión utiliza una escala de 0 a 100 cuando existe evidencia suficiente. La puntuación global es el promedio de las dimensiones evaluables, redondeado al entero más próximo, y devuelve ausencia de valor si no hay ninguna; el reporte identifica su cobertura y limitaciones.
 2. La evaluación debe conservar la versión del análisis y la rúbrica utilizada.
 3. Recibir nuevamente un mismo análisis debe conservar un único resultado para esa versión.
 
@@ -2375,9 +2380,10 @@ Los atributos se encapsulan; las operaciones públicas expresan las reglas del c
 
 | Elemento | Atributos o valores | Operaciones públicas |
 | --- | --- | --- |
-| ScoreResult | UUID id<br>UUID sessionId<br>Long userId<br>String analysisVersion<br>String rubricVersion<br>VoiceScore score<br>List~String~ recommendations<br>Instant computedAt | hasEvidence() boolean |
+| ScoreResult | UUID id<br>UUID sessionId<br>Long userId<br>String analysisVersion<br>String rubricVersion<br>VoiceScore score<br>EvaluationEvidence evidence<br>List~String~ recommendations<br>Instant computedAt | hasEvidence() boolean |
 | VoiceScore | Integer fluency<br>Integer clarity<br>Integer volume<br>Integer vocabulary<br>Integer confidence | overall() Integer |
-| EvaluationEvidence | UUID sessionId<br>String analysisVersion<br>Map~String,double~ metrics<br>List~String~ availableDimensions<br>List~String~ limitations<br>List~String~ contextualFindings | Consulta mediante el agregado o servicio responsable. |
+| EvaluationEvidence | UUID sessionId<br>String analysisVersion<br>Map~String,double~ metrics<br>List~String~ availableDimensions<br>List~String~ limitations<br>List~ContextualFinding~ contextualFindings | Consulta mediante el agregado o servicio responsable. |
+| ContextualFinding | String term<br>boolean spoken<br>String evidenceFragment<br>String suggestedAlternative<br>String reason | Consulta mediante el agregado o servicio responsable. |
 | ScoreCalculator | Sin estado propio. | calculate(EvaluationEvidence evidence, String rubricVersion) VoiceScore |
 
 ### 5.3.2. Interface Layer
@@ -2407,13 +2413,14 @@ La lectura del reporte recuperará la evaluación para un estudiante autorizado.
 | Nombre | Tipo | Descripción | Capa |
 | --- | --- | --- | --- |
 | EvaluatePracticeHandler | Event Handler | Solicita el cálculo a ScoreCalculator con las métricas del análisis. | Application |
+| PurgeScoreResultsHandler | Event Handler | Retira los resultados de la sesión y registra la confirmación local de eliminación. | Application |
 | ReportQueryHandler | Query Handler | Recupera la evaluación autorizada y su estado; EvaluatePracticeHandler conserva ScoreResult y solicita ScoringCompletedEvent. | Application |
 
 **Contratos de coordinación**
 
 | Clase o grupo de clases | Responsabilidad | Operaciones previstas |
 | --- | --- | --- |
-| EvaluatePracticeHandler / ReportQueryHandler | Evalúa, registra y recupera resultados autorizados. | handle(FillerAnalyzedEvent); query(sessionId, requester) |
+| EvaluatePracticeHandler / ReportQueryHandler / PurgeScoreResultsHandler | Evalúa, consulta y retira resultados autorizados. | handle(FillerAnalyzedEvent); query(sessionId, requester); handle(DeletionRequestedEvent) |
 
 Los handlers validan la petición o el evento antes de ejecutar cambios. Los puertos de repositorio y de integración son contratos; los adaptadores de Infrastructure realizan esos contratos. Los nombres describen clases previstas para implementar el diseño, sin afirmar que estén desplegadas.
 
@@ -2428,8 +2435,11 @@ La capa de infraestructura recibe las métricas, conserva las evaluaciones y com
 | FillerAnalyzedConsumer | Consumidor de eventos | Recibe las métricas y activa el flujo de evaluación. | Infrastructure |
 | ScoreResultRepository | Repositorio | Conserva y consulta evaluaciones en PostgreSQL. | Infrastructure |
 | ScoringCompletedPublisher | Publicador de eventos | Comunica la evaluación completada mediante RabbitMQ. | Infrastructure |
+| DeletionRequestedConsumer / PurgeReceiptPublisher | Adaptadores de privacidad | Reciben la solicitud de eliminación y confirman la purga de evaluaciones. | Infrastructure |
 
-ScoreResultRepository conserva una evaluación por sesión, analysisVersion y rubricVersion, con una restricción única compuesta. La transacción registra el resultado y la salida en outbox antes de confirmar el evento recibido. SessionAccessClient comprueba autorización y eliminación para las consultas.
+ScoreResultRepository conserva una evaluación por sesión, analysisVersion y rubricVersion, con una restricción única compuesta. Guarda también EvaluationEvidence como una copia versionada: métricas, dimensiones disponibles, limitaciones y hallazgos con fragmento, alternativa y razón. La consulta, la compartición y la exportación leen esa misma copia; no reconstruyen la evidencia a partir de un análisis posterior ni almacenan audio o el material completo en Scoring. La transacción registra el resultado y la salida en outbox antes de confirmar el evento recibido. SessionAccessClient comprueba autorización y eliminación para las consultas.
+
+DeletionRequestedConsumer delega en PurgeScoreResultsHandler, que retira las evaluaciones y su evidencia conservada. La operación confirma su estado local antes de que PurgeReceiptPublisher comunique purge.completed con requestId y el nombre del contexto. Se aplica el control de eventos tardíos definido en Contratos y garantías de integración.
 
 ### 5.3.5. Bounded Context Software Architecture Component Level Diagrams
 
@@ -2437,12 +2447,12 @@ Esta vista C4 descompone el container de Scoring & Feedback definido en 4.3.3. L
 
 | Clases agrupadas en el componente | Capa | Responsabilidad |
 | --- | --- | --- |
-| FillerAnalyzedConsumer | Infrastructure | Adapta el evento de análisis. |
+| FillerAnalyzedConsumer / DeletionRequestedConsumer | Infrastructure | Adapta análisis y solicitudes de purga. |
 | ReportController | Interface | Ofrece reporte, estado y solicitud de reintento. |
-| EvaluatePracticeHandler / ReportQueryHandler | Application | Evalúa, registra y recupera resultados autorizados. |
-| ScoreCalculator / ScoreResult / VoiceScore | Domain | Calcula dimensiones respaldadas por evidencia. |
+| EvaluatePracticeHandler / ReportQueryHandler / PurgeScoreResultsHandler | Application | Evalúa, consulta y retira resultados autorizados. |
+| ScoreCalculator / ScoreResult / VoiceScore / EvaluationEvidence | Domain | Calcula dimensiones respaldadas por evidencia. |
 | ScoreResultRepository / ScoringOutbox | Infrastructure | Mantiene unicidad por sesión y versiones. |
-| ScoringCompletedPublisher | Infrastructure | Despacha evaluación confirmada. |
+| ScoringCompletedPublisher / PurgeReceiptPublisher | Infrastructure | Despacha evaluación o confirmación de purga. |
 | SessionAccessClient | Infrastructure | Comprueba acceso y eliminación. |
 | AnalysisJobClient | Infrastructure | Consulta estado y solicita reintento. |
 
@@ -2452,7 +2462,7 @@ Esta vista C4 descompone el container de Scoring & Feedback definido en 4.3.3. L
 
 #### 5.3.6.1. Bounded Context Domain Layer Class Diagrams
 
-ScoreResult contiene VoiceScore y, en el modelo ampliado, las versiones de análisis y rúbrica. ScoreCalculator aplica los criterios de puntuación. La composición relaciona ScoreResult con VoiceScore; el consumidor del evento pertenece a Infrastructure y aparece en componentes. Las dimensiones sin evidencia admiten un valor ausente en lugar de asignarles cero.
+ScoreResult contiene VoiceScore, EvaluationEvidence y las versiones de análisis y rúbrica. EvaluationEvidence contiene los hallazgos contextuales autorizados. ScoreCalculator aplica los criterios de puntuación. Las composiciones identifican la puntuación y la evidencia conservada como partes del resultado; el consumidor del evento pertenece a Infrastructure y aparece en componentes. Las dimensiones sin evidencia admiten un valor ausente en lugar de asignarles cero.
 
 ![Clases de Scoring & Feedback](assets/diagrams/tactical/03-scoring-feedback-classes.png)
 
@@ -2466,7 +2476,7 @@ La tabla score_results contiene la referencia a la sesión, el usuario, las dime
 
 | Objeto | Restricción y relación con las reglas |
 | --- | --- |
-| SCORE_RESULTS | UNIQUE(session_id, analysis_version, rubric_version). Dimensiones nulas cuando no existe evidencia; CHECK entre 0 y 100 para valores presentes. Las recomendaciones conservan la referencia a la evidencia utilizada. |
+| SCORE_RESULTS | UNIQUE(session_id, analysis_version, rubric_version). Dimensiones nulas cuando no existe evidencia; CHECK entre 0 y 100 para valores presentes. evidence conserva métricas, cobertura, limitaciones y hallazgos de esa evaluación en JSONB, con la misma analysisVersion del resultado. Las recomendaciones remiten a esa evidencia y no a un análisis más reciente. |
 
 La unicidad compuesta se documenta en esta tabla porque comprende varios campos; las marcas PK/FK/UK del diagrama identifican claves simples. Inbox y outbox son registros técnicos del esquema privado: eventId es único en inbox y el despacho confirma la salida después del commit local. No se crean FKs hacia otros contextos.
 
@@ -2648,7 +2658,7 @@ La capa de dominio representa la evolución del estudiante a partir de sus prác
 
 **Aggregate Root**
 
-UserProgress conserva cantidades de sesiones y minutos. El promedio y la mejor puntuación se derivan de SessionMetrics según modo y versiones seleccionados, en lugar de guardar una media que mezcle rúbricas. La experiencia y las reglas de racha pertenecen a Gamification; el panel puede presentar la racha como información resumida, sin redefinir sus reglas.
+UserProgress conserva cantidades de sesiones y minutos. El promedio global y la mejor puntuación se derivan de SessionMetrics del mismo modo y versiones, con las cinco dimensiones evaluables. Los resultados parciales pueden consultarse por dimensión y aportan a los conteos de práctica válida; no se mezclan con resultados completos en el promedio global. La experiencia y las reglas de racha pertenecen a Gamification; el panel puede presentar la racha como información resumida, sin redefinir sus reglas.
 
 **Entities**
 
@@ -2663,8 +2673,8 @@ SessionMetrics conserva las métricas y versiones de cada práctica. AdaptivePla
 
 **Reglas principales**
 
-1. Cada evaluación se incorpora una sola vez al resumen de progreso.
-2. La comparación requiere sesiones del mismo estudiante con modos y versiones compatibles.
+1. Cada práctica válida aumenta los conteos una sola vez. Sus versiones de evaluación se conservan por separado para consultar evidencia compatible.
+2. La comparación requiere sesiones del mismo estudiante con modos y versiones compatibles. Las diferencias por dimensión usan evidencia presente en ambas; una diferencia global requiere además la misma cobertura de dimensiones.
 3. Si no existe suficiente historial, se propone una práctica inicial en lugar de atribuir dificultades recurrentes.
 
 **Atributos y operaciones del modelo de dominio**
@@ -2686,7 +2696,7 @@ ProgressController ofrece la consulta del resumen de desempeño. La actualizaci�
 
 | Operación o contrato | Responsabilidad |
 | --- | --- |
-| `GET /v1/progress/dashboard?userId={userId}` | Consultar el resumen de actividad y desempeño. |
+| `GET /v1/progress/dashboard` | Consultar el resumen del estudiante autenticado, con modo y versiones como filtros de la vista. |
 | `scoring.completed` | Recibir una evaluación para incorporar sus métricas al progreso. |
 | `GET /v1/progress/comparisons?left={id}&right={id}` y `POST /v1/progress/plans` | Comparar evidencia propia compatible y generar un plan con referencias a las prácticas utilizadas. |
 
@@ -2698,7 +2708,7 @@ La capa de aplicación coordina la incorporación de evaluaciones y la consulta 
 
 **Actualización por eventos**
 
-ScoringCompletedEvent incorpora la puntuación y la duración de una práctica al resumen de UserProgress. El diseño ampliado registra la evidencia por sesión para evitar contribuciones duplicadas.
+RecordProgressHandler incorpora la puntuación y la duración confirmada de ScoringCompletedEvent únicamente cuando valid=true, según el veredicto de Sessions. Una práctica no válida no aumenta los conteos ni participa en promedios. La evidencia se conserva por sesión y versiones para evitar contribuciones duplicadas.
 
 **Queries**
 
@@ -2712,7 +2722,7 @@ La consulta del panel recupera los totales y el desempeño del estudiante. UserP
 | UserProgressQueryService | Servicio de consulta propuesto | Organiza la lectura del panel y la comparación de prácticas compatibles. | Application |
 | BuildAdaptivePlanHandler | Command Handler | Relaciona ejercicios con recomendaciones y sesiones que aportan evidencia. | Application |
 
-**Recorrido del caso de uso.** Una evaluación completada actualiza los totales y las métricas del estudiante. Las consultas obtienen el resumen y, en la ampliación, las evidencias por sesión. La comparación verifica el modo y la versión antes de presentar variaciones de desempeño.
+**Recorrido del caso de uso.** Una evaluación completada actualiza los totales y las métricas del estudiante. Las consultas obtienen el resumen y, en la ampliación, las evidencias por sesión. La comparación verifica el modo, las versiones y la cobertura antes de presentar variaciones de desempeño; no resta puntuaciones globales con distintas dimensiones evaluadas.
 
 **Contratos de coordinación**
 
@@ -2769,7 +2779,7 @@ user_progress conserva los totales de prácticas y minutos; las puntuaciones res
 | Objeto | Restricción y relación con las reglas |
 | --- | --- |
 | SESSION_METRICS | UNIQUE(session_id, analysis_version, rubric_version). Cada dimensión presente cumple 0–100. user_id referencia USER_PROGRESS en el mismo esquema; session_id es referencia externa. Se comparan mismo usuario, modo y versiones. |
-| USER_PROGRESS | Los conteos se recalculan por session_id distinto; promedios y mejores resultados se presentan por versiones compatibles, excluyendo valores sin evidencia. |
+| USER_PROGRESS | Los conteos se recalculan por session_id válido distinto. Promedio global y mejor resultado requieren mismo modo, versiones y cinco dimensiones evaluables; sin resultados completos se indica ausencia de valor. La evolución por dimensión utiliza solo los valores presentes. |
 | ADAPTIVE_PLANS / PRACTICE_EXERCISES | evidence_ids referencia registros locales existentes; FK plan_id interna. Un plan sin historial suficiente propone práctica inicial y no atribuye debilidades recurrentes. |
 
 La unicidad compuesta se documenta en esta tabla porque comprende varios campos; las marcas PK/FK/UK del diagrama identifican claves simples. Inbox y outbox son registros técnicos del esquema privado: eventId es único en inbox y el despacho confirma la salida después del commit local. No se crean FKs hacia otros contextos.
@@ -2815,7 +2825,7 @@ Los atributos se encapsulan; las operaciones públicas expresan las reglas del c
 | Elemento | Atributos o valores | Operaciones públicas |
 | --- | --- | --- |
 | ShareGrant | UUID id<br>UUID reportId<br>UUID sessionId<br>Long ownerId<br>String tokenHash<br>String scope<br>Instant expiresAt<br>Instant revokedAt | isAccessible(Instant now, boolean deleted) boolean<br>revoke(Instant now) void |
-| DeletionRequest | UUID id<br>UUID sessionId<br>Long ownerId<br>DeletionState state<br>Set~String~ expectedContexts<br>Instant deadline | registerReceipt(PurgeReceipt receipt) void<br>isComplete() boolean |
+| DeletionRequest | UUID id<br>UUID sessionId<br>Long ownerId<br>DeletionState state<br>Set~String~ expectedContexts<br>Instant deadline | registerReceipt(PurgeReceipt receipt) void<br>isComplete() boolean<br>requireRetry(Instant now) void |
 | DeletionState | REQUESTED<br>ACCESS_BLOCKED<br>PURGING<br>COMPLETED<br>RETRY_REQUIRED | Consulta mediante el agregado o servicio responsable. |
 | PurgeReceipt | UUID id<br>String context<br>Instant completedAt | Consulta mediante el agregado o servicio responsable. |
 
@@ -2863,7 +2873,7 @@ Los manejadores propuestos separan cada operación y reúnen las comprobaciones 
 | CollectPurgeReceiptHandler | Manejador de confirmaciones | Reúne las confirmaciones y determina si la solicitud concluyó. | Application |
 | ExportReportHandler | Manejador de exportación | Prepara la descarga con el alcance y las versiones autorizadas. | Application |
 
-**Recorrido del caso de uso.** Compartir genera un permiso temporal; consultar verifica su vigencia y revocación. Eliminar bloquea nuevas consultas y solicita el retiro de los datos a cada contexto responsable. La solicitud se completa cuando se reúnen las confirmaciones esperadas.
+**Recorrido del caso de uso.** Compartir genera un permiso temporal; consultar verifica su vigencia y revocación. Eliminar bloquea nuevas consultas y solicita el retiro de los datos a cada contexto responsable. La solicitud se completa cuando se reúnen las confirmaciones esperadas. RequestDeletionHandler fija deadline a 24 horas desde la aceptación, como meta inicial de QAS-PRI-01. Al consultar o actualizar una solicitud, si vence ese plazo y falta alguna confirmación, DeletionRequest pasa a RETRY_REQUIRED y presenta los contextos pendientes; el acceso continúa bloqueado. Las confirmaciones posteriores permiten concluir la purga sin afirmar que se cumplió el plazo. La meta de diseño no acredita un acuerdo de servicio validado con los proveedores.
 
 **Contratos de coordinación**
 
@@ -3457,9 +3467,11 @@ Las operaciones de este capítulo especifican el diseño objetivo; su documentac
 | Cierre confirmado | Sessions recibe closureId, sessionId, checkpointId y evidencia autorizada. UNIQUE(sessionId, closureId) y transición de estado impiden cierres repetidos. Evidencia y outbox se confirman en una transacción; solo después se publica session.live.finalized. |
 | Eventos de análisis y evaluación | Cada mensaje incluye eventId, occurredAt, sessionId, userId, correlationId y las versiones pertinentes. El cierre incorpora mode, goal, confirmedDurationSeconds, valid y validityRuleVersion; Analysis y Scoring propagan estos metadatos sin reinterpretar el veredicto de Sessions. Los consumidores registran eventId en inbox; la clave de negocio sesión/versión evita duplicar resultados aun si llega otro eventId. El ACK sigue a la confirmación local. |
 | Recuperación de análisis | AnalysisJob conserva estado e intentos por sesión y versión; un reintento reutiliza el job. Los mensajes fallidos pasan a una cola de errores después del límite configurado y pueden reactivarse con autorización. El estado se consulta mediante el reporte; no se fabrica una puntuación mientras está pendiente. |
-| Avance y reconocimientos | Progress distingue prácticas únicas de versiones de resultados: totalSessions y totalMinutes se calculan por sessionId; las medias solo agregan evidencia compatible de la vista elegida. Gamification contabiliza una sesión válida una vez, aunque sea reevaluada. |
-| Eliminación | Sharing registra la solicitud y pide a Sessions bloquear el acceso. Solo después de esa confirmación responde 202 con ACCESS_BLOCKED y comunica deletion.requested. Cada contexto elimina su evidencia y confirma con requestId/context; Sharing completa al reunir los contextos esperados. Un fallo del bloqueo devuelve 503, sin afirmar que el acceso ya fue retirado. |
+| Avance y reconocimientos | Progress distingue prácticas únicas de versiones de resultados: totalSessions y totalMinutes se calculan por sessionId válido; el promedio global y el mejor resultado utilizan el mismo modo, versiones y las cinco dimensiones evaluables. Los parciales se consultan por dimensión y no reciben cero por falta de evidencia. Gamification contabiliza una sesión válida una vez, aunque sea reevaluada. |
+| Eliminación | Sharing registra la solicitud y pide a Sessions bloquear el acceso. Solo después de esa confirmación responde 202 con ACCESS_BLOCKED y comunica deletion.requested. Sessions, Analysis, Scoring, Progress, Gamification y Notifications retiran sus datos o referencias del ensayo y publican purge.completed con requestId/context después de confirmar su operación local. Sessions incluye el archivo privado; Progress y Gamification recalculan los agregados afectados. Sharing revoca los permisos y completa la solicitud al reunir los seis contextos esperados. Un fallo del bloqueo devuelve 503, sin afirmar que el acceso ya fue retirado. |
 | Salida durable | Los contextos con escritura local conservan outbox junto a su cambio y utilizan confirmación del broker. El registro técnico no duplica la propiedad de datos ni contiene tokens, audio o material. Identificadores de otros contextos son referencias, no claves foráneas entre bases. |
+
+**Control de eventos posteriores al borrado.** Cada consumidor mantiene el estado técnico de eliminación por sessionId junto a su registro de mensajes. La retirada de datos de la base y esa marca se confirman en la misma transacción local; el archivo privado se elimina por separado y Sessions solo confirma su purga cuando ambas operaciones concluyen; un evento tardío de análisis, evaluación o notificación no puede reconstruir la evidencia retirada. Si una escritura ya estaba en curso, debe comprobar la marca antes de confirmarse. Un mensaje repetido de eliminación conserva el mismo resultado y puede reenviar la confirmación; no declara purga completa si una operación, incluido el borrado del archivo, falló. Inbox, outbox y marcas de eliminación son registros técnicos complementarios a las tablas de negocio de las figuras.
 
 En Interface se describen las peticiones y los eventos. Infrastructure implementa REST/AMQP, repositorios y dispatchers; Application valida y coordina el caso de uso; Domain mantiene las reglas. Una figura C4 agrupa clases por responsabilidad y la tabla siguiente permite identificar las clases que implementarán esa responsabilidad.
 

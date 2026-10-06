@@ -8,6 +8,7 @@ class ScoreResult {
   -String analysisVersion
   -String rubricVersion
   -VoiceScore score
+  -EvaluationEvidence evidence
   -List~String~ recommendations
   -Instant computedAt
   +hasEvidence() boolean
@@ -28,11 +29,21 @@ class EvaluationEvidence {
   -Map~String,double~ metrics
   -List~String~ availableDimensions
   -List~String~ limitations
-  -List~String~ contextualFindings
+  -List~ContextualFinding~ contextualFindings
+}
+class ContextualFinding {
+  <<ValueObject>>
+  -String term
+  -boolean spoken
+  -String evidenceFragment
+  -String suggestedAlternative
+  -String reason
 }
 class ScoreCalculator {
   +calculate(EvaluationEvidence evidence, String rubricVersion) VoiceScore
 }
 ScoreResult "1" *-- "1" VoiceScore : dimensiones
+ScoreResult "1" *-- "1" EvaluationEvidence : evidencia conservada
+EvaluationEvidence "1" *-- "0..*" ContextualFinding : hallazgos autorizados
 ScoreCalculator ..> EvaluationEvidence : interpreta
 ScoreCalculator ..> VoiceScore : calcula
