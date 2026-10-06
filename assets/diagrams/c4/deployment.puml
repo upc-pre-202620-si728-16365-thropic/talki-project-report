@@ -34,6 +34,7 @@ cloud "Railway: servicios propuestos" {
 }
 cloud "Supabase: datos propuestos" {
   database "PostgreSQL\nEsquemas privados por contexto" as pg
+  node "Almacenamiento de objetos\nMateriales privados autorizados" as storage
 }
 cloud "Servicios externos" {
   node "Gemini Live" as ai
@@ -46,8 +47,10 @@ gateway --> services : enrutamiento / HTTPS-JSON
 services --> broker : publica eventos / AMQP
 broker --> services : entrega eventos / AMQP
 services --> pg : datos propios / PostgreSQL-TLS
+core --> storage : Sessions almacena o purga material / HTTPS
 services --> ai : credencial efímera / HTTPS
 browser -[norank]-> ai : voz autorizada / WSS
+mobile -[norank]-> ai : voz autorizada / WSS
 services --> mail : avisos / HTTPS-SMTP-TLS propuesto
 legend bottom
 Nodo: entorno de ejecución. Artefacto: unidad alojada.

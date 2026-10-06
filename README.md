@@ -1467,7 +1467,7 @@ Cada escenario incluye fuente, estímulo, entorno, artefacto, respuesta y medida
 |---|---|---|
 | C-01 | La primera integración de conversación por voz utilizará Gemini Live API. | Es el proveedor disponible para el piloto; debe quedar aislado para evitar dependencia irreversible. |
 | C-02 | El audio crudo no se persistirá por defecto. | Reduce riesgo de privacidad y costo; solo podrá conservarse mediante consentimiento y una política explícita futura. |
-| C-03 | La experiencia inicial será web y en español. | El cliente deberá funcionar en navegadores modernos con permiso de micrófono; la terminología y rúbricas parten del contexto hispanohablante. |
+| C-03 | La experiencia inicial será web, con interfaz en_US por defecto y es_419 como alternativa. | El cliente deberá funcionar en navegadores modernos con permiso de micrófono. El idioma de conversación se configura por separado; la propuesta inicial de práctica y sus rúbricas parten del contexto hispanohablante. |
 | C-04 | Se reutilizará la base técnica existente de Talki: servicios Spring Boot, PostgreSQL y RabbitMQ. | La arquitectura debe evolucionar los activos previos y mantener compatibilidad razonable con sus contratos. |
 | C-05 | El equipo está formado por cinco estudiantes y trabaja bajo el calendario académico del curso. | Las decisiones deben ser implementables, observables y documentables dentro del semestre; se evitará fragmentación innecesaria. |
 | C-06 | El piloto opera con presupuesto limitado y servicios cloud administrados. | Se prioriza escalamiento gradual, límites de consumo y componentes open-source cuando no incrementen la carga operativa. |
@@ -1499,7 +1499,7 @@ Los candidatos se priorizan con dos dimensiones: importancia para stakeholders e
 | 14 | AD-Q07 | Calidad | Reducir fricción para iniciar una primera sesión válida. | H/M | QAS-USA-01. |
 | 15 | AD-C01 | Restricción | Usar la integración de voz disponible para el piloto, encapsulada tras una interfaz interna. | Restricción | C-01. |
 | 16 | AD-C02 | Restricción | No persistir audio crudo por defecto. | Restricción | C-02. |
-| 17 | AD-C03 | Restricción | Entregar una experiencia web en español. | Restricción | C-03. |
+| 17 | AD-C03 | Restricción | Entregar una experiencia web con interfaz en_US/es_419 y práctica inicial en español. | Restricción | C-03. |
 | 18 | AD-C04 | Restricción | Reutilizar Spring Boot, PostgreSQL y RabbitMQ. | Restricción | C-04. |
 | 19 | AD-C05 | Restricción | Mantener una solución realizable por cinco estudiantes durante el semestre. | Restricción | C-05, C-06. |
 | 20 | AD-C06 | Restricción | Operar con presupuesto limitado y servicios cloud administrados. | Restricción | C-05, C-06. |
@@ -2038,7 +2038,7 @@ Los almacenes de la figura agrupan infraestructura PostgreSQL, no propiedad comp
 
 ### 4.3.4. Deployment Diagrams
 
-El despliegue UML propone hosting del cliente web en Vercel, procesos Spring Boot y RabbitMQ en Railway, y PostgreSQL con TLS en Supabase. El navegador ejecuta la conversación con Gemini Live mediante WSS. Las peticiones de negocio utilizan HTTPS/JSON y los eventos internos utilizan AMQP. El acceso a datos respeta los esquemas de cada contexto aunque compartan infraestructura administrada.
+El despliegue UML propone hosting del cliente web en Vercel, procesos Spring Boot y RabbitMQ en Railway, y PostgreSQL con TLS y almacenamiento privado de materiales en Supabase. Sessions administra los archivos autorizados mediante HTTPS; los demás contextos reciben únicamente la evidencia permitida. Tanto el navegador como la aplicación móvil ejecutan la conversación con Gemini Live mediante WSS. Las peticiones de negocio utilizan HTTPS/JSON y los eventos internos utilizan AMQP. El acceso a datos respeta los esquemas de cada contexto aunque compartan infraestructura administrada.
 
 ![UML Deployment Diagram de Talki](assets/diagrams/c4/deployment.png)
 
