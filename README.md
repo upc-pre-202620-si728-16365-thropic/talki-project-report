@@ -85,6 +85,7 @@
 | 1.19 | 05/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Revisión de congruencia del feedback: idioma de interfaz y conversación, materiales y voz móvil en despliegue, evidencia conservada del reporte, confirmaciones de purga y presentación de rúbricas y puntuaciones parciales. Ajuste del Student Outcome oral del TB1 según las omisiones señaladas por el profesor. |
 | 1.20 | 06/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Actualización de tres edades y de los intervalos de entrevistas, verificados en la grabación de Google Drive. Incorporación del enlace directo al video. Retirada de la sección preliminar de analíticos de colaboración y de su entrada del índice, conservando las seis entrevistas. |
 | 1.21 | 07/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Simplificación del anexo Videos de Exposiciones: enlaces pendientes identificados por entrega. |
+| 1.22 | 07/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Retirada de Video About-the-Product y su entrada del índice por corresponder a un hito posterior al TP. |
 
 La edición de las versiones 1.0–1.12 fue realizada por Alejandro Daniel Oroncoy Almeyda. Los demás nombres corresponden a los coautores registrados en los commits del avance, asociados en esta tabla por las secciones correspondientes. La revisión individual de esos integrantes continúa pendiente.
 
@@ -277,7 +278,6 @@ La edición de las versiones 1.0–1.12 fue realizada por Alejandro Daniel Oronc
     - [7.3.1. Diseño de entrevistas](#731-diseño-de-entrevistas)
     - [7.3.2. Registro de entrevistas](#732-registro-de-entrevistas)
     - [7.3.3. Evaluaciones según heurísticas](#733-evaluaciones-según-heurísticas)
-  - [7.4. Video About-the-Product](#74-video-about-the-product)
 - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
   - [Conclusiones](#conclusiones)
   - [Recomendaciones](#recomendaciones)
@@ -4464,8 +4464,6 @@ Este capítulo corresponde a los hitos posteriores de implementación y validaci
 ### 7.3.2. Registro de entrevistas
 
 ### 7.3.3. Evaluaciones según heurísticas
-
-## 7.4. Video About-the-Product
 
 # Conclusiones y recomendaciones
 
