@@ -84,6 +84,7 @@
 | 1.18 | 05/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Reorganización de la información de colaboración: evidencias de GitHub en Project Report Collaboration Insights, aportes en Student Outcome e informe de participación en Anexos. Retirada de tablas y explicaciones duplicadas. |
 | 1.19 | 05/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Revisión de congruencia del feedback: idioma de interfaz y conversación, materiales y voz móvil en despliegue, evidencia conservada del reporte, confirmaciones de purga y presentación de rúbricas y puntuaciones parciales. Ajuste del Student Outcome oral del TB1 según las omisiones señaladas por el profesor. |
 | 1.20 | 06/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Actualización de tres edades y de los intervalos de entrevistas, verificados en la grabación de Google Drive. Incorporación del enlace directo al video. Retirada de la sección preliminar de analíticos de colaboración y de su entrada del índice, conservando las seis entrevistas. |
+| 1.21 | 07/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Simplificación del anexo Videos de Exposiciones: enlaces pendientes identificados por entrega. |
 
 La edición de las versiones 1.0–1.12 fue realizada por Alejandro Daniel Oroncoy Almeyda. Los demás nombres corresponden a los coautores registrados en los commits del avance, asociados en esta tabla por las secciones correspondientes. La revisión individual de esos integrantes continúa pendiente.
 
@@ -4546,4 +4547,6 @@ Thropic. (2026). *Talki: Project report* [Repositorio de GitHub, versión 2cfa37
 
 ## Videos de Exposiciones
 
-El video del TP debe mostrar la presentación individual a cámara y la explicación de los artefactos en las herramientas del curso, incluyendo Landscape, Bounded Context Canvases, diseño táctico y UX. El enlace del TB1 y el video del TP están pendientes de disponibilidad; se incorporarán con la entrega identificada y acceso verificable. La sección About-the-Team mantiene el estado de su video independiente.
+**TB1:** Enlace pendiente.
+
+**TP:** Enlace pendiente.
