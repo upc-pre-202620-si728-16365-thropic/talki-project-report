@@ -44,7 +44,7 @@ workspace "Talki: diseño táctico" "Diseño objetivo del TP" {
         n4_repo = component "SessionRepository / FeedbackRepository / MaterialRepository" "Infrastructure: Conserva evidencia y referencias de material privado" "Java / Spring Boot"
         n4_storage = component "PrivateMaterialStorageAdapter" "Infrastructure: Almacena o purga el archivo autorizado" "Java / Spring Boot"
         n4_messaging = component "UserRegisteredConsumer / SessionFinalizedPublisher" "Infrastructure: Actualiza proyección y despacha cierre confirmado" "Java / Spring Boot"
-        n4_consentClient = component "ConsentVerificationClient" "Infrastructure: Verifica consentimiento de Identity" "Java / Spring Boot"
+        n4_consentClient = component "ConsentVerificationClient / IdentityProfileClient" "Infrastructure: Verifica consentimiento y obtiene perfil vigente de Identity" "Java / Spring Boot"
       }
       db4 = container "Datos privados: Practice Session Management" "Esquema aislado" "PostgreSQL"
       progress = container "Progress & Adaptation" "Contexto y proceso de ejecución" "Java / Spring Boot" {
@@ -74,9 +74,9 @@ workspace "Talki: diseño táctico" "Diseño objetivo del TP" {
       db7 = container "Datos privados: Gamification" "Esquema aislado" "PostgreSQL"
       identity = container "Identity & Access" "Contexto y proceso de ejecución" "Java / Spring Boot" {
         n8_api = component "AuthController / ProfileController / VoiceConsentController" "Interface: Recibe acceso, perfil, recuperación y consentimiento" "Java / Spring Boot"
-        n8_app = component "AuthService / TokenSessionService / ConsentCommandService / PasswordRecoveryService" "Application: Coordina cuenta, tokens y autorizaciones" "Java / Spring Boot"
-        n8_rules = component "AppUser / RefreshToken / VoiceConsent / PasswordResetRequest" "Domain: Mantiene identidad y vigencia/retiro/consumo" "Java / Spring Boot"
-        n8_repo = component "AppUserRepository / RefreshTokenRepository / VoiceConsentRepository / PasswordResetRepository" "Infrastructure: Conserva registros privados de cuenta" "Java / Spring Boot"
+        n8_app = component "AuthService / TokenSessionService / ConsentCommandService / PasswordRecoveryService / EmailVerificationService" "Application: Coordina cuenta, tokens y autorizaciones" "Java / Spring Boot"
+        n8_rules = component "AppUser / RefreshToken / VoiceConsent / PasswordResetRequest / EmailVerificationRequest" "Domain: Mantiene identidad y vigencia/retiro/consumo" "Java / Spring Boot"
+        n8_repo = component "AppUserRepository / RefreshTokenRepository / VoiceConsentRepository / PasswordResetRepository / EmailVerificationRepository" "Infrastructure: Conserva registros privados de cuenta" "Java / Spring Boot"
         n8_security = component "PasswordEncoder / JwtTokenProvider" "Infrastructure: Protege contraseña y firma acceso" "Java / Spring Boot"
         n8_publisher = component "RabbitUserRegisteredPublisher / AccountNoticePublisher" "Infrastructure: Despacha avisos de cuenta sin secretos" "Java / Spring Boot"
       }
@@ -94,7 +94,7 @@ workspace "Talki: diseño táctico" "Diseño objetivo del TP" {
         n10_app = component "DispatchNotificationHandler / NotificationTemplateService / NotificationPreferenceService / NotificationRetryHandler" "Application: Prepara contenido, respeta preferencias y coordina reintento" "Java / Spring Boot"
         n10_rules = component "Notification / NotificationPreference / NotificationPushService" "Domain: Mantiene estado y contrato de entrega" "Java / Spring Boot"
         n10_repo = component "NotificationRepository / NotificationPreferenceRepository" "Infrastructure: Registra avisos únicos, intentos y preferencias" "Java / Spring Boot"
-        n10_channels = component "WebSocketPushAdapter / EmailNotificationAdapter" "Infrastructure: Entrega aviso sin evidencia privada" "Java / Spring Boot"
+        n10_channels = component "WebSocketPushAdapter / EmailNotificationAdapter / AccountNoticeClient" "Infrastructure: Entrega aviso sin evidencia privada" "Java / Spring Boot"
       }
       db10 = container "Datos privados: Notifications" "Esquema aislado" "PostgreSQL"
     }
@@ -133,6 +133,7 @@ workspace "Talki: diseño táctico" "Diseño objetivo del TP" {
     n4_messaging -> n4_app "Entrega evento validado" "Java"
     n4_app -> n4_rules "Aplica reglas de dominio" "Java"
     n4_app -> n4_repo "Lee y confirma datos del contexto" "Java"
+    n4_acl -> n4_consentClient "Obtiene perfil vigente" "Java"
     n4_app -> n4_consentClient "Verifica consentimiento" "Java"
     n4_app -> n4_storage "Gestiona material autorizado" "Java"
     n4_app -> n4_acl "Adapta identidad externa" "Java"
@@ -200,6 +201,7 @@ workspace "Talki: diseño táctico" "Diseño objetivo del TP" {
     bff -> n10_api "Consulta/modifica preferencias" "HTTPS / JSON"
     n10_repo -> db10 "Conserva avisos y preferencias" "SQL / TLS"
     n10_channels -> web "Entrega aviso autenticado" "WSS"
+    n10_channels -> identity "Obtiene enlace efímero para aviso de cuenta" "HTTPS / JSON"
     n10_channels -> mail "Envía mensaje transaccional" "HTTPS / SMTP-TLS"
   }
   views {

@@ -10,9 +10,9 @@ ContainerDb(db, "Esquema privado del contexto", "PostgreSQL / TLS", "Fuera del c
 Container(sessions, "Practice Session Management", "Java / Spring Boot", "Fuera del container representado")
 Container_Boundary(scope, "Identity & Access: proceso Java / Spring Boot") {
   Component(api, "AuthController / ProfileController / VoiceConsentController", "Java / Spring Boot", "Interface: Recibe acceso, perfil, recuperación y consentimiento")
-  Component(app, "AuthService / TokenSessionService / ConsentCommandService / PasswordRecoveryService", "Java / Spring Boot", "Application: Coordina cuenta, tokens y autorizaciones")
-  Component(rules, "AppUser / RefreshToken / VoiceConsent / PasswordResetRequest", "Java / Spring Boot", "Domain: Mantiene identidad y vigencia/retiro/consumo")
-  Component(repo, "AppUserRepository / RefreshTokenRepository / VoiceConsentRepository / PasswordResetRepository", "Java / Spring Boot", "Infrastructure: Conserva registros privados de cuenta")
+  Component(app, "AuthService / TokenSessionService / ConsentCommandService / PasswordRecoveryService / EmailVerificationService", "Java / Spring Boot", "Application: Coordina cuenta, tokens y autorizaciones")
+  Component(rules, "AppUser / RefreshToken / VoiceConsent / PasswordResetRequest / EmailVerificationRequest", "Java / Spring Boot", "Domain: Mantiene identidad y vigencia/retiro/consumo")
+  Component(repo, "AppUserRepository / RefreshTokenRepository / VoiceConsentRepository / PasswordResetRepository / EmailVerificationRepository", "Java / Spring Boot", "Infrastructure: Conserva registros privados de cuenta")
   Component(security, "PasswordEncoder / JwtTokenProvider", "Java / Spring Boot", "Infrastructure: Protege contraseña y firma acceso")
   Component(publisher, "RabbitUserRegisteredPublisher / AccountNoticePublisher", "Java / Spring Boot", "Infrastructure: Despacha avisos de cuenta sin secretos")
 }

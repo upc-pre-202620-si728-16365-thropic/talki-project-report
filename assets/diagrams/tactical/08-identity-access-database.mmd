@@ -2,6 +2,7 @@ erDiagram
     APP_USERS ||--o{ REFRESH_TOKENS : renueva
     APP_USERS ||--o{ VOICE_CONSENTS : autoriza
     APP_USERS ||--o{ PASSWORD_RESET_REQUESTS : recupera
+    APP_USERS ||--o{ EMAIL_VERIFICATION_REQUESTS : verifica
     APP_USERS {
         bigint id PK
         varchar email UK
@@ -9,6 +10,10 @@ erDiagram
         varchar username
         varchar academic_segment
         varchar interface_locale
+        varchar university
+        varchar career
+        varchar default_practice_goal
+        timestamp email_verified_at
         varchar role
         timestamp created_at
     }
@@ -28,6 +33,13 @@ erDiagram
         timestamp withdrawn_at
     }
     PASSWORD_RESET_REQUESTS {
+        uuid id PK
+        bigint user_id FK
+        varchar token_hash UK
+        timestamp expires_at
+        timestamp used_at
+    }
+    EMAIL_VERIFICATION_REQUESTS {
         uuid id PK
         bigint user_id FK
         varchar token_hash UK

@@ -88,6 +88,7 @@
 | 1.22 | 07/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Retirada de Video About-the-Product y su entrada del índice por corresponder a un hito posterior al TP. |
 | 1.23 | 07/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Incorporación de Project Report Collaboration Insights después del registro de versiones, con analíticos del repositorio, historial de develop y capturas de commits de los integrantes. |
 | 1.24 | 07/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Simplificación de Project Report Collaboration Insights para mostrar únicamente los analíticos del repositorio. Integración del avance en main conservando el historial de commits y actualización de la captura con los cinco integrantes. |
+| 1.25 | 07/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Revisión global de congruencia: fuentes y alcance de investigación, hipótesis y canvas, requisitos funcionales/no funcionales, responsabilidades de contextos, contratos y correspondencia de modelos con UX. |
 
 La edición de las versiones 1.0–1.12 fue realizada por Alejandro Daniel Oroncoy Almeyda. Los demás nombres corresponden a los coautores registrados en los commits del avance, asociados en esta tabla por las secciones correspondientes. La revisión individual de esos integrantes continúa pendiente.
 
@@ -136,9 +137,10 @@ A continuación se presentan los analíticos de colaboración del repositorio de
   - [2.4. Ubiquitous Language](#24-ubiquitous-language)
 - [Capítulo III: Requirements Specification](#capítulo-iii-requirements-specification)
   - [3.1. To-Be Scenario Mapping](#31-to-be-scenario-mapping)
-  - [3.2. User Stories](#32-user-stories)
-  - [3.3. Impact Mapping](#33-impact-mapping)
-  - [3.4. Product Backlog](#34-product-backlog)
+  - [3.2. Requisitos Funcionales y No Funcionales](#32-requisitos-funcionales-y-no-funcionales)
+  - [3.3. User Stories](#33-user-stories)
+  - [3.4. Impact Mapping](#34-impact-mapping)
+  - [3.5. Product Backlog](#35-product-backlog)
 - [Capítulo IV: Strategic-Level Software Design](#capítulo-iv-strategic-level-software-design)
   - [4.1. Strategic-Level Attribute-Driven Design](#41-strategic-level-attribute-driven-design)
     - [4.1.1. Design Purpose](#411-design-purpose)
@@ -312,7 +314,7 @@ El curso contribuye al cumplimiento del Student Outcome ABET:
 
 **Criterio: Capacidad de comunicarse efectivamente con un rango de audiencias.**
 
-En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 3.
+El cuadro relaciona las acciones y evidencias de TB1 y TP con el ABET – EAC - Student Outcome 3. Distingue la documentación realizada de las revisiones y exposiciones pendientes.
 
 El registro es acumulativo: conserva TB1 e incorpora TP. Para el TP se distingue la documentación disponible de la revisión individual y la sustentación aún pendientes; las acciones futuras no se registran como logros realizados.
 
@@ -333,7 +335,7 @@ Thropic es una startup de tecnología educativa fundada por estudiantes de Ingen
 
 **Visión:** Ser la plataforma líder en Latinoamérica para el desarrollo de habilidades de comunicación oral en el ámbito académico y profesional para 2030.
 
-Talki es la solución principal de Thropic: una aplicación web que utiliza IA para analizar, evaluar y retroalimentar la comunicación oral de estudiantes universitarios en tiempo real, ayudándoles a mejorar su fluidez, pronunciación, estructura del discurso y confianza al hablar en público.
+Talki es la propuesta principal de Thropic: una aplicación web para ensayar exposiciones, entrevistas y sustentaciones. Combina conversación y señales durante la práctica con evaluación posterior de la evidencia autorizada. Su aporte al desempeño y a la confianza del estudiante deberá validarse con tareas observadas.
 
 **Nombre del producto:** Talki proviene de la combinación de "Talk" (hablar, en inglés) con el sufijo "-i", que evoca inteligencia e innovación. El nombre representa la idea de contar con un compañero inteligente que ayuda a mejorar la forma de comunicarse oralmente.
 
@@ -376,63 +378,43 @@ Talki es la solución principal de Thropic: una aplicación web que utiliza IA p
 
 #### WHAT (Qué)
 
-Las deficiencias en comunicación oral afectan el desempeño académico y profesional de los universitarios peruanos.
+Las entrevistas de 2.2 describen dificultades para controlar el volumen, la fluidez, las muletillas y la organización del discurso en situaciones académicas y profesionales. Son necesidades de los seis participantes; no constituyen una estimación de prevalencia entre todos los universitarios.
 
 #### WHEN (Cuándo)
 
-Se manifiesta principalmente al momento de realizar exposiciones, sustentaciones, entrevistas de trabajo y presentaciones profesionales.
+Durante la preparación y realización de exposiciones, sustentaciones, entrevistas de trabajo y presentaciones profesionales.
 
 #### WHERE (Dónde)
 
-En aulas universitarias, plataformas virtuales y entornos laborales/prácticas.
+En aulas, reuniones virtuales y entornos laborales. El piloto se orienta a estudiantes residentes en Lima, incluyendo a quienes cursan programas universitarios a distancia.
 
 #### WHO (Quién)
 
-Estudiantes de educación superior peruanos (ciclos 1-10), especialmente aquellos sin acceso a coaching personalizado.
+Estudiantes universitarios residentes en Perú, organizados por etapa académica: ciclos 1 al 5 y ciclos 6 al 10. La etapa orienta las ayudas; no restringe los modos de práctica.
 
 #### WHY (Por qué)
 
-La educación tradicional no brinda suficientes espacios de práctica oral con feedback personalizado. El acceso a coaches es costoso y limitado.
+Los participantes describen preparación con guiones, diapositivas, ensayos personales y opinión de compañeros. La necesidad identificada es complementar esos métodos con práctica autónoma y observaciones específicas sobre el discurso, sin afirmar que todos carezcan de apoyo o que la IA sustituya al tutor.
 
 #### HOW (Cómo)
 
-Talki usa IA para grabar, analizar y retroalimentar la comunicación oral del usuario en tiempo real, con ejercicios progresivos y personalizados.
+Talki propone una aplicación web para preparar y realizar ensayos por voz, recibir acompañamiento durante la práctica y consultar un análisis posterior de la evidencia autorizada. La transcripción, las señales acústicas y el material contextual tienen alcances distintos; solo se evaluarán dimensiones respaldadas por evidencia.
 
 #### HOW MUCH (Cuánto)
 
-Según la Superintendencia Nacional de Educación Superior Universitaria (SUNEDU, 2023), más de 1.5 millones de estudiantes se encuentran matriculados en universidades peruanas, representando un mercado potencial significativo para soluciones de desarrollo de competencias comunicativas.
+Maldonado et al. (2022) estudiaron a 51 universitarios mediante una intervención con talleres y debates, comparando competencia oral y ansiedad antes y después. Sus resultados respaldan investigar la práctica guiada; no demuestran la eficacia de Talki ni cuantifican la ansiedad en universitarios peruanos.
 
-En el plano de la ansiedad comunicativa, la literatura científica muestra cifras consistentemente elevadas. Maldonado et al. (2022), en un estudio experimental con universitarios publicado en la *Revista Latina de Comunicación Social*, confirmaron que la ansiedad al hablar en público impacta directamente el desempeño académico y la participación activa en clases. A nivel global, investigaciones compiladas por Teleprompter.com (2024) revelan que el **75% de las personas** experimenta algún nivel de ansiedad al hablar en público, y el **61% de universitarios** la reporta como un temor significativo.
+Varona Albán y Ramos Benítez (2024) analizaron competencias de egresados de la Universidad del Cauca, Colombia, con respuestas de egresados, empresas y coordinadores. Entre los porcentajes reportados por los 77 representantes empresariales destacan trabajo en equipo (10,1 %) y comunicación asertiva (9,1 %). El alcance es ese estudio, no el conjunto de empleadores de Latinoamérica.
 
-_Figura 1: Prevalencia de la ansiedad al hablar en público en población universitaria_
-
-<div align="center">
-<img src="assets/images/figures/figura1_ansiedad_publica.png" alt="Figura 1: Ansiedad al hablar en público" width="680">
-</div>
-
-_Nota._ Elaboración propia basada en Teleprompter.com (2024) y Crown Counseling (2024).
-
-Respecto al impacto en la empleabilidad, un estudio descriptivo sobre competencias laborales blandas en egresados universitarios latinoamericanos (Redalyc, 2022) identificó que la **comunicación asertiva** es la segunda habilidad más demandada por empleadores (9.1%), solo detrás del trabajo en equipo (10.1%). Sin embargo, es también una de las competencias con mayores brechas en egresados.
-
-_Figura 2: Habilidades blandas más demandadas por empleadores en Latinoamérica_
+_Figura 1: Habilidades reportadas en el estudio de egresados de la Universidad del Cauca_
 
 <div align="center">
-<img src="assets/images/figures/figura2_habilidades_demandadas.png" alt="Figura 2: Habilidades blandas más demandadas" width="680">
+<img src="assets/images/figures/figura2_habilidades_demandadas.png" alt="Habilidades reportadas por representantes empresariales en el estudio de la Universidad del Cauca" width="680">
 </div>
 
-_Nota._ Elaboración propia basada en Redalyc (2022).
+_Nota._ Elaboración propia basada en Varona Albán y Ramos Benítez (2024). Los porcentajes corresponden a la distribución publicada en ese estudio; no representan la proporción de puestos de trabajo que exige cada habilidad.
 
-Finalmente, la ansiedad comunicativa no solo afecta el desempeño académico sino también la trayectoria profesional. Datos de Crown Counseling (2024) y Teleprompter.com (2024) indican que el **70% de los empleos** requiere algún nivel de oratoria o presentaciones; el **30% de las personas** ha evitado postular a empleos o ascensos debido a esta ansiedad; y quienes la padecen tienen un **15% menos de probabilidad** de alcanzar posiciones gerenciales.
-
-_Figura 3: Impacto profesional de la ansiedad al hablar en público_
-
-<div align="center">
-<img src="assets/images/figures/figura3_impacto_profesional.png" alt="Figura 3: Impacto profesional de la ansiedad comunicativa" width="680">
-</div>
-
-_Nota._ Elaboración propia basada en Crown Counseling (2024) y Teleprompter.com (2024).
-
-Ante este escenario, el costo de un coach de oratoria privado en Lima oscila entre S/. 80 y S/. 200 por sesión (con frecuencia semanal recomendada), haciendo inaccesible el entrenamiento personalizado para la mayoría del segmento universitario. Talki aborda esta brecha mediante IA accesible desde cualquier navegador web, a una fracción del costo.
+Las seis entrevistas aportan evidencia exploratoria local. Dos participantes expresaron montos en USD; el rango de S/ 15–25 es una hipótesis comercial que requiere validación. No se presenta una cifra de mercado ni un ahorro frente a coaches sin una fuente y un alcance comparables.
 
 ### 1.2.2. Lean UX Process
 
@@ -440,9 +422,9 @@ El proceso Lean UX aplicado en Thropic sigue el enfoque de validación continua 
 
 #### 1.2.2.1. Lean UX Problem Statements
 
-**Segmento 1:** Hemos observado que los estudiantes de ciclos 1-5 carecen de espacios seguros y accesibles para practicar la comunicación oral con feedback real. El impacto es bajo desempeño en exposiciones y pérdida de oportunidades académicas. ¿Cómo podríamos brindarles práctica guiada con IA para que ganen confianza progresivamente?
+**Segmento 1:** En las entrevistas aparecen dificultades de volumen, fluidez y organización durante las exposiciones. ¿Cómo podríamos complementar el ensayo personal con práctica guiada y feedback sustentado que ayude a estudiantes de ciclos 1 al 5 a identificar una acción de mejora?
 
-**Segmento 2:** Hemos observado que los estudiantes de ciclos 6-10 no tienen herramientas asequibles para prepararse para entrevistas laborales y presentaciones profesionales. El impacto es dificultad para insertarse en el mercado laboral. ¿Cómo podríamos simular entornos reales de comunicación profesional para que estén listos al graduarse?
+**Segmento 2:** Los relatos de ciclos avanzados muestran necesidad de preparar argumentos y respuestas bajo presión, junto con una preferencia por práctica autónoma y orientación opcional. ¿Cómo podríamos facilitar ensayos contextualizados de entrevistas y sustentaciones, sin atribuirles resultados laborales aún no medidos?
 
 #### 1.2.2.2. Lean UX Assumptions
 
@@ -450,20 +432,20 @@ El proceso Lean UX aplicado en Thropic sigue el enfoque de validación continua 
 
 1. Creemos que los usuarios pagarán una suscripción mensual de S/. 15-25 por acceso premium.
 2. Creemos que el mayor canal de adquisición serán las redes sociales universitarias (Instagram, TikTok).
-3. Creemos que los usuarios necesitan al menos 3 sesiones semanales para notar mejora en 30 días.
+3. Creemos que una meta de 3 sesiones semanales durante 4 semanas favorecerá el hábito; su efecto en el desempeño debe evaluarse.
 4. Creemos que las universidades adoptarán Talki como herramienta complementaria en cursos de comunicación.
-5. Creemos que el NPS (Net Promoter Score) alcanzará 40+ en los primeros 6 meses.
+5. Creemos que la satisfacción puede alcanzar un NPS de 45 en el piloto; es una meta exploratoria, distinta de la utilidad por tarea de BG-04.
 6. Creemos que el costo de adquisición por usuario será menor a S/. 10 mediante estrategias de referidos.
 7. Creemos que el 60% de usuarios retendrá la app más de 3 meses con gamificación efectiva.
 8. Creemos que las alianzas con institutos y universidades serán nuestro principal canal B2B.
 9. Creemos que los usuarios en ciclos 6-10 están dispuestos a pagar más por features de simulación de entrevistas.
-10. Creemos que el mercado latinoamericano de edtech crecerá 25% anual los próximos 3 años.
+10. Creemos que existe interés institucional por complementar la preparación oral; lo investigaremos con universidades antes de proyectar expansión.
 11. Creemos que la diferenciación por idioma español y contexto peruano/latinoamericano será una ventaja competitiva sostenible.
 
 ##### User Assumptions
 
-1. **¿Quién es el usuario?** Estudiantes universitarios peruanos de ciclos 1-10, de 17 a 26 años, nativos digitales con acceso a laptop/PC y conexión a internet.
-2. **¿Dónde encaja nuestro producto en su vida?** En los momentos previos a exposiciones, durante el estudio en casa, y en transporte público.
+1. **¿Quién es el usuario?** Estudiantes universitarios residentes en Perú, de ciclos 1 al 10, con acceso a un navegador, micrófono e internet. No se utiliza la edad como criterio de acceso.
+2. **¿Dónde encaja nuestro producto en su vida?** Antes de exposiciones y entrevistas, en un lugar adecuado para hablar y proteger la privacidad. Durante un traslado podrían revisar recomendaciones, sin asumir que puedan practicar por voz allí.
 3. **¿Qué problemas resuelve nuestro producto?** La falta de espacios seguros para practicar oralidad con feedback inmediato y personalizado.
 4. **¿Cuándo y cómo es usado nuestro producto?** Sesiones de 10-20 minutos, principalmente en las noches, desde el navegador web en su laptop o PC.
 5. **¿Qué características son importantes?** Feedback en tiempo real, ejercicios progresivos, historial de progreso, modo simulación de entrevistas.
@@ -471,26 +453,26 @@ El proceso Lean UX aplicado en Thropic sigue el enfoque de validación continua 
 
 #### 1.2.2.3. Lean UX Hypothesis Statements
 
-Cada hipótesis sigue el feature hypothesis template y explicita los cuatro componentes requeridos: business outcome medible, usuario segmentado (Valeria Ríos o Rodrigo Sánchez), beneficio percibido y feature asociada.
+Cada hipótesis relaciona un resultado medible, un segmento, un beneficio y una funcionalidad. Son propuestas por contrastar, no resultados del producto. BG-01 a BG-05 concretan los objetivos del piloto de cuatro semanas; CAC y churn requieren una etapa comercial posterior.
 
-1. **H1 (Adopción).** Creemos que lograremos una retención semanal del 40% y una permanencia promedio de más de 90 días en Valeria Ríos (Segmento 1, ciclos 1 al 5) si la estudiante gana confianza al practicar exposiciones con feedback inmediato, mediante la feature de *ejercicios guiados con IA*.
+1. **H1 (Adopción).** Creemos que al menos el 40 % de usuarios activos completará 3 sesiones por semana durante 4 semanas (BG-01) si Valeria puede ensayar exposiciones y comprender una acción de mejora, mediante práctica guiada y feedback con evidencia.
 
-2. **H2 (Conversión).** Creemos que lograremos una reducción de la ansiedad al hablar en público y un NPS de al menos 45 puntos en Rodrigo Sánchez (Segmento 2, ciclos 6 al 10) si el estudiante se prepara para entrevistas laborales reales en condiciones realistas, mediante la feature de *simulador de entrevistas con feedback en tiempo real*.
+2. **H2 (Utilidad).** Creemos que al menos el 70 % de participantes del segmento de Rodrigo calificará útil una simulación contextualizada (BG-04), y exploraremos un NPS de 45, si puede preparar respuestas y argumentos mediante simulación y feedback. No se mide reducción clínica de ansiedad.
 
-3. **H3 (Engagement).** Creemos que lograremos al menos 3 sesiones semanales sostenidas durante 4 semanas consecutivas en ambos segmentos si los estudiantes conservan el hábito de práctica gracias a refuerzos positivos, mediante la feature de *streaks y logros*.
+3. **H3 (Engagement).** Creemos que las rachas y los logros de US35 ayudarán a ambos segmentos a sostener la meta de BG-01. Se comparará la continuidad de uso; conceder un logro no demuestra una mejora de habilidad.
 
-4. **H4 (Engagement).** Creemos que lograremos un aumento del engagement de 40% (es decir, al menos 4 sesiones al mes) en Rodrigo Sánchez (Segmento 2) si el estudiante puede visualizar su progreso medible por habilidad en un lugar único, mediante la feature de *dashboard de métricas personales*.
+4. **H4 (Engagement).** Creemos que el dashboard de US21 aumentará en 40 % la frecuencia de práctica de Rodrigo frente a sus cuatro semanas previas. El indicador es (sesiones posteriores − sesiones previas) / sesiones previas; solo se calculará con una línea base positiva y períodos equivalentes. No equivale a un número fijo de sesiones al mes.
 
-5. **H5 (Adopción).** Creemos que lograremos un CAC por debajo de S/ 10 vía referidos en Valeria Ríos (Segmento 1) si la estudiante puede compartir logros con sus compañeros de clase, mediante la feature de *comunidad y retos entre amigos*.
+5. **H5 (Adopción).** Creemos que la recomendación entre compañeros puede reducir el CAC por debajo de S/ 10 si Valeria puede compartir voluntariamente un reporte mediante US32. La hipótesis se evaluará después del piloto, con gastos y altas atribuibles; no presupone una comunidad ni retos entre amigos fuera del backlog.
 
-6. **H6 (Retención).** Creemos que lograremos un churn mensual por debajo del 15% en ambos segmentos si los estudiantes reciben un plan de práctica personalizado según sus errores recurrentes, mediante la feature de *ruta de aprendizaje adaptativa con IA*.
+6. **H6 (Retención).** Creemos que un plan basado en evidencia recurrente (US36) favorecerá la continuidad de ambos segmentos. El churn mensual objetivo inferior a 15 % se investigará después de ofrecer una suscripción y definir la cohorte de pago; no se confunde con la práctica semanal del piloto.
 
 #### 1.2.2.4. Lean UX Canvas
 
-_Figura 4: Lean UX Canvas de Talki_
+_Figura 2: Lean UX Canvas de Talki_
 
 <div align="center">
-<img src="assets/images/screenshots/lean-ux-canvas.png" alt="Lean UX Canvas" width="680">
+<img src="assets/images/screenshots/lean-ux-canvas-tp.png" alt="Lean UX Canvas" width="1100">
 </div>
 
 _Nota._ Elaboración propia (2026).
@@ -499,12 +481,14 @@ El canvas documenta de forma visual: business outcomes, problemas de usuario, op
 
 ## 1.3. Segmentos objetivo
 
+La segmentación se basa en la etapa académica y las tareas descritas en las entrevistas. Los rasgos siguientes son perfiles de diseño por contrastar, no distribuciones demográficas verificadas. El piloto se enfoca en Lima; la expansión a otras ciudades y las preferencias comerciales siguen como hipótesis.
+
 **Segmento 1: Estudiantes universitarios de ciclos 1 al 5**
 
 *Aspectos Demográficos:*
-- Edad: 17-21 años
+- Edad: No determina el segmento; se verificará en el registro de entrevistas.
 - Sexo: Masculino y femenino
-- Nivel socioeconómico: B y C
+- Nivel socioeconómico: No comprobado en las entrevistas; no se utiliza como criterio de segmentación.
 - Ciclo: 1 al 5 de educación superior universitaria
 
 *Aspectos Geográficos:*
@@ -520,9 +504,9 @@ El canvas documenta de forma visual: business outcomes, problemas de usuario, op
 **Segmento 2: Estudiantes universitarios de ciclos 6 al 10**
 
 *Aspectos Demográficos:*
-- Edad: 21-26 años
+- Edad: No determina el segmento; se verificará en el registro de entrevistas.
 - Sexo: Masculino y femenino
-- Nivel socioeconómico: B y C
+- Nivel socioeconómico: No comprobado en las entrevistas; no se utiliza como criterio de segmentación.
 - Ciclo: 6 al 10 de educación superior universitaria, próximos a egresar
 
 *Aspectos Geográficos:*
@@ -541,132 +525,31 @@ El canvas documenta de forma visual: business outcomes, problemas de usuario, op
 
 ### 2.1.1. Análisis competitivo
 
-Para identificar las fortalezas, debilidades y estrategias de nuestros competidores directos e indirectos, con el fin de definir la propuesta de valor diferenciada de Talki y detectar oportunidades de mercado no atendidas, se elaboró el siguiente **Competitive Analysis Landscape** comparando Talki con tres competidores relevantes en el espacio de aplicaciones de mejora de la comunicación oral: ELSA Speak, Speeko y Orai.
+El análisis compara la propuesta de Talki con la información publicada por [ELSA Speak](https://elsaspeak.com/es/product?variant=C), [Speeko](https://www.speeko.co/) y [Orai](https://orai.com/), consultada el 07/10/2026. Las funciones de competidores se distinguen de las hipótesis de Talki; las oportunidades y amenazas son interpretaciones del equipo, no resultados de pruebas comparativas.
 
 <table>
-  <tr>
-    <th colspan="6">Competitive Analysis Landscape</th>
-  </tr>
-  <tr>
-    <td colspan="2" align="center"><b>¿Por qué llevar a cabo este análisis?</b></td>
-    <td colspan="4">Para identificar las fortalezas, debilidades y estrategias de nuestros competidores directos e indirectos, con el fin de definir la propuesta de valor diferenciada de Talki y detectar oportunidades de mercado no atendidas.</td>
-  </tr>
-  <tr>
-    <th colspan="2">Nombre</th>
-    <th>Talki (Thropic)</th>
-    <th>ELSA Speak</th>
-    <th>Speeko</th>
-    <th>Orai</th>
-  </tr>
-  <tr>
-    <td colspan="2" align="center"><b>Logo</b></td>
-    <td align="center"><img src="assets/images/logos/talki-logo.png" alt="Talki logo" width="100"></td>
-    <td align="center"><img src="assets/images/logos/elsa-speak-logo.png" alt="ELSA Speak" width="100"></td>
-    <td align="center"><img src="assets/images/logos/speeko-logo.png" alt="Speeko" width="100"></td>
-    <td align="center"><img src="assets/images/logos/orai-logo.png" alt="Orai" width="100"></td>
-  </tr>
-  <tr>
-    <td rowspan="2"><b>Perfil</b></td>
-    <td><b>Overview</b></td>
-    <td>Aplicación web con IA que analiza y retroalimenta la comunicación oral de estudiantes universitarios peruanos en tiempo real, en español.</td>
-    <td>App de pronunciación en inglés con IA que evalúa y corrige la pronunciación del usuario en tiempo real mediante reconocimiento de voz avanzado.</td>
-    <td>App de coaching para hablar en público con lecciones estructuradas impartidas por coaches reales y ejercicios de práctica.</td>
-    <td>App móvil con IA que analiza la oratoria del usuario (ritmo, palabras de relleno, energía, expresión facial) y entrega retroalimentación inmediata y lecciones personalizadas.</td>
-  </tr>
-  <tr>
-    <td><b>Ventaja competitiva ¿Qué valor ofrece a los clientes?</b></td>
-    <td>Feedback en tiempo real en español con contexto académico peruano; enfocado en universitarios latinoamericanos.</td>
-    <td>Motor de IA especializado en detección de errores fonéticos del inglés; más de 50M usuarios globales.</td>
-    <td>Contenido creado por coaches profesionales de oratoria; estructura de cursos progresivos y micro-lecciones de 5 minutos.</td>
-    <td>Análisis multimodal (voz + expresión facial) con plan de entrenamiento adaptativo; gamificación y seguimiento de progreso detallado.</td>
-  </tr>
-  <tr>
-    <td rowspan="2"><b>Perfil de Marketing</b></td>
-    <td><b>Mercado objetivo</b></td>
-    <td>Estudiantes universitarios peruanos/latinoamericanos de ciclos 1-10.</td>
-    <td>Hablantes no nativos de inglés que desean mejorar su pronunciación, principalmente en Asia y Latinoamérica.</td>
-    <td>Profesionales y estudiantes angloparlantes que quieren mejorar su oratoria y liderazgo comunicacional.</td>
-    <td>Profesionales, estudiantes y ejecutivos angloparlantes que necesitan mejorar presentaciones y discursos.</td>
-  </tr>
-  <tr>
-    <td><b>Estrategias de Marketing</b></td>
-    <td>Freemium, marketing universitario, referidos entre compañeros.</td>
-    <td>Freemium, referidos, partnerships con instituciones educativas.</td>
-    <td>Freemium, publicidad en LinkedIn y redes, membresías corporativas.</td>
-    <td>Freemium con trial de 7 días, alianzas con instituciones educativas, plan Enterprise para equipos.</td>
-  </tr>
-  <tr>
-    <td rowspan="3"><b>Perfil de Producto</b></td>
-    <td><b>Productos &amp; Servicios</b></td>
-    <td>Aplicación web con análisis de voz, ejercicios guiados, simulador de entrevistas y dashboard de progreso.</td>
-    <td>App móvil (iOS/Android) con lecciones de pronunciación, conversación simulada y análisis fonético detallado.</td>
-    <td>App móvil con cursos de oratoria, ejercicios diarios de 5 minutos y biblioteca de habilidades comunicacionales.</td>
-    <td>App móvil (iOS/Android) con análisis de voz e imagen, lecciones gamificadas, historial de práctica y plan personalizado de 4 semanas.</td>
-  </tr>
-  <tr>
-    <td><b>Precios y Costos</b></td>
-    <td>Freemium; plan premium S/. 15-25/mes.</td>
-    <td>Gratis con funciones limitadas; premium desde $6.99/mes.</td>
-    <td>Gratis con funciones básicas; premium desde $9.99/mes.</td>
-    <td>Gratis con funciones básicas; premium desde $9.99/mes o $39.99/año.</td>
-  </tr>
-  <tr>
-    <td><b>Canales de distribución</b></td>
-    <td>Sitio web (talki.com), compatible con navegadores modernos (Chrome, Edge, Safari, Firefox).</td>
-    <td>App Store, Google Play, web.</td>
-    <td>App Store, Google Play.</td>
-    <td>App Store, Google Play.</td>
-  </tr>
-  <tr>
-    <td rowspan="4"><b>Análisis SWOT</b></td>
-    <td><b>Fortalezas</b></td>
-    <td>Español nativo, contexto universitario peruano, IA personalizada, gamificación.</td>
-    <td>IA muy precisa, gran base de usuarios global, contenido extenso y probado.</td>
-    <td>Contenido de alta calidad creado por expertos, formato de micro-lecciones atractivo.</td>
-    <td>Análisis multimodal avanzado, plan adaptativo personalizado, gamificación efectiva, disponible en iOS y Android.</td>
-  </tr>
-  <tr>
-    <td><b>Oportunidades</b></td>
-    <td>Mercado latinoamericano poco atendido, alianzas con universidades, expansión a otros países.</td>
-    <td>Expansión a otros idiomas, mercado B2B con instituciones educativas.</td>
-    <td>Mercado B2B corporativo, expansión a español y otros idiomas.</td>
-    <td>Expansión a idiomas distintos del inglés, mercado educativo universitario latinoamericano sin atender.</td>
-  </tr>
-  <tr>
-    <td><b>Debilidades</b></td>
-    <td>Startup nueva sin track record, recursos limitados, marca poco conocida.</td>
-    <td>Enfocado solo en pronunciación del inglés, no cubre comunicación oral en español.</td>
-    <td>Sin IA para feedback en tiempo real, contenido exclusivamente en inglés.</td>
-    <td>Solo disponible en inglés, sin adaptación al contexto académico ni latinoamericano.</td>
-  </tr>
-  <tr>
-    <td><b>Amenazas</b></td>
-    <td>Entrada de apps internacionales al mercado hispanohablante, competidores con mayor financiamiento.</td>
-    <td>Competidores con IA generativa más avanzada, apps multiidioma con mayor alcance.</td>
-    <td>Apps con IA generativa que ofrecen feedback personalizado, saturación del mercado edtech.</td>
-    <td>Saturación del mercado edtech en inglés, nuevos competidores con IA generativa más potente.</td>
-  </tr>
+<tr><th colspan="6">Competitive Analysis Landscape</th></tr>
+<tr><td colspan="2"><b>Propósito</b></td><td colspan="4">Reconocer alternativas de práctica oral y precisar qué valor debe validar Talki para estudiantes residentes en Perú.</td></tr>
+<tr><th colspan="2">Nombre</th><th>Talki (Thropic)</th><th>ELSA Speak</th><th>Speeko</th><th>Orai</th></tr>
+<tr><td colspan="2"><b>Logo</b></td><td><img src="assets/images/logos/talki-logo.png" alt="Talki" width="100"></td><td><img src="assets/images/logos/elsa-speak-logo.png" alt="ELSA Speak" width="100"></td><td><img src="assets/images/logos/speeko-logo.png" alt="Speeko" width="100"></td><td><img src="assets/images/logos/orai-logo.png" alt="Orai" width="100"></td></tr>
+<tr><td rowspan="2"><b>Perfil</b></td><td>Overview</td><td>Propuesta web de ensayo, conversación por voz y análisis posterior con evidencia autorizada.</td><td>Coach de inglés con IA, conversación y feedback personalizado.</td><td>Coach de comunicación oral con IA y alertas en tiempo real.</td><td>Práctica de oratoria con análisis de voz y ejercicios.</td></tr>
+<tr><td>Valor ofrecido</td><td>Validar ayudas para exposiciones, sustentaciones y entrevistas del contexto universitario.</td><td>Feedback de pronunciación y fluidez, roleplays y tutor bilingüe.</td><td>Observaciones de ritmo, tono y muletillas; lecciones y orientación.</td><td>Observaciones de ritmo, muletillas, claridad y energía; seguimiento de práctica.</td></tr>
+<tr><td rowspan="2"><b>Marketing</b></td><td>Usuarios</td><td>Estudiantes de ciclos 1 al 10 residentes en Perú; piloto en Lima.</td><td>Personas que practican comunicación en inglés.</td><td>Personas que practican presentaciones y comunicación oral.</td><td>Personas que ensayan discursos y presentaciones.</td></tr>
+<tr><td>Adquisición</td><td>Redes universitarias y recomendación entre compañeros, por validar.</td><td>Distribución digital y oferta educativa.</td><td>Distribución digital y contenido formativo.</td><td>Distribución digital y ejercicios de práctica.</td></tr>
+<tr><td rowspan="3"><b>Producto</b></td><td>Funciones</td><td>Ensayo, simulación, reporte, comparación, plan y control de datos, según el diseño de V y VI.</td><td>Roleplays, transcripciones y recomendaciones para aprender inglés.</td><td>Feedback de voz, ejercicios y contenido de coaches.</td><td>Ejercicios, feedback de voz, rachas y tendencias.</td></tr>
+<tr><td>Precio</td><td>Hipótesis freemium y S/ 15–25 mensuales; precio y condiciones pendientes de validar.</td><td>Planes publicados en el sitio oficial; condiciones variables por oferta y región.</td><td>Planes publicados en el sitio oficial; condiciones por consultar.</td><td>Planes publicados en el sitio oficial; condiciones por consultar.</td></tr>
+<tr><td>Canales</td><td>Web adaptable; dominio público pendiente de confirmar. Diseño móvil sin afirmar una app nativa disponible.</td><td>App Store y Google Play.</td><td>iOS, Android, macOS y web.</td><td>Aplicaciones móviles y web.</td></tr>
+<tr><td rowspan="4"><b>SWOT: interpretación del equipo</b></td><td>Fortalezas</td><td>Diseño orientado a tareas universitarias y privacidad; beneficio por demostrar.</td><td>Especialización en aprendizaje de inglés.</td><td>Combina práctica con IA y orientación formativa.</td><td>Relaciona práctica, feedback y seguimiento.</td></tr>
+<tr><td>Oportunidades</td><td>Investigar adopción en cursos y comprensión de feedback en español.</td><td>Investigar usos educativos adicionales.</td><td>Investigar adaptación a otras tareas y contextos.</td><td>Investigar prácticas contextualizadas.</td></tr>
+<tr><td>Limitaciones frente al caso Talki</td><td>No hay todavía evidencia de eficacia, mercado o servicios integrados del diseño objetivo.</td><td>Su propósito es aprender inglés; no equivale a evaluar oratoria universitaria en español.</td><td>Debe comprobarse su ajuste al escenario universitario local; no se afirma ausencia de IA.</td><td>Debe comprobarse su ajuste al contexto local; no se atribuye análisis facial.</td></tr>
+<tr><td>Amenazas</td><td>Alternativas existentes con funcionalidades similares y mayores recursos.</td><td colspan="3">Para todas las alternativas: cambios en proveedores de IA y expectativas de privacidad y utilidad que requieren revisión continua.</td></tr>
 </table>
 
 ### 2.1.2. Estrategias y tácticas frente a competidores
 
-A partir del análisis competitivo, Thropic adopta las siguientes estrategias para posicionar Talki en el mercado:
+La diferenciación propuesta consiste en adaptar la práctica a exposiciones y sustentaciones universitarias, ofrecer explicaciones comprensibles del reporte y facilitar una revisión opcional con tutor. ELSA enfatiza el aprendizaje de inglés; Speeko y Orai también ofrecen práctica y feedback con IA. Por ello, usar IA o emitir avisos en vivo no basta para afirmar una ventaja.
 
-**Frente a ELSA Speak:**
-ELSA Speak domina el mercado de pronunciación en inglés pero no atiende la comunicación oral en español ni el contexto académico latinoamericano. Talki se diferencia enfocándose exclusivamente en español con contexto universitario peruano, ofreciendo ejercicios de exposición académica y simulación de sustentaciones que ELSA no contempla.
-
-**Frente a Speeko:**
-Speeko utiliza contenido pregrabado por coaches sin feedback personalizado en tiempo real. Talki responde con IA generativa que analiza el discurso del usuario en el momento y entrega retroalimentación específica e inmediata, no guiones estáticos. Además, Speeko no tiene presencia en el mercado hispanohablante, lo que representa una ventana de oportunidad directa.
-
-**Frente a Orai:**
-Orai ofrece análisis de oratoria con IA de manera similar a Talki, pero opera exclusivamente en inglés y sin ninguna adaptación al contexto académico latinoamericano. Talki capitaliza esta brecha ofreciendo la misma profundidad de análisis (ritmo, fluidez, claridad) pero en español, con ejercicios diseñados para sustentaciones, exposiciones universitarias y entrevistas de prácticas preprofesionales típicas del sistema educativo peruano.
-
-**Estrategia de diferenciación general:**
-
-- *Localización:* Único producto diseñado para el contexto universitario peruano/latinoamericano en español
-- *Precio accesible:* Modelo freemium con plan premium a S/. 15-25/mes, muy por debajo de los competidores internacionales
-- *Alianzas universitarias:* Partnerships con facultades de Ingeniería y Comunicaciones de universidades peruanas para adopción institucional
-- *Gamificación contextual:* Sistema de logros y streaks adaptado a los ciclos académicos peruanos (exposiciones, sustentaciones, entrevistas de prácticas)
+El piloto deberá observar si las ayudas contextualizadas, la evidencia de cada recomendación y el control de datos aportan valor para ambos segmentos. El precio y las alianzas universitarias se investigarán por separado. No se afirma exclusividad en español, superioridad técnica ni ahorro de precio sin una comparación verificable.
 
 ## 2.2. Entrevistas
 
@@ -801,7 +684,7 @@ Estudia Ingeniería de Software en la UPC y está en cuarto ciclo. Ya venía con
 
 **Gian Guerra (Computer Science, University of the People EE.UU., 6to ciclo)**
 
-Estudiante peruano radicado en Lima que cursa Computer Science de forma remota en una universidad estadounidense (University of the People), se encuentra en sexto ciclo. Aunque su universidad es extranjera, se incluye en el estudio porque representa el caso de universitarios peruanos que complementan su formación local con programas internacionales 100% online y que enfrentan retos adicionales de comunicación oral en contextos bilingües, un perfil cada vez más frecuente en el mercado laboral tecnológico peruano. Ha tenido evaluaciones orales variadas: monografías, proyectos de software, debates y simulaciones de entrevistas, además de entrevistas reales de trabajo. Reconoce que su comunicación oral ha mejorado enormemente desde sus inicios universitarios, principalmente gracias al mundo laboral. Antes hablaba muy rápido, llenaba los silencios y usaba muletillas constantemente. Actualmente, los escenarios que aún le generan presión son las presentaciones ante jefes o personas con mayor jerarquía. Se prepara haciendo "chuletillas" (resúmenes de ideas principales), consultando guías de oratoria y grabándose para identificar sus puntos débiles. Ha reconocido que la mala comunicación le jugó en contra en sus primeras entrevistas de trabajo, especialmente una con una empresa española en inglés. Ha probado la herramienta digital "Speak", que le da feedback sobre pronunciación, entonación y relación de palabras, aunque no sobre contenido ni manejo de silencios. Considera que lo más valioso sería una app que analice silencios y variedad de vocabulario, dos de sus puntos más débiles. Ve una aplicación con IA para simular sustentaciones y entrevistas como "extremadamente útil", con feedback sobre gestos, pronunciación, muletillas y claridad de ideas. Prefiere un esquema híbrido: IA autónoma con checkpoints periódicos con un tutor humano.
+Estudiante peruano radicado en Lima que cursa Computer Science de forma remota en una universidad estadounidense (University of the People), se encuentra en sexto ciclo. Aunque su universidad es extranjera, se incluye en el estudio porque representa el caso de universitarios peruanos que complementan su formación local con programas internacionales 100% online y que enfrentan retos adicionales de comunicación oral en contextos bilingües, un caso incluido en esta muestra exploratoria, sin estimar su frecuencia en la población. Ha tenido evaluaciones orales variadas: monografías, proyectos de software, debates y simulaciones de entrevistas, además de entrevistas reales de trabajo. Reconoce que su comunicación oral ha mejorado enormemente desde sus inicios universitarios, principalmente gracias al mundo laboral. Antes hablaba muy rápido, llenaba los silencios y usaba muletillas constantemente. Actualmente, los escenarios que aún le generan presión son las presentaciones ante jefes o personas con mayor jerarquía. Se prepara haciendo "chuletillas" (resúmenes de ideas principales), consultando guías de oratoria y grabándose para identificar sus puntos débiles. Ha reconocido que la mala comunicación le jugó en contra en sus primeras entrevistas de trabajo, especialmente una con una empresa española en inglés. Ha probado la herramienta digital "Speak", que le da feedback sobre pronunciación, entonación y relación de palabras, aunque no sobre contenido ni manejo de silencios. Considera que lo más valioso sería una app que analice silencios y variedad de vocabulario, dos de sus puntos más débiles. Ve una aplicación con IA para simular sustentaciones y entrevistas como "extremadamente útil", con feedback sobre gestos, pronunciación, muletillas y claridad de ideas. Prefiere un esquema híbrido: IA autónoma con checkpoints periódicos con un tutor humano.
 
 **Puntos clave:**
 - Experiencia amplia: debates, proyectos, simulaciones y **entrevistas reales de trabajo**.
@@ -869,7 +752,7 @@ La matriz siguiente resume lo relatado en las fichas de 2.2.2 y en el análisis 
 
 **Diferencias relevantes para el diseño**
 
-En el primer segmento, el ensayo guiado debe ayudar a ordenar el discurso y revisar aspectos concretos como volumen, fluidez y repetición de palabras. En el segundo, la propuesta debe permitir ensayar preguntas contextualizadas, revisar silencios y justificar argumentos. Los modos siguen disponibles para ambos segmentos; la etapa académica orienta las ayudas y no restringe funciones.
+En el primer segmento, el ensayo guiado debe ayudar a ordenar el discurso y revisar aspectos concretos como volumen, fluidez y repetición de palabras. En el segundo, la propuesta debe permitir ensayar preguntas contextualizadas, revisar silencios y justificar argumentos. Los modos se proponen disponibles para ambos segmentos; la etapa académica orienta las ayudas y no restringe funciones.
 
 **Implicaciones y límites**
 
@@ -883,13 +766,13 @@ En el primer segmento, el ensayo guiado debe ayudar a ordenar el discurso y revi
 
 ### 2.3.1. User Personas
 
-Para comprender mejor las necesidades, motivaciones y comportamientos de los usuarios clave de Talki, se han desarrollado dos perfiles de usuario o personas representativas. Estos perfiles sintetizan características típicas, objetivos y retos de los segmentos principales, facilitando el diseño centrado en el usuario y la toma de decisiones estratégicas durante el desarrollo de la plataforma.
+Para comprender mejor las necesidades, motivaciones y comportamientos de los usuarios clave de Talki, se han desarrollado dos perfiles de usuario o personas representativas. Son arquetipos compuestos de diseño, no personas entrevistadas ni perfiles estadísticamente representativos. Sus edades, nombres y ocupaciones sirven para contextualizar las tareas. Sintetizan objetivos y retos de los segmentos principales, facilitando el diseño centrado en el usuario y la toma de decisiones estratégicas durante el desarrollo de la plataforma.
 
 **Persona 1: Valeria Ríos, la Estudiante en Formación Oral**
 
 Estudiante universitaria de 19 años, residente en Lima, Perú, cursando los ciclos 1 al 5 de una carrera con alta demanda de presentaciones orales. Valeria representa a los estudiantes de ciclos iniciales que enfrentan con frecuencia exposiciones como principal forma de evaluación, pero carecen de herramientas y métodos efectivos para practicar. Se considera responsable y esforzada, aunque algo insegura al hablar en público y en busca de mejorar de forma constante. Sus principales frustraciones son que su voz se apaga durante la exposición sin que ella lo note y los "black outs" provocados por los nervios. Valora recibir retroalimentación honesta y objetiva que le permita identificar errores (como la pérdida de volumen de voz o los olvidos por nervios) y mejorar progresivamente su desempeño, sin depender de terceros y a un costo accesible.
 
-> *"Sé que voy a estar nerviosa, pero trato de estar lo más preparada posible."*
+*Idea que resume el arquetipo, sin atribuir una cita literal: prepararse para afrontar los nervios de una exposición.*
 
 ![Ficha de persona de Valeria Ríos](assets/images/personas/PersonaSeg1.jpg)
 
@@ -897,7 +780,7 @@ Estudiante universitaria de 19 años, residente en Lima, Perú, cursando los cic
 
 Estudiante universitario de 23 años, residente en Lima, Perú, cursando los ciclos 6 al 10 de Ingeniería de Software con vida laboral activa. Rodrigo encarna a los estudiantes avanzados que, habiendo ganado experiencia académica y laboral, reconocen que la comunicación oral es un factor decisivo en su desarrollo profesional. Es analítico, proactivo y autodidacta; domina herramientas digitales como Speak y NotebookLM, pero ninguna cubre el feedback de oratoria que necesita (manejo de silencios, muletillas, claridad de ideas). Una mala entrevista en inglés con una empresa española le dejó claro que la comunicación oral es tan importante como el conocimiento técnico. Busca una solución específica que le brinde análisis detallado de su oratoria y le permita prepararse de forma autónoma para sustentaciones importantes y entrevistas de trabajo reales, con la opción de complementar la práctica autónoma con orientación periódica de un tutor.
 
-> *"A medida que sube la complejidad, te das cuenta de que la preparación es algo fundamental."*
+*Idea que resume el arquetipo, sin atribuir una cita literal: preparar argumentos ante escenarios profesionales más exigentes.*
 
 ![Ficha de persona de Rodrigo Sánchez](assets/images/personas/PersonaSeg2.jpg)
 
@@ -957,20 +840,20 @@ El lenguaje ubicuo (Ubiquitous Language) establece un vocabulario común y compa
 | **Speaker / Orador** | Estudiante universitario que utiliza Talki para practicar y mejorar su comunicación oral mediante exposiciones, sustentaciones o simulaciones de entrevistas. |
 | **Practice Session / Sesión de Práctica** | Actividad en la que el orador se graba practicando una exposición, sustentación o entrevista, y sobre la cual Talki ejecuta el análisis de su oratoria. |
 | **Live Coach / Coach en Vivo** | Componente de IA que acompaña al orador durante la sesión de práctica en tiempo real, entregando retroalimentación inmediata sobre su desempeño oral. |
-| **Voice Coach Score / Puntuación del Coach de Voz** | Métrica integral, generada por Talki al finalizar una sesión, que resume el desempeño del orador en cinco dimensiones: fluidez, claridad, volumen, vocabulario y confianza. |
+| **Voice Coach Score / Puntuación del Coach de Voz** | Resultado propuesto del análisis posterior con cinco dimensiones posibles: fluidez, claridad, volumen, vocabulario y confianza estimada. Una dimensión sin evidencia queda ausente; una muestra parcial no recibe un total completo. |
 | **Fluency / Fluidez** | Dimensión que mide la continuidad y el ritmo del discurso del orador, penalizando las interrupciones, titubeos y pausas involuntarias. |
 | **Clarity / Claridad** | Dimensión que evalúa qué tan comprensible y bien organizada es la exposición de las ideas del orador. |
 | **Volume / Volumen** | Dimensión que analiza la intensidad y estabilidad de la voz del orador durante la sesión, detectando por ejemplo la pérdida de volumen hacia el final de la presentación. |
 | **Vocabulary / Vocabulario** | Dimensión que mide la riqueza y variedad léxica del discurso, identificando la repetición excesiva de palabras. |
-| **Confidence / Confianza** | Dimensión que estima la seguridad percibida del orador a partir de indicadores acústicos y de fluidez. |
+| **Confidence / Confianza** | Indicador propuesto de señales del discurso, cuando existe evidencia suficiente. No mide el estado emocional, la seguridad personal ni un diagnóstico de ansiedad. |
 | **Filler Word / Muletilla** | Palabra o sonido de relleno (por ejemplo, "eh", "este", "o sea") que el orador utiliza de forma involuntaria y que Talki detecta y contabiliza como oportunidad de mejora. |
 | **Silence Management / Manejo de Silencios** | Habilidad del orador para gestionar las pausas y silencios de su discurso; Talki mide la proporción de silencios para identificar pausas excesivas o incómodas. |
 | **Feedback / Retroalimentación** | Conjunto de observaciones y recomendaciones específicas y accionables que Talki entrega al orador tras analizar su sesión de práctica. |
 | **Interview Simulation / Simulación de Entrevista** | Modo de práctica en el que Talki recrea una entrevista de trabajo o de prácticas preprofesionales para que el orador ensaye sus respuestas y reciba análisis de su oratoria. |
 | **Thesis Defense / Sustentación** | Modo de práctica orientado a exposiciones y sustentaciones académicas de alta importancia frente a un jurado o profesor. |
-| **Progress Dashboard / Panel de Progreso** | Vista que consolida el historial de sesiones del orador y la evolución de cada dimensión del Voice Coach Score a lo largo del tiempo. |
+| **Progress Dashboard / Panel de Progreso** | Vista de evaluaciones compatibles por modo y versiones, con dimensiones respaldadas por evidencia. Sessions conserva el historial completo, incluidos borradores y análisis fallidos. |
 | **Gamification / Gamificación** | Conjunto de mecánicas (logros, streaks y niveles) que incentivan la práctica constante del orador, adaptadas al calendario académico universitario. |
-| **Freemium** | Modelo de negocio de Talki que ofrece funcionalidades básicas de forma gratuita y funcionalidades avanzadas mediante un plan premium de pago (S/. 15-25 mensuales). |
+| **Freemium** | Hipótesis de funciones básicas gratuitas y un plan premium de S/ 15–25 mensuales; no acredita un precio aprobado ni una suscripción operativa. |
 
 # Capítulo III: Requirements Specification
 
@@ -1008,7 +891,43 @@ Rodrigo se prepara para una entrevista de prácticas o una sustentación ante ju
 
 Los dos escenarios convergen en el flujo **configurar → verificar → practicar → analizar → recomendar → repetir**. La diferencia está en la profundidad: Valeria necesita orientación simple y confianza progresiva; Rodrigo requiere simulación contextual, repreguntas, evidencia detallada y seguimiento profesional.
 
-## 3.2. User Stories
+## 3.2. Requisitos Funcionales y No Funcionales
+
+Los requisitos convierten las necesidades de II y los escenarios de 3.1 en capacidades verificables. Las historias de 3.3 detallan los criterios de aceptación; ADD en 4.1 concreta los atributos de calidad. Se especifica el diseño objetivo, sin afirmar que todas las capacidades estén implementadas.
+
+**Requisitos funcionales**
+
+| ID | Capacidad requerida | Historias y responsabilidad de diseño |
+| --- | --- | --- |
+| RF-01 | Consultar beneficios, condiciones de planes, testimonios autorizados y enviar una consulta. | US01–US04; landing de 6.3. |
+| RF-02 | Registrar y verificar cuenta, acceder, recuperar contraseña, editar perfil y cerrar sesión. | US05–US08, US28; Identity & Access (5.8). |
+| RF-03 | Preparar título, modo, duración, segmento, meta y áreas de enfoque. | US09–US11, US23–US25; Sessions (5.4), con perfil de Identity. |
+| RF-04 | Comprobar micrófono y consentimiento, y adjuntar o retirar material autorizado. | US29, US30; Sessions, Identity y Live Coaching (5.1). |
+| RF-05 | Practicar por voz con transcripción, pausa, recuperación y cierre confirmado. | US12–US14, US34; Live Coaching y Sessions. |
+| RF-06 | Realizar simulaciones y recibir señales silenciables cuando haya evidencia. | US31, US38; Live Coaching y AI Provider Gateway (5.9). |
+| RF-07 | Consultar puntuación, muletillas, palabras clave y recomendaciones con evidencia y límites. | US15–US19, US26; Analysis (5.2) y Scoring (5.3). |
+| RF-08 | Consultar y reintentar análisis recuperable sin duplicar resultados. | US37; Analysis y Scoring. |
+| RF-09 | Consultar historial propio, evolución y comparación de evaluaciones compatibles. | US20–US22; Sessions y Progress (5.5). |
+| RF-10 | Consultar planes de práctica, rachas y logros basados en prácticas válidas. | US35, US36; Progress y Gamification (5.7). |
+| RF-11 | Exportar, compartir temporalmente, revocar consentimiento y eliminar datos. | US27, US32, US33; Sharing (5.6), Identity y contextos responsables de datos. |
+| RF-12 | Recibir avisos de cuenta, evaluación y privacidad, y controlar preferencias. | Soporte transversal a US05, US07, US15, US32, US33, US35; Notifications (5.10). |
+
+**Requisitos no funcionales**
+
+| ID | Condición verificable | Referencia y criterio del diseño |
+| --- | --- | --- |
+| RNF-01 | Interacción en vivo sin bloquear la captura. | QAS-PER-01: objetivo p95 ≤ 2 s y error < 1 %, bajo concurrencia del piloto por definir. |
+| RNF-02 | Reporte posterior oportuno y sin duplicados. | QAS-PER-02, QAS-REL-01: 95 % ≤ 60 s para prácticas de hasta 20 min; reentregas no duplican resultados ni progreso. |
+| RNF-03 | Acceso limitado al propietario o al permiso temporal vigente. | QAS-SEC-01: rechazar toda solicitud no autorizada; nunca confiar en un userId aportado como autorización. |
+| RNF-04 | Control del procesamiento y eliminación de datos privados. | C-02, C-08, QAS-PRI-01: consentimiento vigente, audio crudo sin persistencia por defecto, revocación inmediata y purga con estado verificable. |
+| RNF-05 | Recuperación y diagnóstico ante fallos. | QAS-AVA-01, QAS-OBS-01: detectar interrupción ≤ 10 s, conservar estado confirmado y correlacionar etapa fallida ≤ 15 min, sin contenido privado en logs. |
+| RNF-06 | Incorporar modos y proveedores mediante contratos localizados. | QAS-MOD-01, QAS-INT-01: pruebas contractuales y del flujo central; tiempos iniciales de 2 y 5 persona-días por validar. |
+| RNF-07 | Primera práctica comprensible y diseño adaptable. | QAS-USA-01: 90 % inicia en ≤ 3 min sin ayuda; criterios visuales y navegación de 6.1 y 6.2. |
+| RNF-08 | Interpretar resultados con idioma y versiones explícitos. | C-03, C-09: interfaz en_US/es_419, idioma de conversación separado y comparaciones solo con modo y versiones compatibles; no sustituir datos ausentes por cero. |
+
+Los umbrales son objetivos iniciales que se medirán durante implementación y validación. Las restricciones tecnológicas y del equipo se conservan en ADD; no se presentan como funcionalidades de usuario.
+
+## 3.3. User Stories
 
 Para conservar la trazabilidad con el proyecto desarrollado en el ciclo anterior, se mantienen los identificadores **US01–US28** y se actualiza su redacción cuando corresponde. Las historias **US29–US38** amplían el backlog con privacidad, material contextual, simulación, continuidad, procesamiento asíncrono, aprendizaje adaptativo y coaching en vivo, capacidades necesarias para la versión actual de Talki.
 
@@ -1040,7 +959,7 @@ Los criterios de aceptación se especifican como escenarios **Dado–Cuando–En
 | US12 | Iniciar grabación y transcripción | Como estudiante, quiero iniciar la práctica y visualizar la transcripción para monitorear lo que digo. | Con permisos válidos comienza la captura; la transcripción incremental se muestra; un fallo de permisos ofrece instrucciones. |
 | US13 | Pausar y reanudar | Como estudiante, quiero pausar y reanudar sin perder el progreso confirmado. | El estado y cronómetro se actualizan consistentemente; al reanudar no se duplica la transcripción. |
 | US14 | Finalizar y guardar | Como estudiante, quiero finalizar la sesión y conservar la transcripción para obtener feedback. | Se solicita confirmación; finalizar ocurre una sola vez; se guarda el estado y comienza el análisis. |
-| US31 | Simular entrevista o sustentación | Como estudiante avanzado, quiero responder preguntas y repreguntas contextualizadas para prepararme para escenarios exigentes. | La IA utiliza material autorizado; respeta turnos y tiempo; las repreguntas son pertinentes; el usuario puede terminar. |
+| US31 | Simular entrevista o sustentación | Como estudiante que prepara una entrevista o sustentación, quiero responder preguntas y repreguntas contextualizadas para prepararme para escenarios exigentes. | La IA utiliza material autorizado; respeta turnos y tiempo; las repreguntas son pertinentes; el usuario puede terminar. |
 | US34 | Recuperar una sesión interrumpida | Como estudiante, quiero reanudar o cerrar correctamente una práctica tras una desconexión para no perder todo el esfuerzo. | Se detecta la desconexión; se conserva el último estado válido; se ofrece reanudar o generar resultado parcial identificado. |
 | US38 | Recibir coaching en tiempo cercano al real | Como estudiante, quiero recibir señales discretas sobre ritmo, volumen y pausas para corregirme sin perder el hilo. | Las señales se entregan dentro del umbral de latencia; pueden silenciarse; no bloquean la captura ni interrumpen la voz. |
 | EP05 | Feedback y análisis con IA | Como estudiante, quiero recibir resultados comprensibles y accionables para saber qué mejorar. | No corresponde. |
@@ -1180,19 +1099,19 @@ Cada historia tiene un escenario principal y dos escenarios alternativos o de er
 | US28 | Principal | existe una sesión autenticada | el estudiante cierra sesión | se revoca refresh token y se eliminan credenciales locales. |
 | US28 | Alternativo | existe una práctica en curso | solicita cerrar sesión | se advierte antes de perder acceso al ensayo. |
 | US28 | Excepción | se intenta renovar con un refresh token revocado | solicita otra credencial | la renovación se rechaza y requiere nuevo acceso. |
-| US29 | Principal | aún no hay consentimiento | prueba audio o inicia | Talki bloquea captura hasta consentimiento y validación. |
+| US29 | Principal | existe permiso de dispositivo y falta consentimiento | prueba el nivel del micrófono localmente o intenta iniciar | permite comprobar la señal local sin enviar ni guardar audio; bloquea la práctica y el procesamiento externo hasta aceptar el consentimiento. |
 | US29 | Alternativo | hay permiso de micrófono pero no consentimiento | intenta iniciar | se bloquea el procesamiento de voz hasta aceptar las condiciones. |
 | US29 | Excepción | la prueba no detecta señal de entrada | verifica el micrófono | se ofrecen instrucciones y no se marca la prueba como exitosa. |
 | US30 | Principal | el estudiante selecciona un archivo | lo adjunta | valida formato y tamaño, y permite eliminarlo. |
 | US30 | Alternativo | el archivo excede el tamaño o usa un formato no permitido | intenta adjuntarlo | se informa el motivo y no se incorpora al contexto. |
 | US30 | Excepción | el estudiante retira un material antes de la práctica | confirma eliminarlo | el material deja de estar autorizado para esa práctica. |
-| US31 | Principal | el estudiante avanzado inicia simulación | responde preguntas | la IA respeta turnos, tiempo y material autorizado. |
+| US31 | Principal | el estudiante inicia una simulación | responde preguntas | la IA respeta turnos, tiempo y material autorizado. |
 | US31 | Alternativo | el estudiante decide terminar la simulación | confirma el cierre | la IA deja de preguntar y se conserva la evidencia autorizada. |
 | US31 | Excepción | la IA pierde conexión o recibe material insuficiente | solicita una nueva pregunta | se informa la limitación sin inventar datos del CV o proyecto. |
 | US32 | Principal | el propietario comparte un reporte | crea o revoca enlace | el acceso es temporal, limitado y revocable. |
 | US32 | Alternativo | el enlace compartido venció | el tutor abre el reporte | se deniega el acceso y no se muestran otras sesiones. |
 | US32 | Excepción | el propietario revoca un enlace activo | el tutor vuelve a solicitar el recurso | la autorización se rechaza de inmediato. |
-| US33 | Principal | el propietario solicita revocación o borrado | confirma la acción | se bloquean accesos y se activa purga auditable. |
+| US33 | Principal | el propietario solicita retirar consentimiento o borrar una sesión | confirma la acción elegida | el retiro bloquea nuevo procesamiento; el borrado bloquea acceso al recurso y activa purga auditable. Retirar consentimiento no elimina por sí solo el historial. |
 | US33 | Alternativo | el propietario retira consentimiento | se intenta iniciar nuevo procesamiento | la solicitud se bloquea aunque una purga previa siga pendiente. |
 | US33 | Excepción | un contexto no confirma la purga física | consulta el estado de eliminación | el acceso sigue bloqueado y el estado figura pendiente. |
 | US34 | Principal | ocurre una desconexión | vuelve a la práctica | conserva estado válido y ofrece reanudar o cierre parcial. |
@@ -1211,7 +1130,7 @@ Cada historia tiene un escenario principal y dos escenarios alternativos o de er
 | US38 | Alternativo | el estudiante silencia las señales | continúa hablando | la captura continúa sin avisos del coach. |
 | US38 | Excepción | no hay evidencia acústica o la latencia supera el umbral | se intenta generar una señal | se omite la señal no sustentada y se informa la limitación sin bloquear el ensayo. |
 
-## 3.3. Impact Mapping
+## 3.4. Impact Mapping
 
 El Impact Map conecta los objetivos de negocio con los actores, los cambios de comportamiento esperados y los entregables que los hacen posibles. El objetivo no es implementar todas las ideas, sino priorizar aquellas que aportan evidencia sobre adopción, práctica sostenida y mejora percibida.
 
@@ -1227,7 +1146,7 @@ El Impact Map conecta los objetivos de negocio con los actores, los cambios de c
 | BG-02 | Validar que el feedback permite una mejora accionable. | Al cierre de 4 semanas, al menos 60 % de quienes completan 2 sesiones marca una recomendación como aplicada o registra una mejora en la métrica asociada. |
 | BG-03 | Reducir la fricción de la primera práctica. | Durante la prueba de usabilidad del piloto, al menos 90 % de participantes inicia una sesión válida en 3 minutos o menos, sin ayuda. |
 | BG-04 | Validar utilidad para escenarios avanzados. | Al cierre del piloto, al menos 70 % de estudiantes de ciclos 6–10 que prueban una simulación contextualizada la califica útil para entrevista o sustentación. |
-| BG-05 | Sostener confianza en el tratamiento de datos. | Durante el piloto, 100 % de sesiones registra consentimiento antes de capturar audio y 100 % de enlaces revocados deja de otorgar acceso de inmediato. |
+| BG-05 | Sostener confianza en el tratamiento de datos. | Durante el piloto, 100 % de sesiones registra consentimiento antes de enviar o procesar voz y 100 % de enlaces revocados deja de otorgar acceso de inmediato. |
 
 ```mermaid
 flowchart LR
@@ -1291,7 +1210,7 @@ La siguiente trazabilidad complementa el diagrama y asegura que cada meta SMART 
 4. Si el progreso se expresa mediante comparaciones válidas y recomendaciones adaptativas, aumentará la repetición de sesiones.
 5. Si la privacidad es visible y controlable, disminuirá la resistencia a grabarse y cargar material personal.
 
-## 3.4. Product Backlog
+## 3.5. Product Backlog
 
 El orden expresa el valor para validar Talki: completar un ensayo, obtener feedback útil y comunicar la propuesta del producto. No es una secuencia de implementación. Las dependencias se resuelven en Sprint Planning junto con los contratos técnicos y las salvaguardas de acceso y privacidad.
 
@@ -1311,7 +1230,7 @@ Las estimaciones preliminares utilizan únicamente **1, 2, 3, 5 y 8 story points
 | 10 | US16 | Analizar muletillas | Should | 5 | US14 | MVP |
 | 11 | US19 | Recibir sugerencias por sección | Should | 5 | US15 | MVP |
 | 12 | US26 | Recibir recomendaciones por segmento | Must | 5 | US15, US23 | MVP |
-| 13 | US37 | Consultar estado y reintentar análisis | Must | 5 | US14, US15 | MVP |
+| 13 | US37 | Consultar estado y reintentar análisis | Must | 5 | US14, TS03, TS04 | MVP |
 | 14 | US20 | Consultar historial | Should | 3 | US06, US15 | MVP |
 | 15 | US29 | Verificar micrófono y consentimiento | Must | 5 | US09 | MVP |
 | 16 | US34 | Recuperar una sesión interrumpida | Must | 8 | US12, US14 | MVP |
@@ -1338,9 +1257,9 @@ Las estimaciones preliminares utilizan únicamente **1, 2, 3, 5 y 8 story points
 | 37 | US35 | Mantener rachas y logros | Could | 5 | US20 | Incremento 3 |
 | 38 | US07 | Recuperar contraseña | Should | 3 | US05 | Incremento 3 |
 
-Los contratos técnicos se planifican con las historias que habilitan. Su orden en la tabla permite identificarlos sin sustituir la prioridad de negocio.
+Los contratos técnicos se planifican con las historias que habilitan. La columna siguiente identifica esas historias y los contratos previos: las historias habilitadas no son dependencias que deban terminar antes del contrato. Su orden no sustituye la prioridad de negocio.
 
-| Orden | ID | Título | Prioridad | SP | Dependencias | Entrega objetivo |
+| Orden | ID | Título | Prioridad | SP | Historias habilitadas y contratos previos | Entrega objetivo |
 | ---: | --- | --- | :---: | ---: | --- | --- |
 | 39 | TS01 | API de sesiones | Must | 3 | US09, US20 | MVP / Sprint 1 |
 | 40 | TS02 | Contrato de coaching en vivo | Must | 8 | US12, US14, US29, US38 | MVP / Sprint 1 |
@@ -1358,7 +1277,7 @@ US31 y US38 se reestiman a 8 puntos considerando las interfaces de voz y los con
 - **Should:** incrementa contextualización, profundidad del entrenamiento, adaptación y colaboración.
 - **Could:** fortalece engagement, adquisición y conveniencia, pero no bloquea la validación inicial.
 
-La tabla constituye el Product Backlog versionado del equipo para TB1. Las User Stories y sus criterios quedan redactados en este informe, de acuerdo con el enunciado; su evolución queda trazada mediante los commits y Pull Requests de esta rama.
+La tabla constituye el Product Backlog acumulativo de TB1 y TP. Las User Stories y sus criterios quedan redactados en este informe, de acuerdo con el enunciado; su evolución queda trazada mediante los commits y Pull Requests de esta rama.
 
 ### Definición de Ready
 
@@ -1450,7 +1369,7 @@ Cada escenario incluye fuente, estímulo, entorno, artefacto, respuesta y medida
 | C-08 | El usuario debe consentir el procesamiento de voz y material cargado. | Ninguna sesión puede comenzar sin permisos; la revocación y eliminación deben formar parte del diseño. |
 | C-09 | Los reportes históricos deben indicar la versión de la rúbrica y del análisis. | Evita comparar resultados producidos con criterios incompatibles y permite reproducibilidad. |
 
-**Precisión de ADD:** la disponibilidad inicial de Gemini Live (C-01) se trata como una condición del piloto, no como una razón para acoplar el dominio al proveedor. La decisión de integración se compara explícitamente en 4.1.4; las restricciones C-02 a C-09 se implementan mediante los contratos técnicos de 3.2 y las historias de consentimiento, borrado y trazabilidad.
+**Precisión de ADD:** la disponibilidad inicial de Gemini Live (C-01) se trata como una condición del piloto, no como una razón para acoplar el dominio al proveedor. La decisión de integración se compara explícitamente en 4.1.4; las restricciones C-02 a C-09 se implementan mediante los contratos técnicos de 3.3 y las historias de consentimiento, borrado y trazabilidad.
 
 ### 4.1.3. Architectural Drivers Backlog
 
@@ -1492,17 +1411,17 @@ En cada iteración se toma el siguiente driver de mayor prioridad, se revisan la
 
 #### Candidate Pattern Evaluation Matrix
 
-Los tres patrones se evalúan contra los mismos siete drivers H/H. Cada celda resume el principal pro o contra para ese driver.
+Los tres patrones se evalúan contra los mismos siete drivers H/H. Cada celda resume un beneficio o riesgo del diseño considerado. Un monolito también puede utilizar colas y adaptadores; los riesgos no son limitaciones inevitables del patrón.
 
 | Driver H/H | Monolito modular | Microservicios + REST síncrono | Microservicios + Event-Driven |
 |---|---|---|---|
 | AD-Q02: privacidad y autorización | **Pro:** una política central. **Contra:** mayor radio de exposición. | **Pro:** separación de datos. **Contra:** propaga autorización en cada llamada. | **Pro:** ownership y minimización por servicio. **Contra:** auditar eventos exige gobierno. |
 | AD-F03: ciclo de sesión y recuperación | **Pro:** transacción simple. **Contra:** una falla afecta todo el ciclo. | **Pro:** separa sesión y captura. **Contra:** acoplamiento temporal al recuperar. | **Pro:** checkpoints y recuperación desacoplada. **Contra:** consistencia eventual. |
 | AD-F04: coaching en vivo | **Pro:** camino corto. **Contra:** escala todo el sistema. | **Pro:** WebSocket especializado. **Contra:** dependencia del servicio en vivo. | **Pro:** aísla eventos secundarios. **Contra:** no reemplaza WebSocket para el audio en vivo. |
-| AD-F06: análisis y reporte | **Pro:** respuesta directa. **Contra:** bloquea al usuario durante el análisis. | **Pro:** servicios especializados. **Contra:** cadena síncrona vulnerable a fallas. | **Pro:** colas, reintentos e idempotencia. **Contra:** reporte con consistencia eventual. |
+| AD-F06: análisis y reporte | **Pro:** transacciones locales simples. **Contra:** el procesamiento pesado comparte recursos si no se aísla mediante workers. | **Pro:** servicios especializados. **Contra:** cadena síncrona vulnerable a fallas. | **Pro:** colas, reintentos e idempotencia. **Contra:** reporte con consistencia eventual. |
 | AD-Q03: idempotencia | **Pro:** transacción única. **Contra:** difícil escalar procesos pesados. | **Pro:** contratos claros. **Contra:** reintentos entre servicios duplican trabajo. | **Pro:** Outbox/Inbox y consumidores idempotentes. **Contra:** requiere gobierno de eventos. |
 | AD-Q05: degradación ante fallas | **Pro:** menor operación. **Contra:** punto único de falla. | **Pro:** aislamiento parcial. **Contra:** una dependencia lenta bloquea la cadena. | **Pro:** circuit breaker, DLQ y degradación. **Contra:** mayor complejidad operativa. |
-| AD-F05: simulación contextual | **Pro:** integración IA rápida. **Contra:** acopla proveedor y dominio. | **Pro:** adaptador por servicio. **Contra:** llamadas bloqueantes. | **Pro:** adaptador IA aislado y eventos para resultados. **Contra:** más contratos que mantener. |
+| AD-F05: simulación contextual | **Pro:** integración IA concentrada. **Contra:** exige separación explícita de módulos y adaptadores para evitar acoplamiento. | **Pro:** adaptador por servicio. **Contra:** llamadas bloqueantes. | **Pro:** adaptador IA aislado y eventos para resultados. **Contra:** más contratos que mantener. |
 
 **Conclusión:** se selecciona **Microservicios + Event-Driven** para el pipeline de sesión y análisis porque satisface mejor los drivers de confiabilidad, recuperación e idempotencia. Se complementa con REST para comandos/consultas y WebSocket para coaching en vivo; el patrón no se aplica como sustituto del canal de baja latencia.
 
@@ -1514,7 +1433,7 @@ Los tres patrones se evalúan contra los mismos siete drivers H/H. Cada celda re
 | ADD-04 | Modelo de coordinación | Procesar la finalización y análisis mediante eventos RabbitMQ. | AD-F06, AD-Q03, AD-Q05. | Cadena síncrona entre servicios; tareas periódicas sobre base de datos. | Desacopla y permite reintentos, a cambio de consistencia eventual y gobierno de contratos. |
 | ADD-05 | Modelo de coordinación / confiabilidad | Diseñar consumidores idempotentes usando `session_id + analysis_version` y aplicar Inbox/Outbox cuando una operación combine persistencia y publicación. | AD-Q03, AD-C04. | Confiar en entrega única; deduplicación manual ocasional. | Evita dobles reportes y progreso duplicado; añade índices, registros de procesamiento y limpieza. |
 | ADD-06 | Elección de tecnología / interoperabilidad | Encapsular Gemini Live y proveedores futuros detrás de un AI Provider Adapter y una Anti-Corruption Layer. | AD-F05, AD-Q04, AD-C01. | Invocar directamente el SDK desde la lógica de dominio. | Reduce acoplamiento; el contrato común puede no exponer todas las funciones exclusivas del proveedor. |
-| ADD-07 | Modelo de datos | Aplicar Database per Service con PostgreSQL; utilizar JSONB para resultados semiestructurados versionados. | AD-F06, AD-F07, AD-Q03, AD-C03. | Base de datos compartida; almacenamiento documental para todo. | Preserva ownership y transacciones locales; las vistas cruzadas requieren eventos o modelos de lectura. |
+| ADD-07 | Modelo de datos | Aplicar Database per Service con PostgreSQL; utilizar JSONB para resultados semiestructurados versionados. | AD-F06, AD-F07, AD-Q03; C-04 (base técnica). | Base de datos compartida; almacenamiento documental para todo. | Preserva ownership y transacciones locales; las vistas cruzadas requieren eventos o modelos de lectura. |
 | ADD-08 | Gestión de recursos / privacidad | Procesar audio en memoria o almacenamiento temporal con TTL y no conservarlo por defecto. | AD-Q02, AD-C02. | Guardar todas las grabaciones. | Reduce riesgo y costo, pero limita reprocesamiento; se conservan transcript autorizado, métricas y versiones. |
 | ADD-09 | Seguridad | Utilizar tokens de corta duración, refresh rotativo, RBAC y autorización por propiedad del recurso. | AD-F01, AD-Q02. | Sesión central de servidor; API keys por usuario. | Escala y desacopla, pero requiere revocación, rotación segura y validación coherente en gateway y servicios. |
 | ADD-10 | Resiliencia | Aplicar timeouts, circuit breaker, reintentos limitados con *exponential backoff*, DLQ y respuesta degradada. | AD-Q05, AD-Q01. | Reintentos indefinidos; fallo inmediato sin recuperación. | Evita cascadas y mejora continuidad; algunos resultados podrán ser parciales y deberán etiquetarse claramente. |
@@ -1533,7 +1452,7 @@ La siguiente matriz conserva la estructura de refinamiento ADD: cada fila conect
 
 | Scenario(s) | Business Goals | Relevant Quality Attributes | Stimulus | Stimulus Source | Environment | Artifact | Response | Response Measure | Questions | Issues |
 |---|---|---|---|---|---|---|---|---|---|---|
-| QAS-PER-01: coaching en vivo | BG-01, BG-03 | Rendimiento, escalabilidad | Llega un nuevo fragmento de audio. | Estudiante que practica. | Carga normal del piloto. | Cliente, WebSocket, Live Coach y adaptador IA. | Procesa y entrega una señal sin bloquear captura. | p95 ≤ 2 s; error < 1 %, validados por prueba de carga. | ¿Cuál es la concurrencia aprobada y el presupuesto de latencia externo? | Variabilidad del proveedor; degradar señales secundarias antes de la captura. |
+| QAS-PER-01: coaching en vivo | BG-01, BG-03 | Rendimiento, escalabilidad | Llega un nuevo fragmento de audio. | Estudiante que practica. | Carga normal del piloto. | Cliente, WebSocket, Live Coach y adaptador IA. | Procesa y entrega una señal sin bloquear captura. | Objetivo p95 ≤ 2 s y error < 1 %; por validar mediante prueba de carga. | ¿Cuál es la concurrencia aprobada y el presupuesto de latencia externo? | Variabilidad del proveedor; degradar señales secundarias antes de la captura. |
 | QAS-PER-02 y QAS-REL-01: reporte único | BG-01, BG-02 | Rendimiento, confiabilidad | Finalización o reentrega de un mismo evento hasta diez veces. | Estudiante y RabbitMQ. | Carga normal y reintentos tras falla. | Pipeline de análisis, scoring y progreso. | Genera un reporte único y consistente. | 95 % ≤ 60 s; un resultado por `session_id + analysis_version`. | ¿Qué capacidad de cola se requiere en el piloto? | Eventos fuera de orden; usar versión, máquina de estados e Inbox/Outbox. |
 | QAS-SEC-01 y QAS-PRI-01: acceso y borrado | BG-05 | Seguridad, privacidad | Acceso ajeno, revocación de enlace o solicitud de borrado. | Usuario no autorizado o propietario. | Operación normal o intento malicioso. | Gateway, identidad, sesión, reporte y almacenamiento. | Deniega acceso, revoca enlace y propaga borrado. | 100 % de accesos ajenos rechazados; enlace inválido inmediato; borrado lógico ≤ 1 min. | ¿Cuál es el plazo contractual de purga física? | Procesamiento temporal por tercero; minimizar datos y registrar consentimiento. |
 | QAS-AVA-01 y QAS-OBS-01: caída y diagnóstico | BG-01, BG-05 | Disponibilidad, resiliencia, observabilidad | El proveedor no responde o soporte recibe una sesión fallida. | Proveedor IA o agente de soporte. | Sesión activa o producción. | Adaptador IA, orquestador, sesión, logs y trazas. | Evita cascada, conserva estado y correlaciona la causa. | Detección ≤ 10 s; componente identificado ≤ 15 min. | ¿Qué nivel de servicio ofrece el proveedor? | Desconexión prolongada; permitir cierre seguro o resultado parcial etiquetado. |
@@ -1616,9 +1535,9 @@ El resultado mantiene trazabilidad directa con los insumos previos: el lenguaje 
 
 #### Organización de la sesión
 
-El equipo realizó una sesión de EventStorming de aproximadamente 90 minutos sobre un tablero de **Miro**, con la participación de los cinco integrantes de Thropic. Un integrante actuó como facilitador (guía el avance por fases y protege el timebox) y otro como timekeeper; los roles se alternaron entre bloques. La sesión partió de los insumos ya validados en capítulos anteriores: el glosario de la sección 2.4, los escenarios As-is y To-Be, y las historias US05–US38 con sus escenarios de aceptación.
+El modelo de EventStorming organiza los insumos documentados: lenguaje ubicuo, escenarios As-Is y To-Be e historias de usuario. Las figuras muestran los eventos, políticas y fronteras utilizados para analizar el dominio. No se acredita duración, asistencia o validación de un taller mediante estas imágenes.
 
-La duración acotada respondió a la recomendación de concentrar el esfuerzo: en lugar de exhaustividad, se buscó una primera aproximación suficiente al dominio, cuyas zonas inciertas quedaran registradas como *hot spots* para resolverlas con posterioridad.
+Se distinguen decisiones adoptadas para el diseño e incertidumbres pendientes; la revisión con usuarios y equipo deberá contrastarlas.
 
 #### Convenciones del tablero
 
@@ -1667,15 +1586,15 @@ El equipo marcó como **eventos pivote** aquellos que implican un cambio de esta
 
 Las zonas en disputa se registraron como *hot spots* rosados y se resolvieron o dejaron en backlog con esa etiqueta:
 
-| Hot Spot | Resolución durante la sesión o acción posterior |
+| Hot Spot | Decisión del diseño o acción pendiente |
 |---|---|
 | ¿La transcripción en vivo y la transcripción final son el mismo objeto? | Sí: la versión incremental se consolida al finalizar; el análisis consume la versión consolidada y versionada. |
 | ¿Quién decide si una sesión es válida para puntuar? | La política de validez pertenece al ciclo de sesión; el análisis y la gamificación solo consumen el veredicto. |
-| ¿Dónde vive el consentimiento? | Se registra una vez con la identidad y se propaga como estado verificable; no se consulta en línea en cada captura. |
+| ¿Dónde vive el consentimiento? | Identity conserva el registro autoritativo. Se comprueba la vigencia antes de iniciar, reanudar o reintentar procesamiento; el snapshot documenta la comprobación, no reemplaza el permiso vigente. No se consulta Identity por cada fragmento de voz. |
 | ¿Qué pasa si Gemini Live no responde a mitad de la sesión? | Degradación explícita: conservar estado confirmado, ofrecer cierre seguro o resultado parcial etiquetado (QAS-AVA-01). |
 | ¿Cómo evitamos reportes duplicados por reintentos del bus? | Cada consumidor registra eventId. Analysis usa sesión/versión de análisis; Scoring añade versión de rúbrica; progreso conserva versiones y gamificación cuenta una sola contribución por sesión (ADD-05). |
 
-![Fase 3 de EventStorming: eventos pivote marcados y hot spots discutidos sobre el tablero](assets/images/eventstorming/es-02-pivotal-events-hotspots.png)
+![Fase 3 de EventStorming: eventos pivote y decisiones vigentes sobre consentimiento, evidencia e idempotencia](assets/images/eventstorming/es-02-pivotal-events-hotspots-tp.png)
 
 #### Resultado de la sesión
 
@@ -1687,7 +1606,7 @@ Al cierre quedaron ordenados los eventos del flujo completo, el puente entre el 
 
 #### Técnica aplicada
 
-El equipo combinó dos de las técnicas propuestas: **look-for-pivotal-events** como método principal, porque los cinco eventos pivote delimitan con claridad los cambios de estado entre partes del proceso, y **start-with-value** como verificación, comprobando que las partes del dominio con mayor valor para el negocio (el coaching en vivo y el análisis del discurso con IA) quedaran dentro de fronteras propias y protegidas. La sesión de descubrimiento se realizó sobre el mismo tablero de Miro, duplicando el EventStorm consolidado para poder comparar los cambios progresivos; su duración fue menor a dos horas.
+El equipo combinó dos de las técnicas propuestas: **look-for-pivotal-events** como método principal, porque los cinco eventos pivote delimitan con claridad los cambios de estado entre partes del proceso, y **start-with-value** como verificación, comprobando que las partes del dominio con mayor valor para el negocio (el coaching en vivo y el análisis del discurso con IA) quedaran dentro de fronteras propias y protegidas. La sesión de descubrimiento se realizó sobre el mismo tablero de Miro, duplicando el EventStorm consolidado para poder comparar los cambios progresivos; las figuras permiten comparar las fronteras candidatas y las finales.
 
 #### Proceso sobre el EventStorm
 
@@ -1723,22 +1642,22 @@ La decisión deliberada fue **no** crear un contexto por cada tabla o entidad, y
 
 ### 4.2.3. Domain Message Flows Modeling
 
-Para visualizar cómo deben colaborar los bounded contexts, el equipo aplicó **Domain Storytelling**: cada escenario se narra como una secuencia numerada de frases con la estructura *actor → actividad → objeto de trabajo*, y cada actividad se asigna al bounded context que la ejecuta. Las sesiones se realizaron sobre el tablero de Miro con la plantilla de Domain Storytelling (actores como figuras, actividades como flechas numeradas y objetos de trabajo como documentos); como alternativa de detalle, el equipo dispone del Domain Storytelling Tool (domainstorytelling.org), que exporta los mismos diagramas en formato intercambiable. Se modelaron tres casos que cubren los dos segmentos objetivo y el bloque de privacidad.
+Para visualizar cómo deben colaborar los bounded contexts, el equipo aplicó **Domain Storytelling**: cada escenario se narra como una secuencia numerada de frases con la estructura *actor → actividad → objeto de trabajo*, y cada actividad se asigna al bounded context que la ejecuta. Las tablas identifican actores, actividades y objetos de trabajo; las figuras muestran la coordinación entre contextos. No se atribuye a estas imágenes evidencia de un taller ni equivalencia de formatos de exportación entre herramientas. Se modelaron tres casos que cubren los dos segmentos objetivo y el bloque de privacidad.
 
 #### DS-01: Primera práctica guiada (segmento 1: Valeria)
 
 | # | Actor | Actividad | Objeto de trabajo | Bounded context ejecutor |
 |---:|---|---|---|---|
-| 1 | Estudiante | Se registra y otorga consentimiento | Cuenta, registro de consentimiento | Identity & Access |
+| 1 | Estudiante | Registra o accede a su cuenta | Cuenta | Identity & Access |
 | 2 | Estudiante | Crea y configura el ensayo (modo, duración, áreas de enfoque) | Borrador de sesión | Practice Session Management |
-| 3 | Estudiante | Prueba el micrófono y autoriza la captura | Verificación de audio, permiso | Practice Session Management → Identity & Access (valida consentimiento) |
+| 3 | Estudiante | Comprueba audio localmente y otorga consentimiento para enviar y procesar voz | Verificación de audio, consentimiento vigente | Practice Session Management → Identity & Access (valida consentimiento) |
 | 4 | Estudiante | Inicia la práctica | Sesión activa | Practice Session Management → Live Coaching |
 | 5 | Live Coaching | Transcribe en vivo y emite señales de ritmo, volumen y pausas | Transcripción incremental, señales | Live Coaching (con AI Provider Gateway) |
 | 6 | Estudiante | Finaliza y confirma | Sesión finalizada | Practice Session Management |
 | 7 | Practice Session Management | Confirma la evidencia recibida de Live Coaching y publica `Sesión Finalizada` | Evento de cierre y veredicto de validez | Practice Session Management → Speech Analysis |
 | 8 | Speech Analysis | Calcula métricas (muletillas, silencios, volumen, vocabulario) | Métricas de discurso | Speech Analysis |
 | 9 | Scoring & Feedback | Genera puntuación, sugerencias priorizadas y explicación por segmento | Reporte | Scoring & Feedback |
-| 10 | Progress & Adaptation | Actualiza progreso y compara con sesiones previas | Panel de progreso | Progress & Adaptation |
+| 10 | Progress & Adaptation | Registra la evaluación; compara solo si existen sesiones previas compatibles | Panel de progreso | Progress & Adaptation |
 | 11 | Estudiante | Consulta el reporte y elige una acción de mejora | Reporte, plan de acción | Scoring & Feedback (reporte publicado) |
 
 ![Domain Storytelling DS-01: colaboración de bounded contexts en la primera práctica guiada](assets/diagrams/c4/practice-story-sequence.png)
@@ -1790,7 +1709,7 @@ Cada canvas se elaboró siguiendo un proceso iterativo con seis pasos: (1) **Con
 | Capacidades clave | Gestionar el canal en vivo (WebSocket); transcribir incrementalmente; generar señales de ritmo/volumen/pausas; conducir la simulación con turnos y tiempos; consolidar la transcripción al cierre. |
 | Hechos producidos | `Grabación Iniciada`, `Transcripción Incrementada` y `Señal de Coaching Emitida` durante el recorrido. Live entrega la evidencia de cierre a Sessions; Sessions publica `Sesión Finalizada` después de confirmarla. |
 | Eventos consumidos | `Sesión Preparada` (Practice Session Management), `Consentimiento Otorgado` (Identity & Access). |
-| Reglas de negocio | Ninguna captura sin consentimiento válido y prueba de audio; las señales pueden silenciarse pero nunca bloquean la captura; la finalización ocurre una sola vez por sesión. |
+| Reglas de negocio | Ningún envío ni procesamiento de voz sin consentimiento válido y prueba de audio; la prueba local del dispositivo no transmite ni persiste audio; las señales pueden silenciarse pero nunca bloquean la captura; la finalización ocurre una sola vez por sesión. |
 | Dependencias | Aguas arriba: Practice Session Management (Customer/Supplier), Identity & Access (Conformist). Entrega evidencia a Practice Session Management para el cierre durable. Hacia AI Provider Gateway: Customer/Supplier para preparar la credencial. |
 | Capas de capacidades | Núcleo de tiempo real (canal, señales); soporte de conversación (simulación); adaptación (pasarela de IA). |
 | Crítica de diseño | Se evaluó separar "captura" y "conversación de simulación"; se rechazó para el piloto por compartir restricciones de latencia y equipo; se documenta como posible partición futura si escala la concurrencia. |
@@ -1815,7 +1734,7 @@ Cada canvas se elaboró siguiendo un proceso iterativo con seis pasos: (1) **Con
 | Sección | Contenido |
 |---|---|
 | Clasificación estratégica | Core domain. Traduce métricas en mejora concreta: el Voice Coach Score y las acciones priorizadas. |
-| Propósito | Generar la puntuación integral, fortalezas y oportunidades, sugerencias con evidencia y explicaciones adaptadas al segmento académico. |
+| Propósito | Generar puntuaciones por dimensiones con evidencia, fortalezas y oportunidades, sugerencias con evidencia y explicaciones adaptadas al segmento académico. |
 | Lenguaje ubicuo | Voice Coach Score, sugerencia priorizada, rúbrica versionada, evidencia, recomendación por segmento. |
 | Capacidades clave | Calcular el Voice Coach Score por rúbrica; priorizar sugerencias y asociarlas a evidencia; adaptar la explicación al segmento (US26); versionar rúbricas y resultados. |
 | Eventos publicados | `Puntuación Generada`, `Sugerencias Priorizadas Generadas`, `Reporte Disponible`. |
@@ -1845,7 +1764,7 @@ Cada canvas se elaboró siguiendo un proceso iterativo con seis pasos: (1) **Con
 | Clasificación estratégica | Supporting subdomain. Sostiene el hábito mediante evidencia de evolución. |
 | Propósito | Consolidar el historial, mostrar tendencias por habilidad, comparar sesiones compatibles y generar el plan adaptativo de ejercicios. |
 | Lenguaje ubicuo | Panel de progreso, tendencia, sesión compatible, plan adaptativo, meta de mejora. |
-| Capacidades clave | Consultar historial propio (US20); calcular tendencias con versiones de métricas (US21); comparar sesiones (US22); generar plan adaptativo justificado (US36). |
+| Capacidades clave | Consultar evaluaciones propias para progreso (US21); Sessions aporta el historial completo de US20. Calcular tendencias con versiones de métricas (US21); comparar sesiones (US22); generar plan adaptativo justificado (US36). |
 | Eventos publicados | `Progreso Actualizado`, `Plan Adaptativo Generado`. |
 | Eventos consumidos | `Reporte Disponible`, `Puntuación Generada` (Scoring & Feedback), `Sesión Finalizada` (para comparabilidad). |
 | Reglas de negocio | Solo se comparan sesiones compatibles por versión de rúbrica y análisis; los cambios pequeños no se sobredimensionan; el plan explica por qué recomienda cada ejercicio. |
@@ -1905,7 +1824,7 @@ Cada canvas se elaboró siguiendo un proceso iterativo con seis pasos: (1) **Con
 | Eventos publicados | Hechos de operación (proveedor degradado, disponible) para observabilidad. |
 | Peticiones recibidas | Preparación interna de credenciales desde Live Coaching. |
 | Reglas de negocio | Solo el material autorizado sale hacia el proveedor; las capacidades exclusivas de un proveedor se declaran opcionales y no contaminan el contrato común (QAS-INT-01). |
-| Dependencias | Colabora con Live Coaching mediante un contrato interno de preparación. Aguas abajo: Gemini Live API mediante Anti-Corruption Layer. |
+| Dependencias | Colabora con Live Coaching mediante un contrato interno de preparación. Gemini Live actúa como proveedor externo; la Anti-Corruption Layer traduce su contrato al lenguaje de la pasarela. |
 | Crítica de diseño | Se evaluó que cada contexto integre al proveedor por su cuenta; se rechazó porque duplicaría traducción, límites de consumo y controles de privacidad. |
 
 #### 10. Notifications (Notificaciones)
@@ -1956,7 +1875,7 @@ El equipo evaluó explícitamente un **Shared Kernel** de definiciones de métri
 | Speech Analysis | Scoring & Feedback | Customer/Supplier + Published Language | Esquema versionado de métricas de discurso | Consistencia entre versiones sin Shared Kernel (C-09). |
 | Scoring & Feedback | Progress & Adaptation, Gamification, Sharing & Retention | Customer/Supplier + Published Language | Evaluación completada (`scoring.completed`) y consulta del reporte publicado | Progreso y gamificación reciben la evaluación; compartición referencia el reporte conservado por Scoring. |
 | AI Provider Gateway | Live Coaching | Open Host Service + Published Language, relación Customer/Supplier | Preparación de credencial, capacidad del modo y vigencia | La pasarela ofrece el contrato estable; Live es su consumidor y mantiene separada la voz WSS del cierre de Sessions. |
-| AI Provider Gateway | Gemini Live API (externo) | **Anti-Corruption Layer** | Adaptador de proveedor + negociación de capacidades | Impide que el modelo del proveedor contamine el lenguaje del dominio (ADD-06, QAS-INT-01). |
+| Gemini Live API (externo) | AI Provider Gateway | **Anti-Corruption Layer** | Adaptador de proveedor + negociación de capacidades | Impide que el modelo del proveedor contamine el lenguaje del dominio (ADD-06, QAS-INT-01). |
 | Practice Session Management, Scoring & Feedback | Gamification | **Conformist** | Veredicto de validez y evaluación completada | La gamificación respeta la validez de la sesión y calcula rachas/logros a partir de la evaluación recibida. |
 | Scoring & Feedback | Sharing & Retention | Customer/Supplier | Consulta de reportes publicados | La compartición no duplica reportes; referencia los existentes. |
 | Sharing & Retention | Practice Session Management, Speech Analysis, Scoring & Feedback, Progress & Adaptation, Gamification, Notifications | Customer/Supplier + Published Language | Órdenes de purga y confirmaciones | La eliminación de evidencia, evaluaciones, progreso y rachas respeta la propiedad de datos de cada contexto. |
@@ -1970,7 +1889,7 @@ Los nombres de negocio de los canvases se concretan en los contratos técnicos: 
 
 #### Conclusión del context mapping
 
-El mapa resultante protege tres propiedades: (1) el **core** (Live Coaching, Speech Analysis, Scoring & Feedback) solo depende de contratos publicados y de una pasarela con Anti-Corruption Layer, nunca de detalles de proveedores ni de contextos genéricos; (2) la **privacidad** revoca permisos localmente y exige confirmar el bloqueo en Sessions antes de aceptar una eliminación; la purga posterior se coordina por eventos y confirmaciones; y (3) la **evolución**, que comprende nuevos modos, rúbricas o proveedores, queda confinada a un contexto por tipo de cambio. Este mapa es el insumo directo de los diagramas C4 de la sección 4.3 y de la descomposición táctica del capítulo V.
+El mapa resultante protege tres propiedades: (1) el **core** (Live Coaching, Speech Analysis, Scoring & Feedback) solo depende de contratos publicados y de una pasarela con Anti-Corruption Layer, sin incorporar detalles internos de proveedores ni de contextos genéricos; (2) la **privacidad** revoca permisos localmente y exige confirmar el bloqueo en Sessions antes de aceptar una eliminación; la purga posterior se coordina por eventos y confirmaciones; y (3) la **evolución**, que comprende nuevos modos, rúbricas o proveedores, queda confinada a un contexto por tipo de cambio. Este mapa es el insumo directo de los diagramas C4 de la sección 4.3 y de la descomposición táctica del capítulo V.
 
 ## 4.3. Software Architecture
 
@@ -2132,7 +2051,7 @@ Los handlers validan la petición o el evento antes de ejecutar cambios. Los pue
 
 ### 5.1.4. Infrastructure Layer
 
-La capa de infraestructura gestiona la obtención de credenciales del proveedor y la publicación del cierre de la práctica.
+La capa de infraestructura obtiene credenciales del proveedor y confirma el cierre en Sessions. Sessions conserva la evidencia y publica el evento de finalización.
 
 **Elementos de Infrastructure Layer**
 
@@ -2216,11 +2135,11 @@ Los atributos se encapsulan; las operaciones públicas expresan las reglas del c
 
 **Evidencia acústica y contextual**
 
-AuthorizedSpeechEvidence separa transcripción, señales acústicas disponibles, contexto autorizado, meta y duración confirmada. AcousticEvidenceAnalyzer calcula solo métricas respaldadas por señales de audio; si faltan, registra la limitación en lugar de estimar volumen desde texto. ContextualEvidenceAnalyzer compara términos del discurso y del contexto autorizado: cada ContextualFinding distingue palabra pronunciada, fragmento fuente, alternativa sugerida y motivo. Las reglas preservan terminología especializada y omiten recomendaciones sin soporte. SpeechAnalysisResult agrupa estos hallazgos y FillerResult, además de dimensiones disponibles y limitaciones.
+AuthorizedSpeechEvidence separa transcripción, señales acústicas disponibles, contexto autorizado, meta, áreas de enfoque y duración confirmada. AcousticEvidenceAnalyzer calcula solo métricas respaldadas por señales de audio; si faltan, registra la limitación en lugar de estimar volumen desde texto. ContextualEvidenceAnalyzer compara términos del discurso y del contexto autorizado: cada ContextualFinding distingue palabra pronunciada, fragmento fuente, alternativa sugerida y motivo. Las reglas preservan terminología especializada y omiten recomendaciones sin soporte. SpeechAnalysisResult agrupa estos hallazgos y FillerResult, además de dimensiones disponibles y limitaciones.
 
 | Elemento | Atributos | Operación o relación |
 | --- | --- | --- |
-| AuthorizedSpeechEvidence | transcript, acousticFeatures, authorizedContext, goal, confirmedDurationSeconds. | Entrada de los analizadores; solo incluye material autorizado. |
+| AuthorizedSpeechEvidence | transcript, acousticFeatures, authorizedContext, goal, focusAreas, confirmedDurationSeconds. | Entrada de los analizadores; solo incluye material autorizado. |
 | AcousticEvidenceAnalyzer | Sin estado propio. | analyze(AuthorizedSpeechEvidence): SpeechAnalysisResult. |
 | ContextualEvidenceAnalyzer | Sin estado propio. | analyze(AuthorizedSpeechEvidence): lista de ContextualFinding. |
 | ContextualFinding | term, spoken, evidenceFragment, suggestedAlternative, reason. | Resultado inmutable; spoken=false identifica sugerencia, sin atribuirla al discurso. |
@@ -2228,7 +2147,9 @@ AuthorizedSpeechEvidence separa transcripción, señales acústicas disponibles,
 
 ### 5.2.2. Interface Layer
 
-Este contexto recibe la evidencia mediante eventos de integración. No necesita un controlador REST para ejecutar el análisis de muletillas.
+El procesamiento se inicia mediante eventos de integración. AnalysisJobController ofrece consulta y reintento internos; no ejecuta el análisis sincrónicamente desde la petición del usuario.
+
+**Estado del trabajo.** `GET /internal/v1/analysis-jobs?sessionId={id}&analysisVersion={version}` devuelve estado e intentos, o 404 si no existe. `POST /internal/v1/analysis-jobs/{jobId}/retries` devuelve 202 para un fallo recuperable o 409 si el estado no admite reintento. Estos contratos requieren identidad de servicio y comprobación de acceso de la sesión; ReportController los consume mediante AnalysisJobClient.
 
 **Contrato de entrada.** SessionLiveFinalizedEvent identifica la sesión y el estudiante, e incluye la transcripción, la duración y las métricas disponibles. SessionLiveFinalizedConsumer es el adaptador AMQP de Infrastructure y delega el mensaje `session.live.finalized` en AnalyzeSpeechHandler de Application.
 
@@ -2357,7 +2278,7 @@ Los atributos se encapsulan; las operaciones públicas expresan las reglas del c
 | --- | --- | --- |
 | ScoreResult | UUID id<br>UUID sessionId<br>Long userId<br>String analysisVersion<br>String rubricVersion<br>VoiceScore score<br>EvaluationEvidence evidence<br>List~String~ recommendations<br>Instant computedAt | hasEvidence() boolean |
 | VoiceScore | Integer fluency<br>Integer clarity<br>Integer volume<br>Integer vocabulary<br>Integer confidence | overall() Integer |
-| EvaluationEvidence | UUID sessionId<br>String analysisVersion<br>Map~String,double~ metrics<br>List~String~ availableDimensions<br>List~String~ limitations<br>List~ContextualFinding~ contextualFindings | Consulta mediante el agregado o servicio responsable. |
+| EvaluationEvidence | UUID sessionId<br>String analysisVersion<br>String mode<br>String goal<br>List~String~ focusAreas<br>String academicSegment<br>String configurationVersion<br>Map~String,double~ metrics<br>List~String~ availableDimensions<br>List~String~ limitations<br>List~ContextualFinding~ contextualFindings | Consulta mediante el agregado o servicio responsable. |
 | ContextualFinding | String term<br>boolean spoken<br>String evidenceFragment<br>String suggestedAlternative<br>String reason | Consulta mediante el agregado o servicio responsable. |
 | ScoreCalculator | Sin estado propio. | calculate(EvaluationEvidence evidence, String rubricVersion) VoiceScore |
 
@@ -2367,7 +2288,7 @@ La evaluación se activa al recibir el evento `fillers.analyzed`. FillerAnalyzed
 
 **Entrada y salida del contexto.** FillerAnalyzedConsumer recibe el análisis y activa la evaluación. Al concluir, ScoringCompletedEvent comunica la puntuación por dimensión, el resumen global y los datos de la práctica mediante `scoring.completed`.
 
-**Consulta del reporte.** ReportController expone `GET /v1/reports/{sessionId}`. ReportQueryHandler consulta Sessions para comprobar propiedad y ausencia de eliminación. Devuelve 200 con reportId, sessionId, analysisVersion, rubricVersion, dimensiones, evidencia y recomendaciones; 202 con analysisState si aún no existe resultado; 404 si la práctica no está disponible para el solicitante. Un fallo de análisis devuelve un estado recuperable, sin puntuación fabricada. `POST /v1/reports/{sessionId}/analysis-retries` solicita un reintento sobre el mismo AnalysisJob y devuelve 202 con jobId y estado.
+**Consulta del reporte.** ReportController expone `GET /v1/reports/{sessionId}`. ReportQueryHandler consulta Sessions para comprobar propiedad y ausencia de eliminación. Devuelve 200 con reportId, sessionId, analysisVersion, rubricVersion, dimensiones, evidencia y recomendaciones; 202 con analysisState si aún no existe resultado; 404 si la práctica no está disponible para el solicitante. Un fallo de análisis devuelve un estado recuperable, sin puntuación fabricada. `POST /v1/reports/{sessionId}/analysis-retries` comprueba processingAllowed mediante Sessions y solicita un reintento sobre el mismo AnalysisJob; devuelve 202 con jobId y estado, o 403 sin reintentar cuando se retiró el consentimiento.
 
 **Lectura interna para compartir.** `GET /internal/v1/reports/{reportId}` se limita al servicio Sharing & Retention autenticado. Recibe una autorización validada con ownerId, sessionId y scope; Scoring comprueba que coincida con el reporte y que la sesión siga disponible. Devuelve solo la proyección permitida; el material contextual queda excluido. El token del enlace se resuelve en Sharing y no sustituye estas comprobaciones.
 
@@ -2389,7 +2310,7 @@ La lectura del reporte recuperará la evaluación para un estudiante autorizado.
 | --- | --- | --- | --- |
 | EvaluatePracticeHandler | Event Handler | Solicita el cálculo a ScoreCalculator con las métricas del análisis. | Application |
 | PurgeScoreResultsHandler | Event Handler | Retira los resultados de la sesión y registra la confirmación local de eliminación. | Application |
-| ReportQueryHandler | Query Handler | Recupera la evaluación autorizada y su estado; EvaluatePracticeHandler conserva ScoreResult y solicita ScoringCompletedEvent. | Application |
+| ReportQueryHandler | Query Handler | Recupera la evaluación autorizada y su estado, preservando versiones y dimensiones sin evidencia. | Application |
 
 **Contratos de coordinación**
 
@@ -2472,24 +2393,24 @@ Session es el punto de entrada al agregado de práctica. Conserva su identidad, 
 
 **Entities**
 
-Feedback representa una retroalimentación vinculada a la práctica. Cada registro conserva su identidad y el contenido que el estudiante podrá revisar.
+Feedback representa una observación personal asociada a la práctica. El propietario puede registrarla para su revisión. La evaluación automática y sus recomendaciones pertenecen a ScoreResult en Scoring & Feedback; esta anotación no las reemplaza ni permite al tutor modificar el reporte compartido.
 
 **Value Objects**
 
-SessionUserContext reúne el identificador, correo, nombre de usuario y segmento académico del estudiante. SessionContextFacade adapta estos datos al lenguaje de sesiones, sin incorporar el modelo completo de cuentas.
+SessionUserContext reúne el identificador y segmento académico necesarios para adaptar las recomendaciones. SessionContextFacade adapta estos datos al lenguaje de sesiones, sin incorporar el modelo completo de cuentas. Al preparar un borrador obtiene el perfil vigente mediante IdentityProfileClient; la proyección local no determina el segmento si está desactualizada.
 
 **Elementos de Domain Layer**
 
 | Nombre | Tipo | Descripción | Capa |
 | --- | --- | --- | --- |
 | Session | Aggregate Root | Representa la práctica y controla sus cambios de estado. | Domain |
-| Feedback | Entity | Conserva la retroalimentación asociada a una sesión. | Domain |
+| Feedback | Entity | Conserva una observación del propietario; la evaluación automática pertenece a Scoring. | Domain |
 | SessionUserContext | Value Object | Representa la identidad del estudiante en el lenguaje de este contexto. | Domain |
 
 **Reglas principales**
 
 1. La sesión pertenece al estudiante autenticado y conserva esa relación durante todo el recorrido.
-2. El feedback se vincula a la sesión que lo originó.
+2. La observación personal se vincula a la sesión; los reportes automáticos se consultan en Scoring con sus versiones.
 3. El inicio requiere las autorizaciones correspondientes y la finalización debe producir un único cierre.
 
 **Atributos y operaciones del modelo de dominio**
@@ -2502,11 +2423,11 @@ Los atributos se encapsulan; las operaciones públicas expresan las reglas del c
 | PracticeEvidence | String transcript<br>Map~String,double~ acousticMetrics<br>String authorizedMaterialSummary<br>int confirmedDurationSeconds<br>Instant observedAt | Se conserva al cierre; métricas y resumen son opcionales y requieren autorización. |
 | SessionMode | QUICK_PRACTICE<br>INTERVIEW<br>THESIS_DEFENSE<br>SCENARIO | Consulta mediante el agregado o servicio responsable. |
 | SessionState | DRAFT<br>ACTIVE<br>PAUSED<br>ANALYSIS_PENDING<br>ANALYSIS_FAILED<br>COMPLETED<br>DELETED | Consulta mediante el agregado o servicio responsable. |
-| PracticeConfiguration | String goal<br>int durationSeconds<br>String scenario<br>String conversationLocale<br>String version | Consulta mediante el agregado o servicio responsable. |
+| PracticeConfiguration | String goal<br>List~String~ focusAreas<br>String academicSegment<br>int durationSeconds<br>String scenario<br>String conversationLocale<br>String version | Consulta mediante el agregado o servicio responsable. |
 | ConsentSnapshot | UUID consentId<br>String policyVersion<br>String scope<br>Instant checkedAt | Consulta mediante el agregado o servicio responsable. |
 | PracticeMaterial | UUID id<br>String mediaType<br>long sizeBytes<br>String storageKey<br>boolean authorized | isAllowed() boolean |
 | Feedback | UUID id<br>String content<br>String rubricVersion<br>Instant createdAt | Consulta mediante el agregado o servicio responsable. |
-| SessionUserContext | Long userId<br>String academicSegment | Consulta mediante el agregado o servicio responsable. |
+| SessionUserContext | Long userId<br>String academicSegment<br>String defaultPracticeGoal | Consulta mediante el agregado o servicio responsable. |
 
 **Veredicto de práctica válida.** Session conserva valid y validityRuleVersion. Para la regla propuesta v1.0, la práctica debe pertenecer al estudiante, haber iniciado con consentimiento comprobado, tener duración confirmada positiva y evidencia autorizada no vacía. Una finalización sin evidencia no contribuye a XP ni rachas. Una dimensión no evaluable no invalida automáticamente una práctica que sí cumple esas condiciones. El veredicto se publica junto al cierre y acompaña los contratos de análisis/evaluación: los consumidores no lo recalculan con reglas propias.
 
@@ -2521,15 +2442,16 @@ SessionController expone las operaciones de preparación, consulta y cierre de l
 | Operación | Responsabilidad |
 | --- | --- |
 | `POST /v1/sessions` | Crear una práctica con título, modo, meta, duración e idioma; userId se deriva del acceso autenticado. |
-| `GET /v1/sessions` | Consultar las sesiones del estudiante autenticado, con filtros de fecha y modo. |
+| `GET /v1/sessions` | Consultar el historial propio con filtros de título (q), modo, estado y período (after/before). Incluye borradores y análisis fallidos. |
+| `POST /v1/sessions/{id}/start` | Pasar de DRAFT a ACTIVE tras comprobar propiedad, consentimiento vigente y preparación de audio; 200 con estado o 409 para transición inválida. |
 | `GET /v1/sessions/{id}` | Consultar el detalle de una práctica. |
 | `POST /v1/sessions/{id}/finalize` | Confirmar el cierre autorizado con closureId y evidencia; responder 202 durante el análisis. |
-| `PATCH /v1/sessions/{id}/configuration` | Modificar meta, escenario, duración o idioma mientras la sesión sea un borrador propio. |
+| `PATCH /v1/sessions/{id}/configuration` | Modificar meta, áreas de enfoque, escenario, duración o idioma mientras la sesión sea un borrador propio. |
 | `POST /v1/sessions/{id}/materials` / `DELETE /v1/sessions/{id}/materials/{materialId}` | Asociar o retirar el archivo propio autorizado, después de comprobar formato y tamaño. |
 | `POST /v1/sessions/{id}/pause` / `POST /v1/sessions/{id}/resume` | Confirmar o recuperar un checkpoint propio; rechazar transiciones incompatibles con 409. |
-| `GET /internal/v1/sessions/{id}/access` | Proporcionar a servicios autenticados la pertenencia y el estado de acceso, sin devolver la evidencia privada. |
+| `GET /internal/v1/sessions/{id}/access` | Proporcionar pertenencia, eliminación y processingAllowed a servicios autenticados, sin evidencia privada. Sessions comprueba con Identity el consentimiento vigente para nuevo procesamiento; un retiro no bloquea la consulta de reportes propios ya generados. |
 | `POST /internal/v1/sessions/{id}/access-blocks` | Confirmar el bloqueo idempotente por requestId solicitado por Sharing antes de la purga. |
-| `POST /v1/sessions/{id}/feedbacks` | Registrar retroalimentación asociada a la sesión. |
+| `POST /v1/sessions/{id}/feedbacks` | Registrar una observación del propietario, sin modificar la evaluación de Scoring. |
 | `GET /v1/sessions/{id}/feedbacks` | Consultar la retroalimentación de la práctica. |
 
 **Datos de entrada y respuesta.** CreateSessionRequest reúne título, modo y PracticeConfiguration. Los controles de acceso toman la identidad de la autenticación, no de un userId arbitrario. Las respuestas presentan estado y configuración; la evidencia privada solo se entrega en el alcance autorizado. El cierre confirma un PracticeEvidence y publica sus versiones. Los códigos 403/404 impiden acceder a recursos ajenos o eliminados; 409 identifica una transición incompatible.
@@ -2554,13 +2476,13 @@ Las operaciones de lectura recuperan una sesión por identificador, las sesiones
 | SessionQueryService y SessionQueryServiceImpl | Contrato e implementación de consultas | Recuperan sesiones y retroalimentaciones. | Application |
 | SessionContextFacade | Adaptador de contexto | Traduce la identidad externa a SessionUserContext. | Application |
 
-**Ampliación del ciclo de práctica.** PracticeConfiguration registra meta, duración, escenario, idioma de conversación y versión. PracticeMaterial admite PDF, TXT o PPTX de hasta 10 MB, con autorización del estudiante y una clave de almacenamiento privado. ConsentSnapshot conserva la comprobación del consentimiento; Identity mantiene el registro autoritativo. Pausa/reanudación utiliza checkpointId y la eliminación marca deletedAt antes de solicitar purga.
+**Ampliación del ciclo de práctica.** PracticeConfiguration registra meta, áreas de enfoque, segmento aplicado, duración, escenario, idioma de conversación y versión. El segmento es una copia del perfil comprobado al preparar el ensayo; actualizar el perfil no reinterpreta prácticas anteriores. PracticeMaterial admite PDF, TXT o PPTX de hasta 10 MB, con autorización del estudiante y una clave de almacenamiento privado. ConsentSnapshot conserva la comprobación del consentimiento; Identity mantiene el registro autoritativo. Pausa/reanudación utiliza checkpointId y la eliminación marca deletedAt antes de solicitar purga.
 **Contratos de coordinación**
 
 | Clase o grupo de clases | Responsabilidad | Operaciones previstas |
 | --- | --- | --- |
 | SessionCommandService / SessionQueryService | Coordina escritura y consulta de prácticas. | create(configuration); finalize(closure); query(id, requester) |
-| SessionContextFacade | Adapta identidad externa al lenguaje de sesión. | create(configuration); finalize(closure); query(id, requester) |
+| SessionContextFacade | Adapta identidad externa al lenguaje de sesión. | resolve(userId) SessionUserContext |
 
 Los handlers validan la petición o el evento antes de ejecutar cambios. Los puertos de repositorio y de integración son contratos; los adaptadores de Infrastructure realizan esos contratos. Los nombres describen clases previstas para implementar el diseño, sin afirmar que estén desplegadas.
 
@@ -2574,7 +2496,8 @@ La capa de infraestructura implementa la persistencia de sesiones y feedback en 
 | --- | --- | --- | --- |
 | SessionRepository | Repositorio JPA | Conserva prácticas y permite consultarlas por identificador o estudiante. | Infrastructure |
 | FeedbackRepository | Repositorio JPA | Conserva las retroalimentaciones asociadas a una práctica. | Infrastructure |
-| AppUserRepository | Repositorio de proyección local | Recupera la identidad local que utiliza SessionContextFacade. | Infrastructure |
+| AppUserRepository | Repositorio de proyección local | Conserva referencias de identidad; el perfil vigente se comprueba antes de preparar el ensayo. | Infrastructure |
+| IdentityProfileClient / ConsentVerificationClient | Adaptadores HTTP | Consultan perfil y consentimiento vigentes mediante los contratos internos de Identity. | Infrastructure |
 | UserRegisteredConsumer | Consumidor de eventos | Recibe el registro de una cuenta para actualizar su representación local. | Infrastructure |
 
 Las relaciones entre sesión y feedback permanecen dentro del contexto. La ampliación del ciclo de vida incorpora recuperación, material y eliminación con sus reglas de acceso. SessionController pertenece a Interface Layer y delega la persistencia mediante los servicios de aplicación.
@@ -2592,7 +2515,7 @@ Esta vista C4 descompone el container de Practice Session Management definido en
 | SessionRepository / FeedbackRepository / MaterialRepository | Infrastructure | Conserva evidencia y referencias de material privado. |
 | PrivateMaterialStorageAdapter | Infrastructure | Almacena o purga el archivo autorizado. |
 | UserRegisteredConsumer / SessionFinalizedPublisher | Infrastructure | Actualiza proyección y despacha cierre confirmado. |
-| ConsentVerificationClient | Infrastructure | Verifica consentimiento de Identity. |
+| ConsentVerificationClient / IdentityProfileClient | Infrastructure | Verifica consentimiento y obtiene el perfil vigente de Identity. |
 
 ![Componentes de Practice Session Management](assets/diagrams/tactical/04-practice-sessions-components.png)
 
@@ -2603,6 +2526,8 @@ Esta vista C4 descompone el container de Practice Session Management definido en
 Session contiene configuración, comprobación del consentimiento, material opcional y feedback. SessionMode y SessionState enumeran sus valores. SessionUserContext adapta la identidad externa; las operaciones controlan pausa, recuperación, cierre y eliminación.
 
 ![Clases de Practice Session Management](assets/diagrams/tactical/04-practice-sessions-classes.png)
+
+[Ver el diagrama UML a tamaño completo](assets/diagrams/tactical/04-practice-sessions-classes.mmd).
 
 #### 5.4.6.2. Bounded Context Database Design Diagram
 
@@ -2936,6 +2861,7 @@ Achievement representa un reconocimiento obtenido por el estudiante. PracticeCon
 | --- | --- | --- | --- |
 | UserStreak | Aggregate Root | Representa la continuidad de las prácticas y la experiencia acumulada. | Domain |
 | Achievement | Entity (diseño propuesto) | Registra un logro obtenido por el estudiante. | Domain |
+| AchievementRuleService | Servicio de dominio | Evalúa las reglas de reconocimiento sobre contribuciones válidas; Application coordina su publicación. | Domain |
 
 **Reglas principales**
 
@@ -2962,7 +2888,8 @@ GamificationController permite consultar las rachas y el ranking. Los cambios de
 | Operación o contrato | Responsabilidad |
 | --- | --- |
 | `GET /v1/gamification/streaks/{userId}` | Consultar racha actual, mejor racha y experiencia acumulada. |
-| `GET /v1/gamification/leaderboard` | Consultar el listado de participantes del ranking. |
+| `GET /v1/gamification/leaderboard` | Consultar solo participantes que habilitaron la visibilidad pública. |
+| `PATCH /v1/gamification/preferences` | Modificar publicRanking del estudiante autenticado; desactivarlo retira su participación pública. |
 | `scoring.completed` | Activar la actualización de rachas y reconocimientos. |
 | `achievement.unlocked` | Comunicar el logro obtenido. |
 
@@ -2985,7 +2912,7 @@ Las lecturas presentan la racha de un estudiante y el ranking. La participación
 | Nombre | Tipo | Descripción | Capa |
 | --- | --- | --- | --- |
 | RecordGamificationHandler | Event Handler | Aplica las reglas de continuidad y experiencia a UserStreak. | Application |
-| AchievementRuleService | Servicio de dominio | Comprueba las condiciones de reconocimiento y solicita su comunicación. | Application |
+| GamificationQueryService | Servicio de aplicación | Organiza consultas autorizadas de racha y ranking. | Application |
 
 **Recorrido del caso de uso.** La evaluación completada identifica al estudiante y la práctica. El flujo valida su contribución a la racha, actualiza la experiencia y comprueba los logros. El diseño ampliado añade el veredicto de práctica válida, la zona horaria y el registro de sesiones ya procesadas.
 
@@ -3067,7 +2994,7 @@ AppUser representa la cuenta del estudiante. Conserva su identificador, correo, 
 
 **Entities**
 
-RefreshToken se propone para registrar la vigencia y revocación de las credenciales de renovación. VoiceConsent registra versión, alcance, aceptación y retiro. PasswordResetRequest conserva hash y vencimiento del enlace de recuperación.
+RefreshToken se propone para registrar la vigencia y revocación de las credenciales de renovación. VoiceConsent registra versión, alcance, aceptación y retiro. PasswordResetRequest conserva hash y vencimiento del enlace de recuperación. EmailVerificationRequest identifica una verificación de correo de un solo uso; AppUser registra emailVerifiedAt cuando se confirma.
 
 **Enumerations**
 
@@ -3079,12 +3006,14 @@ UserRole define los roles de acceso reconocidos por Talki. Las autorizaciones so
 | --- | --- | --- | --- |
 | AppUser | Aggregate Root | Representa la cuenta, los datos del estudiante y su rol. | Domain |
 | RefreshToken | Entity (diseño propuesto) | Permite renovar el acceso y registrar su revocación. | Domain |
+| VoiceConsent | Entity | Conserva aceptación y retiro por versión y alcance. | Domain |
+| PasswordResetRequest / EmailVerificationRequest | Entity | Mantienen vencimiento y consumo único de recuperación y verificación. | Domain |
 | UserRole | Enumeración | Define los roles de acceso reconocidos por la aplicación. | Domain |
 
 **Reglas principales**
 
 1. Cada cuenta utiliza un correo único y conserva la contraseña mediante un hash.
-2. La renovación sustituye el token anterior y el cierre de sesión permite revocarlo.
+2. La renovación sustituye el token anterior y el cierre de sesión permite revocarlo. La verificación de correo confirma posesión de la dirección; se distingue del consentimiento de voz.
 3. El consentimiento identifica su versión, alcance y momento; se distingue de la aceptación de las condiciones de la cuenta.
 
 **Atributos y operaciones del modelo de dominio**
@@ -3093,11 +3022,12 @@ Los atributos se encapsulan; las operaciones públicas expresan las reglas del c
 
 | Elemento | Atributos o valores | Operaciones públicas |
 | --- | --- | --- |
-| AppUser | Long id<br>String email<br>String passwordHash<br>String username<br>String academicSegment<br>String interfaceLocale<br>UserRole role<br>Instant createdAt | updateProfile(String username, String segment, String locale) void |
+| AppUser | Long id<br>String email<br>String passwordHash<br>String username<br>String academicSegment<br>String interfaceLocale<br>String university<br>String career<br>String defaultPracticeGoal<br>Instant emailVerifiedAt<br>UserRole role<br>Instant createdAt | updateProfile(String username, String segment, String locale) void<br>updateAcademicDetails(String university, String career) void<br>updatePracticeGoal(String goal) void<br>verifyEmail(Instant now) void |
 | UserRole | STUDENT<br>ADMIN | Consulta mediante el agregado o servicio responsable. |
 | RefreshToken | UUID id<br>String tokenHash<br>Instant expiresAt<br>Instant revokedAt | isValid(Instant now) boolean<br>revoke(Instant now) void |
 | VoiceConsent | UUID id<br>String policyVersion<br>String scope<br>Instant acceptedAt<br>Instant withdrawnAt | isActive(String requiredVersion) boolean<br>withdraw(Instant now) void |
 | PasswordResetRequest | UUID id<br>String tokenHash<br>Instant expiresAt<br>Instant usedAt | consume(Instant now) void |
+| EmailVerificationRequest | UUID id<br>String tokenHash<br>Instant expiresAt<br>Instant usedAt | consume(Instant now) void |
 
 ### 5.8.2. Interface Layer
 
@@ -3107,12 +3037,14 @@ AuthController recibe las solicitudes de registro e inicio de sesión y las dele
 
 | Operación | Responsabilidad |
 | --- | --- |
-| `POST /v1/auth/register` | Registrar la cuenta del estudiante. |
+| `POST /v1/auth/register` | Registrar una cuenta única y solicitar verificación; 201 con datos públicos y correo aún no verificado. |
+| `POST /v1/auth/email-verification-requests` | Solicitar nuevo enlace; 202 sin revelar cuentas existentes. |
+| `POST /v1/auth/email-verifications` | Consumir token vigente una vez, marcar emailVerifiedAt y responder 200; rechazar token vencido o usado. |
 | `POST /v1/auth/login` | Autenticar al estudiante y preparar su acceso. |
 
 **Datos de entrada y respuesta.** El registro recibe correo, contraseña, nombre de usuario y segmento académico. Devuelve el identificador y los datos públicos de la cuenta. El inicio de sesión recibe correo y contraseña y devuelve la credencial de acceso y su tipo. La contraseña y su hash no forman parte de la respuesta.
 
-**Contratos de acceso y consentimiento.** `POST /v1/auth/refresh` rota el token; `POST /v1/auth/logout` lo revoca; `PATCH /v1/users/me` modifica perfil e idioma de interfaz; `POST /v1/auth/password-reset-requests` responde 202 sin revelar si existe el correo; `POST /v1/auth/password-resets` consume el token de recuperación. `POST /v1/users/me/voice-consents` registra versión y alcance; `DELETE /v1/users/me/voice-consents/{id}` registra su retiro; `GET /internal/v1/users/{id}/voice-consent` permite verificar la autorización entre servicios autenticados. El registro de una cuenta comunica `user.registered` a los contextos interesados.
+**Contratos de acceso y consentimiento.** `POST /v1/auth/refresh` rota el token; `POST /v1/auth/logout` lo revoca; `PATCH /v1/users/me` modifica nombre, segmento, idioma, universidad/carrera opcionales y meta predeterminada; el próximo borrador copia esa meta a PracticeConfiguration, sin modificar prácticas anteriores; `POST /v1/auth/password-reset-requests` responde 202 sin revelar si existe el correo; `POST /v1/auth/password-resets` consume el token de recuperación. `POST /v1/users/me/voice-consents` registra versión y alcance; `DELETE /v1/users/me/voice-consents/{id}` registra su retiro; `GET /internal/v1/users/{id}/voice-consent` permite verificar la autorización entre servicios autenticados; `GET /internal/v1/users/{id}/profile` devuelve solo userId, segmento y meta predeterminada al servicio de sesiones autorizado. El registro de una cuenta comunica `user.registered` a los contextos interesados.
 
 ### 5.8.3. Application Layer
 
@@ -3120,7 +3052,7 @@ La capa de aplicación coordina el registro y la autenticación. Utiliza la cuen
 
 **Commands**
 
-El registro crea una cuenta después de comprobar el correo y proteger la contraseña. El inicio de sesión verifica las credenciales y solicita un token de acceso. AuthService coordina ambas operaciones.
+El registro comprueba formato y unicidad del correo, protege la contraseña y solicita su verificación. Confirmar el enlace es una operación separada; no se da por verificado un correo solo por registrarlo. El inicio de sesión verifica las credenciales y solicita un token de acceso. AuthService coordina ambas operaciones.
 
 **Commands propuestos**
 
@@ -3139,7 +3071,7 @@ La renovación, el cierre de sesión y la gestión del consentimiento amplían e
 
 | Clase o grupo de clases | Responsabilidad | Operaciones previstas |
 | --- | --- | --- |
-| AuthService / TokenSessionService / ConsentCommandService / PasswordRecoveryService | Coordina cuenta, tokens y autorizaciones. | register(request); login(credentials); rotate(token); consent(version, scope); resetPassword(token) |
+| AuthService / TokenSessionService / ConsentCommandService / PasswordRecoveryService / EmailVerificationService | Coordina cuenta, tokens y autorizaciones. | register(request); login(credentials); rotate(token); consent(version, scope); resetPassword(token) |
 
 Los handlers validan la petición o el evento antes de ejecutar cambios. Los puertos de repositorio y de integración son contratos; los adaptadores de Infrastructure realizan esos contratos. Los nombres describen clases previstas para implementar el diseño, sin afirmar que estén desplegadas.
 
@@ -3156,7 +3088,7 @@ La capa de infraestructura implementa el almacenamiento de cuentas, la protecci�
 | JwtTokenProvider | Servicio de seguridad | Genera la credencial de acceso del estudiante. | Infrastructure |
 | RabbitUserRegisteredPublisher | Publicador de eventos | Implementa UserRegisteredEventPublisher mediante RabbitMQ. | Infrastructure |
 
-Spring Security organiza las reglas de acceso. El cliente web utiliza el BFF y cookies protegidas; la adaptación móvil requiere almacenamiento seguro. RefreshTokenRepository, VoiceConsentRepository y PasswordResetRepository mantienen vigencia, retiro y consumo de tokens. PasswordRecoveryService solicita correo mediante Notifications, sin publicar secretos en los eventos.
+Spring Security organiza las reglas de acceso. El cliente web utiliza el BFF y cookies protegidas; la adaptación móvil requiere almacenamiento seguro. RefreshTokenRepository, VoiceConsentRepository, PasswordResetRepository y EmailVerificationRepository mantienen vigencia, retiro y consumo de tokens. PasswordRecoveryService y EmailVerificationService solicitan avisos a Notifications mediante referencias de entrega, sin publicar tokens en AMQP. El servicio de notificaciones solicita el enlace mediante `POST /internal/v1/account-notices/{id}/delivery`, autenticado y limitado a ese aviso. Identity emite el token y conserva solo su hash y vencimiento; el enlace se transmite por TLS al canal de correo y no se almacena en la base de Notifications ni en logs. Reintentar sustituye el enlace anterior. Este contrato es una ampliación del diseño por implementar.
 
 ### 5.8.5. Bounded Context Software Architecture Component Level Diagrams
 
@@ -3165,9 +3097,9 @@ Esta vista C4 descompone el container de Identity & Access definido en 4.3.3. Lo
 | Clases agrupadas en el componente | Capa | Responsabilidad |
 | --- | --- | --- |
 | AuthController / ProfileController / VoiceConsentController | Interface | Recibe acceso, perfil, recuperación y consentimiento. |
-| AuthService / TokenSessionService / ConsentCommandService / PasswordRecoveryService | Application | Coordina cuenta, tokens y autorizaciones. |
-| AppUser / RefreshToken / VoiceConsent / PasswordResetRequest | Domain | Mantiene identidad y vigencia/retiro/consumo. |
-| AppUserRepository / RefreshTokenRepository / VoiceConsentRepository / PasswordResetRepository | Infrastructure | Conserva registros privados de cuenta. |
+| AuthService / TokenSessionService / ConsentCommandService / PasswordRecoveryService / EmailVerificationService | Application | Coordina cuenta, tokens y autorizaciones. |
+| AppUser / RefreshToken / VoiceConsent / PasswordResetRequest / EmailVerificationRequest | Domain | Mantiene identidad y vigencia/retiro/consumo. |
+| AppUserRepository / RefreshTokenRepository / VoiceConsentRepository / PasswordResetRepository / EmailVerificationRepository | Infrastructure | Conserva registros privados de cuenta. |
 | PasswordEncoder / JwtTokenProvider | Infrastructure | Protege contraseña y firma acceso. |
 | RabbitUserRegisteredPublisher / AccountNoticePublisher | Infrastructure | Despacha avisos de cuenta sin secretos. |
 
@@ -3177,13 +3109,13 @@ Esta vista C4 descompone el container de Identity & Access definido en 4.3.3. Lo
 
 #### 5.8.6.1. Bounded Context Domain Layer Class Diagrams
 
-AppUser reúne cuenta, idioma de interfaz y UserRole. Contiene tokens de renovación, consentimiento versionado y solicitudes de recuperación de un solo uso. El retiro y la revocación conservan fecha para interpretar su vigencia.
+AppUser reúne cuenta, idioma de interfaz y UserRole. Contiene tokens de renovación, consentimiento versionado y solicitudes de recuperación/verificación de un solo uso. La meta predeterminada del perfil solo inicializa nuevos borradores; la meta aplicada al ensayo queda en la configuración versionada de Sessions. El retiro y la revocación conservan fecha para interpretar su vigencia.
 
 ![Clases de Identity & Access](assets/diagrams/tactical/08-identity-access-classes.png)
 
 #### 5.8.6.2. Bounded Context Database Design Diagram
 
-app_users conserva el correo, nombre de usuario, segmento académico, contraseña protegida y rol. La tabla propuesta refresh_tokens se relaciona con la cuenta y conserva la vigencia y revocación de las credenciales. El correo y el hash del token tienen restricciones de unicidad; voice_consents y password_reset_requests se relacionan con la cuenta; el retiro de consentimiento conserva el historial y no se confunde con eliminación de sesiones.
+app_users conserva correo, nombre, segmento, idioma, universidad/carrera opcionales, meta predeterminada, confirmación de correo, contraseña protegida y rol. La tabla propuesta refresh_tokens se relaciona con la cuenta y conserva la vigencia y revocación de las credenciales. El correo y el hash del token tienen restricciones de unicidad; voice_consents, password_reset_requests y email_verification_requests se relacionan con la cuenta; el retiro de consentimiento conserva el historial y no se confunde con eliminación de sesiones.
 
 ![Persistencia de Identity & Access](assets/diagrams/tactical/08-identity-access-database.png)
 
@@ -3192,8 +3124,8 @@ app_users conserva el correo, nombre de usuario, segmento académico, contraseñ
 | Objeto | Restricción y relación con las reglas |
 | --- | --- |
 | APP_USERS | email único normalizado; contraseña protegida mediante hash; interface_locale restringido a en_US/es_419 y en_US por defecto. |
-| REFRESH_TOKENS / PASSWORD_RESET_REQUESTS | Hashes únicos y vencimiento obligatorio. Renovar revoca el token anterior; recuperar consume el enlace una sola vez. Nunca se devuelve password_hash. |
-| VOICE_CONSENTS | UNIQUE(user_id, policy_version, scope), con aceptación y retiro explícitos. Cambiar la versión requiere nueva aceptación; retirar bloquea nuevas prácticas, sin borrar por sí solo el historial. |
+| REFRESH_TOKENS / PASSWORD_RESET_REQUESTS / EMAIL_VERIFICATION_REQUESTS | Hashes únicos y vencimiento obligatorio. Renovar revoca el token anterior; recuperar consume el enlace una sola vez. Nunca se devuelve password_hash. |
+| VOICE_CONSENTS | Unicidad parcial de (user_id, policy_version, scope) solo para registros activos (withdrawn_at ausente), con aceptación y retiro explícitos. Una nueva aceptación crea un registro sin sobrescribir retiros anteriores. Cambiar la versión requiere nueva aceptación; retirar bloquea nuevas prácticas, sin borrar por sí solo el historial. |
 
 La unicidad compuesta se documenta en esta tabla porque comprende varios campos; las marcas PK/FK/UK del diagrama identifican claves simples. Inbox y outbox son registros técnicos del esquema privado: eventId es único en inbox y el despacho confirma la salida después del commit local. No se crean FKs hacia otros contextos.
 
@@ -3210,7 +3142,7 @@ La capa de dominio propuesta define el contrato que debe cumplir una integració
 
 **Integration Port**
 
-AIProviderPort define, en el diseño propuesto, las preparación de una credencial efímera para una conversación autorizada. Este contrato permite expresar las capacidades que Talki necesita sin depender de la API de un proveedor. Las sesiones y evaluaciones permanecen bajo responsabilidad de sus respectivos contextos.
+AIProviderPort define, en el diseño propuesto, la preparación de una credencial efímera para una conversación autorizada. Este contrato permite expresar las capacidades que Talki necesita sin depender de la API de un proveedor. Las sesiones y evaluaciones permanecen bajo responsabilidad de sus respectivos contextos.
 
 **Elementos de Domain Layer**
 
@@ -3367,7 +3299,7 @@ Los eventos de evaluación y logro identifican al destinatario y el tipo de avis
 | --- | --- | --- | --- |
 | DispatchNotificationHandler | Event Handler | Prepara un mensaje que permita acceder al resultado de la práctica. | Application |
 | NotificationTemplateService | Servicio de aplicación | Prepara el reconocimiento que corresponde al evento recibido. | Application |
-| NotificationPreferenceService | Servicio de aplicación | Informan sobre acciones de cuenta, revocación y eliminación según los flujos de 4.2. | Application |
+| NotificationPreferenceService | Servicio de aplicación | Consulta y actualiza preferencias de canal y categorías; distingue avisos necesarios de comunicaciones opcionales. | Application |
 | NotificationRetryHandler | Command Handler | Comprueba las preferencias y solicita la entrega mediante NotificationPushService. | Application |
 
 **Contratos de coordinación**
@@ -3390,6 +3322,7 @@ La capa de infraestructura recibe los eventos que originan avisos. La entrega al
 | AchievementNotificationConsumer | Consumidor de eventos | Recibe los logros obtenidos desde RabbitMQ. | Infrastructure |
 | WebSocketPushAdapter | Adaptador propuesto | Implementa NotificationPushService para entregar avisos al cliente. | Infrastructure |
 | Proveedor de correo | Integración propuesta | Entrega los avisos que correspondan a las preferencias de contacto. | Infrastructure |
+| AccountNoticeClient | Adaptador HTTP propuesto | Solicita a Identity un enlace efímero para un aviso de cuenta; no lo persiste ni registra en logs. | Infrastructure |
 
 Los consumidores base registran la intención de notificar. La entrega efectiva, el control de reintentos y el seguimiento de envíos forman parte de la integración propuesta. La falla del canal no modifica el resultado de la práctica.
 
@@ -3404,7 +3337,7 @@ Esta vista C4 descompone el container de Notifications definido en 4.3.3. Los el
 | DispatchNotificationHandler / NotificationTemplateService / NotificationPreferenceService / NotificationRetryHandler | Application | Prepara contenido, respeta preferencias y coordina reintento. |
 | Notification / NotificationPreference / NotificationPushService | Domain | Mantiene estado y contrato de entrega. |
 | NotificationRepository / NotificationPreferenceRepository | Infrastructure | Registra avisos únicos, intentos y preferencias. |
-| WebSocketPushAdapter / EmailNotificationAdapter | Infrastructure | Entrega aviso sin evidencia privada. |
+| WebSocketPushAdapter / EmailNotificationAdapter / AccountNoticeClient | Infrastructure | Entrega avisos; obtiene enlaces de cuenta por contrato interno protegido y no los conserva. |
 
 ![Componentes de Notifications](assets/diagrams/tactical/10-notifications-components.png)
 
@@ -3438,9 +3371,9 @@ Las operaciones de este capítulo especifican el diseño objetivo; su documentac
 
 | Interacción | Datos y garantía de diseño |
 | --- | --- |
-| Preparación de voz | Live verifica sesión propia y consentimiento vigente; solicita una credencial a AI Gateway por HTTPS. La voz utiliza WSS entre el cliente y Gemini. La pasarela no conserva voz ni sustituye el cierre de Sessions. |
+| Preparación de voz | Live verifica sesión propia y consentimiento vigente antes de iniciar o reanudar; una prueba local del micrófono no envía ni persiste voz. El retiro detiene la captura del cliente y bloquea nuevas credenciales o reintentos; un token anterior no acredita consentimiento vigente. Solicita una credencial a AI Gateway por HTTPS. La voz utiliza WSS entre el cliente y Gemini. La pasarela no conserva voz ni sustituye el cierre de Sessions. |
 | Cierre confirmado | Sessions recibe closureId, sessionId, checkpointId y evidencia autorizada. UNIQUE(sessionId, closureId) y transición de estado impiden cierres repetidos. Evidencia y outbox se confirman en una transacción; solo después se publica session.live.finalized. |
-| Eventos de análisis y evaluación | Cada mensaje incluye eventId, occurredAt, sessionId, userId, correlationId y las versiones pertinentes. El cierre incorpora mode, goal, confirmedDurationSeconds, valid y validityRuleVersion; Analysis y Scoring propagan estos metadatos sin reinterpretar el veredicto de Sessions. Los consumidores registran eventId en inbox; la clave de negocio sesión/versión evita duplicar resultados aun si llega otro eventId. El ACK sigue a la confirmación local. |
+| Eventos de análisis y evaluación | Cada mensaje incluye eventId, occurredAt, sessionId, userId, correlationId y las versiones pertinentes. El cierre incorpora mode, goal, focusAreas, academicSegment, configurationVersion, confirmedDurationSeconds, valid y validityRuleVersion; Analysis y Scoring propagan estos metadatos sin reinterpretar el veredicto de Sessions. Los consumidores registran eventId en inbox; la clave de negocio sesión/versión evita duplicar resultados aun si llega otro eventId. El ACK sigue a la confirmación local. |
 | Recuperación de análisis | AnalysisJob conserva estado e intentos por sesión y versión; un reintento reutiliza el job. Los mensajes fallidos pasan a una cola de errores después del límite configurado y pueden reactivarse con autorización. El estado se consulta mediante el reporte; no se fabrica una puntuación mientras está pendiente. |
 | Avance y reconocimientos | Progress distingue prácticas únicas de versiones de resultados: totalSessions y totalMinutes se calculan por sessionId válido; el promedio global y el mejor resultado utilizan el mismo modo, versiones y las cinco dimensiones evaluables. Los parciales se consultan por dimensión y no reciben cero por falta de evidencia. Gamification contabiliza una sesión válida una vez, aunque sea reevaluada. |
 | Eliminación | Sharing registra la solicitud y pide a Sessions bloquear el acceso. Solo después de esa confirmación responde 202 con ACCESS_BLOCKED y comunica deletion.requested. Sessions, Analysis, Scoring, Progress, Gamification y Notifications retiran sus datos o referencias del ensayo y publican purge.completed con requestId/context después de confirmar su operación local. Sessions incluye el archivo privado; Progress y Gamification recalculan los agregados afectados. Sharing revoca los permisos y completa la solicitud al reunir los seis contextos esperados. Un fallo del bloqueo devuelve 503, sin afirmar que el acceso ya fue retirado. |
@@ -3459,12 +3392,12 @@ La siguiente tabla relaciona cada contexto con las historias de usuario, decisio
 | 5.1. Live Coaching | TS02; US12–US14, US31, US34, US38; ADD-03, ADD-06, ADD-08, ADD-10, ADD-12; QAS-PER-01, QAS-AVA-01 |
 | 5.2. Speech Analysis | TS03; US16–US18, US37 y métricas de US15; ADD-04–ADD-08, ADD-10, ADD-14; QAS-PER-02, QAS-REL-01 |
 | 5.3. Scoring & Feedback | TS03, TS04; US15, US19, US26, US37; ADD-05, ADD-07, ADD-11, ADD-14; C-09, QAS-REL-01 |
-| 5.4. Practice Session Management | TS01; US09–US14, US23–US25, US29, US30, US34; ADD-03–ADD-05, ADD-09, ADD-11; QAS-AVA-01, QAS-USA-01 |
+| 5.4. Practice Session Management | TS01; US09–US14, US20, US23–US25, US29, US30, US34; ADD-03–ADD-05, ADD-09, ADD-11; QAS-AVA-01, QAS-USA-01 |
 | 5.5. Progress & Adaptation | TS05; US20–US22, US24, US36; ADD-05, ADD-07, ADD-11; C-09, QAS-REL-01 |
 | 5.6. Sharing & Retention | TS06; US27, US32, US33; C-02; ADD-08, ADD-09, ADD-13; QAS-SEC-01, QAS-PRI-01 |
 | 5.7. Gamification | US35; ADD-05, ADD-07, ADD-11; QAS-REL-01 |
-| 5.8. Identity & Access | US05–US08, US23, US28, US29; C-08; ADD-02, ADD-09, ADD-13; QAS-SEC-01 |
-| 5.9. AI Provider Gateway | Habilita US12, US17–US19, US30, US31, US38; C-02; ADD-06, ADD-08, ADD-10, ADD-12, ADD-14; QAS-INT-01, QAS-PER-01 |
+| 5.8. Identity & Access | US05–US08, US23, US24, US28, US29; C-08; ADD-02, ADD-09, ADD-13; QAS-SEC-01 |
+| 5.9. AI Provider Gateway | Habilita conversación y contexto de US12, US30, US31, US38; el análisis posterior pertenece a 5.2 y 5.3; C-02; ADD-06, ADD-08, ADD-10, ADD-12, ADD-14; QAS-INT-01, QAS-PER-01 |
 | 5.10. Notifications | Avisos de evaluación y logro: US15, US35. Ampliaciones de cuenta y privacidad: US05, US07, US32, US33; ADD-04, ADD-05, ADD-10, ADD-13; QAS-REL-01 |
 
 # Capítulo VI: Solution UX Design
@@ -3596,7 +3529,7 @@ Las acciones comienzan con verbos, como “Iniciar práctica”, “Compartir re
 | Compartir reporte / Revocar enlace | Permitir o retirar la lectura temporal de un reporte. |
 | Eliminar sesión / Purga pendiente | Retirar el acceso a la sesión e informar que la eliminación de sus datos sigue en curso. |
 
-Las etiquetas utilizan el vocabulario definido en la sección 2.4 y priorizan expresiones breves en español. “Voice Coach Score” se acompaña de una explicación cuando aparece por primera vez.
+Las etiquetas utilizan el vocabulario definido en la sección 2.4 y utilizan expresiones breves y equivalentes en los idiomas de interfaz previstos. Las figuras del informe ilustran el recorrido en español; esto no modifica en_US como idioma inicial propuesto en C-03. “Voice Coach Score” se acompaña de una explicación cuando aparece por primera vez.
 
 ### 6.2.3. SEO Tags and Meta Tags
 
@@ -4078,7 +4011,7 @@ La landing también permite iniciar una consulta y acceder a privacidad y térmi
 
 ### 6.4.3. Applications Mock-ups
 
-Los mock-ups desarrollan la jerarquía visual, los controles y la presentación de los estados de cada pantalla. Las vistas de acceso, inicio, Coach, grabación, reporte e historial muestran el cliente web de Talki; las pantallas complementarias y las adaptaciones móviles son propuestas de diseño. La [landing pública](#632-landing-page-mock-up) se presenta en la sección 6.3.2. El alcance de los datos y las interacciones de ejemplo se describe en 6.5.
+Los mock-ups desarrollan la jerarquía visual, los controles y la presentación de los estados de cada pantalla. Las vistas de acceso, inicio, Coach, grabación, reporte e historial muestran capturas de referencia del cliente web; no representan por sí solas todos los controles y estados ampliados del TP; las pantallas complementarias y las adaptaciones móviles son propuestas de diseño. La [landing pública](#632-landing-page-mock-up) se presenta en la sección 6.3.2. El alcance de los datos y las interacciones de ejemplo se describe en 6.5.
 
 #### A01: Registro
 
@@ -4118,7 +4051,7 @@ El campo de correo y el botón de envío constituyen el foco de la pantalla. El 
 
 #### P01: Perfil y segmento
 
-Los bloques del perfil diferencian los datos personales, el segmento y la meta de práctica. Los controles seleccionados se reconocen mediante texto y resaltado, y la acción de guardar cierra el recorrido.
+Los bloques del perfil diferencian los datos personales, el segmento y la meta predeterminada. Identity conserva estos datos; Sessions copia la meta al preparar un borrador y conserva la configuración del ensayo. Cambiar el perfil no modifica reportes históricos. Los controles seleccionados se reconocen mediante texto y resaltado, y la acción de guardar cierra el recorrido.
 
 **Mock-up de perfil y segmento (web)**
 
@@ -4406,7 +4339,7 @@ El mensaje confirma que la sesión ya no puede consultarse e informa que la elim
 
 **Acceso al prototipo de diseño.**
 
-El [prototipo de diseño](assets/ux/prototype/index.html#privacy) permite explorar las propuestas de consentimiento, recuperación, análisis, comparación, plan de práctica y control de datos. El recorrido predeterminado es interactivo en escritorio y móvil. La variante `?reference=1` conserva las capturas del cliente para comparación visual; esas capturas son estáticas y se distinguen del recorrido demostrable. Para recorrerlo, se debe abrir el HTML en un navegador siguiendo las [instrucciones de ejecución](assets/ux/prototype/README.md).
+El [prototipo de diseño](assets/ux/prototype/index.html) permite explorar las propuestas de consentimiento, recuperación, análisis, comparación, plan de práctica y control de datos. El recorrido predeterminado es interactivo en escritorio y móvil. La variante `?reference=1` conserva las capturas del cliente para comparación visual; esas capturas son estáticas y se distinguen del recorrido demostrable. Para recorrerlo, se debe abrir el HTML en un navegador siguiendo las [instrucciones de ejecución](assets/ux/prototype/README.md).
 
 | Recorrido de demostración | Acciones disponibles |
 | --- | --- |
@@ -4515,33 +4448,27 @@ Pendiente de grabación y publicación. El feedback del primer hito solicita est
 
 # Bibliografía
 
-Crown Counseling. (2024). *30+ revealing fear of public speaking statistics for 2025*. https://crowncounseling.com/statistics/fear-of-public-speaking-statistics/
+ELSA. (s. f.). *ELSA Speak*. Recuperado el 7 de octubre de 2026, de https://elsaspeak.com/es/product?variant=C
 
-ELSA Corp. (2024). *ELSA Speak: AI-powered English pronunciation coach* [Aplicación móvil]. https://elsaspeak.com/
+Maldonado, M. A., García García, A., Armada Crespo, J. M., Alós, F. J., & Moreno Osella, E. M. (2022). Competencia oral y ansiedad: entrenamiento y eficacia en estudiantes universitarios. *Revista Latina de Comunicación Social*, (80), 401–434. https://doi.org/10.4185/RLCS-2022-1800
 
-Maldonado, M. A., García García, A., Armada Crespo, J. M., Alós, F. J., & Moreno Osella, E. M. (2022). Competencia oral y ansiedad: entrenamiento y eficacia en estudiantes universitarios. *Revista Latina de Comunicación Social*, (80). https://doi.org/10.4185/RLCS-2022-1800
+Orai. (s. f.). *Orai: Public speaking app*. Recuperado el 7 de octubre de 2026, de https://orai.com/
 
-Orai Inc. (2024). *Orai: AI-powered public speaking coach* [Aplicación móvil]. https://orai.com/
-
-Redalyc. (2022). *Competencias laborales blandas de alto impacto en egresados universitarios: Un estudio descriptivo*. https://www.redalyc.org/journal/1942/194276552011/html/
+RabbitMQ. (s. f.). *Consumer acknowledgements and publisher confirms*. https://www.rabbitmq.com/docs/confirms
 
 Ries, E. (2011). *The Lean Startup: How today's entrepreneurs use continuous innovation to create radically successful businesses*. Crown Business.
 
-Speeko Inc. (2024). *Speeko: Public Speaking Coach* [Aplicación móvil]. https://www.speeko.co/
+Speeko. (s. f.). *Speeko: AI speech coach*. Recuperado el 7 de octubre de 2026, de https://www.speeko.co/
 
-Superintendencia Nacional de Educación Superior Universitaria. (2023). *Sistema de información universitaria TUNI: Estadísticas de matrícula universitaria*. https://www.sunedu.gob.pe/
+Thropic. (2026). *Talki: Project report* [Repositorio de GitHub, versión 2cfa379]. [GitHub](https://github.com/upc-pre-202601-si657-7940-thropic/talki-project-report/blob/2cfa379b72241a1380d87b4f8c5be53a70950d81/README.MD).
 
-Teleprompter.com. (2024). *Public speaking statistics 2025: Global fear & trends*. https://www.teleprompter.com/blog/public-speaking-statistics
+Varona Albán, J. C., & Ramos Benítez, M. C. (2024). Competencias laborales blandas de alto impacto en egresados universitarios: Un estudio descriptivo. *Revista Virtual Universidad Católica del Norte*, (71), 245–275. https://doi.org/10.35575/rvucn.n71a11
 
 Wojcik, R., Bachmann, F., Bass, L., Clements, P., Merson, P., Nord, R., & Wood, B. (2006). *Attribute-Driven Design (ADD), Version 2.0* (Technical Report CMU/SEI-2006-TR-023). Software Engineering Institute, Carnegie Mellon University. https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=8147
-
-RabbitMQ. (s. f.). *Consumer acknowledgements and publisher confirms*. https://www.rabbitmq.com/docs/confirms
 
 World Wide Web Consortium. (s. f.). *Understanding Success Criterion 1.4.3: Contrast (Minimum)*. https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html
 
 World Wide Web Consortium. (s. f.). *Understanding Success Criterion 2.5.8: Target Size (Minimum)*. https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html
-
-Thropic. (2026). *Talki: Project report* [Repositorio de GitHub, versión 2cfa379]. [GitHub](https://github.com/upc-pre-202601-si657-7940-thropic/talki-project-report/blob/2cfa379b72241a1380d87b4f8c5be53a70950d81/README.MD).
 
 # Anexos
 

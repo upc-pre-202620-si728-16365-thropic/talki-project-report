@@ -46,6 +46,8 @@ class SessionState {
 class PracticeConfiguration {
   <<ValueObject>>
   -String goal
+  -List~String~ focusAreas
+  -String academicSegment
   -int durationSeconds
   -String scenario
   -String conversationLocale
@@ -78,11 +80,12 @@ class SessionUserContext {
   <<ValueObject>>
   -Long userId
   -String academicSegment
+  -String defaultPracticeGoal
 }
 Session "1" *-- "1" PracticeConfiguration : configuración
 Session "1" *-- "0..1" ConsentSnapshot : autorización verificada
 Session "1" *-- "0..1" PracticeMaterial : material opcional
-Session "1" *-- "0..*" Feedback : feedback
+Session "1" *-- "0..*" Feedback : observación personal
 Session --> SessionMode : modo
 Session --> SessionState : estado
 Session ..> SessionUserContext : identidad adaptada

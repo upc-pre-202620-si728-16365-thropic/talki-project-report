@@ -8,6 +8,7 @@ Container(bff, "API Gateway / BFF", "HTTPS / JSON", "Fuera del container represe
 ContainerQueue(bus, "Broker de eventos", "RabbitMQ / AMQP", "Fuera del container representado")
 ContainerDb(db, "Esquema privado del contexto", "PostgreSQL / TLS", "Fuera del container representado")
 System_Ext(mail, "Proveedor de correo", "Canal transaccional propuesto")
+Container(identity, "Identity & Access", "Java / Spring Boot", "Contrato interno protegido de enlaces de cuenta")
 Container(web, "Cliente web / móvil", "Navegador / Flutter", "Fuera del container representado")
 Container_Boundary(scope, "Notifications: proceso Java / Spring Boot") {
   Component(consumer, "NotificationEventConsumer", "Java / Spring Boot", "Infrastructure: Recibe eventos de evaluación, logro, cuenta y privacidad")
@@ -15,7 +16,7 @@ Container_Boundary(scope, "Notifications: proceso Java / Spring Boot") {
   Component(app, "DispatchNotificationHandler / NotificationTemplateService / NotificationPreferenceService / NotificationRetryHandler", "Java / Spring Boot", "Application: Prepara contenido, respeta preferencias y coordina reintento")
   Component(rules, "Notification / NotificationPreference / NotificationPushService", "Java / Spring Boot", "Domain: Mantiene estado y contrato de entrega")
   Component(repo, "NotificationRepository / NotificationPreferenceRepository", "Java / Spring Boot", "Infrastructure: Registra avisos únicos, intentos y preferencias")
-  Component(channels, "WebSocketPushAdapter / EmailNotificationAdapter", "Java / Spring Boot", "Infrastructure: Entrega aviso sin evidencia privada")
+  Component(channels, "WebSocketPushAdapter / EmailNotificationAdapter / AccountNoticeClient", "Java / Spring Boot", "Infrastructure: Entrega aviso sin evidencia privada")
 }
 Rel(api, app, "Delega caso de uso", "Java")
 Rel(consumer, app, "Entrega evento validado", "Java")
@@ -28,5 +29,6 @@ Rel(bff, api, "Consulta/modifica preferencias", "HTTPS / JSON")
 Rel(repo, db, "Conserva avisos y preferencias", "SQL / TLS")
 Rel(channels, web, "Entrega aviso autenticado", "WSS")
 Rel(channels, mail, "Envía mensaje transaccional", "HTTPS / SMTP-TLS")
+Rel(channels, identity, "Obtiene enlace efímero para aviso de cuenta", "HTTPS / JSON")
 SHOW_LEGEND()
 @enduml

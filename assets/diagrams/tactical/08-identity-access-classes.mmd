@@ -8,9 +8,16 @@ class AppUser {
   -String username
   -String academicSegment
   -String interfaceLocale
+  -String university
+  -String career
+  -String defaultPracticeGoal
+  -Instant emailVerifiedAt
   -UserRole role
   -Instant createdAt
   +updateProfile(String username, String segment, String locale) void
+  +updateAcademicDetails(String university, String career) void
+  +updatePracticeGoal(String goal) void
+  +verifyEmail(Instant now) void
 }
 class UserRole {
   <<enumeration>>
@@ -48,3 +55,13 @@ AppUser "1" *-- "0..*" RefreshToken : renovación
 AppUser "1" *-- "0..*" VoiceConsent : historial de consentimiento
 AppUser "1" *-- "0..*" PasswordResetRequest : recuperación
 AppUser --> UserRole : rol
+
+class EmailVerificationRequest {
+  <<Entity>>
+  -UUID id
+  -String tokenHash
+  -Instant expiresAt
+  -Instant usedAt
+  +consume(Instant now) void
+}
+AppUser "1" *-- "0..*" EmailVerificationRequest : verificación de correo
