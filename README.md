@@ -98,6 +98,7 @@
 | 1.32 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Registro de la evaluación del TP indicada por el Team Leader: cumplimiento a tiempo y calificación 20 para los cinco integrantes. Incorporación del NRC 16365 y actualización del PDF y del anexo B. |
 | 1.33 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Incorporación del enlace a la carpeta de publicación del Video About-the-Team proporcionada por el equipo. |
 | 1.34 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Ajuste del Student Outcome del TP para describir la documentación y los recursos de comunicación disponibles al entregar el informe, sin registrar la exposición posterior como pendiente. |
+| 1.35 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Ajuste de Applications Prototyping al alcance del TP, conservando el recorrido interactivo, las pantallas y la descripción del diseño. |
 
 La edición de las versiones 1.0–1.12 fue realizada por Alejandro Daniel Oroncoy Almeyda. Los demás nombres corresponden a los coautores registrados en los commits del avance, asociados en esta tabla por las secciones correspondientes. La revisión individual de esos integrantes continúa pendiente.
 
@@ -4536,8 +4537,6 @@ El recorrido comienza con la configuración de la práctica, continúa con la pr
 <img src="assets/ux/mockups/mobile-report.png" alt="Prototipado de Talki: revisar el feedback" width="320">
 
 **Alcance del prototipo.** Los formularios, las confirmaciones y los estados complementarios permiten evaluar la secuencia de tareas y la comprensión de los mensajes. Las puntuaciones, transcripciones y tendencias son datos de ejemplo. El prototipo simula la interacción sin conectarse a servicios de autenticación, análisis de voz o almacenamiento; la validación funcional corresponde a la aplicación integrada.
-
-**Evidencia audiovisual del prototipo.** La captura y el enlace Microsoft Stream por aplicación están pendientes de grabación/publicación. El recorrido local está disponible para revisión; no sustituye esa evidencia solicitada por el formato.
 
 **Evaluación prevista.** La revisión con estudiantes de ambos segmentos observará si pueden preparar una práctica, comprender su feedback y administrar el acceso a sus reportes. Se registrarán el éxito de las tareas, el tiempo de preparación y las dificultades encontradas. El objetivo de QAS-USA-01 es que al menos el 90 % inicie una sesión válida en tres minutos o menos sin asistencia. Los resultados se documentarán en el capítulo VII cuando se realice la evaluación.
 
