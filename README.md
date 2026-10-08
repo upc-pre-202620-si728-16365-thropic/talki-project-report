@@ -93,6 +93,7 @@
 | 1.27 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Identificación de interfaces de repositorio en Domain y adaptadores JPA en Infrastructure. Actualización de UML, componentes C4 y fuentes Structurizr; precisión de multiplicidades y referencias internas de progreso y logros. |
 | 1.28 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Registro de las edades de Belén Ordoñez (21), Isabel Rodriguez (22) y Juan Alejandro Elías López (20), confirmadas por el equipo. Precisión del origen de las edades; distritos pendientes de confirmación. |
 | 1.29 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Registro de los distritos de Belén, Isabel, Juan Alejandro y Jorge, confirmados por el equipo. Uniformización del nombre Santiago de Surco y cierre de los datos pendientes del registro de entrevistas. |
+| 1.30 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Complementación de Project Report Collaboration Insights con el resumen de TB1 y TP, las contribuciones documentadas, el reparto de secciones y una captura actual del historial de commits. |
 
 La edición de las versiones 1.0–1.12 fue realizada por Alejandro Daniel Oroncoy Almeyda. Los demás nombres corresponden a los coautores registrados en los commits del avance, asociados en esta tabla por las secciones correspondientes. La revisión individual de esos integrantes continúa pendiente.
 
@@ -100,13 +101,39 @@ La edición de las versiones 1.0–1.12 fue realizada por Alejandro Daniel Oronc
 
 Repositorio del informe: [talki-project-report](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report).
 
-A continuación se presentan los analíticos de colaboración del repositorio del informe.
+El informe reúne las contribuciones de los cinco integrantes de Thropic y conserva el avance de cada entrega mediante el historial de GitHub. Los cambios se organizan por capítulos y se relacionan con el Registro de Versiones del Informe.
+
+**TB1: investigación, requisitos y diseño estratégico.**
+
+El trabajo se distribuyó entre el perfil de la startup y las entrevistas, el análisis de necesidades, la especificación de requisitos, el diseño estratégico del dominio y las vistas de arquitectura. Los commits de esta entrega permiten consultar las incorporaciones de cada integrante y los artefactos que sirvieron de base al TP.
+
+**TP: diseño táctico, UX y correcciones del informe.**
+
+El avance se organizó por bounded context y por secciones de UX, conservando la relación con los requisitos y el diseño estratégico. Se incorporaron las capas, los diagramas de componentes, las clases UML, la persistencia, las guías de estilo, la arquitectura de información y los recorridos web y móvil. También se corrigieron la matriz de tareas, los criterios de aceptación, las Technical Stories, el backlog, las vistas C4 y el registro de entrevistas.
+
+La siguiente tabla relaciona las contribuciones documentadas del TB1 con las responsabilidades del TP. Las referencias del TP permiten consultar los cambios por sección y los coautores registrados en el historial.
+
+| Integrante | Contribución documentada en TB1 | Secciones del TP según el reparto del equipo | Referencias del historial |
+| --- | --- | --- | --- |
+| Eduardo Gael Rivera Sosa | Startup Profile, Solution Profile, Lean UX y entrevistas. | 6.1, 6.2 y 6.3: guías de estilo, arquitectura de información y landing page. | TB1: [2bdb301](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/2bdb3017ae4799ec8e55b56c86cbaa0c1de18c58)<br>TP: [598ba24](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/598ba245e24d91b0db552699262f59ae08e0117f) |
+| Manuel Ignacio Tumi Oliden | Competidores, needfinding, personas, matriz de tareas, empathy maps y escenarios As-Is. | 5.2, 5.3 y 5.5: Speech Analysis, Scoring & Feedback y Progress & Adaptation. | TB1: [25285e7](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/25285e781945fde3575f80b021ad794c2c4822e3)<br>TP: [a61880f](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/a61880f1773a3092b6dfb47ade8afdb78e6c2043) |
+| Alejandro Daniel Oroncoy Almeyda | Escenarios To-Be, requisitos, backlog y diseño ADD. | 5.1, 5.4 y 5.9: Live Coaching, Practice Session Management y AI Provider Gateway; integración del informe y correcciones previas. | TB1: [40003d1](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/40003d1d6af89de404d59ceb16d22f0e4b0b1464)<br>TP: [6dc24f7](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/6dc24f712fa3f231c1a55aa7648ca2f2e38d4b90) |
+| Werner Khalil Lang Nassi | EventStorming, descubrimiento de contextos, flujos de mensajes, canvases y Context Mapping. | 5.6, 5.7 y 5.8: Sharing & Retention, Gamification e Identity & Access. | TB1: [bb379c3](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/bb379c3595f2b85027c4db8eea77eff9841ccb4d)<br>TP: [f98af31](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/f98af313949bf196cbad30ada6f6df99cf0e267c) |
+| Kevin Jorge Chi Cruzatt | Vistas de arquitectura System Landscape, Context, Containers y Deployment. | 5.10, 6.4 y 6.5: Notifications, diseño UX/UI y prototipado de aplicaciones. | TB1: [c3a8b2a](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/c3a8b2a740ee4d68092e836678812f322d64f696)<br>TP: [89a8b2e](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/89a8b2e951b8b885dee9a2eb4884804495a56556) |
 
 **Analíticos de colaboración.**
 
 ![Analíticos de colaboración de los cinco integrantes del equipo](./assets/evidence/collaboration/github-contributors-team-provided-20261007.png)
 
 *Figura: Analíticos de colaboración de los cinco integrantes. Captura proporcionada por el equipo; la vista indica contribuciones a la rama `main` y excluye los commits de merge.*
+
+**Commits del avance del TP.**
+
+<img src="assets/evidence/collaboration/github-commits-main-tp-20261008.jpg" alt="Historial de main con los cambios del TP y los autores y coautores mostrados por GitHub" width="1100">
+
+*Figura: Historial de commits consultado el 08/10/2026. La captura muestra cambios integrados en `main`, incluyendo el diseño táctico, UX y las correcciones del informe.*
+
+[Consultar el historial del TP en GitHub](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commits/main/?since=2026-10-07&until=2026-10-08).
 
 # Contenido
 
