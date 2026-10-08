@@ -1,5 +1,5 @@
 classDiagram
- direction LR
+ direction TB
 class AppUser {
   <<AggregateRoot>>
   -Long id
@@ -12,7 +12,7 @@ class AppUser {
   -String career
   -String defaultPracticeGoal
   -Instant emailVerifiedAt
-  -UserRole role
+  -UserRole role [1]
   -Instant createdAt
   +updateProfile(String username, String segment, String locale) void
   +updateAcademicDetails(String university, String career) void
@@ -54,7 +54,7 @@ class PasswordResetRequest {
 AppUser "1" *-- "0..*" RefreshToken : renovación
 AppUser "1" *-- "0..*" VoiceConsent : historial de consentimiento
 AppUser "1" *-- "0..*" PasswordResetRequest : recuperación
-AppUser --> UserRole : rol
+AppUser ..> UserRole : rol
 
 class EmailVerificationRequest {
   <<Entity>>
@@ -64,4 +64,41 @@ class EmailVerificationRequest {
   -Instant usedAt
   +consume(Instant now) void
 }
-AppUser "1" *-- "0..*" EmailVerificationRequest : verificación de correo
+AppUser "1" *-- "0..*" EmailVerificationRequest : verificación
+
+class AppUserRepository {
+  <<interface>>
+  +findById(Long id) Optional~AppUser~
+  +findByEmail(String email) Optional~AppUser~
+  +save(AppUser user) void
+}
+AppUserRepository ..> AppUser
+
+class RefreshTokenRepository {
+  <<interface>>
+  +findByTokenHash(String tokenHash) Optional~RefreshToken~
+  +findByUserId(Long userId) List~RefreshToken~
+  +save(Long userId, RefreshToken token) void
+}
+RefreshTokenRepository ..> RefreshToken
+
+class VoiceConsentRepository {
+  <<interface>>
+  +findByUserId(Long userId) List~VoiceConsent~
+  +save(Long userId, VoiceConsent consent) void
+}
+VoiceConsentRepository ..> VoiceConsent
+
+class PasswordResetRepository {
+  <<interface>>
+  +findByTokenHash(String tokenHash) Optional~PasswordResetRequest~
+  +save(Long userId, PasswordResetRequest request) void
+}
+PasswordResetRepository ..> PasswordResetRequest
+
+class EmailVerificationRepository {
+  <<interface>>
+  +findByTokenHash(String tokenHash) Optional~EmailVerificationRequest~
+  +save(Long userId, EmailVerificationRequest request) void
+}
+EmailVerificationRepository ..> EmailVerificationRequest

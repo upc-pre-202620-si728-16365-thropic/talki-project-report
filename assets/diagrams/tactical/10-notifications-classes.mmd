@@ -9,7 +9,7 @@ class Notification {
   -String templateCode
   -String destinationPath
   -String channel
-  -DeliveryState state
+  -DeliveryState state [1]
   -int attempts
   +markDelivered() void
   +markFailed() void
@@ -34,6 +34,22 @@ class NotificationPushService {
   <<interface>>
   +push(Notification notification) boolean
 }
-Notification --> DeliveryState : estado
+Notification ..> DeliveryState : tipo de estado
 NotificationPushService ..> Notification : entrega
 Notification ..> NotificationPreference : respeta preferencias
+
+class NotificationRepository {
+  <<interface>>
+  +findById(UUID id) Optional~Notification~
+  +findByOriginAndRecipient(UUID eventId, Long userId, String channel) Optional~Notification~
+  +save(Notification notification) void
+  +deleteBySessionId(UUID sessionId) void
+}
+NotificationRepository ..> Notification
+
+class NotificationPreferenceRepository {
+  <<interface>>
+  +findByUserId(Long userId) Optional~NotificationPreference~
+  +save(NotificationPreference preference) void
+}
+NotificationPreferenceRepository ..> NotificationPreference

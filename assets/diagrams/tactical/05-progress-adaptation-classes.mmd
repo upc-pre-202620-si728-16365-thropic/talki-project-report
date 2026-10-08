@@ -43,4 +43,28 @@ class PracticeExercise {
 }
 UserProgress "1" --> "0..*" SessionMetrics : resume evidencia propia
 AdaptivePlan "1" *-- "1..*" PracticeExercise : ejercicios
-AdaptivePlan ..> SessionMetrics : referencia evidencia compatible
+UserProgress "1" --> "0..*" AdaptivePlan : planes del estudiante
+AdaptivePlan "0..*" --> "0..*" SessionMetrics : referencia evidencia compatible
+
+class UserProgressRepository {
+  <<interface>>
+  +findByUserId(Long userId) Optional~UserProgress~
+  +save(UserProgress progress) void
+}
+UserProgressRepository ..> UserProgress
+
+class SessionMetricsRepository {
+  <<interface>>
+  +findByUserId(Long userId) List~SessionMetrics~
+  +save(SessionMetrics metrics) void
+  +deleteBySessionId(UUID sessionId) void
+}
+SessionMetricsRepository ..> SessionMetrics
+
+class AdaptivePlanRepository {
+  <<interface>>
+  +findById(UUID id) Optional~AdaptivePlan~
+  +findByUserId(Long userId) List~AdaptivePlan~
+  +save(AdaptivePlan plan) void
+}
+AdaptivePlanRepository ..> AdaptivePlan

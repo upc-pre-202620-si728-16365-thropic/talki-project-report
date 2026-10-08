@@ -18,7 +18,7 @@ class DeletionRequest {
   -UUID id
   -UUID sessionId
   -Long ownerId
-  -DeletionState state
+  -DeletionState state [1]
   -Set~String~ expectedContexts
   -Instant deadline
   +registerReceipt(PurgeReceipt receipt) void
@@ -40,5 +40,21 @@ class PurgeReceipt {
   -Instant completedAt
 }
 DeletionRequest "1" *-- "0..*" PurgeReceipt : confirmaciones
-DeletionRequest --> DeletionState : estado
+DeletionRequest ..> DeletionState : tipo de estado
 ShareGrant ..> DeletionRequest : bloquea acceso por sesión
+
+class ShareGrantRepository {
+  <<interface>>
+  +findByTokenHash(String tokenHash) Optional~ShareGrant~
+  +findBySessionId(UUID sessionId) List~ShareGrant~
+  +save(ShareGrant grant) void
+}
+ShareGrantRepository ..> ShareGrant
+
+class DeletionRequestRepository {
+  <<interface>>
+  +findById(UUID id) Optional~DeletionRequest~
+  +findBySessionId(UUID sessionId) List~DeletionRequest~
+  +save(DeletionRequest request) void
+}
+DeletionRequestRepository ..> DeletionRequest

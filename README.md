@@ -90,6 +90,7 @@
 | 1.24 | 07/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Simplificación de Project Report Collaboration Insights para mostrar únicamente los analíticos del repositorio. Integración del avance en main conservando el historial de commits y actualización de la captura con los cinco integrantes. |
 | 1.25 | 07/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Revisión global de congruencia: fuentes y alcance de investigación, hipótesis y canvas, requisitos funcionales/no funcionales, responsabilidades de contextos, contratos y correspondencia de modelos con UX. |
 | 1.26 | 07/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Actualización de la imagen de Project Report Collaboration Insights con la captura proporcionada por el equipo. |
+| 1.27 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Identificación de interfaces de repositorio en Domain y adaptadores JPA en Infrastructure. Actualización de UML, componentes C4 y fuentes Structurizr; precisión de multiplicidades y referencias internas de progreso y logros. |
 
 La edición de las versiones 1.0–1.12 fue realizada por Alejandro Daniel Oroncoy Almeyda. Los demás nombres corresponden a los coautores registrados en los commits del avance, asociados en esta tabla por las secciones correspondientes. La revisión individual de esos integrantes continúa pendiente.
 
@@ -1949,14 +1950,18 @@ Cada contexto mantiene una responsabilidad de negocio. La arquitectura objetivo 
 
 ## Organización por capas
 
-Las vistas de componentes utilizan C4: cada figura descompone un único container de 4.3.3 e identifica sus componentes, responsabilidades, tecnología y conexiones externas. Los diagramas de clases UML se limitan al dominio de cada contexto; controladores, orquestadores, consumidores, repositorios y adaptadores se muestran en sus capas mediante la vista de componentes. Las vistas de datos utilizan entidades, claves y relaciones de persistencia; los contextos sin base propia explican dónde reside la información.
+Las vistas de componentes utilizan C4: cada figura descompone un único container de 4.3.3 e identifica sus componentes, responsabilidades, tecnología y conexiones externas. Los diagramas de clases UML se limitan al dominio de cada contexto; las interfaces de repositorio forman parte de Domain y expresan operaciones con tipos del negocio. Sus implementaciones concretas, junto con controladores, orquestadores, consumidores y adaptadores, se identifican en sus capas mediante la vista de componentes. Las vistas de datos utilizan entidades, claves y relaciones de persistencia; los contextos sin base propia explican dónde reside la información.
 
 | Capa | Responsabilidad |
 | --- | --- |
-| Domain Layer | Representa los conceptos del negocio y sus reglas. |
+| Domain Layer | Representa los conceptos del negocio, sus reglas y los contratos de repositorio independientes del almacenamiento. |
 | Interface Layer | Recibe solicitudes y eventos, y presenta las operaciones del contexto. |
 | Application Layer | Coordina los casos de uso y las colaboraciones necesarias para ejecutarlos. |
-| Infrastructure Layer | Implementa el almacenamiento y la comunicación con otros servicios y proveedores. |
+| Infrastructure Layer | Implementa los contratos de repositorio y los adaptadores de almacenamiento, mensajería y proveedores. |
+
+Las interfaces de repositorio se señalan como «interface» en el UML y utilizan entidades o agregados del contexto. Application depende de esos contratos; los adaptadores Jpa…RepositoryAdapter los implementan en Infrastructure y traducen el modelo a PostgreSQL. Optional indica que una consulta puede no encontrar un registro; List representa una colección. Las operaciones de repositorio no sustituyen la comprobación de acceso ni las reglas del agregado. Outbox e inbox son mecanismos de infraestructura y se confirman en la misma transacción que el cambio de negocio.
+
+En los diagramas UML, 1 indica una instancia obligatoria, 0..1 una opcional y 0..* una colección que puede estar vacía. La composición expresa pertenencia al agregado; las asociaciones por identificador no implican propiedad ni claves foráneas entre contextos. Las enumeraciones son tipos de atributos, cuya multiplicidad se indica entre corchetes. Las dependencias y realizaciones de interfaces no llevan cardinalidades.
 
 Los datos permanecen bajo responsabilidad del contexto que los administra. Las relaciones internas se conservan en su propia base y los identificadores de otros contextos se utilizan como referencias. Los servicios que procesan información sin almacenarla permanentemente no requieren una base de negocio propia.
 
@@ -2129,7 +2134,7 @@ Los atributos se encapsulan; las operaciones públicas expresan las reglas del c
 
 | Elemento | Atributos o valores | Operaciones públicas |
 | --- | --- | --- |
-| AnalysisJob | UUID id<br>UUID sessionId<br>Long userId<br>String analysisVersion<br>AnalysisState state<br>int attempts<br>Instant updatedAt | start() void<br>complete(SpeechAnalysisResult result) void<br>fail(String reason) void<br>retry() void |
+| AnalysisJob | UUID id<br>UUID sessionId<br>Long userId<br>String analysisVersion<br>AnalysisState state [1]<br>int attempts<br>Instant updatedAt | start() void<br>complete(SpeechAnalysisResult result) void<br>fail(String reason) void<br>retry() void |
 | AnalysisState | PENDING<br>RUNNING<br>COMPLETED<br>FAILED<br>CANCELLED | Consulta mediante el agregado o servicio responsable. |
 | FillerDetector | Sin estado propio. | detect(String transcript) FillerResult |
 | FillerResult | int totalWords<br>int totalFillers<br>Map~String,int~ byType<br>double fillerRatio | hasEvidence() boolean |
@@ -2145,6 +2150,12 @@ AuthorizedSpeechEvidence separa transcripción, señales acústicas disponibles,
 | ContextualEvidenceAnalyzer | Sin estado propio. | analyze(AuthorizedSpeechEvidence): lista de ContextualFinding. |
 | ContextualFinding | term, spoken, evidenceFragment, suggestedAlternative, reason. | Resultado inmutable; spoken=false identifica sugerencia, sin atribuirla al discurso. |
 | SpeechAnalysisResult | acousticMetrics, availableDimensions, limitations. | Contiene un FillerResult y cero o más hallazgos contextuales. |
+
+**Contratos de repositorio del dominio**
+
+| Interfaz | Operaciones principales | Responsabilidad |
+| --- | --- | --- |
+| AnalysisJobRepository | findById(UUID id) Optional~AnalysisJob~<br>findBySessionAndVersion(UUID sessionId, String analysisVersion) Optional~AnalysisJob~<br>save(AnalysisJob job) void<br>deleteBySessionId(UUID sessionId) void | Consulta el trabajo y conserva sus transiciones sin duplicar la versión de análisis. |
 
 ### 5.2.2. Interface Layer
 
@@ -2191,8 +2202,9 @@ La capa de infraestructura conecta el análisis con los demás contextos mediant
 | SessionLiveFinalizedConsumer | Consumidor de eventos | Recibe el cierre de práctica y activa el análisis. | Infrastructure |
 | FillerAnalyzedPublisher | Publicador de eventos | Comunica el resultado a Scoring & Feedback. | Infrastructure |
 | DeletionRequestedConsumer / PurgeReceiptPublisher | Adaptadores de privacidad | Reciben la solicitud de eliminación y confirman la purga local. | Infrastructure |
+| JpaAnalysisJobRepositoryAdapter | Adaptador de repositorio | Implementa AnalysisJobRepository mediante JPA/PostgreSQL. Consulta el trabajo y conserva sus transiciones sin duplicar la versión de análisis. | Infrastructure |
 
-El análisis no conserva un reporte de negocio propio, pero mantiene AnalysisJob y su salida durable en un esquema privado. FillerDetector procesa la transcripción y el resultado conserva la referencia de sesión. AcousticEvidenceAnalyzer y ContextualEvidenceAnalyzer especifican el análisis acústico y contextual de 4.2 sobre AuthorizedSpeechEvidence. Los resultados se agrupan en SpeechAnalysisResult; no se utiliza material sin autorización. AnalysisJob registra versión, estado e intentos para los reintentos de US37. AnalysisJobRepository y AnalysisResultOutbox almacenan el estado y la salida de forma atómica; el dispatcher publica y confirma el resultado.
+El análisis no conserva un reporte de negocio propio, pero mantiene AnalysisJob y su salida durable en un esquema privado. FillerDetector procesa la transcripción y el resultado conserva la referencia de sesión. AcousticEvidenceAnalyzer y ContextualEvidenceAnalyzer especifican el análisis acústico y contextual de 4.2 sobre AuthorizedSpeechEvidence. Los resultados se agrupan en SpeechAnalysisResult; no se utiliza material sin autorización. AnalysisJob registra versión, estado e intentos para los reintentos de US37. JpaAnalysisJobRepositoryAdapter y AnalysisResultOutbox almacenan el estado y la salida de forma atómica; el dispatcher publica y confirma el resultado.
 
 DeletionRequestedConsumer delega en PurgeAnalysisHandler, que retira el job y sus resultados autorizados. La operación confirma su estado local antes de que PurgeReceiptPublisher comunique purge.completed con requestId y el nombre del contexto. Se aplica el control de eventos tardíos definido en Contratos y garantías de integración.
 
@@ -2202,12 +2214,15 @@ Esta vista C4 descompone el container de Speech Analysis definido en 4.3.3. Los 
 
 | Clases agrupadas en el componente | Capa | Responsabilidad |
 | --- | --- | --- |
+| AnalysisJobRepository | Domain | Define los contratos de consulta y persistencia con tipos del contexto. |
 | SessionLiveFinalizedConsumer / DeletionRequestedConsumer | Infrastructure | Recibe el contrato AMQP y confirma tras commit. |
 | AnalyzeSpeechHandler / PurgeAnalysisHandler | Application | Coordina análisis, reintento y purga. |
 | AnalysisJob / FillerDetector / AcousticEvidenceAnalyzer / ContextualEvidenceAnalyzer | Domain | Controla estado, métricas y hallazgos respaldados por evidencia. |
 | AnalysisJobController | Interface | Consulta estado y solicita reintento interno. |
-| AnalysisJobRepository / AnalysisResultOutbox | Infrastructure | Conserva job y resultado durable. |
+| JpaAnalysisJobRepositoryAdapter / AnalysisResultOutbox | Infrastructure | Conserva job y resultado durable. |
 | FillerAnalyzedPublisher / PurgeReceiptPublisher | Infrastructure | Despacha métricas o confirmación de purga. |
+
+Application utiliza las interfaces de repositorio de Domain. Los adaptadores de Infrastructure realizan esos contratos y acceden únicamente al esquema del contexto.
 
 ![Componentes de Speech Analysis](assets/diagrams/tactical/02-speech-analysis-components.png)
 
@@ -2217,7 +2232,11 @@ Esta vista C4 descompone el container de Speech Analysis definido en 4.3.3. Los 
 
 El diagrama UML relaciona AnalysisJob con su estado y resultado; FillerDetector calcula FillerResult. El consumidor de RabbitMQ y el publicador quedan en Infrastructure y se representan en la vista de componentes.
 
+El UML incluye AnalysisJobRepository como interfaz de Domain; su adaptador concreto se identifica en Infrastructure y en la vista de componentes.
+
 ![Clases de Speech Analysis](assets/diagrams/tactical/02-speech-analysis-classes.png)
+
+[Ver archivo del diagrama UML](assets/diagrams/tactical/02-speech-analysis-classes.mmd)
 
 #### 5.2.6.2. Bounded Context Database Design Diagram
 
@@ -2283,6 +2302,12 @@ Los atributos se encapsulan; las operaciones públicas expresan las reglas del c
 | ContextualFinding | String term<br>boolean spoken<br>String evidenceFragment<br>String suggestedAlternative<br>String reason | Consulta mediante el agregado o servicio responsable. |
 | ScoreCalculator | Sin estado propio. | calculate(EvaluationEvidence evidence, String rubricVersion) VoiceScore |
 
+**Contratos de repositorio del dominio**
+
+| Interfaz | Operaciones principales | Responsabilidad |
+| --- | --- | --- |
+| ScoreResultRepository | findById(UUID id) Optional~ScoreResult~<br>findBySessionAndVersions(UUID sessionId, String analysisVersion, String rubricVersion) Optional~ScoreResult~<br>save(ScoreResult result) void<br>deleteBySessionId(UUID sessionId) void | Conserva la evaluación y su evidencia versionada; permite consultar o retirar los resultados de una sesión. |
+
 ### 5.3.2. Interface Layer
 
 La evaluación se activa al recibir el evento `fillers.analyzed`. FillerAnalyzedEvent conserva la referencia de la sesión y las métricas necesarias para el cálculo.
@@ -2330,11 +2355,11 @@ La capa de infraestructura recibe las métricas, conserva las evaluaciones y com
 | Nombre | Tipo | Descripción | Capa |
 | --- | --- | --- | --- |
 | FillerAnalyzedConsumer | Consumidor de eventos | Recibe las métricas y activa el flujo de evaluación. | Infrastructure |
-| ScoreResultRepository | Repositorio | Conserva y consulta evaluaciones en PostgreSQL. | Infrastructure |
 | ScoringCompletedPublisher | Publicador de eventos | Comunica la evaluación completada mediante RabbitMQ. | Infrastructure |
 | DeletionRequestedConsumer / PurgeReceiptPublisher | Adaptadores de privacidad | Reciben la solicitud de eliminación y confirman la purga de evaluaciones. | Infrastructure |
+| JpaScoreResultRepositoryAdapter | Adaptador de repositorio | Implementa ScoreResultRepository mediante JPA/PostgreSQL. Conserva la evaluación y su evidencia versionada; permite consultar o retirar los resultados de una sesión. | Infrastructure |
 
-ScoreResultRepository conserva una evaluación por sesión, analysisVersion y rubricVersion, con una restricción única compuesta. Guarda también EvaluationEvidence como una copia versionada: métricas, dimensiones disponibles, limitaciones y hallazgos con fragmento, alternativa y razón. La consulta, la compartición y la exportación leen esa misma copia; no reconstruyen la evidencia a partir de un análisis posterior ni almacenan audio o el material completo en Scoring. La transacción registra el resultado y la salida en outbox antes de confirmar el evento recibido. SessionAccessClient comprueba autorización y eliminación para las consultas.
+JpaScoreResultRepositoryAdapter conserva una evaluación por sesión, analysisVersion y rubricVersion, con una restricción única compuesta. Guarda también EvaluationEvidence como una copia versionada: métricas, dimensiones disponibles, limitaciones y hallazgos con fragmento, alternativa y razón. La consulta, la compartición y la exportación leen esa misma copia; no reconstruyen la evidencia a partir de un análisis posterior ni almacenan audio o el material completo en Scoring. La transacción registra el resultado y la salida en outbox antes de confirmar el evento recibido. SessionAccessClient comprueba autorización y eliminación para las consultas.
 
 DeletionRequestedConsumer delega en PurgeScoreResultsHandler, que retira las evaluaciones y su evidencia conservada. La operación confirma su estado local antes de que PurgeReceiptPublisher comunique purge.completed con requestId y el nombre del contexto. Se aplica el control de eventos tardíos definido en Contratos y garantías de integración.
 
@@ -2344,14 +2369,17 @@ Esta vista C4 descompone el container de Scoring & Feedback definido en 4.3.3. L
 
 | Clases agrupadas en el componente | Capa | Responsabilidad |
 | --- | --- | --- |
+| ScoreResultRepository | Domain | Define los contratos de consulta y persistencia con tipos del contexto. |
 | FillerAnalyzedConsumer / DeletionRequestedConsumer | Infrastructure | Adapta análisis y solicitudes de purga. |
 | ReportController | Interface | Ofrece reporte, estado y solicitud de reintento. |
 | EvaluatePracticeHandler / ReportQueryHandler / PurgeScoreResultsHandler | Application | Evalúa, consulta y retira resultados autorizados. |
 | ScoreCalculator / ScoreResult / VoiceScore / EvaluationEvidence | Domain | Calcula dimensiones respaldadas por evidencia. |
-| ScoreResultRepository / ScoringOutbox | Infrastructure | Mantiene unicidad por sesión y versiones. |
+| JpaScoreResultRepositoryAdapter / ScoringOutbox | Infrastructure | Mantiene unicidad por sesión y versiones. |
 | ScoringCompletedPublisher / PurgeReceiptPublisher | Infrastructure | Despacha evaluación o confirmación de purga. |
 | SessionAccessClient | Infrastructure | Comprueba acceso y eliminación. |
 | AnalysisJobClient | Infrastructure | Consulta estado y solicita reintento. |
+
+Application utiliza las interfaces de repositorio de Domain. Los adaptadores de Infrastructure realizan esos contratos y acceden únicamente al esquema del contexto.
 
 ![Componentes de Scoring & Feedback](assets/diagrams/tactical/03-scoring-feedback-components.png)
 
@@ -2361,7 +2389,11 @@ Esta vista C4 descompone el container de Scoring & Feedback definido en 4.3.3. L
 
 ScoreResult contiene VoiceScore, EvaluationEvidence y las versiones de análisis y rúbrica. EvaluationEvidence contiene los hallazgos contextuales autorizados. ScoreCalculator aplica los criterios de puntuación. Las composiciones identifican la puntuación y la evidencia conservada como partes del resultado; el consumidor del evento pertenece a Infrastructure y aparece en componentes. Las dimensiones sin evidencia admiten un valor ausente en lugar de asignarles cero.
 
+El UML incluye ScoreResultRepository como interfaz de Domain; su adaptador concreto se identifica en Infrastructure y en la vista de componentes.
+
 ![Clases de Scoring & Feedback](assets/diagrams/tactical/03-scoring-feedback-classes.png)
+
+[Ver archivo del diagrama UML](assets/diagrams/tactical/03-scoring-feedback-classes.mmd)
 
 #### 5.3.6.2. Bounded Context Database Design Diagram
 
@@ -2420,7 +2452,7 @@ Los atributos se encapsulan; las operaciones públicas expresan las reglas del c
 
 | Elemento | Atributos o valores | Operaciones públicas |
 | --- | --- | --- |
-| Session | UUID id<br>Long userId<br>String title<br>SessionMode mode<br>SessionState state<br>PracticeConfiguration configuration<br>ConsentSnapshot consent<br>UUID checkpointId<br>PracticeEvidence evidence<br>boolean valid<br>String validityRuleVersion<br>Instant startedAt<br>Instant finalizedAt<br>Instant deletedAt | start(ConsentSnapshot consent) void<br>pause(UUID checkpointId) void<br>resume(UUID checkpointId) void<br>finalize(UUID closureId, PracticeEvidence evidence) void<br>markAsCompleted() void<br>markAsAnalysisPending() void<br>markAsAnalysisFailed() void<br>declareValidity(int confirmedDurationSeconds, boolean hasEvidence) boolean<br>markAsDeleted() void |
+| Session | UUID id<br>Long userId<br>String title<br>SessionMode mode [1]<br>SessionState state [1]<br>PracticeConfiguration configuration<br>ConsentSnapshot consent<br>UUID checkpointId<br>PracticeEvidence evidence<br>boolean valid<br>String validityRuleVersion<br>Instant startedAt<br>Instant finalizedAt<br>Instant deletedAt | start(ConsentSnapshot consent) void<br>pause(UUID checkpointId) void<br>resume(UUID checkpointId) void<br>finalize(UUID closureId, PracticeEvidence evidence) void<br>markAsCompleted() void<br>markAsAnalysisPending() void<br>markAsAnalysisFailed() void<br>declareValidity(int confirmedDurationSeconds, boolean hasEvidence) boolean<br>markAsDeleted() void |
 | PracticeEvidence | String transcript<br>Map~String,double~ acousticMetrics<br>String authorizedMaterialSummary<br>int confirmedDurationSeconds<br>Instant observedAt | Se conserva al cierre; métricas y resumen son opcionales y requieren autorización. |
 | SessionMode | QUICK_PRACTICE<br>INTERVIEW<br>THESIS_DEFENSE<br>SCENARIO | Consulta mediante el agregado o servicio responsable. |
 | SessionState | DRAFT<br>ACTIVE<br>PAUSED<br>ANALYSIS_PENDING<br>ANALYSIS_FAILED<br>COMPLETED<br>DELETED | Consulta mediante el agregado o servicio responsable. |
@@ -2433,6 +2465,14 @@ Los atributos se encapsulan; las operaciones públicas expresan las reglas del c
 **Veredicto de práctica válida.** Session conserva valid y validityRuleVersion. Para la regla propuesta v1.0, la práctica debe pertenecer al estudiante, haber iniciado con consentimiento comprobado, tener duración confirmada positiva y evidencia autorizada no vacía. Una finalización sin evidencia no contribuye a XP ni rachas. Una dimensión no evaluable no invalida automáticamente una práctica que sí cumple esas condiciones. El veredicto se publica junto al cierre y acompaña los contratos de análisis/evaluación: los consumidores no lo recalculan con reglas propias.
 
 **Correspondencia de modos.** QUICK_PRACTICE identifica el ensayo de una exposición; INTERVIEW, una entrevista; THESIS_DEFENSE, una sustentación; SCENARIO, un escenario configurable como pitch. El rótulo visible no cambia el identificador de modo utilizado para comparar resultados.
+
+**Contratos de repositorio del dominio**
+
+| Interfaz | Operaciones principales | Responsabilidad |
+| --- | --- | --- |
+| SessionRepository | findById(UUID id) Optional~Session~<br>findByUserId(Long userId) List~Session~<br>save(Session session) void | Conserva el estado y la evidencia de la práctica bajo el identificador de su propietario. |
+| FeedbackRepository | findBySessionId(UUID sessionId) List~Feedback~<br>save(UUID sessionId, Feedback feedback) void<br>deleteBySessionId(UUID sessionId) void | Conserva las observaciones personales asociadas a una sesión del mismo contexto. |
+| MaterialRepository | findBySessionId(UUID sessionId) Optional~PracticeMaterial~<br>save(UUID sessionId, PracticeMaterial material) void<br>deleteBySessionId(UUID sessionId) void | Conserva la referencia y autorización del material opcional; el archivo lo administra el adaptador de almacenamiento privado. |
 
 ### 5.4.2. Interface Layer
 
@@ -2495,11 +2535,14 @@ La capa de infraestructura implementa la persistencia de sesiones y feedback en 
 
 | Nombre | Tipo | Descripción | Capa |
 | --- | --- | --- | --- |
-| SessionRepository | Repositorio JPA | Conserva prácticas y permite consultarlas por identificador o estudiante. | Infrastructure |
-| FeedbackRepository | Repositorio JPA | Conserva las retroalimentaciones asociadas a una práctica. | Infrastructure |
-| AppUserRepository | Repositorio de proyección local | Conserva referencias de identidad; el perfil vigente se comprueba antes de preparar el ensayo. | Infrastructure |
+| JpaSessionUserProjectionAdapter | Repositorio de proyección local | Conserva referencias de identidad; el perfil vigente se comprueba antes de preparar el ensayo. | Infrastructure |
 | IdentityProfileClient / ConsentVerificationClient | Adaptadores HTTP | Consultan perfil y consentimiento vigentes mediante los contratos internos de Identity. | Infrastructure |
 | UserRegisteredConsumer | Consumidor de eventos | Recibe el registro de una cuenta para actualizar su representación local. | Infrastructure |
+| JpaSessionRepositoryAdapter | Adaptador de repositorio | Implementa SessionRepository mediante JPA/PostgreSQL. Conserva el estado y la evidencia de la práctica bajo el identificador de su propietario. | Infrastructure |
+| JpaFeedbackRepositoryAdapter | Adaptador de repositorio | Implementa FeedbackRepository mediante JPA/PostgreSQL. Conserva las observaciones personales asociadas a una sesión del mismo contexto. | Infrastructure |
+| JpaMaterialRepositoryAdapter | Adaptador de repositorio | Implementa MaterialRepository mediante JPA/PostgreSQL. Conserva la referencia y autorización del material opcional; el archivo lo administra el adaptador de almacenamiento privado. | Infrastructure |
+
+JpaSessionUserProjectionAdapter conserva una proyección técnica de identidad para SessionContextFacade; no implementa AppUserRepository ni administra las cuentas de Identity & Access.
 
 Las relaciones entre sesión y feedback permanecen dentro del contexto. La ampliación del ciclo de vida incorpora recuperación, material y eliminación con sus reglas de acceso. SessionController pertenece a Interface Layer y delega la persistencia mediante los servicios de aplicación.
 
@@ -2509,14 +2552,17 @@ Esta vista C4 descompone el container de Practice Session Management definido en
 
 | Clases agrupadas en el componente | Capa | Responsabilidad |
 | --- | --- | --- |
+| SessionRepository / FeedbackRepository / MaterialRepository | Domain | Define los contratos de consulta y persistencia con tipos del contexto. |
 | SessionController | Interface | Recibe preparación, consultas, material y cierre. |
 | SessionCommandService / SessionQueryService | Application | Coordina escritura y consulta de prácticas. |
 | SessionContextFacade | Application | Adapta identidad externa al lenguaje de sesión. |
 | Session / PracticeEvidence / Feedback / configuración / material | Domain | Controla estados, evidencia y límites del ensayo. |
-| SessionRepository / FeedbackRepository / MaterialRepository | Infrastructure | Conserva evidencia y referencias de material privado. |
+| JpaSessionRepositoryAdapter / JpaFeedbackRepositoryAdapter / JpaMaterialRepositoryAdapter | Infrastructure | Conserva evidencia y referencias de material privado. |
 | PrivateMaterialStorageAdapter | Infrastructure | Almacena o purga el archivo autorizado. |
 | UserRegisteredConsumer / SessionFinalizedPublisher | Infrastructure | Actualiza proyección y despacha cierre confirmado. |
 | ConsentVerificationClient / IdentityProfileClient | Infrastructure | Verifica consentimiento y obtiene el perfil vigente de Identity. |
+
+Application utiliza las interfaces de repositorio de Domain. Los adaptadores de Infrastructure realizan esos contratos y acceden únicamente al esquema del contexto.
 
 ![Componentes de Practice Session Management](assets/diagrams/tactical/04-practice-sessions-components.png)
 
@@ -2526,7 +2572,11 @@ Esta vista C4 descompone el container de Practice Session Management definido en
 
 Session contiene configuración, comprobación del consentimiento, material opcional y feedback. SessionMode y SessionState enumeran sus valores. SessionUserContext adapta la identidad externa; las operaciones controlan pausa, recuperación, cierre y eliminación.
 
+El UML incluye SessionRepository / FeedbackRepository / MaterialRepository como interfaces de Domain; sus adaptadores concretos se identifican en Infrastructure y en la vista de componentes.
+
 ![Clases de Practice Session Management](assets/diagrams/tactical/04-practice-sessions-classes.png)
+
+[Ver archivo del diagrama UML](assets/diagrams/tactical/04-practice-sessions-classes.mmd)
 
 [Ver el diagrama UML a tamaño completo](assets/diagrams/tactical/04-practice-sessions-classes.mmd).
 
@@ -2589,6 +2639,14 @@ Los atributos se encapsulan; las operaciones públicas expresan las reglas del c
 | AdaptivePlan | UUID id<br>Long userId<br>String ruleVersion<br>List~UUID~ evidenceIds<br>Instant createdAt | completeExercise(UUID exerciseId) void |
 | PracticeExercise | UUID id<br>String goal<br>String instruction<br>int durationSeconds<br>boolean completed | complete() void |
 
+**Contratos de repositorio del dominio**
+
+| Interfaz | Operaciones principales | Responsabilidad |
+| --- | --- | --- |
+| UserProgressRepository | findByUserId(Long userId) Optional~UserProgress~<br>save(UserProgress progress) void | Conserva el resumen del estudiante después de incorporar o retirar una práctica. |
+| SessionMetricsRepository | findByUserId(Long userId) List~SessionMetrics~<br>save(SessionMetrics metrics) void<br>deleteBySessionId(UUID sessionId) void | Conserva la evidencia identificada por sesión y versiones para comparaciones compatibles. |
+| AdaptivePlanRepository | findById(UUID id) Optional~AdaptivePlan~<br>findByUserId(Long userId) List~AdaptivePlan~<br>save(AdaptivePlan plan) void | Conserva el plan, sus ejercicios y las referencias a la evidencia utilizada. |
+
 ### 5.5.2. Interface Layer
 
 ProgressController ofrece la consulta del resumen de desempeño. La actualización del progreso se origina al recibir una evaluación completada y no mediante una modificación directa desde el cliente.
@@ -2641,9 +2699,10 @@ La capa de infraestructura conserva el resumen de desempeño y recibe las evalua
 
 | Nombre | Tipo | Descripción | Capa |
 | --- | --- | --- | --- |
-| UserProgressRepository | Repositorio | Conserva UserProgress en PostgreSQL y lo consulta por estudiante. | Infrastructure |
 | ScoringCompletedConsumer | Consumidor de eventos | Recibe la evaluación y activa la actualización del progreso. | Infrastructure |
-| SessionMetricsRepository y AdaptivePlanRepository | Repositorios | Conserva evidencia por sesión y versión para comparar prácticas. | Infrastructure |
+| JpaUserProgressRepositoryAdapter | Adaptador de repositorio | Implementa UserProgressRepository mediante JPA/PostgreSQL. Conserva el resumen del estudiante después de incorporar o retirar una práctica. | Infrastructure |
+| JpaSessionMetricsRepositoryAdapter | Adaptador de repositorio | Implementa SessionMetricsRepository mediante JPA/PostgreSQL. Conserva la evidencia identificada por sesión y versiones para comparaciones compatibles. | Infrastructure |
+| JpaAdaptivePlanRepositoryAdapter | Adaptador de repositorio | Implementa AdaptivePlanRepository mediante JPA/PostgreSQL. Conserva el plan, sus ejercicios y las referencias a la evidencia utilizada. | Infrastructure |
 
 RabbitMQ comunica la evaluación y PostgreSQL almacena el resumen. La ampliación conserva resultados compatibles y retira la contribución de una práctica cuando se confirma su eliminación.
 
@@ -2653,11 +2712,14 @@ Esta vista C4 descompone el container de Progress & Adaptation definido en 4.3.3
 
 | Clases agrupadas en el componente | Capa | Responsabilidad |
 | --- | --- | --- |
+| UserProgressRepository / SessionMetricsRepository / AdaptivePlanRepository | Domain | Define los contratos de consulta y persistencia con tipos del contexto. |
 | ProgressController | Interface | Expone dashboard, comparación y plan. |
 | RecordProgressHandler / UserProgressQueryService / BuildAdaptivePlanHandler | Application | Actualiza historial, compara evidencia y prepara ejercicios. |
 | UserProgress / SessionMetrics / AdaptivePlan | Domain | Preserva compatibilidad y referencias de evidencia. |
-| UserProgressRepository / SessionMetricsRepository / AdaptivePlanRepository | Infrastructure | Conserva resultados, planes y ejercicios. |
+| JpaUserProgressRepositoryAdapter / JpaSessionMetricsRepositoryAdapter / JpaAdaptivePlanRepositoryAdapter | Infrastructure | Conserva resultados, planes y ejercicios. |
 | ScoringCompletedConsumer | Infrastructure | Recibe evaluación y delega actualización. |
+
+Application utiliza las interfaces de repositorio de Domain. Los adaptadores de Infrastructure realizan esos contratos y acceden únicamente al esquema del contexto.
 
 ![Componentes de Progress & Adaptation](assets/diagrams/tactical/05-progress-adaptation-components.png)
 
@@ -2667,7 +2729,13 @@ Esta vista C4 descompone el container de Progress & Adaptation definido en 4.3.3
 
 UserProgress reúne los totales y deriva puntuaciones resumidas de evidencia compatible. SessionMetrics conserva evidencia por práctica compatible con el resumen del mismo usuario; AdaptivePlan contiene sus ejercicios. UserProgressQueryService pertenece a Application y se representa en componentes. El modo, las dimensiones y las versiones sostienen las tendencias y la comparación presentadas en 6.4.
 
+Cada UserProgress se relaciona con cero o más planes del mismo estudiante. Un plan contiene uno o más ejercicios y referencia cero o más métricas compatibles; una práctica inicial puede no tener evidencia previa. Las métricas pueden servir de referencia a varios planes, sin pertenecer a ellos.
+
+El UML incluye UserProgressRepository / SessionMetricsRepository / AdaptivePlanRepository como interfaces de Domain; sus adaptadores concretos se identifican en Infrastructure y en la vista de componentes.
+
 ![Clases de Progress & Adaptation](assets/diagrams/tactical/05-progress-adaptation-classes.png)
+
+[Ver archivo del diagrama UML](assets/diagrams/tactical/05-progress-adaptation-classes.mmd)
 
 #### 5.5.6.2. Bounded Context Database Design Diagram
 
@@ -2726,9 +2794,16 @@ Los atributos se encapsulan; las operaciones públicas expresan las reglas del c
 | Elemento | Atributos o valores | Operaciones públicas |
 | --- | --- | --- |
 | ShareGrant | UUID id<br>UUID reportId<br>UUID sessionId<br>Long ownerId<br>String tokenHash<br>String scope<br>Instant expiresAt<br>Instant revokedAt | isAccessible(Instant now, boolean deleted) boolean<br>revoke(Instant now) void |
-| DeletionRequest | UUID id<br>UUID sessionId<br>Long ownerId<br>DeletionState state<br>Set~String~ expectedContexts<br>Instant deadline | registerReceipt(PurgeReceipt receipt) void<br>isComplete() boolean<br>requireRetry(Instant now) void |
+| DeletionRequest | UUID id<br>UUID sessionId<br>Long ownerId<br>DeletionState state [1]<br>Set~String~ expectedContexts<br>Instant deadline | registerReceipt(PurgeReceipt receipt) void<br>isComplete() boolean<br>requireRetry(Instant now) void |
 | DeletionState | REQUESTED<br>ACCESS_BLOCKED<br>PURGING<br>COMPLETED<br>RETRY_REQUIRED | Consulta mediante el agregado o servicio responsable. |
 | PurgeReceipt | UUID id<br>String context<br>Instant completedAt | Consulta mediante el agregado o servicio responsable. |
+
+**Contratos de repositorio del dominio**
+
+| Interfaz | Operaciones principales | Responsabilidad |
+| --- | --- | --- |
+| ShareGrantRepository | findByTokenHash(String tokenHash) Optional~ShareGrant~<br>findBySessionId(UUID sessionId) List~ShareGrant~<br>save(ShareGrant grant) void | Recupera permisos por hash y conserva su vigencia y revocación. |
+| DeletionRequestRepository | findById(UUID id) Optional~DeletionRequest~<br>findBySessionId(UUID sessionId) List~DeletionRequest~<br>save(DeletionRequest request) void | Conserva la solicitud, el plazo y las confirmaciones de los contextos responsables. |
 
 ### 5.6.2. Interface Layer
 
@@ -2792,9 +2867,10 @@ La capa de infraestructura propuesta conserva los permisos y solicitudes y comun
 
 | Nombre | Tipo | Descripción | Capa |
 | --- | --- | --- | --- |
-| Persistencia de permisos y solicitudes | Repositorios propuestos | Conserva ShareGrant, DeletionRequest y sus confirmaciones en PostgreSQL. | Infrastructure |
 | Mensajería de eliminación | Adaptador de eventos propuesto | Comunica las solicitudes y confirmaciones mediante RabbitMQ. | Infrastructure |
 | Exportación del reporte | Adaptador propuesto | Prepara un archivo con información autorizada y vigencia de descarga limitada. | Infrastructure |
+| JpaShareGrantRepositoryAdapter | Adaptador de repositorio | Implementa ShareGrantRepository mediante JPA/PostgreSQL. Recupera permisos por hash y conserva su vigencia y revocación. | Infrastructure |
+| JpaDeletionRequestRepositoryAdapter | Adaptador de repositorio | Implementa DeletionRequestRepository mediante JPA/PostgreSQL. Conserva la solicitud, el plazo y las confirmaciones de los contextos responsables. | Infrastructure |
 
 Los enlaces se conservan mediante un hash. Si no puede comprobarse la vigencia del permiso, la consulta se bloquea. Revocar un enlace retira el acceso futuro, pero no recupera una copia que ya haya sido descargada.
 
@@ -2804,12 +2880,15 @@ Esta vista C4 descompone el container de Sharing & Retention definido en 4.3.3. 
 
 | Clases agrupadas en el componente | Capa | Responsabilidad |
 | --- | --- | --- |
+| ShareGrantRepository / DeletionRequestRepository | Domain | Define los contratos de consulta y persistencia con tipos del contexto. |
 | ShareController / DeletionController / ExportController | Interface | Recibe solicitudes de privacidad y lectura compartida. |
 | CreateShareGrantHandler / ResolveSharedReportHandler / RevokeShareHandler / RequestDeletionHandler / CollectPurgeReceiptHandler / ExportReportHandler | Application | Autoriza consultas y coordina permisos, exportación y purga. |
 | ShareGrant / DeletionRequest / PurgeReceipt | Domain | Controla vigencia, bloqueo y confirmaciones. |
-| ShareGrantRepository / DeletionRequestRepository | Infrastructure | Conserva hashes, solicitudes y confirmaciones. |
+| JpaShareGrantRepositoryAdapter / JpaDeletionRequestRepositoryAdapter | Infrastructure | Conserva hashes, solicitudes y confirmaciones. |
 | DeletionPublisher / PurgeReceiptConsumer | Infrastructure | Solicita purga y recibe confirmaciones. |
 | SessionAccessClient / AuthorizedReportClient | Infrastructure | Bloquea sesión y recupera únicamente el reporte autorizado. |
+
+Application utiliza las interfaces de repositorio de Domain. Los adaptadores de Infrastructure realizan esos contratos y acceden únicamente al esquema del contexto.
 
 ![Componentes de Sharing & Retention](assets/diagrams/tactical/06-sharing-retention-components.png)
 
@@ -2819,7 +2898,11 @@ Esta vista C4 descompone el container de Sharing & Retention definido en 4.3.3. 
 
 ShareGrant administra vigencia y alcance del acceso. DeletionRequest reúne PurgeReceipt, los contextos esperados y DeletionState. La solicitud avanza desde REQUESTED hasta COMPLETED; si falta una confirmación queda PURGING o RETRY_REQUIRED.
 
+El UML incluye ShareGrantRepository / DeletionRequestRepository como interfaces de Domain; sus adaptadores concretos se identifican en Infrastructure y en la vista de componentes.
+
 ![Clases de Sharing & Retention](assets/diagrams/tactical/06-sharing-retention-classes.png)
+
+[Ver archivo del diagrama UML](assets/diagrams/tactical/06-sharing-retention-classes.mmd)
 
 #### 5.6.6.2. Bounded Context Database Design Diagram
 
@@ -2880,6 +2963,14 @@ Los atributos se encapsulan; las operaciones públicas expresan las reglas del c
 | Achievement | UUID id<br>Long userId<br>UUID originSessionId<br>String code<br>String title<br>String ruleVersion<br>Instant unlockedAt | Consulta mediante el agregado o servicio responsable. |
 | PracticeContribution | UUID sessionId<br>Long userId<br>String ruleVersion<br>int xpDelta<br>Instant occurredAt<br>boolean valid | Consulta mediante el agregado o servicio responsable. |
 
+**Contratos de repositorio del dominio**
+
+| Interfaz | Operaciones principales | Responsabilidad |
+| --- | --- | --- |
+| UserStreakRepository | findByUserId(Long userId) Optional~UserStreak~<br>save(UserStreak streak) void | Conserva racha, experiencia y participación voluntaria en el ranking. |
+| AchievementRepository | findByUserId(Long userId) List~Achievement~<br>save(Achievement achievement) void<br>deleteByOriginSessionId(UUID sessionId) void | Conserva logros únicos por usuario, código y versión de regla. |
+| PracticeContributionRepository | findBySessionId(UUID sessionId) Optional~PracticeContribution~<br>findByUserId(Long userId) List~PracticeContribution~<br>save(PracticeContribution contribution) void<br>deleteBySessionId(UUID sessionId) void | Conserva una contribución por práctica válida y permite retirarla sin duplicar XP. |
+
 ### 5.7.2. Interface Layer
 
 GamificationController permite consultar las rachas y el ranking. Los cambios de experiencia y logros se originan en los eventos de evaluación.
@@ -2933,12 +3024,13 @@ La capa de infraestructura conserva las rachas y conecta la evaluación con los 
 
 | Nombre | Tipo | Descripción | Capa |
 | --- | --- | --- | --- |
-| UserStreakRepository | Repositorio | Conserva las rachas y la experiencia en PostgreSQL. | Infrastructure |
 | ScoringCompletedConsumer | Consumidor de eventos | Recibe la evaluación que origina la actualización de reconocimientos. | Infrastructure |
 | AchievementUnlockedPublisher | Publicador de eventos | Comunica el logro obtenido a Notifications. | Infrastructure |
-| AchievementRepository y PracticeContributionRepository | Repositorios | Conserva los logros y las sesiones que los originaron. | Infrastructure |
+| JpaUserStreakRepositoryAdapter | Adaptador de repositorio | Implementa UserStreakRepository mediante JPA/PostgreSQL. Conserva racha, experiencia y participación voluntaria en el ranking. | Infrastructure |
+| JpaAchievementRepositoryAdapter | Adaptador de repositorio | Implementa AchievementRepository mediante JPA/PostgreSQL. Conserva logros únicos por usuario, código y versión de regla. | Infrastructure |
+| JpaPracticeContributionRepositoryAdapter | Adaptador de repositorio | Implementa PracticeContributionRepository mediante JPA/PostgreSQL. Conserva una contribución por práctica válida y permite retirarla sin duplicar XP. | Infrastructure |
 
-PracticeContributionRepository aplica unicidad por sesión para que un nuevo análisis no otorgue XP otra vez. AchievementRepository aplica unicidad por usuario, código y versión de regla. UserStreak conserva zona horaria y publicRanking; GamificationQueryService limita el ranking a quienes optaron por participar.
+JpaPracticeContributionRepositoryAdapter aplica unicidad por sesión para que un nuevo análisis no otorgue XP otra vez. JpaAchievementRepositoryAdapter aplica unicidad por usuario, código y versión de regla. UserStreak conserva zona horaria y publicRanking; GamificationQueryService limita el ranking a quienes optaron por participar.
 
 ### 5.7.5. Bounded Context Software Architecture Component Level Diagrams
 
@@ -2946,11 +3038,14 @@ Esta vista C4 descompone el container de Gamification definido en 4.3.3. Los ele
 
 | Clases agrupadas en el componente | Capa | Responsabilidad |
 | --- | --- | --- |
+| UserStreakRepository / AchievementRepository / PracticeContributionRepository | Domain | Define los contratos de consulta y persistencia con tipos del contexto. |
 | GamificationController | Interface | Expone racha y ranking voluntario. |
 | RecordGamificationHandler / GamificationQueryService | Application | Registra contribuciones únicas y organiza consultas. |
 | UserStreak / Achievement / PracticeContribution / AchievementRuleService | Domain | Aplica validez, zona horaria y reglas versionadas. |
-| UserStreakRepository / AchievementRepository / PracticeContributionRepository | Infrastructure | Conserva progreso lúdico sin duplicar XP. |
+| JpaUserStreakRepositoryAdapter / JpaAchievementRepositoryAdapter / JpaPracticeContributionRepositoryAdapter | Infrastructure | Conserva progreso lúdico sin duplicar XP. |
 | ScoringCompletedConsumer / AchievementUnlockedPublisher | Infrastructure | Recibe práctica evaluada y comunica logros. |
+
+Application utiliza las interfaces de repositorio de Domain. Los adaptadores de Infrastructure realizan esos contratos y acceden únicamente al esquema del contexto.
 
 ![Componentes de Gamification](assets/diagrams/tactical/07-gamification-components.png)
 
@@ -2960,7 +3055,13 @@ Esta vista C4 descompone el container de Gamification definido en 4.3.3. Los ele
 
 UserStreak conserva la racha y la experiencia del usuario, mientras que Achievement identifica cada reconocimiento. La asociación agrupa los logros del mismo usuario; Achievement se identifica como ampliación propuesta. El consumidor y el publicador de eventos se representan en componentes, fuera del dominio. PracticeContribution identifica las prácticas ya contabilizadas.
 
+Cada logro referencia una contribución de práctica mediante originSessionId; una contribución puede originar cero o más logros. La asociación expresa la trazabilidad interna del reconocimiento.
+
+El UML incluye UserStreakRepository / AchievementRepository / PracticeContributionRepository como interfaces de Domain; sus adaptadores concretos se identifican en Infrastructure y en la vista de componentes.
+
 ![Clases de Gamification](assets/diagrams/tactical/07-gamification-classes.png)
+
+[Ver archivo del diagrama UML](assets/diagrams/tactical/07-gamification-classes.mmd)
 
 #### 5.7.6.2. Bounded Context Database Design Diagram
 
@@ -3023,12 +3124,22 @@ Los atributos se encapsulan; las operaciones públicas expresan las reglas del c
 
 | Elemento | Atributos o valores | Operaciones públicas |
 | --- | --- | --- |
-| AppUser | Long id<br>String email<br>String passwordHash<br>String username<br>String academicSegment<br>String interfaceLocale<br>String university<br>String career<br>String defaultPracticeGoal<br>Instant emailVerifiedAt<br>UserRole role<br>Instant createdAt | updateProfile(String username, String segment, String locale) void<br>updateAcademicDetails(String university, String career) void<br>updatePracticeGoal(String goal) void<br>verifyEmail(Instant now) void |
+| AppUser | Long id<br>String email<br>String passwordHash<br>String username<br>String academicSegment<br>String interfaceLocale<br>String university<br>String career<br>String defaultPracticeGoal<br>Instant emailVerifiedAt<br>UserRole role [1]<br>Instant createdAt | updateProfile(String username, String segment, String locale) void<br>updateAcademicDetails(String university, String career) void<br>updatePracticeGoal(String goal) void<br>verifyEmail(Instant now) void |
 | UserRole | STUDENT<br>ADMIN | Consulta mediante el agregado o servicio responsable. |
 | RefreshToken | UUID id<br>String tokenHash<br>Instant expiresAt<br>Instant revokedAt | isValid(Instant now) boolean<br>revoke(Instant now) void |
 | VoiceConsent | UUID id<br>String policyVersion<br>String scope<br>Instant acceptedAt<br>Instant withdrawnAt | isActive(String requiredVersion) boolean<br>withdraw(Instant now) void |
 | PasswordResetRequest | UUID id<br>String tokenHash<br>Instant expiresAt<br>Instant usedAt | consume(Instant now) void |
 | EmailVerificationRequest | UUID id<br>String tokenHash<br>Instant expiresAt<br>Instant usedAt | consume(Instant now) void |
+
+**Contratos de repositorio del dominio**
+
+| Interfaz | Operaciones principales | Responsabilidad |
+| --- | --- | --- |
+| AppUserRepository | findById(Long id) Optional~AppUser~<br>findByEmail(String email) Optional~AppUser~<br>save(AppUser user) void | Conserva la cuenta y permite comprobar la unicidad del correo. |
+| RefreshTokenRepository | findByTokenHash(String tokenHash) Optional~RefreshToken~<br>findByUserId(Long userId) List~RefreshToken~<br>save(Long userId, RefreshToken token) void | Conserva la vigencia y revocación de credenciales de renovación. |
+| VoiceConsentRepository | findByUserId(Long userId) List~VoiceConsent~<br>save(Long userId, VoiceConsent consent) void | Conserva el historial de aceptación y retiro del consentimiento. |
+| PasswordResetRepository | findByTokenHash(String tokenHash) Optional~PasswordResetRequest~<br>save(Long userId, PasswordResetRequest request) void | Conserva el hash, vencimiento y consumo de las solicitudes de recuperación. |
+| EmailVerificationRepository | findByTokenHash(String tokenHash) Optional~EmailVerificationRequest~<br>save(Long userId, EmailVerificationRequest request) void | Conserva el hash, vencimiento y consumo de las solicitudes de verificación. |
 
 ### 5.8.2. Interface Layer
 
@@ -3084,12 +3195,16 @@ La capa de infraestructura implementa el almacenamiento de cuentas, la protecci�
 
 | Nombre | Tipo | Descripción | Capa |
 | --- | --- | --- | --- |
-| AppUserRepository | Repositorio | Conserva las cuentas en PostgreSQL y permite localizarlas por correo. | Infrastructure |
 | PasswordEncoder | Servicio de seguridad | Protege y verifica la contraseña sin conservar su valor original. | Infrastructure |
 | JwtTokenProvider | Servicio de seguridad | Genera la credencial de acceso del estudiante. | Infrastructure |
 | RabbitUserRegisteredPublisher | Publicador de eventos | Implementa UserRegisteredEventPublisher mediante RabbitMQ. | Infrastructure |
+| JpaAppUserRepositoryAdapter | Adaptador de repositorio | Implementa AppUserRepository mediante JPA/PostgreSQL. Conserva la cuenta y permite comprobar la unicidad del correo. | Infrastructure |
+| JpaRefreshTokenRepositoryAdapter | Adaptador de repositorio | Implementa RefreshTokenRepository mediante JPA/PostgreSQL. Conserva la vigencia y revocación de credenciales de renovación. | Infrastructure |
+| JpaVoiceConsentRepositoryAdapter | Adaptador de repositorio | Implementa VoiceConsentRepository mediante JPA/PostgreSQL. Conserva el historial de aceptación y retiro del consentimiento. | Infrastructure |
+| JpaPasswordResetRepositoryAdapter | Adaptador de repositorio | Implementa PasswordResetRepository mediante JPA/PostgreSQL. Conserva el hash, vencimiento y consumo de las solicitudes de recuperación. | Infrastructure |
+| JpaEmailVerificationRepositoryAdapter | Adaptador de repositorio | Implementa EmailVerificationRepository mediante JPA/PostgreSQL. Conserva el hash, vencimiento y consumo de las solicitudes de verificación. | Infrastructure |
 
-Spring Security organiza las reglas de acceso. El cliente web utiliza el BFF y cookies protegidas; la adaptación móvil requiere almacenamiento seguro. RefreshTokenRepository, VoiceConsentRepository, PasswordResetRepository y EmailVerificationRepository mantienen vigencia, retiro y consumo de tokens. PasswordRecoveryService y EmailVerificationService solicitan avisos a Notifications mediante referencias de entrega, sin publicar tokens en AMQP. El servicio de notificaciones solicita el enlace mediante `POST /internal/v1/account-notices/{id}/delivery`, autenticado y limitado a ese aviso. Identity emite el token y conserva solo su hash y vencimiento; el enlace se transmite por TLS al canal de correo y no se almacena en la base de Notifications ni en logs. Reintentar sustituye el enlace anterior. Este contrato es una ampliación del diseño por implementar.
+Spring Security organiza las reglas de acceso. El cliente web utiliza el BFF y cookies protegidas; la adaptación móvil requiere almacenamiento seguro. JpaRefreshTokenRepositoryAdapter, JpaVoiceConsentRepositoryAdapter, JpaPasswordResetRepositoryAdapter y JpaEmailVerificationRepositoryAdapter mantienen vigencia, retiro y consumo de tokens. PasswordRecoveryService y EmailVerificationService solicitan avisos a Notifications mediante referencias de entrega, sin publicar tokens en AMQP. El servicio de notificaciones solicita el enlace mediante `POST /internal/v1/account-notices/{id}/delivery`, autenticado y limitado a ese aviso. Identity emite el token y conserva solo su hash y vencimiento; el enlace se transmite por TLS al canal de correo y no se almacena en la base de Notifications ni en logs. Reintentar sustituye el enlace anterior. Este contrato es una ampliación del diseño por implementar.
 
 ### 5.8.5. Bounded Context Software Architecture Component Level Diagrams
 
@@ -3097,12 +3212,15 @@ Esta vista C4 descompone el container de Identity & Access definido en 4.3.3. Lo
 
 | Clases agrupadas en el componente | Capa | Responsabilidad |
 | --- | --- | --- |
+| AppUserRepository / RefreshTokenRepository / VoiceConsentRepository / PasswordResetRepository / EmailVerificationRepository | Domain | Define los contratos de consulta y persistencia con tipos del contexto. |
 | AuthController / ProfileController / VoiceConsentController | Interface | Recibe acceso, perfil, recuperación y consentimiento. |
 | AuthService / TokenSessionService / ConsentCommandService / PasswordRecoveryService / EmailVerificationService | Application | Coordina cuenta, tokens y autorizaciones. |
 | AppUser / RefreshToken / VoiceConsent / PasswordResetRequest / EmailVerificationRequest | Domain | Mantiene identidad y vigencia/retiro/consumo. |
-| AppUserRepository / RefreshTokenRepository / VoiceConsentRepository / PasswordResetRepository / EmailVerificationRepository | Infrastructure | Conserva registros privados de cuenta. |
+| JpaAppUserRepositoryAdapter / JpaRefreshTokenRepositoryAdapter / JpaVoiceConsentRepositoryAdapter / JpaPasswordResetRepositoryAdapter / JpaEmailVerificationRepositoryAdapter | Infrastructure | Conserva registros privados de cuenta. |
 | PasswordEncoder / JwtTokenProvider | Infrastructure | Protege contraseña y firma acceso. |
 | RabbitUserRegisteredPublisher / AccountNoticePublisher | Infrastructure | Despacha avisos de cuenta sin secretos. |
+
+Application utiliza las interfaces de repositorio de Domain. Los adaptadores de Infrastructure realizan esos contratos y acceden únicamente al esquema del contexto.
 
 ![Componentes de Identity & Access](assets/diagrams/tactical/08-identity-access-components.png)
 
@@ -3112,7 +3230,11 @@ Esta vista C4 descompone el container de Identity & Access definido en 4.3.3. Lo
 
 AppUser reúne cuenta, idioma de interfaz y UserRole. Contiene tokens de renovación, consentimiento versionado y solicitudes de recuperación/verificación de un solo uso. La meta predeterminada del perfil solo inicializa nuevos borradores; la meta aplicada al ensayo queda en la configuración versionada de Sessions. El retiro y la revocación conservan fecha para interpretar su vigencia.
 
+El UML incluye AppUserRepository / RefreshTokenRepository / VoiceConsentRepository / PasswordResetRepository / EmailVerificationRepository como interfaces de Domain; sus adaptadores concretos se identifican en Infrastructure y en la vista de componentes.
+
 ![Clases de Identity & Access](assets/diagrams/tactical/08-identity-access-classes.png)
+
+[Ver archivo del diagrama UML](assets/diagrams/tactical/08-identity-access-classes.mmd)
 
 #### 5.8.6.2. Bounded Context Database Design Diagram
 
@@ -3271,10 +3393,17 @@ Los atributos se encapsulan; las operaciones públicas expresan las reglas del c
 
 | Elemento | Atributos o valores | Operaciones públicas |
 | --- | --- | --- |
-| Notification | UUID id<br>UUID originEventId<br>UUID sessionId (opcional)<br>Long userId<br>String templateCode<br>String destinationPath<br>String channel<br>DeliveryState state<br>int attempts | markDelivered() void<br>markFailed() void<br>scheduleRetry() void |
+| Notification | UUID id<br>UUID originEventId<br>UUID sessionId (opcional)<br>Long userId<br>String templateCode<br>String destinationPath<br>String channel<br>DeliveryState state [1]<br>int attempts | markDelivered() void<br>markFailed() void<br>scheduleRetry() void |
 | DeliveryState | PENDING<br>DELIVERED<br>RETRYING<br>FAILED<br>CANCELLED | Consulta mediante el agregado o servicio responsable. |
 | NotificationPreference | Long userId<br>boolean optionalEmail<br>boolean inApp | update(boolean email, boolean inApp) void |
 | NotificationPushService | Sin estado propio. | push(Notification notification) boolean |
+
+**Contratos de repositorio del dominio**
+
+| Interfaz | Operaciones principales | Responsabilidad |
+| --- | --- | --- |
+| NotificationRepository | findById(UUID id) Optional~Notification~<br>findByOriginAndRecipient(UUID eventId, Long userId, String channel) Optional~Notification~<br>save(Notification notification) void<br>deleteBySessionId(UUID sessionId) void | Conserva avisos e intentos, con unicidad por evento de origen, destinatario y canal. |
+| NotificationPreferenceRepository | findByUserId(Long userId) Optional~NotificationPreference~<br>save(NotificationPreference preference) void | Conserva las preferencias de contacto del destinatario. |
 
 ### 5.10.2. Interface Layer
 
@@ -3324,6 +3453,8 @@ La capa de infraestructura recibe los eventos que originan avisos. La entrega al
 | WebSocketPushAdapter | Adaptador propuesto | Implementa NotificationPushService para entregar avisos al cliente. | Infrastructure |
 | Proveedor de correo | Integración propuesta | Entrega los avisos que correspondan a las preferencias de contacto. | Infrastructure |
 | AccountNoticeClient | Adaptador HTTP propuesto | Solicita a Identity un enlace efímero para un aviso de cuenta; no lo persiste ni registra en logs. | Infrastructure |
+| JpaNotificationRepositoryAdapter | Adaptador de repositorio | Implementa NotificationRepository mediante JPA/PostgreSQL. Conserva avisos e intentos, con unicidad por evento de origen, destinatario y canal. | Infrastructure |
+| JpaNotificationPreferenceRepositoryAdapter | Adaptador de repositorio | Implementa NotificationPreferenceRepository mediante JPA/PostgreSQL. Conserva las preferencias de contacto del destinatario. | Infrastructure |
 
 Los consumidores base registran la intención de notificar. La entrega efectiva, el control de reintentos y el seguimiento de envíos forman parte de la integración propuesta. La falla del canal no modifica el resultado de la práctica.
 
@@ -3333,12 +3464,15 @@ Esta vista C4 descompone el container de Notifications definido en 4.3.3. Los el
 
 | Clases agrupadas en el componente | Capa | Responsabilidad |
 | --- | --- | --- |
+| NotificationRepository / NotificationPreferenceRepository | Domain | Define los contratos de consulta y persistencia con tipos del contexto. |
 | NotificationEventConsumer | Infrastructure | Recibe eventos de evaluación, logro, cuenta y privacidad. |
 | NotificationPreferenceController | Interface | Expone preferencias del destinatario. |
 | DispatchNotificationHandler / NotificationTemplateService / NotificationPreferenceService / NotificationRetryHandler | Application | Prepara contenido, respeta preferencias y coordina reintento. |
 | Notification / NotificationPreference / NotificationPushService | Domain | Mantiene estado y contrato de entrega. |
-| NotificationRepository / NotificationPreferenceRepository | Infrastructure | Registra avisos únicos, intentos y preferencias. |
+| JpaNotificationRepositoryAdapter / JpaNotificationPreferenceRepositoryAdapter | Infrastructure | Registra avisos únicos, intentos y preferencias. |
 | WebSocketPushAdapter / EmailNotificationAdapter / AccountNoticeClient | Infrastructure | Entrega avisos; obtiene enlaces de cuenta por contrato interno protegido y no los conserva. |
+
+Application utiliza las interfaces de repositorio de Domain. Los adaptadores de Infrastructure realizan esos contratos y acceden únicamente al esquema del contexto.
 
 ![Componentes de Notifications](assets/diagrams/tactical/10-notifications-components.png)
 
@@ -3348,7 +3482,11 @@ Esta vista C4 descompone el container de Notifications definido en 4.3.3. Los el
 
 Notification mantiene la identidad del aviso, su origen y DeliveryState. NotificationPreference conserva las decisiones de contacto. NotificationPushService define la entrega independiente del canal; los consumidores y adaptadores WebSocket/correo pertenecen a Infrastructure y se representan en componentes.
 
+El UML incluye NotificationRepository / NotificationPreferenceRepository como interfaces de Domain; sus adaptadores concretos se identifican en Infrastructure y en la vista de componentes.
+
 ![Clases de Notifications](assets/diagrams/tactical/10-notifications-classes.png)
+
+[Ver archivo del diagrama UML](assets/diagrams/tactical/10-notifications-classes.mmd)
 
 #### 5.10.6.2. Bounded Context Database Design Diagram
 

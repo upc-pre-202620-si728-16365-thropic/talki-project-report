@@ -6,7 +6,7 @@ class AnalysisJob {
   -UUID sessionId
   -Long userId
   -String analysisVersion
-  -AnalysisState state
+  -AnalysisState state [1]
   -int attempts
   -Instant updatedAt
   +start() void
@@ -33,7 +33,7 @@ class FillerResult {
   -double fillerRatio
   +hasEvidence() boolean
 }
-AnalysisJob --> AnalysisState : estado
+AnalysisJob ..> AnalysisState : tipo de estado
 AnalysisJob "1" *-- "0..1" SpeechAnalysisResult : resultado
 FillerDetector ..> FillerResult : calcula
 class AuthorizedSpeechEvidence {
@@ -71,3 +71,12 @@ AcousticEvidenceAnalyzer ..> AuthorizedSpeechEvidence : utiliza señales disponi
 AcousticEvidenceAnalyzer ..> SpeechAnalysisResult : calcula métricas con soporte
 ContextualEvidenceAnalyzer ..> AuthorizedSpeechEvidence : interpreta contexto autorizado
 ContextualEvidenceAnalyzer ..> ContextualFinding : distingue uso y sugerencia
+
+class AnalysisJobRepository {
+  <<interface>>
+  +findById(UUID id) Optional~AnalysisJob~
+  +findBySessionAndVersion(UUID sessionId, String analysisVersion) Optional~AnalysisJob~
+  +save(AnalysisJob job) void
+  +deleteBySessionId(UUID sessionId) void
+}
+AnalysisJobRepository ..> AnalysisJob

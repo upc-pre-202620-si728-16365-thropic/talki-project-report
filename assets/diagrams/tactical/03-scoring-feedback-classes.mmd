@@ -52,3 +52,12 @@ ScoreResult "1" *-- "1" EvaluationEvidence : evidencia conservada
 EvaluationEvidence "1" *-- "0..*" ContextualFinding : hallazgos autorizados
 ScoreCalculator ..> EvaluationEvidence : interpreta
 ScoreCalculator ..> VoiceScore : calcula
+
+class ScoreResultRepository {
+  <<interface>>
+  +findById(UUID id) Optional~ScoreResult~
+  +findBySessionAndVersions(UUID sessionId, String analysisVersion, String rubricVersion) Optional~ScoreResult~
+  +save(ScoreResult result) void
+  +deleteBySessionId(UUID sessionId) void
+}
+ScoreResultRepository ..> ScoreResult

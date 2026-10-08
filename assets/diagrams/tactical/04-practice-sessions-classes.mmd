@@ -1,12 +1,12 @@
 classDiagram
- direction LR
+ direction TB
 class Session {
   <<AggregateRoot>>
   -UUID id
   -Long userId
   -String title
-  -SessionMode mode
-  -SessionState state
+  -SessionMode mode [1]
+  -SessionState state [1]
   -PracticeConfiguration configuration
   -ConsentSnapshot consent
   -UUID checkpointId
@@ -83,11 +83,11 @@ class SessionUserContext {
   -String defaultPracticeGoal
 }
 Session "1" *-- "1" PracticeConfiguration : configuración
-Session "1" *-- "0..1" ConsentSnapshot : autorización verificada
-Session "1" *-- "0..1" PracticeMaterial : material opcional
-Session "1" *-- "0..*" Feedback : observación personal
-Session --> SessionMode : modo
-Session --> SessionState : estado
+Session "1" *-- "0..1" ConsentSnapshot : consentimiento
+Session "1" *-- "0..1" PracticeMaterial : material
+Session "1" *-- "0..*" Feedback : observaciones
+Session ..> SessionMode : tipo de modo
+Session ..> SessionState : tipo de estado
 Session ..> SessionUserContext : identidad adaptada
 
 class PracticeEvidence {
@@ -99,3 +99,27 @@ class PracticeEvidence {
   -Instant observedAt
 }
 Session "1" *-- "0..1" PracticeEvidence : cierre autorizado
+
+class SessionRepository {
+  <<interface>>
+  +findById(UUID id) Optional~Session~
+  +findByUserId(Long userId) List~Session~
+  +save(Session session) void
+}
+SessionRepository ..> Session
+
+class FeedbackRepository {
+  <<interface>>
+  +findBySessionId(UUID sessionId) List~Feedback~
+  +save(UUID sessionId, Feedback feedback) void
+  +deleteBySessionId(UUID sessionId) void
+}
+FeedbackRepository ..> Feedback
+
+class MaterialRepository {
+  <<interface>>
+  +findBySessionId(UUID sessionId) Optional~PracticeMaterial~
+  +save(UUID sessionId, PracticeMaterial material) void
+  +deleteBySessionId(UUID sessionId) void
+}
+MaterialRepository ..> PracticeMaterial
