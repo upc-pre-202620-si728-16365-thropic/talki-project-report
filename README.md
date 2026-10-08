@@ -101,6 +101,7 @@
 | 1.35 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Ajuste de Applications Prototyping al alcance del TP, conservando el recorrido interactivo, las pantallas y la descripción del diseño. |
 | 1.36 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Incorporación del enlace al video de exposición del TB1 en Microsoft Stream, proporcionado por el equipo. |
 | 1.37 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Incorporación de la galería de mock-ups web y móvil, con acceso a las imágenes completas desde el capítulo VI y los anexos. |
+| 1.38 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Incorporación del enlace al video de exposición del TP proporcionado por el equipo. |
 
 La edición de las versiones 1.0–1.12 fue realizada por Alejandro Daniel Oroncoy Almeyda. Los demás nombres corresponden a los coautores registrados en los commits del avance, asociados en esta tabla por las secciones correspondientes. La revisión individual de esos integrantes continúa pendiente.
 
@@ -4666,4 +4667,4 @@ World Wide Web Consortium. (s. f.). *Understanding Success Criterion 2.5.8: Targ
 
 **TB1:** [Video de exposición del TB1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202313397_upc_edu_pe/IQC7QXFBUmEQSIIDCqzpD0fSAQCbHqQBwQBGPOsFs7V7_JA?e=uIsNxX&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D).
 
-**TP:** Enlace pendiente.
+**TP:** [Video de exposición del TP](https://youtu.be/K6RUwmhUR2Y).
