@@ -94,6 +94,7 @@
 | 1.28 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Registro de las edades de Belén Ordoñez (21), Isabel Rodriguez (22) y Juan Alejandro Elías López (20), confirmadas por el equipo. Precisión del origen de las edades; distritos pendientes de confirmación. |
 | 1.29 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Registro de los distritos de Belén, Isabel, Juan Alejandro y Jorge, confirmados por el equipo. Uniformización del nombre Santiago de Surco y cierre de los datos pendientes del registro de entrevistas. |
 | 1.30 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Complementación de Project Report Collaboration Insights con el resumen de TB1 y TP, las contribuciones documentadas, el reparto de secciones y una captura actual del historial de commits. |
+| 1.31 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Preparación del informe de participación del TP en Google Docs y PDF, con las responsabilidades de los cinco integrantes. Actualización del anexo B; calificaciones y cumplimiento pendientes de evaluación por el Team Leader. |
 
 La edición de las versiones 1.0–1.12 fue realizada por Alejandro Daniel Oroncoy Almeyda. Los demás nombres corresponden a los coautores registrados en los commits del avance, asociados en esta tabla por las secciones correspondientes. La revisión individual de esos integrantes continúa pendiente.
 
@@ -4643,7 +4644,7 @@ World Wide Web Consortium. (s. f.). *Understanding Success Criterion 2.5.8: Targ
 | Anexo | Descripción | Enlace o ubicación |
 | --- | --- | --- |
 | A | Grabación y evidencias de entrevistas de ambos segmentos. | [Entrevistas_Talki.mp4](https://drive.google.com/file/d/1D9x-oCEfGSbJB6xJMD8UE1BRm_VnHtNS/view); [carpeta de evidencias](https://drive.google.com/drive/folders/1IwH1aTzPJ2Y5cYJS3yqF8UM4eHfprvLE?usp=sharing) |
-| B | Informe de participación del equipo para TB1; versión TP pendiente de elaboración por el Team Leader. | [Informe de Participación: Startup Thropic](https://docs.google.com/document/d/1-tnKLS9I_qJD4kkLwBUQB8QqxdgXBQbJcZ0smvAn1KM/edit) |
+| B | Informes de participación del equipo para TB1 y TP. La versión del TP incluye las responsabilidades; calificaciones y cumplimiento pendientes de evaluación por el Team Leader. | [Informe de participación TB1](https://docs.google.com/document/d/1-tnKLS9I_qJD4kkLwBUQB8QqxdgXBQbJcZ0smvAn1KM/edit); [Informe de participación TP](https://docs.google.com/document/d/1HQGeJVWrvx9NrEYmnsiiDJZ1cNBLX5PONZgHX2efEAA/edit) |
 | C | Evidencias de colaboración: commits, ramas y pull requests. | [Repositorio del informe](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report) |
 | D | Vistas C4 de Landscape, Context y Containers, y despliegue UML de la arquitectura objetivo. | `assets/diagrams/c4/` |
 | E | Diseño táctico por contexto: componentes C4, clases UML, datos y contratos. | `assets/diagrams/tactical/`; modelo para importar en Structurizr: `assets/structurizr/talki-tactical-components.dsl`. |
