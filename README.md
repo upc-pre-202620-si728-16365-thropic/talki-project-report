@@ -99,6 +99,7 @@
 | 1.33 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Incorporación del enlace a la carpeta de publicación del Video About-the-Team proporcionada por el equipo. |
 | 1.34 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Ajuste del Student Outcome del TP para describir la documentación y los recursos de comunicación disponibles al entregar el informe, sin registrar la exposición posterior como pendiente. |
 | 1.35 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Ajuste de Applications Prototyping al alcance del TP, conservando el recorrido interactivo, las pantallas y la descripción del diseño. |
+| 1.36 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Incorporación del enlace al video de exposición del TB1 en Microsoft Stream, proporcionado por el equipo. |
 
 La edición de las versiones 1.0–1.12 fue realizada por Alejandro Daniel Oroncoy Almeyda. Los demás nombres corresponden a los coautores registrados en los commits del avance, asociados en esta tabla por las secciones correspondientes. La revisión individual de esos integrantes continúa pendiente.
 
@@ -4658,6 +4659,6 @@ World Wide Web Consortium. (s. f.). *Understanding Success Criterion 2.5.8: Targ
 
 ## Videos de Exposiciones
 
-**TB1:** Enlace pendiente.
+**TB1:** [Video de exposición del TB1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202313397_upc_edu_pe/IQC7QXFBUmEQSIIDCqzpD0fSAQCbHqQBwQBGPOsFs7V7_JA?e=uIsNxX&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D).
 
 **TP:** Enlace pendiente.
