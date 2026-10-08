@@ -102,6 +102,7 @@
 | 1.36 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Incorporación del enlace al video de exposición del TB1 en Microsoft Stream, proporcionado por el equipo. |
 | 1.37 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Incorporación de la galería de mock-ups web y móvil, con acceso a las imágenes completas desde el capítulo VI y los anexos. |
 | 1.38 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Incorporación del enlace al video de exposición del TP proporcionado por el equipo. |
+| 1.39 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Corrección de la identificación del video proporcionado: corresponde a About-the-Team. Sustitución de la carpeta de Drive y restablecimiento del enlace pendiente del TP. |
 
 La edición de las versiones 1.0–1.12 fue realizada por Alejandro Daniel Oroncoy Almeyda. Los demás nombres corresponden a los coautores registrados en los commits del avance, asociados en esta tabla por las secciones correspondientes. La revisión individual de esos integrantes continúa pendiente.
 
@@ -4622,7 +4623,7 @@ La inteligencia artificial se propone como apoyo para ensayar preguntas contextu
 
 Presentación de los cinco integrantes de Thropic, con sus nombres, apellidos y carrera de Ingeniería de Software. Cada integrante se presenta hablando a cámara.
 
-**Carpeta de publicación:** [Video About-the-Team](https://drive.google.com/drive/folders/13FhBC7u4KbPOafryhuyqy6GOi1M6YRCp?usp=sharing). El equipo incorporará el video en esta carpeta.
+**Video:** [Video About-the-Team](https://www.youtube.com/watch?v=K6RUwmhUR2Y).
 
 # Bibliografía
 
@@ -4667,4 +4668,4 @@ World Wide Web Consortium. (s. f.). *Understanding Success Criterion 2.5.8: Targ
 
 **TB1:** [Video de exposición del TB1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202313397_upc_edu_pe/IQC7QXFBUmEQSIIDCqzpD0fSAQCbHqQBwQBGPOsFs7V7_JA?e=uIsNxX&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D).
 
-**TP:** [Video de exposición del TP](https://youtu.be/K6RUwmhUR2Y).
+**TP:** Enlace pendiente.
