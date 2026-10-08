@@ -96,6 +96,7 @@
 | 1.30 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Complementación de Project Report Collaboration Insights con el resumen de TB1 y TP, las contribuciones documentadas, el reparto de secciones y una captura actual del historial de commits. |
 | 1.31 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Preparación del informe de participación del TP en Google Docs y PDF, con las responsabilidades de los cinco integrantes. Actualización del anexo B; calificaciones y cumplimiento pendientes de evaluación por el Team Leader. |
 | 1.32 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Registro de la evaluación del TP indicada por el Team Leader: cumplimiento a tiempo y calificación 20 para los cinco integrantes. Incorporación del NRC 16365 y actualización del PDF y del anexo B. |
+| 1.33 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Incorporación del enlace a la carpeta de publicación del Video About-the-Team proporcionada por el equipo. |
 
 La edición de las versiones 1.0–1.12 fue realizada por Alejandro Daniel Oroncoy Almeyda. Los demás nombres corresponden a los coautores registrados en los commits del avance, asociados en esta tabla por las secciones correspondientes. La revisión individual de esos integrantes continúa pendiente.
 
@@ -4614,7 +4615,9 @@ La inteligencia artificial se propone como apoyo para ensayar preguntas contextu
 
 # Video About-the-Team
 
-Pendiente de grabación y publicación. El feedback del primer hito solicita esta evidencia: cada integrante deberá presentarse hablando a cámara, con nombre, apellidos y carrera. El equipo confirmó que el video aún no existe; su enlace se incorporará cuando esté disponible.
+Presentación de los cinco integrantes de Thropic, con sus nombres, apellidos y carrera de Ingeniería de Software. Cada integrante se presenta hablando a cámara.
+
+**Carpeta de publicación:** [Video About-the-Team](https://drive.google.com/drive/folders/13FhBC7u4KbPOafryhuyqy6GOi1M6YRCp?usp=sharing). El equipo incorporará el video en esta carpeta.
 
 # Bibliografía
 
