@@ -6,31 +6,53 @@
   "captures": [
     {
       "file": "github-contributors-main-20261002.jpg",
-      "source_url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/graphs/contributors"
+      "source_url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/graphs/contributors",
+      "captured_on": "2026-10-02"
     },
     {
       "file": "github-commits-develop-20261002.jpg",
-      "source_url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commits/develop/"
+      "source_url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commits/develop/",
+      "captured_on": "2026-10-02"
     },
     {
       "file": "commit-eduardo.jpg",
-      "source_url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/2bdb3017ae4799ec8e55b56c86cbaa0c1de18c58"
+      "source_url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/2bdb3017ae4799ec8e55b56c86cbaa0c1de18c58",
+      "captured_on": "2026-10-02"
     },
     {
       "file": "commit-manuel.jpg",
-      "source_url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/25285e781945fde3575f80b021ad794c2c4822e3"
+      "source_url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/25285e781945fde3575f80b021ad794c2c4822e3",
+      "captured_on": "2026-10-02"
     },
     {
       "file": "commit-alejandro.jpg",
-      "source_url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/40003d1d6af89de404d59ceb16d22f0e4b0b1464"
+      "source_url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/40003d1d6af89de404d59ceb16d22f0e4b0b1464",
+      "captured_on": "2026-10-02"
     },
     {
       "file": "commit-werner.jpg",
-      "source_url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/bb379c3595f2b85027c4db8eea77eff9841ccb4d"
+      "source_url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/bb379c3595f2b85027c4db8eea77eff9841ccb4d",
+      "captured_on": "2026-10-02"
     },
     {
       "file": "commit-kevin.jpg",
-      "source_url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/c3a8b2a740ee4d68092e836678812f322d64f696"
+      "source_url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/c3a8b2a740ee4d68092e836678812f322d64f696",
+      "captured_on": "2026-10-02"
+    },
+    {
+      "file": "github-contributors-main-20261007.png",
+      "source_url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/graphs/contributors?from=7%2F4%2F2026",
+      "captured_on": "2026-10-07",
+      "branch": "main",
+      "scope": "Contributions per week, excluding merge commits."
+    },
+    {
+      "file": "github-commits-develop-20261007.png",
+      "source_url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commits/develop/",
+      "captured_on": "2026-10-07",
+      "branch": "develop",
+      "latest_visible_commit": "024addc"
     }
-  ]
+  ],
+  "updated_on": "2026-10-07"
 }

@@ -86,12 +86,56 @@
 | 1.20 | 06/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Actualización de tres edades y de los intervalos de entrevistas, verificados en la grabación de Google Drive. Incorporación del enlace directo al video. Retirada de la sección preliminar de analíticos de colaboración y de su entrada del índice, conservando las seis entrevistas. |
 | 1.21 | 07/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Simplificación del anexo Videos de Exposiciones: enlaces pendientes identificados por entrega. |
 | 1.22 | 07/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Retirada de Video About-the-Product y su entrada del índice por corresponder a un hito posterior al TP. |
+| 1.23 | 07/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Incorporación de Project Report Collaboration Insights después del registro de versiones, con analíticos del repositorio, historial de develop y capturas de commits de los integrantes. |
 
 La edición de las versiones 1.0–1.12 fue realizada por Alejandro Daniel Oroncoy Almeyda. Los demás nombres corresponden a los coautores registrados en los commits del avance, asociados en esta tabla por las secciones correspondientes. La revisión individual de esos integrantes continúa pendiente.
+
+# Project Report Collaboration Insights
+
+Repositorio del informe: [talki-project-report](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report).
+
+A continuación se presentan los analíticos de colaboración y los commits de los integrantes en el repositorio del informe.
+
+**Analíticos de colaboración.**
+
+![Analíticos de Contributors del repositorio del informe en la rama main](./assets/evidence/collaboration/github-contributors-main-20261007.png)
+
+*Figura: Contributors de GitHub, consultado el 07/10/2026. El gráfico corresponde a la rama `main` y excluye los commits de merge.*
+
+**Historial del TP en develop.**
+
+![Historial de commits de la rama develop del repositorio del informe](./assets/evidence/collaboration/github-commits-develop-20261007.png)
+
+*Figura: [Historial de la rama develop](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commits/develop/), consultado el 07/10/2026. Incluye el diseño táctico, el diseño UX y las correcciones documentales del TP.*
+
+**Commits de los integrantes en el TB1.**
+
+Las siguientes capturas, consultadas el 02/10/2026, identifican los commits de cada integrante durante el TB1. Los aportes y las revisiones correspondientes a cada entrega se detallan en Student Outcome.
+
+**Eduardo Gael Rivera Sosa.** Startup Profile, Solution Profile, Lean UX y entrevistas. [Commit 2bdb301](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/2bdb3017ae4799ec8e55b56c86cbaa0c1de18c58).
+
+![Commit de Eduardo Gael Rivera Sosa en el TB1](./assets/evidence/collaboration/commit-eduardo.jpg)
+
+**Manuel Ignacio Tumi Oliden.** Análisis de competidores, entrevistas, needfinding y lenguaje ubicuo. [Commit 25285e7](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/25285e781945fde3575f80b021ad794c2c4822e3).
+
+![Commit de Manuel Ignacio Tumi Oliden en el TB1](./assets/evidence/collaboration/commit-manuel.jpg)
+
+**Alejandro Daniel Oroncoy Almeyda.** Especificación de requisitos y diseño estratégico basado en ADD. [Commit 40003d1](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/40003d1d6af89de404d59ceb16d22f0e4b0b1464).
+
+![Commit de Alejandro Daniel Oroncoy Almeyda en el TB1](./assets/evidence/collaboration/commit-alejandro.jpg)
+
+**Werner Khalil Lang Nassi.** Diseño estratégico de dominio: EventStorming, Bounded Context Canvases y Context Mapping. [Commit bb379c3](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/bb379c3595f2b85027c4db8eea77eff9841ccb4d).
+
+![Commit de Werner Khalil Lang Nassi en el TB1](./assets/evidence/collaboration/commit-werner.jpg)
+
+**Kevin Jorge Chi Cruzatt.** Software Architecture y diagramas C4. [Commit c3a8b2a](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/c3a8b2a740ee4d68092e836678812f322d64f696).
+
+![Commit de Kevin Jorge Chi Cruzatt en el TB1](./assets/evidence/collaboration/commit-kevin.jpg)
 
 # Contenido
 
 - [Registro de Versiones del Informe](#registro-de-versiones-del-informe)
+- [Project Report Collaboration Insights](#project-report-collaboration-insights)
 - [Student Outcome](#student-outcome)
 - [Capítulo I: Introducción](#capítulo-i-introducción)
   - [1.1. Startup Profile](#11-startup-profile)
