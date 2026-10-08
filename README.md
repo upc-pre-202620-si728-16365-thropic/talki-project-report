@@ -4668,4 +4668,4 @@ World Wide Web Consortium. (s. f.). *Understanding Success Criterion 2.5.8: Targ
 
 **TB1:** [Video de exposición del TB1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202313397_upc_edu_pe/IQC7QXFBUmEQSIIDCqzpD0fSAQCbHqQBwQBGPOsFs7V7_JA?e=uIsNxX&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D).
 
-**TP:** Enlace pendiente.
+**TP:** [Video de exposición del TP](https://drive.google.com/drive/folders/1S1YQ4q0QtCI28OER21HIhHuKYnlDoAwp?usp=sharing).
