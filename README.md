@@ -100,6 +100,7 @@
 | 1.34 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Ajuste del Student Outcome del TP para describir la documentación y los recursos de comunicación disponibles al entregar el informe, sin registrar la exposición posterior como pendiente. |
 | 1.35 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Ajuste de Applications Prototyping al alcance del TP, conservando el recorrido interactivo, las pantallas y la descripción del diseño. |
 | 1.36 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Incorporación del enlace al video de exposición del TB1 en Microsoft Stream, proporcionado por el equipo. |
+| 1.37 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Incorporación de la galería de mock-ups web y móvil, con acceso a las imágenes completas desde el capítulo VI y los anexos. |
 
 La edición de las versiones 1.0–1.12 fue realizada por Alejandro Daniel Oroncoy Almeyda. Los demás nombres corresponden a los coautores registrados en los commits del avance, asociados en esta tabla por las secciones correspondientes. La revisión individual de esos integrantes continúa pendiente.
 
@@ -3821,6 +3822,8 @@ El mock-up presenta el mensaje “Ensaya tus ideas. Hazlas escuchar.” junto co
 
 <img src="assets/ux/mockups/mobile-landing.png" alt="Mock-up de la landing pública de Talki: móvil" width="320">
 
+**Diseños completos:** [Galería de mock-ups de la landing](https://upc-pre-202620-si728-16365-thropic.github.io/talki-project-report/?categoria=landing).
+
 ## 6.4. Applications UX/UI Design
 
 Las pantallas representan las operaciones descritas en el capítulo V. La siguiente relación permite revisar qué contexto responde a cada tarea, incluyendo las funciones propuestas.
@@ -4184,6 +4187,8 @@ La landing también permite iniciar una consulta y acceder a privacidad y térmi
 ### 6.4.3. Applications Mock-ups
 
 Los mock-ups desarrollan la jerarquía visual, los controles y la presentación de los estados de cada pantalla. Las vistas de acceso, inicio, Coach, grabación, reporte e historial muestran capturas de referencia del cliente web; no representan por sí solas todos los controles y estados ampliados del TP; las pantallas complementarias y las adaptaciones móviles son propuestas de diseño. La [landing pública](#632-landing-page-mock-up) se presenta en la sección 6.3.2. El alcance de los datos y las interacciones de ejemplo se describe en 6.5.
+
+**Diseños completos:** [Galería de mock-ups de Talki](https://upc-pre-202620-si728-16365-thropic.github.io/talki-project-report/), organizada por pantalla, vista web/móvil y estados de interacción.
 
 #### A01: Registro
 
@@ -4653,7 +4658,7 @@ World Wide Web Consortium. (s. f.). *Understanding Success Criterion 2.5.8: Targ
 | E | Diseño táctico por contexto: componentes C4, clases UML, datos y contratos. | `assets/diagrams/tactical/`; modelo para importar en Structurizr: `assets/structurizr/talki-tactical-components.dsl`. |
 | F | Vistas de contenedores y despliegue refinadas para el curso actual. | `assets/diagrams/c4/containers.*`, `deployment.*` |
 | G | Arquitectura de información, wireflows por objetivo y user flows. | `assets/diagrams/ux/` |
-| H | Wireframes y mock-ups web/móvil, incluyendo estados de error y privacidad. | `assets/ux/wireframes/`, `assets/ux/mockups/` |
+| H | Wireframes y mock-ups web/móvil, incluyendo estados de error y privacidad. | [Galería de mock-ups completos](https://upc-pre-202620-si728-16365-thropic.github.io/talki-project-report/); `assets/ux/wireframes/`, `assets/ux/mockups/`. |
 | I | Prototipo UX navegable, datos de ejemplo, variantes web/móvil y modo wireframe. | [HTML](assets/ux/prototype/index.html), [instrucciones](assets/ux/prototype/README.md) |
 | J | Activos técnicos y registro de versiones de Talki. | `assets/reused-202601/`, [registro de procedencia](assets/design/reuse-manifest.json) |
 

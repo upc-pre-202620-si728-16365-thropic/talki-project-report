@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Galería de los mock-ups de Talki: landing, pantallas web y móvil y estados de interacción.">
+  <meta name="robots" content="noindex,follow">
+  <title>Talki · Galería de mock-ups</title>
+  <link rel="icon" href="assets/images/logos/talki-logo.png">
+  <link rel="stylesheet" href="assets/ux/gallery/gallery.css">
+  <script src="assets/ux/gallery/screens.js" defer></script>
+  <script src="assets/ux/gallery/gallery.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#catalogue">Saltar a las pantallas</a>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Talki, inicio de la galería"><span class="brand-mark" aria-hidden="true">t</span>Talki</a>
+    <a class="report-link" href="https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report#capítulo-vi-solution-ux-design" target="_blank" rel="noopener">Consultar el informe <span aria-hidden="true">↗</span></a>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="title">
+      <div><p class="eyebrow">DISEÑO UX/UI</p><h1 id="title">Galería de mock-ups<span class="accent">.</span></h1><p class="lead">Explora las pantallas web y móvil de Talki. Abre cada diseño para verlo en tamaño completo.</p></div>
+      <div class="summary" aria-label="Contenido de la galería"><strong>26<span>pantallas</span></strong><strong>51<span>mock-ups</span></strong></div>
+    </section>
+    <section class="controls" aria-label="Filtrar mock-ups">
+      <label class="search"><span class="search-icon" aria-hidden="true">⌕</span><span class="sr-only">Buscar una pantalla</span><input id="search" type="search" placeholder="Buscar pantalla, tarea o estado…" autocomplete="off"></label>
+      <div class="filter-row">
+        <div class="tabs" role="group" aria-label="Tipo de pantalla">
+          <button data-category="all" aria-pressed="true">Todas</button>
+          <button data-category="landing" aria-pressed="false">Landing</button>
+          <button data-category="app" aria-pressed="false">Aplicación</button>
+          <button data-category="states" aria-pressed="false">Estados de interacción</button>
+        </div>
+        <label class="device">Vista <select id="device"><option value="all">Web y móvil</option><option value="web">Web</option><option value="mobile">Móvil</option></select></label>
+      </div>
+    </section>
+    <div class="catalogue-heading"><h2 id="catalogue-title">Todas las pantallas</h2><p id="result-count" role="status" aria-live="polite"></p></div>
+    <section id="catalogue" class="catalogue" aria-labelledby="catalogue-title"></section>
+    <div id="empty" class="empty" hidden><h2>No encontramos esa pantalla</h2><p>Prueba con otro término o vuelve a mostrar todas las pantallas.</p><button id="reset" class="primary">Mostrar todas</button></div>
+  </main>
+  <footer><span>Talki · Thropic</span><span>Arquitecturas de Software Emergentes · UPC</span></footer>
+  <dialog id="viewer" aria-labelledby="viewer-title">
+    <div class="viewer-header"><div><p id="viewer-device" class="eyebrow"></p><h2 id="viewer-title"></h2></div><button id="close" class="icon-button" aria-label="Cerrar imagen">×</button></div>
+    <div class="viewer-tools"><div class="zoom-tools"><button id="zoom-out" class="tool" aria-label="Reducir zoom">−</button><output id="zoom-label">Ajustar</output><button id="zoom-in" class="tool" aria-label="Ampliar zoom">+</button><button id="fit" class="tool">Ajustar</button></div><a id="original" class="original" target="_blank" rel="noopener">Abrir imagen completa ↗</a></div>
+    <div id="image-stage" class="image-stage"><img id="viewer-image" alt=""></div>
+    <div class="viewer-bottom"><button id="previous" class="tool">← Anterior</button><span id="image-position"></span><button id="next" class="tool">Siguiente →</button></div>
+  </dialog>
+  <noscript><p class="noscript">Activa JavaScript para explorar la galería. También puedes consultar las imágenes en <a href="https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report#643-applications-mock-ups">el informe de Talki</a>.</p></noscript>
+</body>
+</html>
