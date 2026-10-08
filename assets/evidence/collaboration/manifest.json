@@ -52,6 +52,21 @@
       "captured_on": "2026-10-07",
       "branch": "develop",
       "latest_visible_commit": "024addc"
+    },
+    {
+      "file": "github-contributors-main-20261007-merged.png",
+      "source_url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/graphs/contributors?from=7%2F4%2F2026",
+      "captured_on": "2026-10-07",
+      "branch": "main",
+      "after_integration_commit": "c4f1309",
+      "scope": "Full-page Contributors graph after integrating develop into main; excludes merge commits.",
+      "team_logins_visible": [
+        "alejooroncoy",
+        "gael-rs",
+        "00WernerLang",
+        "Krillsom",
+        "ManuelTumi2224"
+      ]
     }
   ],
   "updated_on": "2026-10-07"

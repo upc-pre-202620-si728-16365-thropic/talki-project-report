@@ -87,7 +87,7 @@
 | 1.21 | 07/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Simplificación del anexo Videos de Exposiciones: enlaces pendientes identificados por entrega. |
 | 1.22 | 07/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Retirada de Video About-the-Product y su entrada del índice por corresponder a un hito posterior al TP. |
 | 1.23 | 07/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Incorporación de Project Report Collaboration Insights después del registro de versiones, con analíticos del repositorio, historial de develop y capturas de commits de los integrantes. |
-| 1.24 | 07/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Simplificación de Project Report Collaboration Insights para mostrar únicamente los analíticos del repositorio. Integración del avance en main conservando el historial de commits. |
+| 1.24 | 07/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Simplificación de Project Report Collaboration Insights para mostrar únicamente los analíticos del repositorio. Integración del avance en main conservando el historial de commits y actualización de la captura con los cinco integrantes. |
 
 La edición de las versiones 1.0–1.12 fue realizada por Alejandro Daniel Oroncoy Almeyda. Los demás nombres corresponden a los coautores registrados en los commits del avance, asociados en esta tabla por las secciones correspondientes. La revisión individual de esos integrantes continúa pendiente.
 
@@ -99,7 +99,7 @@ A continuación se presentan los analíticos de colaboración del repositorio de
 
 **Analíticos de colaboración.**
 
-![Analíticos de Contributors del repositorio del informe en la rama main](./assets/evidence/collaboration/github-contributors-main-20261007.png)
+![Analíticos de Contributors del repositorio del informe en la rama main](./assets/evidence/collaboration/github-contributors-main-20261007-merged.png)
 
 *Figura: Contributors de GitHub, consultado el 07/10/2026. El gráfico corresponde a la rama `main` y excluye los commits de merge.*
 
