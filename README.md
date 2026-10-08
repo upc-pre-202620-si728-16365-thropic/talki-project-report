@@ -89,6 +89,7 @@
 | 1.23 | 07/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Incorporación de Project Report Collaboration Insights después del registro de versiones, con analíticos del repositorio, historial de develop y capturas de commits de los integrantes. |
 | 1.24 | 07/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Simplificación de Project Report Collaboration Insights para mostrar únicamente los analíticos del repositorio. Integración del avance en main conservando el historial de commits y actualización de la captura con los cinco integrantes. |
 | 1.25 | 07/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Revisión global de congruencia: fuentes y alcance de investigación, hipótesis y canvas, requisitos funcionales/no funcionales, responsabilidades de contextos, contratos y correspondencia de modelos con UX. |
+| 1.26 | 07/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Actualización de la imagen de Project Report Collaboration Insights con la captura proporcionada por el equipo. |
 
 La edición de las versiones 1.0–1.12 fue realizada por Alejandro Daniel Oroncoy Almeyda. Los demás nombres corresponden a los coautores registrados en los commits del avance, asociados en esta tabla por las secciones correspondientes. La revisión individual de esos integrantes continúa pendiente.
 
@@ -100,9 +101,9 @@ A continuación se presentan los analíticos de colaboración del repositorio de
 
 **Analíticos de colaboración.**
 
-![Analíticos de Contributors del repositorio del informe en la rama main](./assets/evidence/collaboration/github-contributors-main-20261007-merged.png)
+![Analíticos de colaboración de los cinco integrantes del equipo](./assets/evidence/collaboration/github-contributors-team-provided-20261007.png)
 
-*Figura: Contributors de GitHub, consultado el 07/10/2026. El gráfico corresponde a la rama `main` y excluye los commits de merge.*
+*Figura: Analíticos de colaboración de los cinco integrantes. Captura proporcionada por el equipo; la vista indica contribuciones a la rama `main` y excluye los commits de merge.*
 
 # Contenido
 

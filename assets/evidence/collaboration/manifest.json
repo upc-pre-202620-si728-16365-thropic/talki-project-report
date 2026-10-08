@@ -67,6 +67,15 @@
         "Krillsom",
         "ManuelTumi2224"
       ]
+    },
+    {
+      "file": "github-contributors-team-provided-20261007.png",
+      "origin": "user-provided attachment",
+      "received_on": "2026-10-07",
+      "displayed_branch": "main",
+      "displayed_scope": "Last 3 months; contributions per week excluding merge commits; five team members shown.",
+      "sha256": "38082766b2b6a5f1281f03cbc59ae775e77446177136702ef4e71e8c5fa997a6",
+      "modified": false
     }
   ],
   "updated_on": "2026-10-07"
