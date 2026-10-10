@@ -1,0 +1,51 @@
+@startuml
+!include <C4/C4_Container>
+skinparam defaultFontName Arial
+skinparam dpi 150
+skinparam linetype polyline
+skinparam nodesep 45
+skinparam ranksep 65
+skinparam ArrowFontSize 12
+LAYOUT_TOP_DOWN()
+title C4 Container: eventos, análisis y avisos
+System_Ext(mail, "Correo propuesto", "Cuenta y privacidad")
+System_Boundary(talki, "Talki") {
+Boundary(groupidentity, "Publicadores", "Agrupación visual") {
+Container(identity, "Identity & Access", "Java / Spring Boot", "Cuenta, credenciales y propiedad")
+Container(sessions, "Practice Session Management", "Java / Spring Boot", "Ciclo de vida y evidencia del ensayo")
+Container(sharing, "Sharing & Retention propuesto", "Java / Spring Boot", "Exportación personal y purga")
+}
+ContainerQueue(bus, "Broker de eventos", "RabbitMQ / AMQP", "Colas, confirmaciones, reintentos y cola de fallos")
+Boundary(groupanalysis, "Análisis y evaluación", "Agrupación visual") {
+Container(analysis, "Speech Analysis Worker", "Java / Spring Boot", "Analiza transcripción y publica métricas")
+Container(scoring, "Scoring & Feedback Worker", "Java / Spring Boot", "Evalúa, conserva y versiona el reporte")
+}
+Boundary(groupprogress, "Evolución y entrega", "Agrupación visual") {
+Container(progress, "Progress & Adaptation", "Java / Spring Boot", "Resumen y comparación de progreso")
+Container(game, "Gamification", "Java / Spring Boot", "Rachas y logros")
+Container(notifications, "Notifications", "Java / Spring Boot", "Eventos, preferencias y seguimiento de avisos")
+}
+Container(web, "Cliente web", "Angular / Angular Material", "Configuración, conversación y consulta de resultados")
+}
+BiRel(bus, sessions, "Al broker: Publica session.live.finalized desde outbox\nDesde broker: Entrega user.registered para proyección local", "AMQP")
+BiRel(bus, analysis, "Desde broker: Entrega session.live.finalized\nAl broker: Publica fillers.analyzed", "AMQP")
+BiRel(bus, scoring, "Desde broker: Entrega fillers.analyzed\nAl broker: Publica scoring.completed", "AMQP")
+Rel(bus, progress, "Entrega scoring.completed", "AMQP")
+BiRel(bus, game, "Desde broker: Entrega scoring.completed\nAl broker: Publica achievement.unlocked", "AMQP")
+Rel(identity, bus, "Publica user.registered", "AMQP")
+Rel(sharing, bus, "Coordina purga y confirmaciones", "AMQP; propuesto")
+Rel(bus, notifications, "Entrega eventos de evaluación y logro", "AMQP")
+Rel(notifications, web, "Entrega avisos autenticados", "WSS; propuesto")
+Rel(notifications, mail, "Envía avisos de cuenta y privacidad", "HTTPS / SMTP-TLS; propuesto")
+Lay_R(identity, sessions)
+Lay_R(sessions, sharing)
+Lay_D(sessions, bus)
+Lay_R(analysis, scoring)
+Lay_D(bus, analysis)
+Lay_R(progress, game)
+Lay_R(game, notifications)
+Lay_D(analysis, progress)
+Lay_D(notifications, mail)
+Lay_D(notifications, web)
+SHOW_LEGEND()
+@enduml

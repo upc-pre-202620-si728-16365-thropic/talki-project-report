@@ -1,0 +1,28 @@
+@startuml
+!include <C4/C4_Container>
+skinparam defaultFontName Arial
+skinparam dpi 150
+skinparam linetype polyline
+skinparam nodesep 45
+skinparam ranksep 65
+skinparam ArrowFontSize 12
+LAYOUT_TOP_DOWN()
+title C4 Container: datos de procesamiento, avisos y eliminación
+System_Boundary(talki, "Talki") {
+Boundary(groupanalysis, "Procesamiento y avisos", "Agrupación visual") {
+Container(analysis, "Speech Analysis Worker", "Java / Spring Boot", "Analiza transcripción y publica métricas")
+Container(notifications, "Notifications", "Java / Spring Boot", "Eventos, preferencias y seguimiento de avisos")
+ContainerDb(operationaldata, "Datos de análisis y avisos", "PostgreSQL / TLS", "Esquemas privados de Analysis y Notifications")
+}
+Boundary(groupsharing, "Eliminación", "Agrupación visual") {
+Container(sharing, "Sharing & Retention propuesto", "Java / Spring Boot", "Exportación personal y purga")
+ContainerDb(privacydata, "Datos de privacidad propuestos", "PostgreSQL / TLS", "Solicitudes y confirmaciones de purga")
+}
+}
+Rel(analysis, operationaldata, "Conserva jobs, inbox y outbox propios", "SQL / TLS")
+Rel(notifications, operationaldata, "Conserva avisos y preferencias propios", "SQL / TLS")
+Rel(sharing, privacydata, "Conserva solicitudes y confirmaciones", "SQL / TLS; propuesto")
+Lay_R(analysis, notifications)
+Lay_D(sharing, privacydata)
+SHOW_LEGEND()
+@enduml

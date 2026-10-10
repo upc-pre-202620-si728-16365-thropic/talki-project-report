@@ -104,6 +104,7 @@
 | 1.38 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Incorporación del enlace al video de exposición del TP proporcionado por el equipo. |
 | 1.39 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Corrección de la identificación del video proporcionado: corresponde a About-the-Team. Sustitución de la carpeta de Drive y restablecimiento del enlace pendiente del TP. |
 | 1.40 | 09/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Delimitación del alcance a los dos segmentos de estudiantes; retiro de US32 y del acceso de tutores. Ajuste de requisitos, Impact Mapping, C4, privacidad y diseños UX. |
+| 1.41 | 09/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Organización del nivel de contenedores C4 en vistas complementarias de acceso, voz, consultas, eventos y datos para mejorar su lectura. |
 
 La edición de las versiones 1.0–1.12 fue realizada por Alejandro Daniel Oroncoy Almeyda. Los demás nombres corresponden a los coautores registrados en los commits del avance, asociados en esta tabla por las secciones correspondientes. La revisión individual de esos integrantes continúa pendiente.
 
@@ -1940,7 +1941,43 @@ El cliente web ofrece el recorrido de preparación y revisión; el cliente Flutt
 
 RabbitMQ conecta el procesamiento asíncrono: Practice Session Management publica `session.live.finalized` después de confirmar el cierre recibido de Live Coaching, Speech Analysis produce `fillers.analyzed` y Scoring & Feedback publica `scoring.completed` después de conservar la evaluación. Progress y Gamification consumen ese resultado; Notifications recibe eventos de evaluación y logro. El broker incorpora confirmaciones, reintentos y una cola de fallos como requisitos del diseño. La voz sigue el canal cliente–Gemini Live por WSS, evitando presentar el broker como transporte de audio.
 
-![C4 Container Diagram de Talki](assets/diagrams/c4/containers.png)
+El nivel de contenedores se presenta en vistas complementarias de la misma arquitectura. Cada vista muestra las conexiones de un recorrido y conserva los nombres, responsabilidades y tecnologías de los contenedores. En conjunto representan los diez contextos; las agrupaciones visuales facilitan la lectura y no definen nuevos servicios.
+
+**Acceso y operaciones principales.** Los dos segmentos de estudiantes acceden desde los clientes web o móvil. El API Gateway/BFF dirige las operaciones de cuenta, preparación de sesiones, práctica en vivo y consulta de evaluación. Las demás consultas se muestran en la vista de resultados y control de datos.
+
+![C4 Container: acceso y operaciones principales](assets/diagrams/c4/containers.png)
+
+[Ver diagrama en PlantUML](assets/diagrams/c4/containers.puml).
+
+**Preparación y conversación de voz.** Live Coaching comprueba la sesión y el consentimiento y prepara la integración mediante AI Provider Gateway. Los clientes mantienen el canal de voz WSS con Gemini Live; el cierre de la práctica se confirma en Practice Session Management.
+
+![C4 Container: preparación y conversación de voz](assets/diagrams/c4/containers-live.png)
+
+[Ver diagrama en PlantUML](assets/diagrams/c4/containers-live.puml).
+
+**Consulta de resultados y control de datos.** Se muestran las consultas de reportes, progreso, rachas, preferencias, exportación y eliminación. Scoring & Feedback verifica el acceso a la práctica y consulta el estado del análisis; Sharing & Retention comprueba la pertenencia antes de coordinar la eliminación.
+
+![C4 Container: consulta de resultados y control de datos](assets/diagrams/c4/containers-queries.png)
+
+[Ver diagrama en PlantUML](assets/diagrams/c4/containers-queries.puml).
+
+**Eventos, análisis y avisos.** El broker conecta el cierre de sesión, el análisis, la evaluación, el progreso, los logros y los avisos. En las conexiones bidireccionales, las etiquetas «Al broker» y «Desde broker» distinguen los eventos publicados de los consumidos. AMQP transporta estos eventos; las notificaciones al cliente y el correo utilizan sus propios canales.
+
+![C4 Container: eventos, análisis y avisos](assets/diagrams/c4/containers-events.png)
+
+[Ver diagrama en PlantUML](assets/diagrams/c4/containers-events.puml).
+
+**Datos de cuenta, práctica y evaluación.** Identity & Access y Practice Session Management utilizan sus esquemas privados; Sessions administra también el material autorizado. Scoring & Feedback, Progress & Adaptation y Gamification conservan sus datos en esquemas separados de la infraestructura de evaluación y evolución.
+
+![C4 Container: datos de cuenta, práctica y evaluación](assets/diagrams/c4/containers-data.png)
+
+[Ver diagrama en PlantUML](assets/diagrams/c4/containers-data.puml).
+
+**Datos de procesamiento, avisos y eliminación.** Speech Analysis y Notifications mantienen esquemas privados para sus trabajos, resultados técnicos y avisos. Sharing & Retention conserva las solicitudes de eliminación y sus confirmaciones en el almacén de privacidad.
+
+![C4 Container: datos de procesamiento, avisos y eliminación](assets/diagrams/c4/containers-data-operations.png)
+
+[Ver diagrama en PlantUML](assets/diagrams/c4/containers-data-operations.puml).
 
 | Contenedor / contexto | Responsabilidad | Datos propios | Sección táctica |
 | --- | --- | --- | --- |
@@ -1955,7 +1992,7 @@ RabbitMQ conecta el procesamiento asíncrono: Practice Session Management public
 | AI Provider Gateway, propuesto | Contrato de integración y aislamiento del proveedor. | Sin base de material de práctica. | 5.9 |
 | Notifications | Consumo de eventos y entrega de avisos. | Avisos, intentos y preferencias. | 5.10 |
 
-Los almacenes de la figura agrupan infraestructura PostgreSQL, no propiedad compartida de tablas. Cada contexto accede únicamente a su esquema y comunica cambios mediante contratos o eventos. Las implementaciones disponibles agrupan algunas responsabilidades en servicios existentes; la separación del diagrama es la arquitectura objetivo de ADD, que deberá concretarse y verificarse en implementación. La pasarela de IA, Sharing, la entrega de avisos y las ampliaciones de consulta siguen siendo propuestas.
+Los almacenes de las vistas de datos agrupan infraestructura PostgreSQL, no propiedad compartida de tablas. Cada contexto accede únicamente a su esquema y comunica cambios mediante contratos o eventos. Las implementaciones disponibles agrupan algunas responsabilidades en servicios existentes; la separación del diagrama es la arquitectura objetivo de ADD, que deberá concretarse y verificarse en implementación. La pasarela de IA, Sharing, la entrega de avisos y las ampliaciones de consulta siguen siendo propuestas.
 
 ### 4.3.4. Deployment Diagrams
 
