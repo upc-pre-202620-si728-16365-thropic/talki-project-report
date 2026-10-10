@@ -1,7 +1,6 @@
 flowchart TB
   root["Talki"] --> public["Sitio publico"]
   root --> account["Cuenta autenticada"]
-  root --> limited["Acceso limitado del tutor"]
   public --> landing["Beneficios / como funciona / planes propuestos / consulta"]
   public --> auth["Registro / acceso / recuperacion"]
   account --> home["Inicio"]
@@ -9,6 +8,5 @@ flowchart TB
   account --> history["Historial: estado, reporte, busqueda"]
   account --> progress["Progreso: tendencias, comparacion, plan"]
   account --> profile["Perfil: segmento, metas, preferencias"]
-  profile --> privacy["Privacidad: consentimiento, enlaces, eliminacion"]
+  profile --> privacy["Privacidad: consentimiento, exportacion, eliminacion"]
   profile --> notifications["Preferencias de contacto"]
-  limited --> report["Reporte autorizado de solo lectura"]

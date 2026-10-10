@@ -271,36 +271,18 @@ window.TALKI_MOCKUPS = [
   },
   {
     "id": "D01",
-    "title": "Compartición, exportación y borrado",
+    "title": "Exportación y borrado",
     "category": "app",
-    "description": "Las opciones de compartir y exportar se distinguen de la eliminación. La acción de borrado utiliza una presentación de atención y solicita confirmación; la vigencia del acceso y su revocación se muestran junto al permiso.",
+    "description": "La exportación personal se distingue del retiro de consentimiento y la eliminación. El borrado solicita confirmación y muestra acceso bloqueado y purga pendiente hasta completar las confirmaciones.",
     "images": [
       {
         "src": "assets/ux/mockups/web-privacy.png",
-        "alt": "Mock-up de compartición, exportación y borrado: web",
+        "alt": "Mock-up de exportación y borrado: web",
         "device": "web"
       },
       {
         "src": "assets/ux/mockups/mobile-privacy.png",
-        "alt": "Mock-up de compartición, exportación y borrado: móvil",
-        "device": "mobile"
-      }
-    ]
-  },
-  {
-    "id": "T01",
-    "title": "Reporte de tutor",
-    "category": "app",
-    "description": "La presentación de lectura mantiene visibles la vigencia del acceso y el resumen del reporte. Las métricas y recomendaciones se ordenan con la misma jerarquía de la vista del estudiante, limitada al contenido compartido.",
-    "images": [
-      {
-        "src": "assets/ux/mockups/web-shared.png",
-        "alt": "Mock-up de reporte de tutor: web",
-        "device": "web"
-      },
-      {
-        "src": "assets/ux/mockups/mobile-shared.png",
-        "alt": "Mock-up de reporte de tutor: móvil",
+        "alt": "Mock-up de exportación y borrado: móvil",
         "device": "mobile"
       }
     ]
@@ -428,24 +410,6 @@ window.TALKI_MOCKUPS = [
   },
   {
     "id": "E06",
-    "title": "Enlace revocado",
-    "category": "states",
-    "description": "La vista informa que el recurso no está disponible y bloquea el contenido del reporte compartido.",
-    "images": [
-      {
-        "src": "assets/ux/mockups/web-revoked-link.png",
-        "alt": "Enlace revocado: web",
-        "device": "web"
-      },
-      {
-        "src": "assets/ux/mockups/mobile-revoked-link.png",
-        "alt": "Enlace revocado: móvil",
-        "device": "mobile"
-      }
-    ]
-  },
-  {
-    "id": "E07",
     "title": "Purga pendiente",
     "category": "states",
     "description": "El mensaje confirma que la sesión ya no puede consultarse e informa que la eliminación de sus datos continúa en curso.",

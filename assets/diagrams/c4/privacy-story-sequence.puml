@@ -3,28 +3,22 @@ skinparam defaultFontName Arial
 skinparam dpi 130
 skinparam sequenceMessageAlign center
 skinparam maxMessageSize 250
-title DS-03: secuencia de compartición, revocación y eliminación
+title DS-03: exportación personal y eliminación
 actor Estudiante as student
 participant "Sharing & Retention" as sharing
-actor "Tutor" as tutor
 participant "Scoring & Feedback" as scoring
 participant "Practice Session Management" as sessions
 participant "Contextos propietarios\nde los datos" as owners
 participant "Notifications" as notifications
-student -> sharing : 1. Solicita compartir reporte\nObjeto: solicitud de enlace
-sharing -> sharing : 2. Crea acceso temporal con expiración\nObjeto: enlace temporal
-sharing --> student : Enlace temporal
-student --> tutor : Comparte el enlace autorizado
-tutor -> sharing : 3. Abre enlace y solicita vista de solo lectura
-sharing -> sharing : Valida permiso y vigencia
-sharing -> scoring : Consulta reporte publicado autorizado
-scoring --> sharing : Reporte
-sharing --> tutor : Vista de solo lectura
-student -> sharing : 4. Revoca acceso\nObjeto: orden de revocación
-sharing -> sharing : 5. Invalida enlace inmediatamente
-sharing ->> notifications : Acceso Revocado\nObjeto: evento de privacidad
+student -> sharing : 1. Solicita exportar su reporte
+sharing -> sessions : 2. Comprueba propiedad y disponibilidad
+sessions --> sharing : Autorización del propietario
+sharing -> scoring : 3. Consulta el reporte propio publicado
+scoring --> sharing : Reporte autorizado
+sharing -> sharing : 4. Prepara transcripción y feedback con versiones
+sharing --> student : 5. Entrega archivo para revisión personal
 student -> sharing : 6. Solicita eliminar sesión\nObjeto: orden de eliminación
-sharing -> sharing : Registra solicitud y revoca permisos temporales
+sharing -> sharing : Registra solicitud del propietario
 sharing -> sessions : Solicita bloqueo idempotente por requestId
 sessions --> sharing : Confirma ACCESS_BLOCKED
 sharing --> student : 202: acceso bloqueado, purga en curso
@@ -42,6 +36,7 @@ sharing ->> notifications : Datos Purgados
 notifications -->> student : 8. Informa resultado de la acción
 note over student, notifications
 Diseño propuesto. Las flechas abiertas representan publicación o entrega asíncrona de eventos.
-La revocación bloquea el acceso antes de la entrega del aviso.
+La eliminación bloquea consulta y exportación antes de responder 202.
+Las copias ya descargadas quedan fuera de la purga de Talki.
 end note
 @enduml
