@@ -1,0 +1,56 @@
+{
+  "recordedAt": "2026-10-30",
+  "scope": "Historical source commits pinned by the reuse manifest; not new sprint contributions in 202620.",
+  "commits": [
+    {
+      "repository": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services",
+      "branch": "main",
+      "commit": "9e026c324b6f7a321505af705e9e8ffdd6496fc4",
+      "authorAsRecordedInGit": "Alejandro Daniel Oroncoy Almeyda",
+      "authoredAt": "2026-06-07T08:26:32-05:00",
+      "message": "Merge pull request #6 from upc-pre-202601-si657-7940-thropic/feat/actuator-health\n\nfeat(actuator): habilita /actuator/health en los 2 microservicios",
+      "periodOfOrigin": "202601",
+      "countsAsCurrentTeamContribution": false
+    },
+    {
+      "repository": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services",
+      "branch": "main",
+      "commit": "231bb5eb7ccefb741cbff5274634bef2eef17819",
+      "authorAsRecordedInGit": "Alejandro Daniel Oroncoy Almeyda",
+      "authoredAt": "2026-06-07T08:26:39-05:00",
+      "message": "Merge pull request #4 from upc-pre-202601-si657-7940-thropic/feat/actuator-health\n\nfeat(actuator): habilita /actuator/health en los 2 microservicios",
+      "periodOfOrigin": "202601",
+      "countsAsCurrentTeamContribution": false
+    },
+    {
+      "repository": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend",
+      "branch": "main",
+      "commit": "d63e889a216d093a86bf24a2a328c18d0e610618",
+      "authorAsRecordedInGit": "Alejandro Daniel Oroncoy Almeyda",
+      "authoredAt": "2026-07-09T20:02:02-05:00",
+      "message": "feat: agregar pausa/reanudar en grabación y transcripción en vivo (#3)\n\nAntes solo existía Iniciar/Detener, y detener finalizaba la sesión y disparaba el análisis del coach IA. Ahora se puede pausar sin perder el texto acumulado ni el tiempo transcurrido, y reanudar para seguir hablando hasta presionar Terminar.\n\nCo-authored-by: Claude Sonnet 5 <noreply@anthropic.com>",
+      "periodOfOrigin": "202601",
+      "countsAsCurrentTeamContribution": false
+    },
+    {
+      "repository": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services",
+      "branch": "main",
+      "commit": "cde4b117783db42115acc680ddb22e2bfe99ae24",
+      "authorAsRecordedInGit": "Manuel Tumi",
+      "authoredAt": "2026-07-04T22:59:23-05:00",
+      "message": "fix(live-coach): escenario por defecto en modo scenario sin scenarioId\n\nAntes lanzaba IllegalArgumentException (HTTP 400) al pedir token para el modo\nscenario sin scenarioId, dejando ese modo sin IA. Ahora usa un rol generico por\ndefecto y sigue soportando un scenarioId especifico cuando se pasa.",
+      "periodOfOrigin": "202601",
+      "countsAsCurrentTeamContribution": false
+    },
+    {
+      "repository": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services",
+      "branch": "main",
+      "commit": "1da887abe3dd2d776685c5d864dc4098ceb66344",
+      "authorAsRecordedInGit": "Alejandro Oroncoy",
+      "authoredAt": "2026-07-09T12:22:25-05:00",
+      "message": "fix(identity): permitir re-sembrar la cuenta demo del informe AV4\n\nSi alejo.demo.av4@upc.edu.pe ya existe, register actualiza la contraseña\nen lugar de devolver 403, para que la demo del Sprint 3 sea reproducible.\n\nCo-authored-by: Cursor <cursoragent@cursor.com>",
+      "periodOfOrigin": "202601",
+      "countsAsCurrentTeamContribution": false
+    }
+  ]
+}

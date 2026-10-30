@@ -50,7 +50,7 @@
 
 <div style="page-break-after: always;"></div>
 
-**Avance TB2 — 30/10/2026.** [Checklist detallado y fuentes](docs/tb2/checklist.md) · [Archivos de revisión Word/PDF y keynote](deliverables/tb2/README.md). La documentación se amplió hasta 7.4; el checklist identifica las evidencias que todavía faltan para cerrar la entrega.
+**Avance TB2 — 30/10/2026.** [Pendientes del informe](docs/tb2/pendientes-informe.md) · [Checklist detallado y fuentes](docs/tb2/checklist.md) · [Archivos de revisión Word/PDF y keynote](deliverables/tb2/README.md). La documentación se amplió hasta 7.4; el checklist identifica las evidencias que todavía faltan para cerrar la entrega.
 
 # Registro de Versiones del Informe
 
@@ -108,6 +108,7 @@
 | 1.40 | 09/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Delimitación del alcance a los dos segmentos de estudiantes; retiro de US32 y del acceso de tutores. Ajuste de requisitos, Impact Mapping, C4, privacidad y diseños UX. |
 | 1.41 | 09/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Organización del nivel de contenedores C4 en vistas complementarias de acceso, voz, consultas, eventos y datos para mejorar su lectura. |
 | 1.42 | 30/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Adaptación para TB2: SCM, Sprint 1, contratos, 133 pruebas verificadas con JDK 17, diagnóstico de despliegues, reutilización trazable del código 202601, protocolo de validación y guion About Product. Actualización de Student Outcome y seguimiento de las correcciones del parcial; actividades de campo y audiovisuales pendientes. |
+| 1.43 | 30/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Revisión centrada en el informe: checklist de pendientes documentales, autores/ramas/fechas y mensajes de los commits reutilizados, referencias bibliográficas de los cinco repositorios y seguimiento del PR de adaptación. |
 
 **Aclaración de autoría tras el feedback del parcial.** Las modificaciones editoriales de 1.0–1.12 fueron realizadas por Alejandro Daniel Oroncoy Almeyda. En esas filas se distingue al editor de los coautores registrados en los commits; la coautoría técnica se consulta en Project Report Collaboration Insights. Las versiones posteriores mantienen al autor real de la modificación. Las revisiones asignadas a otros integrantes solo se registrarán como realizadas cuando exista su evidencia; no se redistribuyen cambios históricos para simular participación.
 
@@ -151,7 +152,7 @@ La siguiente tabla relaciona las contribuciones documentadas del TB1 con las res
 
 **TB2: adaptación y verificación de la base reutilizada.**
 
-La actualización del 30/10/2026 documenta SCM, código de origen, contratos, pruebas y estado de publicación. Los commits importados de 202601 mantienen su autoría y fecha; no se suman como contribuciones nuevas de los integrantes actuales. La edición de esta adaptación se registra a nombre de Alejandro Daniel Oroncoy Almeyda. Las responsabilidades propuestas y las revisiones que todavía requieren evidencia individual se detallan en 7.2.1.8. El manifiesto y los resultados de verificación se encuentran en `assets/evidence/tb2/` y `assets/reused-202601/tb2/`.
+La actualización del 30/10/2026 documenta SCM, código de origen, contratos, pruebas y estado de publicación. La adaptación actual se puede revisar en el [PR #7](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/pull/7), con su historial de commits y archivos modificados. Los commits importados de 202601 mantienen su autoría y fecha; no se suman como contribuciones nuevas de los integrantes actuales. La edición de esta adaptación se registra a nombre de Alejandro Daniel Oroncoy Almeyda. Las responsabilidades propuestas y las revisiones que todavía requieren evidencia individual se detallan en 7.2.1.8. El manifiesto y los resultados de verificación se encuentran en `assets/evidence/tb2/` y `assets/reused-202601/tb2/`.
 
 # Contenido
 
@@ -4616,13 +4617,15 @@ El [tablero histórico de 202601](https://github.com/orgs/upc-pre-202601-si657-7
 
 Las evidencias de desarrollo reutilizado se identifican por repositorio, commit y fecha original. La adaptación documental del periodo actual se revisa por separado en el historial del informe. Los SHA fijados permiten recuperar código y mensajes originales sin alterar la autoría histórica.
 
-| Repositorio | Commit / fecha original | Mensaje y contenido verificable |
+| Repositorio / rama de origen | Commit, fecha y autor original | Mensaje del commit |
 | --- | --- | --- |
-| talki-analysis-services | [9e026c3](https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services/commit/9e026c324b6f7a321505af705e9e8ffdd6496fc4); 2026-06-07 | Merge pull request #6 from upc-pre-202601-si657-7940-thropic/feat/actuator-health. El enlace conserva autor, mensaje completo, archivos y fecha. |
-| talki-engagement-services | [231bb5e](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services/commit/231bb5eb7ccefb741cbff5274634bef2eef17819); 2026-06-07 | Merge pull request #4 from upc-pre-202601-si657-7940-thropic/feat/actuator-health. El enlace conserva autor, mensaje completo, archivos y fecha. |
-| talki-frontend | [d63e889](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend/commit/d63e889a216d093a86bf24a2a328c18d0e610618); 2026-07-09 | feat: agregar pausa/reanudar en grabación y transcripción en vivo (#3). El enlace conserva autor, mensaje completo, archivos y fecha. |
-| talki-session-services | [cde4b11](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services/commit/cde4b117783db42115acc680ddb22e2bfe99ae24); 2026-07-04 | fix(live-coach): escenario por defecto en modo scenario sin scenarioId. El enlace conserva autor, mensaje completo, archivos y fecha. |
-| talki-user-services | [1da887a](https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services/commit/1da887abe3dd2d776685c5d864dc4098ceb66344); 2026-07-09 | fix(identity): permitir re-sembrar la cuenta demo del informe AV4. El enlace conserva autor, mensaje completo, archivos y fecha. |
+| [talki-analysis-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services); `main` | [9e026c3](https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services/commit/9e026c324b6f7a321505af705e9e8ffdd6496fc4); 2026-06-07; Alejandro Daniel Oroncoy Almeyda. | Merge pull request #6 from upc-pre-202601-si657-7940-thropic/feat/actuator-health<br><br>feat(actuator): habilita /actuator/health en los 2 microservicios |
+| [talki-engagement-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services); `main` | [231bb5e](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services/commit/231bb5eb7ccefb741cbff5274634bef2eef17819); 2026-06-07; Alejandro Daniel Oroncoy Almeyda. | Merge pull request #4 from upc-pre-202601-si657-7940-thropic/feat/actuator-health<br><br>feat(actuator): habilita /actuator/health en los 2 microservicios |
+| [talki-frontend](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend); `main` | [d63e889](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend/commit/d63e889a216d093a86bf24a2a328c18d0e610618); 2026-07-09; Alejandro Daniel Oroncoy Almeyda. | feat: agregar pausa/reanudar en grabación y transcripción en vivo (#3)<br><br>Antes solo existía Iniciar/Detener, y detener finalizaba la sesión y disparaba el análisis del coach IA. Ahora se puede pausar sin perder el texto acumulado ni el tiempo transcurrido, y reanudar para seguir hablando hasta presionar Terminar. |
+| [talki-session-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services); `main` | [cde4b11](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services/commit/cde4b117783db42115acc680ddb22e2bfe99ae24); 2026-07-04; Manuel Tumi. | fix(live-coach): escenario por defecto en modo scenario sin scenarioId<br><br>Antes lanzaba IllegalArgumentException (HTTP 400) al pedir token para el modo<br>scenario sin scenarioId, dejando ese modo sin IA. Ahora usa un rol generico por<br>defecto y sigue soportando un scenarioId especifico cuando se pasa. |
+| [talki-user-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services); `main` | [1da887a](https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services/commit/1da887abe3dd2d776685c5d864dc4098ceb66344); 2026-07-09; Alejandro Oroncoy. | fix(identity): permitir re-sembrar la cuenta demo del informe AV4<br><br>Si la cuenta de demostración ya existe, register actualiza la contraseña<br>en lugar de devolver 403, para que la demo del Sprint 3 sea reproducible. |
+
+Los nombres anteriores se conservan tal como figuran en Git. El [registro de commits de origen](assets/evidence/tb2/development-commits.json) conserva el mensaje completo, incluida la coautoría declarada, y permite contrastar rama, autor y fecha con las instantáneas. Son contribuciones históricas del periodo 202601.
 
 **Correspondencia con el diseño actual.** Identity corresponde parcialmente a 5.8; Session a 5.4; Live Coach a 5.1 y parte del acceso al proveedor de 5.9; Filler Detection a 5.2; Scoring a 5.3; Progress a 5.5; Gamification a 5.7 y Notifications a 5.10. No se encontró un servicio completo de Sharing & Retention de 5.6 ni un gateway de proveedor desacoplado que materialice todas las políticas de 5.9. Esta tabla es correspondencia de responsabilidades, no equivalencia de implementación.
 
@@ -4854,6 +4857,16 @@ Ries, E. (2011). *The Lean Startup: How today's entrepreneurs use continuous inn
 Speeko. (s. f.). *Speeko: AI speech coach*. Recuperado el 7 de octubre de 2026, de https://www.speeko.co/
 
 Thropic. (2026). *Talki: Project report* [Repositorio de GitHub, versión 2cfa379]. [GitHub](https://github.com/upc-pre-202601-si657-7940-thropic/talki-project-report/blob/2cfa379b72241a1380d87b4f8c5be53a70950d81/README.MD).
+
+Thropic. (2026). *talki-analysis-services* (versión 9e026c3) [Código fuente]. GitHub. https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services/tree/9e026c324b6f7a321505af705e9e8ffdd6496fc4
+
+Thropic. (2026). *talki-engagement-services* (versión 231bb5e) [Código fuente]. GitHub. https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services/tree/231bb5eb7ccefb741cbff5274634bef2eef17819
+
+Thropic. (2026). *talki-frontend* (versión d63e889) [Código fuente]. GitHub. https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend/tree/d63e889a216d093a86bf24a2a328c18d0e610618
+
+Thropic. (2026). *talki-session-services* (versión cde4b11) [Código fuente]. GitHub. https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services/tree/cde4b117783db42115acc680ddb22e2bfe99ae24
+
+Thropic. (2026). *talki-user-services* (versión 1da887a) [Código fuente]. GitHub. https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services/tree/1da887abe3dd2d776685c5d864dc4098ceb66344
 
 Universidad Peruana de Ciencias Aplicadas. (2026). *Trabajo Final 1ASI0728 202620* [Enunciado del curso Arquitecturas de Software Emergentes; páginas 32, 34–35 y anexos B–D]. Campus Virtual UPC. Identificador de contenido: `_76029989_1`.
 

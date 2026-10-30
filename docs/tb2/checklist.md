@@ -4,6 +4,8 @@ Corte de revisión: 30/10/2026. Repositorio actual del periodo 202620.
 
 **Estado general: documentación ampliada; TB2 todavía no está listo para entrega completa.** Faltan recuperar el producto desplegado, cerrar aceptación y aportes individuales, aplicar validación y publicar las evidencias audiovisuales. Los videos de validación y About Product se mantienen pendientes por indicación del equipo.
 
+Para cerrar primero la documentación, consultar el [checklist de pendientes del informe](pendientes-informe.md).
+
 ## Fuentes y alcance
 
 - Campus: `Trabajo Final_1ASI0728_202620.pdf`, contenido `_76029989_1`, adjunto `_51288304_1`, páginas 34–35 (TB2), 39 (participación) y 40 (videos). Hash SHA-256 `c27214041b4acacf132097e6405381f6c625a76fc98ac4ba46878933ecd25673`.
@@ -207,7 +209,7 @@ Una casilla marcada significa que hay contenido documental en el repositorio. No
 
 ## Cierres y archivos de entrega
 
-- [x] Registro de versiones actualizado a 1.42 con descripción de la adaptación.
+- [x] Registro de versiones actualizado a 1.43 con descripción de la adaptación.
 - [x] Collaboration Insights y Student Outcome ampliados, distinguiendo acciones documentadas y revisión pendiente.
 - [x] Avance de conclusiones, recomendaciones, bibliografía y anexos actualizado para TB2.
 - [ ] About Team: completar evidencia de proceso real, retrospectiva, testimonios y publicación Stream/YouTube; el enlace previo acredita presentación individual.
