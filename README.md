@@ -50,6 +50,8 @@
 
 <div style="page-break-after: always;"></div>
 
+**Avance TB2 — 30/10/2026.** [Checklist detallado y fuentes](docs/tb2/checklist.md) · [Archivos de revisión Word/PDF y keynote](deliverables/tb2/README.md). La documentación se amplió hasta 7.4; el checklist identifica las evidencias que todavía faltan para cerrar la entrega.
+
 # Registro de Versiones del Informe
 
 | Versión | Fecha | Autor / coautoría registrada | Descripción de modificación |
@@ -63,18 +65,18 @@
 | 0.7 | 19/09/2026 | Equipo Thropic | Complementación del Student Outcome con la trazabilidad de los aportes de cada integrante en el TB1. |
 | 0.8 | 19/09/2026 | Chi Cruzatt, Kevin Jorge | Desarrollo de la sección 4.3 (Software Architecture) y elaboración de los diagramas System Landscape, Context Level, Container Level y Deployment. |
 | 0.9 | 19/09/2026 | Equipo Thropic | Incorporación del avance de conclusiones y recomendaciones, bibliografía, anexos y evidencia de colaboración del TB1. |
-| 1.0 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel<br>Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Desarrollo del diseño táctico y UX del TP; incorporación de modelos, diagramas, pantallas y prototipo web/móvil. Revisión del equipo y feedback docente pendientes. |
-| 1.1 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Ajuste de UX para conservar las pantallas del cliente Talki como base: retirada de seis mock-ups web duplicados, unificación visual de complementos y uso del cliente web como prototipo principal. |
-| 1.2 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Alineación de la paleta de colores y las tablas de las pantallas complementarias con la identidad visual de Talki en sus temas claro y oscuro. |
-| 1.3 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Presentación de wireframes, mock-ups y estados críticos mediante descripción e imágenes web/móvil dentro del informe. |
-| 1.4 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel<br>Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Revisión editorial de los capítulos V y VI, sustitución de rayas largas y acceso directo a los diseños de la landing desde el catálogo. |
-| 1.5 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel<br>Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Revisión de la redacción de diseño: tipografía, colores, componentes, navegación y prototipado; aclaración de las descripciones de modelos de dominio. |
-| 1.6 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel<br>Rivera Sosa, Eduardo Gael | Justificación de la identidad visual y simplificación de la paleta por función de diseño, sin referencias a archivos CSS. |
-| 1.7 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel<br>Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Revisión integral de V y VI: organización de capas por propósito, trazabilidad consolidada, diagramas de componentes corregidos y descripciones diferenciadas de wireframes y mock-ups. |
-| 1.8 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel<br>Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Chi Cruzatt, Kevin Jorge | Retirada de las consultas de disponibilidad técnica de Interface Layer para centrar el diseño táctico en las operaciones del producto. |
-| 1.9 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel<br>Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Desarrollo de las explicaciones de cada capa, identificación de controladores y contratos, organización de repositorios y adaptadores, guías de estilo y navegación por plataforma y wireflows con pantallas web y móvil. |
-| 1.10 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel<br>Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Organización de Domain Layer por tipo de elemento, separación de comandos, consultas y coordinación de eventos, tablas de capas uniformes y rotulado de figuras web/móvil. |
-| 1.11 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel<br>Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Retirada de enlaces de fuentes editables, revisión de congruencia entre modelos y explicaciones, ajuste de datos de progreso y cuenta, y relación de las pantallas con el diseño táctico. |
+| 1.0 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel (edición); coautores registrados: Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Desarrollo del diseño táctico y UX del TP; incorporación de modelos, diagramas, pantallas y prototipo web/móvil. Revisión del equipo y feedback docente pendientes. |
+| 1.1 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel (edición); coautores registrados: Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Ajuste de UX para conservar las pantallas del cliente Talki como base: retirada de seis mock-ups web duplicados, unificación visual de complementos y uso del cliente web como prototipo principal. |
+| 1.2 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel (edición); coautores registrados: Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Alineación de la paleta de colores y las tablas de las pantallas complementarias con la identidad visual de Talki en sus temas claro y oscuro. |
+| 1.3 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel (edición); coautores registrados: Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Presentación de wireframes, mock-ups y estados críticos mediante descripción e imágenes web/móvil dentro del informe. |
+| 1.4 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel (edición); coautores registrados: Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Revisión editorial de los capítulos V y VI, sustitución de rayas largas y acceso directo a los diseños de la landing desde el catálogo. |
+| 1.5 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel (edición); coautores registrados: Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Revisión de la redacción de diseño: tipografía, colores, componentes, navegación y prototipado; aclaración de las descripciones de modelos de dominio. |
+| 1.6 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel (edición); coautores registrados: Rivera Sosa, Eduardo Gael | Justificación de la identidad visual y simplificación de la paleta por función de diseño, sin referencias a archivos CSS. |
+| 1.7 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel (edición); coautores registrados: Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Revisión integral de V y VI: organización de capas por propósito, trazabilidad consolidada, diagramas de componentes corregidos y descripciones diferenciadas de wireframes y mock-ups. |
+| 1.8 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel (edición); coautores registrados: Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Chi Cruzatt, Kevin Jorge | Retirada de las consultas de disponibilidad técnica de Interface Layer para centrar el diseño táctico en las operaciones del producto. |
+| 1.9 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel (edición); coautores registrados: Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Desarrollo de las explicaciones de cada capa, identificación de controladores y contratos, organización de repositorios y adaptadores, guías de estilo y navegación por plataforma y wireflows con pantallas web y móvil. |
+| 1.10 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel (edición); coautores registrados: Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Organización de Domain Layer por tipo de elemento, separación de comandos, consultas y coordinación de eventos, tablas de capas uniformes y rotulado de figuras web/móvil. |
+| 1.11 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel (edición); coautores registrados: Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Retirada de enlaces de fuentes editables, revisión de congruencia entre modelos y explicaciones, ajuste de datos de progreso y cuenta, y relación de las pantallas con el diseño táctico. |
 | 1.12 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Incorporación de las correcciones documentales del feedback Hito1: tareas de usuario, escenarios Gherkin, contratos técnicos, backlog, C4 y clases UML de dominio. Datos de entrevistas y evidencias audiovisuales pendientes de confirmación. |
 | 1.13 | 05/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Actualización del Student Outcome con los criterios de comunicación oral y escrita del TP, las secciones asociadas a cada integrante y la distinción entre documentación disponible y revisión/sustentación pendientes. |
 | 1.14 | 05/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Corrección de la denominación de entregas: TB1 y TP; detalle del material documentado según el reparto de secciones de cada integrante en el Student Outcome. |
@@ -105,8 +107,9 @@
 | 1.39 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Corrección de la identificación del video proporcionado: corresponde a About-the-Team. Sustitución de la carpeta de Drive y restablecimiento del enlace pendiente del TP. |
 | 1.40 | 09/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Delimitación del alcance a los dos segmentos de estudiantes; retiro de US32 y del acceso de tutores. Ajuste de requisitos, Impact Mapping, C4, privacidad y diseños UX. |
 | 1.41 | 09/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Organización del nivel de contenedores C4 en vistas complementarias de acceso, voz, consultas, eventos y datos para mejorar su lectura. |
+| 1.42 | 30/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Adaptación para TB2: SCM, Sprint 1, contratos, 133 pruebas verificadas con JDK 17, diagnóstico de despliegues, reutilización trazable del código 202601, protocolo de validación y guion About Product. Actualización de Student Outcome y seguimiento de las correcciones del parcial; actividades de campo y audiovisuales pendientes. |
 
-La edición de las versiones 1.0–1.12 fue realizada por Alejandro Daniel Oroncoy Almeyda. Los demás nombres corresponden a los coautores registrados en los commits del avance, asociados en esta tabla por las secciones correspondientes. La revisión individual de esos integrantes continúa pendiente.
+**Aclaración de autoría tras el feedback del parcial.** Las modificaciones editoriales de 1.0–1.12 fueron realizadas por Alejandro Daniel Oroncoy Almeyda. En esas filas se distingue al editor de los coautores registrados en los commits; la coautoría técnica se consulta en Project Report Collaboration Insights. Las versiones posteriores mantienen al autor real de la modificación. Las revisiones asignadas a otros integrantes solo se registrarán como realizadas cuando exista su evidencia; no se redistribuyen cambios históricos para simular participación.
 
 # Project Report Collaboration Insights
 
@@ -145,6 +148,10 @@ La siguiente tabla relaciona las contribuciones documentadas del TB1 con las res
 *Figura: Historial de commits consultado el 08/10/2026. La captura muestra cambios integrados en `main`, incluyendo el diseño táctico, UX y las correcciones del informe.*
 
 [Consultar el historial del TP en GitHub](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commits/main/?since=2026-10-07&until=2026-10-08).
+
+**TB2: adaptación y verificación de la base reutilizada.**
+
+La actualización del 30/10/2026 documenta SCM, código de origen, contratos, pruebas y estado de publicación. Los commits importados de 202601 mantienen su autoría y fecha; no se suman como contribuciones nuevas de los integrantes actuales. La edición de esta adaptación se registra a nombre de Alejandro Daniel Oroncoy Almeyda. Las responsabilidades propuestas y las revisiones que todavía requieren evidencia individual se detallan en 7.2.1.8. El manifiesto y los resultados de verificación se encuentran en `assets/evidence/tb2/` y `assets/reused-202601/tb2/`.
 
 # Contenido
 
@@ -324,19 +331,20 @@ La siguiente tabla relaciona las contribuciones documentadas del TB1 con las res
     - [7.1.3. Source Code Style Guide & Conventions](#713-source-code-style-guide--conventions)
     - [7.1.4. Software Deployment Configuration](#714-software-deployment-configuration)
   - [7.2. Solution Implementation](#72-solution-implementation)
-    - [7.2.X. Sprint X](#72x-sprint-x)
-      - [7.2.X.1. Sprint Planning X](#72x1-sprint-planning-x)
-      - [7.2.X.2. Sprint Backlog X](#72x2-sprint-backlog-x)
-      - [7.2.X.3. Development Evidence for Sprint Review](#72x3-development-evidence-for-sprint-review)
-      - [7.2.X.4. Testing Suite Evidence for Sprint Review](#72x4-testing-suite-evidence-for-sprint-review)
-      - [7.2.X.5. Execution Evidence for Sprint Review](#72x5-execution-evidence-for-sprint-review)
-      - [7.2.X.6. Services Documentation Evidence for Sprint Review](#72x6-services-documentation-evidence-for-sprint-review)
-      - [7.2.X.7. Software Deployment Evidence for Sprint Review](#72x7-software-deployment-evidence-for-sprint-review)
-      - [7.2.X.8. Team Collaboration Insights during Sprint](#72x8-team-collaboration-insights-during-sprint)
+    - [7.2.1. Sprint 1](#721-sprint-1)
+      - [7.2.1.1. Sprint Planning 1](#7211-sprint-planning-1)
+      - [7.2.1.2. Sprint Backlog 1](#7212-sprint-backlog-1)
+      - [7.2.1.3. Development Evidence for Sprint Review](#7213-development-evidence-for-sprint-review)
+      - [7.2.1.4. Testing Suite Evidence for Sprint Review](#7214-testing-suite-evidence-for-sprint-review)
+      - [7.2.1.5. Execution Evidence for Sprint Review](#7215-execution-evidence-for-sprint-review)
+      - [7.2.1.6. Services Documentation Evidence for Sprint Review](#7216-services-documentation-evidence-for-sprint-review)
+      - [7.2.1.7. Software Deployment Evidence for Sprint Review](#7217-software-deployment-evidence-for-sprint-review)
+      - [7.2.1.8. Team Collaboration Insights during Sprint](#7218-team-collaboration-insights-during-sprint)
   - [7.3. Validation Interviews](#73-validation-interviews)
     - [7.3.1. Diseño de entrevistas](#731-diseño-de-entrevistas)
     - [7.3.2. Registro de entrevistas](#732-registro-de-entrevistas)
     - [7.3.3. Evaluaciones según heurísticas](#733-evaluaciones-según-heurísticas)
+  - [7.4. Video About-the-Product](#74-video-about-the-product)
 - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
   - [Conclusiones](#conclusiones)
   - [Recomendaciones](#recomendaciones)
@@ -348,7 +356,7 @@ La siguiente tabla relaciona las contribuciones documentadas del TB1 con las res
 
 # Student Outcome
 
-**Entregas registradas: TB1 y TP.**
+**Entregas registradas: TB1, TP y avance documentado de TB2.**
 
 El curso contribuye al cumplimiento del Student Outcome ABET:
 
@@ -362,6 +370,20 @@ El cuadro relaciona las acciones y evidencias de TB1 y TP con el ABET – EAC - 
 | --- | --- | --- |
 | Comunica oralmente ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería. | **TB1:**<br><br>**Eduardo Gael Rivera Sosa:** Expuse los fundamentos del Startup Profile y Solution Profile de Talki, el proceso Lean UX y los hallazgos de las entrevistas, sustentándolos con evidencia cuantitativa y cualitativa.<br><br>**Manuel Ignacio Tumi Oliden:** Expliqué el análisis de competidores, el needfinding, las personas, la matriz de tareas, los empathy maps y el lenguaje ubicuo para conectar los hallazgos con las necesidades de Talki.<br><br>**Alejandro Daniel Oroncoy Almeyda:** Sustenté el To-Be Scenario Mapping, las user stories, el Impact Mapping, el Product Backlog y el diseño ADD, relacionando requisitos, drivers, decisiones y escenarios de calidad.<br><br>**Werner Khalil Lang Nassi:** Mi sección del TB1 reúne el EventStorming, el descubrimiento de bounded contexts, los flujos de mensajes, los Bounded Context Canvases y el Context Mapping. El feedback docente señala que los canvases no se expusieron en el video; debo incorporarlos a la demostración corregida.<br><br>**Kevin Jorge Chi Cruzatt:** Mi sección del TB1 reúne los diagramas System Landscape, Context Level, Container Level y Deployment. El feedback docente señala que el Landscape no se expuso en el video; debo mostrarlo y explicar sus actores y sistemas externos en la demostración corregida.<br><br>**TP:**<br><br>**Material de apoyo para la comunicación del diseño.**<br><br>**Eduardo Gael Rivera Sosa:** Mi sección reúne las guías de estilo, la organización de la información y el diseño de la landing page (6.1–6.3). Las pantallas y sus explicaciones permiten comunicar las decisiones visuales y de navegación en relación con las necesidades de los estudiantes.<br><br>**Manuel Ignacio Tumi Oliden:** Mi sección reúne Speech Analysis, Scoring & Feedback y Progress & Adaptation (5.2, 5.3 y 5.5). Las capas, los componentes C4, las clases UML y los modelos de datos permiten explicar cómo el discurso se convierte en métricas, evaluación y seguimiento del progreso.<br><br>**Alejandro Daniel Oroncoy Almeyda:** Organicé la explicación de Live Coaching, Practice Session Management y AI Provider Gateway (5.1, 5.4 y 5.9), relacionando los requisitos, los bounded contexts y la arquitectura con el recorrido de práctica. Los diagramas y ejemplos permiten comunicar las responsabilidades y decisiones del diseño.<br><br>**Werner Khalil Lang Nassi:** Mi sección reúne Sharing & Retention, Gamification e Identity & Access (5.6–5.8). Los modelos y ejemplos permiten explicar las reglas de acceso, consentimiento, eliminación, rachas y logros, junto con su relación con las necesidades del estudiante.<br><br>**Kevin Jorge Chi Cruzatt:** Mi sección reúne Notifications y el diseño UX/UI y prototipado de las aplicaciones (5.10, 6.4 y 6.5). Los wireframes, mock-ups, user flows y el recorrido web/móvil permiten explicar las acciones del usuario y los estados de error y privacidad con apoyo de las historias de usuario. | **TB1:**<br><br>El informe TB1 reúne la investigación, los requisitos y el diseño estratégico. El feedback docente identificó omisiones en la presentación individual a cámara y en la demostración del Landscape y los Bounded Context Canvases. Estas observaciones requieren una evidencia audiovisual corregida; la documentación de los artefactos no acredita por sí sola su comunicación oral.<br><br>**TP:**<br><br>Los modelos UML, las pantallas y los ejemplos del recorrido de preparación, práctica y revisión del feedback ofrecen un apoyo visual para comunicar las decisiones de diseño. La explicación del propósito de cada artefacto y su relación con las necesidades de Talki facilita la comprensión para audiencias de negocio y de ingeniería. |
 | Comunica en forma escrita ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería. | **TB1:**<br><br>**Eduardo Gael Rivera Sosa:** Redacté las secciones 1.1 (Startup Profile), 1.2 (Solution Profile y Lean UX Process), 1.3 (Segmentos objetivo) y 2.2 (Entrevistas), documentando la problemática, el proceso Lean UX y los hallazgos de las entrevistas.<br><br>**Manuel Ignacio Tumi Oliden:** Redacté las secciones 2.1 a 2.4, documentando competidores, needfinding, personas, matriz de tareas, mapas de empatía, escenarios As-Is y lenguaje ubicuo.<br><br>**Alejandro Daniel Oroncoy Almeyda:** Redacté las secciones 3.1 a 4.1.5, documentando los escenarios To-Be, user stories, impacto, backlog, drivers arquitectónicos, decisiones de diseño y refinamientos de escenarios de calidad.<br><br>**Werner Khalil Lang Nassi:** Redacté las secciones 4.2 a 4.2.5, documentando EventStorming, candidate context discovery, domain message flows, bounded context canvases y Context Mapping.<br><br>**Kevin Jorge Chi Cruzatt:** Redacté la sección 4.3 (Software Architecture) e incorporé los diagramas System Landscape, Context Level, Container Level y Deployment para documentar la arquitectura de Talki.<br><br>**TP:**<br><br>**Eduardo Gael Rivera Sosa:** Quedé asignado a la revisión de las guías de estilo, la arquitectura de información y el diseño de la landing page ([6.1](#61-style-guidelines), [6.2](#62-information-architecture) y [6.3](#63-landing-page-ui-design)). Mi revisión debe comprobar que la identidad visual, la navegación y la presentación del contenido respondan a las necesidades de los estudiantes.<br><br>**Manuel Ignacio Tumi Oliden:** Quedé asignado a la revisión del diseño táctico de Speech Analysis, Scoring & Feedback y Progress & Adaptation ([5.2](#52-bounded-context-speech-analysis), [5.3](#53-bounded-context-scoring--feedback) y [5.5](#55-bounded-context-progress--adaptation)). Debo revisar las responsabilidades de las capas y los diagramas de componentes, clases y datos, relacionándolos con el análisis del discurso, la evaluación y el seguimiento del progreso.<br><br>**Alejandro Daniel Oroncoy Almeyda:** Documenté el diseño táctico de Live Coaching, Practice Session Management y AI Provider Gateway ([5.1](#51-bounded-context-live-coaching), [5.4](#54-bounded-context-practice-session-management) y [5.9](#59-bounded-context-ai-provider-gateway)), explicando sus capas y relacionando los modelos con los requisitos de Talki. Consolidé los capítulos V y VI e incorporé las correcciones de tareas, criterios Gherkin, Technical Stories, backlog y vistas C4. En la revisión del TP completé los modelos de consentimiento, estado de análisis, configuración, planes y notificaciones; precisé contratos y restricciones de datos y relacioné los objetivos del usuario con wireflows web y móvil. Separé componentes C4 y clases UML para facilitar su explicación a una audiencia de ingeniería y revisé las afirmaciones de entrevistas para distinguir evidencia e hipótesis.<br><br>**Werner Khalil Lang Nassi:** Quedé asignado a la revisión del diseño táctico de Sharing & Retention, Gamification e Identity & Access ([5.6](#56-bounded-context-sharing--retention), [5.7](#57-bounded-context-gamification) y [5.8](#58-bounded-context-identity--access)). Debo comprobar que las reglas de acceso, consentimiento, eliminación, rachas y logros se expresen de forma consistente en las capas y los diagramas de componentes, clases y persistencia.<br><br>**Kevin Jorge Chi Cruzatt:** Quedé asignado a la revisión de Notifications, Applications UX/UI Design y Applications Prototyping ([5.10](#510-bounded-context-notifications), [6.4](#64-applications-uxui-design) y [6.5](#65-applications-prototyping)). Debo revisar la explicación de las notificaciones y la relación entre wireframes, mock-ups, wireflows, user flows y prototipado web/móvil, incluyendo los estados de error y privacidad. | **TB1:**<br><br>El informe consolidó los aportes de los cinco integrantes en una secuencia trazable: contexto y evidencia de investigación, especificación de requisitos y diseño estratégico. La documentación ofrece una referencia clara para el equipo y el docente, diferenciando los hallazgos de producto de las decisiones técnicas que orientan Talki.<br><br>**TP:**<br><br>La documentación del TP conecta los requisitos y el diseño estratégico con las capas, modelos UML, datos y recorridos de usuario de Talki. El reparto identifica las secciones que corresponden a cada integrante y ofrece un material concreto para revisar y comunicar el diseño. Las tablas, imágenes y referencias facilitan la comprensión del proyecto para audiencias de negocio y de ingeniería. |
+
+## Actualización del Student Outcome para TB2
+
+La comunicación escrita se amplía con contratos, procedencia de código, resultados de pruebas y límites de ejecución/despliegue del capítulo VII. La edición e integración de esta actualización se registra a nombre de Alejandro Daniel Oroncoy Almeyda. La reutilización se atribuye al proyecto 202601, distinguiendo resultados actuales e históricos para no comunicar disponibilidad o validación que no se ha demostrado.
+
+| Integrante | Evidencia escrita o revisión de TB2 | Comunicación oral de TB2 |
+| --- | --- | --- |
+| Alejandro Daniel Oroncoy Almeyda | Integración documental de 7.1–7.4, matriz de fuentes, manifiesto de reutilización y evidencias verificadas. Revisión con el equipo pendiente. | Recorrido técnico preparado; exposición grabada pendiente. |
+| Eduardo Gael Rivera Sosa | Revisión propuesta de landing, beneficios y protocolo de entrevistas; aporte propio por registrar. | Explicación de necesidades y validación por realizar y registrar. |
+| Manuel Ignacio Tumi Oliden | Revisión propuesta de análisis, scoring, progreso y pruebas; aporte propio por registrar. | Demostración de contratos y pruebas por realizar y registrar. |
+| Werner Khalil Lang Nassi | Revisión propuesta de identidad, gamificación, privacidad y retención; aporte propio por registrar. | Demostración de modelos y controles por realizar y registrar. |
+| Kevin Jorge Chi Cruzatt | Revisión propuesta de UX, despliegue y navegación; aporte propio por registrar. | Demostración del prototipo/producto por realizar y registrar. |
+
+**Conclusión del avance TB2.** La documentación permite explicar qué existe, cómo reproducirlo y qué falta comprobar. La capacidad de comunicación oral del nuevo hito se acreditará con una exposición de los cinco integrantes que muestre directamente repositorios, modelos, prototipo, APIs y pruebas en sus herramientas. La distribución de responsabilidades es una propuesta de revisión; no reemplaza acciones realizadas ni testimonios individuales.
 
 # Capítulo I: Introducción
 
@@ -4480,45 +4502,316 @@ El recorrido comienza con la configuración de la práctica, continúa con la pr
 
 # Capítulo VII: Software Product Implementation, Validation & Deployment
 
-Este capítulo corresponde a los hitos posteriores de implementación y validación. Se conserva la estructura del formato oficial; este avance de semana 7 no presenta sprints ejecutados, pruebas de producto, despliegues, entrevistas de validación ni videos que todavía no existen. El prototipo UX de 6.5 es evidencia de diseño, no de un producto integrado. La siguiente estructura se completará con evidencia real en esos hitos.
+La primera implementación documentada para TB2 reutiliza la base de Talki del periodo 202601. Se incorporan al repositorio actual instantáneas verificables de cuatro repositorios backend y del cliente web, junto con sus commits y sumas SHA-256. La revisión del 30 de octubre de 2026 vuelve a ejecutar sus pruebas y contrasta el código con el diseño de los capítulos IV–VI. La reutilización permite disponer de una base ejecutable, pero no acredita que todas las historias ampliadas del curso actual estén implementadas.
+
+El alcance de TB2 se toma del *Trabajo Final_1ASI0728_202620.pdf*, páginas 34–35: incluye el Sprint 1 hasta 7.2.1.8, las entrevistas de validación hasta 7.3.3 y 7.4 Video About-the-Product. El Sprint 2 corresponde a TF1. El presente capítulo distingue la evidencia técnica obtenida de las actividades que todavía requieren participación del equipo o de estudiantes.
 
 ## 7.1. Software Configuration Management
 
 ### 7.1.1. Software Development Environment Configuration
 
+El entorno se describe según los archivos realmente incluidos en las instantáneas del código. Las herramientas de modelado y UX conservan los artefactos editables del informe actual. No se asume la instalación de herramientas adicionales citadas en el informe anterior cuando no aparecen en sus dependencias.
+
+| Herramienta | Configuración o versión comprobada | Propósito y referencia |
+| --- | --- | --- |
+| Java y Apache Maven | Java 17; Spring Boot 3.2.5 en los ocho `pom.xml`; ejecución verificada con JDK 17.0.19. | Compilar y probar los servicios. [Java](https://www.oracle.com/java/technologies/downloads/), [Maven](https://maven.apache.org/). |
+| JUnit y Mockito | Dependencias de Spring Boot Starter Test. | Probar dominio, servicios y consumidores con dobles de prueba. [JUnit](https://junit.org/), [Mockito](https://site.mockito.org/). |
+| Springdoc OpenAPI | 2.3.0 en las dependencias del backend. | Generar contratos REST y explorarlos en Swagger UI. [Springdoc](https://springdoc.org/). |
+| Docker y Docker Compose | Un Dockerfile por servicio y `docker-compose.dev.yml` por repositorio backend. | Contenerización y ejecución local. [Docker](https://docs.docker.com/). |
+| RabbitMQ | Imagen local `rabbitmq:3.12-management`. | Mensajes entre servicios. La reproducción conjunta utiliza un solo broker. [RabbitMQ](https://www.rabbitmq.com/docs). |
+| H2 y JPA | H2 en memoria; configuración `create-drop` en los servicios con persistencia. | Datos descartables para desarrollo. Esta configuración no constituye persistencia de producción. |
+| Node.js y pnpm | Node compatible con Next 16; dependencias fijadas en `pnpm-lock.yaml`. | Compilar y ejecutar el cliente con `pnpm install --frozen-lockfile`. [Node.js](https://nodejs.org/), [pnpm](https://pnpm.io/). |
+| Next.js, React y TypeScript | Next 16.2.9, React 19.2.4 y TypeScript 5 declarados por el cliente; Tailwind CSS 4. | Cliente heredado con BFF y cookie de sesión httpOnly. [Next.js](https://nextjs.org/). |
+| Git y GitHub | Historial y commits fijados por repositorio. | Versionado, revisión y procedencia de cambios. [Git](https://git-scm.com/), [GitHub](https://github.com/). |
+| Structurizr y PlantUML | DSL y fuentes de diagramas en `assets/structurizr/` y `assets/diagrams/`. | Demostración del diseño C4 y UML en sus herramientas. [Structurizr](https://structurizr.com/), [PlantUML](https://plantuml.com/). |
+| Navegador y servidor HTTP | HTML, CSS y JavaScript del prototipo de 6.5. | Evaluar navegación web/móvil, con datos de ejemplo. La simulación no utiliza Gemini. |
+
+**Compatibilidad con el enunciado.** El backend Java/Spring Boot se encuentra entre las tecnologías indicadas en la página 32. El cliente reutilizado usa Next.js; el enunciado enumera Angular o Vue para la aplicación web. Debe resolverse esta diferencia mediante adecuación del cliente o autorización expresa del docente. Las vistas móviles del prototipo son adaptaciones responsivas; no se presentan como una aplicación nativa implementada.
+
+**Reproducción.** Se extraen las cinco instantáneas de `assets/reused-202601/tb2/` en un directorio de trabajo y se comprueba su integridad con `manifest.json`. En cada uno de los ocho directorios de servicio se ejecuta, con `JAVA_HOME` apuntando a JDK 17:
+
+```bash
+mvn -B -ntp clean test
+mvn -B -ntp package -DskipTests
+```
+
+En el cliente se ejecuta `pnpm install --frozen-lockfile` y `pnpm build`. Las variables del cliente se obtienen de `.env.example`; los valores privados se mantienen fuera del repositorio. `GEMINI_API_KEY` se requiere para voz real, pero no para las pruebas unitarias ni para explorar los contratos locales. El servicio comunica indisponibilidad con HTTP 503 si no está configurada.
+
 ### 7.1.2. Source Code Management
+
+El repositorio del informe del periodo 202620 es la fuente de la documentación actual. Las instantáneas de código mantienen el nombre de la organización de origen y el commit exacto; no se atribuyen como desarrollo nuevo de este periodo. El [manifiesto de reutilización TB2](assets/reused-202601/tb2/manifest.json) permite comprobar cada archivo importado.
+
+| Repositorio de origen | Commit fijado | Copia y propósito |
+| --- | --- | --- |
+| [talki-analysis-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services) | [9e026c3](https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services/tree/9e026c324b6f7a321505af705e9e8ffdd6496fc4) | [Instantánea](assets/reused-202601/tb2/talki-analysis-services-9e026c3.tar.gz); código del periodo 202601. |
+| [talki-engagement-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services) | [231bb5e](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services/tree/231bb5eb7ccefb741cbff5274634bef2eef17819) | [Instantánea](assets/reused-202601/tb2/talki-engagement-services-231bb5e.tar.gz); código del periodo 202601. |
+| [talki-frontend](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend) | [d63e889](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend/tree/d63e889a216d093a86bf24a2a328c18d0e610618) | [Instantánea](assets/reused-202601/tb2/talki-frontend-d63e889.tar.gz); código del periodo 202601. |
+| [talki-session-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services) | [cde4b11](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services/tree/cde4b117783db42115acc680ddb22e2bfe99ae24) | [Instantánea](assets/reused-202601/tb2/talki-session-services-cde4b11.tar.gz); código del periodo 202601. |
+| [talki-user-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services) | [1da887a](https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services/tree/1da887abe3dd2d776685c5d864dc4098ceb66344) | [Instantánea](assets/reused-202601/tb2/talki-user-services-1da887a.tar.gz); código del periodo 202601. |
+
+El flujo de trabajo del informe utiliza `main` para la versión integrada y ramas de cambios revisables. La presente actualización se prepara en `codex/tb2-report-completion-20261030`; preserva las correcciones de actores y de contenedores posteriores al parcial. Para las siguientes modificaciones se establece GitFlow: `develop` integra trabajo, `feature/<tema>` desarrolla una historia, `release/<versión>` prepara una entrega y `hotfix/<tema>` corrige una versión publicada. Este flujo es la convención adoptada; no se afirma que todas las ramas históricas lo hayan seguido.
+
+Las versiones de producto siguen SemVer: cambio incompatible incrementa la versión mayor, funcionalidad compatible la menor y corrección compatible el parche. Una entrega académica TB2 no constituye por sí sola un release de software. Los commits siguen `tipo(alcance): descripción`, por ejemplo `docs(tb2): document verified implementation baseline` o `fix(session): prevent duplicate finalization`. Cada autor registra el archivo/sección que modificó y enlaza su commit o PR; una asignación de revisión no equivale a un aporte completado.
 
 ### 7.1.3. Source Code Style Guide & Conventions
 
+| Ámbito | Convención aplicable | Comprobación |
+| --- | --- | --- |
+| Java | Paquetes en minúscula; clases en PascalCase; métodos y atributos en camelCase; constantes en UPPER_SNAKE_CASE; nombres técnicos en inglés. | Revisar dominio, aplicación, infraestructura e interfaces de cada servicio. |
+| Dependencias | El dominio expresa reglas; los servicios coordinan casos de uso; infraestructura implementa persistencia y mensajería; interfaces publica contratos. | Revisar imports y contratos respecto del capítulo V. La estructura por carpetas no prueba aislamiento automáticamente. |
+| TypeScript y React | Componentes en PascalCase; funciones y variables en camelCase; tipos explícitos en contratos y funciones del BFF. | Compilación Next/TypeScript; el repositorio contiene configuración ESLint. |
+| HTTP y eventos | Rutas `/v1/...`, verbos según operación, estados HTTP explícitos y DTO documentado. Los mensajes deben mantener identificadores y datos de correlación. | Contrastar controladores y documentos OpenAPI; probar errores y autorización, además del caso feliz. |
+| Secretos y datos | Variables privadas fuera de Git; JWT solo en cookie httpOnly del cliente; datos de pruebas identificados como fixtures. | No publicar claves, contraseñas, JWT ni datos personales en capturas. |
+| Documentación | Numeración acumulativa, tablas textuales editables y figuras con origen y alcance. | Revisar enlaces, procedencia y concordancia entre requisitos, diseño e implementación. |
+
+No se declara cobertura de código ni aprobación de un quality gate que no haya sido medido. Las pruebas ejecutadas comprueban comportamientos concretos, no cumplimiento íntegro de todas las restricciones del diseño.
+
 ### 7.1.4. Software Deployment Configuration
+
+La ejecución local requiere un único RabbitMQ compartido, los ocho servicios y el cliente. Ejecutar simultáneamente los cuatro Compose originales sin adaptarlos produciría conflictos de puertos y brokers separados. El script [capture-tb2-local.py](scripts/capture-tb2-local.py) utiliza un broker aislado y puertos de loopback 18081, 18082, 18083 y 18087–18091, arranca los JAR y los detiene al finalizar la captura. Su alcance es una prueba local reproducible, no un despliegue público.
+
+| Servicio | Puerto de referencia del código | Configuración externa principal |
+| --- | --- | --- |
+| Identity | 8081 | `PORT`, `JWT_SECRET`, parámetros RabbitMQ. |
+| Session | 8082 | `PORT`, parámetros RabbitMQ; almacenamiento H2 local. |
+| Live Coach | 8083 | `GEMINI_API_KEY`, `GEMINI_MODEL`, `GEMINI_BASE_URL`, expiración de token y parámetros RabbitMQ. |
+| Filler Detection / Scoring | 8087 / 8088 | `PORT` y parámetros RabbitMQ. |
+| Progress / Gamification | 8089 / 8090 | `PORT`, parámetros RabbitMQ; H2 local. |
+| Notifications | 8091 | `PORT` y parámetros RabbitMQ; procesamiento por eventos. |
+| Cliente web | 3000 | `TALKI_IDENTITY_URL`, `TALKI_SESSION_URL`, `TALKI_COACH_URL` y demás URLs definidas en `.env.example`. |
+
+La recuperación del ambiente público debe: aprovisionar recursos y variables privadas; compilar cada commit fijado; configurar un broker común y almacenamiento persistente; publicar HTTPS; verificar rutas OpenAPI; configurar las URLs del BFF; ejecutar el recorrido autenticado y registrar capturas fechadas. Los Dockerfiles son insumos del proceso; no acreditan que un servicio esté activo.
+
+La vista 4.3.4 representa la arquitectura objetivo con HTTPS/WSS y mensajería. La base reutilizada agrupa responsabilidades en ocho servicios y mantiene H2 en memoria; no debe confundirse con la materialización completa de los diez bounded contexts ni con el despliegue objetivo de privacidad y retención.
 
 ## 7.2. Solution Implementation
 
-### 7.2.X. Sprint X
+### 7.2.1. Sprint 1
 
-#### 7.2.X.1. Sprint Planning X
+El incremento de TB2 adopta el código existente como base y comprueba su estado antes de añadir las capacidades ampliadas del backlog. El informe anterior contiene un Sprint 1 de mayo de 2026; sus fechas, reuniones y velocidad no se trasladan al curso actual. La revisión del 30/10/2026 registra adaptación documental y verificación técnica. La ejecución formal del Sprint 1 del equipo todavía necesita su acta, tablero y revisión.
 
-#### 7.2.X.2. Sprint Backlog X
+#### 7.2.1.1. Sprint Planning 1
 
-#### 7.2.X.3. Development Evidence for Sprint Review
+**Objetivo propuesto.** Disponer de una primera versión demostrable del recorrido acceso → configuración de práctica → cierre → consulta de resultados, con evidencia de código y pruebas, y con límites explícitos respecto de las historias ampliadas. La meta de aceptación es completar ese recorrido contra un ambiente desplegado y mostrar resultados trazables. La prueba local de este informe cubre solamente las operaciones identificadas en 7.2.1.5.
 
-#### 7.2.X.4. Testing Suite Evidence for Sprint Review
+| Campo del planning | Registro |
+| --- | --- |
+| Entrega | TB2, Sprint 1. |
+| Fecha del registro documental | 30/10/2026. |
+| Fecha, hora y lugar de reunión | Por registrar en el acta real del equipo. |
+| Preparación del documento | Consolidación del informe coordinada por Alejandro Daniel Oroncoy Almeyda. |
+| Asistentes y acuerdos | Pendientes de reunión y confirmación individual; no se presume asistencia. |
+| Revisión del incremento previo | El profesor calificó el parcial con 19/20; diseño táctico y UX 10/10, documentación y colaboración 9/10. |
+| Mejora de retrospectiva | Registrar modificaciones por autor; incorporar fotos y carrera en el keynote; demostrar los artefactos directamente en sus herramientas. |
+| Velocidad y capacidad | No medidas para este Sprint 1. Los puntos de 3.5 son estimaciones de producto; no se registran como velocidad entregada. |
+| Criterio de terminado | Código integrado y trazable, pruebas pertinentes aprobadas, contrato y ejecución comprobados, despliegue accesible y revisión por el equipo. |
 
-#### 7.2.X.5. Execution Evidence for Sprint Review
+#### 7.2.1.2. Sprint Backlog 1
 
-#### 7.2.X.6. Services Documentation Evidence for Sprint Review
+El siguiente backlog identifica tareas verificables del incremento. Es una propuesta de seguimiento; la columna de responsabilidad indica la revisión sugerida según el reparto anterior y no certifica ejecución individual. Las estimaciones de esfuerzo y la aceptación de responsables se completarán durante el planning real.
 
-#### 7.2.X.7. Software Deployment Evidence for Sprint Review
+| Tarea | Historias relacionadas | Trabajo y evidencia de aceptación | Horas estimadas / responsable por confirmar | Estado al 30/10 |
+| --- | --- | --- | --- | --- |
+| TB2-01 | Transversal | Importar instantáneas con commit, licencia si existe y SHA-256; adaptar SCM. | Por estimar / Alejandro | Documentado; archivos importados. |
+| TB2-02 | US05, US06, US28 | Verificar acceso y contrato de identidad; comprobar aislamiento y cierre de sesión. | Por estimar / Werner | Base y pruebas disponibles; aceptación integral pendiente. |
+| TB2-03 | US09, US10, US12–US14; TS01, TS02 | Comprobar creación, modos, token y finalización; demostrar voz real con consentimiento. | Por estimar / Alejandro | Base y pruebas disponibles; voz e integración completa pendientes. |
+| TB2-04 | US15, US16, US19, US37; TS03, TS04 | Contrastar análisis, puntuación, reintento e idempotencia con el diseño vigente. | Por estimar / Manuel | Pruebas unitarias disponibles; contratos ampliados e integración pendientes. |
+| TB2-05 | US20–US22, US35 | Comprobar historial, progreso y logros a partir de eventos reales. | Por estimar / Manuel y Werner | Base disponible; aceptación del flujo completo pendiente. |
+| TB2-06 | US29, US33; TS06 | Implementar o comprobar consentimiento, exportación, purga y propiedad por usuario. | Por estimar / Werner | Diseño documentado; implementación completa no acreditada. |
+| TB2-07 | 6.4.3–6.5 | Conservar mock-ups/user flows; comprobar navegación y capturar video por aplicación. | Por estimar / Kevin | Prototipo publicado; video de navegación pendiente. |
+| TB2-08 | Transversal | Recuperar despliegue, validar HTTPS/OpenAPI y adaptar tecnología web al enunciado. | Por estimar / Kevin y Alejandro | Pendiente; URLs históricas indisponibles. |
+| TB2-09 | 7.3 | Aplicar validación a 3–5 estudiantes por segmento y completar heurísticas. | Por estimar / Eduardo y Kevin | Protocolo listo; sesiones y resultados pendientes. |
+| TB2-10 | 7.4 y anexos | Grabar About Product, actualizar About Team y exposición en herramientas. | Por estimar / Equipo | Guion y recorrido preparados; grabación/publicación pendientes. |
 
-#### 7.2.X.8. Team Collaboration Insights during Sprint
+El [tablero histórico de 202601](https://github.com/orgs/upc-pre-202601-si657-7940-thropic/projects/1) se conserva como referencia del proyecto previo. No sustituye un tablero del Sprint 1 actual. Se debe publicar el tablero 202620, añadir estos ítems y adjuntar captura y URL con estados, responsables y horas acordados.
+
+#### 7.2.1.3. Development Evidence for Sprint Review
+
+Las evidencias de desarrollo reutilizado se identifican por repositorio, commit y fecha original. La adaptación documental del periodo actual se revisa por separado en el historial del informe. Los SHA fijados permiten recuperar código y mensajes originales sin alterar la autoría histórica.
+
+| Repositorio | Commit / fecha original | Mensaje y contenido verificable |
+| --- | --- | --- |
+| talki-analysis-services | [9e026c3](https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services/commit/9e026c324b6f7a321505af705e9e8ffdd6496fc4); 2026-06-07 | Merge pull request #6 from upc-pre-202601-si657-7940-thropic/feat/actuator-health. El enlace conserva autor, mensaje completo, archivos y fecha. |
+| talki-engagement-services | [231bb5e](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services/commit/231bb5eb7ccefb741cbff5274634bef2eef17819); 2026-06-07 | Merge pull request #4 from upc-pre-202601-si657-7940-thropic/feat/actuator-health. El enlace conserva autor, mensaje completo, archivos y fecha. |
+| talki-frontend | [d63e889](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend/commit/d63e889a216d093a86bf24a2a328c18d0e610618); 2026-07-09 | feat: agregar pausa/reanudar en grabación y transcripción en vivo (#3). El enlace conserva autor, mensaje completo, archivos y fecha. |
+| talki-session-services | [cde4b11](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services/commit/cde4b117783db42115acc680ddb22e2bfe99ae24); 2026-07-04 | fix(live-coach): escenario por defecto en modo scenario sin scenarioId. El enlace conserva autor, mensaje completo, archivos y fecha. |
+| talki-user-services | [1da887a](https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services/commit/1da887abe3dd2d776685c5d864dc4098ceb66344); 2026-07-09 | fix(identity): permitir re-sembrar la cuenta demo del informe AV4. El enlace conserva autor, mensaje completo, archivos y fecha. |
+
+**Correspondencia con el diseño actual.** Identity corresponde parcialmente a 5.8; Session a 5.4; Live Coach a 5.1 y parte del acceso al proveedor de 5.9; Filler Detection a 5.2; Scoring a 5.3; Progress a 5.5; Gamification a 5.7 y Notifications a 5.10. No se encontró un servicio completo de Sharing & Retention de 5.6 ni un gateway de proveedor desacoplado que materialice todas las políticas de 5.9. Esta tabla es correspondencia de responsabilidades, no equivalencia de implementación.
+
+Los controladores de la base utilizan identificadores y contratos más simples que el diseño objetivo. Por ejemplo, el endpoint de sesiones recibe `userId` y devuelve entidades; ello no acredita autorización por propietario ni el contrato versionado de `GET /v1/reports/{sessionId}`. Estas diferencias permanecen en el backlog y deben probarse antes de afirmar cumplimiento de TS04, TS06 o de los escenarios de privacidad.
+
+#### 7.2.1.4. Testing Suite Evidence for Sprint Review
+
+Se ejecutó `mvn -B -ntp clean test` en los ocho servicios con JDK 17.0.19. El resultado se obtuvo de los XML de Maven Surefire, por clase y servicio; se conserva en [verification.json](assets/evidence/tb2/verification.json). No se reutiliza el conteo histórico de 128 pruebas del informe anterior.
+
+| Servicio | Pruebas | Fallos | Errores | Omitidas |
+| --- | ---: | ---: | ---: | ---: |
+| identity-service | 16 | 0 | 0 | 0 |
+| notification-service | 7 | 0 | 0 | 0 |
+| session-service | 30 | 0 | 0 | 0 |
+| live-coach-service | 14 | 0 | 0 | 0 |
+| filler-detection-service | 11 | 0 | 0 | 0 |
+| scoring-service | 33 | 0 | 0 | 0 |
+| progress-service | 9 | 0 | 0 | 0 |
+| gamification-service | 13 | 0 | 0 | 0 |
+
+**Resultado:** 133 pruebas, cero fallos, cero errores y cero omitidas. Son pruebas unitarias y de componentes con dobles de prueba, según las clases presentes; el número no representa cobertura porcentual. La primera ejecución con un JDK diferente al declarado presentó incompatibilidad de Mockito/Byte Buddy; la ejecución válida se realizó con Java 17.
+
+La prueba de humo HTTP local, con un caso de finalización fallido, se documenta en 7.2.1.5. No sustituye una suite completa de integración, aceptación BDD ni rendimiento. No se encontraron archivos `.feature` en las cinco instantáneas; los escenarios Gherkin del capítulo III siguen siendo especificaciones, pendientes de vincular con steps y ejecución. Tampoco se encontró evidencia ejecutada de pruebas de voz real, recuperación, autorización entre usuarios, purga distribuida o contratos versionados. El cliente dispone de compilación y lint; no declara un script de pruebas automatizadas en su `package.json`.
+
+Para completar la aceptación se deben ejecutar, al menos: acceso válido/inválido; propiedad de sesiones; permiso de micrófono denegado; token vencido; finalización repetida; análisis pendiente o fallido; reconexión; eliminación con confirmaciones; y recorrido web/móvil. Cada resultado debe enlazar suite, commit, comando y evidencia. No se registra como aprobado mientras no se ejecute.
+
+#### 7.2.1.5. Execution Evidence for Sprint Review
+
+Se levantaron localmente los ocho JAR con un RabbitMQ aislado y H2 descartable. Los ocho servicios entregaron OpenAPI con HTTP 200; Filler Detection y Notifications tienen cero rutas REST de negocio porque trabajan por eventos. La captura reproducible está en [local-execution.json](assets/evidence/tb2/local-execution.json) y las especificaciones se conservan en [openapi-local](assets/evidence/tb2/openapi-local/).
+
+| Operación local con datos de prueba | HTTP obtenido | Interpretación |
+| --- | ---: | --- |
+| `POST /v1/auth/register` | 201 | Cuenta de prueba creada. |
+| `POST /v1/auth/login` | 200 | Credenciales válidas; JWT oculto en la evidencia. |
+| `POST /v1/sessions` | 201 | Sesión creada en DRAFT. |
+| `GET /v1/sessions/1` | 200 | Consulta de la sesión creada. |
+| `GET /v1/sessions?userId=1` | 200 | Listado de la cuenta de prueba. |
+| `POST /v1/sessions/1/finalize` | 500 | Intento de finalizar desde DRAFT; el dominio exige RECORDING y no existe ruta REST de inicio en este controlador. El 500 debe sustituirse por un error de negocio controlado y resolverse el recorrido de estados. |
+| `GET /v1/progress/dashboard?userId=1` | 200 | Resumen vacío inicial; no prueba procesamiento de una sesión finalizada. |
+| `GET /v1/gamification/streaks/1` | 200 | Racha inicial; no acredita logro nuevo. |
+| `GET /v1/coach/modes` | 200 | Catálogo de modos disponible. |
+| `POST /v1/coach/live-token?mode=quick_practice` | 503 | Error esperado con GEMINI_API_KEY vacía; no se consumió el proveedor. |
+
+El recorrido de prueba no se completó. En particular, el intento de finalizar una sesión DRAFT devolvió 500; no representa una práctica de voz realizada. Deben resolverse la transición a RECORDING y el manejo HTTP del estado inválido antes de acreditar la aceptación del ciclo completo. No se efectuó una llamada pagada a Gemini ni se procesó audio real.
+
+La compilación de producción del cliente con `pnpm build` finalizó correctamente. Esto comprueba compilación y tipos, pero no conectividad funcional del producto.
+
+
+La [galería](https://upc-pre-202620-si728-16365-thropic.github.io/talki-project-report/) y el [prototipo UX](https://upc-pre-202620-si728-16365-thropic.github.io/talki-project-report/assets/ux/prototype/) respondieron HTTP 200 el 30/10/2026. Sus pantallas permiten demostrar los flujos de diseño de 6.4–6.5. Las métricas, transcripción y acciones simuladas del prototipo no se presentan como salida de servicios o IA real.
+
+El video de navegación del producto integrado sigue pendiente. Su recorrido debe mostrar landing, acceso, configuración, práctica, cierre, análisis y consulta del resultado, incluyendo un estado de error pertinente. Se debe publicar el MP4 en Stream, registrar duración, insertar una captura con enlace y distinguir la demostración del prototipo de la aplicación conectada. El guion de demostración del anexo K organiza la grabación.
+
+#### 7.2.1.6. Services Documentation Evidence for Sprint Review
+
+La documentación se obtiene de los controladores del commit fijado y, cuando el servicio está ejecutándose localmente, de `/v3/api-docs`. El informe diferencia contratos existentes de los contratos propuestos en las Technical Stories.
+
+| Servicio | Métodos y rutas de la base | Parámetros o contenido principal |
+| --- | --- | --- |
+| Identity | `POST /v1/auth/register`; `POST /v1/auth/login` | Registro: email, password, username, academicSegment; login: email y password. La respuesta de login contiene JWT, que debe ocultarse en evidencias. |
+| Session | `POST /v1/sessions`; `GET /v1/sessions`; `GET /v1/sessions/{id}` | Creación: title, sessionType, userId; listado: query userId; consulta: id. |
+| Session | `POST /v1/sessions/{id}/finalize`; `GET/POST /v1/sessions/{id}/feedbacks` | Finalización y consulta/incorporación de feedback del recurso. |
+| Live Coach | `GET /v1/coach/modes`; `POST /v1/coach/live-token` | Modos; query mode y scenarioId opcional para token efímero. Sin clave configurada responde 503. |
+| Live Coach | `POST /v1/coach/{sessionId}/finalize` | userId, mode, transcriptGemini y métricas en query; publica evento de cierre. No confundir estos parámetros con mediciones verificadas del audio. |
+| Progress | `GET /v1/progress/dashboard` | Query userId. |
+| Gamification | `GET /v1/gamification/streaks/{userId}`; `GET /v1/gamification/leaderboard` | Racha del usuario y ranking. |
+| Scoring | `GET /v1/scores/health` | Ruta de estado declarada por el controlador; no equivale a disponibilidad de todas las evaluaciones. |
+| Filler Detection / Notifications | Consumidores de mensajes | Las operaciones de negocio principales se activan por eventos; la ausencia de rutas REST de negocio no es una documentación fallida. |
+
+Ejemplo de solicitud local para creación de una sesión con datos de prueba:
+
+```http
+POST /v1/sessions
+Content-Type: application/json
+
+{"title":"TB2 local fixture","sessionType":"quick_practice","userId":1}
+```
+
+El controlador declara HTTP 201 al crear y HTTP 202 al finalizar una sesión válida; el intento desde DRAFT de esta prueba devolvió 500. En el caso exitoso de creación, el cuerpo exacto y los identificadores devueltos se conservan en la captura de ejecución local. Las especificaciones completas incluyen esquemas de solicitud/respuesta y deben abrirse en Swagger UI durante la exposición, mostrando un caso exitoso y uno de error sin revelar credenciales.
+
+#### 7.2.1.7. Software Deployment Evidence for Sprint Review
+
+La comprobación pública está fechada en [verification.json](assets/evidence/tb2/verification.json). Se probaron la página del cliente y las rutas `/actuator/health` y `/v3/api-docs` de los ocho orígenes históricos de Railway.
+
+| Producto o evidencia | Resultado del 30/10/2026 | Alcance y acción |
+| --- | --- | --- |
+| Galería y prototipo del informe 202620 en GitHub Pages | HTTP 200 en ambas páginas. | Diseño accesible públicamente; no acredita backend ni voz real. |
+| Cliente histórico `talki-frontend.vercel.app` | HTTP 402. | Recuperar el servicio y repetir el recorrido; la causa administrativa no se deduce solo del código HTTP. |
+| Ocho orígenes históricos de Railway | HTTP 404 en las 16 rutas comprobadas. | No acreditan disponibilidad de API. Revisar proyectos, dominios y despliegues; repetir comprobación tras recuperación. |
+| Ejecución local de las instantáneas | Evidencia separada en 7.2.1.5. | Útil para comprobar código y contratos; no satisface por sí sola el requisito de producto desplegado. |
+
+No se incorporan capturas históricas de Railway como si fueran del ambiente vigente. Para cerrar este punto se necesitan capturas actuales de configuración y servicios activos, URLs funcionales, identificación del commit desplegado, evidencia de persistencia y prueba del recorrido integrado. La primera versión desplegada del producto continúa pendiente.
+
+#### 7.2.1.8. Team Collaboration Insights during Sprint
+
+El historial de TB1 y TP permanece en Project Report Collaboration Insights. La actualización TB2 incorpora procedencia del código, contraste de contratos, resultados de pruebas y protocolo de validación. Las instantáneas de 202601 conservan sus autores originales y no cuentan como commits actuales de los cinco integrantes.
+
+La observación docente sobre concentración editorial se atiende haciendo explícito quién modificó cada versión y separando autoría, coautoría registrada y revisión asignada. No se redistribuyen cambios históricos entre integrantes que no los realizaron. Para cerrar la colaboración del Sprint 1, cada integrante debe revisar su sección, realizar su aporte y aportar el enlace verificable del commit/PR y la evidencia de la herramienta utilizada.
+
+| Integrante | Revisión propuesta para TB2 según el reparto previo | Evidencia de cierre requerida |
+| --- | --- | --- |
+| Alejandro Daniel Oroncoy Almeyda | Integración del informe, SCM, sesiones/coach y trazabilidad de código y pruebas. | PR de esta adaptación y revisión técnica de contratos pendientes. |
+| Eduardo Gael Rivera Sosa | Landing, comunicación de beneficios y entrevistas de validación. | Cambios propios y registro real de sesiones/observaciones. |
+| Manuel Ignacio Tumi Oliden | Análisis, puntuación y progreso. | Revisión de suite, resultados y diferencias con diseño vigente. |
+| Werner Khalil Lang Nassi | Identidad, gamificación, privacidad y retención. | Pruebas/revisión propias y cierre de diferencias de autorización/purga. |
+| Kevin Jorge Chi Cruzatt | Despliegue, UX/prototipo y evidencias de navegación. | Capturas actuales, aportes propios y enlace al recorrido demostrado. |
 
 ## 7.3. Validation Interviews
 
 ### 7.3.1. Diseño de entrevistas
 
+El objetivo es observar si estudiantes de ambos segmentos comprenden la propuesta, preparan una práctica, interpretan feedback y reconocen cómo gestionar sus datos. Se reclutarán entre tres y cinco estudiantes por segmento: ciclos iniciales y ciclos superiores, manteniendo los criterios de 1.3. La muestra mínima prevista es de seis participantes. Las entrevistas de needfinding de 2.2 no se presentan como validación del producto.
+
+**Preparación y consentimiento.** Antes de grabar se explica propósito, duración, qué datos se registran y la posibilidad de retirarse. No se solicita una contraseña personal ni material sensible. Se utiliza una cuenta de prueba o el prototipo con datos de ejemplo. Se identifica qué versión y dispositivo se evalúan; si es el prototipo se advierte que audio y resultados son simulados. Se solicitan autorización independiente para grabación y para uso de un testimonio en el video promocional.
+
+**Inicio.** Se registra código del participante, nombre autorizado, edad, distrito, segmento, ciclo, fecha, dispositivo y experiencia previa. Se pregunta en qué situación necesita practicar y qué espera encontrar al revisar la landing. La evaluación se realiza primero sin explicar dónde pulsar; toda ayuda se registra.
+
+| Tarea | Consigna para el participante | Observación y métrica |
+| --- | --- | --- |
+| V01 — Propuesta | Revisa la landing y explica para quién sirve Talki y qué podrías hacer. | Comprensión de beneficios, límites y acción principal. |
+| V02 — Preparación | Configura una práctica para una exposición o entrevista y prepárala para iniciar. | Éxito sin ayuda, tiempo, errores, comprensión de permisos/consentimiento. |
+| V03 — Práctica | Inicia o recorre una práctica, reconoce el estado y explica cómo terminarías. | Visibilidad del estado, control, recuperación y comprensión del cierre. |
+| V04 — Feedback | Revisa un reporte y explica qué mejorarías en la siguiente práctica. | Localización de evidencia, comprensión de puntuaciones y límites, acción elegida. |
+| V05 — Continuidad | Encuentra una sesión anterior y compara resultados cuando sean compatibles. | Encontrabilidad, filtros, etiquetas y comprensión de comparabilidad. |
+| V06 — Privacidad | Explica cómo exportarías tu información o pedirías su eliminación. | Reconocimiento de confirmaciones, alcance y estado de purga. |
+
+**Cierre.** Preguntar qué fue confuso, qué faltó para confiar en el feedback, qué cambiaría antes de usarlo para una evaluación real y si lo utilizaría en su situación habitual. Registrar citas textuales solo desde la grabación, con permiso e intervalo. Una opinión favorable no se transforma en mejora medida del desempeño.
+
+QAS-USA-01 propone que al menos el 90 % prepare una sesión válida en tres minutos o menos sin ayuda. Se informará el numerador y denominador reales, además del porcentaje y los resultados por segmento. Con seis participantes, alcanzar el umbral requiere seis éxitos; cinco de seis representa 83,3 %. Las tareas simuladas solo prueban usabilidad del prototipo, no efectividad del entrenamiento de voz.
+
 ### 7.3.2. Registro de entrevistas
 
+**Estado: pendiente de aplicación y publicación.** No se dispone de evidencia de sesiones de validación en esta revisión. Se deja preparado el registro mínimo de seis participantes, sin asignar identidades o respuestas ficticias. Los videos de validación permanecen pendientes por acuerdo del equipo.
+
+| Registro | Segmento previsto | Identidad, edad, distrito y fecha | Dispositivo / versión | Stream, inicio y duración | Resumen y tareas |
+| --- | --- | --- | --- | --- | --- |
+| VAL-01 | Ciclos iniciales | Por registrar con autorización. | Por registrar. | Pendiente. | Pendiente de sesión. |
+| VAL-02 | Ciclos iniciales | Por registrar con autorización. | Por registrar. | Pendiente. | Pendiente de sesión. |
+| VAL-03 | Ciclos iniciales | Por registrar con autorización. | Por registrar. | Pendiente. | Pendiente de sesión. |
+| VAL-04 | Ciclos superiores | Por registrar con autorización. | Por registrar. | Pendiente. | Pendiente de sesión. |
+| VAL-05 | Ciclos superiores | Por registrar con autorización. | Por registrar. | Pendiente. | Pendiente de sesión. |
+| VAL-06 | Ciclos superiores | Por registrar con autorización. | Por registrar. | Pendiente. | Pendiente de sesión. |
+
+Por cada entrevista se incorporará captura enlazada al video, datos autorizados, segmento, fecha e intervalo de reproducción; tareas completadas, ayuda ofrecida, observaciones y síntesis interpretativa. Se consolidará un MP4 con títulos por participante, publicado en el canal Stream indicado por el docente. La edición prevista por entrevista es de tres a cinco minutos, según el Anexo C del enunciado.
+
 ### 7.3.3. Evaluaciones según heurísticas
+
+Se evaluarán usabilidad, arquitectura de información y diseño inclusivo usando el formato del Anexo D del enunciado. El registro separará evidencia observada, interpretación, severidad, recomendación y decisión. La siguiente matriz define qué observar; sus campos de resultados permanecen pendientes hasta realizar las sesiones.
+
+| Dimensión | Criterio y situación a observar | Evidencia requerida | Resultado |
+| --- | --- | --- | --- |
+| Usabilidad | Visibilidad de preparación, escucha, pausa, análisis y finalización. | Tarea V02–V04, pantalla e intervalo; errores y explicación del participante. | Por evaluar. |
+| Usabilidad | Control, cancelación, recuperación de permiso denegado o desconexión. | Ruta intentada, ayuda requerida y recuperación conseguida. | Por evaluar. |
+| Usabilidad | Correspondencia de feedback con evidencia y claridad de mensajes. | Interpretación de puntuación y recomendación sin inducir respuestas. | Por evaluar. |
+| Arquitectura de información | Etiquetas y agrupación de práctica, historial, progreso y privacidad. | Búsqueda inicial y ruta seguida en V05–V06. | Por evaluar. |
+| Arquitectura de información | Encontrabilidad y orientación dentro del recorrido. | Retrocesos, elección de navegación, filtros y elementos no encontrados. | Por evaluar. |
+| Diseño inclusivo | Legibilidad, contraste, foco visible, teclado y orden de lectura. | Dispositivo, método de entrada, captura y barrera concreta. | Por evaluar. |
+| Diseño inclusivo | Alternativas a audio/color y comprensión de consentimiento y eliminación. | Interpretación, recurso alternativo disponible y dificultad observada. | Por evaluar. |
+
+Cada hallazgo tendrá ID, participante/tarea, heurística, evidencia, frecuencia, severidad 0–4, recomendación, responsable y estado. La severidad 0 indica ausencia de problema; 1 cosmético; 2 menor; 3 mayor; 4 impide una tarea esencial. Se debe justificar la severidad por impacto, frecuencia y recuperación. No se asigna una nota ni se afirma accesibilidad certificada a partir de la existencia de mock-ups.
+
+El análisis final agrupará problemas por segmento y dispositivo, priorizará los bloqueos, enlazará cada decisión con una historia y conservará las versiones anterior y corregida. El resultado de esta sección sigue pendiente de observaciones reales.
+
+## 7.4. Video About-the-Product
+
+**Estado: grabación y publicación pendientes.** El video presentará Talki a estudiantes que necesitan practicar exposiciones, entrevistas o sustentaciones. Explicará el problema, la propuesta, el recorrido y las condiciones de uso sin prometer una mejora de desempeño todavía no medida. Debe durar entre uno y tres minutos e incluir interacción con el producto y al menos una opinión autorizada de cada segmento.
+
+| Intervalo propuesto | Contenido y evidencia |
+| --- | --- |
+| 0:00–0:20 | Necesidad de practicar comunicación oral y presentación breve de Talki. |
+| 0:20–0:45 | Público objetivo y modelo de acceso/planes, distinguiendo propuesta de funcionalidad disponible. |
+| 0:45–1:30 | Configuración, práctica y lectura de feedback; mostrar la aplicación real. Si se usa el prototipo, rotular simulación. |
+| 1:30–2:10 | Una opinión autorizada de ciclos iniciales y una de ciclos superiores, recogidas realmente. |
+| 2:10–2:30 | Beneficio esperado, acceso a la solución y límites pertinentes. |
+
+La versión final se publicará en Microsoft Stream y YouTube; se añadirá captura, duración, enlaces y fecha de publicación, y se incrustará en la landing. No se sustituye con el video About-the-Team ni con las entrevistas de needfinding. El guion queda preparado; las opiniones y URLs se completarán al grabar.
+
 
 # Conclusiones y recomendaciones
 
@@ -4541,19 +4834,23 @@ Con el TP de semana 7, esa base se extiende a diseño táctico y UX:
 
 La inteligencia artificial se propone como apoyo para ensayar preguntas contextualizadas, obtener transcripción y convertir evidencia autorizada en recomendaciones concretas. Estas capacidades responden a las dificultades relatadas de fluidez, claridad y preparación bajo presión. Su utilidad depende de la calidad de la evidencia y de que el estudiante comprenda las recomendaciones; una transcripción por sí sola no mide volumen ni una puntuación acredita reducción de ansiedad. Las entrevistas y el prototipo sustentan la propuesta de diseño, mientras que la mejora del desempeño deberá evaluarse con prácticas y tareas observadas en ambos segmentos.
 
+**Avance TB2.** La base 202601 ofrece ocho servicios y un cliente compilables. La ejecución con Java 17 aprueba 133 pruebas unitarias; la galería y el prototipo de diseño están publicados. Los enlaces históricos del producto no acreditan disponibilidad actual: el cliente responde 402 y las rutas comprobadas del backend 404. Deben recuperarse el despliegue y la aceptación integrada antes de presentar una primera versión operativa. El protocolo de validación está preparado, pero todavía no hay resultados observados ni opiniones autorizadas de validación para sustentar una mejora de desempeño.
+
 ## Recomendaciones
 
 - Validar las historias priorizadas y los criterios de aceptación con estudiantes y docentes antes de iniciar la implementación.
 - Mantener la trazabilidad entre los drivers ADD, los bounded contexts y los diagramas de arquitectura cuando se incorporen nuevas decisiones de diseño.
 - Revisar el despliegue refinado de 4.3.4 con RabbitMQ y canales HTTPS/WSS, y comprobar presupuesto, conectividad y roles de base de datos antes de operar.
 - Usar los escenarios de calidad refinados como base de pruebas de rendimiento, privacidad, recuperación e idempotencia durante la fase de implementación.
-- Incorporar el feedback docente a I–IV y revisar V–VI con el equipo; ejecutar después la implementación, pruebas y validaciones del capítulo VII con evidencias reales.
+- Cerrar las observaciones del parcial con aportes verificables por integrante, la lámina del equipo y la exposición en herramientas. Recuperar el despliegue y resolver la tecnología web respecto del enunciado; ejecutar aceptación, validación por segmento y publicación de videos antes de declarar TB2 completo.
 
 # Video About-the-Team
 
 Presentación de los cinco integrantes de Thropic, con sus nombres, apellidos y carrera de Ingeniería de Software. Cada integrante se presenta hablando a cámara.
 
 **Video:** [Video About-the-Team](https://www.youtube.com/watch?v=K6RUwmhUR2Y).
+
+La versión enlazada acredita presentación individual del equipo. Para TB2 se debe complementar con escenas de trabajo real, retrospectiva y testimonio de actividades y competencias, conforme al Anexo C. Su publicación en Stream e incrustación en la landing deben registrarse con evidencia; no se presume que la presentación existente cubra todo ese contenido.
 
 # Bibliografía
 
@@ -4570,6 +4867,8 @@ Ries, E. (2011). *The Lean Startup: How today's entrepreneurs use continuous inn
 Speeko. (s. f.). *Speeko: AI speech coach*. Recuperado el 7 de octubre de 2026, de https://www.speeko.co/
 
 Thropic. (2026). *Talki: Project report* [Repositorio de GitHub, versión 2cfa379]. [GitHub](https://github.com/upc-pre-202601-si657-7940-thropic/talki-project-report/blob/2cfa379b72241a1380d87b4f8c5be53a70950d81/README.MD).
+
+Universidad Peruana de Ciencias Aplicadas. (2026). *Trabajo Final 1ASI0728 202620* [Enunciado del curso Arquitecturas de Software Emergentes; páginas 32, 34–35 y anexos B–D]. Campus Virtual UPC. Identificador de contenido: `_76029989_1`.
 
 Varona Albán, J. C., & Ramos Benítez, M. C. (2024). Competencias laborales blandas de alto impacto en egresados universitarios: Un estudio descriptivo. *Revista Virtual Universidad Católica del Norte*, (71), 245–275. https://doi.org/10.35575/rvucn.n71a11
 
@@ -4594,8 +4893,15 @@ World Wide Web Consortium. (s. f.). *Understanding Success Criterion 2.5.8: Targ
 | I | Prototipo UX navegable, datos de ejemplo, variantes web/móvil y modo wireframe. | [HTML](assets/ux/prototype/index.html), [instrucciones](assets/ux/prototype/README.md) |
 | J | Activos técnicos y registro de versiones de Talki. | `assets/reused-202601/`, [registro de procedencia](assets/design/reuse-manifest.json) |
 
+| K | Checklist numerado TB2, fuentes y seguimiento de feedback del parcial. | [Checklist TB2](docs/tb2/checklist.md); [guion de demostración](docs/tb2/guion-demostracion.md). |
+| L | Instantáneas del código 202601 y verificación técnica TB2. | [Manifiesto](assets/reused-202601/tb2/manifest.json); [verificación](assets/evidence/tb2/verification.json). |
+| M | Informe de participación TB2 para evaluación del Team Leader. | [Registro de participación TB2](docs/tb2/participacion.md). No reutiliza las notas del TP. |
+| N | Archivos de revisión TB2: complemento Word/PDF, keynote PPTX/PDF y participación editable. | [Archivos y alcance](deliverables/tb2/README.md). |
+
 ## Videos de Exposiciones
 
 **TB1:** [Video de exposición del TB1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202313397_upc_edu_pe/IQC7QXFBUmEQSIIDCqzpD0fSAQCbHqQBwQBGPOsFs7V7_JA?e=uIsNxX&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D).
 
 **TP:** [Video de exposición del TP](https://drive.google.com/drive/folders/1S1YQ4q0QtCI28OER21HIhHuKYnlDoAwp?usp=sharing).
+
+**TB2:** grabación de exposición pendiente; debe mostrar los artefactos directamente en sus herramientas, con participación de los cinco integrantes.

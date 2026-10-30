@@ -1,0 +1,259 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Talki — Live Coach Service API",
+    "description": "API del orquestador de sesiones en tiempo real con Google Gemini Live. Aplica el patrón Strategy con cuatro implementaciones de SessionModeStrategy (QuickPractice, Interview, ThesisDefense, Scenario) instanciadas por una SessionModeStrategyFactory. Al cerrar la sesión calcula métricas acústicas en memoria (words_per_minute, silence_ratio, volume_rms_avg) y publica el evento session.live.finalized con transcript_gemini al exchange talki.events.",
+    "contact": {
+      "name": "Thropic — Equipo Talki",
+      "url": "https://github.com/upc-pre-202601-si657-7940-thropic"
+    },
+    "license": {
+      "name": "Académico — UPC SI657 2026-10"
+    },
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8083",
+      "description": "Local (perfil dev)"
+    },
+    {
+      "url": "https://api.talki.lat",
+      "description": "Producción (Railway)"
+    }
+  ],
+  "paths": {
+    "/v1/coach/{sessionId}/finalize": {
+      "post": {
+        "tags": [
+          "live-coach-controller"
+        ],
+        "operationId": "finalize",
+        "parameters": [
+          {
+            "name": "sessionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "mode",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "scenarioId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "transcriptGemini",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": ""
+            }
+          },
+          {
+            "name": "wordsPerMinute",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "silenceRatio",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "format": "double",
+              "default": 0.0
+            }
+          },
+          {
+            "name": "volumeRmsAvg",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "format": "double",
+              "default": 0.0
+            }
+          },
+          {
+            "name": "durationSeconds",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 300
+            }
+          },
+          {
+            "name": "academicSegment",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "ciclos_6_10"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionLiveFinalizedEvent"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/coach/live-token": {
+      "post": {
+        "tags": [
+          "live-coach-controller"
+        ],
+        "operationId": "liveToken",
+        "parameters": [
+          {
+            "name": "mode",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "scenarioId",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/coach/modes": {
+      "get": {
+        "tags": [
+          "live-coach-controller"
+        ],
+        "operationId": "getModes",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "SessionLiveFinalizedEvent": {
+        "type": "object",
+        "properties": {
+          "eventId": {
+            "type": "string"
+          },
+          "eventType": {
+            "type": "string"
+          },
+          "occurredAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "traceId": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          },
+          "sessionId": {
+            "type": "string"
+          },
+          "userId": {
+            "type": "string"
+          },
+          "mode": {
+            "type": "string"
+          },
+          "scenarioId": {
+            "type": "string"
+          },
+          "transcriptGemini": {
+            "type": "string"
+          },
+          "wordsPerMinute": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "silenceRatio": {
+            "type": "number",
+            "format": "double"
+          },
+          "volumeRmsAvg": {
+            "type": "number",
+            "format": "double"
+          },
+          "durationSeconds": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "academicSegment": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

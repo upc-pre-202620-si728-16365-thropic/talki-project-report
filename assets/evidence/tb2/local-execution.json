@@ -1,0 +1,213 @@
+{
+  "checkedAt": "2026-10-30T22:47:16.515172+00:00",
+  "scope": "Local integration smoke with disposable fixture data and H2. No microphone, paid Gemini call, production deployment, or participant validation.",
+  "flowCompleted": false,
+  "openapiDocuments": [
+    {
+      "service": "identity-service",
+      "httpStatus": 200,
+      "paths": 2,
+      "file": "assets/evidence/tb2/openapi-local/identity-service.json"
+    },
+    {
+      "service": "notification-service",
+      "httpStatus": 200,
+      "paths": 0,
+      "file": "assets/evidence/tb2/openapi-local/notification-service.json"
+    },
+    {
+      "service": "session-service",
+      "httpStatus": 200,
+      "paths": 4,
+      "file": "assets/evidence/tb2/openapi-local/session-service.json"
+    },
+    {
+      "service": "live-coach-service",
+      "httpStatus": 200,
+      "paths": 3,
+      "file": "assets/evidence/tb2/openapi-local/live-coach-service.json"
+    },
+    {
+      "service": "filler-detection-service",
+      "httpStatus": 200,
+      "paths": 0,
+      "file": "assets/evidence/tb2/openapi-local/filler-detection-service.json"
+    },
+    {
+      "service": "scoring-service",
+      "httpStatus": 200,
+      "paths": 1,
+      "file": "assets/evidence/tb2/openapi-local/scoring-service.json"
+    },
+    {
+      "service": "progress-service",
+      "httpStatus": 200,
+      "paths": 1,
+      "file": "assets/evidence/tb2/openapi-local/progress-service.json"
+    },
+    {
+      "service": "gamification-service",
+      "httpStatus": 200,
+      "paths": 2,
+      "file": "assets/evidence/tb2/openapi-local/gamification-service.json"
+    }
+  ],
+  "checks": [
+    {
+      "label": "register fixture",
+      "service": "identity-service",
+      "method": "POST",
+      "path": "/v1/auth/register",
+      "httpStatus": 201,
+      "response": {
+        "email": "tb2-local-fixture@example.invalid",
+        "username": "TB2 local fixture",
+        "userId": 1,
+        "academicSegment": "ciclos_1_5"
+      }
+    },
+    {
+      "label": "login fixture",
+      "service": "identity-service",
+      "method": "POST",
+      "path": "/v1/auth/login",
+      "httpStatus": 200,
+      "response": {
+        "token": "[redacted ephemeral local JWT]",
+        "type": "Bearer"
+      }
+    },
+    {
+      "label": "create fixture session",
+      "service": "session-service",
+      "method": "POST",
+      "path": "/v1/sessions",
+      "httpStatus": 201,
+      "response": {
+        "id": 1,
+        "title": "TB2 local fixture",
+        "status": "DRAFT",
+        "sessionType": "quick_practice",
+        "user": {
+          "id": 1,
+          "email": "tb2-local-fixture@example.invalid",
+          "username": "TB2 local fixture",
+          "academicSegment": "ciclos_1_5"
+        },
+        "createdAt": "2026-10-30T17:47:16.060235",
+        "finalizedAt": null
+      }
+    },
+    {
+      "label": "read fixture session",
+      "service": "session-service",
+      "method": "GET",
+      "path": "/v1/sessions/1",
+      "httpStatus": 200,
+      "response": {
+        "id": 1,
+        "title": "TB2 local fixture",
+        "status": "DRAFT",
+        "sessionType": "quick_practice",
+        "user": {
+          "id": 1,
+          "email": "tb2-local-fixture@example.invalid",
+          "username": "TB2 local fixture",
+          "academicSegment": "ciclos_1_5"
+        },
+        "createdAt": "2026-10-30T17:47:16.060235",
+        "finalizedAt": null
+      }
+    },
+    {
+      "label": "list fixture sessions",
+      "service": "session-service",
+      "method": "GET",
+      "path": "/v1/sessions?userId=1",
+      "httpStatus": 200,
+      "response": [
+        {
+          "id": 1,
+          "title": "TB2 local fixture",
+          "status": "DRAFT",
+          "sessionType": "quick_practice",
+          "user": {
+            "id": 1,
+            "email": "tb2-local-fixture@example.invalid",
+            "username": "TB2 local fixture",
+            "academicSegment": "ciclos_1_5"
+          },
+          "createdAt": "2026-10-30T17:47:16.060235",
+          "finalizedAt": null
+        }
+      ]
+    },
+    {
+      "label": "finalize fixture session",
+      "service": "session-service",
+      "method": "POST",
+      "path": "/v1/sessions/1/finalize",
+      "httpStatus": 500,
+      "response": {
+        "timestamp": "2026-10-30T22:47:16.199+00:00",
+        "status": 500,
+        "error": "Internal Server Error",
+        "path": "/v1/sessions/1/finalize"
+      }
+    },
+    {
+      "label": "read progress-service",
+      "service": "progress-service",
+      "method": "GET",
+      "path": "/v1/progress/dashboard?userId=1",
+      "httpStatus": 200,
+      "response": {
+        "totalSessions": 0,
+        "userId": "1",
+        "currentStreak": 0,
+        "averageScore": 0.0,
+        "bestScore": 0,
+        "totalMinutes": 0
+      }
+    },
+    {
+      "label": "read gamification-service",
+      "service": "gamification-service",
+      "method": "GET",
+      "path": "/v1/gamification/streaks/1",
+      "httpStatus": 200,
+      "response": {
+        "longestStreak": 0,
+        "currentStreak": 0,
+        "userId": "1",
+        "totalXp": 0
+      }
+    },
+    {
+      "label": "available modes",
+      "service": "live-coach-service",
+      "method": "GET",
+      "path": "/v1/coach/modes",
+      "httpStatus": 200,
+      "response": {
+        "modes": [
+          "quick_practice",
+          "interview",
+          "thesis_defense",
+          "scenario"
+        ],
+        "description": "Modos disponibles para sesiones con Gemini Live"
+      }
+    },
+    {
+      "label": "AI unavailable without configured key",
+      "service": "live-coach-service",
+      "method": "POST",
+      "path": "/v1/coach/live-token?mode=quick_practice",
+      "httpStatus": 503,
+      "response": {
+        "error": "GEMINI_API_KEY no está configurada en live-coach-service"
+      }
+    }
+  ]
+}

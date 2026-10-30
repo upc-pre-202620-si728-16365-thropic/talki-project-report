@@ -1,0 +1,87 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Talki — Gamification Service API",
+    "description": "Microservicio de engagement del producto Talki. Consume scoring.completed del exchange talki.events, mantiene la entidad UserStreak con la racha de sesiones consecutivas y los puntos XP acumulados, y publica achievement.unlocked cuando el usuario alcanza hitos predefinidos (primera sesión, racha de 7 días, racha de 30 días, 1000 XP). Los logros son consumidos por notification-service para enviar push al cliente Angular.",
+    "contact": {
+      "name": "Thropic — Equipo Talki",
+      "url": "https://github.com/upc-pre-202601-si657-7940-thropic"
+    },
+    "license": {
+      "name": "Académico — UPC SI657 2026-10"
+    },
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8090",
+      "description": "Local (perfil dev)"
+    },
+    {
+      "url": "https://api.talki.lat",
+      "description": "Producción (Railway)"
+    }
+  ],
+  "paths": {
+    "/v1/gamification/streaks/{userId}": {
+      "get": {
+        "tags": [
+          "gamification-controller"
+        ],
+        "operationId": "getStreaks",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/gamification/leaderboard": {
+      "get": {
+        "tags": [
+          "gamification-controller"
+        ],
+        "operationId": "getLeaderboard",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {}
+}
