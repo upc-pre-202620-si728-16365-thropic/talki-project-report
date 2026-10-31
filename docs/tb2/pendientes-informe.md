@@ -17,8 +17,10 @@ Fuentes: enunciado del curso obtenido con Campus, páginas 34–35, y comentario
 - [x] **7.2.1.6:** métodos, rutas, parámetros, ejemplo de solicitud y ocho documentos OpenAPI locales disponibles.
 - [x] **7.3.1:** diseño de validación, consentimiento, tareas, métricas y preguntas de cierre preparados.
 - [x] **7.4:** introducción y guion del About Product redactados; publicación pendiente por indicación del equipo.
-- [x] **Registro de versiones y bibliografía:** autoría editorial aclarada, versión 1.50 y referencias de los cinco repositorios de código añadidas.
+- [x] **Registro de versiones y bibliografía:** autoría editorial aclarada, versión 1.51 y referencias de los cinco repositorios de código añadidas.
 - [x] **Conclusiones, recomendaciones y anexos:** avance TB2 incorporado, con límites de lo comprobado.
+
+- [x] **Reparto operativo por integrante:** 24 tareas agrupadas por persona, con repositorios de referencia, acciones, entregables, secciones a actualizar y orden de dependencias, desarrollado íntegramente en 7.2.1.2 del README.
 
 ## Registros que faltan completar dentro del informe
 

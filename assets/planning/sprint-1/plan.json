@@ -1382,5 +1382,251 @@
       "willDo": "Documentará contratos/puertos; integrará errores de acceso y controles de práctica. Preparará los perfiles del ambiente y comprobará servicios y cliente publicados.",
       "tasks": "SB1-01-C; SB1-02-C; SB1-03-D; SB1-07-A/B"
     }
-  ]
+  ],
+  "handoff": {
+    "date": "2026-10-30",
+    "status": "Reparto acordado por el equipo; ejecución/aceptación pendientes",
+    "sourceOfTruth": "README.md — Reparto operativo por integrante en 7.2.1.2",
+    "immediateTaskHours": 74,
+    "deferredValidationHours": 6,
+    "members": [
+      {
+        "name": "Alejandro Daniel Oroncoy Almeyda",
+        "area": "Sesiones, voz y trazabilidad",
+        "repositoriesOfReference": [
+          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services"
+        ],
+        "tasks": [
+          {
+            "id": "SB1-01-A",
+            "hours": 3,
+            "willDo": "Verificará el arranque desde las instantáneas con JDK 17 y un solo RabbitMQ; corregirá en 7.1.4 los pasos o puertos que no se reproduzcan.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-03-A",
+            "hours": 4,
+            "willDo": "Resolverá DRAFT → RECORDING y el consentimiento antes de capturar voz; finalizar una sesión en estado inválido deberá devolver un error controlado, con prueba.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-03-B",
+            "hours": 4,
+            "willDo": "Comprobará el token efímero y un ensayo de voz con configuración autorizada; documentará permiso denegado, clave ausente y token vencido sin publicar claves ni JWT.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-03-C",
+            "hours": 4,
+            "willDo": "Mantendrá el mismo sessionId/userId al cerrar y publicar el evento; comprobará que repetir la finalización no produzca dos evaluaciones.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-07-C",
+            "hours": 1,
+            "willDo": "Consolidará en el README los enlaces reales de historia/tarea, commit probado, comando, resultado y URL del ambiente.",
+            "deferred": false
+          }
+        ],
+        "immediateHours": 16,
+        "deferredHours": 0,
+        "coordinationHours": 2,
+        "reserveHours": 2,
+        "totalCapacityHours": 20,
+        "firstStep": "Empezará por SB1-01-A y la transición de inicio de sesión de SB1-03-A para desbloquear voz, análisis y cliente.",
+        "deliverable": "Commit/PR del ciclo de sesión y voz; procedimiento de arranque comprobado; pruebas con resultados y matriz historia → tarea → servicio → commit → prueba → URL.",
+        "readmeSections": "7.1.4; 7.2.1.3; 7.2.1.5; matriz técnica de cierre."
+      },
+      {
+        "name": "Eduardo Gael Rivera Sosa",
+        "area": "Cliente Next.js, landing y responsive",
+        "repositoriesOfReference": [
+          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend"
+        ],
+        "tasks": [
+          {
+            "id": "SB1-01-B",
+            "hours": 2,
+            "willDo": "Contrastará las versiones Next.js/React/TypeScript, Tailwind y shadcn con los archivos del cliente y mantendrá 7.1.1 alineado con el código real.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-06-A",
+            "hours": 4,
+            "willDo": "Ajustará beneficios, planes, contacto y estados vacíos de la landing a lo que funciona; identificará testimonios y videos todavía pendientes.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-06-B",
+            "hours": 4,
+            "willDo": "Conectará acceso, preparación, práctica, reporte e historial con las APIs a través del BFF; sustituirá simulaciones solo cuando exista el comportamiento real.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-06-C",
+            "hours": 2,
+            "willDo": "Comprobará navegación por teclado, foco, etiquetas, mensajes de error y vista móvil; entregará capturas de la versión probada.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-08-A",
+            "hours": 4,
+            "willDo": "Conservará la responsabilidad de aplicar el protocolo a ambos segmentos; esta tarea seguirá diferida, sin entrevistas ni resultados ficticios.",
+            "deferred": true
+          }
+        ],
+        "immediateHours": 12,
+        "deferredHours": 4,
+        "coordinationHours": 2,
+        "reserveHours": 2,
+        "totalCapacityHours": 20,
+        "firstStep": "Empezará por comprobar el stack del cliente y ajustar la landing; conectará las pantallas cuando estén disponibles los contratos de sesión y feedback.",
+        "deliverable": "Commit/PR del frontend, resultado de compilación, capturas web/móvil y lista de pantallas conectadas y errores comprobados; registro de validación solo cuando se retomen entrevistas.",
+        "readmeSections": "7.1.1; 7.2.1.5; evidencias de UI vinculadas a 6.3–6.5."
+      },
+      {
+        "name": "Manuel Ignacio Tumi Oliden",
+        "area": "Análisis, feedback, pruebas y progreso",
+        "repositoriesOfReference": [
+          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services",
+          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services",
+          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services"
+        ],
+        "tasks": [
+          {
+            "id": "SB1-04-A",
+            "hours": 4,
+            "willDo": "Comprobará session.live.finalized → fillers.analyzed → scoring.completed con el mismo sessionId/userId; verificará duplicados y fallo visible.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-04-B",
+            "hours": 4,
+            "willDo": "Verificará la persistencia y consulta del feedback del propietario, incluyendo score, evidencia, límites y estados pendiente/fallido; registrará lo que falte del contrato versionado.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-04-C",
+            "hours": 4,
+            "willDo": "Implementará y ejecutará integración y al menos un feature BDD con steps para caso feliz y error; guardará los resultados para 7.2.1.4.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-05-A",
+            "hours": 4,
+            "willDo": "Comparará progreso antes/después de una evaluación y comprobará que el evento repetido no vuelva a incrementar el resumen.",
+            "deferred": false
+          }
+        ],
+        "immediateHours": 16,
+        "deferredHours": 0,
+        "coordinationHours": 2,
+        "reserveHours": 2,
+        "totalCapacityHours": 20,
+        "firstStep": "Empezará por revisar los contratos y preparar fixtures de eventos; ejecutará la cadena completa cuando Alejandro entregue el cierre correlacionado.",
+        "deliverable": "Commit/PR del pipeline/feedback, pruebas de integración y BDD con feature/steps, comando y resultado; evidencia antes/después de la proyección de progreso.",
+        "readmeSections": "7.2.1.4; 7.2.1.5; contratos de análisis y feedback de 7.2.1.6."
+      },
+      {
+        "name": "Werner Khalil Lang Nassi",
+        "area": "Acceso, gamificación, notificaciones y privacidad",
+        "repositoriesOfReference": [
+          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services",
+          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services",
+          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services"
+        ],
+        "tasks": [
+          {
+            "id": "SB1-02-A",
+            "hours": 4,
+            "willDo": "Comprobará registro, login, segmento, credenciales inválidas y logout; entregará resultados con cuentas fixture y tokens ocultos.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-02-B",
+            "hours": 4,
+            "willDo": "Probará con usuarios A/B que B no pueda leer, listar, finalizar o añadir feedback a la sesión de A; corregirá o documentará el control faltante.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-05-B",
+            "hours": 4,
+            "willDo": "Comprobará racha/logro y el consumidor de notificaciones después de una evaluación válida; repetirá el evento y mostrará el canal de aviso que exista realmente.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-07-D",
+            "hours": 2,
+            "willDo": "Verificará aislamiento y consentimiento del ambiente publicado; mientras falte G-PRIV, documentará y comprobará la limitación a fixtures/acceso controlado.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-08-B",
+            "hours": 2,
+            "willDo": "Conservará la responsabilidad de consolidar hallazgos y heurísticas después de las entrevistas; esta tarea seguirá diferida.",
+            "deferred": true
+          }
+        ],
+        "immediateHours": 14,
+        "deferredHours": 2,
+        "coordinationHours": 2,
+        "reserveHours": 2,
+        "totalCapacityHours": 20,
+        "firstStep": "Empezará por SB1-02-A/B para desbloquear las verificaciones del propietario y el recorrido de sesión.",
+        "deliverable": "Commit/PR y pruebas con dos cuentas de fixture, resultados de racha/aviso sin duplicados y comprobación de la puerta de privacidad; heurísticas solo cuando existan sesiones reales.",
+        "readmeSections": "7.2.1.4–7.2.1.6, controles de acceso/privacidad; heurísticas de 7.3.3 diferidas."
+      },
+      {
+        "name": "Kevin Jorge Chi Cruzatt",
+        "area": "Contratos, controles de práctica y despliegue",
+        "repositoriesOfReference": [
+          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend",
+          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services",
+          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services",
+          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services",
+          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services"
+        ],
+        "tasks": [
+          {
+            "id": "SB1-01-C",
+            "hours": 3,
+            "willDo": "Relacionará servicios, puertos, configuración y los ocho OpenAPI con el commit de base y el diagrama de despliegue; conservará los contratos revisados.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-02-C",
+            "hours": 2,
+            "willDo": "Comprobará en Next.js la cookie httpOnly, expiración de sesión, retorno al login y errores recuperables sin exponer el token.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-03-D",
+            "hours": 4,
+            "willDo": "Comprobará los controles de grabación, pausa/reanudación y cierre, además de permiso denegado y desconexión; registrará el resultado real.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-07-A",
+            "hours": 3,
+            "willDo": "Preparará perfiles, HTTPS, broker común, variables externas y almacenamiento persistente; documentará accesos o recursos que bloqueen la publicación.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-07-B",
+            "hours": 4,
+            "willDo": "Publicará el commit integrado y verificará cliente/APIs, Swagger y reinicio con datos fixture persistidos; incorporará URLs y capturas actuales en 7.2.1.7.",
+            "deferred": false
+          }
+        ],
+        "immediateHours": 16,
+        "deferredHours": 0,
+        "coordinationHours": 2,
+        "reserveHours": 2,
+        "totalCapacityHours": 20,
+        "firstStep": "Empezará por preparar contratos, recursos y perfiles; publicará el incremento cuando cliente, análisis y pruebas de integración estén disponibles.",
+        "deliverable": "Commit/PR de configuración e integración que corresponda, ocho contratos OpenAPI coherentes, capturas de Swagger, URLs funcionales, SHA desplegado y evidencia de persistencia.",
+        "readmeSections": "7.1.4; 7.2.1.5–7.2.1.7."
+      }
+    ]
+  }
 }

@@ -210,7 +210,7 @@ Una casilla marcada significa que hay contenido documental en el repositorio. No
 
 ## Cierres y archivos de entrega
 
-- [x] Registro de versiones actualizado a 1.50 con descripción de la adaptación.
+- [x] Registro de versiones actualizado a 1.51 con descripción de la adaptación.
 - [x] Collaboration Insights y Student Outcome ampliados, distinguiendo acciones documentadas y revisión pendiente.
 - [x] Avance de conclusiones, recomendaciones, bibliografía y anexos actualizado para TB2.
 - [ ] About Team: completar evidencia de proceso real, retrospectiva, testimonios y publicación Stream/YouTube; el enlace previo acredita presentación individual.

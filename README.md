@@ -116,6 +116,7 @@
 | 1.48 | 30/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Selección de Next.js/React como frontend por decisión del Team Leader; alineación de arquitectura, tecnologías, diagramas y Sprint 1. Retiro de la migración G-WEB y conservación del enunciado original como fuente. |
 | 1.49 | 30/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Calendario del Sprint 1 acordado del 26/10 al 08/11; división del trabajo en voz del equipo y responsabilidades futuras explícitas. Planning incluido dentro de las 20 h por integrante; entrevistas y videos conservados como diferidos. |
 | 1.50 | 30/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Desarrollo de 7.2.1.3: historial actual con rama/fechas/archivos, matriz de trazabilidad de ocho PBIs y 24 tareas, código base, artefactos y cierre requerido. Inventario de repositorios accesibles; implementación nueva, videos y entrevistas conservados como pendientes. |
+| 1.51 | 30/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Reparto operativo del trabajo por integrante: 24 tareas con acciones futuras, repositorios base, entregables, secciones del README, dependencias y revisión. Se conservan 74 h inmediatas y 6 h de validación diferida. |
 
 # Project Report Collaboration Insights
 
@@ -4885,6 +4886,93 @@ El backlog sustituye las diez tareas genéricas iniciales por **ocho PBIs y 24 t
 | --- | --- | ---: | --- | --- | --- |
 | **SB1-08-A** Aplicar protocolo a ambos segmentos y registrar sesiones | Eduardo | 4 | SB1-06-C | Al menos tres participantes por segmento, consentimiento, fecha, dispositivo/versión y tareas; registrar éxito, tiempo, ayuda y observaciones. Si se usa prototipo, se declara simulación; reclutamiento es dependencia externa. | Por hacer |
 | **SB1-08-B** Consolidar heurísticas y decisiones de mejora | Werner | 2 | SB1-08-A | Hallazgos reales de usabilidad, arquitectura de información y diseño inclusivo con severidad, evidencia y acción. Videos de validación y About Product siguen diferidos; no se inventan opiniones. | Por hacer |
+
+**Reparto operativo por integrante para ejecutar el incremento.** Como equipo, acordamos los siguientes paquetes de trabajo para el sprint del 26/10 al 08/11. Cada integrante desarrollará sus tareas, comprobará los criterios de las tablas anteriores y actualizará su evidencia en este README. El reparto asigna trabajo futuro; las casillas se cerrarán cuando exista el resultado revisado.
+
+Cada paquete conserva **16 h estimadas de tareas, 2 h de coordinación y 2 h de reserva**. En Eduardo hay 4 h de entrevistas diferidas y en Werner 2 h de heurísticas diferidas; el trabajo inmediato suma **74 h** y esas 6 h siguen asignadas sin fecha de aplicación. Videos e entrevistas permanecen pendientes.
+
+**Alejandro Daniel Oroncoy Almeyda — Sesiones, voz y trazabilidad.**
+
+Trabajará sobre [talki-session-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services). Las referencias corresponden a la base de 202601; registrará el repositorio y la rama reales de sus cambios del sprint.
+
+Empezará por SB1-01-A y la transición de inicio de sesión de SB1-03-A para desbloquear voz, análisis y cliente.
+
+- [ ] **SB1-01-A — 3 h.** Verificará el arranque desde las instantáneas con JDK 17 y un solo RabbitMQ; corregirá en 7.1.4 los pasos o puertos que no se reproduzcan.
+- [ ] **SB1-03-A — 4 h.** Resolverá DRAFT → RECORDING y el consentimiento antes de capturar voz; finalizar una sesión en estado inválido deberá devolver un error controlado, con prueba.
+- [ ] **SB1-03-B — 4 h.** Comprobará el token efímero y un ensayo de voz con configuración autorizada; documentará permiso denegado, clave ausente y token vencido sin publicar claves ni JWT.
+- [ ] **SB1-03-C — 4 h.** Mantendrá el mismo sessionId/userId al cerrar y publicar el evento; comprobará que repetir la finalización no produzca dos evaluaciones.
+- [ ] **SB1-07-C — 1 h.** Consolidará en el README los enlaces reales de historia/tarea, commit probado, comando, resultado y URL del ambiente.
+
+**Entregará:** Commit/PR del ciclo de sesión y voz; procedimiento de arranque comprobado; pruebas con resultados y matriz historia → tarea → servicio → commit → prueba → URL.
+
+**Actualizará en el README:** 7.1.4; 7.2.1.3; 7.2.1.5; matriz técnica de cierre.
+
+**Eduardo Gael Rivera Sosa — Cliente Next.js, landing y responsive.**
+
+Trabajará sobre [talki-frontend](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend). Las referencias corresponden a la base de 202601; registrará el repositorio y la rama reales de sus cambios del sprint.
+
+Empezará por comprobar el stack del cliente y ajustar la landing; conectará las pantallas cuando estén disponibles los contratos de sesión y feedback.
+
+- [ ] **SB1-01-B — 2 h.** Contrastará las versiones Next.js/React/TypeScript, Tailwind y shadcn con los archivos del cliente y mantendrá 7.1.1 alineado con el código real.
+- [ ] **SB1-06-A — 4 h.** Ajustará beneficios, planes, contacto y estados vacíos de la landing a lo que funciona; identificará testimonios y videos todavía pendientes.
+- [ ] **SB1-06-B — 4 h.** Conectará acceso, preparación, práctica, reporte e historial con las APIs a través del BFF; sustituirá simulaciones solo cuando exista el comportamiento real.
+- [ ] **SB1-06-C — 2 h.** Comprobará navegación por teclado, foco, etiquetas, mensajes de error y vista móvil; entregará capturas de la versión probada.
+- [ ] **SB1-08-A — 4 h.** **Diferido.** Conservará la responsabilidad de aplicar el protocolo a ambos segmentos; esta tarea seguirá diferida, sin entrevistas ni resultados ficticios.
+
+**Entregará:** Commit/PR del frontend, resultado de compilación, capturas web/móvil y lista de pantallas conectadas y errores comprobados; registro de validación solo cuando se retomen entrevistas.
+
+**Actualizará en el README:** 7.1.1; 7.2.1.5; evidencias de UI vinculadas a 6.3–6.5.
+
+**Manuel Ignacio Tumi Oliden — Análisis, feedback, pruebas y progreso.**
+
+Trabajará sobre [talki-analysis-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services), [talki-engagement-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services), [talki-session-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services). Las referencias corresponden a la base de 202601; registrará el repositorio y la rama reales de sus cambios del sprint.
+
+Empezará por revisar los contratos y preparar fixtures de eventos; ejecutará la cadena completa cuando Alejandro entregue el cierre correlacionado.
+
+- [ ] **SB1-04-A — 4 h.** Comprobará session.live.finalized → fillers.analyzed → scoring.completed con el mismo sessionId/userId; verificará duplicados y fallo visible.
+- [ ] **SB1-04-B — 4 h.** Verificará la persistencia y consulta del feedback del propietario, incluyendo score, evidencia, límites y estados pendiente/fallido; registrará lo que falte del contrato versionado.
+- [ ] **SB1-04-C — 4 h.** Implementará y ejecutará integración y al menos un feature BDD con steps para caso feliz y error; guardará los resultados para 7.2.1.4.
+- [ ] **SB1-05-A — 4 h.** Comparará progreso antes/después de una evaluación y comprobará que el evento repetido no vuelva a incrementar el resumen.
+
+**Entregará:** Commit/PR del pipeline/feedback, pruebas de integración y BDD con feature/steps, comando y resultado; evidencia antes/después de la proyección de progreso.
+
+**Actualizará en el README:** 7.2.1.4; 7.2.1.5; contratos de análisis y feedback de 7.2.1.6.
+
+**Werner Khalil Lang Nassi — Acceso, gamificación, notificaciones y privacidad.**
+
+Trabajará sobre [talki-user-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services), [talki-session-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services), [talki-engagement-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services). Las referencias corresponden a la base de 202601; registrará el repositorio y la rama reales de sus cambios del sprint.
+
+Empezará por SB1-02-A/B para desbloquear las verificaciones del propietario y el recorrido de sesión.
+
+- [ ] **SB1-02-A — 4 h.** Comprobará registro, login, segmento, credenciales inválidas y logout; entregará resultados con cuentas fixture y tokens ocultos.
+- [ ] **SB1-02-B — 4 h.** Probará con usuarios A/B que B no pueda leer, listar, finalizar o añadir feedback a la sesión de A; corregirá o documentará el control faltante.
+- [ ] **SB1-05-B — 4 h.** Comprobará racha/logro y el consumidor de notificaciones después de una evaluación válida; repetirá el evento y mostrará el canal de aviso que exista realmente.
+- [ ] **SB1-07-D — 2 h.** Verificará aislamiento y consentimiento del ambiente publicado; mientras falte G-PRIV, documentará y comprobará la limitación a fixtures/acceso controlado.
+- [ ] **SB1-08-B — 2 h.** **Diferido.** Conservará la responsabilidad de consolidar hallazgos y heurísticas después de las entrevistas; esta tarea seguirá diferida.
+
+**Entregará:** Commit/PR y pruebas con dos cuentas de fixture, resultados de racha/aviso sin duplicados y comprobación de la puerta de privacidad; heurísticas solo cuando existan sesiones reales.
+
+**Actualizará en el README:** 7.2.1.4–7.2.1.6, controles de acceso/privacidad; heurísticas de 7.3.3 diferidas.
+
+**Kevin Jorge Chi Cruzatt — Contratos, controles de práctica y despliegue.**
+
+Trabajará sobre [talki-frontend](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend), [talki-user-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services), [talki-session-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services), [talki-analysis-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services), [talki-engagement-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services). Las referencias corresponden a la base de 202601; registrará el repositorio y la rama reales de sus cambios del sprint.
+
+Empezará por preparar contratos, recursos y perfiles; publicará el incremento cuando cliente, análisis y pruebas de integración estén disponibles.
+
+- [ ] **SB1-01-C — 3 h.** Relacionará servicios, puertos, configuración y los ocho OpenAPI con el commit de base y el diagrama de despliegue; conservará los contratos revisados.
+- [ ] **SB1-02-C — 2 h.** Comprobará en Next.js la cookie httpOnly, expiración de sesión, retorno al login y errores recuperables sin exponer el token.
+- [ ] **SB1-03-D — 4 h.** Comprobará los controles de grabación, pausa/reanudación y cierre, además de permiso denegado y desconexión; registrará el resultado real.
+- [ ] **SB1-07-A — 3 h.** Preparará perfiles, HTTPS, broker común, variables externas y almacenamiento persistente; documentará accesos o recursos que bloqueen la publicación.
+- [ ] **SB1-07-B — 4 h.** Publicará el commit integrado y verificará cliente/APIs, Swagger y reinicio con datos fixture persistidos; incorporará URLs y capturas actuales en 7.2.1.7.
+
+**Entregará:** Commit/PR de configuración e integración que corresponda, ocho contratos OpenAPI coherentes, capturas de Swagger, URLs funcionales, SHA desplegado y evidencia de persistencia.
+
+**Actualizará en el README:** 7.1.4; 7.2.1.5–7.2.1.7.
+
+**Entrega y revisión de cada paquete.** Cada integrante partirá de la versión integrada del informe en `main`, trabajará en una rama del repositorio de aplicación que corresponda y enlazará su commit/PR real. En el README incorporará: tarea/historia, repositorio y rama, SHA probado, comando y resultado de pruebas, capturas sin secretos y URL del ambiente cuando aplique. Registrará avance/bloqueos en GitHub Projects y actualizará su modificación en el registro de versiones y su acción en Student Outcome. Un compañero revisará la evidencia antes de marcar la tarea como terminada; las notas de participación se evaluarán al cierre.
+
+**Orden para desbloquear al equipo.** Alejandro verificará el arranque y Werner comenzará acceso/propiedad; Eduardo podrá avanzar con stack y landing mientras Kevin prepara contratos/ambiente y Manuel prepara fixtures. Tras resolver estados y cierre de sesión, Manuel comprobará análisis/feedback; Eduardo conectará pantallas y Kevin comprobará controles. Con la proyección validada, Werner verificará gamificación/notificaciones. Finalmente, Kevin publicará y comprobará el ambiente, y Alejandro consolidará la trazabilidad. Si falta un insumo, se registrará la dependencia en la tarjeta; no se sustituirá el resultado con una captura histórica.
 
 **Estados del tablero.** `Todo` equivale a Por hacer; `In Progress`, a En curso; `Done`, a Terminado con evidencia y revisión. Un bloqueo se registra en la tarjeta con causa, dependencia y responsable de resolución; no se oculta marcando la tarjeta como completada. El estado de aceptación de una US/TS se evalúa por sus criterios completos, separado del cierre de una tarea parcial.
 
