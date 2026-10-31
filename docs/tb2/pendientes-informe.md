@@ -17,7 +17,7 @@ Fuentes: enunciado del curso obtenido con Campus, páginas 34–35, y comentario
 - [x] **7.2.1.6:** métodos, rutas, parámetros, ejemplo de solicitud y ocho documentos OpenAPI locales disponibles.
 - [x] **7.3.1:** diseño de validación, consentimiento, tareas, métricas y preguntas de cierre preparados.
 - [x] **7.4:** introducción y guion del About Product redactados; publicación pendiente por indicación del equipo.
-- [x] **Registro de versiones y bibliografía:** autoría editorial aclarada, versión 1.45 y referencias de los cinco repositorios de código añadidas.
+- [x] **Registro de versiones y bibliografía:** autoría editorial aclarada, versión 1.46 y referencias de los cinco repositorios de código añadidas.
 - [x] **Conclusiones, recomendaciones y anexos:** avance TB2 incorporado, con límites de lo comprobado.
 
 ## Registros que faltan completar dentro del informe
@@ -39,7 +39,7 @@ Fuentes: enunciado del curso obtenido con Campus, páginas 34–35, y comentario
 - [ ] **7.2.1.4 — Testing.** Añadir pruebas ejecutadas de integración y aceptación BDD, con features/steps, comandos, commits y resultados. Las 133 unitarias ya están documentadas; no se convierten en evidencia de aceptación, rendimiento, privacidad o cobertura porcentual.
 - [ ] **7.2.1.5 — Ejecución.** Incorporar capturas y explicación del recorrido integrado real, desde acceso hasta consulta del resultado. Registrar la transición válida de estados y la respuesta controlada al estado inválido. La comprobación actual no cubre voz real ni el cierre completo.
 - [ ] **7.2.1.6 — Documentación de servicios.** Incorporar captura de Swagger UI y la URL del ambiente operativo, con ejemplos legibles de solicitud/respuesta y un error pertinente. Las especificaciones locales existentes se conservan como base.
-- [ ] **4.3.4 / capítulo V / 7.1–7.2 — Concordancia.** Revisar las diferencias entre la arquitectura objetivo de diez contextos y la base de ocho servicios al cerrar las decisiones técnicas. Identificar qué se implementó y qué sigue propuesto, especialmente Sharing & Retention, gateway de IA, autorización, purga y reportes versionados.
+- [x] **4.3.4 / capítulo V / 7.1–7.2 — Concordancia documentada.** Matriz de los diez contextos frente a los ocho servicios, con enlaces a archivos de commits fijados, alcance comprobado y diferencias. Sharing & Retention, gateway integrado, autorización, purga y reportes versionados están identificados en la [matriz de concordancia en 7.1.4](../../README.md#714-software-deployment-configuration); sus implementaciones pendientes no se marcan cerradas.
 
 ## Validación y referencias audiovisuales del informe
 
@@ -54,9 +54,11 @@ Los registros y el análisis de validación también requieren que las sesiones 
 
 ## Consolidación final del documento
 
-- [ ] **Conclusiones y recomendaciones.** Ajustar la síntesis con los resultados efectivamente obtenidos al cerrar sprint, despliegue y validación. El avance actual ya distingue resultados y limitaciones.
+- [x] **Conclusiones y recomendaciones del avance.** Síntesis actualizada con capacidad/plan confirmado, concordancia de contextos, pruebas y límites observados; no atribuye resultados a entrevistas o despliegues pendientes. Se revisará cuando cambien los resultados técnicos o de campo.
 - [ ] **Bibliografía, figuras y anexos.** Revisar la correspondencia final de citas, referencias, atribución de figuras y enlaces; retirar de los anexos cualquier estado que se haya quedado desactualizado.
-- [ ] **Informe completo Word.** Unir carátula, versiones, colaboración, índice, Student Outcome, capítulos I–VII, conclusiones, bibliografía y anexos. El Word disponible hoy es solo el complemento VII de 14 páginas.
-- [ ] **Formato y PDF completo.** Actualizar índice automático, numeración, referencias cruzadas, pies y tamaño de figuras; comprobar tablas y saltos de página; exportar y revisar el PDF del informe entero.
+- [x] **Informe integrado en README.md.** Carátula, versiones, colaboración, índice, Student Outcome, capítulos I–VII, conclusiones, bibliografía y anexos conservados en el [README](../../README.md). Reproducción, concordancia y respuestas observadas están desarrolladas allí, además de sus fuentes de evidencia.
+- **Word/PDF fuera del alcance actual**, por indicación del equipo: la prioridad y fuente de todo el contenido es README.md.
 
-**Orden de trabajo:** cerrar primero los registros y la evidencia disponible de 7.1–7.2; incorporar los aportes reales del equipo; completar resultados de validación cuando existan; consolidar Word/PDF del informe acumulativo. Las referencias audiovisuales acordadas pueden permanecer identificadas como pendientes durante esta revisión, sin marcar el entregable académico completo como terminado.
+**Avance documental 1.46 en README.md:** correspondencia de arquitectura, procedimiento local, respuestas HTTP observadas, historial actual y conclusiones completados con fuentes verificables.
+
+**Orden de trabajo restante:** resolver decisiones tecnológicas/herramienta, ejecutar y evidenciar 7.1–7.2; incorporar aportes reales del equipo; realizar entrevistas y completar resultados de validación cuando se retomen. Actualizar el README cuando cambien esas evidencias. Las referencias audiovisuales acordadas pueden permanecer identificadas como pendientes durante esta revisión, sin marcar el entregable académico completo como terminado.

@@ -1,0 +1,129 @@
+{
+  "cutoffCommit": "0b0afa85c870d14e84502a1c8a8eb33832fda755",
+  "period": "202620",
+  "commits": [
+    {
+      "sha": "0b0afa85c870d14e84502a1c8a8eb33832fda755",
+      "date": "2026-10-30T19:26:24-05:00",
+      "author": "Alejandro Oroncoy",
+      "subject": "docs(tb2): confirm sprint capacity and task owners",
+      "files": [
+        "README.md",
+        "assets/planning/sprint-1/board-metadata.json",
+        "assets/planning/sprint-1/board-snapshot.json",
+        "assets/planning/sprint-1/plan.json",
+        "deliverables/tb2/README.md",
+        "docs/tb2/checklist.md",
+        "docs/tb2/pendientes-informe.md",
+        "docs/tb2/sprint-1-plan.md"
+      ],
+      "url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/0b0afa85c870d14e84502a1c8a8eb33832fda755",
+      "kind": "Documentación y evidencia técnica; no implementación nueva de los servicios"
+    },
+    {
+      "sha": "6f0b3ba4901049b921defc611b91a11257d72043",
+      "date": "2026-10-30T19:21:03-05:00",
+      "author": "Alejandro Oroncoy",
+      "subject": "docs(sprint): define TB2 planning and 24-task backlog",
+      "files": [
+        "README.md",
+        "assets/planning/sprint-1/board-metadata.json",
+        "assets/planning/sprint-1/board-snapshot.json",
+        "assets/planning/sprint-1/board.json",
+        "assets/planning/sprint-1/capture-manifest.json",
+        "assets/planning/sprint-1/github-project-20261030.jpg",
+        "assets/planning/sprint-1/github-project-items-20261030.jpg",
+        "assets/planning/sprint-1/plan.json",
+        "assets/planning/sprint-1/product-roadmap.csv",
+        "assets/planning/sprint-1/sprint-backlog.csv",
+        "assets/planning/sprint-1/technology-requirements.json",
+        "deliverables/tb2/README.md",
+        "docs/tb2/checklist.md",
+        "docs/tb2/entorno-y-tecnologia.md",
+        "docs/tb2/pendientes-informe.md",
+        "docs/tb2/sprint-1-plan.md"
+      ],
+      "url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/6f0b3ba4901049b921defc611b91a11257d72043",
+      "kind": "Documentación y evidencia técnica; no implementación nueva de los servicios"
+    },
+    {
+      "sha": "4e462c9d645115ec65ade3cd4c93c4f844db0055",
+      "date": "2026-10-30T18:04:37-05:00",
+      "author": "Alejandro Oroncoy",
+      "subject": "docs(tb2): prioritize report completion and document remaining evidence",
+      "files": [
+        "README.md",
+        "assets/evidence/tb2/development-commits.json",
+        "deliverables/tb2/README.md",
+        "docs/tb2/checklist.md",
+        "docs/tb2/pendientes-informe.md"
+      ],
+      "url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/4e462c9d645115ec65ade3cd4c93c4f844db0055",
+      "kind": "Documentación y evidencia técnica; no implementación nueva de los servicios"
+    },
+    {
+      "sha": "eeb24d6e8d5551658e972f51a736ed364cdc3827",
+      "date": "2026-10-30T17:57:21-05:00",
+      "author": "Alejandro Oroncoy",
+      "subject": "docs(tb2): retain cumulative Student Outcome table format",
+      "files": [
+        "README.md"
+      ],
+      "url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/eeb24d6e8d5551658e972f51a736ed364cdc3827",
+      "kind": "Documentación y evidencia técnica; no implementación nueva de los servicios"
+    },
+    {
+      "sha": "5607d22f4d4ae8fe38221a9b4f42c0727273bb32",
+      "date": "2026-10-30T17:55:27-05:00",
+      "author": "Alejandro Oroncoy",
+      "subject": "docs(tb2): normalize Campus evidence formatting",
+      "files": [
+        "assets/evidence/tb2/campus-scope-and-feedback.json"
+      ],
+      "url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/5607d22f4d4ae8fe38221a9b4f42c0727273bb32",
+      "kind": "Documentación y evidencia técnica; no implementación nueva de los servicios"
+    },
+    {
+      "sha": "7240c8eba70c01ffab9137a50f6f6fafc8cfa2b7",
+      "date": "2026-10-30T17:55:21-05:00",
+      "author": "Alejandro Oroncoy",
+      "subject": "docs(tb2): adapt verified baseline and track delivery gaps",
+      "files": [
+        ".gitignore",
+        "README.md",
+        "assets/evidence/tb2/campus-scope-and-feedback.json",
+        "assets/evidence/tb2/local-execution.json",
+        "assets/evidence/tb2/openapi-local/filler-detection-service.json",
+        "assets/evidence/tb2/openapi-local/gamification-service.json",
+        "assets/evidence/tb2/openapi-local/identity-service.json",
+        "assets/evidence/tb2/openapi-local/live-coach-service.json",
+        "assets/evidence/tb2/openapi-local/notification-service.json",
+        "assets/evidence/tb2/openapi-local/progress-service.json",
+        "assets/evidence/tb2/openapi-local/scoring-service.json",
+        "assets/evidence/tb2/openapi-local/session-service.json",
+        "assets/evidence/tb2/verification.json",
+        "assets/reused-202601/tb2/manifest.json",
+        "assets/reused-202601/tb2/talki-analysis-services-9e026c3.tar.gz",
+        "assets/reused-202601/tb2/talki-engagement-services-231bb5e.tar.gz",
+        "assets/reused-202601/tb2/talki-frontend-d63e889.tar.gz",
+        "assets/reused-202601/tb2/talki-session-services-cde4b11.tar.gz",
+        "assets/reused-202601/tb2/talki-user-services-1da887a.tar.gz",
+        "deliverables/tb2/Complemento-TB2.docx",
+        "deliverables/tb2/Complemento-TB2.pdf",
+        "deliverables/tb2/Participacion-TB2.docx",
+        "deliverables/tb2/Participacion-TB2.pdf",
+        "deliverables/tb2/README.md",
+        "deliverables/tb2/Talki-TB2-Keynote.pdf",
+        "deliverables/tb2/Talki-TB2-Keynote.pptx",
+        "docs/tb2/checklist.md",
+        "docs/tb2/guion-demostracion.md",
+        "docs/tb2/participacion.md",
+        "scripts/capture-tb2-local.py",
+        "scripts/verify-tb2-evidence.py"
+      ],
+      "url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/7240c8eba70c01ffab9137a50f6f6fafc8cfa2b7",
+      "kind": "Documentación y evidencia técnica; no implementación nueva de los servicios"
+    }
+  ],
+  "limitation": "Los aportes de implementación y las revisiones de los otros cuatro integrantes siguen pendientes de evidencia."
+}

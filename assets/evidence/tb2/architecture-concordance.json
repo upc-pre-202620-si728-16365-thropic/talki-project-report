@@ -1,0 +1,86 @@
+{
+  "reviewedOn": "2026-10-30",
+  "method": "Comparación documental de capítulos IV–V con archivos del commit fijado y resultados ya capturados; no prueba aceptación ni despliegue.",
+  "contexts": [
+    {
+      "context": "5.1 Live Coaching",
+      "repository": "talki-session-services",
+      "service": "live-coach-service",
+      "source": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services/blob/cde4b117783db42115acc680ddb22e2bfe99ae24/live-coach-service/src/main/java/com/thropic/talki/livecoach/application/services/LiveCoachOrchestrator.java",
+      "available": "Modos y token efímero; publica cierre de práctica.",
+      "remaining": "Correlación con sesión persistida, estados y voz real: SB1-03 / TS02."
+    },
+    {
+      "context": "5.2 Speech Analysis",
+      "repository": "talki-analysis-services",
+      "service": "filler-detection-service",
+      "source": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services/blob/9e026c324b6f7a321505af705e9e8ffdd6496fc4/filler-detection-service/src/main/java/com/thropic/talki/filler/domain/event/SessionLiveFinalizedEvent.java",
+      "available": "Consumidor de cierre y detección de muletillas.",
+      "remaining": "Métricas acústicas, cobertura y recorrido integrado: SB1-04 / US16 / TS03."
+    },
+    {
+      "context": "5.3 Scoring & Feedback",
+      "repository": "talki-analysis-services",
+      "service": "scoring-service",
+      "source": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services/blob/9e026c324b6f7a321505af705e9e8ffdd6496fc4/scoring-service/src/main/java/com/thropic/talki/scoring/infrastructure/messaging/consumer/FillerAnalyzedConsumer.java",
+      "available": "Consumidor de métricas y cálculo de score.",
+      "remaining": "Rúbricas/reportes versionados y aceptación: SB1-04 / TS04."
+    },
+    {
+      "context": "5.4 Practice Session Management",
+      "repository": "talki-session-services",
+      "service": "session-service",
+      "source": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services/blob/cde4b117783db42115acc680ddb22e2bfe99ae24/session-service/src/main/java/com/thropic/talki/session/interfaces/rest/SessionController.java",
+      "available": "Creación, consulta, finalización y feedback.",
+      "remaining": "Inicio RECORDING, errores y autorización por dueño: SB1-02–04 / TS01."
+    },
+    {
+      "context": "5.5 Progress & Adaptation",
+      "repository": "talki-engagement-services",
+      "service": "progress-service",
+      "source": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services/blob/231bb5eb7ccefb741cbff5274634bef2eef17819/progress-service/src/main/java/com/thropic/talki/progress/infrastructure/messaging/consumer/ScoringCompletedConsumer.java",
+      "available": "Resumen y proyección de evaluaciones.",
+      "remaining": "Comparación y plan adaptativo ampliados: US22 / US36; verificar proyección SB1-05."
+    },
+    {
+      "context": "5.6 Sharing & Retention",
+      "repository": null,
+      "service": null,
+      "source": null,
+      "available": "No se identifica un servicio dedicado en la base importada.",
+      "remaining": "Exportación, bloqueo y purga distribuida: G-PRIV / US27 / US33 / TS06."
+    },
+    {
+      "context": "5.7 Gamification",
+      "repository": "talki-engagement-services",
+      "service": "gamification-service",
+      "source": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services/blob/231bb5eb7ccefb741cbff5274634bef2eef17819/gamification-service/src/main/java/com/thropic/talki/gamification/interfaces/rest/GamificationController.java",
+      "available": "Rachas, logros y consulta de ranking.",
+      "remaining": "Comprobar actualización y duplicados: SB1-05 / US35."
+    },
+    {
+      "context": "5.8 Identity & Access",
+      "repository": "talki-user-services",
+      "service": "identity-service",
+      "source": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services/blob/1da887abe3dd2d776685c5d864dc4098ceb66344/identity-service/src/main/java/com/thropic/talki/identity/interfaces/rest/AuthController.java",
+      "available": "Registro, login y segmento académico.",
+      "remaining": "Autorización cruzada, retiro de consentimiento y ampliaciones de cuenta: SB1-02 / G-PRIV."
+    },
+    {
+      "context": "5.9 AI Provider Gateway",
+      "repository": "talki-session-services",
+      "service": "live-coach-service",
+      "source": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services/blob/cde4b117783db42115acc680ddb22e2bfe99ae24/live-coach-service/src/main/java/com/thropic/talki/livecoach/infrastructure/gemini/GeminiTokenService.java",
+      "available": "Adaptador Gemini integrado en live-coach-service.",
+      "remaining": "No existe despliegue independiente de este contexto; comprobar aislamiento y contrato TS02."
+    },
+    {
+      "context": "5.10 Notifications",
+      "repository": "talki-user-services",
+      "service": "notification-service",
+      "source": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services/blob/1da887abe3dd2d776685c5d864dc4098ceb66344/notification-service/src/main/java/com/thropic/talki/notification/domain/event/ScoringCompletedEvent.java",
+      "available": "Consumidor de evaluación y logros.",
+      "remaining": "Verificar canal realmente disponible y duplicados: SB1-05. No se acredita correo enviado."
+    }
+  ]
+}

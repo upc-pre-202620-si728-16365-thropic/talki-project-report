@@ -209,14 +209,15 @@ Una casilla marcada significa que hay contenido documental en el repositorio. No
 
 ## Cierres y archivos de entrega
 
-- [x] Registro de versiones actualizado a 1.45 con descripción de la adaptación.
+- [x] Registro de versiones actualizado a 1.46 con descripción de la adaptación.
 - [x] Collaboration Insights y Student Outcome ampliados, distinguiendo acciones documentadas y revisión pendiente.
 - [x] Avance de conclusiones, recomendaciones, bibliografía y anexos actualizado para TB2.
 - [ ] About Team: completar evidencia de proceso real, retrospectiva, testimonios y publicación Stream/YouTube; el enlace previo acredita presentación individual.
 - [ ] Video de navegación: captura, duración y Stream; no confundir prototipo con integración real.
 - [ ] Exposición: máximo 25 min, todos los integrantes y demostración en herramientas.
 - [ ] Performance Report TB2: el Team Leader debe confirmar aportes, cumplimiento y notas; [formato Word/PDF preparado](../../deliverables/tb2/README.md).
-- [ ] Informe completo final en Word y PDF con los archivos y enlaces de cierre. El README es la fuente acumulativa actual; se adjunta [complemento VII Word/PDF](../../deliverables/tb2/README.md) de 14 páginas para revisión.
+- [x] Informe I–VII, conclusiones, bibliografía y anexos mantenidos íntegramente en [README.md](../../README.md), como fuente principal indicada por el equipo.
+- La exportación a Word/PDF queda fuera del trabajo actual por indicación del equipo; no condiciona esta revisión del README.
 - [x] [Keynote de avance PPTX/PDF](../../deliverables/tb2/README.md), con lámina del equipo y estado actual. Actualizar sus pendientes al cerrar la entrega.
 - [ ] MP4, enlaces de Stream y ZIP de complementos según corresponda. No subir el paquete a Blackboard antes de cerrar pendientes.
 
@@ -226,4 +227,4 @@ Una casilla marcada significa que hay contenido documental en el repositorio. No
 2. Confirmar planning, tablero, estimaciones y aportes/revisiones de los cinco integrantes.
 3. Ejecutar aceptación BDD y las pruebas de integración que faltan; registrar resultados sin convertir propuestas en éxitos.
 4. Aplicar validación por segmento y completar análisis/heurísticas; grabaciones pendientes según lo acordado.
-5. Publicar videos, cerrar Performance Report y regenerar Word/PDF y keynote del paquete final.
+5. Cuando se retomen los materiales audiovisuales, publicar videos, cerrar Performance Report y actualizar enlaces del README y la presentación.
