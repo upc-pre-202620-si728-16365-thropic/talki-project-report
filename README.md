@@ -115,8 +115,6 @@
 | 1.47 | 30/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Confirmación de GitHub Projects como herramienta admitida y elegida para Sprint 1 por el Team Leader. Cierre del pendiente de herramienta en informe, plan y checklist. |
 | 1.48 | 30/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Selección de Next.js/React como frontend por decisión del Team Leader; alineación de arquitectura, tecnologías, diagramas y Sprint 1. Retiro de la migración G-WEB y conservación del enunciado original como fuente. |
 
-**Aclaración de autoría tras el feedback del parcial.** Las modificaciones editoriales de 1.0–1.12 fueron realizadas por Alejandro Daniel Oroncoy Almeyda. En esas filas se distingue al editor de los coautores registrados en los commits; la coautoría técnica se consulta en Project Report Collaboration Insights. Las versiones posteriores mantienen al autor real de la modificación. Las revisiones asignadas a otros integrantes solo se registrarán como realizadas cuando exista su evidencia; no se redistribuyen cambios históricos para simular participación.
-
 # Project Report Collaboration Insights
 
 Repositorio del informe: [talki-project-report](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report).
