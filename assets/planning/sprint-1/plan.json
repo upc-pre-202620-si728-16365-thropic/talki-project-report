@@ -15,7 +15,7 @@
       "Werner Khalil Lang Nassi",
       "Kevin Jorge Chi Cruzatt"
     ],
-    "agreementStatus": "Contenido operativo propuesto para ratificar; no acta retrospectiva inventada.",
+    "agreementStatus": "Capacidad de 20 h por integrante y responsables del plan confirmados por el Team Leader el 30/10/2026; calendario y demás decisiones operativas continúan como propuesta.",
     "proposedExecutionStart": "2026-10-31",
     "proposedExecutionEnd": "2026-11-08",
     "institutionalDeadline": "No se deduce una fecha/hora de Blackboard; el enunciado sitúa TB2 en semana 12.",
@@ -23,7 +23,7 @@
     "durationMinutes": 60
   },
   "capacity": {
-    "status": "Propuesta pendiente de disponibilidad individual",
+    "status": "20 h por integrante confirmadas por el Team Leader",
     "grossHoursPerPerson": 20,
     "deliveryHoursPerPerson": 16,
     "ceremonyHoursPerPerson": 2,
@@ -35,38 +35,38 @@
     "forecastPoints": 36,
     "measuredVelocity": null,
     "note": "Los SP del sprint estiman trabajo residual por PBI; no se suman a los SP originales ni se convierten en horas.",
-    "ratification": "Disponibilidad de 20 h futuras por integrante aún no confirmada; se mantiene como supuesto explícito de planificación. Los datos de la reunión sí están confirmados."
+    "ratification": "El Team Leader confirmó el 30/10/2026 las 20 h por integrante y los responsables propuestos. Las 80 h de tareas y los 36 SP siguen siendo estimaciones, no ejecución o velocidad medida."
   },
   "team": [
     {
       "name": "Alejandro Daniel Oroncoy Almeyda",
       "plannedDeliveryHours": 16,
       "grossCapacityHours": 20,
-      "assignmentStatus": "Propuesto; no afirma acuerdo individual"
+      "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
     },
     {
       "name": "Eduardo Gael Rivera Sosa",
       "plannedDeliveryHours": 16,
       "grossCapacityHours": 20,
-      "assignmentStatus": "Propuesto; no afirma acuerdo individual"
+      "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
     },
     {
       "name": "Manuel Ignacio Tumi Oliden",
       "plannedDeliveryHours": 16,
       "grossCapacityHours": 20,
-      "assignmentStatus": "Propuesto; no afirma acuerdo individual"
+      "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
     },
     {
       "name": "Werner Khalil Lang Nassi",
       "plannedDeliveryHours": 16,
       "grossCapacityHours": 20,
-      "assignmentStatus": "Propuesto; no afirma acuerdo individual"
+      "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
     },
     {
       "name": "Kevin Jorge Chi Cruzatt",
       "plannedDeliveryHours": 16,
       "grossCapacityHours": 20,
-      "assignmentStatus": "Propuesto; no afirma acuerdo individual"
+      "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
     }
   ],
   "sprintGoal": "Demostrar una base integrada y trazable de acceso, práctica, cierre y feedback, con los ocho servicios existentes y evidencia de pruebas y despliegue; las capacidades ampliadas y las puertas de tecnología/privacidad permanecen explícitas.",
@@ -91,7 +91,7 @@
           "dependsOn": [],
           "acceptance": "Un clon limpio puede compilar con JDK 17, iniciar un único RabbitMQ y los ocho servicios; el runbook separa H2 local de persistencia pública y no expone secretos.",
           "status": "Por hacer",
-          "assignmentStatus": "Propuesto; requiere ratificación individual"
+          "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
         },
         {
           "id": "SB1-01-B",
@@ -101,7 +101,7 @@
           "dependsOn": [],
           "acceptance": "Matriz de enunciado frente al stack real; decisión Angular/Vue o autorización adjunta. Si sigue abierta, se registra bloqueo de conformidad y no se renombra Next.js.",
           "status": "Por hacer",
-          "assignmentStatus": "Propuesto; requiere ratificación individual"
+          "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
         },
         {
           "id": "SB1-01-C",
@@ -113,7 +113,7 @@
           ],
           "acceptance": "URLs/puertos, commit base, diagrama de despliegue ejecutable y ocho contratos OpenAPI coherentes; enlaces de las evidencias en el informe.",
           "status": "Por hacer",
-          "assignmentStatus": "Propuesto; requiere ratificación individual"
+          "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
         }
       ],
       "hours": 8,
@@ -162,7 +162,7 @@
           ],
           "acceptance": "Registro nuevo 201, login válido 200, credenciales inválidas con respuesta controlada y logout invalida acceso del cliente; usar cuentas fixture y ocultar JWT.",
           "status": "Por hacer",
-          "assignmentStatus": "Propuesto; requiere ratificación individual"
+          "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
         },
         {
           "id": "SB1-02-B",
@@ -174,7 +174,7 @@
           ],
           "acceptance": "Dos cuentas de prueba: el usuario B no puede leer, listar, finalizar o añadir feedback a la sesión de A. La identidad validada prevalece sobre userId enviado por el cliente.",
           "status": "Por hacer",
-          "assignmentStatus": "Propuesto; requiere ratificación individual"
+          "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
         },
         {
           "id": "SB1-02-C",
@@ -186,7 +186,7 @@
           ],
           "acceptance": "Cliente conserva sesión en cookie httpOnly y presenta errores recuperables sin exponer token; prueba de expiración y retorno al login documentada.",
           "status": "Por hacer",
-          "assignmentStatus": "Propuesto; requiere ratificación individual"
+          "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
         }
       ],
       "hours": 10,
@@ -241,7 +241,7 @@
           ],
           "acceptance": "Ruta de inicio autorizada y transición DRAFT a RECORDING definidas; finalizar desde estado inválido devuelve error de negocio controlado, no 500. Registrar consentimiento antes de captura.",
           "status": "Por hacer",
-          "assignmentStatus": "Propuesto; requiere ratificación individual"
+          "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
         },
         {
           "id": "SB1-03-B",
@@ -253,7 +253,7 @@
           ],
           "acceptance": "Credencial permanente solo en servidor; permiso denegado, clave ausente y token vencido se comunican. Con configuración autorizada se prueba un ensayo corto sin publicar audio personal.",
           "status": "Por hacer",
-          "assignmentStatus": "Propuesto; requiere ratificación individual"
+          "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
         },
         {
           "id": "SB1-03-C",
@@ -266,7 +266,7 @@
           ],
           "acceptance": "El ID persistido de sesión se conserva en coach y eventos; finalizar una vez produce una sola evaluación lógica. Repetir la petición no duplica resultados.",
           "status": "Por hacer",
-          "assignmentStatus": "Propuesto; requiere ratificación individual"
+          "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
         },
         {
           "id": "SB1-03-D",
@@ -279,7 +279,7 @@
           ],
           "acceptance": "Web muestra grabación, pausa/reanudación y cierre confirmado; permiso denegado y desconexión tienen recuperación o resultado parcial explícito. No declarar recuperación integral si no se verifica.",
           "status": "Por hacer",
-          "assignmentStatus": "Propuesto; requiere ratificación individual"
+          "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
         }
       ],
       "hours": 16,
@@ -329,7 +329,7 @@
           ],
           "acceptance": "Fixture recorre session.live.finalized, fillers.analyzed y scoring.completed con el mismo sessionId/userId; duplicado reconocido y fallo con estado visible.",
           "status": "Por hacer",
-          "assignmentStatus": "Propuesto; requiere ratificación individual"
+          "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
         },
         {
           "id": "SB1-04-B",
@@ -341,7 +341,7 @@
           ],
           "acceptance": "Reporte recuperable de la sesión del propietario contiene puntuación, muletillas, evidencia y límites. Estados pendiente/fallido no muestran una evaluación inventada; diferencias con TS04 versionado registradas.",
           "status": "Por hacer",
-          "assignmentStatus": "Propuesto; requiere ratificación individual"
+          "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
         },
         {
           "id": "SB1-04-C",
@@ -353,7 +353,7 @@
           ],
           "acceptance": "Pruebas de integración y al menos un feature BDD ejecutable con steps verifican el caso feliz y un error; se adjuntan commit, comando y resultado. No convertir el conteo unitario en aceptación.",
           "status": "Por hacer",
-          "assignmentStatus": "Propuesto; requiere ratificación individual"
+          "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
         }
       ],
       "hours": 12,
@@ -399,7 +399,7 @@
           ],
           "acceptance": "Scoring válido actualiza una sola vez el resumen del propietario; comparar el antes/después con el mismo fixture y conservar métricas/versiones disponibles sin inferir comparación avanzada.",
           "status": "Por hacer",
-          "assignmentStatus": "Propuesto; requiere ratificación individual"
+          "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
         },
         {
           "id": "SB1-05-B",
@@ -411,7 +411,7 @@
           ],
           "acceptance": "Sesión válida activa la regla de racha/logro y el consumidor de notificaciones; reenvío del evento no duplica el efecto. Mostrar qué canal de aviso existe realmente; no afirmar envío de email no configurado.",
           "status": "Por hacer",
-          "assignmentStatus": "Propuesto; requiere ratificación individual"
+          "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
         }
       ],
       "hours": 8,
@@ -463,7 +463,7 @@
           ],
           "acceptance": "Beneficios y planes describen disponibilidad real; sin testimonios autorizados se muestra estado vacío. Contacto y videos identifican qué funciona y qué está pendiente.",
           "status": "Por hacer",
-          "assignmentStatus": "Propuesto; requiere ratificación individual"
+          "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
         },
         {
           "id": "SB1-06-B",
@@ -477,7 +477,7 @@
           ],
           "acceptance": "Acceso, preparación, práctica, reporte e historial consumen la base elegida; simulaciones y capturas de referencia están diferenciadas. La migración completa de framework es una rama condicional estimada aparte.",
           "status": "Por hacer",
-          "assignmentStatus": "Propuesto; requiere ratificación individual"
+          "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
         },
         {
           "id": "SB1-06-C",
@@ -489,7 +489,7 @@
           ],
           "acceptance": "Recorrido con teclado, foco, etiquetas, errores y vista móvil comprobado; responsive no se presenta como app nativa. Capturas corresponden al commit probado.",
           "status": "Por hacer",
-          "assignmentStatus": "Propuesto; requiere ratificación individual"
+          "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
         }
       ],
       "hours": 10,
@@ -542,7 +542,7 @@
           ],
           "acceptance": "Dominio/HTTPS, broker compartido, almacenamiento y variables externas documentados; H2 create-drop queda limitado al ambiente descartable. Acceso y presupuesto aprobados son dependencia externa.",
           "status": "Por hacer",
-          "assignmentStatus": "Propuesto; requiere ratificación individual"
+          "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
         },
         {
           "id": "SB1-07-B",
@@ -556,7 +556,7 @@
           ],
           "acceptance": "Las URLs del commit desplegado responden; OpenAPI y frontend funcionan contra el mismo ambiente. Una captura de despliegue histórico o un 200 de galería no cuenta como backend operativo.",
           "status": "Por hacer",
-          "assignmentStatus": "Propuesto; requiere ratificación individual"
+          "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
         },
         {
           "id": "SB1-07-C",
@@ -568,7 +568,7 @@
           ],
           "acceptance": "Informe enlaza historia, tarea, servicio, commit, prueba y URL; los requisitos sin evidencia permanecen identificados.",
           "status": "Por hacer",
-          "assignmentStatus": "Propuesto; requiere ratificación individual"
+          "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
         },
         {
           "id": "SB1-07-D",
@@ -581,7 +581,7 @@
           ],
           "acceptance": "Aislamiento y consentimiento comprobados; hasta completar exportación/purga de TS06, el ambiente se limita a fixtures o acceso controlado y no admite un piloto con datos personales reales.",
           "status": "Por hacer",
-          "assignmentStatus": "Propuesto; requiere ratificación individual"
+          "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
         }
       ],
       "hours": 10,
@@ -629,7 +629,7 @@
           ],
           "acceptance": "Al menos tres participantes por segmento, consentimiento, fecha, dispositivo/versión y tareas; registrar éxito, tiempo, ayuda y observaciones. Si se usa prototipo, se declara simulación; reclutamiento es dependencia externa.",
           "status": "Por hacer",
-          "assignmentStatus": "Propuesto; requiere ratificación individual"
+          "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
         },
         {
           "id": "SB1-08-B",
@@ -641,7 +641,7 @@
           ],
           "acceptance": "Hallazgos reales de usabilidad, arquitectura de información y diseño inclusivo con severidad, evidencia y acción. Videos de validación y About Product siguen diferidos; no se inventan opiniones.",
           "status": "Por hacer",
-          "assignmentStatus": "Propuesto; requiere ratificación individual"
+          "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
         }
       ],
       "hours": 6,
@@ -1301,5 +1301,13 @@
     ],
     "source": "Confirmación expresa del Team Leader el 30/10/2026."
   },
-  "baselinePolicy": "Las evidencias existentes al 30/10 son insumos. El plan de 80 h estima trabajo pendiente; no imputa como esfuerzo real la elaboración de este plan ni vuelve a contar la importación histórica como desarrollo nuevo."
+  "baselinePolicy": "Las evidencias existentes al 30/10 son insumos. El plan de 80 h estima trabajo pendiente; no imputa como esfuerzo real la elaboración de este plan ni vuelve a contar la importación histórica como desarrollo nuevo.",
+  "capacityConfirmation": {
+    "confirmedBy": "Team Leader",
+    "date": "2026-10-30",
+    "grossHoursPerPerson": 20,
+    "assignmentsConfirmed": true,
+    "executionCalendarConfirmed": false,
+    "source": "Confirmación expresa en la conversación: «sí, dejemos las 20 horas por integrante y los responsables como propusiste»."
+  }
 }
