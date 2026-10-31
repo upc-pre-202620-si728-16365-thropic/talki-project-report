@@ -193,7 +193,7 @@ Una casilla marcada significa que hay contenido documental en el repositorio. No
 - [ ] **7.1.4. Software Deployment Configuration** — Configuración y reproducción local documentadas; recuperar ambiente público persistente.
 - [ ] **7.2. Solution Implementation** — Implementación base identificada y diferencias con diseño explícitas.
 - [ ] **7.2.1. Sprint 1** — Base de Sprint 1 documentada; cierre formal actual pendiente.
-- [x] **7.2.1.1. Sprint Planning 1 — definición operativa** — Planning del 28/10, 20:00–21:00 por Meet, con cinco asistentes confirmado; objetivo, 36 SP residuales, 20 h por integrante y responsables confirmados por el Team Leader; aceptación definida. Calendario y compromiso de fecha pendientes.
+- [x] **7.2.1.1. Sprint Planning 1 — definición operativa** — Planning del 28/10, 20:00–21:00 por Meet, con cinco asistentes confirmado; objetivo, 36 SP residuales, 20 h por integrante y división del trabajo acordadas como equipo; sprint del 26/10 al 08/11, aceptación definida e imputación del planning dentro de la capacidad.
 - [x] **7.2.1.2. Sprint Backlog 1 — estructura definida** — Ocho PBIs / 24 tareas, 80 h, responsables confirmados por el Team Leader, dependencias, criterios, URL y capturas del tablero y hoja de ruta completa. GitHub Projects admitido y elegido según confirmación del Team Leader.
 - [ ] **7.2.1.3. Development Evidence for Sprint Review** — Commits originales fijados y copiados; añadir cambios reales de implementación de este periodo.
 - [ ] **7.2.1.4. Testing Suite Evidence for Sprint Review** — 133 unitarias aprobadas con Java 17; completar aceptación BDD, integración y controles pendientes.
@@ -209,7 +209,7 @@ Una casilla marcada significa que hay contenido documental en el repositorio. No
 
 ## Cierres y archivos de entrega
 
-- [x] Registro de versiones actualizado a 1.48 con descripción de la adaptación.
+- [x] Registro de versiones actualizado a 1.49 con descripción de la adaptación.
 - [x] Collaboration Insights y Student Outcome ampliados, distinguiendo acciones documentadas y revisión pendiente.
 - [x] Avance de conclusiones, recomendaciones, bibliografía y anexos actualizado para TB2.
 - [ ] About Team: completar evidencia de proceso real, retrospectiva, testimonios y publicación Stream/YouTube; el enlace previo acredita presentación individual.
@@ -224,7 +224,7 @@ Una casilla marcada significa que hay contenido documental en el repositorio. No
 ## Orden de cierre recomendado
 
 1. Resolver el despliegue de Next.js/React y los servicios; ejecutar recorrido integrado, autorización y privacidad.
-2. Cerrar el calendario del sprint y registrar aportes/revisiones de los cinco integrantes; reunión, capacidad, responsables y GitHub Projects ya confirmados.
+2. Registrar avances y revisiones reales de los cinco integrantes conforme a la división acordada; calendario, reunión, capacidad, responsabilidades y GitHub Projects ya definidos.
 3. Ejecutar aceptación BDD y las pruebas de integración que faltan; registrar resultados sin convertir propuestas en éxitos.
 4. Aplicar validación por segmento y completar análisis/heurísticas; grabaciones pendientes según lo acordado.
 5. Cuando se retomen los materiales audiovisuales, publicar videos, cerrar Performance Report y actualizar enlaces del README y la presentación.

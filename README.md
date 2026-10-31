@@ -114,6 +114,7 @@
 | 1.46 | 30/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Consolidación documental TB2: concordancia de los diez contextos con ocho servicios, reproducción local, contratos y respuestas observadas, historial actual y trazabilidad de cierre en README.md. Videos, entrevistas y resultados de campo pendientes. |
 | 1.47 | 30/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Confirmación de GitHub Projects como herramienta admitida y elegida para Sprint 1 por el Team Leader. Cierre del pendiente de herramienta en informe, plan y checklist. |
 | 1.48 | 30/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Selección de Next.js/React como frontend por decisión del Team Leader; alineación de arquitectura, tecnologías, diagramas y Sprint 1. Retiro de la migración G-WEB y conservación del enunciado original como fuente. |
+| 1.49 | 30/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Calendario del Sprint 1 acordado del 26/10 al 08/11; división del trabajo en voz del equipo y responsabilidades futuras explícitas. Planning incluido dentro de las 20 h por integrante; entrevistas y videos conservados como diferidos. |
 
 # Project Report Collaboration Insights
 
@@ -4702,32 +4703,33 @@ El ambiente público requiere HTTPS, broker común, perfiles y almacenamiento pe
 
 ### 7.2.1. Sprint 1
 
-El incremento de TB2 adopta el código existente como base y comprueba su estado antes de añadir las capacidades ampliadas del backlog. El informe anterior contiene un Sprint 1 de mayo de 2026; sus fechas, reuniones y velocidad no se trasladan al curso actual. La revisión del 30/10/2026 registra adaptación documental y verificación técnica. El Team Leader confirmó que el planning fue el 28/10, de 20:00 a 21:00 por Google Meet, con los cinco integrantes presentes. El tablero y la definición residual quedan documentados en 7.2.1.1–7.2.1.2; las 20 h futuras por integrante y los responsables fueron confirmados por el Team Leader el 30/10; el calendario sigue propuesto.
-
+El incremento de TB2 adopta el código existente como base y comprueba su estado antes de añadir las capacidades ampliadas del backlog. Como equipo, acordamos desarrollar el **Sprint 1 del lunes 26 de octubre al domingo 8 de noviembre de 2026**, con una duración de dos semanas, 20 h por integrante y las responsabilidades de 7.2.1.1–7.2.1.2. El planning se realizó el 28/10, de 20:00 a 21:00 por Google Meet, con los cinco integrantes. Las fechas y la velocidad del ciclo 202601 se conservan como antecedentes; las evidencias del periodo actual se registran por separado.
 #### 7.2.1.1. Sprint Planning 1
 
-La reunión de planning se realizó el **28 de octubre de 2026, de 20:00 a 21:00 (America/Lima), por Google Meet**, con asistencia de los cinco integrantes, según la confirmación del Team Leader. La siguiente definición operativa se completó documentalmente el 30/10/2026 sobre los servicios y evidencias disponibles. La fecha, el horario, la modalidad y los asistentes están confirmados. El Team Leader confirmó el 30/10/2026 las 20 h por integrante y los responsables del plan. Esta confirmación posterior no se atribuye retrospectivamente a la reunión del día 28. Las horas de tarea y los SP son estimaciones; el calendario sigue propuesto.
+Como equipo, acordamos organizar el Sprint 1 del **26/10/2026 al 08/11/2026**, con **20 h por integrante** y una distribución explícita de responsabilidades. La reunión de planning se realizó el **28 de octubre de 2026, de 20:00 a 21:00 (America/Lima), por Google Meet**, con los cinco integrantes presentes. El calendario inicia el lunes 26 y conserva el planning en su fecha real del miércoles 28. El objetivo, las tareas y sus criterios guían el trabajo; su cumplimiento se registra con evidencia, no por la sola asignación de un responsable.
 
 **Sprint Goal.** Demostrar un recorrido integrado de acceso, preparación, práctica, cierre y consulta de feedback, aprovechando los ocho servicios existentes. Cada comportamiento presentado debe enlazar historia, tarea, commit, prueba y evidencia de ejecución. La meta es una primera versión demostrable; el cumplimiento completo de una User Story requiere todos sus criterios originales de 3.3.
 
 | Campo | Definición y estado |
 | --- | --- |
 | Entrega / iteración | TB2 / Sprint 1 del periodo 202620. |
-| Fecha de reunión | 28/10/2026, confirmada por el Team Leader. |
-| Modalidad y plataforma | Remota por Google Meet, confirmada por el Team Leader. |
-| Hora de inicio y fin | 20:00–21:00, hora de Lima (UTC−05:00), confirmadas por el Team Leader. |
+| Fecha de reunión | Miércoles 28/10/2026. |
+| Modalidad y plataforma | Remota por Google Meet. |
+| Hora de inicio y fin | 20:00–21:00, hora de Lima (UTC−05:00). |
 | Duración | 60 minutos. |
-| Preparación e integración del plan | Alejandro Daniel Oroncoy Almeyda, para revisión del equipo. |
+| Organización del plan | Acuerdo del equipo Thropic; coordinación por bloque y responsables por tarea. |
 | Integrantes asistentes | Alejandro Daniel Oroncoy Almeyda; Eduardo Gael Rivera Sosa; Manuel Ignacio Tumi Oliden; Werner Khalil Lang Nassi; Kevin Jorge Chi Cruzatt. |
-| Asistencia efectiva a la reunión | Cinco de cinco integrantes presentes, confirmado por el Team Leader. |
-| Ventana operativa propuesta | 31/10–08/11/2026, para el trabajo residual definido al 30/10; fechas sujetas a ratificación. No se atribuye este calendario a un acuerdo ya confirmado del 28/10. |
-| Fecha institucional de entrega | El enunciado sitúa TB2 en semana 12; confirmar fecha/hora publicada en Blackboard. El 08/11 es un cierre interno propuesto. |
+| Asistencia efectiva a la reunión | Cinco de cinco integrantes presentes. |
+| Inicio del sprint | Lunes 26/10/2026. |
+| Cierre del sprint | Domingo 08/11/2026. |
+| Duración del sprint | Dos semanas: 14 días calendario, con ambas fechas incluidas. |
+| Fecha institucional de entrega | El enunciado sitúa TB2 en semana 12; confirmar fecha/hora publicada en Blackboard. El 08/11 es el cierre interno acordado del sprint. |
 | Insumos | Capítulos I–VI; backlog de 3.5; ocho servicios reutilizados y cliente; 133 pruebas unitarias aprobadas; contratos y prueba HTTP local del 30/10. |
 | Revisión previa | Feedback del parcial: 19/20, con diseño táctico/UX 10/10 y documentación/colaboración 9/10. |
 | Mejora incorporada al plan | Aportes individuales verificables; documentación trazable; lámina del equipo y demostración de artefactos en herramientas. Son insumos del feedback; no se registra una retrospectiva adicional inexistente. |
-| Estimación | 8 PBIs con 24 tareas: **36 SP residuales y 80 h de trabajo**. Las cifras son pronóstico inicial, no velocidad ni tiempo ejecutado. |
-| Capacidad confirmada por el Team Leader | 5 integrantes × 20 h = **100 h**: 80 h de tareas, 10 h de coordinación/revisión y 10 h de contingencia. Capacidad y responsables confirmados por el Team Leader el 30/10/2026. |
-| Compromiso propuesto | Completar SB1-01–SB1-08 conforme a sus criterios, con capacidad y responsables confirmados por el Team Leader; el calendario, los accesos/recursos y la resolución de bloqueos deben cerrarse antes de comprometer una fecha. Si cambian esos insumos, se replanifica. |
+| Estimación | 8 PBIs con 24 tareas: **36 SP residuales y 80 h de trabajo**. Las cifras son pronóstico inicial, no velocidad ni tiempo ejecutado; incluyen 6 h / 3 SP de validación diferida. |
+| Capacidad acordada como equipo | 5 integrantes × 20 h = **100 h durante las dos semanas**: 80 h estimadas de tareas, 10 h de coordinación/revisión —incluido el planning— y 10 h de contingencia. Equivale a 10 h por integrante por semana. |
+| Compromiso del equipo | Orientar SB1-01–SB1-07 al cierre del 08/11 conforme a sus criterios y accesos disponibles; registrar y resolver bloqueos, y comunicar cualquier ajuste de alcance. SB1-08 conserva responsables, pero su aplicación depende de las entrevistas diferidas. Ninguna asignación acredita una tarea terminada. |
 
 **Base disponible y alcance pendiente.** La importación de código, los 133 resultados unitarios, los ocho documentos OpenAPI y los casos HTTP del 30/10 son insumos ya disponibles. No se estiman otra vez como si fueran desarrollo nuevo. El trabajo residual consiste en resolver diferencias, integrar, ejecutar aceptación, recuperar despliegue y documentar resultados. Las ampliaciones del producto se mantienen en la hoja de ruta completa, sin prometer su ejecución dentro de estas mismas 80 horas.
 
@@ -4744,7 +4746,18 @@ La reunión de planning se realizó el **28 de octubre de 2026, de 20:00 a 21:00
 | Cliente web, landing y BFF | Pantallas, sesión del navegador y consumo de APIs. | SB1-02, SB1-03 y SB1-06 sobre Next.js/React. |
 | RabbitMQ, persistencia y ambiente | Integración entre servicios y ejecución reproducible/desplegada. | SB1-01 y SB1-07. |
 
-**Reparto de capacidad confirmado por el Team Leader el 30/10/2026.** Un coordinador por PBI organiza el cierre; las tareas de 7.2.1.2 indican quién hace cada parte. Las horas de apoyo se contabilizan a su responsable, no se suman de nuevo al coordinador.
+**Distribución de responsabilidades acordada como equipo.** Un coordinador por PBI organiza el cierre; las tareas de 7.2.1.2 indican quién hace cada parte. Las horas de apoyo se contabilizan a su responsable, no se suman de nuevo al coordinador.
+
+Acordamos la siguiente división del trabajo. Las responsabilidades se expresan como acciones a realizar durante el sprint; las tareas de validación se mantienen asignadas y diferidas, como decidió el equipo.
+
+| Integrante | Qué realizará | Tareas relacionadas |
+| --- | --- | --- |
+| Alejandro Daniel Oroncoy Almeyda | Coordinará el procedimiento de arranque, los estados y consentimiento de sesión, voz/token y cierre sin duplicados. Consolidará la trazabilidad técnica del informe. | SB1-01-A; SB1-03-A/B/C; SB1-07-C |
+| Eduardo Gael Rivera Sosa | Documentará el stack Next.js/React; ajustará landing, conectará pantallas con APIs y comprobará el recorrido responsive. Mantendrá la responsabilidad de aplicar validación cuando se retomen las entrevistas. | SB1-01-B; SB1-06-A/B/C; SB1-08-A — diferida |
+| Manuel Ignacio Tumi Oliden | Comprobará los contratos del pipeline, el feedback persistido y sus pruebas de integración/BDD. Verificará la actualización del progreso por eventos. | SB1-04-A/B/C; SB1-05-A |
+| Werner Khalil Lang Nassi | Verificará acceso, logout y autorización por propietario; comprobará gamificación/notificaciones y la puerta de privacidad. Consolidará heurísticas cuando existan las sesiones de validación. | SB1-02-A/B; SB1-05-B; SB1-07-D; SB1-08-B — diferida |
+| Kevin Jorge Chi Cruzatt | Documentará contratos/puertos; integrará errores de acceso y controles de práctica. Preparará los perfiles del ambiente y comprobará servicios y cliente publicados. | SB1-01-C; SB1-02-C; SB1-03-D; SB1-07-A/B |
+
 
 | Integrante | Tareas asignadas en el plan | Trabajo | Coordinación / revisión | Reserva | Total confirmado |
 | --- | --- | ---: | ---: | ---: | ---: |
@@ -4757,16 +4770,19 @@ La reunión de planning se realizó el **28 de octubre de 2026, de 20:00 a 21:00
 
 Los SP de cada PBI usan la escala 1, 2, 3, 5 y 8 para estimar el **trabajo que queda** sobre la base reutilizada. Los SP originales de las User Stories y Technical Stories de 3.5 se conservan; no se suman a estos 36 puntos ni se convierten mediante una regla de horas por punto. La velocidad del equipo se medirá al cerrar trabajo realmente aceptado.
 
-**Secuencia propuesta y dependencias.** La secuencia organiza cierres, permitiendo iniciar antes las tareas cuyos insumos ya estén disponibles. Por ejemplo, el ambiente de SB1-07-A puede prepararse con SB1-01-C, aunque el despliegue integrado de SB1-07-B espere al cliente y al análisis.
+**Calendario del sprint y dependencias.** La secuencia organiza cierres, permitiendo iniciar antes las tareas cuyos insumos ya estén disponibles. Por ejemplo, el ambiente de SB1-07-A puede prepararse con SB1-01-C, aunque el despliegue integrado de SB1-07-B espere al cliente y al análisis.
 
-| Ventana propuesta | Trabajo prioritario | Salida comprobable |
+| Fecha / periodo | Trabajo y coordinación previstos | Evidencia o salida requerida |
 | --- | --- | --- |
-| 31/10–01/11 | SB1-01; registro/acceso de SB1-02; landing de SB1-06-A. | Entorno reproducible, decisión tecnológica registrada y acceso con fixtures. |
-| 02/11–04/11 | Autorización, estados de sesión, token/voz, cierre y preparación de ambiente. | Sesión autorizada y correlación del evento; errores de estado controlados. |
-| 04/11–06/11 | Análisis/feedback, cliente integrado, progreso, logros y aceptación. | Reporte trazable y pruebas del recorrido; integración por eventos comprobada. |
-| 07/11–08/11 | Despliegue, validación con ambos segmentos, matriz de evidencias, review y retrospectiva. | URLs y capturas actuales; registros reales de validación; balance de terminado/pendiente. |
+| 26/10–27/10 | Inicio del periodo del sprint y preparación de insumos del backlog. | El periodo comienza el lunes 26; las tareas de esos días solo se registran como ejecutadas si existe evidencia. |
+| 28/10, 20:00–21:00 | Planning por Google Meet con los cinco integrantes. | Reunión registrada; objetivo y organización del incremento. |
+| 29/10–01/11 | Entorno, registro/acceso, contratos y landing: SB1-01, SB1-02 y SB1-06-A. | Base reproducible, stack elegido y acceso con fixtures; registrar el estado real de cada tarea. |
+| 02/11–04/11 | Autorización, estados, voz, cierre y preparación del ambiente. | Sesión autorizada, correlación del evento y errores de negocio controlados. |
+| 05/11–06/11 | Análisis/feedback, cliente integrado, progreso, logros y pruebas. | Reporte trazable; resultados de integración y aceptación con commit identificado. |
+| 07/11–08/11 | Despliegue, matriz de evidencias, revisión y retrospectiva del sprint. | URLs/capturas actuales y balance real de terminado, bloqueado y pendiente al cierre del domingo 8. |
+| Diferido, sin fecha de aplicación | Entrevistas y resultados de validación de SB1-08; videos. | Eduardo y Werner conservan sus responsabilidades; no se programan sesiones ni se atribuyen resultados mientras sigan diferidas. |
 
-La coordinación propuesta comprende seis sincronizaciones de diez minutos y una sesión de review/retrospectiva de sesenta minutos por integrante: dos horas en total. Las diez horas de reserva del equipo absorben incidencias pequeñas; no cubren ampliaciones de alcance de decenas de horas.
+**Coordinación dentro de la capacidad.** Las 2 h por integrante incluyen 60 min del planning del 28/10, tres sincronizaciones previstas de 10 min, una review prevista de 20 min y una retrospectiva prevista de 10 min: 120 min en total. Las últimas actividades quedan por realizar. De las 100 h totales, el planning representa 5 h de equipo; descontando únicamente esa reunión confirmada quedan 95 h, sin deducir otros esfuerzos no medidos. Las 80 h de tareas incluyen 74 h técnicas/documentales y 6 h de validación asignada pero diferida; esas 6 h no se cuentan como ejecución ni como entrevista comprometida para el 08/11. Las 10 h de reserva absorben incidencias pequeñas.
 
 **Definition of Ready.** Antes de iniciar una tarea deben existir su criterio de aceptación, responsable, dependencia resuelta, repositorio/commit de base e insumos de prueba. Si requiere credenciales, presupuesto cloud, acceso al proveedor o participantes, se registra el bloqueo concreto. Nunca se incluye un secreto en el tablero o en la captura.
 
@@ -4778,9 +4794,9 @@ La coordinación propuesta comprende seis sincronizaciones de diez minutos y una
 
 #### 7.2.1.2. Sprint Backlog 1
 
-El backlog sustituye las diez tareas genéricas iniciales por **ocho PBIs y 24 tareas**, todos definidos con responsable confirmado por el Team Leader, horas estimadas, dependencia y aceptación. El estado inicial es **Por hacer** para el trabajo residual; los activos existentes del 30/10 se conservan como base disponible y no convierten las historias completas en trabajo terminado.
+El backlog sustituye las diez tareas genéricas iniciales por **ocho PBIs y 24 tareas**, todos definidos con responsable acordado como equipo, horas estimadas, dependencia y aceptación. El estado inicial es **Por hacer** para el trabajo residual; los activos existentes del 30/10 se conservan como base disponible y no convierten las historias completas en trabajo terminado.
 
-| PBI | Incremento | Historias / contratos relacionados | Coordinación confirmada | SP residuales | Trabajo | Dependencias para el cierre |
+| PBI | Incremento | Historias / contratos relacionados | Coordinación acordada | SP residuales | Trabajo | Dependencias para el cierre |
 | --- | --- | --- | --- | ---: | ---: | --- |
 | SB1-01 | Entorno reproducible, restricciones y trazabilidad | Transversal | Kevin | 2 | 8 h | Ninguna |
 | SB1-02 | Identidad, acceso y aislamiento de sesiones | US05, US06, US20, US23, US28, US33 | Werner | 5 | 10 h | SB1-01 |
@@ -4807,7 +4823,7 @@ El backlog sustituye las diez tareas genéricas iniciales por **ocho PBIs y 24 t
 
 **SB1-01 — Entorno reproducible, restricciones y trazabilidad.** Servicios: Todos los servicios, Cliente web.
 
-| Tarea | Responsable confirmado | Horas | Dependencias | Criterio de aceptación | Estado |
+| Tarea | Responsable acordado | Horas | Dependencias | Criterio de aceptación | Estado |
 | --- | --- | ---: | --- | --- | --- |
 | **SB1-01-A** Cerrar el runbook de arranque y configuración | Alejandro | 3 | Ninguna | Un clon limpio puede compilar con JDK 17, iniciar un único RabbitMQ y los ocho servicios; el runbook separa H2 local de persistencia pública y no expone secretos. | Por hacer |
 | **SB1-01-B** Registrar decisiones de tecnología y alcance | Eduardo | 2 | Ninguna | Registrar Next.js/React/TypeScript, Tailwind y shadcn como stack elegido; relacionar versiones y BFF con los archivos del cliente. Conservar la fuente académica original y la decisión del equipo sin atribuir autorización docente no registrada. | Por hacer |
@@ -4815,7 +4831,7 @@ El backlog sustituye las diez tareas genéricas iniciales por **ocho PBIs y 24 t
 
 **SB1-02 — Identidad, acceso y aislamiento de sesiones.** Servicios: identity-service, session-service, BFF del cliente.
 
-| Tarea | Responsable confirmado | Horas | Dependencias | Criterio de aceptación | Estado |
+| Tarea | Responsable acordado | Horas | Dependencias | Criterio de aceptación | Estado |
 | --- | --- | ---: | --- | --- | --- |
 | **SB1-02-A** Verificar registro, login, segmento y logout | Werner | 4 | SB1-01-A | Registro nuevo 201, login válido 200, credenciales inválidas con respuesta controlada y logout invalida acceso del cliente; usar cuentas fixture y ocultar JWT. | Por hacer |
 | **SB1-02-B** Implementar o comprobar autorización por propietario | Werner | 4 | SB1-02-A | Dos cuentas de prueba: el usuario B no puede leer, listar, finalizar o añadir feedback a la sesión de A. La identidad validada prevalece sobre userId enviado por el cliente. | Por hacer |
@@ -4823,7 +4839,7 @@ El backlog sustituye las diez tareas genéricas iniciales por **ocho PBIs y 24 t
 
 **SB1-03 — Práctica y ciclo de sesión con coaching.** Servicios: session-service, live-coach-service, Cliente web, Gemini Live.
 
-| Tarea | Responsable confirmado | Horas | Dependencias | Criterio de aceptación | Estado |
+| Tarea | Responsable acordado | Horas | Dependencias | Criterio de aceptación | Estado |
 | --- | --- | ---: | --- | --- | --- |
 | **SB1-03-A** Cerrar máquina de estados y consentimiento | Alejandro | 4 | SB1-02-B | Ruta de inicio autorizada y transición DRAFT a RECORDING definidas; finalizar desde estado inválido devuelve error de negocio controlado, no 500. Registrar consentimiento antes de captura. | Por hacer |
 | **SB1-03-B** Comprobar integración de voz y token efímero | Alejandro | 4 | SB1-03-A | Credencial permanente solo en servidor; permiso denegado, clave ausente y token vencido se comunican. Con configuración autorizada se prueba un ensayo corto sin publicar audio personal. | Por hacer |
@@ -4832,7 +4848,7 @@ El backlog sustituye las diez tareas genéricas iniciales por **ocho PBIs y 24 t
 
 **SB1-04 — Análisis, puntuación y consulta de feedback.** Servicios: filler-detection-service, scoring-service, session-service.
 
-| Tarea | Responsable confirmado | Horas | Dependencias | Criterio de aceptación | Estado |
+| Tarea | Responsable acordado | Horas | Dependencias | Criterio de aceptación | Estado |
 | --- | --- | ---: | --- | --- | --- |
 | **SB1-04-A** Comprobar contratos del pipeline y duplicados | Manuel | 4 | SB1-03-C | Fixture recorre session.live.finalized, fillers.analyzed y scoring.completed con el mismo sessionId/userId; duplicado reconocido y fallo con estado visible. | Por hacer |
 | **SB1-04-B** Persistir y consultar feedback mínimo trazable | Manuel | 4 | SB1-04-A | Reporte recuperable de la sesión del propietario contiene puntuación, muletillas, evidencia y límites. Estados pendiente/fallido no muestran una evaluación inventada; diferencias con TS04 versionado registradas. | Por hacer |
@@ -4840,14 +4856,14 @@ El backlog sustituye las diez tareas genéricas iniciales por **ocho PBIs y 24 t
 
 **SB1-05 — Progreso, logros y notificaciones por eventos.** Servicios: progress-service, gamification-service, notification-service.
 
-| Tarea | Responsable confirmado | Horas | Dependencias | Criterio de aceptación | Estado |
+| Tarea | Responsable acordado | Horas | Dependencias | Criterio de aceptación | Estado |
 | --- | --- | ---: | --- | --- | --- |
 | **SB1-05-A** Verificar proyección de progreso | Manuel | 4 | SB1-04-A | Scoring válido actualiza una sola vez el resumen del propietario; comparar el antes/después con el mismo fixture y conservar métricas/versiones disponibles sin inferir comparación avanzada. | Por hacer |
 | **SB1-05-B** Verificar racha y aviso sin duplicados | Werner | 4 | SB1-05-A | Sesión válida activa la regla de racha/logro y el consumidor de notificaciones; reenvío del evento no duplica el efecto. Mostrar qué canal de aviso existe realmente; no afirmar envío de email no configurado. | Por hacer |
 
 **SB1-06 — Landing y recorrido web coherentes con el incremento.** Servicios: Landing, Cliente web, BFF.
 
-| Tarea | Responsable confirmado | Horas | Dependencias | Criterio de aceptación | Estado |
+| Tarea | Responsable acordado | Horas | Dependencias | Criterio de aceptación | Estado |
 | --- | --- | ---: | --- | --- | --- |
 | **SB1-06-A** Actualizar landing y estados vacíos | Eduardo | 4 | SB1-01-B | Beneficios y planes describen disponibilidad real; sin testimonios autorizados se muestra estado vacío. Contacto y videos identifican qué funciona y qué está pendiente. | Por hacer |
 | **SB1-06-B** Integrar las pantallas con servicios reales | Eduardo | 4 | SB1-02-C, SB1-03-C, SB1-04-B | Acceso, preparación, práctica, reporte e historial consumen la base elegida; simulaciones y capturas de referencia están diferenciadas. Se reutiliza el cliente Next.js/React y se comprueba su integración; no se incluye una migración de framework. | Por hacer |
@@ -4855,7 +4871,7 @@ El backlog sustituye las diez tareas genéricas iniciales por **ocho PBIs y 24 t
 
 **SB1-07 — Despliegue y evidencias de la primera versión.** Servicios: Ocho servicios backend, RabbitMQ, Persistencia, Cliente web.
 
-| Tarea | Responsable confirmado | Horas | Dependencias | Criterio de aceptación | Estado |
+| Tarea | Responsable acordado | Horas | Dependencias | Criterio de aceptación | Estado |
 | --- | --- | ---: | --- | --- | --- |
 | **SB1-07-A** Preparar perfiles y recursos del ambiente | Kevin | 3 | SB1-01-C | Dominio/HTTPS, broker compartido, almacenamiento y variables externas documentados; H2 create-drop queda limitado al ambiente descartable. Acceso y presupuesto aprobados son dependencia externa. | Por hacer |
 | **SB1-07-B** Publicar y comprobar servicios y cliente | Kevin | 4 | SB1-07-A, SB1-04-C, SB1-06-C | Las URLs del commit desplegado responden; OpenAPI y frontend funcionan contra el mismo ambiente. Una captura de despliegue histórico o un 200 de galería no cuenta como backend operativo. | Por hacer |
@@ -4864,7 +4880,7 @@ El backlog sustituye las diez tareas genéricas iniciales por **ocho PBIs y 24 t
 
 **SB1-08 — Aplicación de validación y registro de hallazgos.** Servicios: Landing, Prototipo o cliente identificado.
 
-| Tarea | Responsable confirmado | Horas | Dependencias | Criterio de aceptación | Estado |
+| Tarea | Responsable acordado | Horas | Dependencias | Criterio de aceptación | Estado |
 | --- | --- | ---: | --- | --- | --- |
 | **SB1-08-A** Aplicar protocolo a ambos segmentos y registrar sesiones | Eduardo | 4 | SB1-06-C | Al menos tres participantes por segmento, consentimiento, fecha, dispositivo/versión y tareas; registrar éxito, tiempo, ayuda y observaciones. Si se usa prototipo, se declara simulación; reclutamiento es dependencia externa. | Por hacer |
 | **SB1-08-B** Consolidar heurísticas y decisiones de mejora | Werner | 2 | SB1-08-A | Hallazgos reales de usabilidad, arquitectura de información y diseño inclusivo con severidad, evidencia y acción. Videos de validación y About Product siguen diferidos; no se inventan opiniones. | Por hacer |
@@ -5120,7 +5136,7 @@ El historial de TB1 y TP permanece en Project Report Collaboration Insights. La 
 
 La observación docente sobre concentración editorial se atiende haciendo explícito quién modificó cada versión y separando autoría, coautoría registrada y revisión asignada. No se redistribuyen cambios históricos entre integrantes que no los realizaron. Para cerrar la colaboración del Sprint 1, cada integrante debe revisar su sección, realizar su aporte y aportar el enlace verificable del commit/PR y la evidencia de la herramienta utilizada.
 
-| Integrante | Responsabilidad del plan confirmada por el Team Leader | Evidencia de cierre requerida |
+| Integrante | Responsabilidad acordada por el equipo | Evidencia de cierre requerida |
 | --- | --- | --- |
 | Alejandro Daniel Oroncoy Almeyda | Integración del informe, SCM, sesiones/coach y trazabilidad de código y pruebas. | [PR #7](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/pull/7) y commits actuales de 7.2.1.3: edición documentada. Cierre técnico de tareas pendiente. |
 | Eduardo Gael Rivera Sosa | Landing, comunicación de beneficios y entrevistas de validación. | Cambios propios y registro real de sesiones/observaciones. |

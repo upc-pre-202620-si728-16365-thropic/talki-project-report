@@ -17,7 +17,7 @@ Fuentes: enunciado del curso obtenido con Campus, páginas 34–35, y comentario
 - [x] **7.2.1.6:** métodos, rutas, parámetros, ejemplo de solicitud y ocho documentos OpenAPI locales disponibles.
 - [x] **7.3.1:** diseño de validación, consentimiento, tareas, métricas y preguntas de cierre preparados.
 - [x] **7.4:** introducción y guion del About Product redactados; publicación pendiente por indicación del equipo.
-- [x] **Registro de versiones y bibliografía:** autoría editorial aclarada, versión 1.48 y referencias de los cinco repositorios de código añadidas.
+- [x] **Registro de versiones y bibliografía:** autoría editorial aclarada, versión 1.49 y referencias de los cinco repositorios de código añadidas.
 - [x] **Conclusiones, recomendaciones y anexos:** avance TB2 incorporado, con límites de lo comprobado.
 
 ## Registros que faltan completar dentro del informe
@@ -25,8 +25,8 @@ Fuentes: enunciado del curso obtenido con Campus, páginas 34–35, y comentario
 - [x] **7.2.1.1 — Definición del Planning.** Fecha real 28/10, 20:00–21:00 por Google Meet y asistencia de cinco integrantes confirmados; objetivo, insumos, 36 SP residuales, 80 h de tareas, reparto de capacidad confirmado por el Team Leader, calendario, reglas de trabajo y Definition of Ready/Done definidos en el [plan detallado](sprint-1-plan.md).
 - [x] **7.2.1.2 — Definición del Sprint Backlog.** Ocho PBIs y 24 tareas con responsables confirmados por el Team Leader, horas estimadas, dependencias, estado y aceptación; tablero actual con URL/capturas y hoja de ruta de las 37 US y seis TS publicados.
 - [x] **Datos del acta.** Reunión del 28/10/2026, de 20:00 a 21:00 (Lima), por Google Meet, con los cinco integrantes presentes: confirmado por el Team Leader.
-- [x] **Capacidad y responsables.** El Team Leader confirmó el 30/10/2026 las 20 h futuras por integrante y los responsables definidos: 100 h de capacidad total, con 80 h estimadas de tareas, 10 h de coordinación/revisión y 10 h de reserva.
-- [ ] **Calendario y compromiso de fecha.** Ratificar la ventana interna 31/10–08/11 y comprobar la fecha/hora institucional. La confirmación de capacidad no confirma estas fechas ni acredita trabajo ejecutado.
+- [x] **Capacidad y responsables.** El Team Leader confirmó el 30/10/2026 las 20 h por integrante para el sprint 26/10–08/11 y los responsables definidos: 100 h de capacidad total, con 80 h estimadas de tareas, 10 h de coordinación/revisión y 10 h de reserva.
+- [x] **7.2.1.1 — Calendario y responsabilidades.** Como equipo acordamos Sprint 1 del lunes 26/10 al domingo 08/11/2026, 20 h por integrante durante las dos semanas y división explícita de lo que realizará cada integrante. El planning del 28/10 está incluido en esa capacidad. La fecha institucional de Blackboard se conserva separada del cierre interno.
 - [x] **Herramienta de tablero de la entrega.** GitHub Projects admitido según confirmación del Team Leader el 30/10/2026 y elegido por el equipo. Se conserva el tablero actual; no hace falta trasladarlo a otra herramienta. Quedan las actualizaciones de estados/evidencias conforme se ejecuten las tareas.
 - [ ] **7.2.1.3 — Development Evidence.** Añadir los cambios propios del periodo 202620: repositorio, rama, SHA, autor, fecha, mensaje y vínculo con historia/tarea. La procedencia de la base 202601 ya está completa.
 - [ ] **7.2.1.8 — Team Collaboration Insights.** Completar aportes y revisión de los cinco integrantes con commits/PR verificables y captura actual de colaboración. El PR de adaptación está enlazado; las revisiones sugeridas de otros integrantes no se presentan como realizadas.
