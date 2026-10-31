@@ -13,5 +13,11 @@
       "file": "assets/planning/sprint-1/github-project-20261030.jpg",
       "sha256": "aef526d385adcf94c8d62be301053b0cc1e7661f455dc06e638740d6a997cf48"
     }
-  ]
+  ],
+  "subsequentDecision": {
+    "date": "2026-10-30",
+    "change": "Next.js/React conservado; G-WEB archivado por decisión del equipo después de las capturas.",
+    "currentActiveCards": 10,
+    "currentSnapshot": "assets/planning/sprint-1/board-snapshot.json"
+  }
 }

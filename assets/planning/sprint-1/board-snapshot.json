@@ -2,7 +2,7 @@
   "items": [
     {
       "content": {
-        "body": "Estado: planificación pendiente de ejecutar. Responsables y capacidad de 20 h por integrante confirmados por el Team Leader el 30/10/2026. Las horas de tareas son estimaciones; el calendario sigue propuesto.\n\nHistorias: Transversal\n\nServicios: Todos los servicios, Cliente web\n\nDependencias PBI: Ninguna\n\n- [ ] **SB1-01-A — Cerrar el runbook de arranque y configuración** (3 h; Alejandro Daniel Oroncoy Almeyda).\n  - Dependencias: Ninguna.\n  - Aceptación: Un clon limpio puede compilar con JDK 17, iniciar un único RabbitMQ y los ocho servicios; el runbook separa H2 local de persistencia pública y no expone secretos.\n- [ ] **SB1-01-B — Registrar decisiones de tecnología y alcance** (2 h; Eduardo Gael Rivera Sosa).\n  - Dependencias: Ninguna.\n  - Aceptación: Matriz de enunciado frente al stack real; decisión Angular/Vue o autorización adjunta. Si sigue abierta, se registra bloqueo de conformidad y no se renombra Next.js.\n- [ ] **SB1-01-C — Versionar contrato y evidencia del entorno** (3 h; Kevin Jorge Chi Cruzatt).\n  - Dependencias: SB1-01-A.\n  - Aceptación: URLs/puertos, commit base, diagrama de despliegue ejecutable y ocho contratos OpenAPI coherentes; enlaces de las evidencias en el informe.\n\nEstimaciones de trabajo residual. Los SP originales de 3.5 se mantienen; la historia completa solo termina al aprobar todos sus criterios.\n\n**Base comprobada al 30/10/2026:** Ocho servicios compilados, 133 unitarias aprobadas y ocho OpenAPI locales capturados.\n\n**Trabajo restante:** Cerrar runbook de clon limpio, decisión tecnológica y concordancia de contratos/despliegue.\n",
+        "body": "Estado: trabajo residual pendiente de ejecutar y aceptar. Responsables y capacidad de 20 h por integrante confirmados por el Team Leader.\n\nDecisión web del equipo: conservar Next.js/React/TypeScript, Tailwind y shadcn. G-WEB retirado; esta decisión no se atribuye al documento docente.\n\nHistorias: Transversal\n\nServicios: Todos los servicios, Cliente web\n\n- [ ] **SB1-01-A — Cerrar el runbook de arranque y configuración** (3 h; Alejandro Daniel Oroncoy Almeyda).\n  - Dependencias: Ninguna.\n  - Aceptación: Un clon limpio puede compilar con JDK 17, iniciar un único RabbitMQ y los ocho servicios; el runbook separa H2 local de persistencia pública y no expone secretos.\n- [ ] **SB1-01-B — Registrar decisiones de tecnología y alcance** (2 h; Eduardo Gael Rivera Sosa).\n  - Dependencias: Ninguna.\n  - Aceptación: Registrar Next.js/React/TypeScript, Tailwind y shadcn como stack elegido; relacionar versiones y BFF con los archivos del cliente. Conservar la fuente académica original y la decisión del equipo sin atribuir autorización docente no registrada.\n- [ ] **SB1-01-C — Versionar contrato y evidencia del entorno** (3 h; Kevin Jorge Chi Cruzatt).\n  - Dependencias: SB1-01-A.\n  - Aceptación: URLs/puertos, commit base, diagrama de despliegue ejecutable y ocho contratos OpenAPI coherentes; enlaces de las evidencias en el informe.\n\n**Base comprobada:** Ocho servicios compilados, 133 unitarias aprobadas y ocho OpenAPI locales capturados.\n\n**Trabajo restante:** Cerrar runbook de clon limpio, decisión tecnológica y concordancia de contratos/despliegue.\n",
         "id": "DI_lADOE3JeVs4BphgjzgLjDzQ",
         "title": "SB1-01 — Entorno reproducible, restricciones y trazabilidad",
         "type": "DraftIssue"
@@ -77,7 +77,7 @@
     },
     {
       "content": {
-        "body": "Estado: planificación pendiente de ejecutar. Responsables y capacidad de 20 h por integrante confirmados por el Team Leader el 30/10/2026. Las horas de tareas son estimaciones; el calendario sigue propuesto.\n\nHistorias: US01, US02, US03, US04, US09, US15, US20, US29\n\nServicios: Landing, Cliente web, BFF\n\nDependencias PBI: SB1-01, SB1-02\n\n- [ ] **SB1-06-A — Actualizar landing y estados vacíos** (4 h; Eduardo Gael Rivera Sosa).\n  - Dependencias: SB1-01-B.\n  - Aceptación: Beneficios y planes describen disponibilidad real; sin testimonios autorizados se muestra estado vacío. Contacto y videos identifican qué funciona y qué está pendiente.\n- [ ] **SB1-06-B — Integrar las pantallas con servicios reales** (4 h; Eduardo Gael Rivera Sosa).\n  - Dependencias: SB1-02-C, SB1-03-C, SB1-04-B.\n  - Aceptación: Acceso, preparación, práctica, reporte e historial consumen la base elegida; simulaciones y capturas de referencia están diferenciadas. La migración completa de framework es una rama condicional estimada aparte.\n- [ ] **SB1-06-C — Comprobar usabilidad técnica web y responsive** (2 h; Eduardo Gael Rivera Sosa).\n  - Dependencias: SB1-06-B.\n  - Aceptación: Recorrido con teclado, foco, etiquetas, errores y vista móvil comprobado; responsive no se presenta como app nativa. Capturas corresponden al commit probado.\n\nEstimaciones de trabajo residual. Los SP originales de 3.5 se mantienen; la historia completa solo termina al aprobar todos sus criterios.\n\n**Base comprobada al 30/10/2026:** Compilación Next.js aprobada; galería y prototipo públicos dieron 200.\n\n**Trabajo restante:** Integrar el recorrido real, ajustar landing/errores y resolver conformidad del framework.\n",
+        "body": "Estado: trabajo residual pendiente de ejecutar y aceptar. Responsables y capacidad de 20 h por integrante confirmados por el Team Leader.\n\nDecisión web del equipo: conservar Next.js/React/TypeScript, Tailwind y shadcn. G-WEB retirado; esta decisión no se atribuye al documento docente.\n\nHistorias: US01, US02, US03, US04, US09, US15, US20, US29\n\nServicios: Landing, Cliente web, BFF\n\n- [ ] **SB1-06-A — Actualizar landing y estados vacíos** (4 h; Eduardo Gael Rivera Sosa).\n  - Dependencias: SB1-01-B.\n  - Aceptación: Beneficios y planes describen disponibilidad real; sin testimonios autorizados se muestra estado vacío. Contacto y videos identifican qué funciona y qué está pendiente.\n- [ ] **SB1-06-B — Integrar las pantallas con servicios reales** (4 h; Eduardo Gael Rivera Sosa).\n  - Dependencias: SB1-02-C, SB1-03-C, SB1-04-B.\n  - Aceptación: Acceso, preparación, práctica, reporte e historial consumen la base elegida; simulaciones y capturas de referencia están diferenciadas. Se reutiliza el cliente Next.js/React y se comprueba su integración; no se incluye una migración de framework.\n- [ ] **SB1-06-C — Comprobar usabilidad técnica web y responsive** (2 h; Eduardo Gael Rivera Sosa).\n  - Dependencias: SB1-06-B.\n  - Aceptación: Recorrido con teclado, foco, etiquetas, errores y vista móvil comprobado; responsive no se presenta como app nativa. Capturas corresponden al commit probado.\n\n**Base comprobada:** Compilación Next.js aprobada; galería y prototipo públicos dieron 200.\n\n**Trabajo restante:** Integrar el recorrido real en Next.js/React y ajustar landing, errores y evidencias.\n",
         "id": "DI_lADOE3JeVs4BphgjzgLjD0o",
         "title": "SB1-06 — Landing y recorrido web coherentes con el incremento",
         "type": "DraftIssue"
@@ -122,21 +122,6 @@
     },
     {
       "content": {
-        "body": "Paquete fuera de las 80 horas del Sprint 1.\n\nActivación: El docente no autoriza la base Next.js o el equipo elige adecuación.\n\nAlcance: Acceso, BFF equivalente seguro, configuración, práctica, reporte, historial, estados responsive y pruebas. Estimación orientativa de 40–64 h; refinar tras el spike SB1-01-B.\n\nNo se registra como terminado ni como compromiso aceptado del equipo.\n\nUI conforme: Angular Material/PrimeNG o PrimeVue/Vuetify, según el framework elegido. La librería actual Tailwind/shadcn no se presenta como una de esas opciones.\n",
-        "id": "DI_lADOE3JeVs4BphgjzgLjD1M",
-        "title": "G-WEB — Adecuación a Angular o Vue",
-        "type": "DraftIssue"
-      },
-      "coordinación": "Eduardo Gael Rivera Sosa",
-      "fase": "Condicional",
-      "horas planificadas": 48,
-      "id": "PVTI_lADOE3JeVs4BphgjzhE5zEQ",
-      "sP residual": 8,
-      "status": "Todo",
-      "title": "G-WEB — Adecuación a Angular o Vue"
-    },
-    {
-      "content": {
         "body": "Paquete fuera de las 80 horas del Sprint 1.\n\nActivación: Antes de cualquier piloto que procese datos personales reales.\n\nAlcance: US27, US33 y TS06: solicitud autorizada, bloqueo, exportación, confirmaciones por contexto, reintento, auditoría y aceptación. Estimación inicial de alta incertidumbre; no basta ocultar un botón.\n\nNo se registra como terminado ni como compromiso aceptado del equipo.\n",
         "id": "DI_lADOE3JeVs4BphgjzgLjD1Q",
         "title": "G-PRIV — Exportación, revocación y purga distribuida",
@@ -165,5 +150,5 @@
       "title": "G-MEDIA — Grabación y publicación audiovisual TB2"
     }
   ],
-  "totalCount": 11
+  "totalCount": 10
 }

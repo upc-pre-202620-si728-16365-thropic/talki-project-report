@@ -17,7 +17,7 @@
   },
   "observedBaseline": {
     "backend": "Java 17 con Spring Boot 3.2.5.",
-    "webApplication": "Next.js/React con Tailwind/shadcn; conformidad pendiente.",
+    "webApplication": "Next.js 16.2.9 / React 19.2.4 / TypeScript; Tailwind CSS 4 / shadcn. Stack elegido por el Team Leader.",
     "localStorage": "H2 en memoria con create-drop.",
     "reviewBoard": "GitHub Projects; admitido según confirmación del Team Leader el 30/10/2026 y elegido por el equipo."
   },
@@ -26,5 +26,13 @@
     "confirmedBy": "Team Leader",
     "statement": "El tablero está admitido: GitHub Projects; se usará esa herramienta.",
     "status": "Admitido según confirmación del equipo y elegido para Sprint 1"
+  },
+  "projectDecision": {
+    "date": "2026-10-30",
+    "decidedBy": "Team Leader",
+    "web": "Next.js/React/TypeScript; Tailwind CSS y shadcn",
+    "backend": "Java 17 / Spring Boot 3.2.5",
+    "scope": "Conservar el cliente existente y retirar la migración G-WEB del plan activo.",
+    "academicAuthorization": "No se aporta autorización docente nueva; el enunciado original se conserva."
   }
 }

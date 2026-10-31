@@ -113,6 +113,7 @@
 | 1.45 | 30/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Confirmación de 20 h por integrante y responsables del Sprint 1 por el Team Leader; sincronización del plan, tablero y checklist de cierre. Calendario operativo aún propuesto. |
 | 1.46 | 30/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Consolidación documental TB2: concordancia de los diez contextos con ocho servicios, reproducción local, contratos y respuestas observadas, historial actual y trazabilidad de cierre en README.md. Videos, entrevistas y resultados de campo pendientes. |
 | 1.47 | 30/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Confirmación de GitHub Projects como herramienta admitida y elegida para Sprint 1 por el Team Leader. Cierre del pendiente de herramienta en informe, plan y checklist. |
+| 1.48 | 30/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Selección de Next.js/React como frontend por decisión del Team Leader; alineación de arquitectura, tecnologías, diagramas y Sprint 1. Retiro de la migración G-WEB y conservación del enunciado original como fuente. |
 
 **Aclaración de autoría tras el feedback del parcial.** Las modificaciones editoriales de 1.0–1.12 fueron realizadas por Alejandro Daniel Oroncoy Almeyda. En esas filas se distingue al editor de los coautores registrados en los commits; la coautoría técnica se consulta en Project Report Collaboration Insights. Las versiones posteriores mantienen al autor real de la modificación. Las revisiones asignadas a otros integrantes solo se registrarán como realizadas cuando exista su evidencia; no se redistribuyen cambios históricos para simular participación.
 
@@ -1951,7 +1952,7 @@ Los únicos actores humanos son los estudiantes de ciclos 1–5 y 6–10. La fro
 
 ### 4.3.3. Container Level Diagrams
 
-El cliente web ofrece el recorrido de preparación y revisión; el cliente Flutter es una ampliación móvil. Para la aplicación de este curso se seleccionan Angular, TypeScript y Angular Material, conforme al enunciado; la landing utiliza HTML5, CSS3 y JavaScript. Las pantallas de Talki conservan su identidad visual y son referencias UX, no evidencia de que la implementación Angular esté terminada. La adopción móvil cross-platform con Flutter es una propuesta que deberá justificar cobertura y distribución antes de implementar. La arquitectura objetivo propone un API Gateway/BFF para enrutar operaciones y aplicar políticas comunes. Los servicios se organizan por responsabilidad de contexto: Identity & Access, Practice Session Management, Live Coaching, Speech Analysis, Scoring & Feedback, Progress & Adaptation, Sharing & Retention, Gamification, AI Provider Gateway y Notifications.
+El cliente web ofrece el recorrido de preparación y revisión; el cliente Flutter es una ampliación móvil. Para la aplicación web se seleccionan Next.js, React y TypeScript, con Tailwind CSS y componentes shadcn, aprovechando el cliente existente y su BFF. La landing forma parte de la experiencia web y utiliza HTML, CSS y JavaScript/TypeScript. Las pantallas de referencia y el prototipo conservan su alcance UX; la integración funcional se comprueba en el capítulo VII. La adopción móvil cross-platform con Flutter es una propuesta que deberá justificar cobertura y distribución antes de implementar. La arquitectura objetivo propone un API Gateway/BFF para enrutar operaciones y aplicar políticas comunes. Los servicios se organizan por responsabilidad de contexto: Identity & Access, Practice Session Management, Live Coaching, Speech Analysis, Scoring & Feedback, Progress & Adaptation, Sharing & Retention, Gamification, AI Provider Gateway y Notifications.
 
 RabbitMQ conecta el procesamiento asíncrono: Practice Session Management publica `session.live.finalized` después de confirmar el cierre recibido de Live Coaching, Speech Analysis produce `fillers.analyzed` y Scoring & Feedback publica `scoring.completed` después de conservar la evaluación. Progress y Gamification consumen ese resultado; Notifications recibe eventos de evaluación y logro. El broker incorpora confirmaciones, reintentos y una cola de fallos como requisitos del diseño. La voz sigue el canal cliente–Gemini Live por WSS, evitando presentar el broker como transporte de audio.
 
@@ -4502,7 +4503,7 @@ El alcance de TB2 se toma del *Trabajo Final_1ASI0728_202620.pdf*, páginas 34�
 
 ### 7.1.1. Software Development Environment Configuration
 
-**Qué significa entorno y tecnología en Talki.** La tecnología identifica con qué está construido cada componente. El entorno define dónde y con qué configuración se ejecuta ese código: equipo local, ambiente de pruebas o ambiente publicado. Cambiar una URL o una variable de entorno no convierte Next.js en Angular ni Vue.
+**Qué significa entorno y tecnología en Talki.** La tecnología identifica con qué está construido cada componente. El entorno define dónde y con qué configuración se ejecuta ese código: equipo local, ambiente de pruebas o ambiente publicado. El entorno local, de integración o publicado utiliza el mismo stack, con su configuración correspondiente.
 
 | Concepto | Ejemplo concreto en Talki | Qué documentamos |
 | --- | --- | --- |
@@ -4515,9 +4516,9 @@ El alcance de TB2 se toma del *Trabajo Final_1ASI0728_202620.pdf*, páginas 34�
 | Entorno de integración | Se ejecutan juntos los componentes necesarios para comprobar el recorrido. | Mismo ID de sesión, intercambios HTTP/eventos y resultados de aceptación. |
 | Entorno publicado | Los productos están disponibles por HTTPS en recursos cloud. | URLs actuales, commit, variables externas y almacenamiento persistente, según el diseño de despliegue. |
 
-**Diferencia con el enunciado.** La página 32 admite Java/Spring Boot para servicios: esa parte de la base coincide. Para la aplicación web enumera Angular o Vue y bibliotecas de componentes de Material Design: Angular Material/PrimeNG o PrimeVue/Vuetify, según el framework. La base heredada usa Next.js/React con Tailwind/shadcn, por lo que la conformidad de la aplicación web debe resolverse mediante una adecuación real o autorización expresa del docente. **Nest Framework**, permitido como alternativa de backend, y **Next.js**, usado por el cliente heredado, son tecnologías distintas. El diseño responsive del navegador tampoco acredita una aplicación móvil nativa.
+**Decisión tecnológica del proyecto.** El Team Leader confirmó el 30/10/2026 conservar **Next.js 16.2.9, React 19.2.4 y TypeScript**, con **Tailwind CSS 4 y shadcn**, para el cliente web. Se reutilizan sus pantallas y BFF y se concentra el trabajo en integración, errores, pruebas y despliegue. Los ocho servicios se mantienen en Java 17/Spring Boot 3.2.5. La aplicación móvil Flutter continúa como ampliación propuesta; la vista responsive es parte del cliente web.
 
-El plan trata esta diferencia como una decisión de alcance en SB1-01-B y, si se requiere adecuación, como el paquete adicional G-WEB. No se rehacen automáticamente los ocho servicios Java por cambiar el framework de las pantallas. Por separado, H2 sirve para las pruebas locales; la persistencia del ambiente publicado se configura y comprueba en SB1-07.
+SB1-01-B documenta esta selección y comprueba su correspondencia con los archivos del cliente; SB1-06 integra el recorrido con los servicios. La migración a otro framework se retira del plan por decisión del equipo. H2 se utiliza en pruebas locales; la persistencia del ambiente publicado se configura y comprueba en SB1-07.
 
 El entorno se describe según los archivos realmente incluidos en las instantáneas del código. Las herramientas de modelado y UX conservan los artefactos editables del informe actual. No se asume la instalación de herramientas adicionales citadas en el informe anterior cuando no aparecen en sus dependencias.
 
@@ -4535,7 +4536,7 @@ El entorno se describe según los archivos realmente incluidos en las instantán
 | Structurizr y PlantUML | DSL y fuentes de diagramas en `assets/structurizr/` y `assets/diagrams/`. | Demostración del diseño C4 y UML en sus herramientas. [Structurizr](https://structurizr.com/), [PlantUML](https://plantuml.com/). |
 | Navegador y servidor HTTP | HTML, CSS y JavaScript del prototipo de 6.5. | Evaluar navegación web/móvil, con datos de ejemplo. La simulación no utiliza Gemini. |
 
-**Compatibilidad con el enunciado.** El backend Java/Spring Boot se encuentra entre las tecnologías indicadas en la página 32. El cliente reutilizado usa Next.js; el enunciado enumera Angular o Vue para la aplicación web. Debe resolverse esta diferencia mediante adecuación del cliente o autorización expresa del docente. Las vistas móviles del prototipo son adaptaciones responsivas; no se presentan como una aplicación nativa implementada.
+**Referencia del enunciado.** La sección Tecnología de la página 32 enumera Angular/Vue para Web Applications. Next.js/React es la decisión actual del equipo; esta edición del informe no modifica el documento del curso ni acredita autorización docente para esa diferencia. El [registro de tecnologías](assets/planning/sprint-1/technology-requirements.json) conserva el texto de origen y la decisión del proyecto.
 
 El procedimiento de reproducción de 7.1.4 detalla integridad, extracción, pruebas, puertos, Swagger y cliente, con interpretación de errores.
 
@@ -4742,7 +4743,7 @@ La reunión de planning se realizó el **28 de octubre de 2026, de 20:00 a 21:00
 | progress-service | Resumen del progreso a partir de evaluaciones. | SB1-05. |
 | gamification-service | Rachas y logros según sesiones válidas. | SB1-05. |
 | notification-service | Consumo de eventos de evaluación/logro y aviso disponible. | SB1-05. No se presume un canal de correo configurado. |
-| Cliente web, landing y BFF | Pantallas, sesión del navegador y consumo de APIs. | SB1-02, SB1-03 y SB1-06; G-WEB si se requiere adecuación. |
+| Cliente web, landing y BFF | Pantallas, sesión del navegador y consumo de APIs. | SB1-02, SB1-03 y SB1-06 sobre Next.js/React. |
 | RabbitMQ, persistencia y ambiente | Integración entre servicios y ejecución reproducible/desplegada. | SB1-01 y SB1-07. |
 
 **Reparto de capacidad confirmado por el Team Leader el 30/10/2026.** Un coordinador por PBI organiza el cierre; las tareas de 7.2.1.2 indican quién hace cada parte. Las horas de apoyo se contabilizan a su responsable, no se suman de nuevo al coordinador.
@@ -4767,7 +4768,7 @@ Los SP de cada PBI usan la escala 1, 2, 3, 5 y 8 para estimar el **trabajo que q
 | 04/11–06/11 | Análisis/feedback, cliente integrado, progreso, logros y aceptación. | Reporte trazable y pruebas del recorrido; integración por eventos comprobada. |
 | 07/11–08/11 | Despliegue, validación con ambos segmentos, matriz de evidencias, review y retrospectiva. | URLs y capturas actuales; registros reales de validación; balance de terminado/pendiente. |
 
-La coordinación propuesta comprende seis sincronizaciones de diez minutos y una sesión de review/retrospectiva de sesenta minutos por integrante: dos horas en total. Las diez horas de reserva del equipo absorben incidencias pequeñas; no cubren una migración completa de tecnología o una ampliación de alcance de decenas de horas.
+La coordinación propuesta comprende seis sincronizaciones de diez minutos y una sesión de review/retrospectiva de sesenta minutos por integrante: dos horas en total. Las diez horas de reserva del equipo absorben incidencias pequeñas; no cubren ampliaciones de alcance de decenas de horas.
 
 **Definition of Ready.** Antes de iniciar una tarea deben existir su criterio de aceptación, responsable, dependencia resuelta, repositorio/commit de base e insumos de prueba. Si requiere credenciales, presupuesto cloud, acceso al proveedor o participantes, se registra el bloqueo concreto. Nunca se incluye un secreto en el tablero o en la captura.
 
@@ -4802,7 +4803,7 @@ El backlog sustituye las diez tareas genéricas iniciales por **ocho PBIs y 24 t
 | SB1-03 — Integración pendiente | Crear sesión 201, modos 200; finalizar DRAFT dio 500 y token sin clave dio 503 esperado. | Cerrar estados/consentimiento, voz configurada, correlación y cierre sin duplicados. |
 | SB1-04 — Base disponible | 11 unitarias de detección de muletillas y 33 de scoring aprobadas; contratos de eventos presentes. | Comprobar recorrido asíncrono, consulta de feedback, errores, duplicados y aceptación BDD. |
 | SB1-05 — Base disponible | 9 unitarias de progreso, 13 de gamificación y 7 de notificaciones; consultas iniciales de progreso/racha 200. | Demostrar actualización real por evento válido y que el duplicado no repite efectos. |
-| SB1-06 — Cliente/prototipo disponibles | Compilación Next.js aprobada; galería y prototipo públicos dieron 200. | Integrar el recorrido real, ajustar landing/errores y resolver conformidad del framework. |
+| SB1-06 — Cliente/prototipo disponibles | Compilación Next.js aprobada; galería y prototipo públicos dieron 200. | Integrar el recorrido real en Next.js/React y ajustar landing, errores y evidencias. |
 | SB1-07 — Bloqueado por despliegue | En la comprobación del 30/10, frontend histórico 402 y 16 rutas Railway 404. | Acceso a recursos, perfiles/persistencia, publicación y verificación del ambiente efectivo. |
 | SB1-08 — Protocolo listo | Guion de validación y registro de seis participantes preparado; sin sesiones o resultados acreditados. | Reclutar/aplicar a ambos segmentos y registrar observaciones y heurísticas reales. |
 
@@ -4811,7 +4812,7 @@ El backlog sustituye las diez tareas genéricas iniciales por **ocho PBIs y 24 t
 | Tarea | Responsable confirmado | Horas | Dependencias | Criterio de aceptación | Estado |
 | --- | --- | ---: | --- | --- | --- |
 | **SB1-01-A** Cerrar el runbook de arranque y configuración | Alejandro | 3 | Ninguna | Un clon limpio puede compilar con JDK 17, iniciar un único RabbitMQ y los ocho servicios; el runbook separa H2 local de persistencia pública y no expone secretos. | Por hacer |
-| **SB1-01-B** Registrar decisiones de tecnología y alcance | Eduardo | 2 | Ninguna | Matriz de enunciado frente al stack real; decisión Angular/Vue o autorización adjunta. Si sigue abierta, se registra bloqueo de conformidad y no se renombra Next.js. | Por hacer |
+| **SB1-01-B** Registrar decisiones de tecnología y alcance | Eduardo | 2 | Ninguna | Registrar Next.js/React/TypeScript, Tailwind y shadcn como stack elegido; relacionar versiones y BFF con los archivos del cliente. Conservar la fuente académica original y la decisión del equipo sin atribuir autorización docente no registrada. | Por hacer |
 | **SB1-01-C** Versionar contrato y evidencia del entorno | Kevin | 3 | SB1-01-A | URLs/puertos, commit base, diagrama de despliegue ejecutable y ocho contratos OpenAPI coherentes; enlaces de las evidencias en el informe. | Por hacer |
 
 **SB1-02 — Identidad, acceso y aislamiento de sesiones.** Servicios: identity-service, session-service, BFF del cliente.
@@ -4851,7 +4852,7 @@ El backlog sustituye las diez tareas genéricas iniciales por **ocho PBIs y 24 t
 | Tarea | Responsable confirmado | Horas | Dependencias | Criterio de aceptación | Estado |
 | --- | --- | ---: | --- | --- | --- |
 | **SB1-06-A** Actualizar landing y estados vacíos | Eduardo | 4 | SB1-01-B | Beneficios y planes describen disponibilidad real; sin testimonios autorizados se muestra estado vacío. Contacto y videos identifican qué funciona y qué está pendiente. | Por hacer |
-| **SB1-06-B** Integrar las pantallas con servicios reales | Eduardo | 4 | SB1-02-C, SB1-03-C, SB1-04-B | Acceso, preparación, práctica, reporte e historial consumen la base elegida; simulaciones y capturas de referencia están diferenciadas. La migración completa de framework es una rama condicional estimada aparte. | Por hacer |
+| **SB1-06-B** Integrar las pantallas con servicios reales | Eduardo | 4 | SB1-02-C, SB1-03-C, SB1-04-B | Acceso, preparación, práctica, reporte e historial consumen la base elegida; simulaciones y capturas de referencia están diferenciadas. Se reutiliza el cliente Next.js/React y se comprueba su integración; no se incluye una migración de framework. | Por hacer |
 | **SB1-06-C** Comprobar usabilidad técnica web y responsive | Eduardo | 2 | SB1-06-B | Recorrido con teclado, foco, etiquetas, errores y vista móvil comprobado; responsive no se presenta como app nativa. Capturas corresponden al commit probado. | Por hacer |
 
 **SB1-07 — Despliegue y evidencias de la primera versión.** Servicios: Ocho servicios backend, RabbitMQ, Persistencia, Cliente web.
@@ -4876,19 +4877,18 @@ El backlog sustituye las diez tareas genéricas iniciales por **ocho PBIs y 24 t
 
 ![Tablero de Sprint 1 con PBIs, responsables y horas](assets/planning/sprint-1/github-project-items-20261030.jpg)
 
-*Figura: Tablero real de revisión del periodo 202620. Todos los PBIs están pendientes de ejecución/aceptación; la captura precede a la confirmación posterior de las asignaciones y las 20 h por integrante por el Team Leader el mismo 30/10/2026.*
+*Figura: Tablero real de revisión del periodo 202620. Todos los PBIs están pendientes de ejecución/aceptación; la captura muestra también G-WEB antes de su retiro posterior por decisión del equipo. La captura precede a la confirmación posterior de las asignaciones y las 20 h por integrante por el Team Leader el mismo 30/10/2026.*
 
 ![Columnas de horas, puntos y fase del tablero](assets/planning/sprint-1/github-project-20261030.jpg)
 
-*Figura: Continuación horizontal del mismo tablero, con puntos y separación de paquetes condicionales. Las horas condicionales no forman parte del total de 80 h del Sprint 1.*
+*Figura: Continuación horizontal del mismo tablero, con puntos y separación de paquetes condicionales. Las horas condicionales no forman parte del total de 80 h del Sprint 1. G-WEB aparece en esta captura anterior y fue retirado al confirmar Next.js/React; el snapshot del tablero registra el estado actualizado.*
 
 **Herramienta de control del Sprint 1.** El equipo utilizará **GitHub Projects**, cuya admisión para esta entrega fue confirmada por el Team Leader el 30/10/2026. El tablero enlazado es la herramienta elegida para tareas, responsables, horas, estados y evidencias. La lista general de herramientas de la página 32 se conserva como fuente del enunciado; la confirmación del equipo cierra el pendiente de selección/aceptación, sin requerir traslado a Trello, Jira, YouTrack o Pivotal. El [CSV de tareas](assets/planning/sprint-1/sprint-backlog.csv) conserva una copia editable de las tareas del tablero.
 
-**Paquetes que cambian la capacidad necesaria.** La propuesta no oculta trabajo obligatorio dentro de estimaciones insuficientes. Si se activan G-WEB y G-PRIV, se requieren **80 h adicionales de trabajo estimado**, antes de coordinación/reserva; el total de entrega pasa de 80 a 160 h y debe cambiar el plazo, la disponibilidad o el alcance de la demostración. Las 20 h confirmadas por integrante no cubren ese escenario.
+**Paquetes que cambian la capacidad necesaria.** Se conserva Next.js/React y se retira G-WEB de la planificación activa; sus 48 h estimadas no se suman al sprint ni se cuentan como trabajo terminado. G-PRIV requiere **32 h adicionales estimadas** antes de un piloto con datos reales: el trabajo de entrega pasaría de 80 a 112 h, más coordinación/reserva, y requeriría replanificar capacidad o plazo. G-MEDIA sigue diferido.
 
 | Paquete | Activación / objetivo | Responsable de coordinación | Estimación adicional | Condición de cierre |
 | --- | --- | --- | ---: | --- |
-| G-WEB | Adecuar el cliente a Angular o Vue si no se obtiene autorización expresa para Next.js. | Eduardo; apoyo de Kevin y Alejandro. | 48 h; rango inicial 40–64 h, alta incertidumbre. | Pantallas, acceso/BFF seguro, APIs, errores, responsive y pruebas en el framework conforme. La decisión se toma en SB1-01-B. |
 | G-PRIV | Completar US27, US33 y TS06 antes de un piloto que procese datos personales reales. | Werner; apoyo de Manuel y Alejandro. | 32 h iniciales, alta incertidumbre. | Exportación, revocación, bloqueo, purga por contexto, confirmaciones, reintento, auditoría y pruebas. Mientras falte, limitar el ambiente a fixtures/acceso controlado. |
 | G-MEDIA | Reactivar grabaciones y publicaciones cuando existan producto y testimonios reales. | Equipo. | 12 h orientativas de preparación/edición; reestimar según material. | Navegación, validación y About Product/Team según el enunciado. Los videos diferidos no se marcan publicados. |
 
@@ -5004,7 +5004,7 @@ Para completar la aceptación se deben ejecutar, al menos: acceso válido/invál
 | AC-03 / SB1-03 | Autorizar captura, iniciar RECORDING, pausar/reanudar y finalizar una vez; repetir cierre sin duplicar evaluación. | Crear DRAFT 201; finalizar desde DRAFT devolvió 500; no se ejecutó voz real. | No aceptado; corregir estados e integrar voz. |
 | AC-04 / SB1-04 | Enviar cierre fixture; seguir sessionId/userId por detección y scoring; consultar feedback del propietario y repetir evento. | Unitarias de detección/scoring aprobadas y contratos disponibles; sin cadena completa observada. | Integración, BDD e idempotencia pendientes. |
 | AC-05 / SB1-05 | Comparar progreso y racha antes/después de una evaluación válida; reenviar evento y revisar aviso real. | Consultas iniciales vacías con 200; no hay evidencia de actualización por evento. | Pendiente. |
-| AC-06 / SB1-06 | Recorrer landing, acceso, preparación, práctica e historial con APIs; verificar errores y teclado/vista móvil. | Cliente compila; prototipo de diseño disponible con datos ficticios. | Recorrido conectado y conformidad tecnológica pendientes. |
+| AC-06 / SB1-06 | Recorrer landing, acceso, preparación, práctica e historial con APIs; verificar errores y teclado/vista móvil. | Cliente compila; prototipo de diseño disponible con datos ficticios. | Recorrido conectado, errores y accesibilidad pendientes. |
 | AC-07 / SB1-07 | Publicar el mismo commit, abrir APIs/cliente por HTTPS, reiniciar y recuperar datos fixture persistidos. | Cliente histórico 402 y rutas Railway 404; ejecución local separada. | Despliegue operativo pendiente. |
 | AC-08 / SB1-08 | Aplicar tareas V01–V06 a ambos segmentos y registrar datos, ayuda y hallazgos reales. | Protocolo listo; entrevistas no realizadas/acreditadas en esta revisión. | Diferido por indicación del equipo. |
 
@@ -5230,7 +5230,7 @@ La inteligencia artificial se propone como apoyo para ensayar preguntas contextu
 - Mantener la trazabilidad entre los drivers ADD, los bounded contexts y los diagramas de arquitectura cuando se incorporen nuevas decisiones de diseño.
 - Revisar el despliegue refinado de 4.3.4 con RabbitMQ y canales HTTPS/WSS, y comprobar presupuesto, conectividad y roles de base de datos antes de operar.
 - Usar los escenarios de calidad refinados como base de pruebas de rendimiento, privacidad, recuperación e idempotencia durante la fase de implementación.
-- Cerrar las observaciones del parcial con aportes verificables por integrante, la lámina del equipo y la exposición en herramientas. Recuperar el despliegue y resolver la tecnología web respecto del enunciado; ejecutar aceptación, validación por segmento y publicación de videos antes de declarar TB2 completo.
+- Cerrar las observaciones del parcial con aportes verificables por integrante, la lámina del equipo y la exposición en herramientas. Recuperar el despliegue del cliente Next.js/React y los servicios; ejecutar aceptación, validación por segmento y publicación de videos antes de declarar TB2 completo.
 
 # Video About-the-Team
 

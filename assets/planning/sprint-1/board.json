@@ -55,12 +55,6 @@
       "phase": "Sprint 1"
     },
     {
-      "pbi": "G-WEB",
-      "projectItemId": "PVTI_lADOE3JeVs4BphgjzhE5zEQ",
-      "title": "G-WEB — Adecuación a Angular o Vue",
-      "phase": "Condicional"
-    },
-    {
       "pbi": "G-PRIV",
       "projectItemId": "PVTI_lADOE3JeVs4BphgjzhE5zIA",
       "title": "G-PRIV — Exportación, revocación y purga distribuida",
@@ -78,5 +72,14 @@
     "confirmedBy": "Team Leader",
     "statement": "El tablero está admitido: GitHub Projects; se usará esa herramienta.",
     "status": "Admitido según confirmación del equipo y elegido para Sprint 1"
-  }
+  },
+  "archivedItems": [
+    {
+      "pbi": "G-WEB",
+      "projectItemId": "PVTI_lADOE3JeVs4BphgjzhE5zEQ",
+      "title": "G-WEB — Adecuación a Angular o Vue",
+      "phase": "Condicional",
+      "status": "Archivado por retiro de alcance"
+    }
+  ]
 }

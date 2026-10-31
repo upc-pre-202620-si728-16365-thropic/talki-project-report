@@ -17,7 +17,7 @@ Fuentes: enunciado del curso obtenido con Campus, páginas 34–35, y comentario
 - [x] **7.2.1.6:** métodos, rutas, parámetros, ejemplo de solicitud y ocho documentos OpenAPI locales disponibles.
 - [x] **7.3.1:** diseño de validación, consentimiento, tareas, métricas y preguntas de cierre preparados.
 - [x] **7.4:** introducción y guion del About Product redactados; publicación pendiente por indicación del equipo.
-- [x] **Registro de versiones y bibliografía:** autoría editorial aclarada, versión 1.47 y referencias de los cinco repositorios de código añadidas.
+- [x] **Registro de versiones y bibliografía:** autoría editorial aclarada, versión 1.48 y referencias de los cinco repositorios de código añadidas.
 - [x] **Conclusiones, recomendaciones y anexos:** avance TB2 incorporado, con límites de lo comprobado.
 
 ## Registros que faltan completar dentro del informe
@@ -34,7 +34,7 @@ Fuentes: enunciado del curso obtenido con Campus, páginas 34–35, y comentario
 
 ## Evidencia técnica que falta incorporar
 
-- [ ] **7.1.1 — Entorno y tecnología.** Registrar cómo se resuelve Next.js frente a Angular/Vue indicados en el enunciado: adecuación efectuada o autorización docente documentada. Mantener la distinción entre diseño móvil responsivo y una aplicación móvil implementada.
+- [x] **7.1.1 — Stack documentado y elegido.** Next.js/React/TypeScript con Tailwind/shadcn; servicios Java/Spring Boot. La selección fue confirmada por el Team Leader el 30/10/2026; la migración G-WEB se retiró del plan. La fuente académica original se conserva y no se presenta como autorización docente. Responsive web y móvil propuesto permanecen diferenciados.
 - [ ] **7.1.4 y 7.2.1.7 — Despliegue.** Incorporar ambiente activo, configuración sin secretos, pasos ejecutados, commit desplegado, URLs funcionales y capturas actuales. El diagnóstico existente es 402 en el cliente y 404 en las 16 rutas históricas de backend consultadas; no demuestra una primera versión operativa.
 - [ ] **7.2.1.4 — Testing.** Añadir pruebas ejecutadas de integración y aceptación BDD, con features/steps, comandos, commits y resultados. Las 133 unitarias ya están documentadas; no se convierten en evidencia de aceptación, rendimiento, privacidad o cobertura porcentual.
 - [ ] **7.2.1.5 — Ejecución.** Incorporar capturas y explicación del recorrido integrado real, desde acceso hasta consulta del resultado. Registrar la transición válida de estados y la respuesta controlada al estado inválido. La comprobación actual no cubre voz real ni el cierre completo.
@@ -61,4 +61,4 @@ Los registros y el análisis de validación también requieren que las sesiones 
 
 **Avance documental 1.46 en README.md:** correspondencia de arquitectura, procedimiento local, respuestas HTTP observadas, historial actual y conclusiones completados con fuentes verificables.
 
-**Orden de trabajo restante:** resolver la decisión tecnológica, ejecutar y evidenciar 7.1–7.2; incorporar aportes reales del equipo; realizar entrevistas y completar resultados de validación cuando se retomen. Actualizar el README cuando cambien esas evidencias. Las referencias audiovisuales acordadas pueden permanecer identificadas como pendientes durante esta revisión, sin marcar el entregable académico completo como terminado.
+**Orden de trabajo restante:** ejecutar y evidenciar 7.1–7.2; incorporar aportes reales del equipo; realizar entrevistas y completar resultados de validación cuando se retomen. Actualizar el README cuando cambien esas evidencias. Las referencias audiovisuales acordadas pueden permanecer identificadas como pendientes durante esta revisión, sin marcar el entregable académico completo como terminado.

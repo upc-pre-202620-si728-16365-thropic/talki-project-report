@@ -37,7 +37,7 @@ La reunión de planning se realizó el **28 de octubre de 2026, de 20:00 a 21:00
 | progress-service | Resumen del progreso a partir de evaluaciones. | SB1-05. |
 | gamification-service | Rachas y logros según sesiones válidas. | SB1-05. |
 | notification-service | Consumo de eventos de evaluación/logro y aviso disponible. | SB1-05. No se presume un canal de correo configurado. |
-| Cliente web, landing y BFF | Pantallas, sesión del navegador y consumo de APIs. | SB1-02, SB1-03 y SB1-06; G-WEB si se requiere adecuación. |
+| Cliente web, landing y BFF | Pantallas, sesión del navegador y consumo de APIs. | SB1-02, SB1-03 y SB1-06 sobre Next.js/React. |
 | RabbitMQ, persistencia y ambiente | Integración entre servicios y ejecución reproducible/desplegada. | SB1-01 y SB1-07. |
 
 **Reparto de capacidad confirmado por el Team Leader el 30/10/2026.** Un coordinador por PBI organiza el cierre; las tareas de 7.2.1.2 indican quién hace cada parte. Las horas de apoyo se contabilizan a su responsable, no se suman de nuevo al coordinador.
@@ -62,7 +62,7 @@ Los SP de cada PBI usan la escala 1, 2, 3, 5 y 8 para estimar el **trabajo que q
 | 04/11–06/11 | Análisis/feedback, cliente integrado, progreso, logros y aceptación. | Reporte trazable y pruebas del recorrido; integración por eventos comprobada. |
 | 07/11–08/11 | Despliegue, validación con ambos segmentos, matriz de evidencias, review y retrospectiva. | URLs y capturas actuales; registros reales de validación; balance de terminado/pendiente. |
 
-La coordinación propuesta comprende seis sincronizaciones de diez minutos y una sesión de review/retrospectiva de sesenta minutos por integrante: dos horas en total. Las diez horas de reserva del equipo absorben incidencias pequeñas; no cubren una migración completa de tecnología o una ampliación de alcance de decenas de horas.
+La coordinación propuesta comprende seis sincronizaciones de diez minutos y una sesión de review/retrospectiva de sesenta minutos por integrante: dos horas en total. Las diez horas de reserva del equipo absorben incidencias pequeñas; no cubren ampliaciones de alcance de decenas de horas.
 
 **Definition of Ready.** Antes de iniciar una tarea deben existir su criterio de aceptación, responsable, dependencia resuelta, repositorio/commit de base e insumos de prueba. Si requiere credenciales, presupuesto cloud, acceso al proveedor o participantes, se registra el bloqueo concreto. Nunca se incluye un secreto en el tablero o en la captura.
 
@@ -97,7 +97,7 @@ El backlog sustituye las diez tareas genéricas iniciales por **ocho PBIs y 24 t
 | SB1-03 — Integración pendiente | Crear sesión 201, modos 200; finalizar DRAFT dio 500 y token sin clave dio 503 esperado. | Cerrar estados/consentimiento, voz configurada, correlación y cierre sin duplicados. |
 | SB1-04 — Base disponible | 11 unitarias de detección de muletillas y 33 de scoring aprobadas; contratos de eventos presentes. | Comprobar recorrido asíncrono, consulta de feedback, errores, duplicados y aceptación BDD. |
 | SB1-05 — Base disponible | 9 unitarias de progreso, 13 de gamificación y 7 de notificaciones; consultas iniciales de progreso/racha 200. | Demostrar actualización real por evento válido y que el duplicado no repite efectos. |
-| SB1-06 — Cliente/prototipo disponibles | Compilación Next.js aprobada; galería y prototipo públicos dieron 200. | Integrar el recorrido real, ajustar landing/errores y resolver conformidad del framework. |
+| SB1-06 — Cliente/prototipo disponibles | Compilación Next.js aprobada; galería y prototipo públicos dieron 200. | Integrar el recorrido real en Next.js/React y ajustar landing, errores y evidencias. |
 | SB1-07 — Bloqueado por despliegue | En la comprobación del 30/10, frontend histórico 402 y 16 rutas Railway 404. | Acceso a recursos, perfiles/persistencia, publicación y verificación del ambiente efectivo. |
 | SB1-08 — Protocolo listo | Guion de validación y registro de seis participantes preparado; sin sesiones o resultados acreditados. | Reclutar/aplicar a ambos segmentos y registrar observaciones y heurísticas reales. |
 
@@ -106,7 +106,7 @@ El backlog sustituye las diez tareas genéricas iniciales por **ocho PBIs y 24 t
 | Tarea | Responsable confirmado | Horas | Dependencias | Criterio de aceptación | Estado |
 | --- | --- | ---: | --- | --- | --- |
 | **SB1-01-A** Cerrar el runbook de arranque y configuración | Alejandro | 3 | Ninguna | Un clon limpio puede compilar con JDK 17, iniciar un único RabbitMQ y los ocho servicios; el runbook separa H2 local de persistencia pública y no expone secretos. | Por hacer |
-| **SB1-01-B** Registrar decisiones de tecnología y alcance | Eduardo | 2 | Ninguna | Matriz de enunciado frente al stack real; decisión Angular/Vue o autorización adjunta. Si sigue abierta, se registra bloqueo de conformidad y no se renombra Next.js. | Por hacer |
+| **SB1-01-B** Registrar decisiones de tecnología y alcance | Eduardo | 2 | Ninguna | Registrar Next.js/React/TypeScript, Tailwind y shadcn como stack elegido; relacionar versiones y BFF con los archivos del cliente. Conservar la fuente académica original y la decisión del equipo sin atribuir autorización docente no registrada. | Por hacer |
 | **SB1-01-C** Versionar contrato y evidencia del entorno | Kevin | 3 | SB1-01-A | URLs/puertos, commit base, diagrama de despliegue ejecutable y ocho contratos OpenAPI coherentes; enlaces de las evidencias en el informe. | Por hacer |
 
 **SB1-02 — Identidad, acceso y aislamiento de sesiones.** Servicios: identity-service, session-service, BFF del cliente.
@@ -146,7 +146,7 @@ El backlog sustituye las diez tareas genéricas iniciales por **ocho PBIs y 24 t
 | Tarea | Responsable confirmado | Horas | Dependencias | Criterio de aceptación | Estado |
 | --- | --- | ---: | --- | --- | --- |
 | **SB1-06-A** Actualizar landing y estados vacíos | Eduardo | 4 | SB1-01-B | Beneficios y planes describen disponibilidad real; sin testimonios autorizados se muestra estado vacío. Contacto y videos identifican qué funciona y qué está pendiente. | Por hacer |
-| **SB1-06-B** Integrar las pantallas con servicios reales | Eduardo | 4 | SB1-02-C, SB1-03-C, SB1-04-B | Acceso, preparación, práctica, reporte e historial consumen la base elegida; simulaciones y capturas de referencia están diferenciadas. La migración completa de framework es una rama condicional estimada aparte. | Por hacer |
+| **SB1-06-B** Integrar las pantallas con servicios reales | Eduardo | 4 | SB1-02-C, SB1-03-C, SB1-04-B | Acceso, preparación, práctica, reporte e historial consumen la base elegida; simulaciones y capturas de referencia están diferenciadas. Se reutiliza el cliente Next.js/React y se comprueba su integración; no se incluye una migración de framework. | Por hacer |
 | **SB1-06-C** Comprobar usabilidad técnica web y responsive | Eduardo | 2 | SB1-06-B | Recorrido con teclado, foco, etiquetas, errores y vista móvil comprobado; responsive no se presenta como app nativa. Capturas corresponden al commit probado. | Por hacer |
 
 **SB1-07 — Despliegue y evidencias de la primera versión.** Servicios: Ocho servicios backend, RabbitMQ, Persistencia, Cliente web.
@@ -171,19 +171,18 @@ El backlog sustituye las diez tareas genéricas iniciales por **ocho PBIs y 24 t
 
 ![Tablero de Sprint 1 con PBIs, responsables y horas](../../assets/planning/sprint-1/github-project-items-20261030.jpg)
 
-*Figura: Tablero real de revisión del periodo 202620. Todos los PBIs están pendientes de ejecución/aceptación; la captura precede a la confirmación posterior de las asignaciones y las 20 h por integrante por el Team Leader el mismo 30/10/2026.*
+*Figura: Tablero real de revisión del periodo 202620. Todos los PBIs están pendientes de ejecución/aceptación; la captura muestra también G-WEB antes de su retiro posterior por decisión del equipo. La captura precede a la confirmación posterior de las asignaciones y las 20 h por integrante por el Team Leader el mismo 30/10/2026.*
 
 ![Columnas de horas, puntos y fase del tablero](../../assets/planning/sprint-1/github-project-20261030.jpg)
 
-*Figura: Continuación horizontal del mismo tablero, con puntos y separación de paquetes condicionales. Las horas condicionales no forman parte del total de 80 h del Sprint 1.*
+*Figura: Continuación horizontal del mismo tablero, con puntos y separación de paquetes condicionales. Las horas condicionales no forman parte del total de 80 h del Sprint 1. G-WEB aparece en esta captura anterior y fue retirado al confirmar Next.js/React; el snapshot del tablero registra el estado actualizado.*
 
 **Herramienta de control del Sprint 1.** El equipo utilizará **GitHub Projects**, cuya admisión para esta entrega fue confirmada por el Team Leader el 30/10/2026. El tablero enlazado es la herramienta elegida para tareas, responsables, horas, estados y evidencias. La lista general de herramientas de la página 32 se conserva como fuente del enunciado; la confirmación del equipo cierra el pendiente de selección/aceptación, sin requerir traslado a Trello, Jira, YouTrack o Pivotal. El [CSV de tareas](../../assets/planning/sprint-1/sprint-backlog.csv) conserva una copia editable de las tareas del tablero.
 
-**Paquetes que cambian la capacidad necesaria.** La propuesta no oculta trabajo obligatorio dentro de estimaciones insuficientes. Si se activan G-WEB y G-PRIV, se requieren **80 h adicionales de trabajo estimado**, antes de coordinación/reserva; el total de entrega pasa de 80 a 160 h y debe cambiar el plazo, la disponibilidad o el alcance de la demostración. Las 20 h confirmadas por integrante no cubren ese escenario.
+**Paquetes que cambian la capacidad necesaria.** Se conserva Next.js/React y se retira G-WEB de la planificación activa; sus 48 h estimadas no se suman al sprint ni se cuentan como trabajo terminado. G-PRIV requiere **32 h adicionales estimadas** antes de un piloto con datos reales: el trabajo de entrega pasaría de 80 a 112 h, más coordinación/reserva, y requeriría replanificar capacidad o plazo. G-MEDIA sigue diferido.
 
 | Paquete | Activación / objetivo | Responsable de coordinación | Estimación adicional | Condición de cierre |
 | --- | --- | --- | ---: | --- |
-| G-WEB | Adecuar el cliente a Angular o Vue si no se obtiene autorización expresa para Next.js. | Eduardo; apoyo de Kevin y Alejandro. | 48 h; rango inicial 40–64 h, alta incertidumbre. | Pantallas, acceso/BFF seguro, APIs, errores, responsive y pruebas en el framework conforme. La decisión se toma en SB1-01-B. |
 | G-PRIV | Completar US27, US33 y TS06 antes de un piloto que procese datos personales reales. | Werner; apoyo de Manuel y Alejandro. | 32 h iniciales, alta incertidumbre. | Exportación, revocación, bloqueo, purga por contexto, confirmaciones, reintento, auditoría y pruebas. Mientras falte, limitar el ambiente a fixtures/acceso controlado. |
 | G-MEDIA | Reactivar grabaciones y publicaciones cuando existan producto y testimonios reales. | Equipo. | 12 h orientativas de preparación/edición; reestimar según material. | Navegación, validación y About Product/Team según el enunciado. Los videos diferidos no se marcan publicados. |
 

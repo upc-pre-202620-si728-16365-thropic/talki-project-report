@@ -99,7 +99,7 @@
           "owner": "Eduardo Gael Rivera Sosa",
           "hours": 2,
           "dependsOn": [],
-          "acceptance": "Matriz de enunciado frente al stack real; decisión Angular/Vue o autorización adjunta. Si sigue abierta, se registra bloqueo de conformidad y no se renombra Next.js.",
+          "acceptance": "Registrar Next.js/React/TypeScript, Tailwind y shadcn como stack elegido; relacionar versiones y BFF con los archivos del cliente. Conservar la fuente académica original y la decisión del equipo sin atribuir autorización docente no registrada.",
           "status": "Por hacer",
           "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
         },
@@ -475,7 +475,7 @@
             "SB1-03-C",
             "SB1-04-B"
           ],
-          "acceptance": "Acceso, preparación, práctica, reporte e historial consumen la base elegida; simulaciones y capturas de referencia están diferenciadas. La migración completa de framework es una rama condicional estimada aparte.",
+          "acceptance": "Acceso, preparación, práctica, reporte e historial consumen la base elegida; simulaciones y capturas de referencia están diferenciadas. Se reutiliza el cliente Next.js/React y se comprueba su integración; no se incluye una migración de framework.",
           "status": "Por hacer",
           "assignmentStatus": "Confirmado por el Team Leader el 30/10/2026"
         },
@@ -499,7 +499,7 @@
         "status": "Cliente/prototipo disponibles",
         "checkedAt": "2026-10-30",
         "evidence": "Compilación Next.js aprobada; galería y prototipo públicos dieron 200.",
-        "remainingWork": "Integrar el recorrido real, ajustar landing/errores y resolver conformidad del framework.",
+        "remainingWork": "Integrar el recorrido real en Next.js/React y ajustar landing, errores y evidencias.",
         "sources": [
           "assets/evidence/tb2/verification.json",
           "assets/evidence/tb2/local-execution.json"
@@ -1166,22 +1166,6 @@
   ],
   "conditionalPackages": [
     {
-      "id": "G-WEB",
-      "title": "Adecuación a Angular o Vue",
-      "hours": 48,
-      "points": 8,
-      "owner": "Eduardo Gael Rivera Sosa",
-      "allocation": {
-        "Eduardo Gael Rivera Sosa": 24,
-        "Kevin Jorge Chi Cruzatt": 16,
-        "Alejandro Daniel Oroncoy Almeyda": 8
-      },
-      "trigger": "El docente no autoriza la base Next.js o el equipo elige adecuación.",
-      "scope": "Acceso, BFF equivalente seguro, configuración, práctica, reporte, historial, estados responsive y pruebas. Estimación orientativa de 40–64 h; refinar tras el spike SB1-01-B. Incluir biblioteca de UI conforme al enunciado (Angular Material/PrimeNG o PrimeVue/Vuetify); no basta trasladar el CSS heredado.",
-      "includedIn80Hours": false,
-      "releaseGate": true
-    },
-    {
       "id": "G-PRIV",
       "title": "Exportación, revocación y purga distribuida",
       "hours": 32,
@@ -1266,12 +1250,6 @@
         "phase": "Sprint 1"
       },
       {
-        "pbi": "G-WEB",
-        "projectItemId": "PVTI_lADOE3JeVs4BphgjzhE5zEQ",
-        "title": "G-WEB — Adecuación a Angular o Vue",
-        "phase": "Condicional"
-      },
-      {
         "pbi": "G-PRIV",
         "projectItemId": "PVTI_lADOE3JeVs4BphgjzhE5zIA",
         "title": "G-PRIV — Exportación, revocación y purga distribuida",
@@ -1289,7 +1267,16 @@
       "confirmedBy": "Team Leader",
       "statement": "El tablero está admitido: GitHub Projects; se usará esa herramienta.",
       "status": "Admitido según confirmación del equipo y elegido para Sprint 1"
-    }
+    },
+    "archivedItems": [
+      {
+        "pbi": "G-WEB",
+        "projectItemId": "PVTI_lADOE3JeVs4BphgjzhE5zEQ",
+        "title": "G-WEB — Adecuación a Angular o Vue",
+        "phase": "Condicional",
+        "status": "Archivado por retiro de alcance"
+      }
+    ]
   },
   "meetingFacts": {
     "date": "2026-10-28",
@@ -1315,5 +1302,34 @@
     "assignmentsConfirmed": true,
     "executionCalendarConfirmed": false,
     "source": "Confirmación expresa en la conversación: «sí, dejemos las 20 horas por integrante y los responsables como propusiste»."
-  }
+  },
+  "technologyDecision": {
+    "date": "2026-10-30",
+    "decidedBy": "Team Leader",
+    "web": "Next.js/React/TypeScript; Tailwind CSS y shadcn",
+    "backend": "Java 17 / Spring Boot 3.2.5",
+    "scope": "Conservar el cliente existente y retirar la migración G-WEB del plan activo.",
+    "academicAuthorization": "No se aporta autorización docente nueva; el enunciado original se conserva."
+  },
+  "retiredPackages": [
+    {
+      "id": "G-WEB",
+      "title": "Adecuación a Angular o Vue",
+      "hours": 48,
+      "points": 8,
+      "owner": "Eduardo Gael Rivera Sosa",
+      "allocation": {
+        "Eduardo Gael Rivera Sosa": 24,
+        "Kevin Jorge Chi Cruzatt": 16,
+        "Alejandro Daniel Oroncoy Almeyda": 8
+      },
+      "trigger": "El docente no autoriza la base Next.js o el equipo elige adecuación.",
+      "scope": "Acceso, BFF equivalente seguro, configuración, práctica, reporte, historial, estados responsive y pruebas. Estimación orientativa de 40–64 h; refinar tras el spike SB1-01-B. Incluir biblioteca de UI conforme al enunciado (Angular Material/PrimeNG o PrimeVue/Vuetify); no basta trasladar el CSS heredado.",
+      "includedIn80Hours": false,
+      "releaseGate": true,
+      "status": "Retirado por decisión del equipo; no implementado",
+      "retiredOn": "2026-10-30",
+      "reason": "Se conserva Next.js/React. No se ejecuta ni compromete migración de framework."
+    }
+  ]
 }

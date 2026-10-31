@@ -11,7 +11,7 @@ title C4 Container: acceso y operaciones principales
 Person(early, "Estudiante de ciclos 1 a 5", "Ensaya exposiciones y revisa feedback propio")
 Person(advanced, "Estudiante de ciclos 6 a 10", "Prepara entrevistas y sustentaciones contextualizadas")
 System_Boundary(talki, "Talki") {
-Container(web, "Cliente web", "Angular / Angular Material", "Configuración, conversación y consulta de resultados")
+Container(web, "Cliente web", "Next.js / React / TypeScript", "Configuración, conversación y consulta de resultados")
 Container(mobile, "Cliente móvil propuesto", "Flutter", "Versión móvil del mismo recorrido")
 Container(gateway, "API Gateway / BFF propuesto", "HTTPS / JSON", "Enruta peticiones y aplica políticas comunes")
 Container(identity, "Identity & Access", "Java / Spring Boot", "Cuenta, credenciales y propiedad")

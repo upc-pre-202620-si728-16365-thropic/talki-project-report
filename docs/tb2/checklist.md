@@ -187,7 +187,7 @@ Una casilla marcada significa que hay contenido documental en el repositorio. No
 - [x] **6.4.4. Applications User Flow Diagrams** — contenido disponible en el informe; conservar y revisar si cambia la implementación.
 - [x] **6.5. Applications Prototyping** — contenido disponible en el informe; conservar y revisar si cambia la implementación.
 - [ ] **7.1. Software Configuration Management** — SCM documentado con fuentes verificadas.
-- [ ] **7.1.1. Software Development Environment Configuration** — Versiones comprobadas; resolver Next.js frente a Angular/Vue exigidos y aplicación móvil si corresponde.
+- [x] **7.1.1. Software Development Environment Configuration** — Stack elegido Next.js/React/TypeScript y Java/Spring Boot documentado con versiones; decisión del equipo diferenciada del enunciado original.
 - [ ] **7.1.2. Source Code Management** — Cinco instantáneas de código, SHA y procedencia; GitHub Projects confirmado como admitido y elegido; incorporar aportes propios del periodo actual.
 - [x] **7.1.3. Source Code Style Guide & Conventions** — Convenciones descritas; no declarar quality gates o cobertura no medidos.
 - [ ] **7.1.4. Software Deployment Configuration** — Configuración y reproducción local documentadas; recuperar ambiente público persistente.
@@ -209,7 +209,7 @@ Una casilla marcada significa que hay contenido documental en el repositorio. No
 
 ## Cierres y archivos de entrega
 
-- [x] Registro de versiones actualizado a 1.47 con descripción de la adaptación.
+- [x] Registro de versiones actualizado a 1.48 con descripción de la adaptación.
 - [x] Collaboration Insights y Student Outcome ampliados, distinguiendo acciones documentadas y revisión pendiente.
 - [x] Avance de conclusiones, recomendaciones, bibliografía y anexos actualizado para TB2.
 - [ ] About Team: completar evidencia de proceso real, retrospectiva, testimonios y publicación Stream/YouTube; el enlace previo acredita presentación individual.
@@ -223,7 +223,7 @@ Una casilla marcada significa que hay contenido documental en el repositorio. No
 
 ## Orden de cierre recomendado
 
-1. Resolver el despliegue y la adecuación del cliente web; ejecutar recorrido integrado, autorización y privacidad.
+1. Resolver el despliegue de Next.js/React y los servicios; ejecutar recorrido integrado, autorización y privacidad.
 2. Cerrar el calendario del sprint y registrar aportes/revisiones de los cinco integrantes; reunión, capacidad, responsables y GitHub Projects ya confirmados.
 3. Ejecutar aceptación BDD y las pruebas de integración que faltan; registrar resultados sin convertir propuestas en éxitos.
 4. Aplicar validación por segmento y completar análisis/heurísticas; grabaciones pendientes según lo acordado.

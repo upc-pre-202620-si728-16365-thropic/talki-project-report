@@ -1,6 +1,6 @@
 # Entorno y tecnología de Talki
 
-**Qué significa entorno y tecnología en Talki.** La tecnología identifica con qué está construido cada componente. El entorno define dónde y con qué configuración se ejecuta ese código: equipo local, ambiente de pruebas o ambiente publicado. Cambiar una URL o una variable de entorno no convierte Next.js en Angular ni Vue.
+**Qué significa entorno y tecnología en Talki.** La tecnología identifica con qué está construido cada componente. El entorno define dónde y con qué configuración se ejecuta ese código: equipo local, ambiente de pruebas o ambiente publicado. El entorno local, de integración o publicado utiliza el mismo stack, con su configuración correspondiente.
 
 | Concepto | Ejemplo concreto en Talki | Qué documentamos |
 | --- | --- | --- |
@@ -13,8 +13,10 @@
 | Entorno de integración | Se ejecutan juntos los componentes necesarios para comprobar el recorrido. | Mismo ID de sesión, intercambios HTTP/eventos y resultados de aceptación. |
 | Entorno publicado | Los productos están disponibles por HTTPS en recursos cloud. | URLs actuales, commit, variables externas y almacenamiento persistente, según el diseño de despliegue. |
 
-**Diferencia con el enunciado.** La página 32 admite Java/Spring Boot para servicios: esa parte de la base coincide. Para la aplicación web enumera Angular o Vue y bibliotecas de componentes de Material Design: Angular Material/PrimeNG o PrimeVue/Vuetify, según el framework. La base heredada usa Next.js/React con Tailwind/shadcn, por lo que la conformidad de la aplicación web debe resolverse mediante una adecuación real o autorización expresa del docente. **Nest Framework**, permitido como alternativa de backend, y **Next.js**, usado por el cliente heredado, son tecnologías distintas. El diseño responsive del navegador tampoco acredita una aplicación móvil nativa.
+**Decisión tecnológica del proyecto.** El Team Leader confirmó el 30/10/2026 conservar **Next.js 16.2.9, React 19.2.4 y TypeScript**, con **Tailwind CSS 4 y shadcn**, para el cliente web. Se reutilizan sus pantallas y BFF y se concentra el trabajo en integración, errores, pruebas y despliegue. Los ocho servicios se mantienen en Java 17/Spring Boot 3.2.5. La aplicación móvil Flutter continúa como ampliación propuesta; la vista responsive es parte del cliente web.
 
-El plan trata esta diferencia como una decisión de alcance en SB1-01-B y, si se requiere adecuación, como el paquete adicional G-WEB. No se rehacen automáticamente los ocho servicios Java por cambiar el framework de las pantallas. Por separado, H2 sirve para las pruebas locales; la persistencia del ambiente publicado se configura y comprueba en SB1-07.
+SB1-01-B documenta esta selección y comprueba su correspondencia con los archivos del cliente; SB1-06 integra el recorrido con los servicios. La migración a otro framework se retira del plan por decisión del equipo. H2 se utiliza en pruebas locales; la persistencia del ambiente publicado se configura y comprueba en SB1-07.
+
+**Referencia del enunciado.** La sección Tecnología de la página 32 enumera Angular/Vue para Web Applications. Next.js/React es la decisión actual del equipo; esta edición del informe no modifica el documento del curso ni acredita autorización docente para esa diferencia. El [registro de tecnologías](../../assets/planning/sprint-1/technology-requirements.json) conserva el texto de origen y la decisión del proyecto.
 
 Fuente: archivos del código reutilizado y página 32 de Trabajo Final_1ASI0728_202620.pdf, obtenido con Campus.

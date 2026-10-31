@@ -25,7 +25,7 @@ Container(progress, "Progress & Adaptation", "Java / Spring Boot", "Resumen y co
 Container(game, "Gamification", "Java / Spring Boot", "Rachas y logros")
 Container(notifications, "Notifications", "Java / Spring Boot", "Eventos, preferencias y seguimiento de avisos")
 }
-Container(web, "Cliente web", "Angular / Angular Material", "Configuración, conversación y consulta de resultados")
+Container(web, "Cliente web", "Next.js / React / TypeScript", "Configuración, conversación y consulta de resultados")
 }
 BiRel(bus, sessions, "Al broker: Publica session.live.finalized desde outbox\nDesde broker: Entrega user.registered para proyección local", "AMQP")
 BiRel(bus, analysis, "Desde broker: Entrega session.live.finalized\nAl broker: Publica fillers.analyzed", "AMQP")
