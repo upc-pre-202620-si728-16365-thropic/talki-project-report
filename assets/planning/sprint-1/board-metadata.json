@@ -1,0 +1,20 @@
+{
+  "closed": false,
+  "fields": {
+    "totalCount": 17
+  },
+  "id": "PVT_kwDOE3JeVs4Bphgj",
+  "items": {
+    "totalCount": 11
+  },
+  "number": 1,
+  "owner": {
+    "login": "upc-pre-202620-si728-16365-thropic",
+    "type": "Organization"
+  },
+  "public": true,
+  "readme": "Planning confirmado: 28/10/2026, de 20:00 a 21:00 (America/Lima), por Google Meet. El Team Leader confirmó la asistencia de los cinco integrantes: Alejandro Oroncoy, Eduardo Rivera, Manuel Tumi, Werner Lang y Kevin Chi.\n\nDefinición operativa documentada el 30/10: ocho PBIs, 24 tareas, 80 horas de trabajo y 36 SP residuales. Capacidad propuesta: cinco integrantes x 20 h = 100 h futuras (80 trabajo + 10 coordinación + 10 contingencia). La disponibilidad individual y el calendario 31/10–08/11 aún son supuestos del plan, no velocidad medida ni trabajo realizado.\n\nLos ocho servicios existentes y la evidencia del 30/10 son insumos reutilizados, no desarrollo nuevo por ejecutar desde cero. Cada tarjeta separa base comprobada y trabajo restante. Los paquetes Condicional no caben en las 80 h y se resuelven antes de declarar conformidad o abrir un piloto con datos reales.\n\nPlan y hoja de ruta de 37 US + 6 TS: https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/blob/codex/tb2-report-completion-20261030/docs/tb2/sprint-1-plan.md\n\nGitHub Projects es un tablero de revisión. La página 32 del enunciado enumera Pivotal/YouTrack/Jira/Trello; usarlo como sustituto requiere confirmación docente, o trasladar la estructura a una herramienta indicada. El CSV queda en el repositorio.\n",
+  "shortDescription": "Sprint 1 de TB2: plan residual, servicios, responsables propuestos y aceptación. Reunión 28/10 por Meet.",
+  "title": "Talki 202620 — TB2 — Sprint 1 — Planning 28/10",
+  "url": "https://github.com/orgs/upc-pre-202620-si728-16365-thropic/projects/1"
+}

@@ -1,0 +1,76 @@
+{
+  "provider": "GitHub Projects",
+  "id": "PVT_kwDOE3JeVs4Bphgj",
+  "number": 1,
+  "url": "https://github.com/orgs/upc-pre-202620-si728-16365-thropic/projects/1",
+  "visibility": "PUBLIC",
+  "purpose": "Tablero de revisión; pendiente confirmación docente o traslado a herramienta enumerada en p32.",
+  "items": [
+    {
+      "pbi": "SB1-01",
+      "projectItemId": "PVTI_lADOE3JeVs4BphgjzhE5ybc",
+      "title": "SB1-01 — Entorno reproducible, restricciones y trazabilidad",
+      "phase": "Sprint 1"
+    },
+    {
+      "pbi": "SB1-02",
+      "projectItemId": "PVTI_lADOE3JeVs4BphgjzhE5yhQ",
+      "title": "SB1-02 — Identidad, acceso y aislamiento de sesiones",
+      "phase": "Sprint 1"
+    },
+    {
+      "pbi": "SB1-03",
+      "projectItemId": "PVTI_lADOE3JeVs4BphgjzhE5yl8",
+      "title": "SB1-03 — Práctica y ciclo de sesión con coaching",
+      "phase": "Sprint 1"
+    },
+    {
+      "pbi": "SB1-04",
+      "projectItemId": "PVTI_lADOE3JeVs4BphgjzhE5yrM",
+      "title": "SB1-04 — Análisis, puntuación y consulta de feedback",
+      "phase": "Sprint 1"
+    },
+    {
+      "pbi": "SB1-05",
+      "projectItemId": "PVTI_lADOE3JeVs4BphgjzhE5yws",
+      "title": "SB1-05 — Progreso, logros y notificaciones por eventos",
+      "phase": "Sprint 1"
+    },
+    {
+      "pbi": "SB1-06",
+      "projectItemId": "PVTI_lADOE3JeVs4BphgjzhE5y2g",
+      "title": "SB1-06 — Landing y recorrido web coherentes con el incremento",
+      "phase": "Sprint 1"
+    },
+    {
+      "pbi": "SB1-07",
+      "projectItemId": "PVTI_lADOE3JeVs4BphgjzhE5y7U",
+      "title": "SB1-07 — Despliegue y evidencias de la primera versión",
+      "phase": "Sprint 1"
+    },
+    {
+      "pbi": "SB1-08",
+      "projectItemId": "PVTI_lADOE3JeVs4BphgjzhE5y_s",
+      "title": "SB1-08 — Aplicación de validación y registro de hallazgos",
+      "phase": "Sprint 1"
+    },
+    {
+      "pbi": "G-WEB",
+      "projectItemId": "PVTI_lADOE3JeVs4BphgjzhE5zEQ",
+      "title": "G-WEB — Adecuación a Angular o Vue",
+      "phase": "Condicional"
+    },
+    {
+      "pbi": "G-PRIV",
+      "projectItemId": "PVTI_lADOE3JeVs4BphgjzhE5zIA",
+      "title": "G-PRIV — Exportación, revocación y purga distribuida",
+      "phase": "Condicional"
+    },
+    {
+      "pbi": "G-MEDIA",
+      "projectItemId": "PVTI_lADOE3JeVs4BphgjzhE5zLQ",
+      "title": "G-MEDIA — Grabación y publicación audiovisual TB2",
+      "phase": "Condicional"
+    }
+  ]
+}

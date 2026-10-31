@@ -1,0 +1,23 @@
+{
+  "source": {
+    "filename": "Trabajo Final_1ASI0728_202620.pdf",
+    "page": 32,
+    "sha256": "c27214041b4acacf132097e6405381f6c625a76fc98ac4ba46878933ecd25673",
+    "retrieval": "Campus; resumen de la sección Tecnología"
+  },
+  "requirements": {
+    "backend": "REST con Spring Boot/Java, ASP.NET Core/C# o Nest/TypeScript.",
+    "landing": "HTML5, CSS3 y JavaScript.",
+    "webApplication": "Angular o Vue; Material Design y bibliotecas Angular Material/PrimeNG o PrimeVue/Vuetify.",
+    "projectControl": "Pivotal Tracker, JetBrains YouTrack, Jira Software o Trello.",
+    "sourceControl": "Git/GitHub con GitFlow.",
+    "apiDocumentation": "OpenAPI vía Swagger.",
+    "mobileIfApplicable": "Nativo Kotlin o Swift; cross-platform Dart/Flutter o C#/Xamarin si aplica. No tecnologías híbridas."
+  },
+  "observedBaseline": {
+    "backend": "Java 17 con Spring Boot 3.2.5.",
+    "webApplication": "Next.js/React con Tailwind/shadcn; conformidad pendiente.",
+    "localStorage": "H2 en memoria con create-drop.",
+    "reviewBoard": "GitHub Projects, con estructura trasladable; sustitución de las herramientas de control requiere confirmación docente."
+  }
+}

@@ -17,13 +17,16 @@ Fuentes: enunciado del curso obtenido con Campus, páginas 34–35, y comentario
 - [x] **7.2.1.6:** métodos, rutas, parámetros, ejemplo de solicitud y ocho documentos OpenAPI locales disponibles.
 - [x] **7.3.1:** diseño de validación, consentimiento, tareas, métricas y preguntas de cierre preparados.
 - [x] **7.4:** introducción y guion del About Product redactados; publicación pendiente por indicación del equipo.
-- [x] **Registro de versiones y bibliografía:** autoría editorial aclarada, versión 1.43 y referencias de los cinco repositorios de código añadidas.
+- [x] **Registro de versiones y bibliografía:** autoría editorial aclarada, versión 1.44 y referencias de los cinco repositorios de código añadidas.
 - [x] **Conclusiones, recomendaciones y anexos:** avance TB2 incorporado, con límites de lo comprobado.
 
 ## Registros que faltan completar dentro del informe
 
-- [ ] **7.2.1.1 — Sprint Planning 1.** Completar fecha, hora, lugar/modalidad, asistentes, acuerdos, capacidad, estimación de puntos y compromiso del Sprint 1 actual. El objetivo y criterio de terminado ya están redactados. Las reuniones y velocidad del ciclo anterior no se trasladan como si fueran actuales.
-- [ ] **7.2.1.2 — Sprint Backlog 1.** Confirmar historias/tareas del sprint, responsables, horas estimadas y estado real; incorporar URL y captura del tablero actual. Hay diez tareas propuestas, todavía sin estimación o asignación confirmada.
+- [x] **7.2.1.1 — Definición del Planning.** Fecha real 28/10, 20:00–21:00 por Google Meet y asistencia de cinco integrantes confirmados; objetivo, insumos, 36 SP residuales, 80 h de tareas, reparto de capacidad propuesto, calendario, reglas de trabajo y Definition of Ready/Done definidos en el [plan detallado](sprint-1-plan.md).
+- [x] **7.2.1.2 — Definición del Sprint Backlog.** Ocho PBIs y 24 tareas con responsables propuestos, horas, dependencias, estado y aceptación; tablero actual con URL/capturas y hoja de ruta de las 37 US y seis TS publicados.
+- [x] **Datos del acta.** Reunión del 28/10/2026, de 20:00 a 21:00 (Lima), por Google Meet, con los cinco integrantes presentes: confirmado por el Team Leader.
+- [ ] **Disponibilidad y compromiso de ejecución.** Confirmar las 20 h futuras por integrante y el calendario 31/10–08/11. Las estimaciones, el reparto y los criterios están definidos; no se presenta esa capacidad como disponibilidad ya confirmada.
+- [ ] **Herramienta de tablero de la entrega.** Trasladar la estructura a Trello/Jira/YouTrack/Pivotal según p32 o adjuntar aceptación docente para GitHub Projects. El tablero GitHub publicado es de revisión, no una excepción ya autorizada.
 - [ ] **7.2.1.3 — Development Evidence.** Añadir los cambios propios del periodo 202620: repositorio, rama, SHA, autor, fecha, mensaje y vínculo con historia/tarea. La procedencia de la base 202601 ya está completa.
 - [ ] **7.2.1.8 — Team Collaboration Insights.** Completar aportes y revisión de los cinco integrantes con commits/PR verificables y captura actual de colaboración. El PR de adaptación está enlazado; las revisiones sugeridas de otros integrantes no se presentan como realizadas.
 - [ ] **Registro de versiones / Student Outcome.** Incorporar cada nueva modificación individual y las acciones que cada integrante realmente realizó en TB2; actualizar las conclusiones grupales acumulativas con esas acciones. La corrección de autoría histórica ya está hecha.
