@@ -195,7 +195,8 @@ Una casilla marcada significa que hay contenido documental en el repositorio. No
 - [ ] **7.2.1. Sprint 1** — Base de Sprint 1 documentada; cierre formal actual pendiente.
 - [x] **7.2.1.1. Sprint Planning 1 — definición operativa** — Planning del 28/10, 20:00–21:00 por Meet, con cinco asistentes confirmado; objetivo, 36 SP residuales, 20 h por integrante y división del trabajo acordadas como equipo; sprint del 26/10 al 08/11, aceptación definida e imputación del planning dentro de la capacidad.
 - [x] **7.2.1.2. Sprint Backlog 1 — estructura definida** — Ocho PBIs / 24 tareas, 80 h, responsables confirmados por el Team Leader, dependencias, criterios, URL y capturas del tablero y hoja de ruta completa. GitHub Projects admitido y elegido según confirmación del Team Leader.
-- [ ] **7.2.1.3. Development Evidence for Sprint Review** — Commits originales fijados y copiados; añadir cambios reales de implementación de este periodo.
+- [x] **7.2.1.3 — Matriz documental** — Historial, rama, fechas, autores, mensajes y archivos actuales; ocho PBIs / 24 tareas relacionados con historias, base y artefactos.
+- [ ] **7.2.1.3. Development Evidence for Sprint Review — cierre técnico** — Añadir commits/PR reales de implementación del periodo actual y pruebas; la trazabilidad documental y procedencia ya están completas.
 - [ ] **7.2.1.4. Testing Suite Evidence for Sprint Review** — 133 unitarias aprobadas con Java 17; completar aceptación BDD, integración y controles pendientes.
 - [ ] **7.2.1.5. Execution Evidence for Sprint Review** — Compilación del cliente y prueba local capturadas; resolver finalización de sesión DRAFT (500), transición a RECORDING y aceptación integrada. Completar capturas/video.
 - [ ] **7.2.1.6. Services Documentation Evidence for Sprint Review** — Rutas y contratos base documentados; añadir Swagger accesible del despliegue recuperado.
@@ -209,7 +210,7 @@ Una casilla marcada significa que hay contenido documental en el repositorio. No
 
 ## Cierres y archivos de entrega
 
-- [x] Registro de versiones actualizado a 1.49 con descripción de la adaptación.
+- [x] Registro de versiones actualizado a 1.50 con descripción de la adaptación.
 - [x] Collaboration Insights y Student Outcome ampliados, distinguiendo acciones documentadas y revisión pendiente.
 - [x] Avance de conclusiones, recomendaciones, bibliografía y anexos actualizado para TB2.
 - [ ] About Team: completar evidencia de proceso real, retrospectiva, testimonios y publicación Stream/YouTube; el enlace previo acredita presentación individual.

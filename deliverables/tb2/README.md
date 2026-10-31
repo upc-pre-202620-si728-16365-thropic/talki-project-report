@@ -4,7 +4,7 @@ La fuente acumulativa es el [informe del repositorio](../../README.md). El alcan
 
 | Archivo | Contenido y estado |
 | --- | --- |
-| [Complemento TB2 Word](Complemento-TB2.docx) / [PDF](Complemento-TB2.pdf) | Fuentes, correcciones del parcial y capítulo VII actualizado. Es un complemento de 14 páginas de la adaptación 1.42; no reemplaza los capítulos I–VI del informe acumulativo. Las versiones 1.43–1.49 del README amplían los commits, referencias y definición de Planning/Backlog; este complemento aún no incorpora esa revisión. |
+| [Complemento TB2 Word](Complemento-TB2.docx) / [PDF](Complemento-TB2.pdf) | Fuentes, correcciones del parcial y capítulo VII actualizado. Es un complemento de 14 páginas de la adaptación 1.42; no reemplaza los capítulos I–VI del informe acumulativo. Las versiones 1.43–1.50 del README amplían los commits, referencias y definición de Planning/Backlog; este complemento aún no incorpora esa revisión. |
 | [Keynote PowerPoint](Talki-TB2-Keynote.pptx) / [PDF](Talki-TB2-Keynote.pdf) | Presentación de avance de 11 láminas, con foto, nombres, apellidos y carrera de los cinco integrantes. Incluye evidencias verificadas y pendientes. |
 | [Participación Word](Participacion-TB2.docx) / [PDF](Participacion-TB2.pdf) | Formato editable para que el Team Leader confirme responsabilidades, cumplimiento y notas de TB2. No está evaluado. |
 

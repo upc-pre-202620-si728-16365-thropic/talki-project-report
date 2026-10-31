@@ -10,14 +10,14 @@ Fuentes: enunciado del curso obtenido con Campus, páginas 34–35, y comentario
 
 - [x] **Capítulos I–V:** investigación, requisitos, diseño estratégico y diez bounded contexts con sus capas y diagramas. El profesor calificó diseño táctico y UX con 10/10; conservar lo aprobado.
 - [x] **6.4.3, 6.4.4 y 6.5:** mock-ups, user flows y prototipo web/móvil descritos e ilustrados; alcance de la simulación identificado.
-- [x] **7.1.1–7.1.4:** herramientas/versiones, repositorios, convenciones y configuración local redactados. Las diferencias de tecnología y el ambiente público siguen señalados como pendientes.
+- [x] **7.1.1–7.1.4:** herramientas/versiones, repositorios, convenciones y configuración local redactados. El stack Next.js/React y Java/Spring Boot está elegido; el ambiente público sigue pendiente.
 - [x] **7.2.1.3:** procedencia de los cinco repositorios reutilizados, rama, commit, fecha, autor y mensajes documentados. El [registro de origen](../../assets/evidence/tb2/development-commits.json) conserva la coautoría declarada; esos commits son de 202601.
 - [x] **7.2.1.4:** resultado comprobado de 133 pruebas unitarias con JDK 17: cero fallos, errores u omisiones.
 - [x] **7.2.1.5:** resultados reales de la prueba HTTP local, incluido el 500 al intentar finalizar una sesión DRAFT y el 503 esperado de Gemini sin clave.
 - [x] **7.2.1.6:** métodos, rutas, parámetros, ejemplo de solicitud y ocho documentos OpenAPI locales disponibles.
 - [x] **7.3.1:** diseño de validación, consentimiento, tareas, métricas y preguntas de cierre preparados.
 - [x] **7.4:** introducción y guion del About Product redactados; publicación pendiente por indicación del equipo.
-- [x] **Registro de versiones y bibliografía:** autoría editorial aclarada, versión 1.49 y referencias de los cinco repositorios de código añadidas.
+- [x] **Registro de versiones y bibliografía:** autoría editorial aclarada, versión 1.50 y referencias de los cinco repositorios de código añadidas.
 - [x] **Conclusiones, recomendaciones y anexos:** avance TB2 incorporado, con límites de lo comprobado.
 
 ## Registros que faltan completar dentro del informe
@@ -28,7 +28,8 @@ Fuentes: enunciado del curso obtenido con Campus, páginas 34–35, y comentario
 - [x] **Capacidad y responsables.** El Team Leader confirmó el 30/10/2026 las 20 h por integrante para el sprint 26/10–08/11 y los responsables definidos: 100 h de capacidad total, con 80 h estimadas de tareas, 10 h de coordinación/revisión y 10 h de reserva.
 - [x] **7.2.1.1 — Calendario y responsabilidades.** Como equipo acordamos Sprint 1 del lunes 26/10 al domingo 08/11/2026, 20 h por integrante durante las dos semanas y división explícita de lo que realizará cada integrante. El planning del 28/10 está incluido en esa capacidad. La fecha institucional de Blackboard se conserva separada del cierre interno.
 - [x] **Herramienta de tablero de la entrega.** GitHub Projects admitido según confirmación del Team Leader el 30/10/2026 y elegido por el equipo. Se conserva el tablero actual; no hace falta trasladarlo a otra herramienta. Quedan las actualizaciones de estados/evidencias conforme se ejecuten las tareas.
-- [ ] **7.2.1.3 — Development Evidence.** Añadir los cambios propios del periodo 202620: repositorio, rama, SHA, autor, fecha, mensaje y vínculo con historia/tarea. La procedencia de la base 202601 ya está completa.
+- [x] **7.2.1.3 — Trazabilidad documental.** Historial actual actualizado con repositorio, rama, SHA, fecha/hora, autor, mensaje y archivos. Matriz de ocho PBIs / 24 tareas con historias, coordinación futura, commits base y artefactos disponibles en el README.
+- [ ] **7.2.1.3 — Evidencia de implementación.** Incorporar commit/PR de los cambios reales de software del incremento y sus pruebas. La consulta de la organización actual solo identifica el informe entre los repositorios accesibles; la base de aplicación permanece preservada con su procedencia 202601. La edición documental no se cuenta como desarrollo nuevo de servicios.
 - [ ] **7.2.1.8 — Team Collaboration Insights.** Completar aportes y revisión de los cinco integrantes con commits/PR verificables y captura actual de colaboración. El PR de adaptación está enlazado; las revisiones sugeridas de otros integrantes no se presentan como realizadas.
 - [ ] **Registro de versiones / Student Outcome.** Incorporar cada nueva modificación individual y las acciones que cada integrante realmente realizó en TB2; actualizar las conclusiones grupales acumulativas con esas acciones. La corrección de autoría histórica ya está hecha.
 
