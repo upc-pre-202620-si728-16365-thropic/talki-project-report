@@ -1,18 +1,6 @@
 classDiagram
  direction LR
-class ShareGrant {
-  <<AggregateRoot>>
-  -UUID id
-  -UUID reportId
-  -UUID sessionId
-  -Long ownerId
-  -String tokenHash
-  -String scope
-  -Instant expiresAt
-  -Instant revokedAt
-  +isAccessible(Instant now, boolean deleted) boolean
-  +revoke(Instant now) void
-}
+
 class DeletionRequest {
   <<AggregateRoot>>
   -UUID id
@@ -41,15 +29,8 @@ class PurgeReceipt {
 }
 DeletionRequest "1" *-- "0..*" PurgeReceipt : confirmaciones
 DeletionRequest ..> DeletionState : tipo de estado
-ShareGrant ..> DeletionRequest : bloquea acceso por sesión
 
-class ShareGrantRepository {
-  <<interface>>
-  +findByTokenHash(String tokenHash) Optional~ShareGrant~
-  +findBySessionId(UUID sessionId) List~ShareGrant~
-  +save(ShareGrant grant) void
-}
-ShareGrantRepository ..> ShareGrant
+
 
 class DeletionRequestRepository {
   <<interface>>

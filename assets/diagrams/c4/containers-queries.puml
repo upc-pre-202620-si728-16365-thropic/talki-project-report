@@ -1,0 +1,37 @@
+@startuml
+!include <C4/C4_Container>
+skinparam defaultFontName Arial
+skinparam dpi 150
+skinparam linetype polyline
+skinparam nodesep 45
+skinparam ranksep 65
+skinparam ArrowFontSize 12
+LAYOUT_TOP_DOWN()
+title C4 Container: consulta de resultados y control de datos
+System_Boundary(talki, "Talki") {
+Container(gateway, "API Gateway / BFF propuesto", "HTTPS / JSON", "Enruta peticiones y aplica políticas comunes")
+Container(scoring, "Scoring & Feedback Worker", "Java / Spring Boot", "Evalúa, conserva y versiona el reporte")
+Container(progress, "Progress & Adaptation", "Java / Spring Boot", "Resumen y comparación de progreso")
+Container(game, "Gamification", "Java / Spring Boot", "Rachas y logros")
+Container(sharing, "Sharing & Retention propuesto", "Java / Spring Boot", "Exportación personal y purga")
+Container(notifications, "Notifications", "Java / Spring Boot", "Eventos, preferencias y seguimiento de avisos")
+Container(sessions, "Practice Session Management", "Java / Spring Boot", "Ciclo de vida y evidencia del ensayo")
+Container(analysis, "Speech Analysis Worker", "Java / Spring Boot", "Analiza transcripción y publica métricas")
+}
+Rel(gateway, scoring, "Consulta reporte/estado o solicita reintento", "HTTPS / JSON")
+Rel(scoring, sessions, "Comprueba acceso y eliminación", "HTTPS / JSON")
+Rel(scoring, analysis, "Consulta job y solicita reintento", "HTTPS / JSON")
+Rel(sharing, sessions, "Bloquea acceso antes de solicitar purga", "HTTPS / JSON")
+Rel(sharing, scoring, "Recupera reporte autorizado", "HTTPS / JSON")
+Rel(gateway, notifications, "Consulta y modifica preferencias", "HTTPS / JSON")
+Rel(gateway, progress, "Consulta evolución", "HTTPS / JSON")
+Rel(gateway, game, "Consulta rachas y ranking", "HTTPS / JSON")
+Rel(gateway, sharing, "Exporta sus reportes y elimina sesiones", "HTTPS / JSON; propuesto")
+Lay_R(scoring, progress)
+Lay_R(progress, game)
+Lay_R(sharing, notifications)
+Lay_R(sessions, analysis)
+Lay_D(scoring, sessions)
+Lay_D(sharing, sessions)
+SHOW_LEGEND()
+@enduml

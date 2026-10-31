@@ -60,11 +60,11 @@ workspace "Talki: diseño táctico" "Diseño objetivo del TP" {
       }
       db5 = container "Datos privados: Progress & Adaptation" "Esquema aislado" "PostgreSQL"
       sharing = container "Sharing & Retention" "Contexto y proceso de ejecución" "Java / Spring Boot" {
-        n6_api = component "ShareController / DeletionController / ExportController" "Interface: Recibe solicitudes de privacidad y lectura compartida" "Java / Spring Boot"
-        n6_app = component "CreateShareGrantHandler / ResolveSharedReportHandler / RevokeShareHandler / RequestDeletionHandler / CollectPurgeReceiptHandler / ExportReportHandler" "Application: Autoriza consultas y coordina permisos, exportación y purga" "Java / Spring Boot"
-        n6_rules = component "ShareGrant / DeletionRequest / PurgeReceipt" "Domain: Controla vigencia, bloqueo y confirmaciones" "Java / Spring Boot"
-        n6_ports = component "ShareGrantRepository / DeletionRequestRepository" "Domain: Contratos de consulta y persistencia con tipos del contexto" "Java / interfaces"
-        n6_repo = component "JpaShareGrantRepositoryAdapter / JpaDeletionRequestRepositoryAdapter" "Infrastructure: Conserva hashes, solicitudes y confirmaciones" "Java / Spring Boot"
+        n6_api = component "DeletionController / ExportController" "Interface: Recibe solicitudes de exportación personal y eliminación" "Java / Spring Boot"
+        n6_app = component "RequestDeletionHandler / CollectPurgeReceiptHandler / ExportReportHandler" "Application: Comprueba propiedad y coordina exportación y purga" "Java / Spring Boot"
+        n6_rules = component "DeletionRequest / PurgeReceipt" "Domain: Controla bloqueo y confirmaciones de eliminación" "Java / Spring Boot"
+        n6_ports = component "DeletionRequestRepository" "Domain: Contratos de consulta y persistencia con tipos del contexto" "Java / interfaces"
+        n6_repo = component "JpaDeletionRequestRepositoryAdapter" "Infrastructure: Conserva solicitudes y confirmaciones" "Java / Spring Boot"
         n6_messaging = component "DeletionPublisher / PurgeReceiptConsumer" "Infrastructure: Solicita purga y recibe confirmaciones" "Java / Spring Boot"
         n6_clients = component "SessionAccessClient / AuthorizedReportClient" "Infrastructure: Bloquea sesión y recupera únicamente el reporte autorizado" "Java / Spring Boot"
       }
@@ -174,8 +174,8 @@ workspace "Talki: diseño táctico" "Diseño objetivo del TP" {
     n6_repo -> n6_ports "Implementa contratos de repositorio" "Java"
     n6_app -> n6_clients "Comprueba acceso y recupera reporte" "Java"
     n6_app -> n6_messaging "Registra salida o confirmación" "Java"
-    bff -> n6_api "Comparte, revoca, exporta o elimina" "HTTPS / JSON"
-    n6_repo -> db6 "Conserva permisos y solicitudes" "SQL / TLS"
+    bff -> n6_api "Exporta su reporte o elimina su sesión" "HTTPS / JSON"
+    n6_repo -> db6 "Conserva solicitudes y confirmaciones" "SQL / TLS"
     n6_messaging -> bus "Publica deletion.requested" "AMQP"
     bus -> n6_messaging "Entrega purge.completed" "AMQP"
     n6_clients -> sessions "Verifica propiedad y bloquea acceso" "HTTPS / JSON"

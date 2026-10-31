@@ -1,0 +1,25 @@
+{
+  "checkedOn": "2026-10-30",
+  "organization": "upc-pre-202620-si728-16365-thropic",
+  "method": "Listado autenticado de repositorios accesibles y consulta individual de los cinco nombres de implementación.",
+  "accessibleRepositories": [
+    {
+      "defaultBranchRef": {
+        "name": "main"
+      },
+      "name": "talki-project-report",
+      "pushedAt": "2026-10-31T01:34:00Z",
+      "url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report",
+      "pushedAtLima": "2026-10-30T20:34:00-05:00"
+    }
+  ],
+  "implementationNamesChecked": [
+    "talki-user-services",
+    "talki-session-services",
+    "talki-analysis-services",
+    "talki-engagement-services",
+    "talki-frontend"
+  ],
+  "individualLookupResult": "GitHub connector returned NOT_FOUND (404) for the five names under this organization.",
+  "interpretation": "No se identifican repositorios de implementación accesibles bajo esos nombres en esta consulta. No prueba inexistencia de repositorios privados o renombrados. El código reutilizado está preservado mediante instantáneas verificadas del periodo 202601."
+}

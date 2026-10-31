@@ -1,0 +1,27 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Talki — Filler Detection Service API",
+    "description": "Microservicio del bounded context Speech Analysis (DDD) del producto Talki. Consume session.live.finalized del exchange talki.events con el transcript_gemini y las métricas acústicas (words_per_minute, silence_ratio, volume_rms_avg) ya calculadas por live-coach-service. Aplica detección de muletillas y publica fillers.analyzed propagando todas las métricas al scoring-service downstream.",
+    "contact": {
+      "name": "Thropic — Equipo Talki",
+      "url": "https://github.com/upc-pre-202601-si657-7940-thropic"
+    },
+    "license": {
+      "name": "Académico — UPC SI657 2026-10"
+    },
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8087",
+      "description": "Local (perfil dev)"
+    },
+    {
+      "url": "https://api.talki.lat",
+      "description": "Producción (Railway)"
+    }
+  ],
+  "paths": {},
+  "components": {}
+}

@@ -27,7 +27,7 @@ scoring -> scoring : 8. Prepara reporte con evidencia
 scoring ->> notices : scoring.completed
 notices --> student : 9. Aviso de disponibilidad
 note over student, ai
-El archivo no se comparte con el tutor ni viaja completo en eventos.
+El archivo personal queda fuera del reporte exportado y no viaja completo en eventos.
 Cliente y Gemini intercambian voz por WSS con la credencial efímera.
 end note
 @enduml

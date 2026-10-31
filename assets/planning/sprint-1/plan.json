@@ -1,0 +1,1632 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-30",
+  "title": "Talki 202620 — TB2 — Sprint 1",
+  "planning": {
+    "meetingDate": "2026-10-28",
+    "modality": "Google Meet",
+    "source": "Fecha, horario 20:00–21:00, Google Meet y asistencia de los cinco integrantes confirmados por el Team Leader en la conversación del 30/10/2026.",
+    "startTime": "20:00",
+    "endTime": "21:00",
+    "attendance": [
+      "Alejandro Daniel Oroncoy Almeyda",
+      "Eduardo Gael Rivera Sosa",
+      "Manuel Ignacio Tumi Oliden",
+      "Werner Khalil Lang Nassi",
+      "Kevin Jorge Chi Cruzatt"
+    ],
+    "agreementStatus": "Calendario 26/10–08/11, capacidad 20 h por integrante y responsables acordados como equipo.",
+    "institutionalDeadline": "No se deduce una fecha/hora de Blackboard; el enunciado sitúa TB2 en semana 12.",
+    "timeZone": "America/Lima",
+    "durationMinutes": 60,
+    "executionStart": "2026-10-26",
+    "executionEnd": "2026-11-08",
+    "durationCalendarDays": 14,
+    "calendarStatus": "Acordado por el equipo; confirmado en la conversación del 30/10/2026"
+  },
+  "capacity": {
+    "status": "Capacidad acordada como equipo para las dos semanas",
+    "grossHoursPerPerson": 20,
+    "deliveryHoursPerPerson": 16,
+    "ceremonyHoursPerPerson": 2,
+    "contingencyHoursPerPerson": 2,
+    "grossTeamHours": 100,
+    "plannedDeliveryHours": 80,
+    "ceremonyHours": 10,
+    "contingencyHours": 10,
+    "forecastPoints": 36,
+    "measuredVelocity": null,
+    "note": "Los SP del sprint estiman trabajo residual por PBI; no se suman a los SP originales ni se convierten en horas.",
+    "ratification": "Acuerdo de equipo: 20 h por integrante durante el sprint 26/10–08/11; incluye el planning del 28/10. Las horas de tareas y los SP son estimaciones, no ejecución medida.",
+    "hoursPerPersonPerWeek": 10,
+    "confirmedPlanningTeamHours": 5,
+    "remainingGrossHoursAfterPlanning": 95,
+    "technicalDocumentaryTaskHours": 74,
+    "deferredValidationTaskHours": 6,
+    "coordinationBreakdownMinutesPerPerson": {
+      "planning": 60,
+      "threeSyncs": 30,
+      "review": 20,
+      "retrospective": 10
+    }
+  },
+  "team": [
+    {
+      "name": "Alejandro Daniel Oroncoy Almeyda",
+      "plannedDeliveryHours": 16,
+      "grossCapacityHours": 20,
+      "assignmentStatus": "Responsabilidad acordada como equipo"
+    },
+    {
+      "name": "Eduardo Gael Rivera Sosa",
+      "plannedDeliveryHours": 16,
+      "grossCapacityHours": 20,
+      "assignmentStatus": "Responsabilidad acordada como equipo"
+    },
+    {
+      "name": "Manuel Ignacio Tumi Oliden",
+      "plannedDeliveryHours": 16,
+      "grossCapacityHours": 20,
+      "assignmentStatus": "Responsabilidad acordada como equipo"
+    },
+    {
+      "name": "Werner Khalil Lang Nassi",
+      "plannedDeliveryHours": 16,
+      "grossCapacityHours": 20,
+      "assignmentStatus": "Responsabilidad acordada como equipo"
+    },
+    {
+      "name": "Kevin Jorge Chi Cruzatt",
+      "plannedDeliveryHours": 16,
+      "grossCapacityHours": 20,
+      "assignmentStatus": "Responsabilidad acordada como equipo"
+    }
+  ],
+  "sprintGoal": "Demostrar una base integrada y trazable de acceso, práctica, cierre y feedback, con los ocho servicios existentes y evidencia de pruebas y despliegue; las capacidades ampliadas y las puertas de tecnología/privacidad permanecen explícitas.",
+  "items": [
+    {
+      "id": "SB1-01",
+      "title": "Entorno reproducible, restricciones y trazabilidad",
+      "points": 2,
+      "coordinator": "Kevin Jorge Chi Cruzatt",
+      "stories": [],
+      "services": [
+        "Todos los servicios",
+        "Cliente web"
+      ],
+      "dependencies": [],
+      "tasks": [
+        {
+          "id": "SB1-01-A",
+          "title": "Cerrar el runbook de arranque y configuración",
+          "owner": "Alejandro Daniel Oroncoy Almeyda",
+          "hours": 3,
+          "dependsOn": [],
+          "acceptance": "Un clon limpio puede compilar con JDK 17, iniciar un único RabbitMQ y los ocho servicios; el runbook separa H2 local de persistencia pública y no expone secretos.",
+          "status": "Por hacer",
+          "assignmentStatus": "Responsabilidad acordada como equipo"
+        },
+        {
+          "id": "SB1-01-B",
+          "title": "Registrar decisiones de tecnología y alcance",
+          "owner": "Eduardo Gael Rivera Sosa",
+          "hours": 2,
+          "dependsOn": [],
+          "acceptance": "Registrar Next.js/React/TypeScript, Tailwind y shadcn como stack elegido; relacionar versiones y BFF con los archivos del cliente. Conservar la fuente académica original y la decisión del equipo sin atribuir autorización docente no registrada.",
+          "status": "Por hacer",
+          "assignmentStatus": "Responsabilidad acordada como equipo"
+        },
+        {
+          "id": "SB1-01-C",
+          "title": "Versionar contrato y evidencia del entorno",
+          "owner": "Kevin Jorge Chi Cruzatt",
+          "hours": 3,
+          "dependsOn": [
+            "SB1-01-A"
+          ],
+          "acceptance": "URLs/puertos, commit base, diagrama de despliegue ejecutable y ocho contratos OpenAPI coherentes; enlaces de las evidencias en el informe.",
+          "status": "Por hacer",
+          "assignmentStatus": "Responsabilidad acordada como equipo"
+        }
+      ],
+      "hours": 8,
+      "status": "Todo",
+      "estimateBasis": "Estimación inicial del trabajo residual; no es tiempo ejecutado ni aprobación de la historia completa.",
+      "baseline": {
+        "status": "Disponible",
+        "checkedAt": "2026-10-30",
+        "evidence": "Ocho servicios compilados, 133 unitarias aprobadas y ocho OpenAPI locales capturados.",
+        "remainingWork": "Cerrar runbook de clon limpio, decisión tecnológica y concordancia de contratos/despliegue.",
+        "sources": [
+          "assets/evidence/tb2/verification.json",
+          "assets/evidence/tb2/local-execution.json"
+        ]
+      }
+    },
+    {
+      "id": "SB1-02",
+      "title": "Identidad, acceso y aislamiento de sesiones",
+      "points": 5,
+      "coordinator": "Werner Khalil Lang Nassi",
+      "stories": [
+        "US05",
+        "US06",
+        "US20",
+        "US23",
+        "US28",
+        "US33"
+      ],
+      "services": [
+        "identity-service",
+        "session-service",
+        "BFF del cliente"
+      ],
+      "dependencies": [
+        "SB1-01"
+      ],
+      "tasks": [
+        {
+          "id": "SB1-02-A",
+          "title": "Verificar registro, login, segmento y logout",
+          "owner": "Werner Khalil Lang Nassi",
+          "hours": 4,
+          "dependsOn": [
+            "SB1-01-A"
+          ],
+          "acceptance": "Registro nuevo 201, login válido 200, credenciales inválidas con respuesta controlada y logout invalida acceso del cliente; usar cuentas fixture y ocultar JWT.",
+          "status": "Por hacer",
+          "assignmentStatus": "Responsabilidad acordada como equipo"
+        },
+        {
+          "id": "SB1-02-B",
+          "title": "Implementar o comprobar autorización por propietario",
+          "owner": "Werner Khalil Lang Nassi",
+          "hours": 4,
+          "dependsOn": [
+            "SB1-02-A"
+          ],
+          "acceptance": "Dos cuentas de prueba: el usuario B no puede leer, listar, finalizar o añadir feedback a la sesión de A. La identidad validada prevalece sobre userId enviado por el cliente.",
+          "status": "Por hacer",
+          "assignmentStatus": "Responsabilidad acordada como equipo"
+        },
+        {
+          "id": "SB1-02-C",
+          "title": "Integrar errores de acceso en el cliente",
+          "owner": "Kevin Jorge Chi Cruzatt",
+          "hours": 2,
+          "dependsOn": [
+            "SB1-02-A"
+          ],
+          "acceptance": "Cliente conserva sesión en cookie httpOnly y presenta errores recuperables sin exponer token; prueba de expiración y retorno al login documentada.",
+          "status": "Por hacer",
+          "assignmentStatus": "Responsabilidad acordada como equipo"
+        }
+      ],
+      "hours": 10,
+      "status": "Todo",
+      "estimateBasis": "Estimación inicial del trabajo residual; no es tiempo ejecutado ni aprobación de la historia completa.",
+      "baseline": {
+        "status": "Parcial",
+        "checkedAt": "2026-10-30",
+        "evidence": "Registro 201, login 200 y consulta/listado de una sesión fixture comprobados.",
+        "remainingWork": "Verificar/logout, errores, expiración y autorización cruzada entre dos cuentas.",
+        "sources": [
+          "assets/evidence/tb2/verification.json",
+          "assets/evidence/tb2/local-execution.json"
+        ]
+      }
+    },
+    {
+      "id": "SB1-03",
+      "title": "Práctica y ciclo de sesión con coaching",
+      "points": 8,
+      "coordinator": "Alejandro Daniel Oroncoy Almeyda",
+      "stories": [
+        "US09",
+        "US10",
+        "US12",
+        "US13",
+        "US14",
+        "US29",
+        "US34",
+        "US38",
+        "TS01",
+        "TS02"
+      ],
+      "services": [
+        "session-service",
+        "live-coach-service",
+        "Cliente web",
+        "Gemini Live"
+      ],
+      "dependencies": [
+        "SB1-01",
+        "SB1-02"
+      ],
+      "tasks": [
+        {
+          "id": "SB1-03-A",
+          "title": "Cerrar máquina de estados y consentimiento",
+          "owner": "Alejandro Daniel Oroncoy Almeyda",
+          "hours": 4,
+          "dependsOn": [
+            "SB1-02-B"
+          ],
+          "acceptance": "Ruta de inicio autorizada y transición DRAFT a RECORDING definidas; finalizar desde estado inválido devuelve error de negocio controlado, no 500. Registrar consentimiento antes de captura.",
+          "status": "Por hacer",
+          "assignmentStatus": "Responsabilidad acordada como equipo"
+        },
+        {
+          "id": "SB1-03-B",
+          "title": "Comprobar integración de voz y token efímero",
+          "owner": "Alejandro Daniel Oroncoy Almeyda",
+          "hours": 4,
+          "dependsOn": [
+            "SB1-03-A"
+          ],
+          "acceptance": "Credencial permanente solo en servidor; permiso denegado, clave ausente y token vencido se comunican. Con configuración autorizada se prueba un ensayo corto sin publicar audio personal.",
+          "status": "Por hacer",
+          "assignmentStatus": "Responsabilidad acordada como equipo"
+        },
+        {
+          "id": "SB1-03-C",
+          "title": "Unificar finalización y evento de análisis",
+          "owner": "Alejandro Daniel Oroncoy Almeyda",
+          "hours": 4,
+          "dependsOn": [
+            "SB1-03-A",
+            "SB1-03-B"
+          ],
+          "acceptance": "El ID persistido de sesión se conserva en coach y eventos; finalizar una vez produce una sola evaluación lógica. Repetir la petición no duplica resultados.",
+          "status": "Por hacer",
+          "assignmentStatus": "Responsabilidad acordada como equipo"
+        },
+        {
+          "id": "SB1-03-D",
+          "title": "Demostrar controles de práctica y errores",
+          "owner": "Kevin Jorge Chi Cruzatt",
+          "hours": 4,
+          "dependsOn": [
+            "SB1-03-B",
+            "SB1-03-C"
+          ],
+          "acceptance": "Web muestra grabación, pausa/reanudación y cierre confirmado; permiso denegado y desconexión tienen recuperación o resultado parcial explícito. No declarar recuperación integral si no se verifica.",
+          "status": "Por hacer",
+          "assignmentStatus": "Responsabilidad acordada como equipo"
+        }
+      ],
+      "hours": 16,
+      "status": "Todo",
+      "estimateBasis": "Estimación inicial del trabajo residual; no es tiempo ejecutado ni aprobación de la historia completa.",
+      "baseline": {
+        "status": "Integración pendiente",
+        "checkedAt": "2026-10-30",
+        "evidence": "Crear sesión 201, modos 200; finalizar DRAFT dio 500 y token sin clave dio 503 esperado.",
+        "remainingWork": "Cerrar estados/consentimiento, voz configurada, correlación y cierre sin duplicados.",
+        "sources": [
+          "assets/evidence/tb2/verification.json",
+          "assets/evidence/tb2/local-execution.json"
+        ]
+      }
+    },
+    {
+      "id": "SB1-04",
+      "title": "Análisis, puntuación y consulta de feedback",
+      "points": 5,
+      "coordinator": "Manuel Ignacio Tumi Oliden",
+      "stories": [
+        "US15",
+        "US16",
+        "US20",
+        "US26",
+        "US37",
+        "TS03",
+        "TS04"
+      ],
+      "services": [
+        "filler-detection-service",
+        "scoring-service",
+        "session-service"
+      ],
+      "dependencies": [
+        "SB1-03"
+      ],
+      "tasks": [
+        {
+          "id": "SB1-04-A",
+          "title": "Comprobar contratos del pipeline y duplicados",
+          "owner": "Manuel Ignacio Tumi Oliden",
+          "hours": 4,
+          "dependsOn": [
+            "SB1-03-C"
+          ],
+          "acceptance": "Fixture recorre session.live.finalized, fillers.analyzed y scoring.completed con el mismo sessionId/userId; duplicado reconocido y fallo con estado visible.",
+          "status": "Por hacer",
+          "assignmentStatus": "Responsabilidad acordada como equipo"
+        },
+        {
+          "id": "SB1-04-B",
+          "title": "Persistir y consultar feedback mínimo trazable",
+          "owner": "Manuel Ignacio Tumi Oliden",
+          "hours": 4,
+          "dependsOn": [
+            "SB1-04-A"
+          ],
+          "acceptance": "Reporte recuperable de la sesión del propietario contiene puntuación, muletillas, evidencia y límites. Estados pendiente/fallido no muestran una evaluación inventada; diferencias con TS04 versionado registradas.",
+          "status": "Por hacer",
+          "assignmentStatus": "Responsabilidad acordada como equipo"
+        },
+        {
+          "id": "SB1-04-C",
+          "title": "Ejecutar aceptación del recorrido de feedback",
+          "owner": "Manuel Ignacio Tumi Oliden",
+          "hours": 4,
+          "dependsOn": [
+            "SB1-04-B"
+          ],
+          "acceptance": "Pruebas de integración y al menos un feature BDD ejecutable con steps verifican el caso feliz y un error; se adjuntan commit, comando y resultado. No convertir el conteo unitario en aceptación.",
+          "status": "Por hacer",
+          "assignmentStatus": "Responsabilidad acordada como equipo"
+        }
+      ],
+      "hours": 12,
+      "status": "Todo",
+      "estimateBasis": "Estimación inicial del trabajo residual; no es tiempo ejecutado ni aprobación de la historia completa.",
+      "baseline": {
+        "status": "Base disponible",
+        "checkedAt": "2026-10-30",
+        "evidence": "11 unitarias de detección de muletillas y 33 de scoring aprobadas; contratos de eventos presentes.",
+        "remainingWork": "Comprobar recorrido asíncrono, consulta de feedback, errores, duplicados y aceptación BDD.",
+        "sources": [
+          "assets/evidence/tb2/verification.json",
+          "assets/evidence/tb2/local-execution.json"
+        ]
+      }
+    },
+    {
+      "id": "SB1-05",
+      "title": "Progreso, logros y notificaciones por eventos",
+      "points": 3,
+      "coordinator": "Werner Khalil Lang Nassi",
+      "stories": [
+        "US21",
+        "US35",
+        "TS05"
+      ],
+      "services": [
+        "progress-service",
+        "gamification-service",
+        "notification-service"
+      ],
+      "dependencies": [
+        "SB1-04"
+      ],
+      "tasks": [
+        {
+          "id": "SB1-05-A",
+          "title": "Verificar proyección de progreso",
+          "owner": "Manuel Ignacio Tumi Oliden",
+          "hours": 4,
+          "dependsOn": [
+            "SB1-04-A"
+          ],
+          "acceptance": "Scoring válido actualiza una sola vez el resumen del propietario; comparar el antes/después con el mismo fixture y conservar métricas/versiones disponibles sin inferir comparación avanzada.",
+          "status": "Por hacer",
+          "assignmentStatus": "Responsabilidad acordada como equipo"
+        },
+        {
+          "id": "SB1-05-B",
+          "title": "Verificar racha y aviso sin duplicados",
+          "owner": "Werner Khalil Lang Nassi",
+          "hours": 4,
+          "dependsOn": [
+            "SB1-05-A"
+          ],
+          "acceptance": "Sesión válida activa la regla de racha/logro y el consumidor de notificaciones; reenvío del evento no duplica el efecto. Mostrar qué canal de aviso existe realmente; no afirmar envío de email no configurado.",
+          "status": "Por hacer",
+          "assignmentStatus": "Responsabilidad acordada como equipo"
+        }
+      ],
+      "hours": 8,
+      "status": "Todo",
+      "estimateBasis": "Estimación inicial del trabajo residual; no es tiempo ejecutado ni aprobación de la historia completa.",
+      "baseline": {
+        "status": "Base disponible",
+        "checkedAt": "2026-10-30",
+        "evidence": "9 unitarias de progreso, 13 de gamificación y 7 de notificaciones; consultas iniciales de progreso/racha 200.",
+        "remainingWork": "Demostrar actualización real por evento válido y que el duplicado no repite efectos.",
+        "sources": [
+          "assets/evidence/tb2/verification.json",
+          "assets/evidence/tb2/local-execution.json"
+        ]
+      }
+    },
+    {
+      "id": "SB1-06",
+      "title": "Landing y recorrido web coherentes con el incremento",
+      "points": 5,
+      "coordinator": "Eduardo Gael Rivera Sosa",
+      "stories": [
+        "US01",
+        "US02",
+        "US03",
+        "US04",
+        "US09",
+        "US15",
+        "US20",
+        "US29"
+      ],
+      "services": [
+        "Landing",
+        "Cliente web",
+        "BFF"
+      ],
+      "dependencies": [
+        "SB1-01",
+        "SB1-02"
+      ],
+      "tasks": [
+        {
+          "id": "SB1-06-A",
+          "title": "Actualizar landing y estados vacíos",
+          "owner": "Eduardo Gael Rivera Sosa",
+          "hours": 4,
+          "dependsOn": [
+            "SB1-01-B"
+          ],
+          "acceptance": "Beneficios y planes describen disponibilidad real; sin testimonios autorizados se muestra estado vacío. Contacto y videos identifican qué funciona y qué está pendiente.",
+          "status": "Por hacer",
+          "assignmentStatus": "Responsabilidad acordada como equipo"
+        },
+        {
+          "id": "SB1-06-B",
+          "title": "Integrar las pantallas con servicios reales",
+          "owner": "Eduardo Gael Rivera Sosa",
+          "hours": 4,
+          "dependsOn": [
+            "SB1-02-C",
+            "SB1-03-C",
+            "SB1-04-B"
+          ],
+          "acceptance": "Acceso, preparación, práctica, reporte e historial consumen la base elegida; simulaciones y capturas de referencia están diferenciadas. Se reutiliza el cliente Next.js/React y se comprueba su integración; no se incluye una migración de framework.",
+          "status": "Por hacer",
+          "assignmentStatus": "Responsabilidad acordada como equipo"
+        },
+        {
+          "id": "SB1-06-C",
+          "title": "Comprobar usabilidad técnica web y responsive",
+          "owner": "Eduardo Gael Rivera Sosa",
+          "hours": 2,
+          "dependsOn": [
+            "SB1-06-B"
+          ],
+          "acceptance": "Recorrido con teclado, foco, etiquetas, errores y vista móvil comprobado; responsive no se presenta como app nativa. Capturas corresponden al commit probado.",
+          "status": "Por hacer",
+          "assignmentStatus": "Responsabilidad acordada como equipo"
+        }
+      ],
+      "hours": 10,
+      "status": "Todo",
+      "estimateBasis": "Estimación inicial del trabajo residual; no es tiempo ejecutado ni aprobación de la historia completa.",
+      "baseline": {
+        "status": "Cliente/prototipo disponibles",
+        "checkedAt": "2026-10-30",
+        "evidence": "Compilación Next.js aprobada; galería y prototipo públicos dieron 200.",
+        "remainingWork": "Integrar el recorrido real en Next.js/React y ajustar landing, errores y evidencias.",
+        "sources": [
+          "assets/evidence/tb2/verification.json",
+          "assets/evidence/tb2/local-execution.json"
+        ]
+      }
+    },
+    {
+      "id": "SB1-07",
+      "title": "Despliegue y evidencias de la primera versión",
+      "points": 5,
+      "coordinator": "Kevin Jorge Chi Cruzatt",
+      "stories": [
+        "TS01",
+        "TS02",
+        "TS03",
+        "TS04"
+      ],
+      "services": [
+        "Ocho servicios backend",
+        "RabbitMQ",
+        "Persistencia",
+        "Cliente web"
+      ],
+      "dependencies": [
+        "SB1-01",
+        "SB1-02",
+        "SB1-03",
+        "SB1-04",
+        "SB1-05",
+        "SB1-06"
+      ],
+      "tasks": [
+        {
+          "id": "SB1-07-A",
+          "title": "Preparar perfiles y recursos del ambiente",
+          "owner": "Kevin Jorge Chi Cruzatt",
+          "hours": 3,
+          "dependsOn": [
+            "SB1-01-C"
+          ],
+          "acceptance": "Dominio/HTTPS, broker compartido, almacenamiento y variables externas documentados; H2 create-drop queda limitado al ambiente descartable. Acceso y presupuesto aprobados son dependencia externa.",
+          "status": "Por hacer",
+          "assignmentStatus": "Responsabilidad acordada como equipo"
+        },
+        {
+          "id": "SB1-07-B",
+          "title": "Publicar y comprobar servicios y cliente",
+          "owner": "Kevin Jorge Chi Cruzatt",
+          "hours": 4,
+          "dependsOn": [
+            "SB1-07-A",
+            "SB1-04-C",
+            "SB1-06-C"
+          ],
+          "acceptance": "Las URLs del commit desplegado responden; OpenAPI y frontend funcionan contra el mismo ambiente. Una captura de despliegue histórico o un 200 de galería no cuenta como backend operativo.",
+          "status": "Por hacer",
+          "assignmentStatus": "Responsabilidad acordada como equipo"
+        },
+        {
+          "id": "SB1-07-C",
+          "title": "Cerrar matriz de trazabilidad técnica",
+          "owner": "Alejandro Daniel Oroncoy Almeyda",
+          "hours": 1,
+          "dependsOn": [
+            "SB1-07-B"
+          ],
+          "acceptance": "Informe enlaza historia, tarea, servicio, commit, prueba y URL; los requisitos sin evidencia permanecen identificados.",
+          "status": "Por hacer",
+          "assignmentStatus": "Responsabilidad acordada como equipo"
+        },
+        {
+          "id": "SB1-07-D",
+          "title": "Verificar puerta de privacidad del despliegue",
+          "owner": "Werner Khalil Lang Nassi",
+          "hours": 2,
+          "dependsOn": [
+            "SB1-02-B",
+            "SB1-07-B"
+          ],
+          "acceptance": "Aislamiento y consentimiento comprobados; hasta completar exportación/purga de TS06, el ambiente se limita a fixtures o acceso controlado y no admite un piloto con datos personales reales.",
+          "status": "Por hacer",
+          "assignmentStatus": "Responsabilidad acordada como equipo"
+        }
+      ],
+      "hours": 10,
+      "status": "Todo",
+      "estimateBasis": "Estimación inicial del trabajo residual; no es tiempo ejecutado ni aprobación de la historia completa.",
+      "baseline": {
+        "status": "Bloqueado por despliegue",
+        "checkedAt": "2026-10-30",
+        "evidence": "En la comprobación del 30/10, frontend histórico 402 y 16 rutas Railway 404.",
+        "remainingWork": "Acceso a recursos, perfiles/persistencia, publicación y verificación del ambiente efectivo.",
+        "sources": [
+          "assets/evidence/tb2/verification.json",
+          "assets/evidence/tb2/local-execution.json"
+        ]
+      }
+    },
+    {
+      "id": "SB1-08",
+      "title": "Aplicación de validación y registro de hallazgos",
+      "points": 3,
+      "coordinator": "Eduardo Gael Rivera Sosa",
+      "stories": [
+        "US01",
+        "US09",
+        "US15",
+        "US20",
+        "US29",
+        "US33"
+      ],
+      "services": [
+        "Landing",
+        "Prototipo o cliente identificado"
+      ],
+      "dependencies": [
+        "SB1-06"
+      ],
+      "tasks": [
+        {
+          "id": "SB1-08-A",
+          "title": "Aplicar protocolo a ambos segmentos y registrar sesiones",
+          "owner": "Eduardo Gael Rivera Sosa",
+          "hours": 4,
+          "dependsOn": [
+            "SB1-06-C"
+          ],
+          "acceptance": "Al menos tres participantes por segmento, consentimiento, fecha, dispositivo/versión y tareas; registrar éxito, tiempo, ayuda y observaciones. Si se usa prototipo, se declara simulación; reclutamiento es dependencia externa.",
+          "status": "Por hacer",
+          "assignmentStatus": "Responsabilidad acordada como equipo"
+        },
+        {
+          "id": "SB1-08-B",
+          "title": "Consolidar heurísticas y decisiones de mejora",
+          "owner": "Werner Khalil Lang Nassi",
+          "hours": 2,
+          "dependsOn": [
+            "SB1-08-A"
+          ],
+          "acceptance": "Hallazgos reales de usabilidad, arquitectura de información y diseño inclusivo con severidad, evidencia y acción. Videos de validación y About Product siguen diferidos; no se inventan opiniones.",
+          "status": "Por hacer",
+          "assignmentStatus": "Responsabilidad acordada como equipo"
+        }
+      ],
+      "hours": 6,
+      "status": "Todo",
+      "estimateBasis": "Estimación inicial del trabajo residual; no es tiempo ejecutado ni aprobación de la historia completa.",
+      "baseline": {
+        "status": "Protocolo listo",
+        "checkedAt": "2026-10-30",
+        "evidence": "Guion de validación y registro de seis participantes preparado; sin sesiones o resultados acreditados.",
+        "remainingWork": "Reclutar/aplicar a ambos segmentos y registrar observaciones y heurísticas reales.",
+        "sources": [
+          "assets/evidence/tb2/verification.json",
+          "assets/evidence/tb2/local-execution.json"
+        ]
+      },
+      "executionStatus": "Diferido: entrevistas pendientes por decisión del equipo"
+    }
+  ],
+  "productRoadmap": [
+    {
+      "id": "US09",
+      "title": "Crear una sesión",
+      "productPoints": 3,
+      "priority": "Must",
+      "dependencies": "US06",
+      "phase": "Sprint 1: incremento mínimo",
+      "sprintItems": [
+        "SB1-03",
+        "SB1-06",
+        "SB1-08"
+      ],
+      "scope": "Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados."
+    },
+    {
+      "id": "US12",
+      "title": "Iniciar grabación y transcripción",
+      "productPoints": 8,
+      "priority": "Must",
+      "dependencies": "US09, US29",
+      "phase": "Sprint 1: incremento mínimo",
+      "sprintItems": [
+        "SB1-03"
+      ],
+      "scope": "Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados."
+    },
+    {
+      "id": "US14",
+      "title": "Finalizar y guardar",
+      "productPoints": 3,
+      "priority": "Must",
+      "dependencies": "US12",
+      "phase": "Sprint 1: incremento mínimo",
+      "sprintItems": [
+        "SB1-03"
+      ],
+      "scope": "Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados."
+    },
+    {
+      "id": "US15",
+      "title": "Recibir feedback general",
+      "productPoints": 8,
+      "priority": "Must",
+      "dependencies": "US14",
+      "phase": "Sprint 1: incremento mínimo",
+      "sprintItems": [
+        "SB1-04",
+        "SB1-06",
+        "SB1-08"
+      ],
+      "scope": "Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados."
+    },
+    {
+      "id": "US01",
+      "title": "Visualizar beneficios",
+      "productPoints": 2,
+      "priority": "Must",
+      "dependencies": "No aplica",
+      "phase": "Sprint 1: incremento mínimo",
+      "sprintItems": [
+        "SB1-06",
+        "SB1-08"
+      ],
+      "scope": "Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados."
+    },
+    {
+      "id": "US02",
+      "title": "Ver planes y precios",
+      "productPoints": 2,
+      "priority": "Must",
+      "dependencies": "No aplica",
+      "phase": "Sprint 1: incremento mínimo",
+      "sprintItems": [
+        "SB1-06"
+      ],
+      "scope": "Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados."
+    },
+    {
+      "id": "US03",
+      "title": "Ver testimonios",
+      "productPoints": 1,
+      "priority": "Must",
+      "dependencies": "No aplica",
+      "phase": "Sprint 1: incremento mínimo",
+      "sprintItems": [
+        "SB1-06"
+      ],
+      "scope": "Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados."
+    },
+    {
+      "id": "US04",
+      "title": "Enviar una consulta",
+      "productPoints": 2,
+      "priority": "Must",
+      "dependencies": "No aplica",
+      "phase": "Sprint 1: incremento mínimo",
+      "sprintItems": [
+        "SB1-06"
+      ],
+      "scope": "Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados."
+    },
+    {
+      "id": "US38",
+      "title": "Recibir coaching en tiempo cercano al real",
+      "productPoints": 8,
+      "priority": "Must",
+      "dependencies": "US12",
+      "phase": "Sprint 1: incremento mínimo",
+      "sprintItems": [
+        "SB1-03"
+      ],
+      "scope": "Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados."
+    },
+    {
+      "id": "US16",
+      "title": "Analizar muletillas",
+      "productPoints": 5,
+      "priority": "Should",
+      "dependencies": "US14",
+      "phase": "Sprint 1: incremento mínimo",
+      "sprintItems": [
+        "SB1-04"
+      ],
+      "scope": "Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados."
+    },
+    {
+      "id": "US19",
+      "title": "Recibir sugerencias por sección",
+      "productPoints": 5,
+      "priority": "Should",
+      "dependencies": "US15",
+      "phase": "Siguiente incremento / Sprint 2",
+      "sprintItems": [],
+      "scope": "Capacidad ampliada del producto; conservar criterios originales y refinar antes de comprometer."
+    },
+    {
+      "id": "US26",
+      "title": "Recibir recomendaciones por segmento",
+      "productPoints": 5,
+      "priority": "Must",
+      "dependencies": "US15, US23",
+      "phase": "Sprint 1: incremento mínimo",
+      "sprintItems": [
+        "SB1-04"
+      ],
+      "scope": "Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados."
+    },
+    {
+      "id": "US37",
+      "title": "Consultar estado y reintentar análisis",
+      "productPoints": 5,
+      "priority": "Must",
+      "dependencies": "US14, TS03, TS04",
+      "phase": "Sprint 1: incremento mínimo",
+      "sprintItems": [
+        "SB1-04"
+      ],
+      "scope": "Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados."
+    },
+    {
+      "id": "US20",
+      "title": "Consultar historial",
+      "productPoints": 3,
+      "priority": "Should",
+      "dependencies": "US06, US15",
+      "phase": "Sprint 1: incremento mínimo",
+      "sprintItems": [
+        "SB1-02",
+        "SB1-04",
+        "SB1-06",
+        "SB1-08"
+      ],
+      "scope": "Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados."
+    },
+    {
+      "id": "US29",
+      "title": "Verificar micrófono y consentimiento",
+      "productPoints": 5,
+      "priority": "Must",
+      "dependencies": "US09",
+      "phase": "Sprint 1: incremento mínimo",
+      "sprintItems": [
+        "SB1-03",
+        "SB1-06",
+        "SB1-08"
+      ],
+      "scope": "Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados."
+    },
+    {
+      "id": "US34",
+      "title": "Recuperar una sesión interrumpida",
+      "productPoints": 8,
+      "priority": "Must",
+      "dependencies": "US12, US14",
+      "phase": "Sprint 1: incremento mínimo",
+      "sprintItems": [
+        "SB1-03"
+      ],
+      "scope": "Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados."
+    },
+    {
+      "id": "US33",
+      "title": "Revocar consentimiento y eliminar datos",
+      "productPoints": 8,
+      "priority": "Must",
+      "dependencies": "US06, US20",
+      "phase": "Puerta obligatoria antes de piloto con datos reales",
+      "sprintItems": [
+        "SB1-02",
+        "SB1-08"
+      ],
+      "scope": "Control de acceso/consentimiento revisado en Sprint 1; exportación y purga distribuidas requieren el paquete G-PRIV antes de usuarios reales."
+    },
+    {
+      "id": "US10",
+      "title": "Seleccionar tipo de sesión",
+      "productPoints": 3,
+      "priority": "Must",
+      "dependencies": "US09",
+      "phase": "Sprint 1: incremento mínimo",
+      "sprintItems": [
+        "SB1-03"
+      ],
+      "scope": "Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados."
+    },
+    {
+      "id": "US23",
+      "title": "Seleccionar segmento académico",
+      "productPoints": 2,
+      "priority": "Must",
+      "dependencies": "US05",
+      "phase": "Sprint 1: incremento mínimo",
+      "sprintItems": [
+        "SB1-02"
+      ],
+      "scope": "Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados."
+    },
+    {
+      "id": "US05",
+      "title": "Registrar una cuenta",
+      "productPoints": 5,
+      "priority": "Must",
+      "dependencies": "No aplica",
+      "phase": "Sprint 1: incremento mínimo",
+      "sprintItems": [
+        "SB1-02"
+      ],
+      "scope": "Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados."
+    },
+    {
+      "id": "US06",
+      "title": "Iniciar sesión",
+      "productPoints": 5,
+      "priority": "Must",
+      "dependencies": "US05",
+      "phase": "Sprint 1: incremento mínimo",
+      "sprintItems": [
+        "SB1-02"
+      ],
+      "scope": "Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados."
+    },
+    {
+      "id": "US28",
+      "title": "Cerrar sesión",
+      "productPoints": 1,
+      "priority": "Must",
+      "dependencies": "US06",
+      "phase": "Sprint 1: incremento mínimo",
+      "sprintItems": [
+        "SB1-02"
+      ],
+      "scope": "Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados."
+    },
+    {
+      "id": "US13",
+      "title": "Pausar y reanudar",
+      "productPoints": 3,
+      "priority": "Should",
+      "dependencies": "US12",
+      "phase": "Sprint 1: incremento mínimo",
+      "sprintItems": [
+        "SB1-03"
+      ],
+      "scope": "Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados."
+    },
+    {
+      "id": "US08",
+      "title": "Editar perfil",
+      "productPoints": 3,
+      "priority": "Must",
+      "dependencies": "US06",
+      "phase": "Siguiente incremento / Sprint 2",
+      "sprintItems": [],
+      "scope": "Capacidad ampliada del producto; conservar criterios originales y refinar antes de comprometer."
+    },
+    {
+      "id": "US11",
+      "title": "Configurar duración objetivo",
+      "productPoints": 2,
+      "priority": "Should",
+      "dependencies": "US09",
+      "phase": "Siguiente incremento / Sprint 2",
+      "sprintItems": [],
+      "scope": "Capacidad ampliada del producto; conservar criterios originales y refinar antes de comprometer."
+    },
+    {
+      "id": "US24",
+      "title": "Establecer metas",
+      "productPoints": 3,
+      "priority": "Could",
+      "dependencies": "US08",
+      "phase": "Siguiente incremento / Sprint 2",
+      "sprintItems": [],
+      "scope": "Capacidad ampliada del producto; conservar criterios originales y refinar antes de comprometer."
+    },
+    {
+      "id": "US25",
+      "title": "Seleccionar áreas de enfoque",
+      "productPoints": 3,
+      "priority": "Could",
+      "dependencies": "US09",
+      "phase": "Siguiente incremento / Sprint 2",
+      "sprintItems": [],
+      "scope": "Capacidad ampliada del producto; conservar criterios originales y refinar antes de comprometer."
+    },
+    {
+      "id": "US30",
+      "title": "Cargar material de contexto",
+      "productPoints": 8,
+      "priority": "Should",
+      "dependencies": "US09",
+      "phase": "Siguiente incremento / Sprint 2",
+      "sprintItems": [],
+      "scope": "Capacidad ampliada del producto; conservar criterios originales y refinar antes de comprometer."
+    },
+    {
+      "id": "US31",
+      "title": "Simular entrevista o sustentación",
+      "productPoints": 8,
+      "priority": "Should",
+      "dependencies": "US10, US30, US38",
+      "phase": "Siguiente incremento / Sprint 2",
+      "sprintItems": [],
+      "scope": "Capacidad ampliada del producto; conservar criterios originales y refinar antes de comprometer."
+    },
+    {
+      "id": "US17",
+      "title": "Analizar palabras clave",
+      "productPoints": 5,
+      "priority": "Should",
+      "dependencies": "US14, US30",
+      "phase": "Siguiente incremento / Sprint 2",
+      "sprintItems": [],
+      "scope": "Capacidad ampliada del producto; conservar criterios originales y refinar antes de comprometer."
+    },
+    {
+      "id": "US18",
+      "title": "Mejorar el léxico",
+      "productPoints": 5,
+      "priority": "Could",
+      "dependencies": "US17",
+      "phase": "Siguiente incremento / Sprint 2",
+      "sprintItems": [],
+      "scope": "Capacidad ampliada del producto; conservar criterios originales y refinar antes de comprometer."
+    },
+    {
+      "id": "US21",
+      "title": "Ver progreso",
+      "productPoints": 5,
+      "priority": "Should",
+      "dependencies": "US20",
+      "phase": "Sprint 1: incremento mínimo",
+      "sprintItems": [
+        "SB1-05"
+      ],
+      "scope": "Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados."
+    },
+    {
+      "id": "US22",
+      "title": "Comparar sesiones",
+      "productPoints": 5,
+      "priority": "Could",
+      "dependencies": "US20, US21",
+      "phase": "Siguiente incremento / Sprint 2",
+      "sprintItems": [],
+      "scope": "Capacidad ampliada del producto; conservar criterios originales y refinar antes de comprometer."
+    },
+    {
+      "id": "US36",
+      "title": "Recibir un plan adaptativo",
+      "productPoints": 8,
+      "priority": "Should",
+      "dependencies": "US19, US21, US22",
+      "phase": "Siguiente incremento / Sprint 2",
+      "sprintItems": [],
+      "scope": "Capacidad ampliada del producto; conservar criterios originales y refinar antes de comprometer."
+    },
+    {
+      "id": "US27",
+      "title": "Exportar transcripción y feedback",
+      "productPoints": 3,
+      "priority": "Could",
+      "dependencies": "US15",
+      "phase": "Puerta obligatoria antes de piloto con datos reales",
+      "sprintItems": [],
+      "scope": "Control de acceso/consentimiento revisado en Sprint 1; exportación y purga distribuidas requieren el paquete G-PRIV antes de usuarios reales."
+    },
+    {
+      "id": "US35",
+      "title": "Mantener rachas y logros",
+      "productPoints": 5,
+      "priority": "Could",
+      "dependencies": "US20",
+      "phase": "Sprint 1: incremento mínimo",
+      "sprintItems": [
+        "SB1-05"
+      ],
+      "scope": "Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados."
+    },
+    {
+      "id": "US07",
+      "title": "Recuperar contraseña",
+      "productPoints": 3,
+      "priority": "Should",
+      "dependencies": "US05",
+      "phase": "Siguiente incremento / Sprint 2",
+      "sprintItems": [],
+      "scope": "Capacidad ampliada del producto; conservar criterios originales y refinar antes de comprometer."
+    },
+    {
+      "id": "TS01",
+      "title": "API de sesiones",
+      "productPoints": 3,
+      "priority": "Must",
+      "dependencies": "US09, US20",
+      "phase": "Sprint 1: incremento mínimo",
+      "sprintItems": [
+        "SB1-03",
+        "SB1-07"
+      ],
+      "scope": "Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados."
+    },
+    {
+      "id": "TS02",
+      "title": "Contrato de coaching en vivo",
+      "productPoints": 8,
+      "priority": "Must",
+      "dependencies": "US12, US14, US29, US38",
+      "phase": "Sprint 1: incremento mínimo",
+      "sprintItems": [
+        "SB1-03",
+        "SB1-07"
+      ],
+      "scope": "Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados."
+    },
+    {
+      "id": "TS03",
+      "title": "Pipeline de análisis idempotente",
+      "productPoints": 8,
+      "priority": "Must",
+      "dependencies": "TS02, US15, US37",
+      "phase": "Sprint 1: incremento mínimo",
+      "sprintItems": [
+        "SB1-04",
+        "SB1-07"
+      ],
+      "scope": "Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados."
+    },
+    {
+      "id": "TS04",
+      "title": "Consulta de reportes versionados",
+      "productPoints": 5,
+      "priority": "Must",
+      "dependencies": "TS03, US15, US20, US37",
+      "phase": "Sprint 1: incremento mínimo",
+      "sprintItems": [
+        "SB1-04",
+        "SB1-07"
+      ],
+      "scope": "Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados."
+    },
+    {
+      "id": "TS05",
+      "title": "API de progreso",
+      "productPoints": 5,
+      "priority": "Must",
+      "dependencies": "TS03, US21, US22",
+      "phase": "Sprint 1: incremento mínimo",
+      "sprintItems": [
+        "SB1-05"
+      ],
+      "scope": "Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados."
+    },
+    {
+      "id": "TS06",
+      "title": "API de exportación y eliminación",
+      "productPoints": 8,
+      "priority": "Must",
+      "dependencies": "US27, US33",
+      "phase": "Puerta obligatoria antes de piloto con datos reales",
+      "sprintItems": [],
+      "scope": "Control de acceso/consentimiento revisado en Sprint 1; exportación y purga distribuidas requieren el paquete G-PRIV antes de usuarios reales."
+    }
+  ],
+  "conditionalPackages": [
+    {
+      "id": "G-PRIV",
+      "title": "Exportación, revocación y purga distribuida",
+      "hours": 32,
+      "points": 8,
+      "owner": "Werner Khalil Lang Nassi",
+      "allocation": {
+        "Werner Khalil Lang Nassi": 20,
+        "Manuel Ignacio Tumi Oliden": 8,
+        "Alejandro Daniel Oroncoy Almeyda": 4
+      },
+      "trigger": "Antes de cualquier piloto que procese datos personales reales.",
+      "scope": "US27, US33 y TS06: solicitud autorizada, bloqueo, exportación, confirmaciones por contexto, reintento, auditoría y aceptación. Estimación inicial de alta incertidumbre; no basta ocultar un botón.",
+      "includedIn80Hours": false,
+      "releaseGate": true
+    },
+    {
+      "id": "G-MEDIA",
+      "title": "Grabación y publicación audiovisual TB2",
+      "hours": 12,
+      "points": null,
+      "owner": "Equipo Thropic",
+      "trigger": "Cuando existan producto y opiniones reales, y el equipo reactive los videos diferidos.",
+      "scope": "Navegación, validación, About Product y actualización de About Team/exposición; duración de edición depende de material real. No acredita grabaciones realizadas.",
+      "includedIn80Hours": false,
+      "releaseGate": false
+    }
+  ],
+  "board": {
+    "provider": "GitHub Projects",
+    "id": "PVT_kwDOE3JeVs4Bphgj",
+    "number": 1,
+    "url": "https://github.com/orgs/upc-pre-202620-si728-16365-thropic/projects/1",
+    "visibility": "PUBLIC",
+    "purpose": "Tablero de Sprint 1; GitHub Projects admitido según confirmación del Team Leader y elegido por el equipo.",
+    "items": [
+      {
+        "pbi": "SB1-01",
+        "projectItemId": "PVTI_lADOE3JeVs4BphgjzhE5ybc",
+        "title": "SB1-01 — Entorno reproducible, restricciones y trazabilidad",
+        "phase": "Sprint 1"
+      },
+      {
+        "pbi": "SB1-02",
+        "projectItemId": "PVTI_lADOE3JeVs4BphgjzhE5yhQ",
+        "title": "SB1-02 — Identidad, acceso y aislamiento de sesiones",
+        "phase": "Sprint 1"
+      },
+      {
+        "pbi": "SB1-03",
+        "projectItemId": "PVTI_lADOE3JeVs4BphgjzhE5yl8",
+        "title": "SB1-03 — Práctica y ciclo de sesión con coaching",
+        "phase": "Sprint 1"
+      },
+      {
+        "pbi": "SB1-04",
+        "projectItemId": "PVTI_lADOE3JeVs4BphgjzhE5yrM",
+        "title": "SB1-04 — Análisis, puntuación y consulta de feedback",
+        "phase": "Sprint 1"
+      },
+      {
+        "pbi": "SB1-05",
+        "projectItemId": "PVTI_lADOE3JeVs4BphgjzhE5yws",
+        "title": "SB1-05 — Progreso, logros y notificaciones por eventos",
+        "phase": "Sprint 1"
+      },
+      {
+        "pbi": "SB1-06",
+        "projectItemId": "PVTI_lADOE3JeVs4BphgjzhE5y2g",
+        "title": "SB1-06 — Landing y recorrido web coherentes con el incremento",
+        "phase": "Sprint 1"
+      },
+      {
+        "pbi": "SB1-07",
+        "projectItemId": "PVTI_lADOE3JeVs4BphgjzhE5y7U",
+        "title": "SB1-07 — Despliegue y evidencias de la primera versión",
+        "phase": "Sprint 1"
+      },
+      {
+        "pbi": "SB1-08",
+        "projectItemId": "PVTI_lADOE3JeVs4BphgjzhE5y_s",
+        "title": "SB1-08 — Aplicación de validación y registro de hallazgos",
+        "phase": "Sprint 1"
+      },
+      {
+        "pbi": "G-PRIV",
+        "projectItemId": "PVTI_lADOE3JeVs4BphgjzhE5zIA",
+        "title": "G-PRIV — Exportación, revocación y purga distribuida",
+        "phase": "Condicional"
+      },
+      {
+        "pbi": "G-MEDIA",
+        "projectItemId": "PVTI_lADOE3JeVs4BphgjzhE5zLQ",
+        "title": "G-MEDIA — Grabación y publicación audiovisual TB2",
+        "phase": "Condicional"
+      }
+    ],
+    "acceptanceConfirmation": {
+      "date": "2026-10-30",
+      "confirmedBy": "Team Leader",
+      "statement": "El tablero está admitido: GitHub Projects; se usará esa herramienta.",
+      "status": "Admitido según confirmación del equipo y elegido para Sprint 1"
+    },
+    "archivedItems": [
+      {
+        "pbi": "G-WEB",
+        "projectItemId": "PVTI_lADOE3JeVs4BphgjzhE5zEQ",
+        "title": "G-WEB — Adecuación a Angular o Vue",
+        "phase": "Condicional",
+        "status": "Archivado por retiro de alcance"
+      }
+    ]
+  },
+  "meetingFacts": {
+    "date": "2026-10-28",
+    "platform": "Google Meet",
+    "startTime": "20:00",
+    "endTime": "21:00",
+    "timeZone": "America/Lima",
+    "durationMinutes": 60,
+    "attendance": [
+      "Alejandro Daniel Oroncoy Almeyda",
+      "Eduardo Gael Rivera Sosa",
+      "Manuel Ignacio Tumi Oliden",
+      "Werner Khalil Lang Nassi",
+      "Kevin Jorge Chi Cruzatt"
+    ],
+    "source": "Confirmación expresa del Team Leader el 30/10/2026."
+  },
+  "baselinePolicy": "Las evidencias existentes al 30/10 son insumos. El plan de 80 h estima trabajo pendiente; no imputa como esfuerzo real la elaboración de este plan ni vuelve a contar la importación histórica como desarrollo nuevo.",
+  "capacityConfirmation": {
+    "confirmedBy": "Team Leader",
+    "date": "2026-10-30",
+    "grossHoursPerPerson": 20,
+    "assignmentsConfirmed": true,
+    "executionCalendarConfirmed": true,
+    "source": "Confirmación expresa en la conversación: «sí, dejemos las 20 horas por integrante y los responsables como propusiste».",
+    "calendarConfirmedOn": "2026-10-30",
+    "calendarSource": "Acuerdo confirmado en conversación: inicio el lunes de esta semana y duración de dos semanas; división de responsabilidades como decisión de equipo."
+  },
+  "technologyDecision": {
+    "date": "2026-10-30",
+    "decidedBy": "Team Leader",
+    "web": "Next.js/React/TypeScript; Tailwind CSS y shadcn",
+    "backend": "Java 17 / Spring Boot 3.2.5",
+    "scope": "Conservar el cliente existente y retirar la migración G-WEB del plan activo.",
+    "academicAuthorization": "No se aporta autorización docente nueva; el enunciado original se conserva."
+  },
+  "retiredPackages": [
+    {
+      "id": "G-WEB",
+      "title": "Adecuación a Angular o Vue",
+      "hours": 48,
+      "points": 8,
+      "owner": "Eduardo Gael Rivera Sosa",
+      "allocation": {
+        "Eduardo Gael Rivera Sosa": 24,
+        "Kevin Jorge Chi Cruzatt": 16,
+        "Alejandro Daniel Oroncoy Almeyda": 8
+      },
+      "trigger": "El docente no autoriza la base Next.js o el equipo elige adecuación.",
+      "scope": "Acceso, BFF equivalente seguro, configuración, práctica, reporte, historial, estados responsive y pruebas. Estimación orientativa de 40–64 h; refinar tras el spike SB1-01-B. Incluir biblioteca de UI conforme al enunciado (Angular Material/PrimeNG o PrimeVue/Vuetify); no basta trasladar el CSS heredado.",
+      "includedIn80Hours": false,
+      "releaseGate": true,
+      "status": "Retirado por decisión del equipo; no implementado",
+      "retiredOn": "2026-10-30",
+      "reason": "Se conserva Next.js/React. No se ejecuta ni compromete migración de framework."
+    }
+  ],
+  "sprintCalendar": {
+    "startDate": "2026-10-26",
+    "endDate": "2026-11-08",
+    "timeZone": "America/Lima",
+    "inclusiveDays": 14,
+    "status": "Acordado como equipo",
+    "institutionalDeadline": "Separada del cierre interno; no se infiere una fecha de Blackboard."
+  },
+  "responsibilityAgreement": [
+    {
+      "name": "Alejandro Daniel Oroncoy Almeyda",
+      "willDo": "Coordinará el procedimiento de arranque, los estados y consentimiento de sesión, voz/token y cierre sin duplicados. Consolidará la trazabilidad técnica del informe.",
+      "tasks": "SB1-01-A; SB1-03-A/B/C; SB1-07-C"
+    },
+    {
+      "name": "Eduardo Gael Rivera Sosa",
+      "willDo": "Documentará el stack Next.js/React; ajustará landing, conectará pantallas con APIs y comprobará el recorrido responsive. Mantendrá la responsabilidad de aplicar validación cuando se retomen las entrevistas.",
+      "tasks": "SB1-01-B; SB1-06-A/B/C; SB1-08-A — diferida"
+    },
+    {
+      "name": "Manuel Ignacio Tumi Oliden",
+      "willDo": "Comprobará los contratos del pipeline, el feedback persistido y sus pruebas de integración/BDD. Verificará la actualización del progreso por eventos.",
+      "tasks": "SB1-04-A/B/C; SB1-05-A"
+    },
+    {
+      "name": "Werner Khalil Lang Nassi",
+      "willDo": "Verificará acceso, logout y autorización por propietario; comprobará gamificación/notificaciones y la puerta de privacidad. Consolidará heurísticas cuando existan las sesiones de validación.",
+      "tasks": "SB1-02-A/B; SB1-05-B; SB1-07-D; SB1-08-B — diferida"
+    },
+    {
+      "name": "Kevin Jorge Chi Cruzatt",
+      "willDo": "Documentará contratos/puertos; integrará errores de acceso y controles de práctica. Preparará los perfiles del ambiente y comprobará servicios y cliente publicados.",
+      "tasks": "SB1-01-C; SB1-02-C; SB1-03-D; SB1-07-A/B"
+    }
+  ],
+  "handoff": {
+    "date": "2026-10-30",
+    "status": "Reparto acordado por el equipo; ejecución/aceptación pendientes",
+    "sourceOfTruth": "README.md — Reparto operativo por integrante en 7.2.1.2",
+    "immediateTaskHours": 74,
+    "deferredValidationHours": 6,
+    "members": [
+      {
+        "name": "Alejandro Daniel Oroncoy Almeyda",
+        "area": "Sesiones, voz y trazabilidad",
+        "repositoriesOfReference": [
+          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services"
+        ],
+        "tasks": [
+          {
+            "id": "SB1-01-A",
+            "hours": 3,
+            "willDo": "Verificará el arranque desde las instantáneas con JDK 17 y un solo RabbitMQ; corregirá en 7.1.4 los pasos o puertos que no se reproduzcan.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-03-A",
+            "hours": 4,
+            "willDo": "Resolverá DRAFT → RECORDING y el consentimiento antes de capturar voz; finalizar una sesión en estado inválido deberá devolver un error controlado, con prueba.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-03-B",
+            "hours": 4,
+            "willDo": "Comprobará el token efímero y un ensayo de voz con configuración autorizada; documentará permiso denegado, clave ausente y token vencido sin publicar claves ni JWT.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-03-C",
+            "hours": 4,
+            "willDo": "Mantendrá el mismo sessionId/userId al cerrar y publicar el evento; comprobará que repetir la finalización no produzca dos evaluaciones.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-07-C",
+            "hours": 1,
+            "willDo": "Consolidará en el README los enlaces reales de historia/tarea, commit probado, comando, resultado y URL del ambiente.",
+            "deferred": false
+          }
+        ],
+        "immediateHours": 16,
+        "deferredHours": 0,
+        "coordinationHours": 2,
+        "reserveHours": 2,
+        "totalCapacityHours": 20,
+        "firstStep": "Empezará por SB1-01-A y la transición de inicio de sesión de SB1-03-A para desbloquear voz, análisis y cliente.",
+        "deliverable": "Commit/PR del ciclo de sesión y voz; procedimiento de arranque comprobado; pruebas con resultados y matriz historia → tarea → servicio → commit → prueba → URL.",
+        "readmeSections": "7.1.4; 7.2.1.3; 7.2.1.5; matriz técnica de cierre."
+      },
+      {
+        "name": "Eduardo Gael Rivera Sosa",
+        "area": "Cliente Next.js, landing y responsive",
+        "repositoriesOfReference": [
+          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend"
+        ],
+        "tasks": [
+          {
+            "id": "SB1-01-B",
+            "hours": 2,
+            "willDo": "Contrastará las versiones Next.js/React/TypeScript, Tailwind y shadcn con los archivos del cliente y mantendrá 7.1.1 alineado con el código real.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-06-A",
+            "hours": 4,
+            "willDo": "Ajustará beneficios, planes, contacto y estados vacíos de la landing a lo que funciona; identificará testimonios y videos todavía pendientes.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-06-B",
+            "hours": 4,
+            "willDo": "Conectará acceso, preparación, práctica, reporte e historial con las APIs a través del BFF; sustituirá simulaciones solo cuando exista el comportamiento real.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-06-C",
+            "hours": 2,
+            "willDo": "Comprobará navegación por teclado, foco, etiquetas, mensajes de error y vista móvil; entregará capturas de la versión probada.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-08-A",
+            "hours": 4,
+            "willDo": "Conservará la responsabilidad de aplicar el protocolo a ambos segmentos; esta tarea seguirá diferida, sin entrevistas ni resultados ficticios.",
+            "deferred": true
+          }
+        ],
+        "immediateHours": 12,
+        "deferredHours": 4,
+        "coordinationHours": 2,
+        "reserveHours": 2,
+        "totalCapacityHours": 20,
+        "firstStep": "Empezará por comprobar el stack del cliente y ajustar la landing; conectará las pantallas cuando estén disponibles los contratos de sesión y feedback.",
+        "deliverable": "Commit/PR del frontend, resultado de compilación, capturas web/móvil y lista de pantallas conectadas y errores comprobados; registro de validación solo cuando se retomen entrevistas.",
+        "readmeSections": "7.1.1; 7.2.1.5; evidencias de UI vinculadas a 6.3–6.5."
+      },
+      {
+        "name": "Manuel Ignacio Tumi Oliden",
+        "area": "Análisis, feedback, pruebas y progreso",
+        "repositoriesOfReference": [
+          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services",
+          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services",
+          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services"
+        ],
+        "tasks": [
+          {
+            "id": "SB1-04-A",
+            "hours": 4,
+            "willDo": "Comprobará session.live.finalized → fillers.analyzed → scoring.completed con el mismo sessionId/userId; verificará duplicados y fallo visible.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-04-B",
+            "hours": 4,
+            "willDo": "Verificará la persistencia y consulta del feedback del propietario, incluyendo score, evidencia, límites y estados pendiente/fallido; registrará lo que falte del contrato versionado.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-04-C",
+            "hours": 4,
+            "willDo": "Implementará y ejecutará integración y al menos un feature BDD con steps para caso feliz y error; guardará los resultados para 7.2.1.4.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-05-A",
+            "hours": 4,
+            "willDo": "Comparará progreso antes/después de una evaluación y comprobará que el evento repetido no vuelva a incrementar el resumen.",
+            "deferred": false
+          }
+        ],
+        "immediateHours": 16,
+        "deferredHours": 0,
+        "coordinationHours": 2,
+        "reserveHours": 2,
+        "totalCapacityHours": 20,
+        "firstStep": "Empezará por revisar los contratos y preparar fixtures de eventos; ejecutará la cadena completa cuando Alejandro entregue el cierre correlacionado.",
+        "deliverable": "Commit/PR del pipeline/feedback, pruebas de integración y BDD con feature/steps, comando y resultado; evidencia antes/después de la proyección de progreso.",
+        "readmeSections": "7.2.1.4; 7.2.1.5; contratos de análisis y feedback de 7.2.1.6."
+      },
+      {
+        "name": "Werner Khalil Lang Nassi",
+        "area": "Acceso, gamificación, notificaciones y privacidad",
+        "repositoriesOfReference": [
+          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services",
+          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services",
+          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services"
+        ],
+        "tasks": [
+          {
+            "id": "SB1-02-A",
+            "hours": 4,
+            "willDo": "Comprobará registro, login, segmento, credenciales inválidas y logout; entregará resultados con cuentas fixture y tokens ocultos.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-02-B",
+            "hours": 4,
+            "willDo": "Probará con usuarios A/B que B no pueda leer, listar, finalizar o añadir feedback a la sesión de A; corregirá o documentará el control faltante.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-05-B",
+            "hours": 4,
+            "willDo": "Comprobará racha/logro y el consumidor de notificaciones después de una evaluación válida; repetirá el evento y mostrará el canal de aviso que exista realmente.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-07-D",
+            "hours": 2,
+            "willDo": "Verificará aislamiento y consentimiento del ambiente publicado; mientras falte G-PRIV, documentará y comprobará la limitación a fixtures/acceso controlado.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-08-B",
+            "hours": 2,
+            "willDo": "Conservará la responsabilidad de consolidar hallazgos y heurísticas después de las entrevistas; esta tarea seguirá diferida.",
+            "deferred": true
+          }
+        ],
+        "immediateHours": 14,
+        "deferredHours": 2,
+        "coordinationHours": 2,
+        "reserveHours": 2,
+        "totalCapacityHours": 20,
+        "firstStep": "Empezará por SB1-02-A/B para desbloquear las verificaciones del propietario y el recorrido de sesión.",
+        "deliverable": "Commit/PR y pruebas con dos cuentas de fixture, resultados de racha/aviso sin duplicados y comprobación de la puerta de privacidad; heurísticas solo cuando existan sesiones reales.",
+        "readmeSections": "7.2.1.4–7.2.1.6, controles de acceso/privacidad; heurísticas de 7.3.3 diferidas."
+      },
+      {
+        "name": "Kevin Jorge Chi Cruzatt",
+        "area": "Contratos, controles de práctica y despliegue",
+        "repositoriesOfReference": [
+          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend",
+          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services",
+          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services",
+          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services",
+          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services"
+        ],
+        "tasks": [
+          {
+            "id": "SB1-01-C",
+            "hours": 3,
+            "willDo": "Relacionará servicios, puertos, configuración y los ocho OpenAPI con el commit de base y el diagrama de despliegue; conservará los contratos revisados.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-02-C",
+            "hours": 2,
+            "willDo": "Comprobará en Next.js la cookie httpOnly, expiración de sesión, retorno al login y errores recuperables sin exponer el token.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-03-D",
+            "hours": 4,
+            "willDo": "Comprobará los controles de grabación, pausa/reanudación y cierre, además de permiso denegado y desconexión; registrará el resultado real.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-07-A",
+            "hours": 3,
+            "willDo": "Preparará perfiles, HTTPS, broker común, variables externas y almacenamiento persistente; documentará accesos o recursos que bloqueen la publicación.",
+            "deferred": false
+          },
+          {
+            "id": "SB1-07-B",
+            "hours": 4,
+            "willDo": "Publicará el commit integrado y verificará cliente/APIs, Swagger y reinicio con datos fixture persistidos; incorporará URLs y capturas actuales en 7.2.1.7.",
+            "deferred": false
+          }
+        ],
+        "immediateHours": 16,
+        "deferredHours": 0,
+        "coordinationHours": 2,
+        "reserveHours": 2,
+        "totalCapacityHours": 20,
+        "firstStep": "Empezará por preparar contratos, recursos y perfiles; publicará el incremento cuando cliente, análisis y pruebas de integración estén disponibles.",
+        "deliverable": "Commit/PR de configuración e integración que corresponda, ocho contratos OpenAPI coherentes, capturas de Swagger, URLs funcionales, SHA desplegado y evidencia de persistencia.",
+        "readmeSections": "7.1.4; 7.2.1.5–7.2.1.7."
+      }
+    ]
+  }
+}

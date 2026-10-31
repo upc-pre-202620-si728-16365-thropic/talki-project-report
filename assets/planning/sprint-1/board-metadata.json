@@ -1,0 +1,20 @@
+{
+  "closed": false,
+  "fields": {
+    "totalCount": 17
+  },
+  "id": "PVT_kwDOE3JeVs4Bphgj",
+  "items": {
+    "totalCount": 10
+  },
+  "number": 1,
+  "owner": {
+    "login": "upc-pre-202620-si728-16365-thropic",
+    "type": "Organization"
+  },
+  "public": true,
+  "readme": "Como equipo, acordamos el Sprint 1 del lunes 26 de octubre al domingo 8 de noviembre de 2026: dos semanas completas. Planning: 28/10, 20:00–21:00 (Lima), por Google Meet, con los cinco integrantes presentes.\n\nCapacidad acordada: 20 h por integrante (10 h por semana), 100 h de equipo. Incluye 80 h estimadas de tareas, 10 h de coordinación/revisión —con las 5 h de equipo del planning incluidas— y 10 h de reserva. Descontando solo el planning confirmado quedan 95 h; no se imputa esfuerzo de otras tareas sin medición.\n\nDivisión del trabajo acordada:\n- Alejandro: arranque, estados/consentimiento, voz/token, finalización y trazabilidad del informe.\n- Eduardo: stack Next.js/React, landing, pantallas/API, responsive; validación asignada pero diferida.\n- Manuel: contratos de análisis, feedback, integración/BDD y progreso por eventos.\n- Werner: acceso/propiedad, gamificación/notificaciones y privacidad; heurísticas asignadas pero diferidas hasta disponer de entrevistas.\n- Kevin: contratos/puertos, errores de acceso, controles de práctica, perfiles y despliegue.\n\nLas responsabilidades se expresan como trabajo por realizar. Las 24 tareas / 80 h / 36 SP incluyen SB1-08 (6 h / 3 SP) diferido por entrevistas pendientes. El resto suma 74 h / 33 SP. Los videos siguen diferidos. No se marcan tareas terminadas por la sola asignación.\n\nGitHub Projects es la herramienta admitida y elegida por el equipo. Next.js/React/TypeScript con Tailwind/shadcn es el stack web elegido. G-WEB queda archivado por retiro de alcance, no como implementación realizada.\n\nEl calendario es interno y no sustituye la fecha institucional de Blackboard. README y plan: https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/blob/main/README.md\n\nReparto operativo individual (24 tareas, entregables, repositorios base y qué actualizará cada integrante):\nhttps://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/blob/main/README.md#7212-sprint-backlog-1\n\nAlejandro Daniel Oroncoy Almeyda — Sesiones, voz y trazabilidad: SB1-01-A, SB1-03-A, SB1-03-B, SB1-03-C, SB1-07-C. 16 h inmediatas.\n\nEduardo Gael Rivera Sosa — Cliente Next.js, landing y responsive: SB1-01-B, SB1-06-A, SB1-06-B, SB1-06-C, SB1-08-A. 12 h inmediatas + 4 h diferidas.\n\nManuel Ignacio Tumi Oliden — Análisis, feedback, pruebas y progreso: SB1-04-A, SB1-04-B, SB1-04-C, SB1-05-A. 16 h inmediatas.\n\nWerner Khalil Lang Nassi — Acceso, gamificación, notificaciones y privacidad: SB1-02-A, SB1-02-B, SB1-05-B, SB1-07-D, SB1-08-B. 14 h inmediatas + 2 h diferidas.\n\nKevin Jorge Chi Cruzatt — Contratos, controles de práctica y despliegue: SB1-01-C, SB1-02-C, SB1-03-D, SB1-07-A, SB1-07-B. 16 h inmediatas.\n",
+  "shortDescription": "Sprint 1: 26/10–08/11. Acuerdo de equipo: 20 h/persona y división del trabajo; validación y videos diferidos.",
+  "title": "Talki 202620 — TB2 — Sprint 1 — Planning 28/10",
+  "url": "https://github.com/orgs/upc-pre-202620-si728-16365-thropic/projects/1"
+}

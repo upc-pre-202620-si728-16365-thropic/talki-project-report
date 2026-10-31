@@ -1,0 +1,347 @@
+{
+  "checkedAt": "2026-10-30T22:37:10.506778+00:00",
+  "scope": "Read-only checks of reused 202601 sources; not proof of new implementation or user validation in 202620.",
+  "repositories": {
+    "talki-analysis-services": {
+      "sha": "9e026c324b6f7a321505af705e9e8ffdd6496fc4",
+      "committedAt": "2026-06-07T08:26:32-05:00",
+      "url": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services"
+    },
+    "talki-engagement-services": {
+      "sha": "231bb5eb7ccefb741cbff5274634bef2eef17819",
+      "committedAt": "2026-06-07T08:26:39-05:00",
+      "url": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services"
+    },
+    "talki-frontend": {
+      "sha": "d63e889a216d093a86bf24a2a328c18d0e610618",
+      "committedAt": "2026-07-09T20:02:02-05:00",
+      "url": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend"
+    },
+    "talki-session-services": {
+      "sha": "cde4b117783db42115acc680ddb22e2bfe99ae24",
+      "committedAt": "2026-07-04T22:59:23-05:00",
+      "url": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services"
+    },
+    "talki-user-services": {
+      "sha": "1da887abe3dd2d776685c5d864dc4098ceb66344",
+      "committedAt": "2026-07-09T12:22:25-05:00",
+      "url": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services"
+    }
+  },
+  "publicProbes": [
+    {
+      "name": "identity-service",
+      "kind": "health",
+      "url": "https://talki-user-services-production.up.railway.app/actuator/health",
+      "httpStatus": 404
+    },
+    {
+      "name": "identity-service",
+      "kind": "openapi",
+      "url": "https://talki-user-services-production.up.railway.app/v3/api-docs",
+      "httpStatus": 404
+    },
+    {
+      "name": "notification-service",
+      "kind": "health",
+      "url": "https://notification-service-production-a277.up.railway.app/actuator/health",
+      "httpStatus": 404
+    },
+    {
+      "name": "notification-service",
+      "kind": "openapi",
+      "url": "https://notification-service-production-a277.up.railway.app/v3/api-docs",
+      "httpStatus": 404
+    },
+    {
+      "name": "session-service",
+      "kind": "health",
+      "url": "https://session-service-production-c267.up.railway.app/actuator/health",
+      "httpStatus": 404
+    },
+    {
+      "name": "session-service",
+      "kind": "openapi",
+      "url": "https://session-service-production-c267.up.railway.app/v3/api-docs",
+      "httpStatus": 404
+    },
+    {
+      "name": "live-coach-service",
+      "kind": "health",
+      "url": "https://live-coach-service-production.up.railway.app/actuator/health",
+      "httpStatus": 404
+    },
+    {
+      "name": "live-coach-service",
+      "kind": "openapi",
+      "url": "https://live-coach-service-production.up.railway.app/v3/api-docs",
+      "httpStatus": 404
+    },
+    {
+      "name": "filler-detection-service",
+      "kind": "health",
+      "url": "https://filler-detection-service-production.up.railway.app/actuator/health",
+      "httpStatus": 404
+    },
+    {
+      "name": "filler-detection-service",
+      "kind": "openapi",
+      "url": "https://filler-detection-service-production.up.railway.app/v3/api-docs",
+      "httpStatus": 404
+    },
+    {
+      "name": "scoring-service",
+      "kind": "health",
+      "url": "https://scoring-service-production-9702.up.railway.app/actuator/health",
+      "httpStatus": 404
+    },
+    {
+      "name": "scoring-service",
+      "kind": "openapi",
+      "url": "https://scoring-service-production-9702.up.railway.app/v3/api-docs",
+      "httpStatus": 404
+    },
+    {
+      "name": "progress-service",
+      "kind": "health",
+      "url": "https://progress-service-production-cd14.up.railway.app/actuator/health",
+      "httpStatus": 404
+    },
+    {
+      "name": "progress-service",
+      "kind": "openapi",
+      "url": "https://progress-service-production-cd14.up.railway.app/v3/api-docs",
+      "httpStatus": 404
+    },
+    {
+      "name": "gamification-service",
+      "kind": "health",
+      "url": "https://gamification-service-production-3c2c.up.railway.app/actuator/health",
+      "httpStatus": 404
+    },
+    {
+      "name": "gamification-service",
+      "kind": "openapi",
+      "url": "https://gamification-service-production-3c2c.up.railway.app/v3/api-docs",
+      "httpStatus": 404
+    },
+    {
+      "name": "frontend",
+      "kind": "page",
+      "url": "https://talki-frontend.vercel.app",
+      "httpStatus": 402
+    },
+    {
+      "name": "prototype",
+      "kind": "page",
+      "url": "https://upc-pre-202620-si728-16365-thropic.github.io/talki-project-report/assets/ux/prototype/",
+      "httpStatus": 200,
+      "finalUrl": "https://upc-pre-202620-si728-16365-thropic.github.io/talki-project-report/assets/ux/prototype/",
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "name": "gallery",
+      "kind": "page",
+      "url": "https://upc-pre-202620-si728-16365-thropic.github.io/talki-project-report/",
+      "httpStatus": 200,
+      "finalUrl": "https://upc-pre-202620-si728-16365-thropic.github.io/talki-project-report/",
+      "contentType": "text/html; charset=utf-8"
+    }
+  ],
+  "unitTests": [
+    {
+      "service": "identity-service",
+      "repository": "talki-user-services",
+      "tests": 16,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suites": [
+        {
+          "name": "com.thropic.talki.identity.application.services.AuthServiceTest",
+          "tests": 7,
+          "javaVersion": "17.0.19"
+        },
+        {
+          "name": "com.thropic.talki.identity.infrastructure.security.JwtTokenProviderTest",
+          "tests": 9,
+          "javaVersion": "17.0.19"
+        }
+      ],
+      "reportFound": true
+    },
+    {
+      "service": "notification-service",
+      "repository": "talki-user-services",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suites": [
+        {
+          "name": "com.thropic.talki.notification.infrastructure.messaging.consumer.AchievementNotificationConsumerTest",
+          "tests": 4,
+          "javaVersion": "17.0.19"
+        },
+        {
+          "name": "com.thropic.talki.notification.infrastructure.messaging.consumer.ScoreNotificationConsumerTest",
+          "tests": 3,
+          "javaVersion": "17.0.19"
+        }
+      ],
+      "reportFound": true
+    },
+    {
+      "service": "session-service",
+      "repository": "talki-session-services",
+      "tests": 30,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suites": [
+        {
+          "name": "com.thropic.talki.session.application.acl.SessionContextFacadeTest",
+          "tests": 6,
+          "javaVersion": "17.0.19"
+        },
+        {
+          "name": "com.thropic.talki.session.application.services.SessionCommandServiceImplTest",
+          "tests": 7,
+          "javaVersion": "17.0.19"
+        },
+        {
+          "name": "com.thropic.talki.session.application.services.SessionQueryServiceImplTest",
+          "tests": 4,
+          "javaVersion": "17.0.19"
+        },
+        {
+          "name": "com.thropic.talki.session.domain.model.entities.SessionTest",
+          "tests": 10,
+          "javaVersion": "17.0.19"
+        },
+        {
+          "name": "com.thropic.talki.session.infrastructure.messaging.consumer.UserRegisteredConsumerTest",
+          "tests": 3,
+          "javaVersion": "17.0.19"
+        }
+      ],
+      "reportFound": true
+    },
+    {
+      "service": "live-coach-service",
+      "repository": "talki-session-services",
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suites": [
+        {
+          "name": "com.thropic.talki.livecoach.application.services.LiveCoachOrchestratorTest",
+          "tests": 5,
+          "javaVersion": "17.0.19"
+        },
+        {
+          "name": "com.thropic.talki.livecoach.domain.model.SessionModeStrategyFactoryTest",
+          "tests": 9,
+          "javaVersion": "17.0.19"
+        }
+      ],
+      "reportFound": true
+    },
+    {
+      "service": "filler-detection-service",
+      "repository": "talki-analysis-services",
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suites": [
+        {
+          "name": "com.thropic.talki.filler.domain.model.FillerDetectorTest",
+          "tests": 7,
+          "javaVersion": "17.0.19"
+        },
+        {
+          "name": "com.thropic.talki.filler.infrastructure.messaging.consumer.SessionLiveFinalizedConsumerTest",
+          "tests": 4,
+          "javaVersion": "17.0.19"
+        }
+      ],
+      "reportFound": true
+    },
+    {
+      "service": "scoring-service",
+      "repository": "talki-analysis-services",
+      "tests": 33,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suites": [
+        {
+          "name": "com.thropic.talki.scoring.domain.model.ScoreCalculatorTest",
+          "tests": 12,
+          "javaVersion": "17.0.19"
+        },
+        {
+          "name": "com.thropic.talki.scoring.domain.model.VoiceScoreTest",
+          "tests": 12,
+          "javaVersion": "17.0.19"
+        },
+        {
+          "name": "com.thropic.talki.scoring.infrastructure.GlobalExceptionHandlerTest",
+          "tests": 5,
+          "javaVersion": "17.0.19"
+        },
+        {
+          "name": "com.thropic.talki.scoring.infrastructure.messaging.consumer.FillerAnalyzedConsumerTest",
+          "tests": 4,
+          "javaVersion": "17.0.19"
+        }
+      ],
+      "reportFound": true
+    },
+    {
+      "service": "progress-service",
+      "repository": "talki-engagement-services",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suites": [
+        {
+          "name": "com.thropic.talki.progress.domain.model.UserProgressTest",
+          "tests": 6,
+          "javaVersion": "17.0.19"
+        },
+        {
+          "name": "com.thropic.talki.progress.infrastructure.messaging.consumer.ScoringCompletedConsumerTest",
+          "tests": 3,
+          "javaVersion": "17.0.19"
+        }
+      ],
+      "reportFound": true
+    },
+    {
+      "service": "gamification-service",
+      "repository": "talki-engagement-services",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suites": [
+        {
+          "name": "com.thropic.talki.gamification.domain.model.UserStreakTest",
+          "tests": 6,
+          "javaVersion": "17.0.19"
+        },
+        {
+          "name": "com.thropic.talki.gamification.infrastructure.messaging.consumer.ScoringCompletedConsumerTest",
+          "tests": 7,
+          "javaVersion": "17.0.19"
+        }
+      ],
+      "reportFound": true
+    }
+  ],
+  "acceptanceFeatureFilesFound": []
+}

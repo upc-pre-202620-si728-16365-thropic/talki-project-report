@@ -50,6 +50,8 @@
 
 <div style="page-break-after: always;"></div>
 
+**Avance TB2 — 30/10/2026.** [Planning y Backlog definidos](docs/tb2/sprint-1-plan.md) · [Pendientes del informe](docs/tb2/pendientes-informe.md) · [Checklist detallado y fuentes](docs/tb2/checklist.md) · [Material de apoyo y presentación](deliverables/tb2/README.md). La documentación se amplió hasta 7.4; el checklist identifica las evidencias que todavía faltan para cerrar la entrega.
+
 # Registro de Versiones del Informe
 
 | Versión | Fecha | Autor / coautoría registrada | Descripción de modificación |
@@ -63,18 +65,18 @@
 | 0.7 | 19/09/2026 | Equipo Thropic | Complementación del Student Outcome con la trazabilidad de los aportes de cada integrante en el TB1. |
 | 0.8 | 19/09/2026 | Chi Cruzatt, Kevin Jorge | Desarrollo de la sección 4.3 (Software Architecture) y elaboración de los diagramas System Landscape, Context Level, Container Level y Deployment. |
 | 0.9 | 19/09/2026 | Equipo Thropic | Incorporación del avance de conclusiones y recomendaciones, bibliografía, anexos y evidencia de colaboración del TB1. |
-| 1.0 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel<br>Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Desarrollo del diseño táctico y UX del TP; incorporación de modelos, diagramas, pantallas y prototipo web/móvil. Revisión del equipo y feedback docente pendientes. |
-| 1.1 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Ajuste de UX para conservar las pantallas del cliente Talki como base: retirada de seis mock-ups web duplicados, unificación visual de complementos y uso del cliente web como prototipo principal. |
-| 1.2 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Alineación de la paleta de colores y las tablas de las pantallas complementarias con la identidad visual de Talki en sus temas claro y oscuro. |
-| 1.3 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Presentación de wireframes, mock-ups y estados críticos mediante descripción e imágenes web/móvil dentro del informe. |
-| 1.4 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel<br>Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Revisión editorial de los capítulos V y VI, sustitución de rayas largas y acceso directo a los diseños de la landing desde el catálogo. |
-| 1.5 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel<br>Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Revisión de la redacción de diseño: tipografía, colores, componentes, navegación y prototipado; aclaración de las descripciones de modelos de dominio. |
-| 1.6 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel<br>Rivera Sosa, Eduardo Gael | Justificación de la identidad visual y simplificación de la paleta por función de diseño, sin referencias a archivos CSS. |
-| 1.7 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel<br>Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Revisión integral de V y VI: organización de capas por propósito, trazabilidad consolidada, diagramas de componentes corregidos y descripciones diferenciadas de wireframes y mock-ups. |
-| 1.8 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel<br>Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Chi Cruzatt, Kevin Jorge | Retirada de las consultas de disponibilidad técnica de Interface Layer para centrar el diseño táctico en las operaciones del producto. |
-| 1.9 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel<br>Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Desarrollo de las explicaciones de cada capa, identificación de controladores y contratos, organización de repositorios y adaptadores, guías de estilo y navegación por plataforma y wireflows con pantallas web y móvil. |
-| 1.10 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel<br>Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Organización de Domain Layer por tipo de elemento, separación de comandos, consultas y coordinación de eventos, tablas de capas uniformes y rotulado de figuras web/móvil. |
-| 1.11 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel<br>Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Retirada de enlaces de fuentes editables, revisión de congruencia entre modelos y explicaciones, ajuste de datos de progreso y cuenta, y relación de las pantallas con el diseño táctico. |
+| 1.0 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel (edición); coautores registrados: Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Desarrollo del diseño táctico y UX del TP; incorporación de modelos, diagramas, pantallas y prototipo web/móvil. Revisión del equipo y feedback docente pendientes. |
+| 1.1 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel (edición); coautores registrados: Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Ajuste de UX para conservar las pantallas del cliente Talki como base: retirada de seis mock-ups web duplicados, unificación visual de complementos y uso del cliente web como prototipo principal. |
+| 1.2 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel (edición); coautores registrados: Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Alineación de la paleta de colores y las tablas de las pantallas complementarias con la identidad visual de Talki en sus temas claro y oscuro. |
+| 1.3 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel (edición); coautores registrados: Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Presentación de wireframes, mock-ups y estados críticos mediante descripción e imágenes web/móvil dentro del informe. |
+| 1.4 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel (edición); coautores registrados: Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Revisión editorial de los capítulos V y VI, sustitución de rayas largas y acceso directo a los diseños de la landing desde el catálogo. |
+| 1.5 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel (edición); coautores registrados: Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Revisión de la redacción de diseño: tipografía, colores, componentes, navegación y prototipado; aclaración de las descripciones de modelos de dominio. |
+| 1.6 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel (edición); coautores registrados: Rivera Sosa, Eduardo Gael | Justificación de la identidad visual y simplificación de la paleta por función de diseño, sin referencias a archivos CSS. |
+| 1.7 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel (edición); coautores registrados: Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Revisión integral de V y VI: organización de capas por propósito, trazabilidad consolidada, diagramas de componentes corregidos y descripciones diferenciadas de wireframes y mock-ups. |
+| 1.8 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel (edición); coautores registrados: Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Chi Cruzatt, Kevin Jorge | Retirada de las consultas de disponibilidad técnica de Interface Layer para centrar el diseño táctico en las operaciones del producto. |
+| 1.9 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel (edición); coautores registrados: Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Desarrollo de las explicaciones de cada capa, identificación de controladores y contratos, organización de repositorios y adaptadores, guías de estilo y navegación por plataforma y wireflows con pantallas web y móvil. |
+| 1.10 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel (edición); coautores registrados: Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Organización de Domain Layer por tipo de elemento, separación de comandos, consultas y coordinación de eventos, tablas de capas uniformes y rotulado de figuras web/móvil. |
+| 1.11 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel (edición); coautores registrados: Tumi Oliden, Manuel Ignacio<br>Lang Nassi, Werner Khalil<br>Rivera Sosa, Eduardo Gael<br>Chi Cruzatt, Kevin Jorge | Retirada de enlaces de fuentes editables, revisión de congruencia entre modelos y explicaciones, ajuste de datos de progreso y cuenta, y relación de las pantallas con el diseño táctico. |
 | 1.12 | 02/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Incorporación de las correcciones documentales del feedback Hito1: tareas de usuario, escenarios Gherkin, contratos técnicos, backlog, C4 y clases UML de dominio. Datos de entrevistas y evidencias audiovisuales pendientes de confirmación. |
 | 1.13 | 05/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Actualización del Student Outcome con los criterios de comunicación oral y escrita del TP, las secciones asociadas a cada integrante y la distinción entre documentación disponible y revisión/sustentación pendientes. |
 | 1.14 | 05/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Corrección de la denominación de entregas: TB1 y TP; detalle del material documentado según el reparto de secciones de cada integrante en el Student Outcome. |
@@ -103,8 +105,18 @@
 | 1.37 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Incorporación de la galería de mock-ups web y móvil, con acceso a las imágenes completas desde el capítulo VI y los anexos. |
 | 1.38 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Incorporación del enlace al video de exposición del TP proporcionado por el equipo. |
 | 1.39 | 08/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Corrección de la identificación del video proporcionado: corresponde a About-the-Team. Sustitución de la carpeta de Drive y restablecimiento del enlace pendiente del TP. |
-
-La edición de las versiones 1.0–1.12 fue realizada por Alejandro Daniel Oroncoy Almeyda. Los demás nombres corresponden a los coautores registrados en los commits del avance, asociados en esta tabla por las secciones correspondientes. La revisión individual de esos integrantes continúa pendiente.
+| 1.40 | 09/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Delimitación del alcance a los dos segmentos de estudiantes; retiro de US32 y del acceso de tutores. Ajuste de requisitos, Impact Mapping, C4, privacidad y diseños UX. |
+| 1.41 | 09/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Organización del nivel de contenedores C4 en vistas complementarias de acceso, voz, consultas, eventos y datos para mejorar su lectura. |
+| 1.42 | 30/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Adaptación para TB2: SCM, Sprint 1, contratos, 133 pruebas verificadas con JDK 17, diagnóstico de despliegues, reutilización trazable del código 202601, protocolo de validación y guion About Product. Actualización de Student Outcome y seguimiento de las correcciones del parcial; actividades de campo y audiovisuales pendientes. |
+| 1.43 | 30/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Revisión centrada en el informe: checklist de pendientes documentales, autores/ramas/fechas y mensajes de los commits reutilizados, referencias bibliográficas de los cinco repositorios y seguimiento del PR de adaptación. |
+| 1.44 | 30/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Definición del Planning y Sprint Backlog sobre los ocho servicios: 8 PBIs, 24 tareas, estimación/capacidad propuesta, responsables, dependencias, aceptación, tablero y hoja de ruta de 37 US y 6 TS. Planning del 28/10, 20:00–21:00 por Google Meet, con cinco integrantes presentes, confirmado por el Team Leader; disponibilidad futura estimada. Explicación de entorno y tecnología. |
+| 1.45 | 30/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Confirmación de 20 h por integrante y responsables del Sprint 1 por el Team Leader; sincronización del plan, tablero y checklist de cierre. Calendario operativo aún propuesto. |
+| 1.46 | 30/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Consolidación documental TB2: concordancia de los diez contextos con ocho servicios, reproducción local, contratos y respuestas observadas, historial actual y trazabilidad de cierre en README.md. Videos, entrevistas y resultados de campo pendientes. |
+| 1.47 | 30/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Confirmación de GitHub Projects como herramienta admitida y elegida para Sprint 1 por el Team Leader. Cierre del pendiente de herramienta en informe, plan y checklist. |
+| 1.48 | 30/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Selección de Next.js/React como frontend por decisión del Team Leader; alineación de arquitectura, tecnologías, diagramas y Sprint 1. Retiro de la migración G-WEB y conservación del enunciado original como fuente. |
+| 1.49 | 30/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Calendario del Sprint 1 acordado del 26/10 al 08/11; división del trabajo en voz del equipo y responsabilidades futuras explícitas. Planning incluido dentro de las 20 h por integrante; entrevistas y videos conservados como diferidos. |
+| 1.50 | 30/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Desarrollo de 7.2.1.3: historial actual con rama/fechas/archivos, matriz de trazabilidad de ocho PBIs y 24 tareas, código base, artefactos y cierre requerido. Inventario de repositorios accesibles; implementación nueva, videos y entrevistas conservados como pendientes. |
+| 1.51 | 30/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Reparto operativo del trabajo por integrante: 24 tareas con acciones futuras, repositorios base, entregables, secciones del README, dependencias y revisión. Se conservan 74 h inmediatas y 6 h de validación diferida. |
 
 # Project Report Collaboration Insights
 
@@ -143,6 +155,10 @@ La siguiente tabla relaciona las contribuciones documentadas del TB1 con las res
 *Figura: Historial de commits consultado el 08/10/2026. La captura muestra cambios integrados en `main`, incluyendo el diseño táctico, UX y las correcciones del informe.*
 
 [Consultar el historial del TP en GitHub](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commits/main/?since=2026-10-07&until=2026-10-08).
+
+**TB2: adaptación y verificación de la base reutilizada.**
+
+La actualización del 30/10/2026 documenta SCM, código de origen, contratos, pruebas y estado de publicación. La adaptación actual se puede revisar en el [PR #7](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/pull/7), con su historial de commits y archivos modificados. Los commits importados de 202601 mantienen su autoría y fecha; no se suman como contribuciones nuevas de los integrantes actuales. La edición de esta adaptación se registra a nombre de Alejandro Daniel Oroncoy Almeyda. Las responsabilidades confirmadas por el Team Leader y las revisiones que todavía requieren evidencia individual se detallan en 7.2.1.8. El manifiesto y los resultados de verificación se encuentran en `assets/evidence/tb2/` y `assets/reused-202601/tb2/`.
 
 # Contenido
 
@@ -322,19 +338,20 @@ La siguiente tabla relaciona las contribuciones documentadas del TB1 con las res
     - [7.1.3. Source Code Style Guide & Conventions](#713-source-code-style-guide--conventions)
     - [7.1.4. Software Deployment Configuration](#714-software-deployment-configuration)
   - [7.2. Solution Implementation](#72-solution-implementation)
-    - [7.2.X. Sprint X](#72x-sprint-x)
-      - [7.2.X.1. Sprint Planning X](#72x1-sprint-planning-x)
-      - [7.2.X.2. Sprint Backlog X](#72x2-sprint-backlog-x)
-      - [7.2.X.3. Development Evidence for Sprint Review](#72x3-development-evidence-for-sprint-review)
-      - [7.2.X.4. Testing Suite Evidence for Sprint Review](#72x4-testing-suite-evidence-for-sprint-review)
-      - [7.2.X.5. Execution Evidence for Sprint Review](#72x5-execution-evidence-for-sprint-review)
-      - [7.2.X.6. Services Documentation Evidence for Sprint Review](#72x6-services-documentation-evidence-for-sprint-review)
-      - [7.2.X.7. Software Deployment Evidence for Sprint Review](#72x7-software-deployment-evidence-for-sprint-review)
-      - [7.2.X.8. Team Collaboration Insights during Sprint](#72x8-team-collaboration-insights-during-sprint)
+    - [7.2.1. Sprint 1](#721-sprint-1)
+      - [7.2.1.1. Sprint Planning 1](#7211-sprint-planning-1)
+      - [7.2.1.2. Sprint Backlog 1](#7212-sprint-backlog-1)
+      - [7.2.1.3. Development Evidence for Sprint Review](#7213-development-evidence-for-sprint-review)
+      - [7.2.1.4. Testing Suite Evidence for Sprint Review](#7214-testing-suite-evidence-for-sprint-review)
+      - [7.2.1.5. Execution Evidence for Sprint Review](#7215-execution-evidence-for-sprint-review)
+      - [7.2.1.6. Services Documentation Evidence for Sprint Review](#7216-services-documentation-evidence-for-sprint-review)
+      - [7.2.1.7. Software Deployment Evidence for Sprint Review](#7217-software-deployment-evidence-for-sprint-review)
+      - [7.2.1.8. Team Collaboration Insights during Sprint](#7218-team-collaboration-insights-during-sprint)
   - [7.3. Validation Interviews](#73-validation-interviews)
     - [7.3.1. Diseño de entrevistas](#731-diseño-de-entrevistas)
     - [7.3.2. Registro de entrevistas](#732-registro-de-entrevistas)
     - [7.3.3. Evaluaciones según heurísticas](#733-evaluaciones-según-heurísticas)
+  - [7.4. Video About-the-Product](#74-video-about-the-product)
 - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
   - [Conclusiones](#conclusiones)
   - [Recomendaciones](#recomendaciones)
@@ -346,7 +363,7 @@ La siguiente tabla relaciona las contribuciones documentadas del TB1 con las res
 
 # Student Outcome
 
-**Entregas registradas: TB1 y TP.**
+**Entregas registradas: TB1, TP y avance documentado de TB2.**
 
 El curso contribuye al cumplimiento del Student Outcome ABET:
 
@@ -358,8 +375,9 @@ El cuadro relaciona las acciones y evidencias de TB1 y TP con el ABET – EAC - 
 
 | Criterio específico | Acciones realizadas | Conclusiones |
 | --- | --- | --- |
-| Comunica oralmente ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería. | **TB1:**<br><br>**Eduardo Gael Rivera Sosa:** Expuse los fundamentos del Startup Profile y Solution Profile de Talki, el proceso Lean UX y los hallazgos de las entrevistas, sustentándolos con evidencia cuantitativa y cualitativa.<br><br>**Manuel Ignacio Tumi Oliden:** Expliqué el análisis de competidores, el needfinding, las personas, la matriz de tareas, los empathy maps y el lenguaje ubicuo para conectar los hallazgos con las necesidades de Talki.<br><br>**Alejandro Daniel Oroncoy Almeyda:** Sustenté el To-Be Scenario Mapping, las user stories, el Impact Mapping, el Product Backlog y el diseño ADD, relacionando requisitos, drivers, decisiones y escenarios de calidad.<br><br>**Werner Khalil Lang Nassi:** Mi sección del TB1 reúne el EventStorming, el descubrimiento de bounded contexts, los flujos de mensajes, los Bounded Context Canvases y el Context Mapping. El feedback docente señala que los canvases no se expusieron en el video; debo incorporarlos a la demostración corregida.<br><br>**Kevin Jorge Chi Cruzatt:** Mi sección del TB1 reúne los diagramas System Landscape, Context Level, Container Level y Deployment. El feedback docente señala que el Landscape no se expuso en el video; debo mostrarlo y explicar sus actores y sistemas externos en la demostración corregida.<br><br>**TP:**<br><br>**Material de apoyo para la comunicación del diseño.**<br><br>**Eduardo Gael Rivera Sosa:** Mi sección reúne las guías de estilo, la organización de la información y el diseño de la landing page (6.1–6.3). Las pantallas y sus explicaciones permiten comunicar las decisiones visuales y de navegación en relación con las necesidades de los estudiantes.<br><br>**Manuel Ignacio Tumi Oliden:** Mi sección reúne Speech Analysis, Scoring & Feedback y Progress & Adaptation (5.2, 5.3 y 5.5). Las capas, los componentes C4, las clases UML y los modelos de datos permiten explicar cómo el discurso se convierte en métricas, evaluación y seguimiento del progreso.<br><br>**Alejandro Daniel Oroncoy Almeyda:** Organicé la explicación de Live Coaching, Practice Session Management y AI Provider Gateway (5.1, 5.4 y 5.9), relacionando los requisitos, los bounded contexts y la arquitectura con el recorrido de práctica. Los diagramas y ejemplos permiten comunicar las responsabilidades y decisiones del diseño.<br><br>**Werner Khalil Lang Nassi:** Mi sección reúne Sharing & Retention, Gamification e Identity & Access (5.6–5.8). Los modelos y ejemplos permiten explicar las reglas de acceso, consentimiento, eliminación, rachas y logros, junto con su relación con las necesidades del estudiante.<br><br>**Kevin Jorge Chi Cruzatt:** Mi sección reúne Notifications y el diseño UX/UI y prototipado de las aplicaciones (5.10, 6.4 y 6.5). Los wireframes, mock-ups, user flows y el recorrido web/móvil permiten explicar las acciones del usuario y los estados de error y privacidad con apoyo de las historias de usuario. | **TB1:**<br><br>El informe TB1 reúne la investigación, los requisitos y el diseño estratégico. El feedback docente identificó omisiones en la presentación individual a cámara y en la demostración del Landscape y los Bounded Context Canvases. Estas observaciones requieren una evidencia audiovisual corregida; la documentación de los artefactos no acredita por sí sola su comunicación oral.<br><br>**TP:**<br><br>Los modelos UML, las pantallas y los ejemplos del recorrido de preparación, práctica y revisión del feedback ofrecen un apoyo visual para comunicar las decisiones de diseño. La explicación del propósito de cada artefacto y su relación con las necesidades de Talki facilita la comprensión para audiencias de negocio y de ingeniería. |
-| Comunica en forma escrita ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería. | **TB1:**<br><br>**Eduardo Gael Rivera Sosa:** Redacté las secciones 1.1 (Startup Profile), 1.2 (Solution Profile y Lean UX Process), 1.3 (Segmentos objetivo) y 2.2 (Entrevistas), documentando la problemática, el proceso Lean UX y los hallazgos de las entrevistas.<br><br>**Manuel Ignacio Tumi Oliden:** Redacté las secciones 2.1 a 2.4, documentando competidores, needfinding, personas, matriz de tareas, mapas de empatía, escenarios As-Is y lenguaje ubicuo.<br><br>**Alejandro Daniel Oroncoy Almeyda:** Redacté las secciones 3.1 a 4.1.5, documentando los escenarios To-Be, user stories, impacto, backlog, drivers arquitectónicos, decisiones de diseño y refinamientos de escenarios de calidad.<br><br>**Werner Khalil Lang Nassi:** Redacté las secciones 4.2 a 4.2.5, documentando EventStorming, candidate context discovery, domain message flows, bounded context canvases y Context Mapping.<br><br>**Kevin Jorge Chi Cruzatt:** Redacté la sección 4.3 (Software Architecture) e incorporé los diagramas System Landscape, Context Level, Container Level y Deployment para documentar la arquitectura de Talki.<br><br>**TP:**<br><br>**Eduardo Gael Rivera Sosa:** Quedé asignado a la revisión de las guías de estilo, la arquitectura de información y el diseño de la landing page ([6.1](#61-style-guidelines), [6.2](#62-information-architecture) y [6.3](#63-landing-page-ui-design)). Mi revisión debe comprobar que la identidad visual, la navegación y la presentación del contenido respondan a las necesidades de los estudiantes.<br><br>**Manuel Ignacio Tumi Oliden:** Quedé asignado a la revisión del diseño táctico de Speech Analysis, Scoring & Feedback y Progress & Adaptation ([5.2](#52-bounded-context-speech-analysis), [5.3](#53-bounded-context-scoring--feedback) y [5.5](#55-bounded-context-progress--adaptation)). Debo revisar las responsabilidades de las capas y los diagramas de componentes, clases y datos, relacionándolos con el análisis del discurso, la evaluación y el seguimiento del progreso.<br><br>**Alejandro Daniel Oroncoy Almeyda:** Documenté el diseño táctico de Live Coaching, Practice Session Management y AI Provider Gateway ([5.1](#51-bounded-context-live-coaching), [5.4](#54-bounded-context-practice-session-management) y [5.9](#59-bounded-context-ai-provider-gateway)), explicando sus capas y relacionando los modelos con los requisitos de Talki. Consolidé los capítulos V y VI e incorporé las correcciones de tareas, criterios Gherkin, Technical Stories, backlog y vistas C4. En la revisión del TP completé los modelos de consentimiento, estado de análisis, configuración, planes y notificaciones; precisé contratos y restricciones de datos y relacioné los objetivos del usuario con wireflows web y móvil. Separé componentes C4 y clases UML para facilitar su explicación a una audiencia de ingeniería y revisé las afirmaciones de entrevistas para distinguir evidencia e hipótesis.<br><br>**Werner Khalil Lang Nassi:** Quedé asignado a la revisión del diseño táctico de Sharing & Retention, Gamification e Identity & Access ([5.6](#56-bounded-context-sharing--retention), [5.7](#57-bounded-context-gamification) y [5.8](#58-bounded-context-identity--access)). Debo comprobar que las reglas de acceso, consentimiento, eliminación, rachas y logros se expresen de forma consistente en las capas y los diagramas de componentes, clases y persistencia.<br><br>**Kevin Jorge Chi Cruzatt:** Quedé asignado a la revisión de Notifications, Applications UX/UI Design y Applications Prototyping ([5.10](#510-bounded-context-notifications), [6.4](#64-applications-uxui-design) y [6.5](#65-applications-prototyping)). Debo revisar la explicación de las notificaciones y la relación entre wireframes, mock-ups, wireflows, user flows y prototipado web/móvil, incluyendo los estados de error y privacidad. | **TB1:**<br><br>El informe consolidó los aportes de los cinco integrantes en una secuencia trazable: contexto y evidencia de investigación, especificación de requisitos y diseño estratégico. La documentación ofrece una referencia clara para el equipo y el docente, diferenciando los hallazgos de producto de las decisiones técnicas que orientan Talki.<br><br>**TP:**<br><br>La documentación del TP conecta los requisitos y el diseño estratégico con las capas, modelos UML, datos y recorridos de usuario de Talki. El reparto identifica las secciones que corresponden a cada integrante y ofrece un material concreto para revisar y comunicar el diseño. Las tablas, imágenes y referencias facilitan la comprensión del proyecto para audiencias de negocio y de ingeniería. |
+| Comunica oralmente ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería. | **TB1:**<br><br>**Eduardo Gael Rivera Sosa:** Expuse los fundamentos del Startup Profile y Solution Profile de Talki, el proceso Lean UX y los hallazgos de las entrevistas, sustentándolos con evidencia cuantitativa y cualitativa.<br><br>**Manuel Ignacio Tumi Oliden:** Expliqué el análisis de competidores, el needfinding, las personas, la matriz de tareas, los empathy maps y el lenguaje ubicuo para conectar los hallazgos con las necesidades de Talki.<br><br>**Alejandro Daniel Oroncoy Almeyda:** Sustenté el To-Be Scenario Mapping, las user stories, el Impact Mapping, el Product Backlog y el diseño ADD, relacionando requisitos, drivers, decisiones y escenarios de calidad.<br><br>**Werner Khalil Lang Nassi:** Mi sección del TB1 reúne el EventStorming, el descubrimiento de bounded contexts, los flujos de mensajes, los Bounded Context Canvases y el Context Mapping. El feedback docente señala que los canvases no se expusieron en el video; debo incorporarlos a la demostración corregida.<br><br>**Kevin Jorge Chi Cruzatt:** Mi sección del TB1 reúne los diagramas System Landscape, Context Level, Container Level y Deployment. El feedback docente señala que el Landscape no se expuso en el video; debo mostrarlo y explicar sus actores y sistemas externos en la demostración corregida.<br><br>**TP:**<br><br>**Material de apoyo para la comunicación del diseño.**<br><br>**Eduardo Gael Rivera Sosa:** Mi sección reúne las guías de estilo, la organización de la información y el diseño de la landing page (6.1–6.3). Las pantallas y sus explicaciones permiten comunicar las decisiones visuales y de navegación en relación con las necesidades de los estudiantes.<br><br>**Manuel Ignacio Tumi Oliden:** Mi sección reúne Speech Analysis, Scoring & Feedback y Progress & Adaptation (5.2, 5.3 y 5.5). Las capas, los componentes C4, las clases UML y los modelos de datos permiten explicar cómo el discurso se convierte en métricas, evaluación y seguimiento del progreso.<br><br>**Alejandro Daniel Oroncoy Almeyda:** Organicé la explicación de Live Coaching, Practice Session Management y AI Provider Gateway (5.1, 5.4 y 5.9), relacionando los requisitos, los bounded contexts y la arquitectura con el recorrido de práctica. Los diagramas y ejemplos permiten comunicar las responsabilidades y decisiones del diseño.<br><br>**Werner Khalil Lang Nassi:** Mi sección reúne Sharing & Retention, Gamification e Identity & Access (5.6–5.8). Los modelos y ejemplos permiten explicar las reglas de acceso, consentimiento, eliminación, rachas y logros, junto con su relación con las necesidades del estudiante.<br><br>**Kevin Jorge Chi Cruzatt:** Mi sección reúne Notifications y el diseño UX/UI y prototipado de las aplicaciones (5.10, 6.4 y 6.5). Los wireframes, mock-ups, user flows y el recorrido web/móvil permiten explicar las acciones del usuario y los estados de error y privacidad con apoyo de las historias de usuario.<br><br>**TB2:**<br><br>**Alejandro Daniel Oroncoy Almeyda:** Preparé el recorrido de demostración técnica y su relación con los contratos y pruebas; la exposición grabada de TB2 está pendiente.<br><br>**Eduardo Gael Rivera Sosa:** Revisión y explicación de beneficios y validación propuestas; intervención oral de TB2 por realizar y registrar.<br><br>**Manuel Ignacio Tumi Oliden:** Demostración de análisis, scoring, progreso y pruebas propuesta; intervención oral por realizar y registrar.<br><br>**Werner Khalil Lang Nassi:** Demostración de identidad, privacidad y gamificación propuesta; intervención oral por realizar y registrar.<br><br>**Kevin Jorge Chi Cruzatt:** Demostración de UX, prototipo y despliegue propuesta; intervención oral por realizar y registrar. | **TB1:**<br><br>El informe TB1 reúne la investigación, los requisitos y el diseño estratégico. El feedback docente identificó omisiones en la presentación individual a cámara y en la demostración del Landscape y los Bounded Context Canvases. Estas observaciones requieren una evidencia audiovisual corregida; la documentación de los artefactos no acredita por sí sola su comunicación oral.<br><br>**TP:**<br><br>Los modelos UML, las pantallas y los ejemplos del recorrido de preparación, práctica y revisión del feedback ofrecen un apoyo visual para comunicar las decisiones de diseño. La explicación del propósito de cada artefacto y su relación con las necesidades de Talki facilita la comprensión para audiencias de negocio y de ingeniería.<br><br>**TB2:** La presentación incorpora la lámina de los cinco integrantes y el guion organiza la demostración directa en herramientas. La comunicación oral del nuevo hito se acreditará con la exposición real; una asignación no equivale a intervención realizada. |
+| Comunica en forma escrita ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerárquicos, en el marco del desarrollo de un proyecto en ingeniería. | **TB1:**<br><br>**Eduardo Gael Rivera Sosa:** Redacté las secciones 1.1 (Startup Profile), 1.2 (Solution Profile y Lean UX Process), 1.3 (Segmentos objetivo) y 2.2 (Entrevistas), documentando la problemática, el proceso Lean UX y los hallazgos de las entrevistas.<br><br>**Manuel Ignacio Tumi Oliden:** Redacté las secciones 2.1 a 2.4, documentando competidores, needfinding, personas, matriz de tareas, mapas de empatía, escenarios As-Is y lenguaje ubicuo.<br><br>**Alejandro Daniel Oroncoy Almeyda:** Redacté las secciones 3.1 a 4.1.5, documentando los escenarios To-Be, user stories, impacto, backlog, drivers arquitectónicos, decisiones de diseño y refinamientos de escenarios de calidad.<br><br>**Werner Khalil Lang Nassi:** Redacté las secciones 4.2 a 4.2.5, documentando EventStorming, candidate context discovery, domain message flows, bounded context canvases y Context Mapping.<br><br>**Kevin Jorge Chi Cruzatt:** Redacté la sección 4.3 (Software Architecture) e incorporé los diagramas System Landscape, Context Level, Container Level y Deployment para documentar la arquitectura de Talki.<br><br>**TP:**<br><br>**Eduardo Gael Rivera Sosa:** Quedé asignado a la revisión de las guías de estilo, la arquitectura de información y el diseño de la landing page ([6.1](#61-style-guidelines), [6.2](#62-information-architecture) y [6.3](#63-landing-page-ui-design)). Mi revisión debe comprobar que la identidad visual, la navegación y la presentación del contenido respondan a las necesidades de los estudiantes.<br><br>**Manuel Ignacio Tumi Oliden:** Quedé asignado a la revisión del diseño táctico de Speech Analysis, Scoring & Feedback y Progress & Adaptation ([5.2](#52-bounded-context-speech-analysis), [5.3](#53-bounded-context-scoring--feedback) y [5.5](#55-bounded-context-progress--adaptation)). Debo revisar las responsabilidades de las capas y los diagramas de componentes, clases y datos, relacionándolos con el análisis del discurso, la evaluación y el seguimiento del progreso.<br><br>**Alejandro Daniel Oroncoy Almeyda:** Documenté el diseño táctico de Live Coaching, Practice Session Management y AI Provider Gateway ([5.1](#51-bounded-context-live-coaching), [5.4](#54-bounded-context-practice-session-management) y [5.9](#59-bounded-context-ai-provider-gateway)), explicando sus capas y relacionando los modelos con los requisitos de Talki. Consolidé los capítulos V y VI e incorporé las correcciones de tareas, criterios Gherkin, Technical Stories, backlog y vistas C4. En la revisión del TP completé los modelos de consentimiento, estado de análisis, configuración, planes y notificaciones; precisé contratos y restricciones de datos y relacioné los objetivos del usuario con wireflows web y móvil. Separé componentes C4 y clases UML para facilitar su explicación a una audiencia de ingeniería y revisé las afirmaciones de entrevistas para distinguir evidencia e hipótesis.<br><br>**Werner Khalil Lang Nassi:** Quedé asignado a la revisión del diseño táctico de Sharing & Retention, Gamification e Identity & Access ([5.6](#56-bounded-context-sharing--retention), [5.7](#57-bounded-context-gamification) y [5.8](#58-bounded-context-identity--access)). Debo comprobar que las reglas de acceso, consentimiento, eliminación, rachas y logros se expresen de forma consistente en las capas y los diagramas de componentes, clases y persistencia.<br><br>**Kevin Jorge Chi Cruzatt:** Quedé asignado a la revisión de Notifications, Applications UX/UI Design y Applications Prototyping ([5.10](#510-bounded-context-notifications), [6.4](#64-applications-uxui-design) y [6.5](#65-applications-prototyping)). Debo revisar la explicación de las notificaciones y la relación entre wireframes, mock-ups, wireflows, user flows y prototipado web/móvil, incluyendo los estados de error y privacidad.<br><br>**TB2:**<br><br>**Alejandro Daniel Oroncoy Almeyda:** Integré la adaptación documental de 7.1–7.4, la matriz de fuentes, el manifiesto de reutilización, los resultados verificables y el seguimiento de las correcciones del parcial. Distinguí código 202601, pruebas actuales, diseño y actividades pendientes para comunicar el estado con precisión. Incorporé la correspondencia de los diez contextos con los ocho servicios, el procedimiento de reproducción, los commits actuales y las respuestas HTTP observadas; reuní el contenido y las evidencias de la revisión en el README.md.<br><br>**Eduardo Gael Rivera Sosa:** Revisión propuesta de landing, beneficios y protocolo de validación; aporte propio y conformidad por registrar.<br><br>**Manuel Ignacio Tumi Oliden:** Revisión propuesta de análisis, scoring, progreso y pruebas; aporte propio y conformidad por registrar.<br><br>**Werner Khalil Lang Nassi:** Revisión propuesta de identidad, gamificación, privacidad y retención; aporte propio y conformidad por registrar.<br><br>**Kevin Jorge Chi Cruzatt:** Revisión propuesta de UX, prototipo, despliegue y navegación; aporte propio y conformidad por registrar. | **TB1:**<br><br>El informe consolidó los aportes de los cinco integrantes en una secuencia trazable: contexto y evidencia de investigación, especificación de requisitos y diseño estratégico. La documentación ofrece una referencia clara para el equipo y el docente, diferenciando los hallazgos de producto de las decisiones técnicas que orientan Talki.<br><br>**TP:**<br><br>La documentación del TP conecta los requisitos y el diseño estratégico con las capas, modelos UML, datos y recorridos de usuario de Talki. El reparto identifica las secciones que corresponden a cada integrante y ofrece un material concreto para revisar y comunicar el diseño. Las tablas, imágenes y referencias facilitan la comprensión del proyecto para audiencias de negocio y de ingeniería.<br><br>**TB2:** La documentación relaciona contratos, procedencia, resultados y límites para audiencias de negocio e ingeniería. Mantiene la autoría de la base reutilizada y no comunica disponibilidad ni validación no demostradas. Las revisiones individuales propuestas requieren evidencia antes del cierre. |
+
 
 # Capítulo I: Introducción
 
@@ -432,7 +450,7 @@ Estudiantes universitarios residentes en Perú, organizados por etapa académica
 
 #### WHY (Por qué)
 
-Los participantes describen preparación con guiones, diapositivas, ensayos personales y opinión de compañeros. La necesidad identificada es complementar esos métodos con práctica autónoma y observaciones específicas sobre el discurso, sin afirmar que todos carezcan de apoyo o que la IA sustituya al tutor.
+Los participantes describen preparación con guiones, diapositivas, ensayos personales y opinión de compañeros. La necesidad identificada es complementar esos métodos con práctica autónoma y observaciones específicas sobre el discurso, sin afirmar que todos carezcan de apoyo ni que la IA sustituya la orientación humana.
 
 #### HOW (Cómo)
 
@@ -501,7 +519,7 @@ Cada hipótesis relaciona un resultado medible, un segmento, un beneficio y una 
 
 4. **H4 (Engagement).** Creemos que el dashboard de US21 aumentará en 40 % la frecuencia de práctica de Rodrigo frente a sus cuatro semanas previas. El indicador es (sesiones posteriores − sesiones previas) / sesiones previas; solo se calculará con una línea base positiva y períodos equivalentes. No equivale a un número fijo de sesiones al mes.
 
-5. **H5 (Adopción).** Creemos que la recomendación entre compañeros puede reducir el CAC por debajo de S/ 10 si Valeria puede compartir voluntariamente un reporte mediante US32. La hipótesis se evaluará después del piloto, con gastos y altas atribuibles; no presupone una comunidad ni retos entre amigos fuera del backlog.
+5. **H5 (Adopción).** Creemos que la recomendación voluntaria entre compañeros puede reducir el CAC por debajo de S/ 10 si Valeria percibe utilidad en la práctica y recomienda Talki. No requiere acceso de terceros a sus reportes. La hipótesis se evaluará después del piloto, con gastos y altas atribuibles; no presupone una comunidad ni retos entre amigos fuera del backlog.
 
 6. **H6 (Retención).** Creemos que un plan basado en evidencia recurrente (US36) favorecerá la continuidad de ambos segmentos. El churn mensual objetivo inferior a 15 % se investigará después de ofrecer una suscripción y definir la cohorte de pago; no se confunde con la práctica semanal del piloto.
 
@@ -585,7 +603,7 @@ El análisis compara la propuesta de Talki con la información publicada por [EL
 
 ### 2.1.2. Estrategias y tácticas frente a competidores
 
-La diferenciación propuesta consiste en adaptar la práctica a exposiciones y sustentaciones universitarias, ofrecer explicaciones comprensibles del reporte y facilitar una revisión opcional con tutor. ELSA enfatiza el aprendizaje de inglés; Speeko y Orai también ofrecen práctica y feedback con IA. Por ello, usar IA o emitir avisos en vivo no basta para afirmar una ventaja.
+La diferenciación propuesta consiste en adaptar la práctica a exposiciones y sustentaciones universitarias, ofrecer explicaciones comprensibles del reporte y facilitar la revisión autónoma del desempeño. ELSA enfatiza el aprendizaje de inglés; Speeko y Orai también ofrecen práctica y feedback con IA. Por ello, usar IA o emitir avisos en vivo no basta para afirmar una ventaja.
 
 El piloto deberá observar si las ayudas contextualizadas, la evidencia de cada recomendación y el control de datos aportan valor para ambos segmentos. El precio y las alianzas universitarias se investigarán por separado. No se afirma exclusividad en español, superioridad técnica ni ahorro de precio sin una comparación verificable.
 
@@ -785,7 +803,7 @@ La matriz siguiente resume lo relatado en las fichas de 2.2.2 y en el análisis 
 | Usa herramientas digitales de preparación o práctica. | 1/3 (33,3 %): Isabel. | 2/3 (66,7 %): Gian y Jorge. | Facilitar inicio guiado y ofrecer escenarios de mayor detalle. Las grabadoras de Jennifer se registran aparte para no confundir aplicaciones especializadas con captura. |
 | Usa grabaciones para prepararse. | 0/3 (0 %): no se documenta un hábito actual; los tres muestran disposición. | 2/3 (66,7 %): Gian y Jennifer; en Jorge no consta. | Diferenciar disposición declarada de comportamiento observado. Ofrecer audio y consentimiento claros. |
 | Está dispuesto a probar grabación o ya la utiliza. | 3/3 (100 %): Belén, Isabel y Juan Alejandro. | 2/3 (66,7 %): Gian y Jennifer; en Jorge no consta. | Cinco casos sustentan la hipótesis de práctica autónoma; no se atribuye el sexto por practicar frente al espejo. |
-| Expresa interés en combinar IA y tutor. | 1/3 (33,3 %): Juan Alejandro. | 2/3 (66,7 %): Gian y Jennifer. | Compartición opcional y controlada; Jorge prioriza autonomía, sin rechazar orientación docente. |
+| Expresa interés en combinar IA y tutor. | 1/3 (33,3 %): Juan Alejandro. | 2/3 (66,7 %): Gian y Jennifer. | Registrar la preferencia por orientación humana sin incorporarla como actor ni función del alcance actual; Jorge prioriza autonomía. |
 | Declara un precio numérico de referencia. | 2/3 (66,7 %): Belén, USD 2–5; Isabel, hasta USD 5. | 0/3 (0 %): no consta monto en las fichas. | El precio debe investigarse; no concluir que el segmento avanzado pagará más. |
 
 **Diferencias relevantes para el diseño**
@@ -796,7 +814,7 @@ En el primer segmento, el ensayo guiado debe ayudar a ordenar el discurso y revi
 
 1. Las entrevistas sustentan necesidades de práctica y una aceptación inicial del feedback de IA; no validan el funcionamiento de Talki ni su eficacia para mejorar la comunicación.
 2. La percepción de honestidad expresada por Belén es un hallazgo individual. No demuestra que un modelo de IA sea imparcial; el reporte debe presentar evidencia, limitaciones y dimensiones no evaluables.
-3. Compartir con un tutor debe ser opcional, temporal y limitado al reporte autorizado. La preferencia de autonomía de Jorge exige conservar un recorrido privado completo.
+3. La orientación humana mencionada en las entrevistas se conserva como hallazgo de investigación. El alcance actual de Talki comprende únicamente a los estudiantes de los dos segmentos: práctica autónoma, reportes propios y exportación personal. No incluye cuentas ni acceso de tutores.
 4. Los montos de Belén e Isabel son referencias exploratorias en USD. El rango propuesto de S/ 15–25 se mantiene como hipótesis de negocio, pendiente de evaluar con precios explícitos y una muestra más amplia. No se usa una persona de diseño como evidencia de disposición a pagar.
 5. Para validar la propuesta se observarán tareas de preparación, comprensión del feedback y control de acceso en ambos segmentos. No se atribuyen resultados de esas pruebas antes de realizarlas.
 
@@ -816,7 +834,7 @@ Estudiante universitaria de 19 años, residente en Lima, Perú, cursando los cic
 
 **Persona 2: Rodrigo Sánchez, el Estudiante Avanzado con Miras Profesionales**
 
-Estudiante universitario de 23 años, residente en Lima, Perú, cursando los ciclos 6 al 10 de Ingeniería de Software con vida laboral activa. Rodrigo encarna a los estudiantes avanzados que, habiendo ganado experiencia académica y laboral, reconocen que la comunicación oral es un factor decisivo en su desarrollo profesional. Es analítico, proactivo y autodidacta; domina herramientas digitales como Speak y NotebookLM, pero ninguna cubre el feedback de oratoria que necesita (manejo de silencios, muletillas, claridad de ideas). Una mala entrevista en inglés con una empresa española le dejó claro que la comunicación oral es tan importante como el conocimiento técnico. Busca una solución específica que le brinde análisis detallado de su oratoria y le permita prepararse de forma autónoma para sustentaciones importantes y entrevistas de trabajo reales, con la opción de complementar la práctica autónoma con orientación periódica de un tutor.
+Estudiante universitario de 23 años, residente en Lima, Perú, cursando los ciclos 6 al 10 de Ingeniería de Software con vida laboral activa. Rodrigo encarna a los estudiantes avanzados que, habiendo ganado experiencia académica y laboral, reconocen que la comunicación oral es un factor decisivo en su desarrollo profesional. Es analítico, proactivo y autodidacta; domina herramientas digitales como Speak y NotebookLM, pero ninguna cubre el feedback de oratoria que necesita (manejo de silencios, muletillas, claridad de ideas). Una mala entrevista en inglés con una empresa española le dejó claro que la comunicación oral es tan importante como el conocimiento técnico. Busca una solución específica que le brinde análisis detallado de su oratoria y le permita prepararse de forma autónoma para sustentaciones importantes y entrevistas de trabajo reales, sin depender de la intervención de otra persona dentro de Talki. La orientación humana puede formar parte de su preparación fuera de la aplicación.
 
 *Idea que resume el arquetipo, sin atribuir una cita literal: preparar argumentos ante escenarios profesionales más exigentes.*
 
@@ -925,7 +943,7 @@ Rodrigo se prepara para una entrevista de prácticas o una sustentación ante ju
 | Simulación | Responde preguntas y repreguntas. | Mantiene una conversación por voz, adapta dificultad y registra métricas. | Presión controlada, semejante al escenario real. | IA conversacional con límites de tiempo y turnos claros. |
 | Evaluación | Consulta resultados por competencia. | Explica claridad, manejo de silencios, muletillas, vocabulario, estructura y confianza. | Comprensión precisa de fortalezas y brechas. | Evidencia trazable a fragmentos del discurso. |
 | Plan de mejora | Selecciona prioridades para la siguiente práctica. | Genera ejercicios y recomendaciones según errores recurrentes. | Sensación de progreso dirigido. | Ruta adaptativa basada en historial, no en consejos genéricos. |
-| Colaboración opcional | Decide compartir resultados. | Genera un acceso temporal y revocable al reporte. | Control sobre quién accede a su desempeño. | Privacidad por defecto y consentimiento explícito. |
+| Control del reporte | Decide conservar una copia de sus resultados. | Exporta su propio reporte con información autorizada. | Revisión personal sin conexión. | Acceso exclusivo del propietario y consentimiento explícito. |
 
 Los dos escenarios convergen en el flujo **configurar → verificar → practicar → analizar → recomendar → repetir**. La diferencia está en la profundidad: Valeria necesita orientación simple y confianza progresiva; Rodrigo requiere simulación contextual, repreguntas, evidencia detallada y seguimiento profesional.
 
@@ -947,8 +965,8 @@ Los requisitos convierten las necesidades de II y los escenarios de 3.1 en capac
 | RF-08 | Consultar y reintentar análisis recuperable sin duplicar resultados. | US37; Analysis y Scoring. |
 | RF-09 | Consultar historial propio, evolución y comparación de evaluaciones compatibles. | US20–US22; Sessions y Progress (5.5). |
 | RF-10 | Consultar planes de práctica, rachas y logros basados en prácticas válidas. | US35, US36; Progress y Gamification (5.7). |
-| RF-11 | Exportar, compartir temporalmente, revocar consentimiento y eliminar datos. | US27, US32, US33; Sharing (5.6), Identity y contextos responsables de datos. |
-| RF-12 | Recibir avisos de cuenta, evaluación y privacidad, y controlar preferencias. | Soporte transversal a US05, US07, US15, US32, US33, US35; Notifications (5.10). |
+| RF-11 | Exportar reportes propios, revocar consentimiento y eliminar datos. | US27, US33; Sharing (5.6), Identity y contextos responsables de datos. |
+| RF-12 | Recibir avisos de cuenta, evaluación y privacidad, y controlar preferencias. | Soporte transversal a US05, US07, US15, US33, US35; Notifications (5.10). |
 
 **Requisitos no funcionales**
 
@@ -956,7 +974,7 @@ Los requisitos convierten las necesidades de II y los escenarios de 3.1 en capac
 | --- | --- | --- |
 | RNF-01 | Interacción en vivo sin bloquear la captura. | QAS-PER-01: objetivo p95 ≤ 2 s y error < 1 %, bajo concurrencia del piloto por definir. |
 | RNF-02 | Reporte posterior oportuno y sin duplicados. | QAS-PER-02, QAS-REL-01: 95 % ≤ 60 s para prácticas de hasta 20 min; reentregas no duplican resultados ni progreso. |
-| RNF-03 | Acceso limitado al propietario o al permiso temporal vigente. | QAS-SEC-01: rechazar toda solicitud no autorizada; nunca confiar en un userId aportado como autorización. |
+| RNF-03 | Acceso limitado al propietario autenticado. | QAS-SEC-01: rechazar toda solicitud no autorizada; nunca confiar en un userId aportado como autorización. |
 | RNF-04 | Control del procesamiento y eliminación de datos privados. | C-02, C-08, QAS-PRI-01: consentimiento vigente, audio crudo sin persistencia por defecto, revocación inmediata y purga con estado verificable. |
 | RNF-05 | Recuperación y diagnóstico ante fallos. | QAS-AVA-01, QAS-OBS-01: detectar interrupción ≤ 10 s, conservar estado confirmado y correlacionar etapa fallida ≤ 15 min, sin contenido privado en logs. |
 | RNF-06 | Incorporar modos y proveedores mediante contratos localizados. | QAS-MOD-01, QAS-INT-01: pruebas contractuales y del flujo central; tiempos iniciales de 2 y 5 persona-días por validar. |
@@ -966,6 +984,8 @@ Los requisitos convierten las necesidades de II y los escenarios de 3.1 en capac
 Los umbrales son objetivos iniciales que se medirán durante implementación y validación. Las restricciones tecnológicas y del equipo se conservan en ADD; no se presentan como funcionalidades de usuario.
 
 ## 3.3. User Stories
+
+El alcance contempla dos actores humanos: estudiantes de ciclos 1–5 y de ciclos 6–10. Se retira US32, que proponía acceso de terceros, y se conservan los demás identificadores para mantener la trazabilidad. La exportación de US27 es una descarga personal; no otorga acceso a Talki a otra persona.
 
 Para conservar la trazabilidad con el proyecto desarrollado en el ciclo anterior, se mantienen los identificadores **US01–US28** y se actualiza su redacción cuando corresponde. Las historias **US29–US38** amplían el backlog con privacidad, material contextual, simulación, continuidad, procesamiento asíncrono, aprendizaje adaptativo y coaching en vivo, capacidades necesarias para la versión actual de Talki.
 
@@ -1012,12 +1032,11 @@ Los criterios de aceptación se especifican como escenarios **Dado–Cuando–En
 | US20 | Consultar historial | Como estudiante, quiero revisar mis sesiones anteriores para recuperar reportes. | Solo se muestran recursos del propietario; se ordenan y filtran; cada elemento abre el reporte correcto. |
 | US21 | Ver progreso | Como estudiante, quiero visualizar tendencias para reconocer evolución por habilidad. | Las métricas indican versión y periodo; no se mezclan datos incompatibles; se explican cambios relevantes. |
 | US22 | Comparar sesiones | Como estudiante, quiero comparar dos prácticas para identificar mejoras y retrocesos. | Solo se comparan sesiones compatibles; se muestran variaciones y evidencia; un cambio pequeño no se sobredimensiona. |
-| US35 | Mantener rachas y logros | Como estudiante, quiero recibir refuerzos positivos por práctica consistente y hitos reales. | Las reglas son transparentes; sesiones inválidas no cuentan; cada logro se concede una sola vez y compartirlo es opcional. |
+| US35 | Mantener rachas y logros | Como estudiante, quiero recibir refuerzos positivos por práctica consistente y hitos reales. | Las reglas son transparentes; sesiones inválidas no cuentan; cada logro se concede una sola vez y su visualización pertenece al estudiante. |
 | US36 | Recibir un plan adaptativo | Como estudiante, quiero ejercicios basados en errores recurrentes para enfocar mejor mi tiempo. | El plan utiliza historial suficiente; explica la razón de cada recomendación; se recalcula con nueva evidencia. |
-| EP07 | Reportes, colaboración y privacidad | Como estudiante, quiero exportar o compartir resultados únicamente bajo mi control. | No corresponde. |
-| US27 | Exportar transcripción y feedback | Como estudiante, quiero exportar un reporte para revisarlo sin conexión o presentarlo a un tutor. | El archivo identifica fecha y versiones; respeta la privacidad; no incluye material no autorizado. |
-| US32 | Compartir temporalmente un reporte | Como estudiante, quiero dar acceso limitado a un tutor para recibir orientación adicional. | El enlace tiene expiración y revocación; no expone otras sesiones; el tutor no puede modificar datos. |
-| US33 | Revocar consentimiento y eliminar datos | Como estudiante, quiero retirar permisos o eliminar sesiones para conservar control de mi información. | La revocación impide nuevos accesos; el borrado cambia el estado inmediatamente y activa la purga; queda evidencia de auditoría. |
+| EP07 | Reportes y privacidad | Como estudiante, quiero exportar mis resultados y controlar la conservación de mis datos. | No corresponde. |
+| US27 | Exportar transcripción y feedback | Como estudiante, quiero exportar mi transcripción y feedback para revisar mis resultados sin conexión. | El archivo identifica fecha y versiones; respeta la privacidad; no incluye material no autorizado. |
+| US33 | Revocar consentimiento y eliminar datos | Como estudiante, quiero retirar permisos o eliminar sesiones para conservar control de mi información. | El retiro de consentimiento impide nuevo procesamiento; el borrado bloquea consulta y exportación y activa la purga; queda evidencia de auditoría. |
 
 Las **Technical Stories** definen servicios y contratos que consumen clientes u otros servicios. Su actor es Developer y sus criterios especifican peticiones, respuestas o confirmaciones de mensajes. Las restricciones de privacidad, plataforma, presupuesto y versionado permanecen identificadas como C-02 a C-09 en ADD.
 
@@ -1030,7 +1049,7 @@ Las rutas existentes se toman de las interfaces descritas en el capítulo V. Los
 | TS03 | Pipeline de análisis idempotente | Como Developer, quiero procesar eventos de cierre y publicar resultados versionados para obtener feedback sin duplicar evaluaciones. | RabbitMQ: session.live.finalized, fillers.analyzed y scoring.completed; ACK, reintentos y cola de fallos. |
 | TS04 | Consulta de reportes versionados | Como Developer, quiero un contrato de consulta de feedback para que el cliente distinga resultados completos, parciales y pendientes. | `GET /v1/reports/{sessionId}`; 200 con versiones/métricas/limitaciones, 202 con analysisState y 404 para recursos no disponibles al solicitante. |
 | TS05 | API de progreso | Como Developer, quiero consultar el resumen de progreso para que el cliente presente evolución a partir de sesiones válidas. | GET /v1/progress/dashboard; GET /v1/progress/comparisons?left={id}&right={id}; contratos de 5.5. |
-| TS06 | API de compartición y eliminación | Como Developer, quiero contratos de permisos temporales y purga para controlar acceso y eliminación entre contextos. | APIs propuestas de Sharing & Retention en 5.6; eventos de revocación, purga y confirmación. |
+| TS06 | API de exportación y eliminación | Como Developer, quiero contratos de exportación autorizada y purga para controlar la descarga personal y la eliminación entre contextos. | APIs propuestas de Sharing & Retention en 5.6; eventos de exportación, purga y confirmación. |
 
 | Historia | Escenario | Given | When | Then |
 | --- | --- | --- | --- | --- |
@@ -1045,7 +1064,7 @@ Las rutas existentes se toman de las interfaces descritas en el capítulo V. Los
 | TS05 | Principal | el solicitante está autorizado y tiene sesiones válidas | envía GET /v1/progress/dashboard con modo y versiones compatibles | responde 200 con totales y puntuaciones comparables; la identidad proviene del acceso autenticado. |
 | TS05 | Alternativo / error | se solicita progreso de un usuario ajeno sin permiso | se envía la consulta | responde 403 sin exponer su historial. |
 | TS06 | Principal | el propietario solicita eliminación | se recibe la petición autorizada de borrado | confirma el bloqueo en Sessions y responde 202 con requestId y ACCESS_BLOCKED; completa la purga al recibir las confirmaciones esperadas. |
-| TS06 | Alternativo / error | un enlace fue revocado o venció | se solicita el reporte compartido | responde 403 sin entregar contenido ni habilitar acceso a otras sesiones. |
+| TS06 | Alternativo / error | un reporte pertenece a otro usuario o su sesión fue eliminada | se solicita exportarlo | responde 403 para acceso ajeno o 410 para recurso eliminado, sin entregar contenido. |
 
 ### Escenarios de aceptación
 
@@ -1146,9 +1165,6 @@ Cada historia tiene un escenario principal y dos escenarios alternativos o de er
 | US31 | Principal | el estudiante inicia una simulación | responde preguntas | la IA respeta turnos, tiempo y material autorizado. |
 | US31 | Alternativo | el estudiante decide terminar la simulación | confirma el cierre | la IA deja de preguntar y se conserva la evidencia autorizada. |
 | US31 | Excepción | la IA pierde conexión o recibe material insuficiente | solicita una nueva pregunta | se informa la limitación sin inventar datos del CV o proyecto. |
-| US32 | Principal | el propietario comparte un reporte | crea o revoca enlace | el acceso es temporal, limitado y revocable. |
-| US32 | Alternativo | el enlace compartido venció | el tutor abre el reporte | se deniega el acceso y no se muestran otras sesiones. |
-| US32 | Excepción | el propietario revoca un enlace activo | el tutor vuelve a solicitar el recurso | la autorización se rechaza de inmediato. |
 | US33 | Principal | el propietario solicita retirar consentimiento o borrar una sesión | confirma la acción elegida | el retiro bloquea nuevo procesamiento; el borrado bloquea acceso al recurso y activa purga auditable. Retirar consentimiento no elimina por sí solo el historial. |
 | US33 | Alternativo | el propietario retira consentimiento | se intenta iniciar nuevo procesamiento | la solicitud se bloquea aunque una purga previa siga pendiente. |
 | US33 | Excepción | un contexto no confirma la purga física | consulta el estado de eliminación | el acceso sigue bloqueado y el estado figura pendiente. |
@@ -1184,51 +1200,43 @@ El Impact Map conecta los objetivos de negocio con los actores, los cambios de c
 | BG-02 | Validar que el feedback permite una mejora accionable. | Al cierre de 4 semanas, al menos 60 % de quienes completan 2 sesiones marca una recomendación como aplicada o registra una mejora en la métrica asociada. |
 | BG-03 | Reducir la fricción de la primera práctica. | Durante la prueba de usabilidad del piloto, al menos 90 % de participantes inicia una sesión válida en 3 minutos o menos, sin ayuda. |
 | BG-04 | Validar utilidad para escenarios avanzados. | Al cierre del piloto, al menos 70 % de estudiantes de ciclos 6–10 que prueban una simulación contextualizada la califica útil para entrevista o sustentación. |
-| BG-05 | Sostener confianza en el tratamiento de datos. | Durante el piloto, 100 % de sesiones registra consentimiento antes de enviar o procesar voz y 100 % de enlaces revocados deja de otorgar acceso de inmediato. |
+| BG-05 | Sostener confianza en el tratamiento de datos. | Durante el piloto, 100 % de sesiones registra consentimiento antes de enviar o procesar voz y 100 % de solicitudes aceptadas de eliminación bloquea la consulta y exportación de la sesión antes de responder. |
 
 ```mermaid
 flowchart LR
     G[Objetivo: práctica constante y mejora accionable]
     A1[Estudiante de ciclos 1-5]
     A2[Estudiante de ciclos 6-10]
-    A3[Tutor o profesor]
-    A4[Equipo Thropic]
-    I11[Practica sin depender de terceros]
+    I11[Practica de forma autónoma]
     I12[Comprende errores básicos y gana confianza]
     I21[Ensaya escenarios académicos y laborales realistas]
     I22[Usa evidencia para corregir respuestas]
-    I31[Orienta con un reporte autorizado]
-    I41[Experimenta con modos y rúbricas]
-    I42[Detecta fallos y protege la confianza]
+    I3[Controla sus propios resultados y datos]
     D1[Sesión guiada y verificación de audio]
     D2[Coaching en tiempo cercano al real]
     D3[Reporte con métricas y recomendaciones]
     D4[Simulación contextual y repreguntas]
     D5[Historial, comparación y plan adaptativo]
-    D6[Acceso temporal o exportación]
-    D7[Configuración versionada de modos]
-    D8[Observabilidad y recuperación]
+    D6[Exportación personal, consentimiento y eliminación]
     G --> A1
     G --> A2
-    G --> A3
-    G --> A4
     A1 --> I11 --> D1
     I11 --> D2
     A1 --> I12 --> D3
     A2 --> I21 --> D4
     A2 --> I22 --> D3
     I22 --> D5
-    A3 --> I31 --> D6
-    A4 --> I41 --> D7
-    A4 --> I42 --> D8
+    A1 --> I3
+    A2 --> I3
+    I3 --> D6
 ```
 
 | Actor | Impacto esperado | Entregables relacionados | Historias |
 |---|---|---|---|
-| Estudiante de ciclos 1 al 5 | Practica con menor fricción, reconoce problemas de volumen, fluidez y muletillas, y repite el ensayo con un objetivo claro. | Configuración guiada, prueba de audio, coaching discreto, feedback accionable. | US09, US10, US23, US25, US29, US12–US16, US19, US26, US38. |
-| Estudiante de ciclos 6 al 10 | Se prepara para entrevistas, jurados y sustentaciones mediante escenarios contextualizados y compara su desempeño. | Material contextual, simulación, repreguntas, historial, comparación y plan adaptativo. | US24, US30, US31, US17–US22, US36. |
-| Tutor o profesor | Brinda orientación sin requerir acceso permanente a la cuenta o a todas las sesiones. | Exportación y acceso temporal revocable. | US27, US32. |
-| Equipo Thropic | Valida hipótesis, incorpora nuevos modos y mantiene el servicio confiable sin exponer datos privados. | Versionado, recuperación, estado de análisis, eliminación y observabilidad. | US33, US34, US37; decisiones ADD del capítulo IV. |
+| Estudiante de ciclos 1 al 5 | Practica con menor fricción, reconoce problemas de volumen, fluidez y muletillas, y repite el ensayo con un objetivo claro. | Configuración guiada, prueba de audio, coaching discreto, feedback accionable y control de sus datos. | US09, US10, US23, US25, US29, US12–US16, US19, US26, US27, US33, US38. |
+| Estudiante de ciclos 6 al 10 | Se prepara para entrevistas, jurados y sustentaciones mediante escenarios contextualizados y compara su desempeño. | Material contextual, simulación, repreguntas, historial, comparación, plan adaptativo y control de sus datos. | US24, US30, US31, US17–US22, US27, US33, US36. |
+
+Los dos segmentos son los únicos actores humanos que interactúan con Talki. Los docentes y tutores mencionados en la investigación pertenecen al entorno de preparación del estudiante; no consultan el sistema ni reciben permisos de acceso. El equipo Thropic desarrolla y valida el producto, sin constituir un actor de uso de la solución.
 
 La siguiente trazabilidad complementa el diagrama y asegura que cada meta SMART se conecte con una persona, cambio de comportamiento, entregable y User Stories concretas.
 
@@ -1238,7 +1246,7 @@ La siguiente trazabilidad complementa el diagrama y asegura que cada meta SMART 
 | BG-02: mejora accionable | Valeria y Rodrigo | Identifican y aplican una recomendación basada en evidencia. | Reporte con métricas, sugerencias y comparación. | US16–US22, US36. |
 | BG-03: menor fricción inicial | Valeria | Inicia una primera práctica sin asistencia. | Onboarding, prueba de micrófono y consentimiento. | US05, US09, US10, US29. |
 | BG-04: utilidad avanzada | Rodrigo | Usa una simulación contextual para prepararse para entrevista o sustentación. | Carga de material, simulación y repreguntas. | US30, US31. |
-| BG-05: confianza en datos | Valeria, Rodrigo y tutor | Comparte o elimina información manteniendo control. | Enlaces temporales, revocación y borrado. | US27, US32, US33. |
+| BG-05: confianza en datos | Valeria y Rodrigo | Exporta sus resultados y controla consentimiento y eliminación. | Exportación personal, retiro de consentimiento y borrado verificable. | US27, US33. |
 
 ### Hipótesis de impacto
 
@@ -1291,28 +1299,27 @@ Las estimaciones preliminares utilizan únicamente **1, 2, 3, 5 y 8 story points
 | 33 | US22 | Comparar sesiones | Could | 5 | US20, US21 | Incremento 2 |
 | 34 | US36 | Recibir un plan adaptativo | Should | 8 | US19, US21, US22 | Incremento 2 |
 | 35 | US27 | Exportar transcripción y feedback | Could | 3 | US15 | Incremento 2 |
-| 36 | US32 | Compartir temporalmente un reporte | Should | 5 | US15, US33 | Incremento 2 |
-| 37 | US35 | Mantener rachas y logros | Could | 5 | US20 | Incremento 3 |
-| 38 | US07 | Recuperar contraseña | Should | 3 | US05 | Incremento 3 |
+| 36 | US35 | Mantener rachas y logros | Could | 5 | US20 | Incremento 3 |
+| 37 | US07 | Recuperar contraseña | Should | 3 | US05 | Incremento 3 |
 
 Los contratos técnicos se planifican con las historias que habilitan. La columna siguiente identifica esas historias y los contratos previos: las historias habilitadas no son dependencias que deban terminar antes del contrato. Su orden no sustituye la prioridad de negocio.
 
 | Orden | ID | Título | Prioridad | SP | Historias habilitadas y contratos previos | Entrega objetivo |
 | ---: | --- | --- | :---: | ---: | --- | --- |
-| 39 | TS01 | API de sesiones | Must | 3 | US09, US20 | MVP / Sprint 1 |
-| 40 | TS02 | Contrato de coaching en vivo | Must | 8 | US12, US14, US29, US38 | MVP / Sprint 1 |
-| 41 | TS03 | Pipeline de análisis idempotente | Must | 8 | TS02, US15, US37 | MVP / Sprint 1 |
-| 42 | TS04 | Consulta de reportes versionados | Must | 5 | TS03, US15, US20, US37 | MVP / Sprint 1 |
-| 43 | TS05 | API de progreso | Must | 5 | TS03, US21, US22 | Incremento 2 |
-| 44 | TS06 | API de compartición y eliminación | Must | 8 | US32, US33 | MVP (eliminación) / Incremento 2 (compartición) |
+| 38 | TS01 | API de sesiones | Must | 3 | US09, US20 | MVP / Sprint 1 |
+| 39 | TS02 | Contrato de coaching en vivo | Must | 8 | US12, US14, US29, US38 | MVP / Sprint 1 |
+| 40 | TS03 | Pipeline de análisis idempotente | Must | 8 | TS02, US15, US37 | MVP / Sprint 1 |
+| 41 | TS04 | Consulta de reportes versionados | Must | 5 | TS03, US15, US20, US37 | MVP / Sprint 1 |
+| 42 | TS05 | API de progreso | Must | 5 | TS03, US21, US22 | Incremento 2 |
+| 43 | TS06 | API de exportación y eliminación | Must | 8 | US27, US33 | MVP (eliminación) / Incremento 2 (exportación) |
 
-US31 y US38 se reestiman a 8 puntos considerando las interfaces de voz y los contratos de análisis como habilitadores separados (TS02 y TS03). La estimación deberá revisarse con el equipo: si supera la capacidad de un sprint, se dividirá por comportamiento verificable antes de comprometerla. No implica que esas capacidades estén implementadas.
+US31 y US38 se reestiman a 8 puntos considerando las interfaces de voz y los contratos de análisis como habilitadores separados (TS02 y TS03). La estimación deberá revisarse con el equipo: si supera la capacidad de un sprint, se dividirá por comportamiento verificable antes de comprometerla. La matriz de 7.2.1.2 relaciona todas las historias con el incremento mínimo y sus ampliaciones; los 36 SP residuales del sprint no sustituyen estos puntos de producto. No implica que esas capacidades estén implementadas.
 
 ### Criterio de priorización
 
 - El orden se determina primero por el **valor de negocio para validar el piloto** (practicar, obtener retroalimentación accionable y repetir con confianza), no por el orden técnico de implementación. Por ello, el ensayo y su feedback encabezan el backlog; autenticación y seguridad se calendarizan como dependencias y salvaguardas de ese flujo.
 - **Must:** conforma el circuito mínimo de valor y las salvaguardas necesarias para operar: acceso → preparación → práctica → análisis → feedback → historial, privacidad y recuperación.
-- **Should:** incrementa contextualización, profundidad del entrenamiento, adaptación y colaboración.
+- **Should:** incrementa contextualización, profundidad del entrenamiento, adaptación y exportación personal.
 - **Could:** fortalece engagement, adquisición y conveniencia, pero no bloquea la validación inicial.
 
 La tabla constituye el Product Backlog acumulativo de TB1 y TP. Las User Stories y sus criterios quedan redactados en este informe, de acuerdo con el enunciado; su evolución queda trazada mediante los commits y Pull Requests de esta rama.
@@ -1349,7 +1356,6 @@ El propósito del diseño es definir una arquitectura capaz de soportar una expe
 | Stakeholder | Preocupaciones principales |
 |---|---|
 | Estudiante | Latencia, claridad del feedback, control de datos, continuidad de la sesión, facilidad de uso. |
-| Tutor o profesor | Acceso autorizado y limitado a resultados comprensibles. |
 | Equipo de producto | Velocidad para experimentar con modos, rúbricas y prompts; medición de uso. |
 | Equipo de desarrollo | Separación de responsabilidades, contratos estables, pruebas y despliegues independientes. |
 | Soporte y operaciones | Recuperación ante fallos, trazabilidad, alertas y diagnóstico sin exponer datos privados. |
@@ -1374,7 +1380,7 @@ Las historias primarias se seleccionan por su relevancia para el valor del negoc
 | PF-05 | US30, US31 | Ejecutar simulaciones contextualizadas con preguntas y repreguntas. | Requiere integración con IA, aislamiento del proveedor, contexto autorizado y límites de sesión. |
 | PF-06 | US15, US16, US17, US18, US19, US26, US37 | Procesar métricas, puntuación, recomendaciones y estado del análisis. | Favorece pipeline asíncrono, idempotencia, trazabilidad y consistencia eventual. |
 | PF-07 | US20, US21, US22, US35, US36 | Mantener historial, comparación, engagement y recomendaciones adaptativas. | Requiere modelos de lectura, versionado de métricas y procesamiento de evolución. |
-| PF-08 | US27, US32, US33 | Exportar, compartir y eliminar información bajo control del usuario. | Define permisos temporales, revocación, retención y propagación de borrado. |
+| PF-08 | US27, US33 | Exportar reportes propios y eliminar información bajo control del usuario. | Define autorización por propiedad, retención y propagación de borrado. |
 
 #### 4.1.2.2. Quality Attribute Scenarios
 
@@ -1385,7 +1391,7 @@ Cada escenario incluye fuente, estímulo, entorno, artefacto, respuesta y medida
 | QAS-PER-01 | Rendimiento / escalabilidad | Un estudiante habla y el sistema recibe un nuevo fragmento de audio. | Operación normal bajo la concurrencia objetivo definida para el piloto. | Canal en vivo, orquestador y adaptador de IA. | Procesa el fragmento y entrega una señal de coaching sin bloquear la captura. | Objetivo inicial: latencia extremo a extremo p95 ≤ 2 s y tasa de error < 1 %; ambos valores deben validarse mediante pruebas de carga. | H/H |
 | QAS-PER-02 | Rendimiento | Un estudiante finaliza una práctica de hasta 20 minutos. | Carga normal. | Pipeline de análisis y reporte. | Completa transcripción, métricas, puntuación y recomendaciones. | Objetivo inicial: 95 % de reportes disponibles en ≤ 60 s desde la finalización; el umbral final se ajustará con mediciones del piloto. | H/H |
 | QAS-SEC-01 | Seguridad | Un usuario intenta consultar o modificar una sesión ajena. | Operación normal o intento malicioso. | Gateway, servicio de identidad y recurso de sesión/reporte. | Deniega la operación sin revelar datos y registra el intento. | 100 % de solicitudes no autorizadas rechazadas; evento de auditoría emitido en ≤ 5 s. | H/H |
-| QAS-PRI-01 | Privacidad | El propietario revoca un enlace o solicita eliminar una sesión. | Operación normal. | Compartición, sesión, transcripción, métricas y almacenamiento asociado. | Revoca acceso, marca el recurso para eliminación y propaga la orden. | Enlace inutilizable inmediatamente; borrado lógico objetivo ≤ 1 min; purga física dentro del plazo establecido por la política de retención, con meta inicial ≤ 24 h cuando no exista obligación de conservación. | H/H |
+| QAS-PRI-01 | Privacidad | El propietario retira consentimiento o solicita eliminar una sesión. | Operación normal. | Consentimiento, sesión, transcripción, métricas y almacenamiento asociado. | Detiene nuevo procesamiento al retirar consentimiento; al eliminar, bloquea consultas y exportaciones y propaga la orden. | Acceso bloqueado antes de aceptar la eliminación; borrado lógico objetivo ≤ 1 min; purga física dentro del plazo establecido por la política de retención, con meta inicial ≤ 24 h cuando no exista obligación de conservación. | H/H |
 | QAS-REL-01 | Confiabilidad | El bus entrega el mismo evento de finalización hasta diez veces. | Reintentos posteriores a una falla. | Consumidores de análisis, scoring y progreso. | Reconoce duplicados y conserva un único resultado válido. | Un solo resultado por `session_id + analysis_version`; ninguna actualización de progreso duplicada. | H/H |
 | QAS-AVA-01 | Disponibilidad / resiliencia | El proveedor de IA deja de responder durante una sesión. | Sesión activa. | Adaptador de IA, orquestador y sesión. | Detecta la falla, evita cascada, conserva estado válido e informa opciones de reintento o cierre parcial. | Detección ≤ 10 s; sin pérdida de metadatos confirmados; recuperación o degradación explícita. | H/H |
 | QAS-MOD-01 | Modificabilidad | Producto solicita añadir el modo “debate” con una nueva rúbrica. | Desarrollo normal. | Catálogo de modos, prompts, rúbricas y orquestación. | Se añade una estrategia/configuración sin modificar el ciclo central de sesión. | Objetivo inicial: cambio realizado en ≤ 2 persona-días y pruebas del flujo central sin regresiones; debe validarse durante una iteración real. | H/H |
@@ -1425,7 +1431,7 @@ Los candidatos se priorizan con dos dimensiones: importancia para stakeholders e
 | 8 | AD-Q04 | Calidad | Incorporar modos, rúbricas y proveedores con cambios localizados. | H/M | QAS-MOD-01, QAS-INT-01. |
 | 9 | AD-F01 | Funcional | Autenticar usuarios y asegurar propiedad de sesiones y reportes. | H/M | PF-01, QAS-SEC-01. |
 | 10 | AD-Q01 | Calidad | Sostener latencia y capacidad del flujo en vivo durante el piloto. | H/M | QAS-PER-01, QAS-PER-02. |
-| 11 | AD-F08 | Funcional | Revocar compartición y eliminar datos de una sesión. | H/M | PF-08, QAS-PRI-01. |
+| 11 | AD-F08 | Funcional | Exportar reportes propios y eliminar datos de una sesión. | H/M | PF-08, QAS-PRI-01. |
 | 12 | AD-Q06 | Calidad | Trazar una sesión entre componentes sin registrar contenido privado. | M/H | QAS-OBS-01. |
 | 13 | AD-F07 | Funcional | Mantener historial, comparación y recomendaciones adaptativas. | H/M | PF-07. |
 | 14 | AD-Q07 | Calidad | Reducir fricción para iniciar una primera sesión válida. | H/M | QAS-USA-01. |
@@ -1492,7 +1498,7 @@ La siguiente matriz conserva la estructura de refinamiento ADD: cada fila conect
 |---|---|---|---|---|---|---|---|---|---|---|
 | QAS-PER-01: coaching en vivo | BG-01, BG-03 | Rendimiento, escalabilidad | Llega un nuevo fragmento de audio. | Estudiante que practica. | Carga normal del piloto. | Cliente, WebSocket, Live Coach y adaptador IA. | Procesa y entrega una señal sin bloquear captura. | Objetivo p95 ≤ 2 s y error < 1 %; por validar mediante prueba de carga. | ¿Cuál es la concurrencia aprobada y el presupuesto de latencia externo? | Variabilidad del proveedor; degradar señales secundarias antes de la captura. |
 | QAS-PER-02 y QAS-REL-01: reporte único | BG-01, BG-02 | Rendimiento, confiabilidad | Finalización o reentrega de un mismo evento hasta diez veces. | Estudiante y RabbitMQ. | Carga normal y reintentos tras falla. | Pipeline de análisis, scoring y progreso. | Genera un reporte único y consistente. | 95 % ≤ 60 s; un resultado por `session_id + analysis_version`. | ¿Qué capacidad de cola se requiere en el piloto? | Eventos fuera de orden; usar versión, máquina de estados e Inbox/Outbox. |
-| QAS-SEC-01 y QAS-PRI-01: acceso y borrado | BG-05 | Seguridad, privacidad | Acceso ajeno, revocación de enlace o solicitud de borrado. | Usuario no autorizado o propietario. | Operación normal o intento malicioso. | Gateway, identidad, sesión, reporte y almacenamiento. | Deniega acceso, revoca enlace y propaga borrado. | 100 % de accesos ajenos rechazados; enlace inválido inmediato; borrado lógico ≤ 1 min. | ¿Cuál es el plazo contractual de purga física? | Procesamiento temporal por tercero; minimizar datos y registrar consentimiento. |
+| QAS-SEC-01 y QAS-PRI-01: acceso y borrado | BG-05 | Seguridad, privacidad | Acceso ajeno, retiro de consentimiento o solicitud de borrado. | Usuario no autorizado o propietario. | Operación normal o intento malicioso. | Gateway, identidad, sesión, reporte y almacenamiento. | Deniega acceso ajeno, detiene procesamiento no consentido y propaga borrado. | 100 % de accesos ajenos rechazados; bloqueo de consulta y exportación antes de aceptar el borrado; borrado lógico ≤ 1 min. | ¿Cuál es el plazo contractual de purga física? | Procesamiento temporal por tercero; minimizar datos y registrar consentimiento. |
 | QAS-AVA-01 y QAS-OBS-01: caída y diagnóstico | BG-01, BG-05 | Disponibilidad, resiliencia, observabilidad | El proveedor no responde o soporte recibe una sesión fallida. | Proveedor IA o agente de soporte. | Sesión activa o producción. | Adaptador IA, orquestador, sesión, logs y trazas. | Evita cascada, conserva estado y correlaciona la causa. | Detección ≤ 10 s; componente identificado ≤ 15 min. | ¿Qué nivel de servicio ofrece el proveedor? | Desconexión prolongada; permitir cierre seguro o resultado parcial etiquetado. |
 | QAS-MOD-01 y QAS-INT-01: evolución | BG-04 | Modificabilidad, interoperabilidad | Se solicita el modo debate o un proveedor alterno. | Equipo de producto. | Evolución planificada. | Catálogo de modos, rúbricas, orquestador y adaptador IA. | Incorpora configuración/adaptador sin cambiar el ciclo central. | Modo ≤ 2 persona-días; proveedor equivalente ≤ 5 persona-días y suite contractual aprobada. | ¿Qué capacidades son realmente comunes entre proveedores? | Capacidades exclusivas; declararlas opcionales y aislar extensiones. |
 
@@ -1523,10 +1529,10 @@ La siguiente matriz conserva la estructura de refinamiento ADD: cada fila conect
 | Elemento | Refinamiento |
 |---|---|
 | Objetivo de negocio | Lograr confianza para que el estudiante practique y cargue material sensible. |
-| Tácticas | Autenticación robusta, autorización por rol y ownership, mínimo privilegio, TLS, secretos externos, acceso temporal, consentimiento explícito, minimización y retención con TTL, auditoría sin contenido privado. |
+| Tácticas | Autenticación robusta, autorización por rol y ownership, mínimo privilegio, TLS, secretos externos, exportación por el propietario, consentimiento explícito, minimización y retención con TTL, auditoría sin contenido privado. |
 | Decisiones relacionadas | ADD-02, ADD-08, ADD-09, ADD-13. |
-| Elementos involucrados | Identity, Gateway, Session, almacenamiento temporal, reportes compartibles y auditoría. |
-| Verificación | Pruebas de autorización horizontal, acceso con otro usuario, revocación de enlace, eliminación propagada y revisión automatizada de PII/secretos en logs. |
+| Elementos involucrados | Identity, Gateway, Session, almacenamiento temporal, reportes personales y auditoría. |
+| Verificación | Pruebas de autorización horizontal, acceso con otro usuario, retiro de consentimiento, eliminación propagada y revisión automatizada de PII/secretos en logs. |
 | Riesgo residual | El proveedor externo procesa voz durante la sesión. Mitigación: consentimiento informado, configuración contractual de no retención cuando exista y envío exclusivo de datos necesarios. |
 
 #### Refinamiento QAS-MOD-01 y QAS-INT-01: Nuevos modos y proveedores
@@ -1555,7 +1561,7 @@ La siguiente matriz conserva la estructura de refinamiento ADD: cada fila conect
 
 | Driver | QAS | Decisiones principales | Historias relacionadas |
 |---|---|---|---|
-| AD-F01 / AD-Q02 | QAS-SEC-01, QAS-PRI-01 | ADD-02, ADD-08, ADD-09, ADD-13 | US05, US06, US28, US29, US32, US33. |
+| AD-F01 / AD-Q02 | QAS-SEC-01, QAS-PRI-01 | ADD-02, ADD-08, ADD-09, ADD-13 | US05, US06, US28, US29, US33. |
 | AD-F03 / AD-Q05 | QAS-AVA-01 | ADD-03, ADD-10, ADD-12, ADD-13 | US12, US13, US14, US34, US37. |
 | AD-F04 / AD-Q01 | QAS-PER-01 | ADD-02, ADD-03, ADD-06, ADD-12 | US38. |
 | AD-F06 / AD-Q03 | QAS-PER-02, QAS-REL-01 | ADD-04, ADD-05, ADD-07, ADD-14 | US15–US19, US26, US37. |
@@ -1585,7 +1591,7 @@ El tablero se organizó sobre una línea de tiempo infinita (unbounded timeline)
 |---|---|---|
 | Naranja | Domain Event (hecho de negocio en pasado) | `Sesión Finalizada`, `Reporte Disponible`. |
 | Azul | Command (intención que dispara un evento) | `IniciarGrabación`, `SolicitarEliminación`. |
-| Amarillo | Actor / usuario | Estudiante, Tutor, Equipo Thropic. |
+| Amarillo | Actor / usuario | Estudiante de ciclos 1–5 y estudiante de ciclos 6–10. |
 | Lila | Policy (regla automática "cuando X, entonces Y") | "Cuando `Métricas Calculadas`, entonces calcular puntuación". |
 | Rosado | Hot Spot (zona incierta o en disputa) | "¿Quién valida la validez de una sesión?". |
 | Verde | Read Model (vista de consulta) | Transcripción en vivo, Panel de Progreso. |
@@ -1602,9 +1608,9 @@ El equipo partió de los momentos de mayor valor, obtener feedback del ensayo y 
 | Práctica en vivo | `Grabación Iniciada`, `Fragmento de Audio Capturado`, `Transcripción Incrementada`, `Señal de Coaching Emitida`, `Grabación Pausada`, `Grabación Reanudada`, `Simulación Iniciada`, `Pregunta Formulada`, `Respuesta Registrada`. |
 | Cierre y análisis | `Sesión Finalizada`, `Sesión Recuperada`, `Análisis Iniciado`, `Métricas de Discurso Calculadas`, `Palabras Clave Identificadas`, `Puntuación Generada`, `Sugerencias Priorizadas Generadas`, `Reporte Disponible`, `Análisis Fallido`. |
 | Progreso y engagement | `Progreso Actualizado`, `Sesiones Comparadas`, `Plan Adaptativo Generado`, `Racha Actualizada`, `Logro Concedido`. |
-| Compartición y privacidad | `Reporte Exportado`, `Enlace Temporal Creado`, `Acceso Revocado`, `Eliminación Solicitada`, `Datos Purgados`. |
+| Exportación y privacidad | `Reporte Exportado`, `Eliminación Solicitada`, `Datos Purgados`. |
 
-![Fase 1 de EventStorming en Miro: inventario y ordenamiento de eventos de dominio sobre la línea de tiempo](assets/images/eventstorming/es-01-domain-events.png)
+![Fase 1 de EventStorming: inventario y ordenamiento de eventos de dominio sobre la línea de tiempo](assets/images/eventstorming/es-01-domain-events-two-actors.png)
 
 #### Fase 2: Comandos, actores, políticas y sistemas externos
 
@@ -1619,8 +1625,8 @@ El equipo marcó como **eventos pivote** aquellos que implican un cambio de esta
 | `Consentimiento Otorgado` | Antes de él no puede procesarse voz ni material; condiciona todo el pipeline y materializa C-08. |
 | `Grabación Iniciada` | Abre el mundo en vivo: captura, transcripción incremental y señales de coaching con presupuesto de latencia. |
 | `Sesión Finalizada` | Cierra el mundo en vivo y activa la cadena asíncrona de análisis; exige idempotencia (QAS-REL-01). |
-| `Reporte Disponible` | Momento en que el sistema entrega el valor central; habilita progreso, comparación y compartición. |
-| `Acceso Revocado` / `Datos Purgados` | Cambio de estado de privacidad: el acceso debe cesar de inmediato y la eliminación propagarse (QAS-PRI-01). |
+| `Reporte Disponible` | Momento en que el sistema entrega el valor central; habilita progreso, comparación y exportación personal. |
+| `Eliminación Solicitada` / `Datos Purgados` | Cambio de estado de privacidad: el acceso debe cesar de inmediato y la eliminación propagarse (QAS-PRI-01). |
 
 Las zonas en disputa se registraron como *hot spots* rosados y se resolvieron o dejaron en backlog con esa etiqueta:
 
@@ -1638,7 +1644,7 @@ Las zonas en disputa se registraron como *hot spots* rosados y se resolvieron o 
 
 Al cierre quedaron ordenados los eventos del flujo completo, el puente entre el mundo en vivo y el pipeline asíncrono, y las primeras fronteras visibles: la gestión del ciclo de sesión, la conversación y señales en tiempo real, el análisis posterior, la puntuación, el progreso y el bloque de privacidad. Esta fotografia final del EventStorm es el insumo directo de la Candidate Context Discovery.
 
-![EventStorm consolidado al cierre de la sesión en Miro](assets/images/eventstorming/es-03-eventstorm-final.png)
+![EventStorm consolidado del alcance actual](assets/images/eventstorming/es-03-eventstorm-final-two-actors.png)
 
 ### 4.2.2. Candidate Context Discovery
 
@@ -1668,13 +1674,13 @@ La primera pasada produjo seis candidatos; la revisión de crítica separó la p
 | **Progress & Adaptation** (Progreso y Adaptación) | `Progreso Actualizado`, comparación de sesiones, `Plan Adaptativo Generado` (US20–US22, US36). | **Supporting.** Sostiene el hábito. | Requiere modelo de lectura y versionado de métricas propio. |
 | **Gamification** (Gamificación) | `Racha Actualizada`, `Logro Concedido`; reglas de validez para contar sesiones. | **Supporting.** Engagement. | Mecánicas de juego con lenguaje propio (streaks, logros) y alta tasa de experimentación. |
 | **Identity & Access** (Identidad y Acceso) | `Cuenta Registrada`, autenticación, perfil, registro verificable de consentimiento (US05–US08, US28, C-08). | **Generic.** Resuelto con patrones conocidos. | No diferencia al producto; se requiere alta confiabilidad y un contrato de identidad estable. |
-| **Sharing & Retention** (Compartición y Retención) | `Reporte Exportado`, `Enlace Temporal Creado`, `Acceso Revocado`, `Eliminación Solicitada` (US27, US32, US33). | **Supporting.** Confianza y colaboración. | PF-08 y QAS-PRI-01 exigen un único dueño de compartición, revocación y retención. |
+| **Sharing & Retention** (Compartición y Retención) | `Reporte Exportado`, `Eliminación Solicitada` (US27, US33). | **Supporting.** Confianza y control de datos. | PF-08 y QAS-PRI-01 exigen un único dueño de exportación, eliminación y retención. |
 | **AI Provider Gateway** (Pasarela de Proveedores de IA) | Contrato canónico hacia Gemini Live; aislamiento de proveedor y de sus capacidades exclusivas. | **Generic.** Capacidad técnica externa. | C-01 y QAS-INT-01: sustituir o agregar proveedores con cambios localizados. |
 | **Notifications** (Notificaciones) | Consumo de evaluación y logros; avisos en la aplicación y ampliación por correo para cuenta y privacidad. | **Generic.** Utilitario. | Solo reacciona a hechos ya publicados por otros contextos. |
 
-![Primera pasada de Candidate Context Discovery: clusters y fronteras candidatas sobre el EventStorm duplicado](assets/images/candidate-contexts/cc-01-fronteras-candidatas.png)
+![Primera pasada de Candidate Context Discovery: clusters y fronteras candidatas sobre el EventStorm duplicado](assets/images/candidate-contexts/cc-01-fronteras-candidatas-two-actors.png)
 
-![Fronteras finales nombradas y clasificadas tras la crítica](assets/images/candidate-contexts/cc-02-contextos-finales.png)
+![Fronteras finales nombradas y clasificadas tras la crítica](assets/images/candidate-contexts/cc-02-contextos-finales-two-actors.png)
 
 La decisión deliberada fue **no** crear un contexto por cada tabla o entidad, y **no** fragmentar más el core: Live Coaching, Speech Analysis y Scoring & Feedback permanecen separados porque sus razones de cambio difieren (latencia y conversación, procesamiento lingüístico, pedagogía y rúbricas), pero dentro de cada uno las capacidades comparten lenguaje y datos.
 
@@ -1716,22 +1722,22 @@ Para visualizar cómo deben colaborar los bounded contexts, el equipo aplicó **
 
 ![Domain Storytelling DS-02: simulación contextualizada con material autorizado](assets/diagrams/c4/contextual-story-sequence.png)
 
-#### DS-03: Compartir y revocar un reporte (colaboración con tutor)
+#### DS-03: Exportar resultados propios y eliminar una sesión
 
 | # | Actor | Actividad | Objeto de trabajo | Bounded context ejecutor |
 |---:|---|---|---|---|
-| 1 | Estudiante | Solicita compartir el reporte con su tutor | Solicitud de enlace | Sharing & Retention |
-| 2 | Sharing & Retention | Crea un enlace temporal con expiración | Enlace de acceso temporal | Sharing & Retention |
-| 3 | Tutor | Abre el enlace y consulta el reporte | Vista de solo lectura | Sharing & Retention (consulta el reporte publicado) |
-| 4 | Estudiante | Revoca el acceso | Orden de revocación | Sharing & Retention |
-| 5 | Sharing & Retention | Invalida el enlace de inmediato y publica `Acceso Revocado` | Evento de revocación | Sharing & Retention → Notifications |
+| 1 | Estudiante | Solicita exportar su reporte | Solicitud de exportación | Sharing & Retention |
+| 2 | Sharing & Retention | Comprueba propiedad y disponibilidad de la sesión | Autorización de descarga | Practice Session Management |
+| 3 | Scoring & Feedback | Entrega únicamente el reporte del propietario | Reporte publicado | Scoring & Feedback |
+| 4 | Sharing & Retention | Prepara la copia autorizada | Archivo del reporte | Sharing & Retention |
+| 5 | Estudiante | Descarga el archivo para revisión personal | Copia del reporte | Sharing & Retention |
 | 6 | Estudiante | Solicita eliminar una sesión | Orden de eliminación | Sharing & Retention |
-| 7 | Sharing & Retention | Confirma el bloqueo en Sessions y después solicita la purga de los datos | Bloqueo de acceso, órdenes y confirmaciones de purga | Sessions, Speech Analysis, Scoring, Progress, Gamification y Notifications |
-| 8 | Notifications | Informa al usuario el resultado de la acción | Notificación | Notifications |
+| 7 | Sharing & Retention | Confirma el bloqueo en Sessions y después solicita la purga | Bloqueo, órdenes y confirmaciones | Sessions, Speech Analysis, Scoring, Progress, Gamification y Notifications |
+| 8 | Notifications | Informa al estudiante el resultado | Notificación | Notifications |
 
-![Secuencia de colaboración DS-03: compartición temporal, revocación y eliminación bajo control del propietario](assets/diagrams/c4/privacy-story-sequence.png)
+![Secuencia DS-03: exportación personal y eliminación bajo control del propietario](assets/diagrams/c4/privacy-story-sequence.png)
 
-Los tres flujos confirmaron las fronteras: Sessions entrega a Live Coaching un resumen del material autorizado; Live incorpora ese resumen en las instrucciones de preparación enviadas a la pasarela y el consentimiento actúa como compuerta previa a la captura. Sharing & Retention invalida el permiso antes de responder a la revocación; después comunica el cambio por eventos a los demás contextos, manteniendo el bloqueo de nuevas consultas independiente de la entrega de avisos.
+Los tres flujos conservan a los estudiantes como únicos actores de uso. Sessions entrega a Live Coaching un resumen del material autorizado; el consentimiento actúa como compuerta previa a la captura. Sharing & Retention comprueba propiedad antes de exportar y confirma el bloqueo en Sessions antes de aceptar la eliminación; la purga se coordina mediante eventos y confirmaciones. Las copias ya descargadas quedan fuera de la eliminación de datos alojados en Talki.
 
 ### 4.2.4. Bounded Context Canvases
 
@@ -1813,15 +1819,15 @@ Cada canvas se elaboró siguiendo un proceso iterativo con seis pasos: (1) **Con
 
 | Sección | Contenido |
 |---|---|
-| Clasificación estratégica | Supporting subdomain. Dueño de la confianza: compartición controlada y cumplimiento de retención. |
-| Propósito | Exportar reportes, crear accesos temporales revocables y propagar la eliminación de datos bajo control exclusivo del propietario. |
-| Lenguaje ubicuo | Enlace temporal, expiración, revocación, eliminación lógica, purga, política de retención. |
-| Capacidades clave | Exportar transcripción y feedback (US27); crear y revocar enlaces (US32); iniciar eliminación y purga auditable (US33); administrar la política de retención (C-02). |
-| Eventos publicados | `Reporte Exportado`, `Enlace Temporal Creado`, `Acceso Revocado`, `Eliminación Solicitada`, `Datos Purgados`. |
-| Eventos consumidos | `Reporte Disponible` (para saber qué es compartible), veredicto de validez. |
-| Reglas de negocio | Un enlace revocado deja de otorgar acceso de inmediato (QAS-PRI-01); el borrado lógico se completa en minutos y la purga física según política; la auditoría no registra contenido privado. |
+| Clasificación estratégica | Supporting subdomain. Dueño de la confianza: exportación personal y cumplimiento de retención. |
+| Propósito | Exportar reportes propios y propagar la eliminación de datos bajo control exclusivo del propietario. |
+| Lenguaje ubicuo | Reporte exportado, propiedad del recurso, eliminación lógica, purga, política de retención. |
+| Capacidades clave | Exportar transcripción y feedback propios (US27); iniciar eliminación y purga auditable (US33); administrar la política de retención (C-02). |
+| Eventos publicados | `Reporte Exportado`, `Eliminación Solicitada`, `Datos Purgados`. |
+| Eventos consumidos | `Reporte Disponible` (para saber qué puede exportar su propietario), veredicto de validez. |
+| Reglas de negocio | Solo el propietario puede consultar o exportar su reporte; aceptar una eliminación bloquea ambas operaciones (QAS-PRI-01); el borrado lógico se completa en minutos y la purga física según política; la auditoría no registra contenido privado. |
 | Dependencias | Aguas arriba: Scoring & Feedback (Customer/Supplier para consultar el reporte publicado). Aguas abajo: los contextos propietarios de datos reciben órdenes de purga; Notifications recibe los hechos de privacidad. |
-| Crítica de diseño | Concentrar compartición, revocación y retención en un solo contexto evita criterios de privacidad dispersos; se descartó repartir estas capacidades entre los contextos dueños de los datos. |
+| Crítica de diseño | Concentrar exportación, eliminación y retención en un solo contexto evita criterios de privacidad dispersos; se descartó repartir estas capacidades entre los contextos dueños de los datos. |
 
 #### 7. Gamification (Gamificación)
 
@@ -1833,7 +1839,7 @@ Cada canvas se elaboró siguiendo un proceso iterativo con seis pasos: (1) **Con
 | Capacidades clave | Actualizar rachas; conceder logros una sola vez (US35); exponer el estado de engagement. |
 | Eventos publicados | `Racha Actualizada`, `Logro Concedido`. |
 | Eventos consumidos | Evaluación completada (Scoring & Feedback), junto con la validez declarada por Practice Session Management. |
-| Reglas de negocio | Las sesiones inválidas no cuentan; cada logro se concede una sola vez; compartir un logro es opcional. |
+| Reglas de negocio | Las sesiones inválidas no cuentan; cada logro se concede una sola vez; los logros se presentan en el espacio personal del estudiante. |
 | Dependencias | Aguas arriba: Scoring & Feedback y Practice Session Management (Conformist a la evaluación y al veredicto de validez publicados). Aguas abajo: Notifications recibe los logros. |
 | Crítica de diseño | Se evaluó fusionar con Progress & Adaptation; se rechazó: la gamificación experimenta mecánicas con alta frecuencia, mientras el progreso exige estabilidad histórica. |
 
@@ -1849,7 +1855,7 @@ Cada canvas se elaboró siguiendo un proceso iterativo con seis pasos: (1) **Con
 | Eventos consumidos | Ninguno; es el origen de la cadena de confianza. |
 | Reglas de negocio | Los errores de autenticación no revelan qué credencial falló; el consentimiento registra la versión aceptada y condiciona todo procesamiento posterior. |
 | Dependencias | Aguas arriba de todos: expone un Open Host Service de validación de identidad; los demás contextos son Conformist a su modelo de claims. |
-| Crítica de diseño | El consentimiento vive aquí como registro verificable (quién, qué, cuándo, versión); la ejecución de la privacidad (compartir, revocar, borrar) pertenece a Sharing & Retention. |
+| Crítica de diseño | El consentimiento vive aquí como registro verificable (quién, qué, cuándo, versión); la ejecución de la exportación personal y del borrado pertenece a Sharing & Retention. |
 
 #### 9. AI Provider Gateway (Pasarela de Proveedores de IA)
 
@@ -1870,11 +1876,11 @@ Cada canvas se elaboró siguiendo un proceso iterativo con seis pasos: (1) **Con
 | Sección | Contenido |
 |---|---|
 | Clasificación estratégica | Generic subdomain. Utilitario puro, reacciona a hechos publicados. |
-| Propósito | Informar a los usuarios los hechos relevantes (reporte disponible, revocaciones, eventos de cuenta) mediante avisos en la aplicación y correo electrónico propuesto. |
+| Propósito | Informar a los usuarios los hechos relevantes (reporte disponible, eliminación y eventos de cuenta) mediante avisos en la aplicación y correo electrónico propuesto. |
 | Lenguaje ubicuo | Notificación, plantilla, destinatario, preferencia de contacto. |
 | Capacidades clave | Entregar avisos autenticados en la aplicación; ampliar la entrega por correo con plantillas versionadas y preferencias de contacto. |
 | Eventos publicados | Hechos de entrega para observabilidad. |
-| Eventos consumidos | `Reporte Disponible`, `Logro Concedido` y, como ampliación, `Acceso Revocado`, `Datos Purgados`, `Cuenta Registrada`. |
+| Eventos consumidos | `Reporte Disponible`, `Logro Concedido` y, como ampliación, `Datos Purgados`, `Cuenta Registrada`. |
 | Reglas de negocio | Ninguna notificación incluye contenido de reporte en el cuerpo del correo; los enlaces referencian accesos controlados por Sharing & Retention. |
 | Dependencias | Aguas arriba: múltiples contextos mediante el lenguaje publicado de eventos (colaboración por eventos). |
 | Crítica de diseño | Mantenerlo como contexto propio y consumidor pasivo evita que cada dominio incorpore envío de correos; se descartó un shared service embebido en otros contextos. |
@@ -1911,11 +1917,11 @@ El equipo evaluó explícitamente un **Shared Kernel** de definiciones de métri
 | Practice Session Management | Live Coaching, Speech Analysis, Gamification | Customer/Supplier + Published Language | Eventos de ciclo de vida y veredicto de validez versionados | El ciclo de sesión alimenta al resto; los consumidores se adaptan al contrato publicado. |
 | Live Coaching | Practice Session Management | Customer/Supplier | Evidencia autorizada y petición idempotente de cierre | Sessions confirma el cambio y su outbox antes de entregar el evento al análisis. |
 | Speech Analysis | Scoring & Feedback | Customer/Supplier + Published Language | Esquema versionado de métricas de discurso | Consistencia entre versiones sin Shared Kernel (C-09). |
-| Scoring & Feedback | Progress & Adaptation, Gamification, Sharing & Retention | Customer/Supplier + Published Language | Evaluación completada (`scoring.completed`) y consulta del reporte publicado | Progreso y gamificación reciben la evaluación; compartición referencia el reporte conservado por Scoring. |
+| Scoring & Feedback | Progress & Adaptation, Gamification, Sharing & Retention | Customer/Supplier + Published Language | Evaluación completada (`scoring.completed`) y consulta del reporte publicado | Progreso y gamificación reciben la evaluación; exportación referencia el reporte conservado por Scoring. |
 | AI Provider Gateway | Live Coaching | Open Host Service + Published Language, relación Customer/Supplier | Preparación de credencial, capacidad del modo y vigencia | La pasarela ofrece el contrato estable; Live es su consumidor y mantiene separada la voz WSS del cierre de Sessions. |
 | Gemini Live API (externo) | AI Provider Gateway | **Anti-Corruption Layer** | Adaptador de proveedor + negociación de capacidades | Impide que el modelo del proveedor contamine el lenguaje del dominio (ADD-06, QAS-INT-01). |
 | Practice Session Management, Scoring & Feedback | Gamification | **Conformist** | Veredicto de validez y evaluación completada | La gamificación respeta la validez de la sesión y calcula rachas/logros a partir de la evaluación recibida. |
-| Scoring & Feedback | Sharing & Retention | Customer/Supplier | Consulta de reportes publicados | La compartición no duplica reportes; referencia los existentes. |
+| Scoring & Feedback | Sharing & Retention | Customer/Supplier | Consulta de reportes publicados | La exportación consulta los reportes existentes del propietario; no mantiene una segunda copia de negocio. |
 | Sharing & Retention | Practice Session Management, Speech Analysis, Scoring & Feedback, Progress & Adaptation, Gamification, Notifications | Customer/Supplier + Published Language | Órdenes de purga y confirmaciones | La eliminación de evidencia, evaluaciones, progreso y rachas respeta la propiedad de datos de cada contexto. |
 | Múltiples contextos | Notifications | Colaboración por eventos (Published Language) | Eventos de dominio versionados en el bus | Notifications no aparece como dependencia síncrona de nadie. |
 
@@ -1927,7 +1933,7 @@ Los nombres de negocio de los canvases se concretan en los contratos técnicos: 
 
 #### Conclusión del context mapping
 
-El mapa resultante protege tres propiedades: (1) el **core** (Live Coaching, Speech Analysis, Scoring & Feedback) solo depende de contratos publicados y de una pasarela con Anti-Corruption Layer, sin incorporar detalles internos de proveedores ni de contextos genéricos; (2) la **privacidad** revoca permisos localmente y exige confirmar el bloqueo en Sessions antes de aceptar una eliminación; la purga posterior se coordina por eventos y confirmaciones; y (3) la **evolución**, que comprende nuevos modos, rúbricas o proveedores, queda confinada a un contexto por tipo de cambio. Este mapa es el insumo directo de los diagramas C4 de la sección 4.3 y de la descomposición táctica del capítulo V.
+El mapa resultante protege tres propiedades: (1) el **core** (Live Coaching, Speech Analysis, Scoring & Feedback) solo depende de contratos publicados y de una pasarela con Anti-Corruption Layer, sin incorporar detalles internos de proveedores ni de contextos genéricos; (2) la **privacidad** exige comprobar la propiedad y confirmar el bloqueo en Sessions antes de aceptar una eliminación; la purga posterior se coordina por eventos y confirmaciones; y (3) la **evolución**, que comprende nuevos modos, rúbricas o proveedores, queda confinada a un contexto por tipo de cambio. Este mapa es el insumo directo de los diagramas C4 de la sección 4.3 y de la descomposición táctica del capítulo V.
 
 ## 4.3. Software Architecture
 
@@ -1935,38 +1941,74 @@ Las vistas C4 describen la arquitectura objetivo de Talki y mantienen los diez b
 
 ### 4.3.1. System Landscape Diagram
 
-El paisaje sitúa Talki en el ecosistema de preparación oral. Los estudiantes de ciclos iniciales utilizan el sistema para ensayar exposiciones; los de ciclos avanzados lo emplean para entrevistas y sustentaciones. El tutor o profesor consulta únicamente un reporte compartido con permiso vigente. Gemini Live participa en la conversación de voz y la transcripción; el proveedor de correo propuesto apoyará la recuperación de cuenta y los avisos de privacidad.
+El paisaje sitúa Talki en el ecosistema de preparación oral. Los estudiantes de ciclos iniciales utilizan el sistema para ensayar exposiciones; los de ciclos avanzados lo emplean para entrevistas y sustentaciones. Gemini Live participa en la conversación de voz y la transcripción; el proveedor de correo propuesto apoyará la recuperación de cuenta y los avisos de privacidad.
 
 ![System Landscape de Talki](assets/diagrams/c4/system-landscape.png)
 
 ### 4.3.2. Context Level Diagrams
 
-La frontera de Talki agrupa las capacidades de práctica, feedback, progreso y control de la información. Los usuarios interactúan por HTTPS. La integración de voz prepara una credencial efímera por HTTPS y establece el canal WSS desde el cliente hacia Gemini Live. El correo es una dependencia propuesta cuyo proveedor y mecanismo de entrega deberán configurarse. No se representan clases ni bases de datos internas en esta vista de contexto.
+Los únicos actores humanos son los estudiantes de ciclos 1–5 y 6–10. La frontera de Talki agrupa las capacidades de práctica, feedback, progreso y control de la información. Los usuarios interactúan por HTTPS. La integración de voz prepara una credencial efímera por HTTPS y establece el canal WSS desde el cliente hacia Gemini Live. El correo es una dependencia propuesta cuyo proveedor y mecanismo de entrega deberán configurarse. No se representan clases ni bases de datos internas en esta vista de contexto.
 
 ![C4 System Context de Talki](assets/diagrams/c4/system-context.png)
 
 ### 4.3.3. Container Level Diagrams
 
-El cliente web ofrece el recorrido de preparación y revisión; el cliente Flutter es una ampliación móvil. Para la aplicación de este curso se seleccionan Angular, TypeScript y Angular Material, conforme al enunciado; la landing utiliza HTML5, CSS3 y JavaScript. Las pantallas de Talki conservan su identidad visual y son referencias UX, no evidencia de que la implementación Angular esté terminada. La adopción móvil cross-platform con Flutter es una propuesta que deberá justificar cobertura y distribución antes de implementar. La arquitectura objetivo propone un API Gateway/BFF para enrutar operaciones y aplicar políticas comunes. Los servicios se organizan por responsabilidad de contexto: Identity & Access, Practice Session Management, Live Coaching, Speech Analysis, Scoring & Feedback, Progress & Adaptation, Sharing & Retention, Gamification, AI Provider Gateway y Notifications.
+El cliente web ofrece el recorrido de preparación y revisión; el cliente Flutter es una ampliación móvil. Para la aplicación web se seleccionan Next.js, React y TypeScript, con Tailwind CSS y componentes shadcn, aprovechando el cliente existente y su BFF. La landing forma parte de la experiencia web y utiliza HTML, CSS y JavaScript/TypeScript. Las pantallas de referencia y el prototipo conservan su alcance UX; la integración funcional se comprueba en el capítulo VII. La adopción móvil cross-platform con Flutter es una propuesta que deberá justificar cobertura y distribución antes de implementar. La arquitectura objetivo propone un API Gateway/BFF para enrutar operaciones y aplicar políticas comunes. Los servicios se organizan por responsabilidad de contexto: Identity & Access, Practice Session Management, Live Coaching, Speech Analysis, Scoring & Feedback, Progress & Adaptation, Sharing & Retention, Gamification, AI Provider Gateway y Notifications.
 
 RabbitMQ conecta el procesamiento asíncrono: Practice Session Management publica `session.live.finalized` después de confirmar el cierre recibido de Live Coaching, Speech Analysis produce `fillers.analyzed` y Scoring & Feedback publica `scoring.completed` después de conservar la evaluación. Progress y Gamification consumen ese resultado; Notifications recibe eventos de evaluación y logro. El broker incorpora confirmaciones, reintentos y una cola de fallos como requisitos del diseño. La voz sigue el canal cliente–Gemini Live por WSS, evitando presentar el broker como transporte de audio.
 
-![C4 Container Diagram de Talki](assets/diagrams/c4/containers.png)
+El nivel de contenedores se presenta en vistas complementarias de la misma arquitectura. Cada vista muestra las conexiones de un recorrido y conserva los nombres, responsabilidades y tecnologías de los contenedores. En conjunto representan los diez contextos; las agrupaciones visuales facilitan la lectura y no definen nuevos servicios.
+
+**Acceso y operaciones principales.** Los dos segmentos de estudiantes acceden desde los clientes web o móvil. El API Gateway/BFF dirige las operaciones de cuenta, preparación de sesiones, práctica en vivo y consulta de evaluación. Las demás consultas se muestran en la vista de resultados y control de datos.
+
+![C4 Container: acceso y operaciones principales](assets/diagrams/c4/containers.png)
+
+[Ver diagrama en PlantUML](assets/diagrams/c4/containers.puml).
+
+**Preparación y conversación de voz.** Live Coaching comprueba la sesión y el consentimiento y prepara la integración mediante AI Provider Gateway. Los clientes mantienen el canal de voz WSS con Gemini Live; el cierre de la práctica se confirma en Practice Session Management.
+
+![C4 Container: preparación y conversación de voz](assets/diagrams/c4/containers-live.png)
+
+[Ver diagrama en PlantUML](assets/diagrams/c4/containers-live.puml).
+
+**Consulta de resultados y control de datos.** Se muestran las consultas de reportes, progreso, rachas, preferencias, exportación y eliminación. Scoring & Feedback verifica el acceso a la práctica y consulta el estado del análisis; Sharing & Retention comprueba la pertenencia antes de coordinar la eliminación.
+
+![C4 Container: consulta de resultados y control de datos](assets/diagrams/c4/containers-queries.png)
+
+[Ver diagrama en PlantUML](assets/diagrams/c4/containers-queries.puml).
+
+**Eventos, análisis y avisos.** El broker conecta el cierre de sesión, el análisis, la evaluación, el progreso, los logros y los avisos. En las conexiones bidireccionales, las etiquetas «Al broker» y «Desde broker» distinguen los eventos publicados de los consumidos. AMQP transporta estos eventos; las notificaciones al cliente y el correo utilizan sus propios canales.
+
+![C4 Container: eventos, análisis y avisos](assets/diagrams/c4/containers-events.png)
+
+[Ver diagrama en PlantUML](assets/diagrams/c4/containers-events.puml).
+
+**Datos de cuenta, práctica y evaluación.** Identity & Access y Practice Session Management utilizan sus esquemas privados; Sessions administra también el material autorizado. Scoring & Feedback, Progress & Adaptation y Gamification conservan sus datos en esquemas separados de la infraestructura de evaluación y evolución.
+
+![C4 Container: datos de cuenta, práctica y evaluación](assets/diagrams/c4/containers-data.png)
+
+[Ver diagrama en PlantUML](assets/diagrams/c4/containers-data.puml).
+
+**Datos de procesamiento, avisos y eliminación.** Speech Analysis y Notifications mantienen esquemas privados para sus trabajos, resultados técnicos y avisos. Sharing & Retention conserva las solicitudes de eliminación y sus confirmaciones en el almacén de privacidad.
+
+![C4 Container: datos de procesamiento, avisos y eliminación](assets/diagrams/c4/containers-data-operations.png)
+
+[Ver diagrama en PlantUML](assets/diagrams/c4/containers-data-operations.puml).
 
 | Contenedor / contexto | Responsabilidad | Datos propios | Sección táctica |
 | --- | --- | --- | --- |
 | Live Coaching | Selección de modo, credencial temporal y cierre de conversación. | Sin base de negocio propia. | 5.1 |
 | Speech Analysis Worker | Análisis de evidencia lingüística, acústica y contextual disponible; estado y reintento. | Jobs y salida durable; sin copia del reporte de negocio. | 5.2 |
-| Scoring & Feedback Worker | Evaluación y consulta de resultados por el propietario o mediante acceso temporal autorizado. | Evaluaciones y versiones. | 5.3 |
+| Scoring & Feedback Worker | Evaluación y consulta de resultados exclusivamente por el propietario. | Evaluaciones y versiones. | 5.3 |
 | Practice Session Management | Preparación, ciclo de vida y evidencia de la práctica. | Sesiones, configuración, material autorizado, feedback y outbox de cierre. | 5.4 |
 | Progress & Adaptation | Resumen, comparación y planes de mejora. | Progreso, métricas por sesión, planes y ejercicios. | 5.5 |
-| Sharing & Retention, propuesto | Acceso temporal, exportación y eliminación coordinada. | Permisos, solicitudes de purga y confirmaciones. | 5.6 |
+| Sharing & Retention, propuesto | Exportación personal y eliminación coordinada. | Solicitudes de purga y confirmaciones. | 5.6 |
 | Gamification | Rachas y logros por práctica válida. | Rachas, logros versionados y contribuciones únicas. | 5.7 |
 | Identity & Access | Cuenta, credenciales, perfil y consentimiento. | Usuarios, tokens, recuperación y consentimiento versionado. | 5.8 |
 | AI Provider Gateway, propuesto | Contrato de integración y aislamiento del proveedor. | Sin base de material de práctica. | 5.9 |
 | Notifications | Consumo de eventos y entrega de avisos. | Avisos, intentos y preferencias. | 5.10 |
 
-Los almacenes de la figura agrupan infraestructura PostgreSQL, no propiedad compartida de tablas. Cada contexto accede únicamente a su esquema y comunica cambios mediante contratos o eventos. Las implementaciones disponibles agrupan algunas responsabilidades en servicios existentes; la separación del diagrama es la arquitectura objetivo de ADD, que deberá concretarse y verificarse en implementación. La pasarela de IA, Sharing, la entrega de avisos y las ampliaciones de consulta siguen siendo propuestas.
+Los almacenes de las vistas de datos agrupan infraestructura PostgreSQL, no propiedad compartida de tablas. Cada contexto accede únicamente a su esquema y comunica cambios mediante contratos o eventos. Las implementaciones disponibles agrupan algunas responsabilidades en servicios existentes; la separación del diagrama es la arquitectura objetivo de ADD, que deberá concretarse y verificarse en implementación. La pasarela de IA, Sharing, la entrega de avisos y las ampliaciones de consulta siguen siendo propuestas.
 
 ### 4.3.4. Deployment Diagrams
 
@@ -1980,7 +2022,7 @@ La vista identifica nodos de ejecución y artefactos alojados; no acredita una c
 
 El diseño táctico describe los elementos que forman cada bounded context de Talki y la responsabilidad de sus capas. Este capítulo desarrolla los diez contextos identificados en el capítulo IV mediante sus modelos, operaciones, componentes y datos.
 
-Los componentes descritos combinan la estructura de los servicios de Talki con el modelo previsto para consentimiento, recuperación, versionado, compartición y eliminación. Los elementos identificados como propuestos expresan decisiones de diseño que requieren implementación e integración. Los diagramas presentan el modelo de la solución y sus colaboraciones, no una transcripción literal de todos los archivos de código.
+Los componentes descritos combinan la estructura de los servicios de Talki con el modelo previsto para consentimiento, recuperación, versionado, exportación personal y eliminación. Los elementos identificados como propuestos expresan decisiones de diseño que requieren implementación e integración. Los diagramas presentan el modelo de la solución y sus colaboraciones, no una transcripción literal de todos los archivos de código.
 
 Cada contexto mantiene una responsabilidad de negocio. La arquitectura objetivo de 4.3.3 propone un proceso por contexto; cada vista de componentes descompone ese proceso. Una futura agrupación de despliegue requerirá actualizar ambas vistas, sin mezclar propiedad de datos.
 
@@ -2352,7 +2394,7 @@ La evaluación se activa al recibir el evento `fillers.analyzed`. FillerAnalyzed
 
 **Consulta del reporte.** ReportController expone `GET /v1/reports/{sessionId}`. ReportQueryHandler consulta Sessions para comprobar propiedad y ausencia de eliminación. Devuelve 200 con reportId, sessionId, analysisVersion, rubricVersion, dimensiones, evidencia y recomendaciones; 202 con analysisState si aún no existe resultado; 404 si la práctica no está disponible para el solicitante. Un fallo de análisis devuelve un estado recuperable, sin puntuación fabricada. `POST /v1/reports/{sessionId}/analysis-retries` comprueba processingAllowed mediante Sessions y solicita un reintento sobre el mismo AnalysisJob; devuelve 202 con jobId y estado, o 403 sin reintentar cuando se retiró el consentimiento.
 
-**Lectura interna para compartir.** `GET /internal/v1/reports/{reportId}` se limita al servicio Sharing & Retention autenticado. Recibe una autorización validada con ownerId, sessionId y scope; Scoring comprueba que coincida con el reporte y que la sesión siga disponible. Devuelve solo la proyección permitida; el material contextual queda excluido. El token del enlace se resuelve en Sharing y no sustituye estas comprobaciones.
+**Lectura interna para exportar.** `GET /internal/v1/reports/{reportId}` se limita al servicio Sharing & Retention autenticado. Recibe ownerId y sessionId; Scoring comprueba que corresponden al propietario del reporte y que Sessions mantiene la práctica accesible. Devuelve la transcripción y el feedback autorizados con sus versiones; el material privado de preparación queda excluido. No admite consulta pública ni tokens de acceso de terceros.
 
 ### 5.3.3. Application Layer
 
@@ -2395,7 +2437,7 @@ La capa de infraestructura recibe las métricas, conserva las evaluaciones y com
 | DeletionRequestedConsumer / PurgeReceiptPublisher | Adaptadores de privacidad | Reciben la solicitud de eliminación y confirman la purga de evaluaciones. | Infrastructure |
 | JpaScoreResultRepositoryAdapter | Adaptador de repositorio | Implementa ScoreResultRepository mediante JPA/PostgreSQL. Conserva la evaluación y su evidencia versionada; permite consultar o retirar los resultados de una sesión. | Infrastructure |
 
-JpaScoreResultRepositoryAdapter conserva una evaluación por sesión, analysisVersion y rubricVersion, con una restricción única compuesta. Guarda también EvaluationEvidence como una copia versionada: métricas, dimensiones disponibles, limitaciones y hallazgos con fragmento, alternativa y razón. La consulta, la compartición y la exportación leen esa misma copia; no reconstruyen la evidencia a partir de un análisis posterior ni almacenan audio o el material completo en Scoring. La transacción registra el resultado y la salida en outbox antes de confirmar el evento recibido. SessionAccessClient comprueba autorización y eliminación para las consultas.
+JpaScoreResultRepositoryAdapter conserva una evaluación por sesión, analysisVersion y rubricVersion, con una restricción única compuesta. Guarda también EvaluationEvidence como una copia versionada: métricas, dimensiones disponibles, limitaciones y hallazgos con fragmento, alternativa y razón. La consulta personal y la exportación leen esa misma copia; no reconstruyen la evidencia a partir de un análisis posterior ni almacenan audio o el material completo en Scoring. La transacción registra el resultado y la salida en outbox antes de confirmar el evento recibido. SessionAccessClient comprueba autorización y eliminación para las consultas.
 
 DeletionRequestedConsumer delega en PurgeScoreResultsHandler, que retira las evaluaciones y su evidencia conservada. La operación confirma su estado local antes de que PurgeReceiptPublisher comunique purge.completed con requestId y el nombre del contexto. Se aplica el control de eventos tardíos definido en Contratos y garantías de integración.
 
@@ -2462,7 +2504,7 @@ Session es el punto de entrada al agregado de práctica. Conserva su identidad, 
 
 **Entities**
 
-Feedback representa una observación personal asociada a la práctica. El propietario puede registrarla para su revisión. La evaluación automática y sus recomendaciones pertenecen a ScoreResult en Scoring & Feedback; esta anotación no las reemplaza ni permite al tutor modificar el reporte compartido.
+Feedback representa una observación personal asociada a la práctica. El propietario puede registrarla para su revisión. La evaluación automática y sus recomendaciones pertenecen a ScoreResult en Scoring & Feedback; esta anotación no las reemplaza ni permite modificar la evaluación automática.
 
 **Value Objects**
 
@@ -2792,139 +2834,92 @@ La unicidad compuesta se documenta en esta tabla porque comprende varios campos;
 
 ## 5.6. Bounded Context: Sharing & Retention
 
-Este contexto permite compartir reportes por tiempo limitado, exportarlos y solicitar la eliminación de una sesión. Coordina el acceso y el retiro de los datos con los contextos responsables de conservarlos.
-
-**Servicio o componente asociado:** Modelo propuesto.
+El contexto conserva su nombre en el mapa del dominio. En el alcance actual, la salida de información se limita a la exportación personal del reporte (US27); no crea enlaces de acceso para terceros. Coordina además la eliminación y la retención de datos (US33).
 
 ### 5.6.1. Domain Layer
 
-La capa de dominio propuesta define las condiciones de acceso temporal a un reporte y el seguimiento de la eliminación de una sesión. Cada permiso o solicitud conserva su propia identidad y estado.
+DeletionRequest controla el estado de una eliminación y reúne las confirmaciones de los contextos propietarios. La exportación comprueba la propiedad y disponibilidad del reporte mediante contratos con Sessions y Scoring; no introduce una entidad de permiso compartido.
 
-**Aggregate Roots**
-
-ShareGrant representa el permiso temporal de lectura de un reporte. Conserva el propietario, la vigencia y la revocación del acceso. DeletionRequest registra la solicitud de eliminación y controla su avance hasta recibir las confirmaciones necesarias. Ambos agregados pertenecen al diseño propuesto.
-
-**Entities**
-
-PurgeReceipt registra la confirmación de eliminación enviada por cada contexto responsable. Su relación con DeletionRequest permite identificar las confirmaciones recibidas y las que todavía faltan.
-
-**Elementos de Domain Layer**
-
-| Nombre | Tipo | Descripción | Capa |
+| Elemento | Tipo | Responsabilidad | Capa |
 | --- | --- | --- | --- |
-| ShareGrant | Aggregate Root (diseño propuesto) | Representa un permiso temporal de lectura sobre un reporte. | Domain |
-| DeletionRequest | Aggregate Root (diseño propuesto) | Registra una solicitud de eliminación y su estado. | Domain |
-| PurgeReceipt | Entity (diseño propuesto) | Confirma la eliminación realizada por cada contexto responsable. | Domain |
+| DeletionRequest | Aggregate Root | Registra propietario, sesión, plazo y estado de eliminación. | Domain |
+| PurgeReceipt | Entity | Confirma la retirada de datos en un contexto. | Domain |
+| DeletionState | Enumeration | Distingue solicitud, bloqueo, purga, conclusión y reintento. | Domain |
 
 **Reglas principales**
 
-1. El acceso a un reporte comprueba la vigencia del permiso y su posible revocación.
-2. Revocar un enlace impide nuevas consultas al reporte compartido.
-3. Solicitar la eliminación bloquea el acceso al recurso; la eliminación física concluye cuando se reciben las confirmaciones requeridas.
-4. La exportación incluye únicamente información autorizada del reporte.
+1. Solo el propietario autenticado puede exportar o solicitar eliminar una sesión.
+2. La exportación incluye la transcripción y el feedback autorizados, fecha y versiones; omite material privado de preparación.
+3. Una sesión bloqueada o eliminada no admite consulta ni exportación.
+4. La eliminación concluye cuando se reciben las confirmaciones de los seis contextos esperados. No recupera copias ya descargadas por el estudiante.
 
 **Atributos y operaciones del modelo de dominio**
 
-Los atributos se encapsulan; las operaciones públicas expresan las reglas del contexto. Las interfaces y enumeraciones se distinguen en el UML. Este modelo especifica el diseño objetivo del TP.
-
 | Elemento | Atributos o valores | Operaciones públicas |
 | --- | --- | --- |
-| ShareGrant | UUID id<br>UUID reportId<br>UUID sessionId<br>Long ownerId<br>String tokenHash<br>String scope<br>Instant expiresAt<br>Instant revokedAt | isAccessible(Instant now, boolean deleted) boolean<br>revoke(Instant now) void |
 | DeletionRequest | UUID id<br>UUID sessionId<br>Long ownerId<br>DeletionState state [1]<br>Set~String~ expectedContexts<br>Instant deadline | registerReceipt(PurgeReceipt receipt) void<br>isComplete() boolean<br>requireRetry(Instant now) void |
-| DeletionState | REQUESTED<br>ACCESS_BLOCKED<br>PURGING<br>COMPLETED<br>RETRY_REQUIRED | Consulta mediante el agregado o servicio responsable. |
-| PurgeReceipt | UUID id<br>String context<br>Instant completedAt | Consulta mediante el agregado o servicio responsable. |
+| DeletionState | REQUESTED<br>ACCESS_BLOCKED<br>PURGING<br>COMPLETED<br>RETRY_REQUIRED | Consulta mediante el agregado. |
+| PurgeReceipt | UUID id<br>String context<br>Instant completedAt | Consulta mediante la solicitud responsable. |
 
 **Contratos de repositorio del dominio**
 
 | Interfaz | Operaciones principales | Responsabilidad |
 | --- | --- | --- |
-| ShareGrantRepository | findByTokenHash(String tokenHash) Optional~ShareGrant~<br>findBySessionId(UUID sessionId) List~ShareGrant~<br>save(ShareGrant grant) void | Recupera permisos por hash y conserva su vigencia y revocación. |
-| DeletionRequestRepository | findById(UUID id) Optional~DeletionRequest~<br>findBySessionId(UUID sessionId) List~DeletionRequest~<br>save(DeletionRequest request) void | Conserva la solicitud, el plazo y las confirmaciones de los contextos responsables. |
+| DeletionRequestRepository | findById(UUID id) Optional~DeletionRequest~<br>findBySessionId(UUID sessionId) List~DeletionRequest~<br>save(DeletionRequest request) void | Conserva solicitud, plazo y confirmaciones. |
 
 ### 5.6.2. Interface Layer
 
-Los controladores propuestos reciben las solicitudes de compartir, revocar, exportar y eliminar. Su responsabilidad es identificar al solicitante, validar la estructura de los datos y delegar el caso de uso correspondiente.
+Los controladores identifican al estudiante autenticado, validan la petición y delegan exportación o eliminación.
 
-**Operaciones propuestas**
-
-| Operación | Responsabilidad |
+| Operación propuesta | Responsabilidad |
 | --- | --- |
-| `POST /api/v1/reports/{reportId}/shares` | Crear un permiso de lectura con fecha de vencimiento. |
-| `DELETE /api/v1/shares/{grantId}` | Revocar un permiso creado por el propietario. |
-| `GET /api/v1/shared-reports/{token}` | Consultar la vista autorizada de un reporte compartido. |
-| `POST /api/v1/reports/{reportId}/exports` | Preparar la exportación del reporte. |
-| `POST /api/v1/sessions/{sessionId}/deletions` | Registrar una solicitud de eliminación. |
-| `GET /api/v1/deletions/{requestId}` | Consultar el estado de la eliminación. |
+| `POST /api/v1/reports/{reportId}/exports` | Preparar la descarga personal del reporte autorizado. |
+| `POST /api/v1/sessions/{sessionId}/deletions` | Registrar una eliminación después de confirmar el bloqueo. |
+| `GET /api/v1/deletions/{requestId}` | Consultar el avance de una solicitud propia. |
 
-**Datos de entrada y respuesta.** La compartición identifica el reporte, su vigencia y el alcance permitido. La respuesta devuelve el enlace temporal y su vencimiento. La eliminación devuelve el identificador de la solicitud y su estado. La vista del tutor omite el material contextual y los datos que no formen parte del permiso.
+La exportación responde 200 con el archivo cuando el solicitante es propietario y la sesión sigue accesible. Deniega acceso ajeno con 403; un recurso eliminado responde 410. La eliminación responde 202 con requestId y ACCESS_BLOCKED tras confirmar el bloqueo; si este falla, responde 503 sin afirmar que se aceptó la purga.
 
 ### 5.6.3. Application Layer
 
-La capa de aplicación propuesta coordina la creación de permisos, la consulta de reportes compartidos y la eliminación distribuida de datos.
-
-**Commands propuestos**
-
-La creación de un permiso, su revocación y la solicitud de eliminación modifican el estado de ShareGrant o DeletionRequest. La recepción de una confirmación actualiza el avance de la eliminación.
-
-**Queries del diseño objetivo**
-
-La lectura compartida comprueba la vigencia del permiso antes de recuperar la vista autorizada del reporte. La exportación prepara únicamente la información que puede consultar el solicitante.
-
-**Command Handlers y Query Handlers**
-
-Los manejadores propuestos separan cada operación y reúnen las comprobaciones necesarias antes de utilizar los repositorios o publicar mensajes.
-
-**Elementos de Application Layer**
+La aplicación coordina comprobaciones de propiedad, preparación del archivo y eliminación distribuida. ExportReportHandler consulta el reporte autorizado; RequestDeletionHandler solicita el bloqueo; CollectPurgeReceiptHandler registra confirmaciones idempotentes.
 
 | Nombre | Tipo | Descripción | Capa |
 | --- | --- | --- | --- |
-| CreateShareGrantHandler | Command Handler | Comprueba el propietario y registra la vigencia del permiso. | Application |
-| ResolveSharedReportHandler | Query Handler | Comprueba el permiso y recupera la vista autorizada del reporte. | Application |
-| RevokeShareHandler | Command Handler | Retira el permiso de lectura. | Application |
-| RequestDeletionHandler | Command Handler | Registra la solicitud y comunica la eliminación a los contextos responsables. | Application |
-| CollectPurgeReceiptHandler | Manejador de confirmaciones | Reúne las confirmaciones y determina si la solicitud concluyó. | Application |
-| ExportReportHandler | Manejador de exportación | Prepara la descarga con el alcance y las versiones autorizadas. | Application |
+| ExportReportHandler | Manejador de exportación | Comprueba propiedad y disponibilidad, y prepara transcripción y feedback con sus versiones. | Application |
+| RequestDeletionHandler | Command Handler | Comprueba propiedad, registra solicitud y confirma bloqueo antes de ordenar la purga. | Application |
+| CollectPurgeReceiptHandler | Manejador de confirmaciones | Reúne recibos por requestId/context y determina si concluyó la eliminación. | Application |
 
-**Recorrido del caso de uso.** Compartir genera un permiso temporal; consultar verifica su vigencia y revocación. Eliminar bloquea nuevas consultas y solicita el retiro de los datos a cada contexto responsable. La solicitud se completa cuando se reúnen las confirmaciones esperadas. RequestDeletionHandler fija deadline a 24 horas desde la aceptación, como meta inicial de QAS-PRI-01. Al consultar o actualizar una solicitud, si vence ese plazo y falta alguna confirmación, DeletionRequest pasa a RETRY_REQUIRED y presenta los contextos pendientes; el acceso continúa bloqueado. Las confirmaciones posteriores permiten concluir la purga sin afirmar que se cumplió el plazo. La meta de diseño no acredita un acuerdo de servicio validado con los proveedores.
+RequestDeletionHandler fija deadline a 24 horas desde la aceptación, como meta inicial de QAS-PRI-01. Si vence el plazo y falta alguna confirmación, DeletionRequest pasa a RETRY_REQUIRED y presenta los contextos pendientes; el acceso continúa bloqueado. Las confirmaciones posteriores permiten concluir sin afirmar que se cumplió el plazo. La meta requiere validar acuerdos con los proveedores.
 
-**Contratos de coordinación**
-
-| Clase o grupo de clases | Responsabilidad | Operaciones previstas |
+| Grupo de clases | Responsabilidad | Operaciones previstas |
 | --- | --- | --- |
-| CreateShareGrantHandler / ResolveSharedReportHandler / RevokeShareHandler / RequestDeletionHandler / CollectPurgeReceiptHandler / ExportReportHandler | Autoriza consultas y coordina permisos, exportación y purga. | createGrant(reportId, expiry); revoke(id); resolve(token); delete(sessionId); collect(receipt); export(reportId) |
+| ExportReportHandler / RequestDeletionHandler / CollectPurgeReceiptHandler | Coordina exportación personal y purga. | export(reportId); delete(sessionId); collect(receipt) |
 
-Los handlers validan la petición o el evento antes de ejecutar cambios. Los puertos de repositorio y de integración son contratos; los adaptadores de Infrastructure realizan esos contratos. Los nombres describen clases previstas para implementar el diseño, sin afirmar que estén desplegadas.
+Application utiliza contratos de Domain e integración; Infrastructure implementa los adaptadores.
 
 ### 5.6.4. Infrastructure Layer
 
-La capa de infraestructura propuesta conserva los permisos y solicitudes y comunica la eliminación a los contextos propietarios de los datos.
-
-**Elementos de Infrastructure Layer**
-
 | Nombre | Tipo | Descripción | Capa |
 | --- | --- | --- | --- |
-| Mensajería de eliminación | Adaptador de eventos propuesto | Comunica las solicitudes y confirmaciones mediante RabbitMQ. | Infrastructure |
-| Exportación del reporte | Adaptador propuesto | Prepara un archivo con información autorizada y vigencia de descarga limitada. | Infrastructure |
-| JpaShareGrantRepositoryAdapter | Adaptador de repositorio | Implementa ShareGrantRepository mediante JPA/PostgreSQL. Recupera permisos por hash y conserva su vigencia y revocación. | Infrastructure |
-| JpaDeletionRequestRepositoryAdapter | Adaptador de repositorio | Implementa DeletionRequestRepository mediante JPA/PostgreSQL. Conserva la solicitud, el plazo y las confirmaciones de los contextos responsables. | Infrastructure |
+| JpaDeletionRequestRepositoryAdapter | Adaptador de repositorio | Implementa DeletionRequestRepository con JPA/PostgreSQL; conserva solicitudes y confirmaciones. | Infrastructure |
+| DeletionPublisher / PurgeReceiptConsumer | Adaptadores de eventos | Solicitan purga y reciben confirmaciones mediante RabbitMQ. | Infrastructure |
+| SessionAccessClient / AuthorizedReportClient | Adaptadores de consulta | Comprueban propiedad y bloqueo en Sessions y recuperan el reporte propio desde Scoring. | Infrastructure |
+| Exportación del reporte | Adaptador de archivo | Prepara la descarga autorizada sin crear acceso público. | Infrastructure |
 
-Los enlaces se conservan mediante un hash. Si no puede comprobarse la vigencia del permiso, la consulta se bloquea. Revocar un enlace retira el acceso futuro, pero no recupera una copia que ya haya sido descargada.
+Cada contexto elimina sus propios datos y confirma la operación. La auditoría registra identificadores y estados sin contenido privado.
 
 ### 5.6.5. Bounded Context Software Architecture Component Level Diagrams
 
-Esta vista C4 descompone el container de Sharing & Retention definido en 4.3.3. Los elementos externos se sitúan fuera de su frontera; las relaciones indican responsabilidad y protocolo. Las clases siguientes colaboran en los componentes del proceso y mantienen la separación de capas.
+La vista C4 descompone el proceso de Sharing & Retention del Container Diagram y conserva cuatro capas.
 
-| Clases agrupadas en el componente | Capa | Responsabilidad |
+| Clases agrupadas | Capa | Responsabilidad |
 | --- | --- | --- |
-| ShareGrantRepository / DeletionRequestRepository | Domain | Define los contratos de consulta y persistencia con tipos del contexto. |
-| ShareController / DeletionController / ExportController | Interface | Recibe solicitudes de privacidad y lectura compartida. |
-| CreateShareGrantHandler / ResolveSharedReportHandler / RevokeShareHandler / RequestDeletionHandler / CollectPurgeReceiptHandler / ExportReportHandler | Application | Autoriza consultas y coordina permisos, exportación y purga. |
-| ShareGrant / DeletionRequest / PurgeReceipt | Domain | Controla vigencia, bloqueo y confirmaciones. |
-| JpaShareGrantRepositoryAdapter / JpaDeletionRequestRepositoryAdapter | Infrastructure | Conserva hashes, solicitudes y confirmaciones. |
-| DeletionPublisher / PurgeReceiptConsumer | Infrastructure | Solicita purga y recibe confirmaciones. |
-| SessionAccessClient / AuthorizedReportClient | Infrastructure | Bloquea sesión y recupera únicamente el reporte autorizado. |
-
-Application utiliza las interfaces de repositorio de Domain. Los adaptadores de Infrastructure realizan esos contratos y acceden únicamente al esquema del contexto.
+| DeletionController / ExportController | Interface | Recibe solicitudes del propietario autenticado. |
+| RequestDeletionHandler / CollectPurgeReceiptHandler / ExportReportHandler | Application | Coordina exportación y purga. |
+| DeletionRequest / PurgeReceipt / DeletionRequestRepository | Domain | Controla estados y confirmaciones y define persistencia. |
+| JpaDeletionRequestRepositoryAdapter | Infrastructure | Implementa el contrato y conserva solicitudes y recibos. |
+| DeletionPublisher / PurgeReceiptConsumer | Infrastructure | Comunica solicitudes y confirmaciones. |
+| SessionAccessClient / AuthorizedReportClient | Infrastructure | Comprueba propiedad, bloquea sesión y consulta reporte. |
 
 ![Componentes de Sharing & Retention](assets/diagrams/tactical/06-sharing-retention-components.png)
 
@@ -2932,9 +2927,7 @@ Application utiliza las interfaces de repositorio de Domain. Los adaptadores de 
 
 #### 5.6.6.1. Bounded Context Domain Layer Class Diagrams
 
-ShareGrant administra vigencia y alcance del acceso. DeletionRequest reúne PurgeReceipt, los contextos esperados y DeletionState. La solicitud avanza desde REQUESTED hasta COMPLETED; si falta una confirmación queda PURGING o RETRY_REQUIRED.
-
-El UML incluye ShareGrantRepository / DeletionRequestRepository como interfaces de Domain; sus adaptadores concretos se identifican en Infrastructure y en la vista de componentes.
+DeletionRequest contiene cero o más PurgeReceipt mientras avanza desde REQUESTED hasta COMPLETED, o RETRY_REQUIRED si falta confirmación. Cada recibo pertenece a una solicitud. DeletionRequestRepository es una interfaz de Domain; su adaptador concreto pertenece a Infrastructure.
 
 ![Clases de Sharing & Retention](assets/diagrams/tactical/06-sharing-retention-classes.png)
 
@@ -2942,20 +2935,14 @@ El UML incluye ShareGrantRepository / DeletionRequestRepository como interfaces 
 
 #### 5.6.6.2. Bounded Context Database Design Diagram
 
-share_grants almacena el reporte, propietario, hash del enlace y fechas de vigencia y revocación. deletion_requests registra la solicitud de eliminación y purge_receipts sus confirmaciones. Los registros deben evitar permisos o confirmaciones duplicados. Este esquema corresponde al diseño propuesto.
+El esquema conserva solicitudes y recibos de eliminación. No contiene permisos ni tokens de compartición.
 
 ![Persistencia de Sharing & Retention](assets/diagrams/tactical/06-sharing-retention-database.png)
 
-**Restricciones de persistencia**
-
-| Objeto | Restricción y relación con las reglas |
+| Objeto | Restricción |
 | --- | --- |
-| SHARE_GRANTS | token_hash único; expires_at posterior a creación. Scope limitado al reporte. session_id permite bloquear todos los permisos al eliminar; no se guarda el token en claro. |
-| DELETION_REQUESTS | UNIQUE(session_id), para una solicitud activa de eliminación. expected_contexts conserva los destinatarios que deberán confirmar; estados definidos en UML. |
-| PURGE_RECEIPTS | UNIQUE(request_id, context), FK request_id local. Confirmaciones repetidas no completan dos veces la solicitud. |
-
-La unicidad compuesta se documenta en esta tabla porque comprende varios campos; las marcas PK/FK/UK del diagrama identifican claves simples. Inbox y outbox son registros técnicos del esquema privado: eventId es único en inbox y el despacho confirma la salida después del commit local. No se crean FKs hacia otros contextos.
-
+| DELETION_REQUESTS | UNIQUE(session_id) para una solicitud activa. expected_contexts conserva los seis destinatarios; state sigue el UML. |
+| PURGE_RECEIPTS | UNIQUE(request_id, context), FK request_id local. Una confirmación repetida no completa dos veces la solicitud. |
 
 ## 5.7. Bounded Context: Gamification
 
@@ -3445,7 +3432,7 @@ Los atributos se encapsulan; las operaciones públicas expresan las reglas del c
 
 Este contexto recibe los eventos que originan avisos al estudiante. No necesita que el cliente solicite directamente el envío de una notificación.
 
-**Contratos de entrada.** ScoringCompletedEvent permite reconocer que una evaluación terminó. AchievementUnlockedEvent identifica el logro obtenido. Los eventos `scoring.completed` y `achievement.unlocked` conservan la referencia del destinatario y del hecho que origina el aviso. Los contratos `user.registered`, `share.revoked` y `deletion.completed` identifican destinatario y referencia de la acción; NotificationEventConsumer los transforma en avisos de cuenta o privacidad. El material privado y los tokens no se incluyen en estos mensajes.
+**Contratos de entrada.** ScoringCompletedEvent permite reconocer que una evaluación terminó. AchievementUnlockedEvent identifica el logro obtenido. Los eventos `scoring.completed` y `achievement.unlocked` conservan la referencia del destinatario y del hecho que origina el aviso. Los contratos `user.registered` y `deletion.completed` identifican destinatario y referencia de la acción; NotificationEventConsumer los transforma en avisos de cuenta o privacidad. El material privado y los tokens no se incluyen en estos mensajes.
 
 **Preferencias del estudiante.** NotificationPreferenceController expone `GET /v1/notifications/preferences` (200) y `PATCH /v1/notifications/preferences` (200 con optionalEmail e inApp actualizados). La identidad se deriva de la autenticación. Desactivar avisos opcionales no suprime comunicaciones imprescindibles de acceso o privacidad; el consentimiento de contacto y el canal se verifican antes de cada envío.
 
@@ -3551,7 +3538,7 @@ Las operaciones de este capítulo especifican el diseño objetivo; su documentac
 | Eventos de análisis y evaluación | Cada mensaje incluye eventId, occurredAt, sessionId, userId, correlationId y las versiones pertinentes. El cierre incorpora mode, goal, focusAreas, academicSegment, configurationVersion, confirmedDurationSeconds, valid y validityRuleVersion; Analysis y Scoring propagan estos metadatos sin reinterpretar el veredicto de Sessions. Los consumidores registran eventId en inbox; la clave de negocio sesión/versión evita duplicar resultados aun si llega otro eventId. El ACK sigue a la confirmación local. |
 | Recuperación de análisis | AnalysisJob conserva estado e intentos por sesión y versión; un reintento reutiliza el job. Los mensajes fallidos pasan a una cola de errores después del límite configurado y pueden reactivarse con autorización. El estado se consulta mediante el reporte; no se fabrica una puntuación mientras está pendiente. |
 | Avance y reconocimientos | Progress distingue prácticas únicas de versiones de resultados: totalSessions y totalMinutes se calculan por sessionId válido; el promedio global y el mejor resultado utilizan el mismo modo, versiones y las cinco dimensiones evaluables. Los parciales se consultan por dimensión y no reciben cero por falta de evidencia. Gamification contabiliza una sesión válida una vez, aunque sea reevaluada. |
-| Eliminación | Sharing registra la solicitud y pide a Sessions bloquear el acceso. Solo después de esa confirmación responde 202 con ACCESS_BLOCKED y comunica deletion.requested. Sessions, Analysis, Scoring, Progress, Gamification y Notifications retiran sus datos o referencias del ensayo y publican purge.completed con requestId/context después de confirmar su operación local. Sessions incluye el archivo privado; Progress y Gamification recalculan los agregados afectados. Sharing revoca los permisos y completa la solicitud al reunir los seis contextos esperados. Un fallo del bloqueo devuelve 503, sin afirmar que el acceso ya fue retirado. |
+| Eliminación | Sharing registra la solicitud y pide a Sessions bloquear el acceso. Solo después de esa confirmación responde 202 con ACCESS_BLOCKED y comunica deletion.requested. Sessions, Analysis, Scoring, Progress, Gamification y Notifications retiran sus datos o referencias del ensayo y publican purge.completed con requestId/context después de confirmar su operación local. Sessions incluye el archivo privado; Progress y Gamification recalculan los agregados afectados. Sharing conserva el bloqueo y completa la solicitud al reunir los seis contextos esperados. Un fallo del bloqueo devuelve 503, sin afirmar que el acceso ya fue retirado. |
 | Salida durable | Los contextos con escritura local conservan outbox junto a su cambio y utilizan confirmación del broker. El registro técnico no duplica la propiedad de datos ni contiene tokens, audio o material. Identificadores de otros contextos son referencias, no claves foráneas entre bases. |
 
 **Control de eventos posteriores al borrado.** Cada consumidor mantiene el estado técnico de eliminación por sessionId junto a su registro de mensajes. La retirada de datos de la base y esa marca se confirman en la misma transacción local; el archivo privado se elimina por separado y Sessions solo confirma su purga cuando ambas operaciones concluyen; un evento tardío de análisis, evaluación o notificación no puede reconstruir la evidencia retirada. Si una escritura ya estaba en curso, debe comprobar la marca antes de confirmarse. Un mensaje repetido de eliminación conserva el mismo resultado y puede reenviar la confirmación; no declara purga completa si una operación, incluido el borrado del archivo, falló. Inbox, outbox y marcas de eliminación son registros técnicos complementarios a las tablas de negocio de las figuras.
@@ -3569,11 +3556,11 @@ La siguiente tabla relaciona cada contexto con las historias de usuario, decisio
 | 5.3. Scoring & Feedback | TS03, TS04; US15, US19, US26, US37; ADD-05, ADD-07, ADD-11, ADD-14; C-09, QAS-REL-01 |
 | 5.4. Practice Session Management | TS01; US09–US14, US20, US23–US25, US29, US30, US34; ADD-03–ADD-05, ADD-09, ADD-11; QAS-AVA-01, QAS-USA-01 |
 | 5.5. Progress & Adaptation | TS05; US20–US22, US24, US36; ADD-05, ADD-07, ADD-11; C-09, QAS-REL-01 |
-| 5.6. Sharing & Retention | TS06; US27, US32, US33; C-02; ADD-08, ADD-09, ADD-13; QAS-SEC-01, QAS-PRI-01 |
+| 5.6. Sharing & Retention | TS06; US27, US33; C-02; ADD-08, ADD-09, ADD-13; QAS-SEC-01, QAS-PRI-01 |
 | 5.7. Gamification | US35; ADD-05, ADD-07, ADD-11; QAS-REL-01 |
 | 5.8. Identity & Access | US05–US08, US23, US24, US28, US29; C-08; ADD-02, ADD-09, ADD-13; QAS-SEC-01 |
 | 5.9. AI Provider Gateway | Habilita conversación y contexto de US12, US30, US31, US38; el análisis posterior pertenece a 5.2 y 5.3; C-02; ADD-06, ADD-08, ADD-10, ADD-12, ADD-14; QAS-INT-01, QAS-PER-01 |
-| 5.10. Notifications | Avisos de evaluación y logro: US15, US35. Ampliaciones de cuenta y privacidad: US05, US07, US32, US33; ADD-04, ADD-05, ADD-10, ADD-13; QAS-REL-01 |
+| 5.10. Notifications | Avisos de evaluación y logro: US15, US35. Ampliaciones de cuenta y privacidad: US05, US07, US33; ADD-04, ADD-05, ADD-10, ADD-13; QAS-REL-01 |
 
 # Capítulo VI: Solution UX Design
 
@@ -3668,7 +3655,7 @@ Las acciones de pausar y finalizar se diferencian para evitar cierres involuntar
 
 ### 6.2.1. Organization Systems
 
-La información se organiza por tareas: practicar, consultar el historial, revisar el progreso y administrar el perfil. La primera práctica sigue una secuencia guiada. La landing presenta el servicio a nuevos usuarios, mientras que las sesiones y los reportes se consultan desde el espacio personal del estudiante. El tutor accede únicamente al reporte que se le ha compartido.
+La información se organiza por tareas: practicar, consultar el historial, revisar el progreso y administrar el perfil. La primera práctica sigue una secuencia guiada. La landing presenta el servicio a nuevos usuarios, mientras que las sesiones y los reportes se consultan desde el espacio personal del estudiante.
 
 ![Arquitectura de información de Talki](assets/diagrams/ux/information-architecture.png)
 
@@ -3680,7 +3667,6 @@ La información se organiza por tareas: practicar, consultar el historial, revis
 | Historial | Sesiones propias por fecha, título, modo y estado; acceso al reporte y a acciones de privacidad. |
 | Progreso | Tendencias por dimensiones y versiones compatibles; comparación y plan de ejercicios. |
 | Perfil | Segmento, metas, datos opcionales, preferencias de contacto y control de datos. |
-| Tutor | Solo reporte permitido, fecha/versión y vigencia; no incluye otras sesiones, configuración ni edición. |
 
 ### 6.2.2. Labeling Systems
 
@@ -3688,7 +3674,7 @@ El sistema de etiquetado utiliza el vocabulario de las tareas del estudiante. Lo
 
 **Principios de etiquetado**
 
-Las acciones comienzan con verbos, como “Iniciar práctica”, “Compartir reporte” y “Eliminar sesión”. Los mensajes evitan términos de infraestructura y ofrecen una forma de continuar. El indicador de estado combina una etiqueta con apoyo visual.
+Las acciones comienzan con verbos, como “Iniciar práctica”, “Exportar reporte” y “Eliminar sesión”. Los mensajes evitan términos de infraestructura y ofrecen una forma de continuar. El indicador de estado combina una etiqueta con apoyo visual.
 
 **Etiquetas de tareas y estados**
 
@@ -3701,7 +3687,7 @@ Las acciones comienzan con verbos, como “Iniciar práctica”, “Compartir re
 | En análisis / Falló / Reporte disponible | Indicar si el análisis está en curso, requiere reintento o dispone de un reporte. |
 | Voice Coach Score | Resumen del desempeño obtenido según los criterios de evaluación de la práctica. |
 | Sin evidencia / Resultado parcial | Informar que la práctica no aporta datos suficientes para evaluar una parte del desempeño. |
-| Compartir reporte / Revocar enlace | Permitir o retirar la lectura temporal de un reporte. |
+| Exportar reporte | Descargar la transcripción y el feedback propios para revisarlos sin conexión. |
 | Eliminar sesión / Purga pendiente | Retirar el acceso a la sesión e informar que la eliminación de sus datos sigue en curso. |
 
 Las etiquetas utilizan el vocabulario definido en la sección 2.4 y utilizan expresiones breves y equivalentes en los idiomas de interfaz previstos. Las figuras del informe ilustran el recorrido en español; esto no modifica en_US como idioma inicial propuesto en C-03. “Voice Coach Score” se acompaña de una explicación cuando aparece por primera vez.
@@ -3716,7 +3702,7 @@ Los metadatos explican el servicio en las páginas públicas. El contenido priva
 | Términos | Talki: Terms of use | Purpose, limitations, responsible use and access conditions for Talki. | Talki terms, responsible AI, data control | Thropic | index, follow |
 | Acceso y recuperación | Talki: Account access | Access or recover your private practice space. | Talki account | Thropic | noindex, nofollow |
 | Inicio, historial y progreso | Talki: Your practice space | Review your own practice sessions and compatible feedback. | practice history, progress | Thropic | noindex, nofollow |
-| Reporte personal o compartido | Talki: Practice report | View a report within its authorized scope. | practice feedback | Thropic | noindex, nofollow |
+| Reporte personal | Talki: Practice report | View a report within its authorized scope. | practice feedback | Thropic | noindex, nofollow |
 | Prototipo UX | Talki: UX prototype | Explore the proposed navigation with sample data. | Talki prototype | Thropic | noindex, nofollow |
 
 Cada página pública incluye charset UTF-8, viewport adaptable y lang según la variante publicada (en-US o es-419). Open Graph de landing utiliza tipo website, título “Talki: Make your ideas heard” y descripción “Rehearse, understand your feedback and choose your next step”. La URL canónica y la imagen de vista previa se definirán con el dominio real; no se inventan direcciones. Las páginas privadas no ofrecen vista previa de sus reportes.
@@ -3728,7 +3714,7 @@ Cada página pública incluye charset UTF-8, viewport adaptable y lang según la
 | App Title | Talki: Speaking Practice | Talki: Práctica oral |
 | Subtitle | Rehearse and review your feedback | Ensaya y revisa tu feedback |
 | Keywords | speaking, presentation, interview, rehearsal, university | oratoria, exposición, entrevista, ensayo, universidad |
-| Description | Prepare presentations and interviews through guided practice. Review evidence-based feedback and choose what to share. | Prepara exposiciones y entrevistas con práctica guiada. Revisa feedback acompañado de evidencia y decide qué compartir. |
+| Description | Prepare presentations and interviews through guided practice. Review evidence-based feedback and control your own data. | Prepara exposiciones y entrevistas con práctica guiada. Revisa feedback acompañado de evidencia y controla tus propios datos. |
 
 La publicación futura ajustará el campo de keywords y sus límites a la tienda elegida. Los textos describen funciones propuestas y no prometen eficacia medida.
 
@@ -3775,7 +3761,7 @@ La navegación permite pasar de la preparación del ensayo a la práctica y lueg
 | --- | --- |
 | Menú lateral | Reúne los accesos del cliente a Nueva sesión, Dashboard, Sesiones, Coach y Ranking. Las propuestas añaden progreso, perfil y privacidad. |
 | Preparación por pasos | Ordena configuración, comprobación de audio y consentimiento antes de iniciar. |
-| Acciones del reporte | Permiten volver a practicar y, en las propuestas complementarias, consultar un plan o compartir el resultado. |
+| Acciones del reporte | Permiten volver a practicar y, en las propuestas complementarias, consultar un plan o exportar el resultado propio. |
 | Selección visible | Destaca la sección actual y mantiene disponible la acción de volver. |
 
 **Aplicación móvil propuesta**
@@ -3787,12 +3773,11 @@ La navegación permite pasar de la preparación del ensayo a la práctica y lueg
 | Acciones de práctica | Diferencia pausar, reanudar y finalizar. |
 | Confirmaciones y recuperación | Confirma el cierre de una práctica activa y conserva el contexto al mostrar un error. |
 
-**Landing page y vista compartida**
+**Landing page**
 
 | Espacio | Descripción |
 | --- | --- |
 | Landing pública | Reúne enlaces a beneficios, pasos de uso, planes y contacto, con una acción destacada de registro. |
-| Vista del tutor | Permite leer únicamente el reporte autorizado. Si el enlace caduca o se revoca, informa que ya no está disponible. |
 
 Volver a la configuración conserva las elecciones previas. Los mensajes de error indican la acción que permite continuar y el cierre de una práctica activa requiere confirmación.
 
@@ -3837,7 +3822,7 @@ Las pantallas representan las operaciones descritas en el capítulo V. La siguie
 | S03: practicar, pausar, reanudar y finalizar | Live Coaching (5.1) y Practice Session Management (5.4); AI Provider Gateway (5.9) es la pasarela propuesta. |
 | S04, R01: seguir el análisis y revisar el reporte | Speech Analysis (5.2) obtiene métricas y Scoring & Feedback (5.3) calcula la evaluación. |
 | H01–H02, G01–G03: consultar actividad, historial, tendencias y plan | Practice Session Management (5.4) aporta el historial, Progress & Adaptation (5.5) reúne el progreso y Gamification (5.7) aporta rachas y logros. La comparación y el plan se especifican en los modelos y contratos de 5.5. |
-| D01, T01: compartir, exportar, revocar y eliminar | Sharing & Retention (5.6), en colaboración con los contextos propietarios de los datos. |
+| D01: exportar, retirar consentimiento y eliminar | Sharing & Retention (5.6), en colaboración con los contextos propietarios de los datos. |
 | N01: administrar preferencias de contacto | Notifications (5.10); la entrega por canal y el seguimiento son funciones propuestas. |
 
 ### 6.4.1. Applications Wireframes
@@ -3861,8 +3846,7 @@ Los wireframes presentan la estructura de las pantallas, sus etiquetas y sus rut
 | G01 | Tendencias | US21 |
 | G02 | Comparación | US22 |
 | G03 | Plan adaptativo | US36 |
-| D01 | Compartición, exportación y borrado | US27, US32, US33 |
-| T01 | Reporte de tutor | US32 |
+| D01 | Exportación y borrado | US27, US33 |
 | N01 | Preferencias de contacto | Soporte transversal |
 
 #### A01: Registro
@@ -4061,33 +4045,19 @@ El plan se organiza en bloques de ejercicios con una meta, una duración y una a
 
 <img src="assets/ux/wireframes/mobile-plan.png" alt="Wireframe de plan adaptativo: móvil" width="320">
 
-#### D01: Compartición, exportación y borrado
+#### D01: Exportación y borrado
 
-La pantalla separa el acceso temporal al reporte, la exportación y la eliminación. Las opciones de revocación y los estados de la solicitud se sitúan junto a la acción que los origina.
+La pantalla separa la exportación personal, el retiro de consentimiento y la eliminación. Muestra las consecuencias de cada acción y el estado de la solicitud de borrado.
 
-**Historias relacionadas:** US27, US32, US33.
+**Historias relacionadas:** US27, US33.
 
-**Wireframe de compartición, exportación y borrado (web)**
+**Wireframe de exportación y borrado (web)**
 
-<img src="assets/ux/wireframes/web-privacy.png" alt="Wireframe de compartición, exportación y borrado: web" width="900">
+<img src="assets/ux/wireframes/web-privacy.png" alt="Wireframe de exportación y borrado: web" width="900">
 
-**Wireframe de compartición, exportación y borrado (móvil)**
+**Wireframe de exportación y borrado (móvil)**
 
-<img src="assets/ux/wireframes/mobile-privacy.png" alt="Wireframe de compartición, exportación y borrado: móvil" width="320">
-
-#### T01: Reporte de tutor
-
-La vista compartida reúne la identificación del reporte, la vigencia del permiso y los resultados autorizados. Su estructura se concentra en la lectura del reporte.
-
-**Historias relacionadas:** US32.
-
-**Wireframe de reporte de tutor (web)**
-
-<img src="assets/ux/wireframes/web-shared.png" alt="Wireframe de reporte de tutor: web" width="900">
-
-**Wireframe de reporte de tutor (móvil)**
-
-<img src="assets/ux/wireframes/mobile-shared.png" alt="Wireframe de reporte de tutor: móvil" width="320">
+<img src="assets/ux/wireframes/mobile-privacy.png" alt="Wireframe de exportación y borrado: móvil" width="320">
 
 #### N01: Preferencias de contacto
 
@@ -4132,7 +4102,7 @@ El siguiente diagrama resume las decisiones de acceso, consentimiento y recupera
 | Finalizar y revisar | Confirmar el cierre, consultar el estado del análisis y abrir el reporte disponible. Un fallo ofrece reintentar y la evidencia insuficiente produce un resultado parcial. | S03 → S04 → R01 |
 | Elegir el siguiente ejercicio | Revisar una recomendación, consultar el plan y preparar una nueva práctica. | R01 → G03 → S01 |
 | Comparar el desempeño | Elegir dos sesiones desde el historial. La interfaz comprueba su compatibilidad antes de presentar diferencias. | H02 → G02 |
-| Compartir un reporte | Crear un permiso temporal y consultar la vista de lectura del tutor. Revocar el permiso bloquea nuevas consultas. | R01 → D01 → T01 |
+| Exportar o eliminar datos propios | Descargar el reporte autorizado o confirmar la eliminación y consultar su avance. | R01 → D01 |
 
 **Objetivos y wireflows complementarios**
 
@@ -4148,7 +4118,7 @@ Si se olvida la contraseña: A02 → A03 Recuperar acceso → A02. Los errores d
 
 **UG-02: Ensayar una entrevista o sustentación con material autorizado.** Persona: Rodrigo. Historias relacionadas: US30, US31, US34, US38.
 
-Si se deniega micrófono, permanecer en S02. Tras desconexión, reanudar desde checkpoint o confirmar cierre parcial. El material personal queda fuera del reporte compartido.
+Si se deniega micrófono, permanecer en S02. Tras desconexión, reanudar desde checkpoint o confirmar cierre parcial. El material personal queda fuera del archivo exportado.
 
 <img src="assets/diagrams/ux/wireflow-contextual-web.png" alt="UG-02: wireflow web para ensayar una entrevista o sustentación con material autorizado" width="900">
 
@@ -4170,13 +4140,13 @@ Cada ejercicio identifica objetivo y evidencia fuente compatible. Marcar avance 
 
 <img src="assets/diagrams/ux/wireflow-plan-mobile.png" alt="UG-04: wireflow mobile para aplicar una recomendación mediante un ejercicio de práctica" width="900">
 
-**UG-05: Compartir de forma limitada y retirar acceso o eliminar.** Persona: Valeria y Rodrigo. Historias relacionadas: US27, US32, US33.
+**UG-05: Exportar resultados propios y eliminar una sesión.** Persona: Valeria y Rodrigo. Historias relacionadas: US27, US33.
 
-La rama de exportación sale de D01 y respeta el alcance autorizado. Revocar no elimina la sesión ni recupera copias. Eliminar exige confirmación: acceso bloqueado y purga pendiente hasta recibir confirmaciones.
+La exportación descarga únicamente el reporte propio. El retiro de consentimiento detiene nuevo procesamiento. Eliminar exige confirmación: acceso bloqueado y purga pendiente hasta recibir los seis recibos esperados. Las copias ya descargadas no se recuperan.
 
-<img src="assets/diagrams/ux/wireflow-privacy-web.png" alt="UG-05: wireflow web para compartir de forma limitada y retirar acceso o eliminar" width="900">
+<img src="assets/diagrams/ux/wireflow-privacy-web.png" alt="UG-05: wireflow web para exportar resultados propios y eliminar una sesión" width="900">
 
-<img src="assets/diagrams/ux/wireflow-privacy-mobile.png" alt="UG-05: wireflow mobile para compartir de forma limitada y retirar acceso o eliminar" width="900">
+<img src="assets/diagrams/ux/wireflow-privacy-mobile.png" alt="UG-05: wireflow mobile para exportar resultados propios y eliminar una sesión" width="900">
 
 **UG-06: Comprender la propuesta y elegir registro o consulta.** Persona: Nuevo estudiante. Historias relacionadas: US01–US04.
 
@@ -4360,29 +4330,17 @@ Los ejercicios se presentan en tarjetas que reúnen la meta, el tiempo sugerido 
 
 <img src="assets/ux/mockups/mobile-plan.png" alt="Mock-up de plan adaptativo: móvil" width="320">
 
-#### D01: Compartición, exportación y borrado
+#### D01: Exportación y borrado
 
-Las opciones de compartir y exportar se distinguen de la eliminación. La acción de borrado utiliza una presentación de atención y solicita confirmación; la vigencia del acceso y su revocación se muestran junto al permiso.
+La exportación personal se distingue del retiro de consentimiento y la eliminación. El borrado solicita confirmación y muestra acceso bloqueado y purga pendiente hasta completar las confirmaciones.
 
-**Mock-up de compartición, exportación y borrado (web)**
+**Mock-up de exportación y borrado (web)**
 
-<img src="assets/ux/mockups/web-privacy.png" alt="Mock-up de compartición, exportación y borrado: web" width="900">
+<img src="assets/ux/mockups/web-privacy.png" alt="Mock-up de exportación y borrado: web" width="900">
 
-**Mock-up de compartición, exportación y borrado (móvil)**
+**Mock-up de exportación y borrado (móvil)**
 
-<img src="assets/ux/mockups/mobile-privacy.png" alt="Mock-up de compartición, exportación y borrado: móvil" width="320">
-
-#### T01: Reporte de tutor
-
-La presentación de lectura mantiene visibles la vigencia del acceso y el resumen del reporte. Las métricas y recomendaciones se ordenan con la misma jerarquía de la vista del estudiante, limitada al contenido compartido.
-
-**Mock-up de reporte de tutor (web)**
-
-<img src="assets/ux/mockups/web-shared.png" alt="Mock-up de reporte de tutor: web" width="900">
-
-**Mock-up de reporte de tutor (móvil)**
-
-<img src="assets/ux/mockups/mobile-shared.png" alt="Mock-up de reporte de tutor: móvil" width="320">
+<img src="assets/ux/mockups/mobile-privacy.png" alt="Mock-up de exportación y borrado: móvil" width="320">
 
 #### N01: Preferencias de contacto
 
@@ -4466,18 +4424,6 @@ La interfaz explica la diferencia de modo o versión de rúbrica y solicita eleg
 
 <img src="assets/ux/mockups/mobile-incompatible-comparison.png" alt="Comparación incompatible: móvil" width="320">
 
-##### Enlace revocado
-
-La vista informa que el recurso no está disponible y bloquea el contenido del reporte compartido.
-
-**Enlace revocado (web)**
-
-<img src="assets/ux/mockups/web-revoked-link.png" alt="Enlace revocado: web" width="900">
-
-**Enlace revocado (móvil)**
-
-<img src="assets/ux/mockups/mobile-revoked-link.png" alt="Enlace revocado: móvil" width="320">
-
 ##### Purga pendiente
 
 El mensaje confirma que la sesión ya no puede consultarse e informa que la eliminación de sus datos continúa en curso.
@@ -4496,11 +4442,11 @@ El mensaje confirma que la sesión ya no puede consultarse e informa que la elim
 
 ![User flow de primera práctica](assets/diagrams/ux/first-practice-flow.png)
 
-**UF-02: Simulación contextualizada (Rodrigo).** El estudiante prepara una entrevista o sustentación, añade material autorizado de forma opcional y participa en una práctica por turnos. El flujo contempla la recuperación de la conexión y la revisión del feedback contextual. El material de preparación permanece fuera del reporte compartido con el tutor.
+**UF-02: Simulación contextualizada (Rodrigo).** El estudiante prepara una entrevista o sustentación, añade material autorizado de forma opcional y participa en una práctica por turnos. El flujo contempla la recuperación de la conexión y la revisión del feedback contextual. El material de preparación permanece fuera del archivo exportado.
 
 ![User flow de práctica avanzada](assets/diagrams/ux/advanced-practice-flow.png)
 
-**UF-03: Compartición y eliminación.** El estudiante crea un acceso temporal para un tutor y puede revocarlo desde la misma sección. Si solicita eliminar la sesión, esta deja de estar disponible y se muestra “Purga pendiente” mientras concluye la eliminación de sus datos.
+**UF-03: Exportación y eliminación.** El estudiante descarga su reporte propio o retira consentimiento desde Privacidad. Si solicita eliminar la sesión, esta deja de estar disponible y se muestra “Purga pendiente” mientras concluye la eliminación de sus datos.
 
 ![User flow de privacidad](assets/diagrams/ux/privacy-flow.png)
 
@@ -4526,7 +4472,7 @@ El [prototipo de diseño](assets/ux/prototype/index.html) permite explorar las p
 | Preparación | Elegir el escenario y las condiciones del ensayo, y explorar la comprobación de audio y el consentimiento. |
 | Recuperación | Explorar la respuesta a permisos denegados, desconexiones y fallos de análisis. |
 | Progreso | Consultar el historial de ejemplo, aplicar filtros y comparar sesiones compatibles. |
-| Control de datos | Explorar el acceso temporal del tutor, la revocación, la exportación y la solicitud de eliminación. |
+| Control de datos | Explorar la exportación personal, el retiro de consentimiento y la solicitud de eliminación. |
 
 **Recorrido de interacción**
 
@@ -4550,45 +4496,833 @@ El recorrido comienza con la configuración de la práctica, continúa con la pr
 
 # Capítulo VII: Software Product Implementation, Validation & Deployment
 
-Este capítulo corresponde a los hitos posteriores de implementación y validación. Se conserva la estructura del formato oficial; este avance de semana 7 no presenta sprints ejecutados, pruebas de producto, despliegues, entrevistas de validación ni videos que todavía no existen. El prototipo UX de 6.5 es evidencia de diseño, no de un producto integrado. La siguiente estructura se completará con evidencia real en esos hitos.
+La primera implementación documentada para TB2 reutiliza la base de Talki del periodo 202601. Se incorporan al repositorio actual instantáneas verificables de cuatro repositorios backend y del cliente web, junto con sus commits y sumas SHA-256. La revisión del 30 de octubre de 2026 vuelve a ejecutar sus pruebas y contrasta el código con el diseño de los capítulos IV–VI. La reutilización permite disponer de una base ejecutable, pero no acredita que todas las historias ampliadas del curso actual estén implementadas.
+
+El alcance de TB2 se toma del *Trabajo Final_1ASI0728_202620.pdf*, páginas 34–35: incluye el Sprint 1 hasta 7.2.1.8, las entrevistas de validación hasta 7.3.3 y 7.4 Video About-the-Product. El Sprint 2 corresponde a TF1. El presente capítulo distingue la evidencia técnica obtenida de las actividades que todavía requieren participación del equipo o de estudiantes.
 
 ## 7.1. Software Configuration Management
 
 ### 7.1.1. Software Development Environment Configuration
 
+**Qué significa entorno y tecnología en Talki.** La tecnología identifica con qué está construido cada componente. El entorno define dónde y con qué configuración se ejecuta ese código: equipo local, ambiente de pruebas o ambiente publicado. El entorno local, de integración o publicado utiliza el mismo stack, con su configuración correspondiente.
+
+| Concepto | Ejemplo concreto en Talki | Qué documentamos |
+| --- | --- | --- |
+| Backend | Los ocho servicios Java con Spring Boot registran cuentas, gestionan sesiones y procesan resultados. | Lenguaje/framework, repositorio, versión, contrato y configuración. |
+| Frontend | El cliente heredado Next.js/React presenta pantallas y utiliza un BFF para llamar a los servicios. | Framework real, navegación, consumo de APIs y gestión de sesión. |
+| Mensajería | RabbitMQ comunica el cierre de práctica con análisis, puntuación, progreso y avisos. | Broker común, parámetros de conexión, eventos y recuperación. |
+| Datos locales | H2 está configurada en memoria con create-drop. | Datos descartables para pruebas; no presentarlos como persistencia final de producción. |
+| Proveedor de voz | Gemini Live requiere configuración privada para el ensayo de voz real. | Modelo configurado, credencial del servidor, token efímero y estados de error; nunca publicar la clave. |
+| Entorno local | Los servicios y el broker se ejecutan en el equipo, con puertos de localhost. | Pasos reproducibles de arranque y fixtures de prueba. |
+| Entorno de integración | Se ejecutan juntos los componentes necesarios para comprobar el recorrido. | Mismo ID de sesión, intercambios HTTP/eventos y resultados de aceptación. |
+| Entorno publicado | Los productos están disponibles por HTTPS en recursos cloud. | URLs actuales, commit, variables externas y almacenamiento persistente, según el diseño de despliegue. |
+
+**Decisión tecnológica del proyecto.** El Team Leader confirmó el 30/10/2026 conservar **Next.js 16.2.9, React 19.2.4 y TypeScript**, con **Tailwind CSS 4 y shadcn**, para el cliente web. Se reutilizan sus pantallas y BFF y se concentra el trabajo en integración, errores, pruebas y despliegue. Los ocho servicios se mantienen en Java 17/Spring Boot 3.2.5. La aplicación móvil Flutter continúa como ampliación propuesta; la vista responsive es parte del cliente web.
+
+SB1-01-B documenta esta selección y comprueba su correspondencia con los archivos del cliente; SB1-06 integra el recorrido con los servicios. La migración a otro framework se retira del plan por decisión del equipo. H2 se utiliza en pruebas locales; la persistencia del ambiente publicado se configura y comprueba en SB1-07.
+
+El entorno se describe según los archivos realmente incluidos en las instantáneas del código. Las herramientas de modelado y UX conservan los artefactos editables del informe actual. No se asume la instalación de herramientas adicionales citadas en el informe anterior cuando no aparecen en sus dependencias.
+
+| Herramienta | Configuración o versión comprobada | Propósito y referencia |
+| --- | --- | --- |
+| Java y Apache Maven | Java 17; Spring Boot 3.2.5 en los ocho `pom.xml`; ejecución verificada con JDK 17.0.19. | Compilar y probar los servicios. [Java](https://www.oracle.com/java/technologies/downloads/), [Maven](https://maven.apache.org/). |
+| JUnit y Mockito | Dependencias de Spring Boot Starter Test. | Probar dominio, servicios y consumidores con dobles de prueba. [JUnit](https://junit.org/), [Mockito](https://site.mockito.org/). |
+| Springdoc OpenAPI | 2.3.0 en las dependencias del backend. | Generar contratos REST y explorarlos en Swagger UI. [Springdoc](https://springdoc.org/). |
+| Docker y Docker Compose | Un Dockerfile por servicio y `docker-compose.dev.yml` por repositorio backend. | Contenerización y ejecución local. [Docker](https://docs.docker.com/). |
+| RabbitMQ | Imagen local `rabbitmq:3.12-management`. | Mensajes entre servicios. La reproducción conjunta utiliza un solo broker. [RabbitMQ](https://www.rabbitmq.com/docs). |
+| H2 y JPA | H2 en memoria; configuración `create-drop` en los servicios con persistencia. | Datos descartables para desarrollo. Esta configuración no constituye persistencia de producción. |
+| Node.js y pnpm | Node compatible con Next 16; dependencias fijadas en `pnpm-lock.yaml`. | Compilar y ejecutar el cliente con `pnpm install --frozen-lockfile`. [Node.js](https://nodejs.org/), [pnpm](https://pnpm.io/). |
+| Next.js, React y TypeScript | Next 16.2.9, React 19.2.4 y TypeScript 5 declarados por el cliente; Tailwind CSS 4. | Cliente heredado con BFF y cookie de sesión httpOnly. [Next.js](https://nextjs.org/). |
+| Git y GitHub | Historial y commits fijados por repositorio. | Versionado, revisión y procedencia de cambios. [Git](https://git-scm.com/), [GitHub](https://github.com/). |
+| Structurizr y PlantUML | DSL y fuentes de diagramas en `assets/structurizr/` y `assets/diagrams/`. | Demostración del diseño C4 y UML en sus herramientas. [Structurizr](https://structurizr.com/), [PlantUML](https://plantuml.com/). |
+| Navegador y servidor HTTP | HTML, CSS y JavaScript del prototipo de 6.5. | Evaluar navegación web/móvil, con datos de ejemplo. La simulación no utiliza Gemini. |
+
+**Referencia del enunciado.** La sección Tecnología de la página 32 enumera Angular/Vue para Web Applications. Next.js/React es la decisión actual del equipo; esta edición del informe no modifica el documento del curso ni acredita autorización docente para esa diferencia. El [registro de tecnologías](assets/planning/sprint-1/technology-requirements.json) conserva el texto de origen y la decisión del proyecto.
+
+El procedimiento de reproducción de 7.1.4 detalla integridad, extracción, pruebas, puertos, Swagger y cliente, con interpretación de errores.
+
+**Reproducción.** Se extraen las cinco instantáneas de `assets/reused-202601/tb2/` en un directorio de trabajo y se comprueba su integridad con `manifest.json`. En cada uno de los ocho directorios de servicio se ejecuta, con `JAVA_HOME` apuntando a JDK 17:
+
+```bash
+mvn -B -ntp clean test
+mvn -B -ntp package -DskipTests
+```
+
+En el cliente se ejecuta `pnpm install --frozen-lockfile` y `pnpm build`. Las variables del cliente se obtienen de `.env.example`; los valores privados se mantienen fuera del repositorio. `GEMINI_API_KEY` se requiere para voz real, pero no para las pruebas unitarias ni para explorar los contratos locales. El servicio comunica indisponibilidad con HTTP 503 si no está configurada.
+
 ### 7.1.2. Source Code Management
+
+El repositorio del informe del periodo 202620 es la fuente de la documentación actual. Las instantáneas de código mantienen el nombre de la organización de origen y el commit exacto; no se atribuyen como desarrollo nuevo de este periodo. El [manifiesto de reutilización TB2](assets/reused-202601/tb2/manifest.json) permite comprobar cada archivo importado.
+
+| Repositorio de origen | Commit fijado | Copia y propósito |
+| --- | --- | --- |
+| [talki-analysis-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services) | [9e026c3](https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services/tree/9e026c324b6f7a321505af705e9e8ffdd6496fc4) | [Instantánea](assets/reused-202601/tb2/talki-analysis-services-9e026c3.tar.gz); código del periodo 202601. |
+| [talki-engagement-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services) | [231bb5e](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services/tree/231bb5eb7ccefb741cbff5274634bef2eef17819) | [Instantánea](assets/reused-202601/tb2/talki-engagement-services-231bb5e.tar.gz); código del periodo 202601. |
+| [talki-frontend](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend) | [d63e889](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend/tree/d63e889a216d093a86bf24a2a328c18d0e610618) | [Instantánea](assets/reused-202601/tb2/talki-frontend-d63e889.tar.gz); código del periodo 202601. |
+| [talki-session-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services) | [cde4b11](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services/tree/cde4b117783db42115acc680ddb22e2bfe99ae24) | [Instantánea](assets/reused-202601/tb2/talki-session-services-cde4b11.tar.gz); código del periodo 202601. |
+| [talki-user-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services) | [1da887a](https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services/tree/1da887abe3dd2d776685c5d864dc4098ceb66344) | [Instantánea](assets/reused-202601/tb2/talki-user-services-1da887a.tar.gz); código del periodo 202601. |
+
+El flujo de trabajo del informe utiliza `main` para la versión integrada y ramas de cambios revisables. La presente actualización se prepara en `codex/tb2-report-completion-20261030`; preserva las correcciones de actores y de contenedores posteriores al parcial. Para las siguientes modificaciones se establece GitFlow: `develop` integra trabajo, `feature/<tema>` desarrolla una historia, `release/<versión>` prepara una entrega y `hotfix/<tema>` corrige una versión publicada. Este flujo es la convención adoptada; no se afirma que todas las ramas históricas lo hayan seguido.
+
+Las versiones de producto siguen SemVer: cambio incompatible incrementa la versión mayor, funcionalidad compatible la menor y corrección compatible el parche. Una entrega académica TB2 no constituye por sí sola un release de software. Los commits siguen `tipo(alcance): descripción`, por ejemplo `docs(tb2): document verified implementation baseline` o `fix(session): prevent duplicate finalization`. Cada autor registra el archivo/sección que modificó y enlaza su commit o PR; una asignación de revisión no equivale a un aporte completado.
 
 ### 7.1.3. Source Code Style Guide & Conventions
 
+| Ámbito | Convención aplicable | Comprobación |
+| --- | --- | --- |
+| Java | Paquetes en minúscula; clases en PascalCase; métodos y atributos en camelCase; constantes en UPPER_SNAKE_CASE; nombres técnicos en inglés. | Revisar dominio, aplicación, infraestructura e interfaces de cada servicio. |
+| Dependencias | El dominio expresa reglas; los servicios coordinan casos de uso; infraestructura implementa persistencia y mensajería; interfaces publica contratos. | Revisar imports y contratos respecto del capítulo V. La estructura por carpetas no prueba aislamiento automáticamente. |
+| TypeScript y React | Componentes en PascalCase; funciones y variables en camelCase; tipos explícitos en contratos y funciones del BFF. | Compilación Next/TypeScript; el repositorio contiene configuración ESLint. |
+| HTTP y eventos | Rutas `/v1/...`, verbos según operación, estados HTTP explícitos y DTO documentado. Los mensajes deben mantener identificadores y datos de correlación. | Contrastar controladores y documentos OpenAPI; probar errores y autorización, además del caso feliz. |
+| Secretos y datos | Variables privadas fuera de Git; JWT solo en cookie httpOnly del cliente; datos de pruebas identificados como fixtures. | No publicar claves, contraseñas, JWT ni datos personales en capturas. |
+| Documentación | Numeración acumulativa, tablas textuales editables y figuras con origen y alcance. | Revisar enlaces, procedencia y concordancia entre requisitos, diseño e implementación. |
+
+No se declara cobertura de código ni aprobación de un quality gate que no haya sido medido. Las pruebas ejecutadas comprueban comportamientos concretos, no cumplimiento íntegro de todas las restricciones del diseño.
+
 ### 7.1.4. Software Deployment Configuration
+
+La ejecución local requiere un único RabbitMQ compartido, los ocho servicios y el cliente. Ejecutar simultáneamente los cuatro Compose originales sin adaptarlos produciría conflictos de puertos y brokers separados. El script [capture-tb2-local.py](scripts/capture-tb2-local.py) utiliza un broker aislado y puertos de loopback 18081, 18082, 18083 y 18087–18091, arranca los JAR y los detiene al finalizar la captura. Su alcance es una prueba local reproducible, no un despliegue público.
+
+| Servicio | Puerto de referencia del código | Configuración externa principal |
+| --- | --- | --- |
+| Identity | 8081 | `PORT`, `JWT_SECRET`, parámetros RabbitMQ. |
+| Session | 8082 | `PORT`, parámetros RabbitMQ; almacenamiento H2 local. |
+| Live Coach | 8083 | `GEMINI_API_KEY`, `GEMINI_MODEL`, `GEMINI_BASE_URL`, expiración de token y parámetros RabbitMQ. |
+| Filler Detection / Scoring | 8087 / 8088 | `PORT` y parámetros RabbitMQ. |
+| Progress / Gamification | 8089 / 8090 | `PORT`, parámetros RabbitMQ; H2 local. |
+| Notifications | 8091 | `PORT` y parámetros RabbitMQ; procesamiento por eventos. |
+| Cliente web | 3000 | `TALKI_IDENTITY_URL`, `TALKI_SESSION_URL`, `TALKI_COACH_URL` y demás URLs definidas en `.env.example`. |
+
+La recuperación del ambiente público debe: aprovisionar recursos y variables privadas; compilar cada commit fijado; configurar un broker común y almacenamiento persistente; publicar HTTPS; verificar rutas OpenAPI; configurar las URLs del BFF; ejecutar el recorrido autenticado y registrar capturas fechadas. Los Dockerfiles son insumos del proceso; no acreditan que un servicio esté activo.
+
+Los capítulos IV y V definen diez bounded contexts. Un bounded context delimita lenguaje y reglas; un microservicio es una unidad de ejecución. La base reutilizada tiene ocho servicios: AI Provider Gateway permanece integrado en Live Coach y Sharing & Retention no tiene implementación completa identificada. Esta diferencia no elimina el diseño objetivo ni acredita automáticamente sus garantías.
+
+| Contexto del capítulo V | Materialización comprobable | Alcance de base | Diferencia y cierre |
+| --- | --- | --- | --- |
+| 5.1 Live Coaching | [live-coach-service](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services/blob/cde4b117783db42115acc680ddb22e2bfe99ae24/live-coach-service/src/main/java/com/thropic/talki/livecoach/application/services/LiveCoachOrchestrator.java) | Modos y token efímero; publica cierre de práctica. | Correlación con sesión persistida, estados y voz real: SB1-03 / TS02. |
+| 5.2 Speech Analysis | [filler-detection-service](https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services/blob/9e026c324b6f7a321505af705e9e8ffdd6496fc4/filler-detection-service/src/main/java/com/thropic/talki/filler/domain/event/SessionLiveFinalizedEvent.java) | Consumidor de cierre y detección de muletillas. | Métricas acústicas, cobertura y recorrido integrado: SB1-04 / US16 / TS03. |
+| 5.3 Scoring & Feedback | [scoring-service](https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services/blob/9e026c324b6f7a321505af705e9e8ffdd6496fc4/scoring-service/src/main/java/com/thropic/talki/scoring/infrastructure/messaging/consumer/FillerAnalyzedConsumer.java) | Consumidor de métricas y cálculo de score. | Rúbricas/reportes versionados y aceptación: SB1-04 / TS04. |
+| 5.4 Practice Session Management | [session-service](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services/blob/cde4b117783db42115acc680ddb22e2bfe99ae24/session-service/src/main/java/com/thropic/talki/session/interfaces/rest/SessionController.java) | Creación, consulta, finalización y feedback. | Inicio RECORDING, errores y autorización por dueño: SB1-02–04 / TS01. |
+| 5.5 Progress & Adaptation | [progress-service](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services/blob/231bb5eb7ccefb741cbff5274634bef2eef17819/progress-service/src/main/java/com/thropic/talki/progress/infrastructure/messaging/consumer/ScoringCompletedConsumer.java) | Resumen y proyección de evaluaciones. | Comparación y plan adaptativo ampliados: US22 / US36; verificar proyección SB1-05. |
+| 5.6 Sharing & Retention | Sin servicio dedicado | No se identifica un servicio dedicado en la base importada. | Exportación, bloqueo y purga distribuida: G-PRIV / US27 / US33 / TS06. |
+| 5.7 Gamification | [gamification-service](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services/blob/231bb5eb7ccefb741cbff5274634bef2eef17819/gamification-service/src/main/java/com/thropic/talki/gamification/interfaces/rest/GamificationController.java) | Rachas, logros y consulta de ranking. | Comprobar actualización y duplicados: SB1-05 / US35. |
+| 5.8 Identity & Access | [identity-service](https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services/blob/1da887abe3dd2d776685c5d864dc4098ceb66344/identity-service/src/main/java/com/thropic/talki/identity/interfaces/rest/AuthController.java) | Registro, login y segmento académico. | Autorización cruzada, retiro de consentimiento y ampliaciones de cuenta: SB1-02 / G-PRIV. |
+| 5.9 AI Provider Gateway | [live-coach-service](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services/blob/cde4b117783db42115acc680ddb22e2bfe99ae24/live-coach-service/src/main/java/com/thropic/talki/livecoach/infrastructure/gemini/GeminiTokenService.java) | Adaptador Gemini integrado en live-coach-service. | No existe despliegue independiente de este contexto; comprobar aislamiento y contrato TS02. |
+| 5.10 Notifications | [notification-service](https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services/blob/1da887abe3dd2d776685c5d864dc4098ceb66344/notification-service/src/main/java/com/thropic/talki/notification/domain/event/ScoringCompletedEvent.java) | Consumidor de evaluación y logros. | Verificar canal realmente disponible y duplicados: SB1-05. No se acredita correo enviado. |
+
+Las vistas de contenedores y despliegue de 4.3.3–4.3.4 muestran el objetivo. La reproducción local de 7.1.4 usa un broker compartido y H2 descartable. Ni el nombre de una carpeta ni una prueba unitaria demuestran autorización entre cuentas, purga, persistencia pública, idempotencia integral o recuperación de voz. Cada garantía se acepta con el caso de integración de su PBI.
+
+
+La matriz anterior y su [registro estructurado](assets/evidence/tb2/architecture-concordance.json) enlazan cada contexto con el archivo del commit de origen.
+
+La vista 4.3.4 representa la arquitectura objetivo con HTTPS/WSS y mensajería. La base reutilizada agrupa responsabilidades en ocho servicios y mantiene H2 en memoria; no debe confundirse con la materialización completa de los diez bounded contexts ni con el despliegue objetivo de privacidad y retención.
+
+**Procedimiento completo de reproducción local.**
+
+Este procedimiento utiliza las cinco instantáneas del anexo L. Reproduce la base de 202601 con fixtures; no publica servicios ni consume voz de Gemini. La prueba capturada el 30/10/2026 está en `assets/evidence/tb2/local-execution.json` y conserva también los errores encontrados.
+
+**1 Preparar los insumos.**
+
+Requisitos: JDK 17, Maven, Docker activo, Python 3 y, para el cliente, Node compatible con Next 16 y pnpm. La versión Java utilizada en la evidencia es 17.0.19. Comprobar espacio, puertos libres y acceso al repositorio; no reutilizar datos reales.
+
+Desde la raíz del informe, crear una carpeta y extraer cada archivo respetando el directorio raíz que incluye:
+
+```bash
+mkdir -p .tb2-build/sources
+```
+
+La integridad de los archivos debe comprobarse contra `assets/reused-202601/tb2/manifest.json` antes de extraer. El script siguiente aborta si un SHA-256 difiere:
+
+```python
+import hashlib, json, pathlib, tarfile
+base = pathlib.Path.cwd()
+target = base / '.tb2-build/sources'
+manifest = json.loads((base / 'assets/reused-202601/tb2/manifest.json').read_text())
+for source in manifest['sources']:
+    if 'archive' not in source:
+        continue
+    archive = base / source['archive']
+    assert hashlib.sha256(archive.read_bytes()).hexdigest() == source['sha256']
+    with tarfile.open(archive) as data:
+        for member in data.getmembers():
+            resolved = (target / member.name).resolve()
+            assert resolved.is_relative_to(target.resolve())
+            assert not member.issym() and not member.islnk()
+        data.extractall(target)
+```
+
+**2 Compilar y probar.**
+
+Definir `JAVA_HOME` con la ruta real de JDK 17 y confirmar `java -version` y `mvn -version`. Ejecutar dentro de cada directorio de servicio, no en una supuesta raíz Maven común:
+
+```bash
+mvn -B -ntp clean test
+mvn -B -ntp package -DskipTests
+```
+
+Los directorios son identity-service y notification-service en talki-user-services; session-service y live-coach-service en talki-session-services; filler-detection-service y scoring-service en talki-analysis-services; progress-service y gamification-service en talki-engagement-services. Guardar los reportes Surefire con el SHA probado. El resultado base es 133 pruebas aprobadas; los resultados nuevos deben registrarse por separado.
+
+**3 Ejecutar el smoke descartable.**
+
+```bash
+docker pull rabbitmq:3.12-management
+python3 scripts/capture-tb2-local.py --sources .tb2-build/sources --java-home "$JAVA_HOME"
+```
+
+El script inicia su propio broker en 127.0.0.1:25672, usa credenciales aleatorias locales y arranca los ocho JAR en loopback. Detiene únicamente sus procesos y contenedor en el bloque de limpieza. No modifica los repositorios de origen. Reescribe la captura local/OpenAPI; conservar la evidencia anterior en Git antes de repetirlo. No ofrece Swagger interactivo después de finalizar porque detiene los servicios.
+
+| Servicio | Puerto del smoke | Puerto normal de referencia |
+| --- | ---: | ---: |
+| identity-service | 18081 | 8081 |
+| session-service | 18082 | 8082 |
+| live-coach-service | 18083 | 8083 |
+| filler-detection-service | 18087 | 8087 |
+| scoring-service | 18088 | 8088 |
+| progress-service | 18089 | 8089 |
+| gamification-service | 18090 | 8090 |
+| notification-service | 18091 | 8091 |
+
+**4 Explorar Swagger y el cliente.**
+
+Para una sesión interactiva, mantener un solo broker y ejecutar cada JAR en terminal propia, con `PORT`, `RABBITMQ_HOST`, `RABBITMQ_PORT`, `RABBITMQ_USERNAME`, `RABBITMQ_PASSWORD` y `JWT_SECRET` externos. Generar valores privados locales y no copiarlos al informe. Dejar `GEMINI_API_KEY` vacía si solo se revisan contratos: el token de voz responderá 503.
+
+```bash
+java -jar target/NOMBRE_REAL_DEL_JAR.jar
+```
+
+Sustituir el nombre por el archivo empaquetado; no es un comando con nombre de JAR literal. Abrir `/swagger-ui.html` y `/v3/api-docs` en el puerto elegido. Las especificaciones ya capturadas pueden explorarse también en una instancia local de Swagger UI; ello documenta el contrato, no acredita que el backend esté encendido.
+
+Dentro de talki-frontend ejecutar `pnpm install --frozen-lockfile`, copiar `.env.example` a `.env.local` y configurar las ocho `TALKI_*_URL` al puerto donde esté cada servicio. Ejecutar `pnpm build` y `pnpm start`. No mezclar las URLs 808x del archivo de ejemplo con 1808x del smoke ni usar el smoke ya detenido como backend permanente.
+
+**5 Interpretar y cerrar.**
+
+Registro/login/creación/consulta respondieron correctamente en la captura. Finalizar desde DRAFT produjo 500: registrar como defecto, no como caso aprobado. Token sin clave produjo 503 esperado. Progreso y racha iniciales vacíos no prueban consumo de eventos. La aceptación de voz, la autorización cruzada, la integración por mensajes y el despliegue persistente siguen sus propios criterios de SB1-02–07.
+
+El ambiente público requiere HTTPS, broker común, perfiles y almacenamiento persistente; H2 en memoria con `create-drop` se limita al entorno descartable. Registrar commit y configuración aplicada, verificar reinicio y recorrido antes de afirmar disponibilidad. Este procedimiento no adjudica un despliegue cloud realizado.
+
 
 ## 7.2. Solution Implementation
 
-### 7.2.X. Sprint X
+### 7.2.1. Sprint 1
 
-#### 7.2.X.1. Sprint Planning X
+El incremento de TB2 adopta el código existente como base y comprueba su estado antes de añadir las capacidades ampliadas del backlog. Como equipo, acordamos desarrollar el **Sprint 1 del lunes 26 de octubre al domingo 8 de noviembre de 2026**, con una duración de dos semanas, 20 h por integrante y las responsabilidades de 7.2.1.1–7.2.1.2. El planning se realizó el 28/10, de 20:00 a 21:00 por Google Meet, con los cinco integrantes. Las fechas y la velocidad del ciclo 202601 se conservan como antecedentes; las evidencias del periodo actual se registran por separado.
+#### 7.2.1.1. Sprint Planning 1
 
-#### 7.2.X.2. Sprint Backlog X
+Como equipo, acordamos organizar el Sprint 1 del **26/10/2026 al 08/11/2026**, con **20 h por integrante** y una distribución explícita de responsabilidades. La reunión de planning se realizó el **28 de octubre de 2026, de 20:00 a 21:00 (America/Lima), por Google Meet**, con los cinco integrantes presentes. El calendario inicia el lunes 26 y conserva el planning en su fecha real del miércoles 28. El objetivo, las tareas y sus criterios guían el trabajo; su cumplimiento se registra con evidencia, no por la sola asignación de un responsable.
 
-#### 7.2.X.3. Development Evidence for Sprint Review
+**Sprint Goal.** Demostrar un recorrido integrado de acceso, preparación, práctica, cierre y consulta de feedback, aprovechando los ocho servicios existentes. Cada comportamiento presentado debe enlazar historia, tarea, commit, prueba y evidencia de ejecución. La meta es una primera versión demostrable; el cumplimiento completo de una User Story requiere todos sus criterios originales de 3.3.
 
-#### 7.2.X.4. Testing Suite Evidence for Sprint Review
+| Campo | Definición y estado |
+| --- | --- |
+| Entrega / iteración | TB2 / Sprint 1 del periodo 202620. |
+| Fecha de reunión | Miércoles 28/10/2026. |
+| Modalidad y plataforma | Remota por Google Meet. |
+| Hora de inicio y fin | 20:00–21:00, hora de Lima (UTC−05:00). |
+| Duración | 60 minutos. |
+| Organización del plan | Acuerdo del equipo Thropic; coordinación por bloque y responsables por tarea. |
+| Integrantes asistentes | Alejandro Daniel Oroncoy Almeyda; Eduardo Gael Rivera Sosa; Manuel Ignacio Tumi Oliden; Werner Khalil Lang Nassi; Kevin Jorge Chi Cruzatt. |
+| Asistencia efectiva a la reunión | Cinco de cinco integrantes presentes. |
+| Inicio del sprint | Lunes 26/10/2026. |
+| Cierre del sprint | Domingo 08/11/2026. |
+| Duración del sprint | Dos semanas: 14 días calendario, con ambas fechas incluidas. |
+| Fecha institucional de entrega | El enunciado sitúa TB2 en semana 12; confirmar fecha/hora publicada en Blackboard. El 08/11 es el cierre interno acordado del sprint. |
+| Insumos | Capítulos I–VI; backlog de 3.5; ocho servicios reutilizados y cliente; 133 pruebas unitarias aprobadas; contratos y prueba HTTP local del 30/10. |
+| Revisión previa | Feedback del parcial: 19/20, con diseño táctico/UX 10/10 y documentación/colaboración 9/10. |
+| Mejora incorporada al plan | Aportes individuales verificables; documentación trazable; lámina del equipo y demostración de artefactos en herramientas. Son insumos del feedback; no se registra una retrospectiva adicional inexistente. |
+| Estimación | 8 PBIs con 24 tareas: **36 SP residuales y 80 h de trabajo**. Las cifras son pronóstico inicial, no velocidad ni tiempo ejecutado; incluyen 6 h / 3 SP de validación diferida. |
+| Capacidad acordada como equipo | 5 integrantes × 20 h = **100 h durante las dos semanas**: 80 h estimadas de tareas, 10 h de coordinación/revisión —incluido el planning— y 10 h de contingencia. Equivale a 10 h por integrante por semana. |
+| Compromiso del equipo | Orientar SB1-01–SB1-07 al cierre del 08/11 conforme a sus criterios y accesos disponibles; registrar y resolver bloqueos, y comunicar cualquier ajuste de alcance. SB1-08 conserva responsables, pero su aplicación depende de las entrevistas diferidas. Ninguna asignación acredita una tarea terminada. |
 
-#### 7.2.X.5. Execution Evidence for Sprint Review
+**Base disponible y alcance pendiente.** La importación de código, los 133 resultados unitarios, los ocho documentos OpenAPI y los casos HTTP del 30/10 son insumos ya disponibles. No se estiman otra vez como si fueran desarrollo nuevo. El trabajo residual consiste en resolver diferencias, integrar, ejecutar aceptación, recuperar despliegue y documentar resultados. Las ampliaciones del producto se mantienen en la hoja de ruta completa, sin prometer su ejecución dentro de estas mismas 80 horas.
 
-#### 7.2.X.6. Services Documentation Evidence for Sprint Review
+| Servicio o producto existente | Responsabilidad en la base | PBI que verifica o completa su integración |
+| --- | --- | --- |
+| identity-service | Registro, autenticación y segmento. | SB1-02; seguridad de acceso y BFF en SB1-06. |
+| session-service | Sesiones, estados, consulta y feedback asociado. | SB1-02, SB1-03 y SB1-04. |
+| live-coach-service | Modos, credencial efímera y evento de cierre de voz. | SB1-03. |
+| filler-detection-service | Detección de muletillas desde el evento de cierre. | SB1-04. |
+| scoring-service | Cálculo y publicación de puntuación. | SB1-04; proyecciones posteriores en SB1-05. |
+| progress-service | Resumen del progreso a partir de evaluaciones. | SB1-05. |
+| gamification-service | Rachas y logros según sesiones válidas. | SB1-05. |
+| notification-service | Consumo de eventos de evaluación/logro y aviso disponible. | SB1-05. No se presume un canal de correo configurado. |
+| Cliente web, landing y BFF | Pantallas, sesión del navegador y consumo de APIs. | SB1-02, SB1-03 y SB1-06 sobre Next.js/React. |
+| RabbitMQ, persistencia y ambiente | Integración entre servicios y ejecución reproducible/desplegada. | SB1-01 y SB1-07. |
 
-#### 7.2.X.7. Software Deployment Evidence for Sprint Review
+**Distribución de responsabilidades acordada como equipo.** Un coordinador por PBI organiza el cierre; las tareas de 7.2.1.2 indican quién hace cada parte. Las horas de apoyo se contabilizan a su responsable, no se suman de nuevo al coordinador.
 
-#### 7.2.X.8. Team Collaboration Insights during Sprint
+Acordamos la siguiente división del trabajo. Las responsabilidades se expresan como acciones a realizar durante el sprint; las tareas de validación se mantienen asignadas y diferidas, como decidió el equipo.
+
+| Integrante | Qué realizará | Tareas relacionadas |
+| --- | --- | --- |
+| Alejandro Daniel Oroncoy Almeyda | Coordinará el procedimiento de arranque, los estados y consentimiento de sesión, voz/token y cierre sin duplicados. Consolidará la trazabilidad técnica del informe. | SB1-01-A; SB1-03-A/B/C; SB1-07-C |
+| Eduardo Gael Rivera Sosa | Documentará el stack Next.js/React; ajustará landing, conectará pantallas con APIs y comprobará el recorrido responsive. Mantendrá la responsabilidad de aplicar validación cuando se retomen las entrevistas. | SB1-01-B; SB1-06-A/B/C; SB1-08-A — diferida |
+| Manuel Ignacio Tumi Oliden | Comprobará los contratos del pipeline, el feedback persistido y sus pruebas de integración/BDD. Verificará la actualización del progreso por eventos. | SB1-04-A/B/C; SB1-05-A |
+| Werner Khalil Lang Nassi | Verificará acceso, logout y autorización por propietario; comprobará gamificación/notificaciones y la puerta de privacidad. Consolidará heurísticas cuando existan las sesiones de validación. | SB1-02-A/B; SB1-05-B; SB1-07-D; SB1-08-B — diferida |
+| Kevin Jorge Chi Cruzatt | Documentará contratos/puertos; integrará errores de acceso y controles de práctica. Preparará los perfiles del ambiente y comprobará servicios y cliente publicados. | SB1-01-C; SB1-02-C; SB1-03-D; SB1-07-A/B |
+
+
+| Integrante | Tareas asignadas en el plan | Trabajo | Coordinación / revisión | Reserva | Total confirmado |
+| --- | --- | ---: | ---: | ---: | ---: |
+| Alejandro Daniel Oroncoy Almeyda | SB1-01-A, SB1-03-A, SB1-03-B, SB1-03-C, SB1-07-C | 16 h | 2 h | 2 h | 20 h |
+| Eduardo Gael Rivera Sosa | SB1-01-B, SB1-06-A, SB1-06-B, SB1-06-C, SB1-08-A | 16 h | 2 h | 2 h | 20 h |
+| Manuel Ignacio Tumi Oliden | SB1-04-A, SB1-04-B, SB1-04-C, SB1-05-A | 16 h | 2 h | 2 h | 20 h |
+| Werner Khalil Lang Nassi | SB1-02-A, SB1-02-B, SB1-05-B, SB1-07-D, SB1-08-B | 16 h | 2 h | 2 h | 20 h |
+| Kevin Jorge Chi Cruzatt | SB1-01-C, SB1-02-C, SB1-03-D, SB1-07-A, SB1-07-B | 16 h | 2 h | 2 h | 20 h |
+| **Total** | **24 tareas** | **80 h** | **10 h** | **10 h** | **100 h** |
+
+Los SP de cada PBI usan la escala 1, 2, 3, 5 y 8 para estimar el **trabajo que queda** sobre la base reutilizada. Los SP originales de las User Stories y Technical Stories de 3.5 se conservan; no se suman a estos 36 puntos ni se convierten mediante una regla de horas por punto. La velocidad del equipo se medirá al cerrar trabajo realmente aceptado.
+
+**Calendario del sprint y dependencias.** La secuencia organiza cierres, permitiendo iniciar antes las tareas cuyos insumos ya estén disponibles. Por ejemplo, el ambiente de SB1-07-A puede prepararse con SB1-01-C, aunque el despliegue integrado de SB1-07-B espere al cliente y al análisis.
+
+| Fecha / periodo | Trabajo y coordinación previstos | Evidencia o salida requerida |
+| --- | --- | --- |
+| 26/10–27/10 | Inicio del periodo del sprint y preparación de insumos del backlog. | El periodo comienza el lunes 26; las tareas de esos días solo se registran como ejecutadas si existe evidencia. |
+| 28/10, 20:00–21:00 | Planning por Google Meet con los cinco integrantes. | Reunión registrada; objetivo y organización del incremento. |
+| 29/10–01/11 | Entorno, registro/acceso, contratos y landing: SB1-01, SB1-02 y SB1-06-A. | Base reproducible, stack elegido y acceso con fixtures; registrar el estado real de cada tarea. |
+| 02/11–04/11 | Autorización, estados, voz, cierre y preparación del ambiente. | Sesión autorizada, correlación del evento y errores de negocio controlados. |
+| 05/11–06/11 | Análisis/feedback, cliente integrado, progreso, logros y pruebas. | Reporte trazable; resultados de integración y aceptación con commit identificado. |
+| 07/11–08/11 | Despliegue, matriz de evidencias, revisión y retrospectiva del sprint. | URLs/capturas actuales y balance real de terminado, bloqueado y pendiente al cierre del domingo 8. |
+| Diferido, sin fecha de aplicación | Entrevistas y resultados de validación de SB1-08; videos. | Eduardo y Werner conservan sus responsabilidades; no se programan sesiones ni se atribuyen resultados mientras sigan diferidas. |
+
+**Coordinación dentro de la capacidad.** Las 2 h por integrante incluyen 60 min del planning del 28/10, tres sincronizaciones previstas de 10 min, una review prevista de 20 min y una retrospectiva prevista de 10 min: 120 min en total. Las últimas actividades quedan por realizar. De las 100 h totales, el planning representa 5 h de equipo; descontando únicamente esa reunión confirmada quedan 95 h, sin deducir otros esfuerzos no medidos. Las 80 h de tareas incluyen 74 h técnicas/documentales y 6 h de validación asignada pero diferida; esas 6 h no se cuentan como ejecución ni como entrevista comprometida para el 08/11. Las 10 h de reserva absorben incidencias pequeñas.
+
+**Definition of Ready.** Antes de iniciar una tarea deben existir su criterio de aceptación, responsable, dependencia resuelta, repositorio/commit de base e insumos de prueba. Si requiere credenciales, presupuesto cloud, acceso al proveedor o participantes, se registra el bloqueo concreto. Nunca se incluye un secreto en el tablero o en la captura.
+
+**Definition of Done del incremento.** Cada PBI se acepta cuando: (1) el cambio está integrado y revisado mediante commit/PR; (2) sus pruebas unitarias pertinentes y la integración/aceptación correspondiente pasan; (3) contrato, estado de error y propiedad del recurso están comprobados; (4) la demostración usa datos identificados y muestra el alcance real; (5) el informe enlaza la evidencia del commit probado; y (6) el objetivo de despliegue usa el ambiente efectivo. Una historia completa solo se marca terminada si cumple todos los criterios de 3.3. Una captura de prototipo o de la base histórica no acredita esas condiciones.
+
+**Criterios de aceptación de la review.** Se debe demostrar acceso, preparación, práctica corta, cierre y consulta del resultado con los dos perfiles académicos; repetir una finalización no debe duplicar la evaluación; una sesión inválida no debe inventar puntuación; un usuario no debe acceder a la sesión ajena. Los ocho servicios deben poder documentarse mediante OpenAPI en el ambiente mostrado, y las 133 pruebas base deben seguir aprobadas después de los cambios pertinentes. Se incorpora al menos un escenario BDD ejecutado con sus steps y un caso de error. El resultado observado de las tareas de validación se informa con su muestra real, sin prometer de antemano alcanzar QAS-USA-01.
+
+**Decisiones operativas propuestas.** Limitar a una tarea de implementación en curso por integrante y dos revisiones simultáneas; actualizar diariamente el estado con evidencia; conservar la procedencia 202601; revisar autorización, consentimiento y privacidad antes de datos personales reales; y mantener los videos diferidos identificados como pendientes. Estas decisiones están definidas para ratificación, no se presentan como acta literal de acuerdos no aportados por el equipo.
+
+#### 7.2.1.2. Sprint Backlog 1
+
+El backlog sustituye las diez tareas genéricas iniciales por **ocho PBIs y 24 tareas**, todos definidos con responsable acordado como equipo, horas estimadas, dependencia y aceptación. El estado inicial es **Por hacer** para el trabajo residual; los activos existentes del 30/10 se conservan como base disponible y no convierten las historias completas en trabajo terminado.
+
+| PBI | Incremento | Historias / contratos relacionados | Coordinación acordada | SP residuales | Trabajo | Dependencias para el cierre |
+| --- | --- | --- | --- | ---: | ---: | --- |
+| SB1-01 | Entorno reproducible, restricciones y trazabilidad | Transversal | Kevin | 2 | 8 h | Ninguna |
+| SB1-02 | Identidad, acceso y aislamiento de sesiones | US05, US06, US20, US23, US28, US33 | Werner | 5 | 10 h | SB1-01 |
+| SB1-03 | Práctica y ciclo de sesión con coaching | US09, US10, US12, US13, US14, US29, US34, US38, TS01, TS02 | Alejandro | 8 | 16 h | SB1-01, SB1-02 |
+| SB1-04 | Análisis, puntuación y consulta de feedback | US15, US16, US20, US26, US37, TS03, TS04 | Manuel | 5 | 12 h | SB1-03 |
+| SB1-05 | Progreso, logros y notificaciones por eventos | US21, US35, TS05 | Werner | 3 | 8 h | SB1-04 |
+| SB1-06 | Landing y recorrido web coherentes con el incremento | US01, US02, US03, US04, US09, US15, US20, US29 | Eduardo | 5 | 10 h | SB1-01, SB1-02 |
+| SB1-07 | Despliegue y evidencias de la primera versión | TS01, TS02, TS03, TS04 | Kevin | 5 | 10 h | SB1-01, SB1-02, SB1-03, SB1-04, SB1-05, SB1-06 |
+| SB1-08 | Aplicación de validación y registro de hallazgos | US01, US09, US15, US20, US29, US33 | Eduardo | 3 | 6 h | SB1-06 |
+| **Total** | **8 PBIs / 24 tareas** | **Cobertura mínima y trazable; criterios completos en 3.3** | **Equipo** | **36** | **80 h** | **Ver dependencias de tarea** |
+
+**Base comprobada y trabajo restante.** Los estados siguientes describen el insumo real de cada PBI al 30/10. El estado `Todo` del tablero corresponde únicamente a las tareas residuales definidas; no significa que los servicios deban construirse desde cero.
+
+| PBI / estado de base | Evidencia disponible | Trabajo residual estimado |
+| --- | --- | --- |
+| SB1-01 — Disponible | Ocho servicios compilados, 133 unitarias aprobadas y ocho OpenAPI locales capturados. | Cerrar runbook de clon limpio, decisión tecnológica y concordancia de contratos/despliegue. |
+| SB1-02 — Parcial | Registro 201, login 200 y consulta/listado de una sesión fixture comprobados. | Verificar/logout, errores, expiración y autorización cruzada entre dos cuentas. |
+| SB1-03 — Integración pendiente | Crear sesión 201, modos 200; finalizar DRAFT dio 500 y token sin clave dio 503 esperado. | Cerrar estados/consentimiento, voz configurada, correlación y cierre sin duplicados. |
+| SB1-04 — Base disponible | 11 unitarias de detección de muletillas y 33 de scoring aprobadas; contratos de eventos presentes. | Comprobar recorrido asíncrono, consulta de feedback, errores, duplicados y aceptación BDD. |
+| SB1-05 — Base disponible | 9 unitarias de progreso, 13 de gamificación y 7 de notificaciones; consultas iniciales de progreso/racha 200. | Demostrar actualización real por evento válido y que el duplicado no repite efectos. |
+| SB1-06 — Cliente/prototipo disponibles | Compilación Next.js aprobada; galería y prototipo públicos dieron 200. | Integrar el recorrido real en Next.js/React y ajustar landing, errores y evidencias. |
+| SB1-07 — Bloqueado por despliegue | En la comprobación del 30/10, frontend histórico 402 y 16 rutas Railway 404. | Acceso a recursos, perfiles/persistencia, publicación y verificación del ambiente efectivo. |
+| SB1-08 — Protocolo listo | Guion de validación y registro de seis participantes preparado; sin sesiones o resultados acreditados. | Reclutar/aplicar a ambos segmentos y registrar observaciones y heurísticas reales. |
+
+**SB1-01 — Entorno reproducible, restricciones y trazabilidad.** Servicios: Todos los servicios, Cliente web.
+
+| Tarea | Responsable acordado | Horas | Dependencias | Criterio de aceptación | Estado |
+| --- | --- | ---: | --- | --- | --- |
+| **SB1-01-A** Cerrar el runbook de arranque y configuración | Alejandro | 3 | Ninguna | Un clon limpio puede compilar con JDK 17, iniciar un único RabbitMQ y los ocho servicios; el runbook separa H2 local de persistencia pública y no expone secretos. | Por hacer |
+| **SB1-01-B** Registrar decisiones de tecnología y alcance | Eduardo | 2 | Ninguna | Registrar Next.js/React/TypeScript, Tailwind y shadcn como stack elegido; relacionar versiones y BFF con los archivos del cliente. Conservar la fuente académica original y la decisión del equipo sin atribuir autorización docente no registrada. | Por hacer |
+| **SB1-01-C** Versionar contrato y evidencia del entorno | Kevin | 3 | SB1-01-A | URLs/puertos, commit base, diagrama de despliegue ejecutable y ocho contratos OpenAPI coherentes; enlaces de las evidencias en el informe. | Por hacer |
+
+**SB1-02 — Identidad, acceso y aislamiento de sesiones.** Servicios: identity-service, session-service, BFF del cliente.
+
+| Tarea | Responsable acordado | Horas | Dependencias | Criterio de aceptación | Estado |
+| --- | --- | ---: | --- | --- | --- |
+| **SB1-02-A** Verificar registro, login, segmento y logout | Werner | 4 | SB1-01-A | Registro nuevo 201, login válido 200, credenciales inválidas con respuesta controlada y logout invalida acceso del cliente; usar cuentas fixture y ocultar JWT. | Por hacer |
+| **SB1-02-B** Implementar o comprobar autorización por propietario | Werner | 4 | SB1-02-A | Dos cuentas de prueba: el usuario B no puede leer, listar, finalizar o añadir feedback a la sesión de A. La identidad validada prevalece sobre userId enviado por el cliente. | Por hacer |
+| **SB1-02-C** Integrar errores de acceso en el cliente | Kevin | 2 | SB1-02-A | Cliente conserva sesión en cookie httpOnly y presenta errores recuperables sin exponer token; prueba de expiración y retorno al login documentada. | Por hacer |
+
+**SB1-03 — Práctica y ciclo de sesión con coaching.** Servicios: session-service, live-coach-service, Cliente web, Gemini Live.
+
+| Tarea | Responsable acordado | Horas | Dependencias | Criterio de aceptación | Estado |
+| --- | --- | ---: | --- | --- | --- |
+| **SB1-03-A** Cerrar máquina de estados y consentimiento | Alejandro | 4 | SB1-02-B | Ruta de inicio autorizada y transición DRAFT a RECORDING definidas; finalizar desde estado inválido devuelve error de negocio controlado, no 500. Registrar consentimiento antes de captura. | Por hacer |
+| **SB1-03-B** Comprobar integración de voz y token efímero | Alejandro | 4 | SB1-03-A | Credencial permanente solo en servidor; permiso denegado, clave ausente y token vencido se comunican. Con configuración autorizada se prueba un ensayo corto sin publicar audio personal. | Por hacer |
+| **SB1-03-C** Unificar finalización y evento de análisis | Alejandro | 4 | SB1-03-A, SB1-03-B | El ID persistido de sesión se conserva en coach y eventos; finalizar una vez produce una sola evaluación lógica. Repetir la petición no duplica resultados. | Por hacer |
+| **SB1-03-D** Demostrar controles de práctica y errores | Kevin | 4 | SB1-03-B, SB1-03-C | Web muestra grabación, pausa/reanudación y cierre confirmado; permiso denegado y desconexión tienen recuperación o resultado parcial explícito. No declarar recuperación integral si no se verifica. | Por hacer |
+
+**SB1-04 — Análisis, puntuación y consulta de feedback.** Servicios: filler-detection-service, scoring-service, session-service.
+
+| Tarea | Responsable acordado | Horas | Dependencias | Criterio de aceptación | Estado |
+| --- | --- | ---: | --- | --- | --- |
+| **SB1-04-A** Comprobar contratos del pipeline y duplicados | Manuel | 4 | SB1-03-C | Fixture recorre session.live.finalized, fillers.analyzed y scoring.completed con el mismo sessionId/userId; duplicado reconocido y fallo con estado visible. | Por hacer |
+| **SB1-04-B** Persistir y consultar feedback mínimo trazable | Manuel | 4 | SB1-04-A | Reporte recuperable de la sesión del propietario contiene puntuación, muletillas, evidencia y límites. Estados pendiente/fallido no muestran una evaluación inventada; diferencias con TS04 versionado registradas. | Por hacer |
+| **SB1-04-C** Ejecutar aceptación del recorrido de feedback | Manuel | 4 | SB1-04-B | Pruebas de integración y al menos un feature BDD ejecutable con steps verifican el caso feliz y un error; se adjuntan commit, comando y resultado. No convertir el conteo unitario en aceptación. | Por hacer |
+
+**SB1-05 — Progreso, logros y notificaciones por eventos.** Servicios: progress-service, gamification-service, notification-service.
+
+| Tarea | Responsable acordado | Horas | Dependencias | Criterio de aceptación | Estado |
+| --- | --- | ---: | --- | --- | --- |
+| **SB1-05-A** Verificar proyección de progreso | Manuel | 4 | SB1-04-A | Scoring válido actualiza una sola vez el resumen del propietario; comparar el antes/después con el mismo fixture y conservar métricas/versiones disponibles sin inferir comparación avanzada. | Por hacer |
+| **SB1-05-B** Verificar racha y aviso sin duplicados | Werner | 4 | SB1-05-A | Sesión válida activa la regla de racha/logro y el consumidor de notificaciones; reenvío del evento no duplica el efecto. Mostrar qué canal de aviso existe realmente; no afirmar envío de email no configurado. | Por hacer |
+
+**SB1-06 — Landing y recorrido web coherentes con el incremento.** Servicios: Landing, Cliente web, BFF.
+
+| Tarea | Responsable acordado | Horas | Dependencias | Criterio de aceptación | Estado |
+| --- | --- | ---: | --- | --- | --- |
+| **SB1-06-A** Actualizar landing y estados vacíos | Eduardo | 4 | SB1-01-B | Beneficios y planes describen disponibilidad real; sin testimonios autorizados se muestra estado vacío. Contacto y videos identifican qué funciona y qué está pendiente. | Por hacer |
+| **SB1-06-B** Integrar las pantallas con servicios reales | Eduardo | 4 | SB1-02-C, SB1-03-C, SB1-04-B | Acceso, preparación, práctica, reporte e historial consumen la base elegida; simulaciones y capturas de referencia están diferenciadas. Se reutiliza el cliente Next.js/React y se comprueba su integración; no se incluye una migración de framework. | Por hacer |
+| **SB1-06-C** Comprobar usabilidad técnica web y responsive | Eduardo | 2 | SB1-06-B | Recorrido con teclado, foco, etiquetas, errores y vista móvil comprobado; responsive no se presenta como app nativa. Capturas corresponden al commit probado. | Por hacer |
+
+**SB1-07 — Despliegue y evidencias de la primera versión.** Servicios: Ocho servicios backend, RabbitMQ, Persistencia, Cliente web.
+
+| Tarea | Responsable acordado | Horas | Dependencias | Criterio de aceptación | Estado |
+| --- | --- | ---: | --- | --- | --- |
+| **SB1-07-A** Preparar perfiles y recursos del ambiente | Kevin | 3 | SB1-01-C | Dominio/HTTPS, broker compartido, almacenamiento y variables externas documentados; H2 create-drop queda limitado al ambiente descartable. Acceso y presupuesto aprobados son dependencia externa. | Por hacer |
+| **SB1-07-B** Publicar y comprobar servicios y cliente | Kevin | 4 | SB1-07-A, SB1-04-C, SB1-06-C | Las URLs del commit desplegado responden; OpenAPI y frontend funcionan contra el mismo ambiente. Una captura de despliegue histórico o un 200 de galería no cuenta como backend operativo. | Por hacer |
+| **SB1-07-C** Cerrar matriz de trazabilidad técnica | Alejandro | 1 | SB1-07-B | Informe enlaza historia, tarea, servicio, commit, prueba y URL; los requisitos sin evidencia permanecen identificados. | Por hacer |
+| **SB1-07-D** Verificar puerta de privacidad del despliegue | Werner | 2 | SB1-02-B, SB1-07-B | Aislamiento y consentimiento comprobados; hasta completar exportación/purga de TS06, el ambiente se limita a fixtures o acceso controlado y no admite un piloto con datos personales reales. | Por hacer |
+
+**SB1-08 — Aplicación de validación y registro de hallazgos.** Servicios: Landing, Prototipo o cliente identificado.
+
+| Tarea | Responsable acordado | Horas | Dependencias | Criterio de aceptación | Estado |
+| --- | --- | ---: | --- | --- | --- |
+| **SB1-08-A** Aplicar protocolo a ambos segmentos y registrar sesiones | Eduardo | 4 | SB1-06-C | Al menos tres participantes por segmento, consentimiento, fecha, dispositivo/versión y tareas; registrar éxito, tiempo, ayuda y observaciones. Si se usa prototipo, se declara simulación; reclutamiento es dependencia externa. | Por hacer |
+| **SB1-08-B** Consolidar heurísticas y decisiones de mejora | Werner | 2 | SB1-08-A | Hallazgos reales de usabilidad, arquitectura de información y diseño inclusivo con severidad, evidencia y acción. Videos de validación y About Product siguen diferidos; no se inventan opiniones. | Por hacer |
+
+**Reparto operativo por integrante para ejecutar el incremento.** Como equipo, acordamos los siguientes paquetes de trabajo para el sprint del 26/10 al 08/11. Cada integrante desarrollará sus tareas, comprobará los criterios de las tablas anteriores y actualizará su evidencia en este README. El reparto asigna trabajo futuro; las casillas se cerrarán cuando exista el resultado revisado.
+
+Cada paquete conserva **16 h estimadas de tareas, 2 h de coordinación y 2 h de reserva**. En Eduardo hay 4 h de entrevistas diferidas y en Werner 2 h de heurísticas diferidas; el trabajo inmediato suma **74 h** y esas 6 h siguen asignadas sin fecha de aplicación. Videos e entrevistas permanecen pendientes.
+
+**Alejandro Daniel Oroncoy Almeyda — Sesiones, voz y trazabilidad.**
+
+Trabajará sobre [talki-session-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services). Las referencias corresponden a la base de 202601; registrará el repositorio y la rama reales de sus cambios del sprint.
+
+Empezará por SB1-01-A y la transición de inicio de sesión de SB1-03-A para desbloquear voz, análisis y cliente.
+
+- [ ] **SB1-01-A — 3 h.** Verificará el arranque desde las instantáneas con JDK 17 y un solo RabbitMQ; corregirá en 7.1.4 los pasos o puertos que no se reproduzcan.
+- [ ] **SB1-03-A — 4 h.** Resolverá DRAFT → RECORDING y el consentimiento antes de capturar voz; finalizar una sesión en estado inválido deberá devolver un error controlado, con prueba.
+- [ ] **SB1-03-B — 4 h.** Comprobará el token efímero y un ensayo de voz con configuración autorizada; documentará permiso denegado, clave ausente y token vencido sin publicar claves ni JWT.
+- [ ] **SB1-03-C — 4 h.** Mantendrá el mismo sessionId/userId al cerrar y publicar el evento; comprobará que repetir la finalización no produzca dos evaluaciones.
+- [ ] **SB1-07-C — 1 h.** Consolidará en el README los enlaces reales de historia/tarea, commit probado, comando, resultado y URL del ambiente.
+
+**Entregará:** Commit/PR del ciclo de sesión y voz; procedimiento de arranque comprobado; pruebas con resultados y matriz historia → tarea → servicio → commit → prueba → URL.
+
+**Actualizará en el README:** 7.1.4; 7.2.1.3; 7.2.1.5; matriz técnica de cierre.
+
+**Eduardo Gael Rivera Sosa — Cliente Next.js, landing y responsive.**
+
+Trabajará sobre [talki-frontend](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend). Las referencias corresponden a la base de 202601; registrará el repositorio y la rama reales de sus cambios del sprint.
+
+Empezará por comprobar el stack del cliente y ajustar la landing; conectará las pantallas cuando estén disponibles los contratos de sesión y feedback.
+
+- [ ] **SB1-01-B — 2 h.** Contrastará las versiones Next.js/React/TypeScript, Tailwind y shadcn con los archivos del cliente y mantendrá 7.1.1 alineado con el código real.
+- [ ] **SB1-06-A — 4 h.** Ajustará beneficios, planes, contacto y estados vacíos de la landing a lo que funciona; identificará testimonios y videos todavía pendientes.
+- [ ] **SB1-06-B — 4 h.** Conectará acceso, preparación, práctica, reporte e historial con las APIs a través del BFF; sustituirá simulaciones solo cuando exista el comportamiento real.
+- [ ] **SB1-06-C — 2 h.** Comprobará navegación por teclado, foco, etiquetas, mensajes de error y vista móvil; entregará capturas de la versión probada.
+- [ ] **SB1-08-A — 4 h.** **Diferido.** Conservará la responsabilidad de aplicar el protocolo a ambos segmentos; esta tarea seguirá diferida, sin entrevistas ni resultados ficticios.
+
+**Entregará:** Commit/PR del frontend, resultado de compilación, capturas web/móvil y lista de pantallas conectadas y errores comprobados; registro de validación solo cuando se retomen entrevistas.
+
+**Actualizará en el README:** 7.1.1; 7.2.1.5; evidencias de UI vinculadas a 6.3–6.5.
+
+**Manuel Ignacio Tumi Oliden — Análisis, feedback, pruebas y progreso.**
+
+Trabajará sobre [talki-analysis-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services), [talki-engagement-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services), [talki-session-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services). Las referencias corresponden a la base de 202601; registrará el repositorio y la rama reales de sus cambios del sprint.
+
+Empezará por revisar los contratos y preparar fixtures de eventos; ejecutará la cadena completa cuando Alejandro entregue el cierre correlacionado.
+
+- [ ] **SB1-04-A — 4 h.** Comprobará session.live.finalized → fillers.analyzed → scoring.completed con el mismo sessionId/userId; verificará duplicados y fallo visible.
+- [ ] **SB1-04-B — 4 h.** Verificará la persistencia y consulta del feedback del propietario, incluyendo score, evidencia, límites y estados pendiente/fallido; registrará lo que falte del contrato versionado.
+- [ ] **SB1-04-C — 4 h.** Implementará y ejecutará integración y al menos un feature BDD con steps para caso feliz y error; guardará los resultados para 7.2.1.4.
+- [ ] **SB1-05-A — 4 h.** Comparará progreso antes/después de una evaluación y comprobará que el evento repetido no vuelva a incrementar el resumen.
+
+**Entregará:** Commit/PR del pipeline/feedback, pruebas de integración y BDD con feature/steps, comando y resultado; evidencia antes/después de la proyección de progreso.
+
+**Actualizará en el README:** 7.2.1.4; 7.2.1.5; contratos de análisis y feedback de 7.2.1.6.
+
+**Werner Khalil Lang Nassi — Acceso, gamificación, notificaciones y privacidad.**
+
+Trabajará sobre [talki-user-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services), [talki-session-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services), [talki-engagement-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services). Las referencias corresponden a la base de 202601; registrará el repositorio y la rama reales de sus cambios del sprint.
+
+Empezará por SB1-02-A/B para desbloquear las verificaciones del propietario y el recorrido de sesión.
+
+- [ ] **SB1-02-A — 4 h.** Comprobará registro, login, segmento, credenciales inválidas y logout; entregará resultados con cuentas fixture y tokens ocultos.
+- [ ] **SB1-02-B — 4 h.** Probará con usuarios A/B que B no pueda leer, listar, finalizar o añadir feedback a la sesión de A; corregirá o documentará el control faltante.
+- [ ] **SB1-05-B — 4 h.** Comprobará racha/logro y el consumidor de notificaciones después de una evaluación válida; repetirá el evento y mostrará el canal de aviso que exista realmente.
+- [ ] **SB1-07-D — 2 h.** Verificará aislamiento y consentimiento del ambiente publicado; mientras falte G-PRIV, documentará y comprobará la limitación a fixtures/acceso controlado.
+- [ ] **SB1-08-B — 2 h.** **Diferido.** Conservará la responsabilidad de consolidar hallazgos y heurísticas después de las entrevistas; esta tarea seguirá diferida.
+
+**Entregará:** Commit/PR y pruebas con dos cuentas de fixture, resultados de racha/aviso sin duplicados y comprobación de la puerta de privacidad; heurísticas solo cuando existan sesiones reales.
+
+**Actualizará en el README:** 7.2.1.4–7.2.1.6, controles de acceso/privacidad; heurísticas de 7.3.3 diferidas.
+
+**Kevin Jorge Chi Cruzatt — Contratos, controles de práctica y despliegue.**
+
+Trabajará sobre [talki-frontend](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend), [talki-user-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services), [talki-session-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services), [talki-analysis-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services), [talki-engagement-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services). Las referencias corresponden a la base de 202601; registrará el repositorio y la rama reales de sus cambios del sprint.
+
+Empezará por preparar contratos, recursos y perfiles; publicará el incremento cuando cliente, análisis y pruebas de integración estén disponibles.
+
+- [ ] **SB1-01-C — 3 h.** Relacionará servicios, puertos, configuración y los ocho OpenAPI con el commit de base y el diagrama de despliegue; conservará los contratos revisados.
+- [ ] **SB1-02-C — 2 h.** Comprobará en Next.js la cookie httpOnly, expiración de sesión, retorno al login y errores recuperables sin exponer el token.
+- [ ] **SB1-03-D — 4 h.** Comprobará los controles de grabación, pausa/reanudación y cierre, además de permiso denegado y desconexión; registrará el resultado real.
+- [ ] **SB1-07-A — 3 h.** Preparará perfiles, HTTPS, broker común, variables externas y almacenamiento persistente; documentará accesos o recursos que bloqueen la publicación.
+- [ ] **SB1-07-B — 4 h.** Publicará el commit integrado y verificará cliente/APIs, Swagger y reinicio con datos fixture persistidos; incorporará URLs y capturas actuales en 7.2.1.7.
+
+**Entregará:** Commit/PR de configuración e integración que corresponda, ocho contratos OpenAPI coherentes, capturas de Swagger, URLs funcionales, SHA desplegado y evidencia de persistencia.
+
+**Actualizará en el README:** 7.1.4; 7.2.1.5–7.2.1.7.
+
+**Entrega y revisión de cada paquete.** Cada integrante partirá de la versión integrada del informe en `main`, trabajará en una rama del repositorio de aplicación que corresponda y enlazará su commit/PR real. En el README incorporará: tarea/historia, repositorio y rama, SHA probado, comando y resultado de pruebas, capturas sin secretos y URL del ambiente cuando aplique. Registrará avance/bloqueos en GitHub Projects y actualizará su modificación en el registro de versiones y su acción en Student Outcome. Un compañero revisará la evidencia antes de marcar la tarea como terminada; las notas de participación se evaluarán al cierre.
+
+**Orden para desbloquear al equipo.** Alejandro verificará el arranque y Werner comenzará acceso/propiedad; Eduardo podrá avanzar con stack y landing mientras Kevin prepara contratos/ambiente y Manuel prepara fixtures. Tras resolver estados y cierre de sesión, Manuel comprobará análisis/feedback; Eduardo conectará pantallas y Kevin comprobará controles. Con la proyección validada, Werner verificará gamificación/notificaciones. Finalmente, Kevin publicará y comprobará el ambiente, y Alejandro consolidará la trazabilidad. Si falta un insumo, se registrará la dependencia en la tarjeta; no se sustituirá el resultado con una captura histórica.
+
+**Estados del tablero.** `Todo` equivale a Por hacer; `In Progress`, a En curso; `Done`, a Terminado con evidencia y revisión. Un bloqueo se registra en la tarjeta con causa, dependencia y responsable de resolución; no se oculta marcando la tarjeta como completada. El estado de aceptación de una US/TS se evalúa por sus criterios completos, separado del cierre de una tarea parcial.
+
+**Tablero actual de revisión.** [Talki 202620 — TB2 — Sprint 1](https://github.com/orgs/upc-pre-202620-si728-16365-thropic/projects/1), vinculado al repositorio del informe. Sus tarjetas contienen las 24 tareas, dependencias y criterios; las columnas muestran coordinación, horas, SP y fase. La fecha del título corresponde al planning informado, no a la fecha de creación del tablero. Las capturas siguientes se tomaron el 30/10/2026 y muestran dos desplazamientos horizontales de la misma tabla.
+
+![Tablero de Sprint 1 con PBIs, responsables y horas](assets/planning/sprint-1/github-project-items-20261030.jpg)
+
+*Figura: Tablero real de revisión del periodo 202620. Todos los PBIs están pendientes de ejecución/aceptación; la captura muestra también G-WEB antes de su retiro posterior por decisión del equipo. La captura precede a la confirmación posterior de las asignaciones y las 20 h por integrante por el Team Leader el mismo 30/10/2026.*
+
+![Columnas de horas, puntos y fase del tablero](assets/planning/sprint-1/github-project-20261030.jpg)
+
+*Figura: Continuación horizontal del mismo tablero, con puntos y separación de paquetes condicionales. Las horas condicionales no forman parte del total de 80 h del Sprint 1. G-WEB aparece en esta captura anterior y fue retirado al confirmar Next.js/React; el snapshot del tablero registra el estado actualizado.*
+
+**Herramienta de control del Sprint 1.** El equipo utilizará **GitHub Projects**, cuya admisión para esta entrega fue confirmada por el Team Leader el 30/10/2026. El tablero enlazado es la herramienta elegida para tareas, responsables, horas, estados y evidencias. La lista general de herramientas de la página 32 se conserva como fuente del enunciado; la confirmación del equipo cierra el pendiente de selección/aceptación, sin requerir traslado a Trello, Jira, YouTrack o Pivotal. El [CSV de tareas](assets/planning/sprint-1/sprint-backlog.csv) conserva una copia editable de las tareas del tablero.
+
+**Paquetes que cambian la capacidad necesaria.** Se conserva Next.js/React y se retira G-WEB de la planificación activa; sus 48 h estimadas no se suman al sprint ni se cuentan como trabajo terminado. G-PRIV requiere **32 h adicionales estimadas** antes de un piloto con datos reales: el trabajo de entrega pasaría de 80 a 112 h, más coordinación/reserva, y requeriría replanificar capacidad o plazo. G-MEDIA sigue diferido.
+
+| Paquete | Activación / objetivo | Responsable de coordinación | Estimación adicional | Condición de cierre |
+| --- | --- | --- | ---: | --- |
+| G-PRIV | Completar US27, US33 y TS06 antes de un piloto que procese datos personales reales. | Werner; apoyo de Manuel y Alejandro. | 32 h iniciales, alta incertidumbre. | Exportación, revocación, bloqueo, purga por contexto, confirmaciones, reintento, auditoría y pruebas. Mientras falte, limitar el ambiente a fixtures/acceso controlado. |
+| G-MEDIA | Reactivar grabaciones y publicaciones cuando existan producto y testimonios reales. | Equipo. | 12 h orientativas de preparación/edición; reestimar según material. | Navegación, validación y About Product/Team según el enunciado. Los videos diferidos no se marcan publicados. |
+
+**Hoja de ruta completa.** Se conservan las **37 User Stories y seis Technical Stories** de 3.5. La correspondencia siguiente señala la cobertura mínima del Sprint 1, el trabajo ampliado y las puertas antes de piloto. Las estimaciones originales de producto se mantienen. US21/US35 y otros elementos con capacidades heredadas pueden verificarse parcialmente ahora sin cambiar la prioridad de su implementación ampliada en el Product Backlog.
+
+| ID | Historia / contrato | SP de producto (3.5) | PBI de Sprint 1 relacionado | Plan de cierre |
+| --- | --- | ---: | --- | --- |
+| US09 | Crear una sesión | 3 | SB1-03, SB1-06, SB1-08 | Sprint 1: incremento mínimo. Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados. |
+| US12 | Iniciar grabación y transcripción | 8 | SB1-03 | Sprint 1: incremento mínimo. Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados. |
+| US14 | Finalizar y guardar | 3 | SB1-03 | Sprint 1: incremento mínimo. Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados. |
+| US15 | Recibir feedback general | 8 | SB1-04, SB1-06, SB1-08 | Sprint 1: incremento mínimo. Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados. |
+| US01 | Visualizar beneficios | 2 | SB1-06, SB1-08 | Sprint 1: incremento mínimo. Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados. |
+| US02 | Ver planes y precios | 2 | SB1-06 | Sprint 1: incremento mínimo. Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados. |
+| US03 | Ver testimonios | 1 | SB1-06 | Sprint 1: incremento mínimo. Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados. |
+| US04 | Enviar una consulta | 2 | SB1-06 | Sprint 1: incremento mínimo. Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados. |
+| US38 | Recibir coaching en tiempo cercano al real | 8 | SB1-03 | Sprint 1: incremento mínimo. Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados. |
+| US16 | Analizar muletillas | 5 | SB1-04 | Sprint 1: incremento mínimo. Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados. |
+| US19 | Recibir sugerencias por sección | 5 | No comprometido en este incremento | Siguiente incremento / Sprint 2. Capacidad ampliada del producto; conservar criterios originales y refinar antes de comprometer. |
+| US26 | Recibir recomendaciones por segmento | 5 | SB1-04 | Sprint 1: incremento mínimo. Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados. |
+| US37 | Consultar estado y reintentar análisis | 5 | SB1-04 | Sprint 1: incremento mínimo. Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados. |
+| US20 | Consultar historial | 3 | SB1-02, SB1-04, SB1-06, SB1-08 | Sprint 1: incremento mínimo. Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados. |
+| US29 | Verificar micrófono y consentimiento | 5 | SB1-03, SB1-06, SB1-08 | Sprint 1: incremento mínimo. Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados. |
+| US34 | Recuperar una sesión interrumpida | 8 | SB1-03 | Sprint 1: incremento mínimo. Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados. |
+| US33 | Revocar consentimiento y eliminar datos | 8 | SB1-02, SB1-08 | Puerta obligatoria antes de piloto con datos reales. Control de acceso/consentimiento revisado en Sprint 1; exportación y purga distribuidas requieren el paquete G-PRIV antes de usuarios reales. |
+| US10 | Seleccionar tipo de sesión | 3 | SB1-03 | Sprint 1: incremento mínimo. Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados. |
+| US23 | Seleccionar segmento académico | 2 | SB1-02 | Sprint 1: incremento mínimo. Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados. |
+| US05 | Registrar una cuenta | 5 | SB1-02 | Sprint 1: incremento mínimo. Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados. |
+| US06 | Iniciar sesión | 5 | SB1-02 | Sprint 1: incremento mínimo. Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados. |
+| US28 | Cerrar sesión | 1 | SB1-02 | Sprint 1: incremento mínimo. Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados. |
+| US13 | Pausar y reanudar | 3 | SB1-03 | Sprint 1: incremento mínimo. Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados. |
+| US08 | Editar perfil | 3 | No comprometido en este incremento | Siguiente incremento / Sprint 2. Capacidad ampliada del producto; conservar criterios originales y refinar antes de comprometer. |
+| US11 | Configurar duración objetivo | 2 | No comprometido en este incremento | Siguiente incremento / Sprint 2. Capacidad ampliada del producto; conservar criterios originales y refinar antes de comprometer. |
+| US24 | Establecer metas | 3 | No comprometido en este incremento | Siguiente incremento / Sprint 2. Capacidad ampliada del producto; conservar criterios originales y refinar antes de comprometer. |
+| US25 | Seleccionar áreas de enfoque | 3 | No comprometido en este incremento | Siguiente incremento / Sprint 2. Capacidad ampliada del producto; conservar criterios originales y refinar antes de comprometer. |
+| US30 | Cargar material de contexto | 8 | No comprometido en este incremento | Siguiente incremento / Sprint 2. Capacidad ampliada del producto; conservar criterios originales y refinar antes de comprometer. |
+| US31 | Simular entrevista o sustentación | 8 | No comprometido en este incremento | Siguiente incremento / Sprint 2. Capacidad ampliada del producto; conservar criterios originales y refinar antes de comprometer. |
+| US17 | Analizar palabras clave | 5 | No comprometido en este incremento | Siguiente incremento / Sprint 2. Capacidad ampliada del producto; conservar criterios originales y refinar antes de comprometer. |
+| US18 | Mejorar el léxico | 5 | No comprometido en este incremento | Siguiente incremento / Sprint 2. Capacidad ampliada del producto; conservar criterios originales y refinar antes de comprometer. |
+| US21 | Ver progreso | 5 | SB1-05 | Sprint 1: incremento mínimo. Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados. |
+| US22 | Comparar sesiones | 5 | No comprometido en este incremento | Siguiente incremento / Sprint 2. Capacidad ampliada del producto; conservar criterios originales y refinar antes de comprometer. |
+| US36 | Recibir un plan adaptativo | 8 | No comprometido en este incremento | Siguiente incremento / Sprint 2. Capacidad ampliada del producto; conservar criterios originales y refinar antes de comprometer. |
+| US27 | Exportar transcripción y feedback | 3 | No comprometido en este incremento | Puerta obligatoria antes de piloto con datos reales. Control de acceso/consentimiento revisado en Sprint 1; exportación y purga distribuidas requieren el paquete G-PRIV antes de usuarios reales. |
+| US35 | Mantener rachas y logros | 5 | SB1-05 | Sprint 1: incremento mínimo. Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados. |
+| US07 | Recuperar contraseña | 3 | No comprometido en este incremento | Siguiente incremento / Sprint 2. Capacidad ampliada del producto; conservar criterios originales y refinar antes de comprometer. |
+| TS01 | API de sesiones | 3 | SB1-03, SB1-07 | Sprint 1: incremento mínimo. Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados. |
+| TS02 | Contrato de coaching en vivo | 8 | SB1-03, SB1-07 | Sprint 1: incremento mínimo. Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados. |
+| TS03 | Pipeline de análisis idempotente | 8 | SB1-04, SB1-07 | Sprint 1: incremento mínimo. Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados. |
+| TS04 | Consulta de reportes versionados | 5 | SB1-04, SB1-07 | Sprint 1: incremento mínimo. Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados. |
+| TS05 | API de progreso | 5 | SB1-05 | Sprint 1: incremento mínimo. Cobertura de la base y de los criterios incluidos en los PBIs; aceptación completa de la US/TS solo con todos sus criterios originales comprobados. |
+| TS06 | API de exportación y eliminación | 8 | No comprometido en este incremento | Puerta obligatoria antes de piloto con datos reales. Control de acceso/consentimiento revisado en Sprint 1; exportación y purga distribuidas requieren el paquete G-PRIV antes de usuarios reales. |
+
+La fuente estructurada es [plan.json](assets/planning/sprint-1/plan.json); el [CSV de hoja de ruta](assets/planning/sprint-1/product-roadmap.csv) facilita contrastar la cobertura de cada ID. El [snapshot del tablero](assets/planning/sprint-1/board-snapshot.json) preserva tarjetas y campos al publicarlo. El tablero histórico de 202601 se utiliza únicamente como antecedente.
+
+
+#### 7.2.1.3. Development Evidence for Sprint Review
+
+Las evidencias de desarrollo reutilizado se identifican por repositorio, commit y fecha original. La adaptación documental del periodo actual se revisa por separado en el historial del informe. Los SHA fijados permiten recuperar código y mensajes originales sin alterar la autoría histórica.
+
+| Repositorio / rama de origen | Commit, fecha y autor original | Mensaje del commit |
+| --- | --- | --- |
+| [talki-analysis-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services); `main` | [9e026c3](https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services/commit/9e026c324b6f7a321505af705e9e8ffdd6496fc4); 2026-06-07; Alejandro Daniel Oroncoy Almeyda. | Merge pull request #6 from upc-pre-202601-si657-7940-thropic/feat/actuator-health<br><br>feat(actuator): habilita /actuator/health en los 2 microservicios |
+| [talki-engagement-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services); `main` | [231bb5e](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services/commit/231bb5eb7ccefb741cbff5274634bef2eef17819); 2026-06-07; Alejandro Daniel Oroncoy Almeyda. | Merge pull request #4 from upc-pre-202601-si657-7940-thropic/feat/actuator-health<br><br>feat(actuator): habilita /actuator/health en los 2 microservicios |
+| [talki-frontend](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend); `main` | [d63e889](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend/commit/d63e889a216d093a86bf24a2a328c18d0e610618); 2026-07-09; Alejandro Daniel Oroncoy Almeyda. | feat: agregar pausa/reanudar en grabación y transcripción en vivo (#3)<br><br>Antes solo existía Iniciar/Detener, y detener finalizaba la sesión y disparaba el análisis del coach IA. Ahora se puede pausar sin perder el texto acumulado ni el tiempo transcurrido, y reanudar para seguir hablando hasta presionar Terminar. |
+| [talki-session-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services); `main` | [cde4b11](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services/commit/cde4b117783db42115acc680ddb22e2bfe99ae24); 2026-07-04; Manuel Tumi. | fix(live-coach): escenario por defecto en modo scenario sin scenarioId<br><br>Antes lanzaba IllegalArgumentException (HTTP 400) al pedir token para el modo<br>scenario sin scenarioId, dejando ese modo sin IA. Ahora usa un rol generico por<br>defecto y sigue soportando un scenarioId especifico cuando se pasa. |
+| [talki-user-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services); `main` | [1da887a](https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services/commit/1da887abe3dd2d776685c5d864dc4098ceb66344); 2026-07-09; Alejandro Oroncoy. | fix(identity): permitir re-sembrar la cuenta demo del informe AV4<br><br>Si la cuenta de demostración ya existe, register actualiza la contraseña<br>en lugar de devolver 403, para que la demo del Sprint 3 sea reproducible. |
+
+Los nombres anteriores se conservan tal como figuran en Git. El [registro de commits de origen](assets/evidence/tb2/development-commits.json) conserva el mensaje completo, incluida la coautoría declarada, y permite contrastar rama, autor y fecha con las instantáneas. Son contribuciones históricas del periodo 202601.
+
+**Correspondencia con el diseño actual.** Identity corresponde parcialmente a 5.8; Session a 5.4; Live Coach a 5.1 y parte del acceso al proveedor de 5.9; Filler Detection a 5.2; Scoring a 5.3; Progress a 5.5; Gamification a 5.7 y Notifications a 5.10. No se encontró un servicio completo de Sharing & Retention de 5.6 ni un gateway de proveedor desacoplado que materialice todas las políticas de 5.9. Esta tabla es correspondencia de responsabilidades, no equivalencia de implementación.
+
+Los controladores de la base utilizan identificadores y contratos más simples que el diseño objetivo. Por ejemplo, el endpoint de sesiones recibe `userId` y devuelve entidades; ello no acredita autorización por propietario ni el contrato versionado de `GET /v1/reports/{sessionId}`. Estas diferencias permanecen en el backlog y deben probarse antes de afirmar cumplimiento de TS04, TS06 o de los escenarios de privacidad.
+
+**Evidencia del periodo actual y trazabilidad del incremento.** El repositorio de documentación es [upc-pre-202620-si728-16365-thropic/talki-project-report](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report), rama `codex/tb2-report-completion-20261030`, revisada en el [PR #7](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/pull/7). El corte de esta revisión es [f382326](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/f382326cd46dd7a9c091fe0b2169c5ef817f14d3), dentro del sprint 26/10–08/11. El [registro de commits actuales](assets/evidence/tb2/current-report-commits.json) conserva SHA completo, fecha/hora de Lima, autor tal como figura en Git, mensaje, archivos y relación con los PBIs.
+
+| Commit | Fecha Lima / autor en Git | Mensaje y relación con el incremento |
+| --- | --- | --- |
+| [7240c8e](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/7240c8eba70c01ffab9137a50f6f6fafc8cfa2b7) | 2026-10-30 17:55; Alejandro Oroncoy | `docs(tb2): adapt verified baseline and track delivery gaps`<br>Importación de fuentes, contratos, pruebas base y diagnóstico del ambiente. Relación: SB1-01, SB1-04, SB1-07. |
+| [5607d22](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/5607d22f4d4ae8fe38221a9b4f42c0727273bb32) | 2026-10-30 17:55; Alejandro Oroncoy | `docs(tb2): normalize Campus evidence formatting`<br>Normalización de la evidencia de requisitos y feedback obtenida con Campus. Relación: SB1-01. |
+| [eeb24d6](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/eeb24d6e8d5551658e972f51a736ed364cdc3827) | 2026-10-30 17:57; Alejandro Oroncoy | `docs(tb2): retain cumulative Student Outcome table format`<br>Formato acumulativo de Student Outcome. Relación: Transversal. |
+| [4e462c9](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/4e462c9d645115ec65ade3cd4c93c4f844db0055) | 2026-10-30 18:04; Alejandro Oroncoy | `docs(tb2): prioritize report completion and document remaining evidence`<br>Procedencia, autores y mensajes de los commits base; seguimiento documental. Relación: SB1-01, SB1-07. |
+| [6f0b3ba](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/6f0b3ba4901049b921defc611b91a11257d72043) | 2026-10-30 19:21; Alejandro Oroncoy | `docs(sprint): define TB2 planning and 24-task backlog`<br>Definición de tareas, criterios y tablero del incremento. Relación: SB1-01, SB1-02, SB1-03, SB1-04, SB1-05, SB1-06, SB1-07, SB1-08. |
+| [0b0afa8](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/0b0afa85c870d14e84502a1c8a8eb33832fda755) | 2026-10-30 19:26; Alejandro Oroncoy | `docs(tb2): confirm sprint capacity and task owners`<br>Acuerdo de capacidad y responsables del sprint. Relación: Transversal. |
+| [4d02304](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/4d0230498672cc0063776bc9e18ddf5074be328b) | 2026-10-30 19:59; Alejandro Oroncoy | `docs(tb2): consolidate remaining report content in README`<br>Concordancia de arquitectura, reproducción, matriz de aceptación y ejemplos HTTP. Relación: SB1-01, SB1-04, SB1-07. |
+| [a0e13bc](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/a0e13bccfcc8c93c358f489912a891a0cce4f99c) | 2026-10-30 20:14; Alejandro Oroncoy | `docs(tb2): confirm GitHub Projects as accepted sprint board`<br>GitHub Projects como herramienta admitida y elegida. Relación: Transversal. |
+| [a5f9b0c](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/a5f9b0c768fb62332b4dd9701828d85cab178014) | 2026-10-30 20:19; Alejandro Oroncoy | `docs(tb2): adopt Next React stack and retire migration plan`<br>Selección Next.js/React, diagramas alineados y retiro de la migración G-WEB. Relación: SB1-01, SB1-06. |
+| [1da3a21](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/1da3a216002e830d8f7f3010792420e599685c66) | 2026-10-30 20:25; Alejandro Oroncoy | `docs(report): remove authorship clarification paragraph`<br>Retiro del párrafo de aclaración editorial solicitado por el equipo. Relación: Transversal. |
+| [f382326](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/f382326cd46dd7a9c091fe0b2169c5ef817f14d3) | 2026-10-30 20:33; Alejandro Oroncoy | `docs(sprint): agree two-week calendar and team responsibilities`<br>Calendario 26/10–08/11 y división de responsabilidades como acuerdo del equipo. Relación: Transversal. |
+
+**Correspondencia entre backlog, base de código y evidencia disponible.** La siguiente matriz mantiene los responsables como organización futura del trabajo acordada en 7.2.1.1. Los enlaces de código apuntan al commit histórico fijado; la columna de artefactos identifica evidencia que ya puede consultarse en el informe actual.
+
+| PBI / historias | Tareas y coordinación acordadas | Código base 202601 | Artefactos disponibles | Cierre técnico requerido |
+| --- | --- | --- | --- | --- |
+| **SB1-01**<br>Transversal | SB1-01-A, SB1-01-B, SB1-01-C<br>Coordinará: Kevin Jorge Chi Cruzatt. | [talki-user-services@1da887a](https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services/tree/1da887abe3dd2d776685c5d864dc4098ceb66344); [talki-session-services@cde4b11](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services/tree/cde4b117783db42115acc680ddb22e2bfe99ae24); [talki-analysis-services@9e026c3](https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services/tree/9e026c324b6f7a321505af705e9e8ffdd6496fc4); [talki-engagement-services@231bb5e](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services/tree/231bb5eb7ccefb741cbff5274634bef2eef17819); [talki-frontend@d63e889](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend/tree/d63e889a216d093a86bf24a2a328c18d0e610618) | [Sección del informe](#714-software-deployment-configuration); [Manifiesto](assets/reused-202601/tb2/manifest.json); [Concordancia](assets/evidence/tb2/architecture-concordance.json) | Procedimiento, fuentes y contratos documentados; cierre del entorno contra el commit del incremento pendiente. |
+| **SB1-02**<br>US05, US06, US20, US23, US28, US33 | SB1-02-A, SB1-02-B, SB1-02-C<br>Coordinará: Werner Khalil Lang Nassi. | [talki-user-services@1da887a](https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services/tree/1da887abe3dd2d776685c5d864dc4098ceb66344); [talki-session-services@cde4b11](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services/tree/cde4b117783db42115acc680ddb22e2bfe99ae24); [talki-frontend@d63e889](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend/tree/d63e889a216d093a86bf24a2a328c18d0e610618) | [Prueba HTTP local](assets/evidence/tb2/local-execution.json); [Contrato identity-service](assets/evidence/tb2/openapi-local/identity-service.json) | Registro/login de fixture disponibles; autorización entre cuentas y aceptación pendientes. |
+| **SB1-03**<br>US09, US10, US12, US13, US14, US29, US34, US38, TS01, TS02 | SB1-03-A, SB1-03-B, SB1-03-C, SB1-03-D<br>Coordinará: Alejandro Daniel Oroncoy Almeyda. | [talki-session-services@cde4b11](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services/tree/cde4b117783db42115acc680ddb22e2bfe99ae24); [talki-frontend@d63e889](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend/tree/d63e889a216d093a86bf24a2a328c18d0e610618) | [Prueba HTTP local](assets/evidence/tb2/local-execution.json); [Contrato session-service](assets/evidence/tb2/openapi-local/session-service.json); [Contrato live-coach-service](assets/evidence/tb2/openapi-local/live-coach-service.json) | Creación DRAFT y modos disponibles; estados, voz configurada y cierre completo pendientes. |
+| **SB1-04**<br>US15, US16, US20, US26, US37, TS03, TS04 | SB1-04-A, SB1-04-B, SB1-04-C<br>Coordinará: Manuel Ignacio Tumi Oliden. | [talki-analysis-services@9e026c3](https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services/tree/9e026c324b6f7a321505af705e9e8ffdd6496fc4); [talki-session-services@cde4b11](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services/tree/cde4b117783db42115acc680ddb22e2bfe99ae24) | [Pruebas/diagnóstico](assets/evidence/tb2/verification.json); [Contrato scoring-service](assets/evidence/tb2/openapi-local/scoring-service.json) | Unitarias/contratos base disponibles; pipeline, feedback versionado y BDD pendientes. |
+| **SB1-05**<br>US21, US35, TS05 | SB1-05-A, SB1-05-B<br>Coordinará: Werner Khalil Lang Nassi. | [talki-engagement-services@231bb5e](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services/tree/231bb5eb7ccefb741cbff5274634bef2eef17819); [talki-user-services@1da887a](https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services/tree/1da887abe3dd2d776685c5d864dc4098ceb66344) | [Prueba HTTP local](assets/evidence/tb2/local-execution.json); [Pruebas/diagnóstico](assets/evidence/tb2/verification.json) | Consultas iniciales y unitarias base; actualización real por evento y duplicados pendientes. |
+| **SB1-06**<br>US01, US02, US03, US04, US09, US15, US20, US29 | SB1-06-A, SB1-06-B, SB1-06-C<br>Coordinará: Eduardo Gael Rivera Sosa. | [talki-frontend@d63e889](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend/tree/d63e889a216d093a86bf24a2a328c18d0e610618) | [Sección del informe](#65-applications-prototyping); [Decisión de stack](assets/planning/sprint-1/technology-requirements.json) | Stack elegido y compilación base documentados; recorrido conectado, errores y accesibilidad pendientes. |
+| **SB1-07**<br>TS01, TS02, TS03, TS04 | SB1-07-A, SB1-07-B, SB1-07-C, SB1-07-D<br>Coordinará: Kevin Jorge Chi Cruzatt. | [talki-user-services@1da887a](https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services/tree/1da887abe3dd2d776685c5d864dc4098ceb66344); [talki-session-services@cde4b11](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services/tree/cde4b117783db42115acc680ddb22e2bfe99ae24); [talki-analysis-services@9e026c3](https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services/tree/9e026c324b6f7a321505af705e9e8ffdd6496fc4); [talki-engagement-services@231bb5e](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services/tree/231bb5eb7ccefb741cbff5274634bef2eef17819); [talki-frontend@d63e889](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend/tree/d63e889a216d093a86bf24a2a328c18d0e610618) | [Pruebas/diagnóstico](assets/evidence/tb2/verification.json); [Sección del informe](#7217-software-deployment-evidence-for-sprint-review) | Diagnóstico del ambiente y configuración documentados; publicación operativa y persistencia pendientes. |
+| **SB1-08**<br>US01, US09, US15, US20, US29, US33 | SB1-08-A, SB1-08-B<br>Coordinará: Eduardo Gael Rivera Sosa. | [talki-frontend@d63e889](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend/tree/d63e889a216d093a86bf24a2a328c18d0e610618) | [Protocolo de validación](#731-diseño-de-entrevistas) | Protocolo disponible; entrevistas, hallazgos y videos diferidos por decisión del equipo. |
+
+El [registro estructurado de trazabilidad](assets/evidence/tb2/development-traceability.json) conserva los ocho PBIs y las 24 tareas. La consulta autenticada de la organización actual muestra el repositorio del informe; los cinco nombres esperados de implementación no resultaron accesibles en esa consulta. El [inventario fechado](assets/evidence/tb2/repository-inventory.json) registra el alcance y las limitaciones de esa comprobación. Las instantáneas locales verificadas permiten consultar la base sin atribuirle desarrollo nuevo del periodo actual.
+
+**Estado de 7.2.1.3.** La trazabilidad documental y la procedencia están completas al corte indicado. Los commits del informe acreditan esos artefactos; el cierre de implementación requiere incorporar el commit/PR del cambio de software, su historia/tarea y los resultados de prueba correspondientes. Esos campos técnicos siguen pendientes. Los PBIs no se marcan terminados por estar incluidos en esta matriz; SB1-08 continúa diferido por entrevistas pendientes.
+
+#### 7.2.1.4. Testing Suite Evidence for Sprint Review
+
+Se ejecutó `mvn -B -ntp clean test` en los ocho servicios con JDK 17.0.19. El resultado se obtuvo de los XML de Maven Surefire, por clase y servicio; se conserva en [verification.json](assets/evidence/tb2/verification.json). No se reutiliza el conteo histórico de 128 pruebas del informe anterior.
+
+| Servicio | Pruebas | Fallos | Errores | Omitidas |
+| --- | ---: | ---: | ---: | ---: |
+| identity-service | 16 | 0 | 0 | 0 |
+| notification-service | 7 | 0 | 0 | 0 |
+| session-service | 30 | 0 | 0 | 0 |
+| live-coach-service | 14 | 0 | 0 | 0 |
+| filler-detection-service | 11 | 0 | 0 | 0 |
+| scoring-service | 33 | 0 | 0 | 0 |
+| progress-service | 9 | 0 | 0 | 0 |
+| gamification-service | 13 | 0 | 0 | 0 |
+
+**Resultado:** 133 pruebas, cero fallos, cero errores y cero omitidas. Son pruebas unitarias y de componentes con dobles de prueba, según las clases presentes; el número no representa cobertura porcentual. La primera ejecución con un JDK diferente al declarado presentó incompatibilidad de Mockito/Byte Buddy; la ejecución válida se realizó con Java 17.
+
+La prueba de humo HTTP local, con un caso de finalización fallido, se documenta en 7.2.1.5. No sustituye una suite completa de integración, aceptación BDD ni rendimiento. No se encontraron archivos `.feature` en las cinco instantáneas; los escenarios Gherkin del capítulo III siguen siendo especificaciones, pendientes de vincular con steps y ejecución. Tampoco se encontró evidencia ejecutada de pruebas de voz real, recuperación, autorización entre usuarios, purga distribuida o contratos versionados. El cliente dispone de compilación y lint; no declara un script de pruebas automatizadas en su `package.json`.
+
+Para completar la aceptación se deben ejecutar, al menos: acceso válido/inválido; propiedad de sesiones; permiso de micrófono denegado; token vencido; finalización repetida; análisis pendiente o fallido; reconexión; eliminación con confirmaciones; y recorrido web/móvil. Cada resultado debe enlazar suite, commit, comando y evidencia. No se registra como aprobado mientras no se ejecute.
+
+**Matriz de aceptación del incremento.** Se define el resultado exigido por cada recorrido y se contrasta con la evidencia disponible al 30/10. “Pendiente” significa que no hay ejecución acreditada de ese criterio; las unitarias no sustituyen la prueba integrada.
+
+| Caso / PBI | Criterio y procedimiento de aceptación | Evidencia disponible / resultado | Estado de aceptación |
+| --- | --- | --- | --- |
+| AC-01 / SB1-01 | Extraer fuentes verificadas, compilar los ocho servicios y documentar broker/puertos sin secretos. | Cinco archivos con SHA-256; 133 unitarias y ocho OpenAPI locales. El procedimiento se documenta en 7.1.4. | Base verificada; repetir con el commit del incremento al cerrar. |
+| AC-02 / SB1-02 | Registrar A/B, iniciar sesión y probar lectura, listado, finalización y feedback de A desde B; deben denegarse. | Registro 201/login 200 de un fixture. No hay evidencia de autorización cruzada. | Parcial; aislamiento pendiente. |
+| AC-03 / SB1-03 | Autorizar captura, iniciar RECORDING, pausar/reanudar y finalizar una vez; repetir cierre sin duplicar evaluación. | Crear DRAFT 201; finalizar desde DRAFT devolvió 500; no se ejecutó voz real. | No aceptado; corregir estados e integrar voz. |
+| AC-04 / SB1-04 | Enviar cierre fixture; seguir sessionId/userId por detección y scoring; consultar feedback del propietario y repetir evento. | Unitarias de detección/scoring aprobadas y contratos disponibles; sin cadena completa observada. | Integración, BDD e idempotencia pendientes. |
+| AC-05 / SB1-05 | Comparar progreso y racha antes/después de una evaluación válida; reenviar evento y revisar aviso real. | Consultas iniciales vacías con 200; no hay evidencia de actualización por evento. | Pendiente. |
+| AC-06 / SB1-06 | Recorrer landing, acceso, preparación, práctica e historial con APIs; verificar errores y teclado/vista móvil. | Cliente compila; prototipo de diseño disponible con datos ficticios. | Recorrido conectado, errores y accesibilidad pendientes. |
+| AC-07 / SB1-07 | Publicar el mismo commit, abrir APIs/cliente por HTTPS, reiniciar y recuperar datos fixture persistidos. | Cliente histórico 402 y rutas Railway 404; ejecución local separada. | Despliegue operativo pendiente. |
+| AC-08 / SB1-08 | Aplicar tareas V01–V06 a ambos segmentos y registrar datos, ayuda y hallazgos reales. | Protocolo listo; entrevistas no realizadas/acreditadas en esta revisión. | Diferido por indicación del equipo. |
+
+La prueba de error 503 sin clave de Gemini tiene resultado esperado documentado; no acredita el caso de voz configurada. Los comandos, commit, fecha, fixture, resultados y capturas de cada nueva ejecución se incorporarán a su caso sin sobrescribir el diagnóstico histórico.
+
+#### 7.2.1.5. Execution Evidence for Sprint Review
+
+Se levantaron localmente los ocho JAR con un RabbitMQ aislado y H2 descartable. Los ocho servicios entregaron OpenAPI con HTTP 200; Filler Detection y Notifications tienen cero rutas REST de negocio porque trabajan por eventos. La captura reproducible está en [local-execution.json](assets/evidence/tb2/local-execution.json) y las especificaciones se conservan en [openapi-local](assets/evidence/tb2/openapi-local/).
+
+| Operación local con datos de prueba | HTTP obtenido | Interpretación |
+| --- | ---: | --- |
+| `POST /v1/auth/register` | 201 | Cuenta de prueba creada. |
+| `POST /v1/auth/login` | 200 | Credenciales válidas; JWT oculto en la evidencia. |
+| `POST /v1/sessions` | 201 | Sesión creada en DRAFT. |
+| `GET /v1/sessions/1` | 200 | Consulta de la sesión creada. |
+| `GET /v1/sessions?userId=1` | 200 | Listado de la cuenta de prueba. |
+| `POST /v1/sessions/1/finalize` | 500 | Intento de finalizar desde DRAFT; el dominio exige RECORDING y no existe ruta REST de inicio en este controlador. El 500 debe sustituirse por un error de negocio controlado y resolverse el recorrido de estados. |
+| `GET /v1/progress/dashboard?userId=1` | 200 | Resumen vacío inicial; no prueba procesamiento de una sesión finalizada. |
+| `GET /v1/gamification/streaks/1` | 200 | Racha inicial; no acredita logro nuevo. |
+| `GET /v1/coach/modes` | 200 | Catálogo de modos disponible. |
+| `POST /v1/coach/live-token?mode=quick_practice` | 503 | Error esperado con GEMINI_API_KEY vacía; no se consumió el proveedor. |
+
+El recorrido de prueba no se completó. En particular, el intento de finalizar una sesión DRAFT devolvió 500; no representa una práctica de voz realizada. Deben resolverse la transición a RECORDING y el manejo HTTP del estado inválido antes de acreditar la aceptación del ciclo completo. No se efectuó una llamada pagada a Gemini ni se procesó audio real.
+
+La compilación de producción del cliente con `pnpm build` finalizó correctamente. Esto comprueba compilación y tipos, pero no conectividad funcional del producto.
+
+
+La [galería](https://upc-pre-202620-si728-16365-thropic.github.io/talki-project-report/) y el [prototipo UX](https://upc-pre-202620-si728-16365-thropic.github.io/talki-project-report/assets/ux/prototype/) respondieron HTTP 200 el 30/10/2026. Sus pantallas permiten demostrar los flujos de diseño de 6.4–6.5. Las métricas, transcripción y acciones simuladas del prototipo no se presentan como salida de servicios o IA real.
+
+El video de navegación del producto integrado sigue pendiente. Su recorrido debe mostrar landing, acceso, configuración, práctica, cierre, análisis y consulta del resultado, incluyendo un estado de error pertinente. Se debe publicar el MP4 en Stream, registrar duración, insertar una captura con enlace y distinguir la demostración del prototipo de la aplicación conectada. El guion de demostración del anexo K organiza la grabación.
+
+#### 7.2.1.6. Services Documentation Evidence for Sprint Review
+
+La documentación se obtiene de los controladores del commit fijado y, cuando el servicio está ejecutándose localmente, de `/v3/api-docs`. El informe diferencia contratos existentes de los contratos propuestos en las Technical Stories.
+
+| Servicio | Métodos y rutas de la base | Parámetros o contenido principal |
+| --- | --- | --- |
+| Identity | `POST /v1/auth/register`; `POST /v1/auth/login` | Registro: email, password, username, academicSegment; login: email y password. La respuesta de login contiene JWT, que debe ocultarse en evidencias. |
+| Session | `POST /v1/sessions`; `GET /v1/sessions`; `GET /v1/sessions/{id}` | Creación: title, sessionType, userId; listado: query userId; consulta: id. |
+| Session | `POST /v1/sessions/{id}/finalize`; `GET/POST /v1/sessions/{id}/feedbacks` | Finalización y consulta/incorporación de feedback del recurso. |
+| Live Coach | `GET /v1/coach/modes`; `POST /v1/coach/live-token` | Modos; query mode y scenarioId opcional para token efímero. Sin clave configurada responde 503. |
+| Live Coach | `POST /v1/coach/{sessionId}/finalize` | userId, mode, transcriptGemini y métricas en query; publica evento de cierre. No confundir estos parámetros con mediciones verificadas del audio. |
+| Progress | `GET /v1/progress/dashboard` | Query userId. |
+| Gamification | `GET /v1/gamification/streaks/{userId}`; `GET /v1/gamification/leaderboard` | Racha del usuario y ranking. |
+| Scoring | `GET /v1/scores/health` | Ruta de estado declarada por el controlador; no equivale a disponibilidad de todas las evaluaciones. |
+| Filler Detection / Notifications | Consumidores de mensajes | Las operaciones de negocio principales se activan por eventos; la ausencia de rutas REST de negocio no es una documentación fallida. |
+
+Ejemplo de solicitud local para creación de una sesión con datos de prueba:
+
+```http
+POST /v1/sessions
+Content-Type: application/json
+
+{"title":"TB2 local fixture","sessionType":"quick_practice","userId":1}
+```
+
+El controlador declara HTTP 201 al crear y HTTP 202 al finalizar una sesión válida; el intento desde DRAFT de esta prueba devolvió 500. En el caso exitoso de creación, el cuerpo exacto y los identificadores devueltos se conservan en la captura de ejecución local. Las especificaciones completas incluyen esquemas de solicitud/respuesta y deben abrirse en Swagger UI durante la exposición, mostrando un caso exitoso y uno de error sin revelar credenciales.
+
+**Respuestas observadas en la ejecución local.** Los ejemplos siguientes proceden de la captura del 30/10, con datos fixture; no son respuestas producidas por un despliegue público ni modelos de aceptación aprobada.
+
+**POST /v1/sessions — HTTP 201.**
+
+```json
+{
+  "id": 1,
+  "title": "TB2 local fixture",
+  "status": "DRAFT",
+  "sessionType": "quick_practice",
+  "user": {
+    "id": 1,
+    "email": "tb2-local-fixture@example.invalid",
+    "username": "TB2 local fixture",
+    "academicSegment": "ciclos_1_5"
+  },
+  "createdAt": "2026-10-30T17:47:16.060235",
+  "finalizedAt": null
+}
+```
+
+**POST /v1/sessions/1/finalize — HTTP 500.**
+
+```json
+{
+  "timestamp": "2026-10-30T22:47:16.199+00:00",
+  "status": 500,
+  "error": "Internal Server Error",
+  "path": "/v1/sessions/1/finalize"
+}
+```
+
+**POST /v1/coach/live-token?mode=quick_practice — HTTP 503.**
+
+```json
+{
+  "error": "GEMINI_API_KEY no está configurada en live-coach-service"
+}
+```
+
+#### 7.2.1.7. Software Deployment Evidence for Sprint Review
+
+La comprobación pública está fechada en [verification.json](assets/evidence/tb2/verification.json). Se probaron la página del cliente y las rutas `/actuator/health` y `/v3/api-docs` de los ocho orígenes históricos de Railway.
+
+| Producto o evidencia | Resultado del 30/10/2026 | Alcance y acción |
+| --- | --- | --- |
+| Galería y prototipo del informe 202620 en GitHub Pages | HTTP 200 en ambas páginas. | Diseño accesible públicamente; no acredita backend ni voz real. |
+| Cliente histórico `talki-frontend.vercel.app` | HTTP 402. | Recuperar el servicio y repetir el recorrido; la causa administrativa no se deduce solo del código HTTP. |
+| Ocho orígenes históricos de Railway | HTTP 404 en las 16 rutas comprobadas. | No acreditan disponibilidad de API. Revisar proyectos, dominios y despliegues; repetir comprobación tras recuperación. |
+| Ejecución local de las instantáneas | Evidencia separada en 7.2.1.5. | Útil para comprobar código y contratos; no satisface por sí sola el requisito de producto desplegado. |
+
+No se incorporan capturas históricas de Railway como si fueran del ambiente vigente. Para cerrar este punto se necesitan capturas actuales de configuración y servicios activos, URLs funcionales, identificación del commit desplegado, evidencia de persistencia y prueba del recorrido integrado. La primera versión desplegada del producto continúa pendiente.
+
+#### 7.2.1.8. Team Collaboration Insights during Sprint
+
+El historial de TB1 y TP permanece en Project Report Collaboration Insights. La actualización TB2 incorpora procedencia del código, contraste de contratos, resultados de pruebas y protocolo de validación. Las instantáneas de 202601 conservan sus autores originales y no cuentan como commits actuales de los cinco integrantes.
+
+La observación docente sobre concentración editorial se atiende haciendo explícito quién modificó cada versión y separando autoría, coautoría registrada y revisión asignada. No se redistribuyen cambios históricos entre integrantes que no los realizaron. Para cerrar la colaboración del Sprint 1, cada integrante debe revisar su sección, realizar su aporte y aportar el enlace verificable del commit/PR y la evidencia de la herramienta utilizada.
+
+| Integrante | Responsabilidad acordada por el equipo | Evidencia de cierre requerida |
+| --- | --- | --- |
+| Alejandro Daniel Oroncoy Almeyda | Integración del informe, SCM, sesiones/coach y trazabilidad de código y pruebas. | [PR #7](https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/pull/7) y commits actuales de 7.2.1.3: edición documentada. Cierre técnico de tareas pendiente. |
+| Eduardo Gael Rivera Sosa | Landing, comunicación de beneficios y entrevistas de validación. | Cambios propios y registro real de sesiones/observaciones. |
+| Manuel Ignacio Tumi Oliden | Análisis, puntuación y progreso. | Revisión de suite, resultados y diferencias con diseño vigente. |
+| Werner Khalil Lang Nassi | Identidad, gamificación, privacidad y retención. | Pruebas/revisión propias y cierre de diferencias de autorización/purga. |
+| Kevin Jorge Chi Cruzatt | Despliegue, UX/prototipo y evidencias de navegación. | Capturas actuales, aportes propios y enlace al recorrido demostrado. |
 
 ## 7.3. Validation Interviews
 
 ### 7.3.1. Diseño de entrevistas
 
+El objetivo es observar si estudiantes de ambos segmentos comprenden la propuesta, preparan una práctica, interpretan feedback y reconocen cómo gestionar sus datos. Se reclutarán entre tres y cinco estudiantes por segmento: ciclos iniciales y ciclos superiores, manteniendo los criterios de 1.3. La muestra mínima prevista es de seis participantes. Las entrevistas de needfinding de 2.2 no se presentan como validación del producto.
+
+**Preparación y consentimiento.** Antes de grabar se explica propósito, duración, qué datos se registran y la posibilidad de retirarse. No se solicita una contraseña personal ni material sensible. Se utiliza una cuenta de prueba o el prototipo con datos de ejemplo. Se identifica qué versión y dispositivo se evalúan; si es el prototipo se advierte que audio y resultados son simulados. Se solicitan autorización independiente para grabación y para uso de un testimonio en el video promocional.
+
+**Inicio.** Se registra código del participante, nombre autorizado, edad, distrito, segmento, ciclo, fecha, dispositivo y experiencia previa. Se pregunta en qué situación necesita practicar y qué espera encontrar al revisar la landing. La evaluación se realiza primero sin explicar dónde pulsar; toda ayuda se registra.
+
+| Tarea | Consigna para el participante | Observación y métrica |
+| --- | --- | --- |
+| V01 — Propuesta | Revisa la landing y explica para quién sirve Talki y qué podrías hacer. | Comprensión de beneficios, límites y acción principal. |
+| V02 — Preparación | Configura una práctica para una exposición o entrevista y prepárala para iniciar. | Éxito sin ayuda, tiempo, errores, comprensión de permisos/consentimiento. |
+| V03 — Práctica | Inicia o recorre una práctica, reconoce el estado y explica cómo terminarías. | Visibilidad del estado, control, recuperación y comprensión del cierre. |
+| V04 — Feedback | Revisa un reporte y explica qué mejorarías en la siguiente práctica. | Localización de evidencia, comprensión de puntuaciones y límites, acción elegida. |
+| V05 — Continuidad | Encuentra una sesión anterior y compara resultados cuando sean compatibles. | Encontrabilidad, filtros, etiquetas y comprensión de comparabilidad. |
+| V06 — Privacidad | Explica cómo exportarías tu información o pedirías su eliminación. | Reconocimiento de confirmaciones, alcance y estado de purga. |
+
+**Cierre.** Preguntar qué fue confuso, qué faltó para confiar en el feedback, qué cambiaría antes de usarlo para una evaluación real y si lo utilizaría en su situación habitual. Registrar citas textuales solo desde la grabación, con permiso e intervalo. Una opinión favorable no se transforma en mejora medida del desempeño.
+
+QAS-USA-01 propone que al menos el 90 % prepare una sesión válida en tres minutos o menos sin ayuda. Se informará el numerador y denominador reales, además del porcentaje y los resultados por segmento. Con seis participantes, alcanzar el umbral requiere seis éxitos; cinco de seis representa 83,3 %. Las tareas simuladas solo prueban usabilidad del prototipo, no efectividad del entrenamiento de voz.
+
 ### 7.3.2. Registro de entrevistas
 
+**Estado: pendiente de aplicación y publicación.** No se dispone de evidencia de sesiones de validación en esta revisión. Se deja preparado el registro mínimo de seis participantes, sin asignar identidades o respuestas ficticias. Los videos de validación permanecen pendientes por acuerdo del equipo.
+
+| Registro | Segmento previsto | Identidad, edad, distrito y fecha | Dispositivo / versión | Stream, inicio y duración | Resumen y tareas |
+| --- | --- | --- | --- | --- | --- |
+| VAL-01 | Ciclos iniciales | Por registrar con autorización. | Por registrar. | Pendiente. | Pendiente de sesión. |
+| VAL-02 | Ciclos iniciales | Por registrar con autorización. | Por registrar. | Pendiente. | Pendiente de sesión. |
+| VAL-03 | Ciclos iniciales | Por registrar con autorización. | Por registrar. | Pendiente. | Pendiente de sesión. |
+| VAL-04 | Ciclos superiores | Por registrar con autorización. | Por registrar. | Pendiente. | Pendiente de sesión. |
+| VAL-05 | Ciclos superiores | Por registrar con autorización. | Por registrar. | Pendiente. | Pendiente de sesión. |
+| VAL-06 | Ciclos superiores | Por registrar con autorización. | Por registrar. | Pendiente. | Pendiente de sesión. |
+
+Por cada entrevista se incorporará captura enlazada al video, datos autorizados, segmento, fecha e intervalo de reproducción; tareas completadas, ayuda ofrecida, observaciones y síntesis interpretativa. Se consolidará un MP4 con títulos por participante, publicado en el canal Stream indicado por el docente. La edición prevista por entrevista es de tres a cinco minutos, según el Anexo C del enunciado.
+
 ### 7.3.3. Evaluaciones según heurísticas
+
+Se evaluarán usabilidad, arquitectura de información y diseño inclusivo usando el formato del Anexo D del enunciado. El registro separará evidencia observada, interpretación, severidad, recomendación y decisión. La siguiente matriz define qué observar; sus campos de resultados permanecen pendientes hasta realizar las sesiones.
+
+| Dimensión | Criterio y situación a observar | Evidencia requerida | Resultado |
+| --- | --- | --- | --- |
+| Usabilidad | Visibilidad de preparación, escucha, pausa, análisis y finalización. | Tarea V02–V04, pantalla e intervalo; errores y explicación del participante. | Por evaluar. |
+| Usabilidad | Control, cancelación, recuperación de permiso denegado o desconexión. | Ruta intentada, ayuda requerida y recuperación conseguida. | Por evaluar. |
+| Usabilidad | Correspondencia de feedback con evidencia y claridad de mensajes. | Interpretación de puntuación y recomendación sin inducir respuestas. | Por evaluar. |
+| Arquitectura de información | Etiquetas y agrupación de práctica, historial, progreso y privacidad. | Búsqueda inicial y ruta seguida en V05–V06. | Por evaluar. |
+| Arquitectura de información | Encontrabilidad y orientación dentro del recorrido. | Retrocesos, elección de navegación, filtros y elementos no encontrados. | Por evaluar. |
+| Diseño inclusivo | Legibilidad, contraste, foco visible, teclado y orden de lectura. | Dispositivo, método de entrada, captura y barrera concreta. | Por evaluar. |
+| Diseño inclusivo | Alternativas a audio/color y comprensión de consentimiento y eliminación. | Interpretación, recurso alternativo disponible y dificultad observada. | Por evaluar. |
+
+Cada hallazgo tendrá ID, participante/tarea, heurística, evidencia, frecuencia, severidad 0–4, recomendación, responsable y estado. La severidad 0 indica ausencia de problema; 1 cosmético; 2 menor; 3 mayor; 4 impide una tarea esencial. Se debe justificar la severidad por impacto, frecuencia y recuperación. No se asigna una nota ni se afirma accesibilidad certificada a partir de la existencia de mock-ups.
+
+El análisis final agrupará problemas por segmento y dispositivo, priorizará los bloqueos, enlazará cada decisión con una historia y conservará las versiones anterior y corregida. El resultado de esta sección sigue pendiente de observaciones reales.
+
+## 7.4. Video About-the-Product
+
+**Estado: grabación y publicación pendientes.** El video presentará Talki a estudiantes que necesitan practicar exposiciones, entrevistas o sustentaciones. Explicará el problema, la propuesta, el recorrido y las condiciones de uso sin prometer una mejora de desempeño todavía no medida. Debe durar entre uno y tres minutos e incluir interacción con el producto y al menos una opinión autorizada de cada segmento.
+
+| Intervalo propuesto | Contenido y evidencia |
+| --- | --- |
+| 0:00–0:20 | Necesidad de practicar comunicación oral y presentación breve de Talki. |
+| 0:20–0:45 | Público objetivo y modelo de acceso/planes, distinguiendo propuesta de funcionalidad disponible. |
+| 0:45–1:30 | Configuración, práctica y lectura de feedback; mostrar la aplicación real. Si se usa el prototipo, rotular simulación. |
+| 1:30–2:10 | Una opinión autorizada de ciclos iniciales y una de ciclos superiores, recogidas realmente. |
+| 2:10–2:30 | Beneficio esperado, acceso a la solución y límites pertinentes. |
+
+La versión final se publicará en Microsoft Stream y YouTube; se añadirá captura, duración, enlaces y fecha de publicación, y se incrustará en la landing. No se sustituye con el video About-the-Team ni con las entrevistas de needfinding. El guion queda preparado; las opiniones y URLs se completarán al grabar.
+
 
 # Conclusiones y recomendaciones
 
@@ -4611,19 +5345,23 @@ Con el TP de semana 7, esa base se extiende a diseño táctico y UX:
 
 La inteligencia artificial se propone como apoyo para ensayar preguntas contextualizadas, obtener transcripción y convertir evidencia autorizada en recomendaciones concretas. Estas capacidades responden a las dificultades relatadas de fluidez, claridad y preparación bajo presión. Su utilidad depende de la calidad de la evidencia y de que el estudiante comprenda las recomendaciones; una transcripción por sí sola no mide volumen ni una puntuación acredita reducción de ansiedad. Las entrevistas y el prototipo sustentan la propuesta de diseño, mientras que la mejora del desempeño deberá evaluarse con prácticas y tareas observadas en ambos segmentos.
 
+**Avance TB2.** La planificación actual define 24 tareas, 80 h estimadas y 36 SP residuales; el Team Leader confirmó capacidad de 20 h por integrante y responsables. La matriz de concordancia identifica las diferencias entre diez contextos de diseño y ocho servicios, con Sharing & Retention pendiente y el gateway Gemini integrado en Live Coach. Estas decisiones delimitan el alcance sin presentar el diseño como implementación terminada. La base 202601 ofrece ocho servicios y un cliente compilables. La ejecución con Java 17 aprueba 133 pruebas unitarias; la galería y el prototipo de diseño están publicados. Los enlaces históricos del producto no acreditan disponibilidad actual: el cliente responde 402 y las rutas comprobadas del backend 404. Deben recuperarse el despliegue y la aceptación integrada antes de presentar una primera versión operativa. El protocolo de validación está preparado, pero todavía no hay resultados observados ni opiniones autorizadas de validación para sustentar una mejora de desempeño.
+
 ## Recomendaciones
 
 - Validar las historias priorizadas y los criterios de aceptación con estudiantes y docentes antes de iniciar la implementación.
 - Mantener la trazabilidad entre los drivers ADD, los bounded contexts y los diagramas de arquitectura cuando se incorporen nuevas decisiones de diseño.
 - Revisar el despliegue refinado de 4.3.4 con RabbitMQ y canales HTTPS/WSS, y comprobar presupuesto, conectividad y roles de base de datos antes de operar.
 - Usar los escenarios de calidad refinados como base de pruebas de rendimiento, privacidad, recuperación e idempotencia durante la fase de implementación.
-- Incorporar el feedback docente a I–IV y revisar V–VI con el equipo; ejecutar después la implementación, pruebas y validaciones del capítulo VII con evidencias reales.
+- Cerrar las observaciones del parcial con aportes verificables por integrante, la lámina del equipo y la exposición en herramientas. Recuperar el despliegue del cliente Next.js/React y los servicios; ejecutar aceptación, validación por segmento y publicación de videos antes de declarar TB2 completo.
 
 # Video About-the-Team
 
 Presentación de los cinco integrantes de Thropic, con sus nombres, apellidos y carrera de Ingeniería de Software. Cada integrante se presenta hablando a cámara.
 
 **Video:** [Video About-the-Team](https://www.youtube.com/watch?v=K6RUwmhUR2Y).
+
+La versión enlazada acredita presentación individual del equipo. Para TB2 se debe complementar con escenas de trabajo real, retrospectiva y testimonio de actividades y competencias, conforme al Anexo C. Su publicación en Stream e incrustación en la landing deben registrarse con evidencia; no se presume que la presentación existente cubra todo ese contenido.
 
 # Bibliografía
 
@@ -4640,6 +5378,18 @@ Ries, E. (2011). *The Lean Startup: How today's entrepreneurs use continuous inn
 Speeko. (s. f.). *Speeko: AI speech coach*. Recuperado el 7 de octubre de 2026, de https://www.speeko.co/
 
 Thropic. (2026). *Talki: Project report* [Repositorio de GitHub, versión 2cfa379]. [GitHub](https://github.com/upc-pre-202601-si657-7940-thropic/talki-project-report/blob/2cfa379b72241a1380d87b4f8c5be53a70950d81/README.MD).
+
+Thropic. (2026). *talki-analysis-services* (versión 9e026c3) [Código fuente]. GitHub. https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services/tree/9e026c324b6f7a321505af705e9e8ffdd6496fc4
+
+Thropic. (2026). *talki-engagement-services* (versión 231bb5e) [Código fuente]. GitHub. https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services/tree/231bb5eb7ccefb741cbff5274634bef2eef17819
+
+Thropic. (2026). *talki-frontend* (versión d63e889) [Código fuente]. GitHub. https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend/tree/d63e889a216d093a86bf24a2a328c18d0e610618
+
+Thropic. (2026). *talki-session-services* (versión cde4b11) [Código fuente]. GitHub. https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services/tree/cde4b117783db42115acc680ddb22e2bfe99ae24
+
+Thropic. (2026). *talki-user-services* (versión 1da887a) [Código fuente]. GitHub. https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services/tree/1da887abe3dd2d776685c5d864dc4098ceb66344
+
+Universidad Peruana de Ciencias Aplicadas. (2026). *Trabajo Final 1ASI0728 202620* [Enunciado del curso Arquitecturas de Software Emergentes; páginas 32, 34–35 y anexos B–D]. Campus Virtual UPC. Identificador de contenido: `_76029989_1`.
 
 Varona Albán, J. C., & Ramos Benítez, M. C. (2024). Competencias laborales blandas de alto impacto en egresados universitarios: Un estudio descriptivo. *Revista Virtual Universidad Católica del Norte*, (71), 245–275. https://doi.org/10.35575/rvucn.n71a11
 
@@ -4663,9 +5413,17 @@ World Wide Web Consortium. (s. f.). *Understanding Success Criterion 2.5.8: Targ
 | H | Wireframes y mock-ups web/móvil, incluyendo estados de error y privacidad. | [Galería de mock-ups completos](https://upc-pre-202620-si728-16365-thropic.github.io/talki-project-report/); `assets/ux/wireframes/`, `assets/ux/mockups/`. |
 | I | Prototipo UX navegable, datos de ejemplo, variantes web/móvil y modo wireframe. | [HTML](assets/ux/prototype/index.html), [instrucciones](assets/ux/prototype/README.md) |
 | J | Activos técnicos y registro de versiones de Talki. | `assets/reused-202601/`, [registro de procedencia](assets/design/reuse-manifest.json) |
+| K | Checklist numerado TB2, fuentes y seguimiento de feedback del parcial. | [Checklist TB2](docs/tb2/checklist.md); [guion de demostración](docs/tb2/guion-demostracion.md). |
+| L | Instantáneas del código 202601 y verificación técnica TB2. | [Manifiesto](assets/reused-202601/tb2/manifest.json); [verificación](assets/evidence/tb2/verification.json). |
+| M | Informe de participación TB2 para evaluación del Team Leader. | [Registro de participación TB2](docs/tb2/participacion.md). No reutiliza las notas del TP. |
+| N | Material de apoyo previo: complemento, keynote PPTX/PDF y participación editable. El informe vigente se mantiene en este README. | [Archivos y alcance](deliverables/tb2/README.md). |
+| O | Planning, capacidad y responsables confirmados, Sprint Backlog, tablero y hoja de ruta completa. | [Definición de Sprint 1](docs/tb2/sprint-1-plan.md); [fuente estructurada](assets/planning/sprint-1/plan.json). |
+| P | Concordancia de diseño/implementación y reproducción local completas en 7.1.4. | [Sección 7.1.4](#714-software-deployment-configuration); [evidencia estructurada de los diez contextos](assets/evidence/tb2/architecture-concordance.json). |
 
 ## Videos de Exposiciones
 
 **TB1:** [Video de exposición del TB1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202313397_upc_edu_pe/IQC7QXFBUmEQSIIDCqzpD0fSAQCbHqQBwQBGPOsFs7V7_JA?e=uIsNxX&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D).
 
 **TP:** [Video de exposición del TP](https://drive.google.com/drive/folders/1S1YQ4q0QtCI28OER21HIhHuKYnlDoAwp?usp=sharing).
+
+**TB2:** grabación de exposición pendiente; debe mostrar los artefactos directamente en sus herramientas, con participación de los cinco integrantes.

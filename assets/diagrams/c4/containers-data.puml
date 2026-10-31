@@ -1,0 +1,36 @@
+@startuml
+!include <C4/C4_Container>
+skinparam defaultFontName Arial
+skinparam dpi 150
+skinparam linetype polyline
+skinparam nodesep 45
+skinparam ranksep 65
+skinparam ArrowFontSize 12
+LAYOUT_TOP_DOWN()
+title C4 Container: datos de cuenta, práctica y evaluación
+System_Boundary(talki, "Talki") {
+Boundary(groupidentity, "Cuenta y práctica", "Agrupación visual") {
+Container(identity, "Identity & Access", "Java / Spring Boot", "Cuenta, credenciales y propiedad")
+Container(sessions, "Practice Session Management", "Java / Spring Boot", "Ciclo de vida y evidencia del ensayo")
+ContainerDb(coredata, "Datos de cuenta y práctica", "PostgreSQL / TLS", "Esquemas privados de Identity y Sessions")
+ContainerDb(store, "Material privado", "Almacenamiento de objetos / HTTPS", "Archivos autorizados, separados de su referencia en Sessions")
+}
+Boundary(groupscoring, "Evaluación y evolución", "Agrupación visual") {
+Container(scoring, "Scoring & Feedback Worker", "Java / Spring Boot", "Evalúa, conserva y versiona el reporte")
+Container(progress, "Progress & Adaptation", "Java / Spring Boot", "Resumen y comparación de progreso")
+Container(game, "Gamification", "Java / Spring Boot", "Rachas y logros")
+ContainerDb(resultdata, "Datos de evaluación y evolución", "PostgreSQL / TLS", "Esquemas privados de Scoring, Progress y Gamification")
+}
+}
+Rel(sessions, store, "Conserva o purga material autorizado", "HTTPS")
+Rel(identity, coredata, "Lee y escribe su esquema privado", "SQL / TLS")
+Rel(sessions, coredata, "Lee y escribe su esquema privado", "SQL / TLS")
+Rel(scoring, resultdata, "Conserva evaluaciones en su esquema", "SQL / TLS")
+Rel(progress, resultdata, "Actualiza resumen en su esquema", "SQL / TLS")
+Rel(game, resultdata, "Conserva rachas en su esquema", "SQL / TLS")
+Lay_R(identity, sessions)
+Lay_R(coredata, store)
+Lay_R(scoring, progress)
+Lay_R(progress, game)
+SHOW_LEGEND()
+@enduml

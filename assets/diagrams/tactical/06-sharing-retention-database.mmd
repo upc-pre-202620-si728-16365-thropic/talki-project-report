@@ -1,15 +1,6 @@
 erDiagram
     DELETION_REQUESTS ||--o{ PURGE_RECEIPTS : confirma
-    SHARE_GRANTS {
-        uuid id PK
-        uuid report_id
-        uuid session_id
-        bigint owner_id
-        varchar token_hash UK
-        varchar scope
-        timestamp expires_at
-        timestamp revoked_at
-    }
+
     DELETION_REQUESTS {
         uuid id PK
         uuid session_id

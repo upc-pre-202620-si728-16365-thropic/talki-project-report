@@ -1,0 +1,23 @@
+{
+  "sourceUrl": "https://github.com/orgs/upc-pre-202620-si728-16365-thropic/projects/1",
+  "capturedLocalDate": "2026-10-30",
+  "timeZone": "America/Lima",
+  "method": "Native browser screenshot via Computer Use; two horizontal positions of the same saved GitHub Projects table.",
+  "status": "11 cards: 8 Sprint 1 PBIs and 3 conditional work packages. Core forecast is 80 h and 36 SP; all residual work Todo.",
+  "figures": [
+    {
+      "file": "assets/planning/sprint-1/github-project-items-20261030.jpg",
+      "sha256": "75f323483d25303aeaeddd8cb59bfb260695933d7312b59af74a1af9c3721cfe"
+    },
+    {
+      "file": "assets/planning/sprint-1/github-project-20261030.jpg",
+      "sha256": "aef526d385adcf94c8d62be301053b0cc1e7661f455dc06e638740d6a997cf48"
+    }
+  ],
+  "subsequentDecision": {
+    "date": "2026-10-30",
+    "change": "Next.js/React conservado; G-WEB archivado por decisión del equipo después de las capturas.",
+    "currentActiveCards": 10,
+    "currentSnapshot": "assets/planning/sprint-1/board-snapshot.json"
+  }
+}

@@ -1,0 +1,311 @@
+{
+  "recordedOn": "2026-10-30",
+  "cutoffCommit": "f382326cd46dd7a9c091fe0b2169c5ef817f14d3",
+  "period": "202620",
+  "repository": "upc-pre-202620-si728-16365-thropic/talki-project-report",
+  "branch": "codex/tb2-report-completion-20261030",
+  "pullRequest": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/pull/7",
+  "sprintWindow": {
+    "start": "2026-10-26",
+    "end": "2026-11-08"
+  },
+  "commits": [
+    {
+      "sha": "f382326cd46dd7a9c091fe0b2169c5ef817f14d3",
+      "date": "2026-10-30T20:33:58-05:00",
+      "author": "Alejandro Oroncoy",
+      "subject": "docs(sprint): agree two-week calendar and team responsibilities",
+      "repository": "upc-pre-202620-si728-16365-thropic/talki-project-report",
+      "branch": "codex/tb2-report-completion-20261030",
+      "files": [
+        "README.md",
+        "assets/planning/sprint-1/board-metadata.json",
+        "assets/planning/sprint-1/board-snapshot.json",
+        "assets/planning/sprint-1/plan.json",
+        "deliverables/tb2/README.md",
+        "docs/tb2/checklist.md",
+        "docs/tb2/pendientes-informe.md",
+        "docs/tb2/sprint-1-plan.md"
+      ],
+      "url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/f382326cd46dd7a9c091fe0b2169c5ef817f14d3",
+      "relatedSprintItems": [
+        "Transversal"
+      ],
+      "evidenceMeaning": "Calendario 26/10–08/11 y división de responsabilidades como acuerdo del equipo.",
+      "kind": "Documentación, planificación y verificación de base; no implementación nueva de los servicios"
+    },
+    {
+      "sha": "1da3a216002e830d8f7f3010792420e599685c66",
+      "date": "2026-10-30T20:25:35-05:00",
+      "author": "Alejandro Oroncoy",
+      "subject": "docs(report): remove authorship clarification paragraph",
+      "repository": "upc-pre-202620-si728-16365-thropic/talki-project-report",
+      "branch": "codex/tb2-report-completion-20261030",
+      "files": [
+        "README.md"
+      ],
+      "url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/1da3a216002e830d8f7f3010792420e599685c66",
+      "relatedSprintItems": [
+        "Transversal"
+      ],
+      "evidenceMeaning": "Retiro del párrafo de aclaración editorial solicitado por el equipo.",
+      "kind": "Documentación, planificación y verificación de base; no implementación nueva de los servicios"
+    },
+    {
+      "sha": "a5f9b0c768fb62332b4dd9701828d85cab178014",
+      "date": "2026-10-30T20:19:01-05:00",
+      "author": "Alejandro Oroncoy",
+      "subject": "docs(tb2): adopt Next React stack and retire migration plan",
+      "repository": "upc-pre-202620-si728-16365-thropic/talki-project-report",
+      "branch": "codex/tb2-report-completion-20261030",
+      "files": [
+        "README.md",
+        "assets/diagrams/c4/containers-events.png",
+        "assets/diagrams/c4/containers-events.puml",
+        "assets/diagrams/c4/containers-live.png",
+        "assets/diagrams/c4/containers-live.puml",
+        "assets/diagrams/c4/containers.png",
+        "assets/diagrams/c4/containers.puml",
+        "assets/diagrams/c4/deployment.png",
+        "assets/diagrams/c4/deployment.puml",
+        "assets/planning/sprint-1/board-metadata.json",
+        "assets/planning/sprint-1/board-snapshot.json",
+        "assets/planning/sprint-1/board.json",
+        "assets/planning/sprint-1/capture-manifest.json",
+        "assets/planning/sprint-1/plan.json",
+        "assets/planning/sprint-1/sprint-backlog.csv",
+        "assets/planning/sprint-1/technology-requirements.json",
+        "deliverables/tb2/README.md",
+        "docs/tb2/checklist.md",
+        "docs/tb2/entorno-y-tecnologia.md",
+        "docs/tb2/pendientes-informe.md",
+        "docs/tb2/sprint-1-plan.md"
+      ],
+      "url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/a5f9b0c768fb62332b4dd9701828d85cab178014",
+      "relatedSprintItems": [
+        "SB1-01",
+        "SB1-06"
+      ],
+      "evidenceMeaning": "Selección Next.js/React, diagramas alineados y retiro de la migración G-WEB.",
+      "kind": "Documentación, planificación y verificación de base; no implementación nueva de los servicios"
+    },
+    {
+      "sha": "a0e13bccfcc8c93c358f489912a891a0cce4f99c",
+      "date": "2026-10-30T20:14:37-05:00",
+      "author": "Alejandro Oroncoy",
+      "subject": "docs(tb2): confirm GitHub Projects as accepted sprint board",
+      "repository": "upc-pre-202620-si728-16365-thropic/talki-project-report",
+      "branch": "codex/tb2-report-completion-20261030",
+      "files": [
+        "README.md",
+        "assets/planning/sprint-1/board-metadata.json",
+        "assets/planning/sprint-1/board.json",
+        "assets/planning/sprint-1/plan.json",
+        "assets/planning/sprint-1/technology-requirements.json",
+        "deliverables/tb2/README.md",
+        "docs/tb2/checklist.md",
+        "docs/tb2/pendientes-informe.md",
+        "docs/tb2/sprint-1-plan.md"
+      ],
+      "url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/a0e13bccfcc8c93c358f489912a891a0cce4f99c",
+      "relatedSprintItems": [
+        "Transversal"
+      ],
+      "evidenceMeaning": "GitHub Projects como herramienta admitida y elegida.",
+      "kind": "Documentación, planificación y verificación de base; no implementación nueva de los servicios"
+    },
+    {
+      "sha": "4d0230498672cc0063776bc9e18ddf5074be328b",
+      "date": "2026-10-30T19:59:32-05:00",
+      "author": "Alejandro Oroncoy",
+      "subject": "docs(tb2): consolidate remaining report content in README",
+      "repository": "upc-pre-202620-si728-16365-thropic/talki-project-report",
+      "branch": "codex/tb2-report-completion-20261030",
+      "files": [
+        "README.md",
+        "assets/evidence/tb2/architecture-concordance.json",
+        "assets/evidence/tb2/current-report-commits.json",
+        "deliverables/tb2/README.md",
+        "docs/tb2/checklist.md",
+        "docs/tb2/pendientes-informe.md"
+      ],
+      "url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/4d0230498672cc0063776bc9e18ddf5074be328b",
+      "relatedSprintItems": [
+        "SB1-01",
+        "SB1-04",
+        "SB1-07"
+      ],
+      "evidenceMeaning": "Concordancia de arquitectura, reproducción, matriz de aceptación y ejemplos HTTP.",
+      "kind": "Documentación, planificación y verificación de base; no implementación nueva de los servicios"
+    },
+    {
+      "sha": "0b0afa85c870d14e84502a1c8a8eb33832fda755",
+      "date": "2026-10-30T19:26:24-05:00",
+      "author": "Alejandro Oroncoy",
+      "subject": "docs(tb2): confirm sprint capacity and task owners",
+      "repository": "upc-pre-202620-si728-16365-thropic/talki-project-report",
+      "branch": "codex/tb2-report-completion-20261030",
+      "files": [
+        "README.md",
+        "assets/planning/sprint-1/board-metadata.json",
+        "assets/planning/sprint-1/board-snapshot.json",
+        "assets/planning/sprint-1/plan.json",
+        "deliverables/tb2/README.md",
+        "docs/tb2/checklist.md",
+        "docs/tb2/pendientes-informe.md",
+        "docs/tb2/sprint-1-plan.md"
+      ],
+      "url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/0b0afa85c870d14e84502a1c8a8eb33832fda755",
+      "relatedSprintItems": [
+        "Transversal"
+      ],
+      "evidenceMeaning": "Acuerdo de capacidad y responsables del sprint.",
+      "kind": "Documentación, planificación y verificación de base; no implementación nueva de los servicios"
+    },
+    {
+      "sha": "6f0b3ba4901049b921defc611b91a11257d72043",
+      "date": "2026-10-30T19:21:03-05:00",
+      "author": "Alejandro Oroncoy",
+      "subject": "docs(sprint): define TB2 planning and 24-task backlog",
+      "repository": "upc-pre-202620-si728-16365-thropic/talki-project-report",
+      "branch": "codex/tb2-report-completion-20261030",
+      "files": [
+        "README.md",
+        "assets/planning/sprint-1/board-metadata.json",
+        "assets/planning/sprint-1/board-snapshot.json",
+        "assets/planning/sprint-1/board.json",
+        "assets/planning/sprint-1/capture-manifest.json",
+        "assets/planning/sprint-1/github-project-20261030.jpg",
+        "assets/planning/sprint-1/github-project-items-20261030.jpg",
+        "assets/planning/sprint-1/plan.json",
+        "assets/planning/sprint-1/product-roadmap.csv",
+        "assets/planning/sprint-1/sprint-backlog.csv",
+        "assets/planning/sprint-1/technology-requirements.json",
+        "deliverables/tb2/README.md",
+        "docs/tb2/checklist.md",
+        "docs/tb2/entorno-y-tecnologia.md",
+        "docs/tb2/pendientes-informe.md",
+        "docs/tb2/sprint-1-plan.md"
+      ],
+      "url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/6f0b3ba4901049b921defc611b91a11257d72043",
+      "relatedSprintItems": [
+        "SB1-01",
+        "SB1-02",
+        "SB1-03",
+        "SB1-04",
+        "SB1-05",
+        "SB1-06",
+        "SB1-07",
+        "SB1-08"
+      ],
+      "evidenceMeaning": "Definición de tareas, criterios y tablero del incremento.",
+      "kind": "Documentación, planificación y verificación de base; no implementación nueva de los servicios"
+    },
+    {
+      "sha": "4e462c9d645115ec65ade3cd4c93c4f844db0055",
+      "date": "2026-10-30T18:04:37-05:00",
+      "author": "Alejandro Oroncoy",
+      "subject": "docs(tb2): prioritize report completion and document remaining evidence",
+      "repository": "upc-pre-202620-si728-16365-thropic/talki-project-report",
+      "branch": "codex/tb2-report-completion-20261030",
+      "files": [
+        "README.md",
+        "assets/evidence/tb2/development-commits.json",
+        "deliverables/tb2/README.md",
+        "docs/tb2/checklist.md",
+        "docs/tb2/pendientes-informe.md"
+      ],
+      "url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/4e462c9d645115ec65ade3cd4c93c4f844db0055",
+      "relatedSprintItems": [
+        "SB1-01",
+        "SB1-07"
+      ],
+      "evidenceMeaning": "Procedencia, autores y mensajes de los commits base; seguimiento documental.",
+      "kind": "Documentación, planificación y verificación de base; no implementación nueva de los servicios"
+    },
+    {
+      "sha": "eeb24d6e8d5551658e972f51a736ed364cdc3827",
+      "date": "2026-10-30T17:57:21-05:00",
+      "author": "Alejandro Oroncoy",
+      "subject": "docs(tb2): retain cumulative Student Outcome table format",
+      "repository": "upc-pre-202620-si728-16365-thropic/talki-project-report",
+      "branch": "codex/tb2-report-completion-20261030",
+      "files": [
+        "README.md"
+      ],
+      "url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/eeb24d6e8d5551658e972f51a736ed364cdc3827",
+      "relatedSprintItems": [
+        "Transversal"
+      ],
+      "evidenceMeaning": "Formato acumulativo de Student Outcome.",
+      "kind": "Documentación, planificación y verificación de base; no implementación nueva de los servicios"
+    },
+    {
+      "sha": "5607d22f4d4ae8fe38221a9b4f42c0727273bb32",
+      "date": "2026-10-30T17:55:27-05:00",
+      "author": "Alejandro Oroncoy",
+      "subject": "docs(tb2): normalize Campus evidence formatting",
+      "repository": "upc-pre-202620-si728-16365-thropic/talki-project-report",
+      "branch": "codex/tb2-report-completion-20261030",
+      "files": [
+        "assets/evidence/tb2/campus-scope-and-feedback.json"
+      ],
+      "url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/5607d22f4d4ae8fe38221a9b4f42c0727273bb32",
+      "relatedSprintItems": [
+        "SB1-01"
+      ],
+      "evidenceMeaning": "Normalización de la evidencia de requisitos y feedback obtenida con Campus.",
+      "kind": "Documentación, planificación y verificación de base; no implementación nueva de los servicios"
+    },
+    {
+      "sha": "7240c8eba70c01ffab9137a50f6f6fafc8cfa2b7",
+      "date": "2026-10-30T17:55:21-05:00",
+      "author": "Alejandro Oroncoy",
+      "subject": "docs(tb2): adapt verified baseline and track delivery gaps",
+      "repository": "upc-pre-202620-si728-16365-thropic/talki-project-report",
+      "branch": "codex/tb2-report-completion-20261030",
+      "files": [
+        ".gitignore",
+        "README.md",
+        "assets/evidence/tb2/campus-scope-and-feedback.json",
+        "assets/evidence/tb2/local-execution.json",
+        "assets/evidence/tb2/openapi-local/filler-detection-service.json",
+        "assets/evidence/tb2/openapi-local/gamification-service.json",
+        "assets/evidence/tb2/openapi-local/identity-service.json",
+        "assets/evidence/tb2/openapi-local/live-coach-service.json",
+        "assets/evidence/tb2/openapi-local/notification-service.json",
+        "assets/evidence/tb2/openapi-local/progress-service.json",
+        "assets/evidence/tb2/openapi-local/scoring-service.json",
+        "assets/evidence/tb2/openapi-local/session-service.json",
+        "assets/evidence/tb2/verification.json",
+        "assets/reused-202601/tb2/manifest.json",
+        "assets/reused-202601/tb2/talki-analysis-services-9e026c3.tar.gz",
+        "assets/reused-202601/tb2/talki-engagement-services-231bb5e.tar.gz",
+        "assets/reused-202601/tb2/talki-frontend-d63e889.tar.gz",
+        "assets/reused-202601/tb2/talki-session-services-cde4b11.tar.gz",
+        "assets/reused-202601/tb2/talki-user-services-1da887a.tar.gz",
+        "deliverables/tb2/Complemento-TB2.docx",
+        "deliverables/tb2/Complemento-TB2.pdf",
+        "deliverables/tb2/Participacion-TB2.docx",
+        "deliverables/tb2/Participacion-TB2.pdf",
+        "deliverables/tb2/README.md",
+        "deliverables/tb2/Talki-TB2-Keynote.pdf",
+        "deliverables/tb2/Talki-TB2-Keynote.pptx",
+        "docs/tb2/checklist.md",
+        "docs/tb2/guion-demostracion.md",
+        "docs/tb2/participacion.md",
+        "scripts/capture-tb2-local.py",
+        "scripts/verify-tb2-evidence.py"
+      ],
+      "url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/commit/7240c8eba70c01ffab9137a50f6f6fafc8cfa2b7",
+      "relatedSprintItems": [
+        "SB1-01",
+        "SB1-04",
+        "SB1-07"
+      ],
+      "evidenceMeaning": "Importación de fuentes, contratos, pruebas base y diagnóstico del ambiente.",
+      "kind": "Documentación, planificación y verificación de base; no implementación nueva de los servicios"
+    }
+  ],
+  "limitation": "Los commits documentales no se presentan como implementación nueva o aceptación de una historia. Las evidencias técnicas de cierre se incorporarán al ejecutar las tareas."
+}

@@ -37,7 +37,7 @@ workspace "Talki" "Context map - bounded contexts y patrones DDD (TB1)" {
             progress = softwareSystem "Progress & Adaptation" "Historial, tendencias, comparación de sesiones y plan adaptativo." {
                 tags "Bounded Context"
             }
-            sharing = softwareSystem "Sharing & Retention" "Exportación, enlaces temporales revocables, revocación y retención de datos." {
+            sharing = softwareSystem "Sharing & Retention" "Exportación personal, eliminación y retención de datos." {
                 tags "Bounded Context"
             }
             gamification = softwareSystem "Gamification" "Rachas, niveles y logros para sostener el hábito de práctica." {

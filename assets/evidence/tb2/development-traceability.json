@@ -1,0 +1,414 @@
+{
+  "recordedOn": "2026-10-30",
+  "cutoffCommit": "f382326cd46dd7a9c091fe0b2169c5ef817f14d3",
+  "repository": "upc-pre-202620-si728-16365-thropic/talki-project-report",
+  "branch": "codex/tb2-report-completion-20261030",
+  "items": [
+    {
+      "pbi": "SB1-01",
+      "stories": [],
+      "taskIds": [
+        "SB1-01-A",
+        "SB1-01-B",
+        "SB1-01-C"
+      ],
+      "coordinator": "Kevin Jorge Chi Cruzatt",
+      "plannedHours": 8,
+      "sourceRepositories": [
+        {
+          "name": "talki-user-services",
+          "commit": "1da887abe3dd2d776685c5d864dc4098ceb66344",
+          "url": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services/tree/1da887abe3dd2d776685c5d864dc4098ceb66344",
+          "period": "202601"
+        },
+        {
+          "name": "talki-session-services",
+          "commit": "cde4b117783db42115acc680ddb22e2bfe99ae24",
+          "url": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services/tree/cde4b117783db42115acc680ddb22e2bfe99ae24",
+          "period": "202601"
+        },
+        {
+          "name": "talki-analysis-services",
+          "commit": "9e026c324b6f7a321505af705e9e8ffdd6496fc4",
+          "url": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services/tree/9e026c324b6f7a321505af705e9e8ffdd6496fc4",
+          "period": "202601"
+        },
+        {
+          "name": "talki-engagement-services",
+          "commit": "231bb5eb7ccefb741cbff5274634bef2eef17819",
+          "url": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services/tree/231bb5eb7ccefb741cbff5274634bef2eef17819",
+          "period": "202601"
+        },
+        {
+          "name": "talki-frontend",
+          "commit": "d63e889a216d093a86bf24a2a328c18d0e610618",
+          "url": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend/tree/d63e889a216d093a86bf24a2a328c18d0e610618",
+          "period": "202601"
+        }
+      ],
+      "availableArtifacts": [
+        "README.md#714-software-deployment-configuration",
+        "assets/reused-202601/tb2/manifest.json",
+        "assets/evidence/tb2/architecture-concordance.json"
+      ],
+      "currentDocumentationCommits": [
+        "f382326cd46dd7a9c091fe0b2169c5ef817f14d3",
+        "1da3a216002e830d8f7f3010792420e599685c66",
+        "a5f9b0c768fb62332b4dd9701828d85cab178014",
+        "a0e13bccfcc8c93c358f489912a891a0cce4f99c",
+        "4d0230498672cc0063776bc9e18ddf5074be328b",
+        "0b0afa85c870d14e84502a1c8a8eb33832fda755",
+        "6f0b3ba4901049b921defc611b91a11257d72043",
+        "4e462c9d645115ec65ade3cd4c93c4f844db0055",
+        "eeb24d6e8d5551658e972f51a736ed364cdc3827",
+        "5607d22f4d4ae8fe38221a9b4f42c0727273bb32",
+        "7240c8eba70c01ffab9137a50f6f6fafc8cfa2b7"
+      ],
+      "currentImplementationCommit": null,
+      "closureStatus": "Procedimiento, fuentes y contratos documentados; cierre del entorno contra el commit del incremento pendiente."
+    },
+    {
+      "pbi": "SB1-02",
+      "stories": [
+        "US05",
+        "US06",
+        "US20",
+        "US23",
+        "US28",
+        "US33"
+      ],
+      "taskIds": [
+        "SB1-02-A",
+        "SB1-02-B",
+        "SB1-02-C"
+      ],
+      "coordinator": "Werner Khalil Lang Nassi",
+      "plannedHours": 10,
+      "sourceRepositories": [
+        {
+          "name": "talki-user-services",
+          "commit": "1da887abe3dd2d776685c5d864dc4098ceb66344",
+          "url": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services/tree/1da887abe3dd2d776685c5d864dc4098ceb66344",
+          "period": "202601"
+        },
+        {
+          "name": "talki-session-services",
+          "commit": "cde4b117783db42115acc680ddb22e2bfe99ae24",
+          "url": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services/tree/cde4b117783db42115acc680ddb22e2bfe99ae24",
+          "period": "202601"
+        },
+        {
+          "name": "talki-frontend",
+          "commit": "d63e889a216d093a86bf24a2a328c18d0e610618",
+          "url": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend/tree/d63e889a216d093a86bf24a2a328c18d0e610618",
+          "period": "202601"
+        }
+      ],
+      "availableArtifacts": [
+        "assets/evidence/tb2/local-execution.json",
+        "assets/evidence/tb2/openapi-local/identity-service.json"
+      ],
+      "currentDocumentationCommits": [
+        "f382326cd46dd7a9c091fe0b2169c5ef817f14d3",
+        "1da3a216002e830d8f7f3010792420e599685c66",
+        "a0e13bccfcc8c93c358f489912a891a0cce4f99c",
+        "0b0afa85c870d14e84502a1c8a8eb33832fda755",
+        "6f0b3ba4901049b921defc611b91a11257d72043",
+        "eeb24d6e8d5551658e972f51a736ed364cdc3827"
+      ],
+      "currentImplementationCommit": null,
+      "closureStatus": "Registro/login de fixture disponibles; autorización entre cuentas y aceptación pendientes."
+    },
+    {
+      "pbi": "SB1-03",
+      "stories": [
+        "US09",
+        "US10",
+        "US12",
+        "US13",
+        "US14",
+        "US29",
+        "US34",
+        "US38",
+        "TS01",
+        "TS02"
+      ],
+      "taskIds": [
+        "SB1-03-A",
+        "SB1-03-B",
+        "SB1-03-C",
+        "SB1-03-D"
+      ],
+      "coordinator": "Alejandro Daniel Oroncoy Almeyda",
+      "plannedHours": 16,
+      "sourceRepositories": [
+        {
+          "name": "talki-session-services",
+          "commit": "cde4b117783db42115acc680ddb22e2bfe99ae24",
+          "url": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services/tree/cde4b117783db42115acc680ddb22e2bfe99ae24",
+          "period": "202601"
+        },
+        {
+          "name": "talki-frontend",
+          "commit": "d63e889a216d093a86bf24a2a328c18d0e610618",
+          "url": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend/tree/d63e889a216d093a86bf24a2a328c18d0e610618",
+          "period": "202601"
+        }
+      ],
+      "availableArtifacts": [
+        "assets/evidence/tb2/local-execution.json",
+        "assets/evidence/tb2/openapi-local/session-service.json",
+        "assets/evidence/tb2/openapi-local/live-coach-service.json"
+      ],
+      "currentDocumentationCommits": [
+        "f382326cd46dd7a9c091fe0b2169c5ef817f14d3",
+        "1da3a216002e830d8f7f3010792420e599685c66",
+        "a0e13bccfcc8c93c358f489912a891a0cce4f99c",
+        "0b0afa85c870d14e84502a1c8a8eb33832fda755",
+        "6f0b3ba4901049b921defc611b91a11257d72043",
+        "eeb24d6e8d5551658e972f51a736ed364cdc3827"
+      ],
+      "currentImplementationCommit": null,
+      "closureStatus": "Creación DRAFT y modos disponibles; estados, voz configurada y cierre completo pendientes."
+    },
+    {
+      "pbi": "SB1-04",
+      "stories": [
+        "US15",
+        "US16",
+        "US20",
+        "US26",
+        "US37",
+        "TS03",
+        "TS04"
+      ],
+      "taskIds": [
+        "SB1-04-A",
+        "SB1-04-B",
+        "SB1-04-C"
+      ],
+      "coordinator": "Manuel Ignacio Tumi Oliden",
+      "plannedHours": 12,
+      "sourceRepositories": [
+        {
+          "name": "talki-analysis-services",
+          "commit": "9e026c324b6f7a321505af705e9e8ffdd6496fc4",
+          "url": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services/tree/9e026c324b6f7a321505af705e9e8ffdd6496fc4",
+          "period": "202601"
+        },
+        {
+          "name": "talki-session-services",
+          "commit": "cde4b117783db42115acc680ddb22e2bfe99ae24",
+          "url": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services/tree/cde4b117783db42115acc680ddb22e2bfe99ae24",
+          "period": "202601"
+        }
+      ],
+      "availableArtifacts": [
+        "assets/evidence/tb2/verification.json",
+        "assets/evidence/tb2/openapi-local/scoring-service.json"
+      ],
+      "currentDocumentationCommits": [
+        "f382326cd46dd7a9c091fe0b2169c5ef817f14d3",
+        "1da3a216002e830d8f7f3010792420e599685c66",
+        "a0e13bccfcc8c93c358f489912a891a0cce4f99c",
+        "4d0230498672cc0063776bc9e18ddf5074be328b",
+        "0b0afa85c870d14e84502a1c8a8eb33832fda755",
+        "6f0b3ba4901049b921defc611b91a11257d72043",
+        "eeb24d6e8d5551658e972f51a736ed364cdc3827",
+        "7240c8eba70c01ffab9137a50f6f6fafc8cfa2b7"
+      ],
+      "currentImplementationCommit": null,
+      "closureStatus": "Unitarias/contratos base disponibles; pipeline, feedback versionado y BDD pendientes."
+    },
+    {
+      "pbi": "SB1-05",
+      "stories": [
+        "US21",
+        "US35",
+        "TS05"
+      ],
+      "taskIds": [
+        "SB1-05-A",
+        "SB1-05-B"
+      ],
+      "coordinator": "Werner Khalil Lang Nassi",
+      "plannedHours": 8,
+      "sourceRepositories": [
+        {
+          "name": "talki-engagement-services",
+          "commit": "231bb5eb7ccefb741cbff5274634bef2eef17819",
+          "url": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services/tree/231bb5eb7ccefb741cbff5274634bef2eef17819",
+          "period": "202601"
+        },
+        {
+          "name": "talki-user-services",
+          "commit": "1da887abe3dd2d776685c5d864dc4098ceb66344",
+          "url": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services/tree/1da887abe3dd2d776685c5d864dc4098ceb66344",
+          "period": "202601"
+        }
+      ],
+      "availableArtifacts": [
+        "assets/evidence/tb2/local-execution.json",
+        "assets/evidence/tb2/verification.json"
+      ],
+      "currentDocumentationCommits": [
+        "f382326cd46dd7a9c091fe0b2169c5ef817f14d3",
+        "1da3a216002e830d8f7f3010792420e599685c66",
+        "a0e13bccfcc8c93c358f489912a891a0cce4f99c",
+        "0b0afa85c870d14e84502a1c8a8eb33832fda755",
+        "6f0b3ba4901049b921defc611b91a11257d72043",
+        "eeb24d6e8d5551658e972f51a736ed364cdc3827"
+      ],
+      "currentImplementationCommit": null,
+      "closureStatus": "Consultas iniciales y unitarias base; actualización real por evento y duplicados pendientes."
+    },
+    {
+      "pbi": "SB1-06",
+      "stories": [
+        "US01",
+        "US02",
+        "US03",
+        "US04",
+        "US09",
+        "US15",
+        "US20",
+        "US29"
+      ],
+      "taskIds": [
+        "SB1-06-A",
+        "SB1-06-B",
+        "SB1-06-C"
+      ],
+      "coordinator": "Eduardo Gael Rivera Sosa",
+      "plannedHours": 10,
+      "sourceRepositories": [
+        {
+          "name": "talki-frontend",
+          "commit": "d63e889a216d093a86bf24a2a328c18d0e610618",
+          "url": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend/tree/d63e889a216d093a86bf24a2a328c18d0e610618",
+          "period": "202601"
+        }
+      ],
+      "availableArtifacts": [
+        "README.md#65-applications-prototyping",
+        "assets/planning/sprint-1/technology-requirements.json"
+      ],
+      "currentDocumentationCommits": [
+        "f382326cd46dd7a9c091fe0b2169c5ef817f14d3",
+        "1da3a216002e830d8f7f3010792420e599685c66",
+        "a5f9b0c768fb62332b4dd9701828d85cab178014",
+        "a0e13bccfcc8c93c358f489912a891a0cce4f99c",
+        "0b0afa85c870d14e84502a1c8a8eb33832fda755",
+        "6f0b3ba4901049b921defc611b91a11257d72043",
+        "eeb24d6e8d5551658e972f51a736ed364cdc3827"
+      ],
+      "currentImplementationCommit": null,
+      "closureStatus": "Stack elegido y compilación base documentados; recorrido conectado, errores y accesibilidad pendientes."
+    },
+    {
+      "pbi": "SB1-07",
+      "stories": [
+        "TS01",
+        "TS02",
+        "TS03",
+        "TS04"
+      ],
+      "taskIds": [
+        "SB1-07-A",
+        "SB1-07-B",
+        "SB1-07-C",
+        "SB1-07-D"
+      ],
+      "coordinator": "Kevin Jorge Chi Cruzatt",
+      "plannedHours": 10,
+      "sourceRepositories": [
+        {
+          "name": "talki-user-services",
+          "commit": "1da887abe3dd2d776685c5d864dc4098ceb66344",
+          "url": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services/tree/1da887abe3dd2d776685c5d864dc4098ceb66344",
+          "period": "202601"
+        },
+        {
+          "name": "talki-session-services",
+          "commit": "cde4b117783db42115acc680ddb22e2bfe99ae24",
+          "url": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services/tree/cde4b117783db42115acc680ddb22e2bfe99ae24",
+          "period": "202601"
+        },
+        {
+          "name": "talki-analysis-services",
+          "commit": "9e026c324b6f7a321505af705e9e8ffdd6496fc4",
+          "url": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services/tree/9e026c324b6f7a321505af705e9e8ffdd6496fc4",
+          "period": "202601"
+        },
+        {
+          "name": "talki-engagement-services",
+          "commit": "231bb5eb7ccefb741cbff5274634bef2eef17819",
+          "url": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services/tree/231bb5eb7ccefb741cbff5274634bef2eef17819",
+          "period": "202601"
+        },
+        {
+          "name": "talki-frontend",
+          "commit": "d63e889a216d093a86bf24a2a328c18d0e610618",
+          "url": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend/tree/d63e889a216d093a86bf24a2a328c18d0e610618",
+          "period": "202601"
+        }
+      ],
+      "availableArtifacts": [
+        "assets/evidence/tb2/verification.json",
+        "README.md#7217-software-deployment-evidence-for-sprint-review"
+      ],
+      "currentDocumentationCommits": [
+        "f382326cd46dd7a9c091fe0b2169c5ef817f14d3",
+        "1da3a216002e830d8f7f3010792420e599685c66",
+        "a0e13bccfcc8c93c358f489912a891a0cce4f99c",
+        "4d0230498672cc0063776bc9e18ddf5074be328b",
+        "0b0afa85c870d14e84502a1c8a8eb33832fda755",
+        "6f0b3ba4901049b921defc611b91a11257d72043",
+        "4e462c9d645115ec65ade3cd4c93c4f844db0055",
+        "eeb24d6e8d5551658e972f51a736ed364cdc3827",
+        "7240c8eba70c01ffab9137a50f6f6fafc8cfa2b7"
+      ],
+      "currentImplementationCommit": null,
+      "closureStatus": "Diagnóstico del ambiente y configuración documentados; publicación operativa y persistencia pendientes."
+    },
+    {
+      "pbi": "SB1-08",
+      "stories": [
+        "US01",
+        "US09",
+        "US15",
+        "US20",
+        "US29",
+        "US33"
+      ],
+      "taskIds": [
+        "SB1-08-A",
+        "SB1-08-B"
+      ],
+      "coordinator": "Eduardo Gael Rivera Sosa",
+      "plannedHours": 6,
+      "sourceRepositories": [
+        {
+          "name": "talki-frontend",
+          "commit": "d63e889a216d093a86bf24a2a328c18d0e610618",
+          "url": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend/tree/d63e889a216d093a86bf24a2a328c18d0e610618",
+          "period": "202601"
+        }
+      ],
+      "availableArtifacts": [
+        "README.md#731-diseño-de-entrevistas"
+      ],
+      "currentDocumentationCommits": [
+        "f382326cd46dd7a9c091fe0b2169c5ef817f14d3",
+        "1da3a216002e830d8f7f3010792420e599685c66",
+        "a0e13bccfcc8c93c358f489912a891a0cce4f99c",
+        "0b0afa85c870d14e84502a1c8a8eb33832fda755",
+        "6f0b3ba4901049b921defc611b91a11257d72043",
+        "eeb24d6e8d5551658e972f51a736ed364cdc3827"
+      ],
+      "currentImplementationCommit": null,
+      "closureStatus": "Protocolo disponible; entrevistas, hallazgos y videos diferidos por decisión del equipo."
+    }
+  ],
+  "semantics": "Relaciona artefactos y base disponibles; no marca tareas, historias o PBIs como terminados."
+}

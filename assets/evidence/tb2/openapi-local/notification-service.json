@@ -1,0 +1,27 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Talki — Notification Service API",
+    "description": "Microservicio consumidor de eventos del dominio Notification (DDD) del producto Talki. Procesa `scoring.completed` y `achievement.unlocked` del exchange `talki.events` y entrega notificaciones push al cliente Angular vía WebSocket. Forma parte del mono-repo talki-user-services.",
+    "contact": {
+      "name": "Thropic — Equipo Talki",
+      "url": "https://github.com/upc-pre-202601-si657-7940-thropic"
+    },
+    "license": {
+      "name": "Académico — UPC SI657 2026-10"
+    },
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8091",
+      "description": "Local (perfil dev)"
+    },
+    {
+      "url": "https://api.talki.lat",
+      "description": "Producción (Railway)"
+    }
+  ],
+  "paths": {},
+  "components": {}
+}

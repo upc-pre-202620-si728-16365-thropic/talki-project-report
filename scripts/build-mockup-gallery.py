@@ -49,9 +49,9 @@ for i, match in enumerate(headings):
     description = re.sub(r'\*\*([^*]+)\*\*', r'\1', paragraphs[0])
     items.append({'id': code, 'title': title, 'category': category,
                   'description': description, 'images': pics})
-assert len(items) == 26, f'Unexpected number of screens: {len(items)}'
-assert sum(len(x['images']) for x in items) == 51
-assert len({pic['src'] for item in items for pic in item['images']}) == 51
+assert len(items) == 24, f'Unexpected number of screens: {len(items)}'
+assert sum(len(x['images']) for x in items) == 47
+assert len({pic['src'] for item in items for pic in item['images']}) == 47
 out = ROOT / 'assets/ux/gallery/screens.js'
 out.write_text('window.TALKI_MOCKUPS = ' + json.dumps(items, ensure_ascii=False, indent=2) + ';\n')
-print('Catalogue generated: 26 screens, 51 images; every source exists.')
+print('Catalogue generated: 24 screens, 47 images; every source exists.')
