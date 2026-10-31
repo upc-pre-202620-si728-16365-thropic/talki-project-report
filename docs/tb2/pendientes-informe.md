@@ -17,7 +17,7 @@ Fuentes: enunciado del curso obtenido con Campus, páginas 34–35, y comentario
 - [x] **7.2.1.6:** métodos, rutas, parámetros, ejemplo de solicitud y ocho documentos OpenAPI locales disponibles.
 - [x] **7.3.1:** diseño de validación, consentimiento, tareas, métricas y preguntas de cierre preparados.
 - [x] **7.4:** introducción y guion del About Product redactados; publicación pendiente por indicación del equipo.
-- [x] **Registro de versiones y bibliografía:** autoría editorial aclarada, versión 1.46 y referencias de los cinco repositorios de código añadidas.
+- [x] **Registro de versiones y bibliografía:** autoría editorial aclarada, versión 1.47 y referencias de los cinco repositorios de código añadidas.
 - [x] **Conclusiones, recomendaciones y anexos:** avance TB2 incorporado, con límites de lo comprobado.
 
 ## Registros que faltan completar dentro del informe
@@ -27,7 +27,7 @@ Fuentes: enunciado del curso obtenido con Campus, páginas 34–35, y comentario
 - [x] **Datos del acta.** Reunión del 28/10/2026, de 20:00 a 21:00 (Lima), por Google Meet, con los cinco integrantes presentes: confirmado por el Team Leader.
 - [x] **Capacidad y responsables.** El Team Leader confirmó el 30/10/2026 las 20 h futuras por integrante y los responsables definidos: 100 h de capacidad total, con 80 h estimadas de tareas, 10 h de coordinación/revisión y 10 h de reserva.
 - [ ] **Calendario y compromiso de fecha.** Ratificar la ventana interna 31/10–08/11 y comprobar la fecha/hora institucional. La confirmación de capacidad no confirma estas fechas ni acredita trabajo ejecutado.
-- [ ] **Herramienta de tablero de la entrega.** Trasladar la estructura a Trello/Jira/YouTrack/Pivotal según p32 o adjuntar aceptación docente para GitHub Projects. El tablero GitHub publicado es de revisión, no una excepción ya autorizada.
+- [x] **Herramienta de tablero de la entrega.** GitHub Projects admitido según confirmación del Team Leader el 30/10/2026 y elegido por el equipo. Se conserva el tablero actual; no hace falta trasladarlo a otra herramienta. Quedan las actualizaciones de estados/evidencias conforme se ejecuten las tareas.
 - [ ] **7.2.1.3 — Development Evidence.** Añadir los cambios propios del periodo 202620: repositorio, rama, SHA, autor, fecha, mensaje y vínculo con historia/tarea. La procedencia de la base 202601 ya está completa.
 - [ ] **7.2.1.8 — Team Collaboration Insights.** Completar aportes y revisión de los cinco integrantes con commits/PR verificables y captura actual de colaboración. El PR de adaptación está enlazado; las revisiones sugeridas de otros integrantes no se presentan como realizadas.
 - [ ] **Registro de versiones / Student Outcome.** Incorporar cada nueva modificación individual y las acciones que cada integrante realmente realizó en TB2; actualizar las conclusiones grupales acumulativas con esas acciones. La corrección de autoría histórica ya está hecha.
@@ -61,4 +61,4 @@ Los registros y el análisis de validación también requieren que las sesiones 
 
 **Avance documental 1.46 en README.md:** correspondencia de arquitectura, procedimiento local, respuestas HTTP observadas, historial actual y conclusiones completados con fuentes verificables.
 
-**Orden de trabajo restante:** resolver decisiones tecnológicas/herramienta, ejecutar y evidenciar 7.1–7.2; incorporar aportes reales del equipo; realizar entrevistas y completar resultados de validación cuando se retomen. Actualizar el README cuando cambien esas evidencias. Las referencias audiovisuales acordadas pueden permanecer identificadas como pendientes durante esta revisión, sin marcar el entregable académico completo como terminado.
+**Orden de trabajo restante:** resolver la decisión tecnológica, ejecutar y evidenciar 7.1–7.2; incorporar aportes reales del equipo; realizar entrevistas y completar resultados de validación cuando se retomen. Actualizar el README cuando cambien esas evidencias. Las referencias audiovisuales acordadas pueden permanecer identificadas como pendientes durante esta revisión, sin marcar el entregable académico completo como terminado.

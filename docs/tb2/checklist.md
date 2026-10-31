@@ -188,13 +188,13 @@ Una casilla marcada significa que hay contenido documental en el repositorio. No
 - [x] **6.5. Applications Prototyping** — contenido disponible en el informe; conservar y revisar si cambia la implementación.
 - [ ] **7.1. Software Configuration Management** — SCM documentado con fuentes verificadas.
 - [ ] **7.1.1. Software Development Environment Configuration** — Versiones comprobadas; resolver Next.js frente a Angular/Vue exigidos y aplicación móvil si corresponde.
-- [ ] **7.1.2. Source Code Management** — Cinco instantáneas de código, SHA y procedencia; tablero de revisión publicado; incorporar aportes propios y resolver la aceptación/traslado de herramienta al cerrar.
+- [ ] **7.1.2. Source Code Management** — Cinco instantáneas de código, SHA y procedencia; GitHub Projects confirmado como admitido y elegido; incorporar aportes propios del periodo actual.
 - [x] **7.1.3. Source Code Style Guide & Conventions** — Convenciones descritas; no declarar quality gates o cobertura no medidos.
 - [ ] **7.1.4. Software Deployment Configuration** — Configuración y reproducción local documentadas; recuperar ambiente público persistente.
 - [ ] **7.2. Solution Implementation** — Implementación base identificada y diferencias con diseño explícitas.
 - [ ] **7.2.1. Sprint 1** — Base de Sprint 1 documentada; cierre formal actual pendiente.
 - [x] **7.2.1.1. Sprint Planning 1 — definición operativa** — Planning del 28/10, 20:00–21:00 por Meet, con cinco asistentes confirmado; objetivo, 36 SP residuales, 20 h por integrante y responsables confirmados por el Team Leader; aceptación definida. Calendario y compromiso de fecha pendientes.
-- [x] **7.2.1.2. Sprint Backlog 1 — estructura definida** — Ocho PBIs / 24 tareas, 80 h, responsables confirmados por el Team Leader, dependencias, criterios, URL y capturas del tablero y hoja de ruta completa. Falta resolver la herramienta aceptada para la entrega.
+- [x] **7.2.1.2. Sprint Backlog 1 — estructura definida** — Ocho PBIs / 24 tareas, 80 h, responsables confirmados por el Team Leader, dependencias, criterios, URL y capturas del tablero y hoja de ruta completa. GitHub Projects admitido y elegido según confirmación del Team Leader.
 - [ ] **7.2.1.3. Development Evidence for Sprint Review** — Commits originales fijados y copiados; añadir cambios reales de implementación de este periodo.
 - [ ] **7.2.1.4. Testing Suite Evidence for Sprint Review** — 133 unitarias aprobadas con Java 17; completar aceptación BDD, integración y controles pendientes.
 - [ ] **7.2.1.5. Execution Evidence for Sprint Review** — Compilación del cliente y prueba local capturadas; resolver finalización de sesión DRAFT (500), transición a RECORDING y aceptación integrada. Completar capturas/video.
@@ -209,7 +209,7 @@ Una casilla marcada significa que hay contenido documental en el repositorio. No
 
 ## Cierres y archivos de entrega
 
-- [x] Registro de versiones actualizado a 1.46 con descripción de la adaptación.
+- [x] Registro de versiones actualizado a 1.47 con descripción de la adaptación.
 - [x] Collaboration Insights y Student Outcome ampliados, distinguiendo acciones documentadas y revisión pendiente.
 - [x] Avance de conclusiones, recomendaciones, bibliografía y anexos actualizado para TB2.
 - [ ] About Team: completar evidencia de proceso real, retrospectiva, testimonios y publicación Stream/YouTube; el enlace previo acredita presentación individual.
@@ -224,7 +224,7 @@ Una casilla marcada significa que hay contenido documental en el repositorio. No
 ## Orden de cierre recomendado
 
 1. Resolver el despliegue y la adecuación del cliente web; ejecutar recorrido integrado, autorización y privacidad.
-2. Confirmar planning, tablero, estimaciones y aportes/revisiones de los cinco integrantes.
+2. Cerrar el calendario del sprint y registrar aportes/revisiones de los cinco integrantes; reunión, capacidad, responsables y GitHub Projects ya confirmados.
 3. Ejecutar aceptación BDD y las pruebas de integración que faltan; registrar resultados sin convertir propuestas en éxitos.
 4. Aplicar validación por segmento y completar análisis/heurísticas; grabaciones pendientes según lo acordado.
 5. Cuando se retomen los materiales audiovisuales, publicar videos, cerrar Performance Report y actualizar enlaces del README y la presentación.

@@ -3,7 +3,8 @@
     "filename": "Trabajo Final_1ASI0728_202620.pdf",
     "page": 32,
     "sha256": "c27214041b4acacf132097e6405381f6c625a76fc98ac4ba46878933ecd25673",
-    "retrieval": "Campus; resumen de la sección Tecnología"
+    "retrieval": "Campus; resumen de la sección Tecnología",
+    "webApplicationExcerpt": "Para el desarrollo de Web Applications, se hará uso de Angular Framework, o Vue"
   },
   "requirements": {
     "backend": "REST con Spring Boot/Java, ASP.NET Core/C# o Nest/TypeScript.",
@@ -18,6 +19,12 @@
     "backend": "Java 17 con Spring Boot 3.2.5.",
     "webApplication": "Next.js/React con Tailwind/shadcn; conformidad pendiente.",
     "localStorage": "H2 en memoria con create-drop.",
-    "reviewBoard": "GitHub Projects, con estructura trasladable; sustitución de las herramientas de control requiere confirmación docente."
+    "reviewBoard": "GitHub Projects; admitido según confirmación del Team Leader el 30/10/2026 y elegido por el equipo."
+  },
+  "boardAcceptanceConfirmation": {
+    "date": "2026-10-30",
+    "confirmedBy": "Team Leader",
+    "statement": "El tablero está admitido: GitHub Projects; se usará esa herramienta.",
+    "status": "Admitido según confirmación del equipo y elegido para Sprint 1"
   }
 }

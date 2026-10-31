@@ -1215,7 +1215,7 @@
     "number": 1,
     "url": "https://github.com/orgs/upc-pre-202620-si728-16365-thropic/projects/1",
     "visibility": "PUBLIC",
-    "purpose": "Tablero de revisión; pendiente confirmación docente o traslado a herramienta enumerada en p32.",
+    "purpose": "Tablero de Sprint 1; GitHub Projects admitido según confirmación del Team Leader y elegido por el equipo.",
     "items": [
       {
         "pbi": "SB1-01",
@@ -1283,7 +1283,13 @@
         "title": "G-MEDIA — Grabación y publicación audiovisual TB2",
         "phase": "Condicional"
       }
-    ]
+    ],
+    "acceptanceConfirmation": {
+      "date": "2026-10-30",
+      "confirmedBy": "Team Leader",
+      "statement": "El tablero está admitido: GitHub Projects; se usará esa herramienta.",
+      "status": "Admitido según confirmación del equipo y elegido para Sprint 1"
+    }
   },
   "meetingFacts": {
     "date": "2026-10-28",
