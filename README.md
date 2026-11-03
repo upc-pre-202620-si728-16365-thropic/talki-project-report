@@ -117,6 +117,7 @@
 | 1.49 | 30/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Calendario del Sprint 1 acordado del 26/10 al 08/11; división del trabajo en voz del equipo y responsabilidades futuras explícitas. Planning incluido dentro de las 20 h por integrante; entrevistas y videos conservados como diferidos. |
 | 1.50 | 30/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Desarrollo de 7.2.1.3: historial actual con rama/fechas/archivos, matriz de trazabilidad de ocho PBIs y 24 tareas, código base, artefactos y cierre requerido. Inventario de repositorios accesibles; implementación nueva, videos y entrevistas conservados como pendientes. |
 | 1.51 | 30/10/2026 | Oroncoy Almeyda, Alejandro Daniel | Reparto operativo del trabajo por integrante: 24 tareas con acciones futuras, repositorios base, entregables, secciones del README, dependencias y revisión. Se conservan 74 h inmediatas y 6 h de validación diferida. |
+| 1.52 | 02/11/2026 | Oroncoy Almeyda, Alejandro Daniel | Repositorios de implementación en la organización 202620. Se actualizan las fuentes de trabajo, el arranque local y el inventario. |
 
 # Project Report Collaboration Insights
 
@@ -4496,7 +4497,7 @@ El recorrido comienza con la configuración de la práctica, continúa con la pr
 
 # Capítulo VII: Software Product Implementation, Validation & Deployment
 
-La primera implementación documentada para TB2 reutiliza la base de Talki del periodo 202601. Se incorporan al repositorio actual instantáneas verificables de cuatro repositorios backend y del cliente web, junto con sus commits y sumas SHA-256. La revisión del 30 de octubre de 2026 vuelve a ejecutar sus pruebas y contrasta el código con el diseño de los capítulos IV–VI. La reutilización permite disponer de una base ejecutable, pero no acredita que todas las historias ampliadas del curso actual estén implementadas.
+La primera implementación documentada para TB2 reutiliza la base de Talki del periodo 202601. Los cuatro repositorios backend y el cliente web están en la organización 202620, con los mismos commits de base verificados para TB2. La revisión del 30 de octubre de 2026 vuelve a ejecutar sus pruebas y contrasta el código con el diseño de los capítulos IV–VI. La reutilización permite disponer de una base ejecutable, pero no acredita que todas las historias ampliadas del curso actual estén implementadas.
 
 El alcance de TB2 se toma del *Trabajo Final_1ASI0728_202620.pdf*, páginas 34–35: incluye el Sprint 1 hasta 7.2.1.8, las entrevistas de validación hasta 7.3.3 y 7.4 Video About-the-Product. El Sprint 2 corresponde a TF1. El presente capítulo distingue la evidencia técnica obtenida de las actividades que todavía requieren participación del equipo o de estudiantes.
 
@@ -4521,7 +4522,7 @@ El alcance de TB2 se toma del *Trabajo Final_1ASI0728_202620.pdf*, páginas 34�
 
 SB1-01-B documenta esta selección y comprueba su correspondencia con los archivos del cliente; SB1-06 integra el recorrido con los servicios. La migración a otro framework se retira del plan por decisión del equipo. H2 se utiliza en pruebas locales; la persistencia del ambiente publicado se configura y comprueba en SB1-07.
 
-El entorno se describe según los archivos realmente incluidos en las instantáneas del código. Las herramientas de modelado y UX conservan los artefactos editables del informe actual. No se asume la instalación de herramientas adicionales citadas en el informe anterior cuando no aparecen en sus dependencias.
+El entorno se describe según los archivos de los commits de base indicados en 7.1.2. Las herramientas de modelado y UX conservan los artefactos editables del informe actual. No se asume la instalación de herramientas adicionales citadas en el informe anterior cuando no aparecen en sus dependencias.
 
 | Herramienta | Configuración o versión comprobada | Propósito y referencia |
 | --- | --- | --- |
@@ -4541,7 +4542,7 @@ El entorno se describe según los archivos realmente incluidos en las instantán
 
 El procedimiento de reproducción de 7.1.4 detalla integridad, extracción, pruebas, puertos, Swagger y cliente, con interpretación de errores.
 
-**Reproducción.** Se extraen las cinco instantáneas de `assets/reused-202601/tb2/` en un directorio de trabajo y se comprueba su integridad con `manifest.json`. En cada uno de los ocho directorios de servicio se ejecuta, con `JAVA_HOME` apuntando a JDK 17:
+**Reproducción.** Se clonan los cinco repositorios de la organización actual y se seleccionan los commits indicados en 7.1.4. En cada uno de los ocho directorios de servicio se ejecuta, con `JAVA_HOME` apuntando a JDK 17:
 
 ```bash
 mvn -B -ntp clean test
@@ -4552,15 +4553,15 @@ En el cliente se ejecuta `pnpm install --frozen-lockfile` y `pnpm build`. Las va
 
 ### 7.1.2. Source Code Management
 
-El repositorio del informe del periodo 202620 es la fuente de la documentación actual. Las instantáneas de código mantienen el nombre de la organización de origen y el commit exacto; no se atribuyen como desarrollo nuevo de este periodo. El [manifiesto de reutilización TB2](assets/reused-202601/tb2/manifest.json) permite comprobar cada archivo importado.
+El equipo desarrolla en los cinco repositorios de la organización 202620. Cada rama `main` se inicializó con el commit de base indicado. El [manifiesto de procedencia](assets/reused-202601/tb2/manifest.json) registra los repositorios de origen y las copias históricas.
 
-| Repositorio de origen | Commit fijado | Copia y propósito |
+| Repositorio de trabajo 202620 | Commit de base | Origen 202601 |
 | --- | --- | --- |
-| [talki-analysis-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services) | [9e026c3](https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services/tree/9e026c324b6f7a321505af705e9e8ffdd6496fc4) | [Instantánea](assets/reused-202601/tb2/talki-analysis-services-9e026c3.tar.gz); código del periodo 202601. |
-| [talki-engagement-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services) | [231bb5e](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services/tree/231bb5eb7ccefb741cbff5274634bef2eef17819) | [Instantánea](assets/reused-202601/tb2/talki-engagement-services-231bb5e.tar.gz); código del periodo 202601. |
-| [talki-frontend](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend) | [d63e889](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend/tree/d63e889a216d093a86bf24a2a328c18d0e610618) | [Instantánea](assets/reused-202601/tb2/talki-frontend-d63e889.tar.gz); código del periodo 202601. |
-| [talki-session-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services) | [cde4b11](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services/tree/cde4b117783db42115acc680ddb22e2bfe99ae24) | [Instantánea](assets/reused-202601/tb2/talki-session-services-cde4b11.tar.gz); código del periodo 202601. |
-| [talki-user-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services) | [1da887a](https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services/tree/1da887abe3dd2d776685c5d864dc4098ceb66344) | [Instantánea](assets/reused-202601/tb2/talki-user-services-1da887a.tar.gz); código del periodo 202601. |
+| [talki-analysis-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-analysis-services) | [9e026c3](https://github.com/upc-pre-202620-si728-16365-thropic/talki-analysis-services/tree/9e026c324b6f7a321505af705e9e8ffdd6496fc4) | [Repositorio original](https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services) |
+| [talki-engagement-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-engagement-services) | [231bb5e](https://github.com/upc-pre-202620-si728-16365-thropic/talki-engagement-services/tree/231bb5eb7ccefb741cbff5274634bef2eef17819) | [Repositorio original](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services) |
+| [talki-frontend](https://github.com/upc-pre-202620-si728-16365-thropic/talki-frontend) | [d63e889](https://github.com/upc-pre-202620-si728-16365-thropic/talki-frontend/tree/d63e889a216d093a86bf24a2a328c18d0e610618) | [Repositorio original](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend) |
+| [talki-session-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-session-services) | [cde4b11](https://github.com/upc-pre-202620-si728-16365-thropic/talki-session-services/tree/cde4b117783db42115acc680ddb22e2bfe99ae24) | [Repositorio original](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services) |
+| [talki-user-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-user-services) | [1da887a](https://github.com/upc-pre-202620-si728-16365-thropic/talki-user-services/tree/1da887abe3dd2d776685c5d864dc4098ceb66344) | [Repositorio original](https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services) |
 
 El flujo de trabajo del informe utiliza `main` para la versión integrada y ramas de cambios revisables. La presente actualización se prepara en `codex/tb2-report-completion-20261030`; preserva las correcciones de actores y de contenedores posteriores al parcial. Para las siguientes modificaciones se establece GitFlow: `develop` integra trabajo, `feature/<tema>` desarrolla una historia, `release/<versión>` prepara una entrega y `hotfix/<tema>` corrige una versión publicada. Este flujo es la convención adoptada; no se afirma que todas las ramas históricas lo hayan seguido.
 
@@ -4619,36 +4620,30 @@ La vista 4.3.4 representa la arquitectura objetivo con HTTPS/WSS y mensajería. 
 
 **Procedimiento completo de reproducción local.**
 
-Este procedimiento utiliza las cinco instantáneas del anexo L. Reproduce la base de 202601 con fixtures; no publica servicios ni consume voz de Gemini. La prueba capturada el 30/10/2026 está en `assets/evidence/tb2/local-execution.json` y conserva también los errores encontrados.
+Este procedimiento utiliza los cinco repositorios de 7.1.2 y fija el commit de cada uno. Reproduce la base de 202601 con fixtures; no publica servicios ni consume voz de Gemini. La prueba capturada el 30/10/2026 está en `assets/evidence/tb2/local-execution.json` y conserva también los errores encontrados.
 
 **1 Preparar los insumos.**
 
 Requisitos: JDK 17, Maven, Docker activo, Python 3 y, para el cliente, Node compatible con Next 16 y pnpm. La versión Java utilizada en la evidencia es 17.0.19. Comprobar espacio, puertos libres y acceso al repositorio; no reutilizar datos reales.
 
-Desde la raíz del informe, crear una carpeta y extraer cada archivo respetando el directorio raíz que incluye:
+Desde la raíz del informe, clonar los repositorios y seleccionar los commits para reproducir la evidencia de base. Para desarrollar, crear una rama de trabajo en el repositorio correspondiente.
 
 ```bash
+(
+set -e
 mkdir -p .tb2-build/sources
-```
-
-La integridad de los archivos debe comprobarse contra `assets/reused-202601/tb2/manifest.json` antes de extraer. El script siguiente aborta si un SHA-256 difiere:
-
-```python
-import hashlib, json, pathlib, tarfile
-base = pathlib.Path.cwd()
-target = base / '.tb2-build/sources'
-manifest = json.loads((base / 'assets/reused-202601/tb2/manifest.json').read_text())
-for source in manifest['sources']:
-    if 'archive' not in source:
-        continue
-    archive = base / source['archive']
-    assert hashlib.sha256(archive.read_bytes()).hexdigest() == source['sha256']
-    with tarfile.open(archive) as data:
-        for member in data.getmembers():
-            resolved = (target / member.name).resolve()
-            assert resolved.is_relative_to(target.resolve())
-            assert not member.issym() and not member.islnk()
-        data.extractall(target)
+cd .tb2-build/sources
+git clone https://github.com/upc-pre-202620-si728-16365-thropic/talki-analysis-services.git
+git -C talki-analysis-services switch --detach 9e026c324b6f7a321505af705e9e8ffdd6496fc4
+git clone https://github.com/upc-pre-202620-si728-16365-thropic/talki-engagement-services.git
+git -C talki-engagement-services switch --detach 231bb5eb7ccefb741cbff5274634bef2eef17819
+git clone https://github.com/upc-pre-202620-si728-16365-thropic/talki-frontend.git
+git -C talki-frontend switch --detach d63e889a216d093a86bf24a2a328c18d0e610618
+git clone https://github.com/upc-pre-202620-si728-16365-thropic/talki-session-services.git
+git -C talki-session-services switch --detach cde4b117783db42115acc680ddb22e2bfe99ae24
+git clone https://github.com/upc-pre-202620-si728-16365-thropic/talki-user-services.git
+git -C talki-user-services switch --detach 1da887abe3dd2d776685c5d864dc4098ceb66344
+)
 ```
 
 **2 Compilar y probar.**
@@ -4893,11 +4888,11 @@ Cada paquete conserva **16 h estimadas de tareas, 2 h de coordinación y 2 h de 
 
 **Alejandro Daniel Oroncoy Almeyda — Sesiones, voz y trazabilidad.**
 
-Trabajará sobre [talki-session-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services). Las referencias corresponden a la base de 202601; registrará el repositorio y la rama reales de sus cambios del sprint.
+Trabajará sobre [talki-session-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-session-services). Registrará la rama y el commit de sus cambios del sprint.
 
 Empezará por SB1-01-A y la transición de inicio de sesión de SB1-03-A para desbloquear voz, análisis y cliente.
 
-- [ ] **SB1-01-A — 3 h.** Verificará el arranque desde las instantáneas con JDK 17 y un solo RabbitMQ; corregirá en 7.1.4 los pasos o puertos que no se reproduzcan.
+- [ ] **SB1-01-A — 3 h.** Verificará el arranque desde los commits de base con JDK 17 y un solo RabbitMQ; corregirá en 7.1.4 los pasos o puertos que no se reproduzcan.
 - [ ] **SB1-03-A — 4 h.** Resolverá DRAFT → RECORDING y el consentimiento antes de capturar voz; finalizar una sesión en estado inválido deberá devolver un error controlado, con prueba.
 - [ ] **SB1-03-B — 4 h.** Comprobará el token efímero y un ensayo de voz con configuración autorizada; documentará permiso denegado, clave ausente y token vencido sin publicar claves ni JWT.
 - [ ] **SB1-03-C — 4 h.** Mantendrá el mismo sessionId/userId al cerrar y publicar el evento; comprobará que repetir la finalización no produzca dos evaluaciones.
@@ -4909,7 +4904,7 @@ Empezará por SB1-01-A y la transición de inicio de sesión de SB1-03-A para de
 
 **Eduardo Gael Rivera Sosa — Cliente Next.js, landing y responsive.**
 
-Trabajará sobre [talki-frontend](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend). Las referencias corresponden a la base de 202601; registrará el repositorio y la rama reales de sus cambios del sprint.
+Trabajará sobre [talki-frontend](https://github.com/upc-pre-202620-si728-16365-thropic/talki-frontend). Registrará la rama y el commit de sus cambios del sprint.
 
 Empezará por comprobar el stack del cliente y ajustar la landing; conectará las pantallas cuando estén disponibles los contratos de sesión y feedback.
 
@@ -4925,7 +4920,7 @@ Empezará por comprobar el stack del cliente y ajustar la landing; conectará la
 
 **Manuel Ignacio Tumi Oliden — Análisis, feedback, pruebas y progreso.**
 
-Trabajará sobre [talki-analysis-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services), [talki-engagement-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services), [talki-session-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services). Las referencias corresponden a la base de 202601; registrará el repositorio y la rama reales de sus cambios del sprint.
+Trabajará sobre [talki-analysis-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-analysis-services), [talki-engagement-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-engagement-services), [talki-session-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-session-services). Registrará la rama y el commit de sus cambios del sprint.
 
 Empezará por revisar los contratos y preparar fixtures de eventos; ejecutará la cadena completa cuando Alejandro entregue el cierre correlacionado.
 
@@ -4940,7 +4935,7 @@ Empezará por revisar los contratos y preparar fixtures de eventos; ejecutará l
 
 **Werner Khalil Lang Nassi — Acceso, gamificación, notificaciones y privacidad.**
 
-Trabajará sobre [talki-user-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services), [talki-session-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services), [talki-engagement-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services). Las referencias corresponden a la base de 202601; registrará el repositorio y la rama reales de sus cambios del sprint.
+Trabajará sobre [talki-user-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-user-services), [talki-session-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-session-services), [talki-engagement-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-engagement-services). Registrará la rama y el commit de sus cambios del sprint.
 
 Empezará por SB1-02-A/B para desbloquear las verificaciones del propietario y el recorrido de sesión.
 
@@ -4956,7 +4951,7 @@ Empezará por SB1-02-A/B para desbloquear las verificaciones del propietario y e
 
 **Kevin Jorge Chi Cruzatt — Contratos, controles de práctica y despliegue.**
 
-Trabajará sobre [talki-frontend](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend), [talki-user-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services), [talki-session-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services), [talki-analysis-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services), [talki-engagement-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services). Las referencias corresponden a la base de 202601; registrará el repositorio y la rama reales de sus cambios del sprint.
+Trabajará sobre [talki-frontend](https://github.com/upc-pre-202620-si728-16365-thropic/talki-frontend), [talki-user-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-user-services), [talki-session-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-session-services), [talki-analysis-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-analysis-services), [talki-engagement-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-engagement-services). Registrará la rama y el commit de sus cambios del sprint.
 
 Empezará por preparar contratos, recursos y perfiles; publicará el incremento cuando cliente, análisis y pruebas de integración estén disponibles.
 
@@ -5093,7 +5088,7 @@ Los controladores de la base utilizan identificadores y contratos más simples q
 | **SB1-07**<br>TS01, TS02, TS03, TS04 | SB1-07-A, SB1-07-B, SB1-07-C, SB1-07-D<br>Coordinará: Kevin Jorge Chi Cruzatt. | [talki-user-services@1da887a](https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services/tree/1da887abe3dd2d776685c5d864dc4098ceb66344); [talki-session-services@cde4b11](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services/tree/cde4b117783db42115acc680ddb22e2bfe99ae24); [talki-analysis-services@9e026c3](https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services/tree/9e026c324b6f7a321505af705e9e8ffdd6496fc4); [talki-engagement-services@231bb5e](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services/tree/231bb5eb7ccefb741cbff5274634bef2eef17819); [talki-frontend@d63e889](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend/tree/d63e889a216d093a86bf24a2a328c18d0e610618) | [Pruebas/diagnóstico](assets/evidence/tb2/verification.json); [Sección del informe](#7217-software-deployment-evidence-for-sprint-review) | Diagnóstico del ambiente y configuración documentados; publicación operativa y persistencia pendientes. |
 | **SB1-08**<br>US01, US09, US15, US20, US29, US33 | SB1-08-A, SB1-08-B<br>Coordinará: Eduardo Gael Rivera Sosa. | [talki-frontend@d63e889](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend/tree/d63e889a216d093a86bf24a2a328c18d0e610618) | [Protocolo de validación](#731-diseño-de-entrevistas) | Protocolo disponible; entrevistas, hallazgos y videos diferidos por decisión del equipo. |
 
-El [registro estructurado de trazabilidad](assets/evidence/tb2/development-traceability.json) conserva los ocho PBIs y las 24 tareas. La consulta autenticada de la organización actual muestra el repositorio del informe; los cinco nombres esperados de implementación no resultaron accesibles en esa consulta. El [inventario fechado](assets/evidence/tb2/repository-inventory.json) registra el alcance y las limitaciones de esa comprobación. Las instantáneas locales verificadas permiten consultar la base sin atribuirle desarrollo nuevo del periodo actual.
+El [registro estructurado de trazabilidad](assets/evidence/tb2/development-traceability.json) conserva los ocho PBIs y las 24 tareas. El [inventario actualizado](assets/evidence/tb2/repository-inventory.json) registra los cinco repositorios de implementación de la organización actual y el commit con que se inicializó cada uno. Los commits de base conservan la autoría de 202601.
 
 **Estado de 7.2.1.3.** La trazabilidad documental y la procedencia están completas al corte indicado. Los commits del informe acreditan esos artefactos; el cierre de implementación requiere incorporar el commit/PR del cambio de software, su historia/tarea y los resultados de prueba correspondientes. Esos campos técnicos siguen pendientes. Los PBIs no se marcan terminados por estar incluidos en esta matriz; SB1-08 continúa diferido por entrevistas pendientes.
 
@@ -5114,7 +5109,7 @@ Se ejecutó `mvn -B -ntp clean test` en los ocho servicios con JDK 17.0.19. El r
 
 **Resultado:** 133 pruebas, cero fallos, cero errores y cero omitidas. Son pruebas unitarias y de componentes con dobles de prueba, según las clases presentes; el número no representa cobertura porcentual. La primera ejecución con un JDK diferente al declarado presentó incompatibilidad de Mockito/Byte Buddy; la ejecución válida se realizó con Java 17.
 
-La prueba de humo HTTP local, con un caso de finalización fallido, se documenta en 7.2.1.5. No sustituye una suite completa de integración, aceptación BDD ni rendimiento. No se encontraron archivos `.feature` en las cinco instantáneas; los escenarios Gherkin del capítulo III siguen siendo especificaciones, pendientes de vincular con steps y ejecución. Tampoco se encontró evidencia ejecutada de pruebas de voz real, recuperación, autorización entre usuarios, purga distribuida o contratos versionados. El cliente dispone de compilación y lint; no declara un script de pruebas automatizadas en su `package.json`.
+La prueba de humo HTTP local, con un caso de finalización fallido, se documenta en 7.2.1.5. No sustituye una suite completa de integración, aceptación BDD ni rendimiento. No se encontraron archivos `.feature` en los cinco commits de base revisados; los escenarios Gherkin del capítulo III siguen siendo especificaciones, pendientes de vincular con steps y ejecución. Tampoco se encontró evidencia ejecutada de pruebas de voz real, recuperación, autorización entre usuarios, purga distribuida o contratos versionados. El cliente dispone de compilación y lint; no declara un script de pruebas automatizadas en su `package.json`.
 
 Para completar la aceptación se deben ejecutar, al menos: acceso válido/inválido; propiedad de sesiones; permiso de micrófono denegado; token vencido; finalización repetida; análisis pendiente o fallido; reconexión; eliminación con confirmaciones; y recorrido web/móvil. Cada resultado debe enlazar suite, commit, comando y evidencia. No se registra como aprobado mientras no se ejecute.
 
@@ -5235,7 +5230,7 @@ La comprobación pública está fechada en [verification.json](assets/evidence/t
 | Galería y prototipo del informe 202620 en GitHub Pages | HTTP 200 en ambas páginas. | Diseño accesible públicamente; no acredita backend ni voz real. |
 | Cliente histórico `talki-frontend.vercel.app` | HTTP 402. | Recuperar el servicio y repetir el recorrido; la causa administrativa no se deduce solo del código HTTP. |
 | Ocho orígenes históricos de Railway | HTTP 404 en las 16 rutas comprobadas. | No acreditan disponibilidad de API. Revisar proyectos, dominios y despliegues; repetir comprobación tras recuperación. |
-| Ejecución local de las instantáneas | Evidencia separada en 7.2.1.5. | Útil para comprobar código y contratos; no satisface por sí sola el requisito de producto desplegado. |
+| Ejecución local de los commits de base | Evidencia separada en 7.2.1.5. | Útil para comprobar código y contratos; no satisface por sí sola el requisito de producto desplegado. |
 
 No se incorporan capturas históricas de Railway como si fueran del ambiente vigente. Para cerrar este punto se necesitan capturas actuales de configuración y servicios activos, URLs funcionales, identificación del commit desplegado, evidencia de persistencia y prueba del recorrido integrado. La primera versión desplegada del producto continúa pendiente.
 
@@ -5414,7 +5409,7 @@ World Wide Web Consortium. (s. f.). *Understanding Success Criterion 2.5.8: Targ
 | I | Prototipo UX navegable, datos de ejemplo, variantes web/móvil y modo wireframe. | [HTML](assets/ux/prototype/index.html), [instrucciones](assets/ux/prototype/README.md) |
 | J | Activos técnicos y registro de versiones de Talki. | `assets/reused-202601/`, [registro de procedencia](assets/design/reuse-manifest.json) |
 | K | Checklist numerado TB2, fuentes y seguimiento de feedback del parcial. | [Checklist TB2](docs/tb2/checklist.md); [guion de demostración](docs/tb2/guion-demostracion.md). |
-| L | Instantáneas del código 202601 y verificación técnica TB2. | [Manifiesto](assets/reused-202601/tb2/manifest.json); [verificación](assets/evidence/tb2/verification.json). |
+| L | Procedencia de los repositorios de código y verificación técnica TB2. | [Manifiesto](assets/reused-202601/tb2/manifest.json); [verificación](assets/evidence/tb2/verification.json). |
 | M | Informe de participación TB2 para evaluación del Team Leader. | [Registro de participación TB2](docs/tb2/participacion.md). No reutiliza las notas del TP. |
 | N | Material de apoyo previo: complemento, keynote PPTX/PDF y participación editable. El informe vigente se mantiene en este README. | [Archivos y alcance](deliverables/tb2/README.md). |
 | O | Planning, capacidad y responsables confirmados, Sprint Backlog, tablero y hoja de ruta completa. | [Definición de Sprint 1](docs/tb2/sprint-1-plan.md); [fuente estructurada](assets/planning/sprint-1/plan.json). |

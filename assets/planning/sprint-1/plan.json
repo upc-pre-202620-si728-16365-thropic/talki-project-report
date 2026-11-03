@@ -1394,13 +1394,13 @@
         "name": "Alejandro Daniel Oroncoy Almeyda",
         "area": "Sesiones, voz y trazabilidad",
         "repositoriesOfReference": [
-          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services"
+          "https://github.com/upc-pre-202620-si728-16365-thropic/talki-session-services"
         ],
         "tasks": [
           {
             "id": "SB1-01-A",
             "hours": 3,
-            "willDo": "Verificará el arranque desde las instantáneas con JDK 17 y un solo RabbitMQ; corregirá en 7.1.4 los pasos o puertos que no se reproduzcan.",
+            "willDo": "Verificará el arranque desde los commits de base con JDK 17 y un solo RabbitMQ; corregirá en 7.1.4 los pasos o puertos que no se reproduzcan.",
             "deferred": false
           },
           {
@@ -1441,7 +1441,7 @@
         "name": "Eduardo Gael Rivera Sosa",
         "area": "Cliente Next.js, landing y responsive",
         "repositoriesOfReference": [
-          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend"
+          "https://github.com/upc-pre-202620-si728-16365-thropic/talki-frontend"
         ],
         "tasks": [
           {
@@ -1488,9 +1488,9 @@
         "name": "Manuel Ignacio Tumi Oliden",
         "area": "Análisis, feedback, pruebas y progreso",
         "repositoriesOfReference": [
-          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services",
-          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services",
-          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services"
+          "https://github.com/upc-pre-202620-si728-16365-thropic/talki-analysis-services",
+          "https://github.com/upc-pre-202620-si728-16365-thropic/talki-engagement-services",
+          "https://github.com/upc-pre-202620-si728-16365-thropic/talki-session-services"
         ],
         "tasks": [
           {
@@ -1531,9 +1531,9 @@
         "name": "Werner Khalil Lang Nassi",
         "area": "Acceso, gamificación, notificaciones y privacidad",
         "repositoriesOfReference": [
-          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services",
-          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services",
-          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services"
+          "https://github.com/upc-pre-202620-si728-16365-thropic/talki-user-services",
+          "https://github.com/upc-pre-202620-si728-16365-thropic/talki-session-services",
+          "https://github.com/upc-pre-202620-si728-16365-thropic/talki-engagement-services"
         ],
         "tasks": [
           {
@@ -1580,11 +1580,11 @@
         "name": "Kevin Jorge Chi Cruzatt",
         "area": "Contratos, controles de práctica y despliegue",
         "repositoriesOfReference": [
-          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend",
-          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services",
-          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services",
-          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services",
-          "https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services"
+          "https://github.com/upc-pre-202620-si728-16365-thropic/talki-frontend",
+          "https://github.com/upc-pre-202620-si728-16365-thropic/talki-user-services",
+          "https://github.com/upc-pre-202620-si728-16365-thropic/talki-session-services",
+          "https://github.com/upc-pre-202620-si728-16365-thropic/talki-analysis-services",
+          "https://github.com/upc-pre-202620-si728-16365-thropic/talki-engagement-services"
         ],
         "tasks": [
           {

@@ -7,37 +7,47 @@
     {
       "repository": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services",
       "commit": "9e026c324b6f7a321505af705e9e8ffdd6496fc4",
-      "archive": "assets/reused-202601/tb2/talki-analysis-services-9e026c3.tar.gz",
       "sha256": "0fb4982bf3c3094973d3b8f9378143526687a5e05ba06e9f40fa44d169a68c34",
-      "bytes": 18682
+      "bytes": 18682,
+      "currentRepository": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-analysis-services",
+      "previousArchive": "assets/reused-202601/tb2/talki-analysis-services-9e026c3.tar.gz",
+      "previousArchiveRef": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/blob/cb6e2740f14cd068268086ecdbd66d78af323b07/assets/reused-202601/tb2/talki-analysis-services-9e026c3.tar.gz"
     },
     {
       "repository": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services",
       "commit": "231bb5eb7ccefb741cbff5274634bef2eef17819",
-      "archive": "assets/reused-202601/tb2/talki-engagement-services-231bb5e.tar.gz",
       "sha256": "f162cf9b6574434e306de1d2f66e2bb6c38273696c62c46fdbc62bf54a30dd04",
-      "bytes": 13524
+      "bytes": 13524,
+      "currentRepository": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-engagement-services",
+      "previousArchive": "assets/reused-202601/tb2/talki-engagement-services-231bb5e.tar.gz",
+      "previousArchiveRef": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/blob/cb6e2740f14cd068268086ecdbd66d78af323b07/assets/reused-202601/tb2/talki-engagement-services-231bb5e.tar.gz"
     },
     {
       "repository": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend",
       "commit": "d63e889a216d093a86bf24a2a328c18d0e610618",
-      "archive": "assets/reused-202601/tb2/talki-frontend-d63e889.tar.gz",
       "sha256": "aa519c78a4a0be7e45448a304784f287e5aba79baef26fbddcb29272ed467c96",
-      "bytes": 126222
+      "bytes": 126222,
+      "currentRepository": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-frontend",
+      "previousArchive": "assets/reused-202601/tb2/talki-frontend-d63e889.tar.gz",
+      "previousArchiveRef": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/blob/cb6e2740f14cd068268086ecdbd66d78af323b07/assets/reused-202601/tb2/talki-frontend-d63e889.tar.gz"
     },
     {
       "repository": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services",
       "commit": "cde4b117783db42115acc680ddb22e2bfe99ae24",
-      "archive": "assets/reused-202601/tb2/talki-session-services-cde4b11.tar.gz",
       "sha256": "57ee89b8fb86ce9cc4f6c00630ba379a46d3d16e2225a8d2a51fd54a4230f411",
-      "bytes": 22711
+      "bytes": 22711,
+      "currentRepository": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-session-services",
+      "previousArchive": "assets/reused-202601/tb2/talki-session-services-cde4b11.tar.gz",
+      "previousArchiveRef": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/blob/cb6e2740f14cd068268086ecdbd66d78af323b07/assets/reused-202601/tb2/talki-session-services-cde4b11.tar.gz"
     },
     {
       "repository": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services",
       "commit": "1da887abe3dd2d776685c5d864dc4098ceb66344",
-      "archive": "assets/reused-202601/tb2/talki-user-services-1da887a.tar.gz",
       "sha256": "94309e2fed3cefb1ddac6c14a21dd3a37bc90b47da66e4d759de57661f5e0e41",
-      "bytes": 14316
+      "bytes": 14316,
+      "currentRepository": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-user-services",
+      "previousArchive": "assets/reused-202601/tb2/talki-user-services-1da887a.tar.gz",
+      "previousArchiveRef": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report/blob/cb6e2740f14cd068268086ecdbd66d78af323b07/assets/reused-202601/tb2/talki-user-services-1da887a.tar.gz"
     },
     {
       "repository": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-project-report",
@@ -50,5 +60,6 @@
       "adaptation": "Structure and verifiable technical content adapted to chapter VII; historical dates, counts and deployment claims are not current evidence.",
       "sourceSha256": "f3eefb325882c1fa642ca98d36b73ccdb120b9f4d69ac02fcbf2aad1a1d27f49"
     }
-  ]
+  ],
+  "migrationDate": "2026-11-02"
 }

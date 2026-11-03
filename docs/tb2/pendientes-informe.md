@@ -17,7 +17,7 @@ Fuentes: enunciado del curso obtenido con Campus, páginas 34–35, y comentario
 - [x] **7.2.1.6:** métodos, rutas, parámetros, ejemplo de solicitud y ocho documentos OpenAPI locales disponibles.
 - [x] **7.3.1:** diseño de validación, consentimiento, tareas, métricas y preguntas de cierre preparados.
 - [x] **7.4:** introducción y guion del About Product redactados; publicación pendiente por indicación del equipo.
-- [x] **Registro de versiones y bibliografía:** autoría editorial aclarada, versión 1.51 y referencias de los cinco repositorios de código añadidas.
+- [x] **Registro de versiones y bibliografía:** autoría editorial aclarada, versión 1.52 y referencias de los cinco repositorios de código añadidas.
 - [x] **Conclusiones, recomendaciones y anexos:** avance TB2 incorporado, con límites de lo comprobado.
 
 - [x] **Reparto operativo por integrante:** 24 tareas agrupadas por persona, con repositorios de referencia, acciones, entregables, secciones a actualizar y orden de dependencias, desarrollado íntegramente en 7.2.1.2 del README.
@@ -31,7 +31,7 @@ Fuentes: enunciado del curso obtenido con Campus, páginas 34–35, y comentario
 - [x] **7.2.1.1 — Calendario y responsabilidades.** Como equipo acordamos Sprint 1 del lunes 26/10 al domingo 08/11/2026, 20 h por integrante durante las dos semanas y división explícita de lo que realizará cada integrante. El planning del 28/10 está incluido en esa capacidad. La fecha institucional de Blackboard se conserva separada del cierre interno.
 - [x] **Herramienta de tablero de la entrega.** GitHub Projects admitido según confirmación del Team Leader el 30/10/2026 y elegido por el equipo. Se conserva el tablero actual; no hace falta trasladarlo a otra herramienta. Quedan las actualizaciones de estados/evidencias conforme se ejecuten las tareas.
 - [x] **7.2.1.3 — Trazabilidad documental.** Historial actual actualizado con repositorio, rama, SHA, fecha/hora, autor, mensaje y archivos. Matriz de ocho PBIs / 24 tareas con historias, coordinación futura, commits base y artefactos disponibles en el README.
-- [ ] **7.2.1.3 — Evidencia de implementación.** Incorporar commit/PR de los cambios reales de software del incremento y sus pruebas. La consulta de la organización actual solo identifica el informe entre los repositorios accesibles; la base de aplicación permanece preservada con su procedencia 202601. La edición documental no se cuenta como desarrollo nuevo de servicios.
+- [ ] **7.2.1.3 — Evidencia de implementación.** Incorporar commit/PR de los cambios reales de software del incremento y sus pruebas. Los cinco repositorios de implementación ya están disponibles en la organización actual con los commits de base de 202601. La edición documental no se cuenta como desarrollo nuevo de servicios.
 - [ ] **7.2.1.8 — Team Collaboration Insights.** Completar aportes y revisión de los cinco integrantes con commits/PR verificables y captura actual de colaboración. El PR de adaptación está enlazado; las revisiones sugeridas de otros integrantes no se presentan como realizadas.
 - [ ] **Registro de versiones / Student Outcome.** Incorporar cada nueva modificación individual y las acciones que cada integrante realmente realizó en TB2; actualizar las conclusiones grupales acumulativas con esas acciones. La corrección de autoría histórica ya está hecha.
 

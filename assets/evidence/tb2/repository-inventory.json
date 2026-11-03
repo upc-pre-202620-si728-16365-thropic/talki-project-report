@@ -1,25 +1,36 @@
 {
-  "checkedOn": "2026-10-30",
+  "checkedOn": "2026-11-02",
   "organization": "upc-pre-202620-si728-16365-thropic",
-  "method": "Listado autenticado de repositorios accesibles y consulta individual de los cinco nombres de implementación.",
-  "accessibleRepositories": [
+  "implementationRepositories": [
     {
-      "defaultBranchRef": {
-        "name": "main"
-      },
-      "name": "talki-project-report",
-      "pushedAt": "2026-10-31T01:34:00Z",
-      "url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-project-report",
-      "pushedAtLima": "2026-10-30T20:34:00-05:00"
+      "url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-analysis-services",
+      "defaultBranch": "main",
+      "initialCommit": "9e026c324b6f7a321505af705e9e8ffdd6496fc4",
+      "sourceRepository": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services"
+    },
+    {
+      "url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-engagement-services",
+      "defaultBranch": "main",
+      "initialCommit": "231bb5eb7ccefb741cbff5274634bef2eef17819",
+      "sourceRepository": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services"
+    },
+    {
+      "url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-frontend",
+      "defaultBranch": "main",
+      "initialCommit": "d63e889a216d093a86bf24a2a328c18d0e610618",
+      "sourceRepository": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend"
+    },
+    {
+      "url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-session-services",
+      "defaultBranch": "main",
+      "initialCommit": "cde4b117783db42115acc680ddb22e2bfe99ae24",
+      "sourceRepository": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services"
+    },
+    {
+      "url": "https://github.com/upc-pre-202620-si728-16365-thropic/talki-user-services",
+      "defaultBranch": "main",
+      "initialCommit": "1da887abe3dd2d776685c5d864dc4098ceb66344",
+      "sourceRepository": "https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services"
     }
-  ],
-  "implementationNamesChecked": [
-    "talki-user-services",
-    "talki-session-services",
-    "talki-analysis-services",
-    "talki-engagement-services",
-    "talki-frontend"
-  ],
-  "individualLookupResult": "GitHub connector returned NOT_FOUND (404) for the five names under this organization.",
-  "interpretation": "No se identifican repositorios de implementación accesibles bajo esos nombres en esta consulta. No prueba inexistencia de repositorios privados o renombrados. El código reutilizado está preservado mediante instantáneas verificadas del periodo 202601."
+  ]
 }

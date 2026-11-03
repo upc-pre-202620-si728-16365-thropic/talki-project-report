@@ -187,11 +187,11 @@ Cada paquete conserva **16 h estimadas de tareas, 2 h de coordinación y 2 h de 
 
 **Alejandro Daniel Oroncoy Almeyda — Sesiones, voz y trazabilidad.**
 
-Trabajará sobre [talki-session-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services). Las referencias corresponden a la base de 202601; registrará el repositorio y la rama reales de sus cambios del sprint.
+Trabajará sobre [talki-session-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-session-services). Registrará la rama y el commit de sus cambios del sprint.
 
 Empezará por SB1-01-A y la transición de inicio de sesión de SB1-03-A para desbloquear voz, análisis y cliente.
 
-- [ ] **SB1-01-A — 3 h.** Verificará el arranque desde las instantáneas con JDK 17 y un solo RabbitMQ; corregirá en 7.1.4 los pasos o puertos que no se reproduzcan.
+- [ ] **SB1-01-A — 3 h.** Verificará el arranque desde los commits de base con JDK 17 y un solo RabbitMQ; corregirá en 7.1.4 los pasos o puertos que no se reproduzcan.
 - [ ] **SB1-03-A — 4 h.** Resolverá DRAFT → RECORDING y el consentimiento antes de capturar voz; finalizar una sesión en estado inválido deberá devolver un error controlado, con prueba.
 - [ ] **SB1-03-B — 4 h.** Comprobará el token efímero y un ensayo de voz con configuración autorizada; documentará permiso denegado, clave ausente y token vencido sin publicar claves ni JWT.
 - [ ] **SB1-03-C — 4 h.** Mantendrá el mismo sessionId/userId al cerrar y publicar el evento; comprobará que repetir la finalización no produzca dos evaluaciones.
@@ -203,7 +203,7 @@ Empezará por SB1-01-A y la transición de inicio de sesión de SB1-03-A para de
 
 **Eduardo Gael Rivera Sosa — Cliente Next.js, landing y responsive.**
 
-Trabajará sobre [talki-frontend](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend). Las referencias corresponden a la base de 202601; registrará el repositorio y la rama reales de sus cambios del sprint.
+Trabajará sobre [talki-frontend](https://github.com/upc-pre-202620-si728-16365-thropic/talki-frontend). Registrará la rama y el commit de sus cambios del sprint.
 
 Empezará por comprobar el stack del cliente y ajustar la landing; conectará las pantallas cuando estén disponibles los contratos de sesión y feedback.
 
@@ -219,7 +219,7 @@ Empezará por comprobar el stack del cliente y ajustar la landing; conectará la
 
 **Manuel Ignacio Tumi Oliden — Análisis, feedback, pruebas y progreso.**
 
-Trabajará sobre [talki-analysis-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services), [talki-engagement-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services), [talki-session-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services). Las referencias corresponden a la base de 202601; registrará el repositorio y la rama reales de sus cambios del sprint.
+Trabajará sobre [talki-analysis-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-analysis-services), [talki-engagement-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-engagement-services), [talki-session-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-session-services). Registrará la rama y el commit de sus cambios del sprint.
 
 Empezará por revisar los contratos y preparar fixtures de eventos; ejecutará la cadena completa cuando Alejandro entregue el cierre correlacionado.
 
@@ -234,7 +234,7 @@ Empezará por revisar los contratos y preparar fixtures de eventos; ejecutará l
 
 **Werner Khalil Lang Nassi — Acceso, gamificación, notificaciones y privacidad.**
 
-Trabajará sobre [talki-user-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services), [talki-session-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services), [talki-engagement-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services). Las referencias corresponden a la base de 202601; registrará el repositorio y la rama reales de sus cambios del sprint.
+Trabajará sobre [talki-user-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-user-services), [talki-session-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-session-services), [talki-engagement-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-engagement-services). Registrará la rama y el commit de sus cambios del sprint.
 
 Empezará por SB1-02-A/B para desbloquear las verificaciones del propietario y el recorrido de sesión.
 
@@ -250,7 +250,7 @@ Empezará por SB1-02-A/B para desbloquear las verificaciones del propietario y e
 
 **Kevin Jorge Chi Cruzatt — Contratos, controles de práctica y despliegue.**
 
-Trabajará sobre [talki-frontend](https://github.com/upc-pre-202601-si657-7940-thropic/talki-frontend), [talki-user-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-user-services), [talki-session-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-session-services), [talki-analysis-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-analysis-services), [talki-engagement-services](https://github.com/upc-pre-202601-si657-7940-thropic/talki-engagement-services). Las referencias corresponden a la base de 202601; registrará el repositorio y la rama reales de sus cambios del sprint.
+Trabajará sobre [talki-frontend](https://github.com/upc-pre-202620-si728-16365-thropic/talki-frontend), [talki-user-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-user-services), [talki-session-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-session-services), [talki-analysis-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-analysis-services), [talki-engagement-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-engagement-services). Registrará la rama y el commit de sus cambios del sprint.
 
 Empezará por preparar contratos, recursos y perfiles; publicará el incremento cuando cliente, análisis y pruebas de integración estén disponibles.
 
