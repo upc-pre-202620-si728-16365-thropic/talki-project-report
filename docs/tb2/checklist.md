@@ -11,7 +11,7 @@ Para cerrar primero la documentación, consultar el [checklist de pendientes del
 - Campus: `Trabajo Final_1ASI0728_202620.pdf`, contenido `_76029989_1`, adjunto `_51288304_1`, páginas 34–35 (TB2), 39 (participación) y 40 (videos). Hash SHA-256 `c27214041b4acacf132097e6405381f6c625a76fc98ac4ba46878933ecd25673`.
 - Campus: comentarios generales de `S07|TB1`, contenido `_74449762_1`, columna `_15245146_1`, nota 19/20. Diseño táctico y UX: 10/10; documentación y colaboración: 9/10.
 - [Extracto de Campus con las fuentes y el feedback](../../assets/evidence/tb2/campus-scope-and-feedback.json).
-- [Informe anterior reutilizado](https://github.com/upc-pre-202601-si657-7940-thropic/talki-project-report/tree/2cfa379b72241a1380d87b4f8c5be53a70950d81), con [manifiesto de copias](../../assets/reused-202601/tb2/manifest.json) y [verificación actual](../../assets/evidence/tb2/verification.json).
+- [Informe anterior reutilizado](https://github.com/upc-pre-202601-si657-7940-thropic/talki-project-report/tree/2cfa379b72241a1380d87b4f8c5be53a70950d81), con [manifiesto de procedencia](../../assets/reused-202601/tb2/manifest.json) y [verificación actual](../../assets/evidence/tb2/verification.json).
 
 El enunciado ubica TB2 en semana 12 y TF1 en semana 15. Esta referencia no sustituye la fecha/hora de una actividad TB2 publicada en Blackboard ni una instrucción posterior del profesor. El corte numérico es **7.4**, incluyendo 7.2.1.8 y 7.3.3; **7.2.2 Sprint 2 corresponde a TF1**.
 
@@ -188,7 +188,7 @@ Una casilla marcada significa que hay contenido documental en el repositorio. No
 - [x] **6.5. Applications Prototyping** — contenido disponible en el informe; conservar y revisar si cambia la implementación.
 - [ ] **7.1. Software Configuration Management** — SCM documentado con fuentes verificadas.
 - [x] **7.1.1. Software Development Environment Configuration** — Stack elegido Next.js/React/TypeScript y Java/Spring Boot documentado con versiones; decisión del equipo diferenciada del enunciado original.
-- [ ] **7.1.2. Source Code Management** — Cinco instantáneas de código, SHA y procedencia; GitHub Projects confirmado como admitido y elegido; incorporar aportes propios del periodo actual.
+- [ ] **7.1.2. Source Code Management** — Cinco repositorios de implementación en la organización actual, con SHA y procedencia; GitHub Projects confirmado como admitido y elegido; incorporar aportes propios del periodo actual.
 - [x] **7.1.3. Source Code Style Guide & Conventions** — Convenciones descritas; no declarar quality gates o cobertura no medidos.
 - [ ] **7.1.4. Software Deployment Configuration** — Configuración y reproducción local documentadas; recuperar ambiente público persistente.
 - [ ] **7.2. Solution Implementation** — Implementación base identificada y diferencias con diseño explícitas.
@@ -210,7 +210,7 @@ Una casilla marcada significa que hay contenido documental en el repositorio. No
 
 ## Cierres y archivos de entrega
 
-- [x] Registro de versiones actualizado a 1.51 con descripción de la adaptación.
+- [x] Registro de versiones actualizado a 1.52 con descripción de la adaptación.
 - [x] Collaboration Insights y Student Outcome ampliados, distinguiendo acciones documentadas y revisión pendiente.
 - [x] Avance de conclusiones, recomendaciones, bibliografía y anexos actualizado para TB2.
 - [ ] About Team: completar evidencia de proceso real, retrospectiva, testimonios y publicación Stream/YouTube; el enlace previo acredita presentación individual.
