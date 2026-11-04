@@ -5154,6 +5154,20 @@ El recorrido de prueba no se completó. En particular, el intento de finalizar u
 
 La compilación de producción del cliente con `pnpm build` finalizó correctamente. Esto comprueba compilación y tipos, pero no conectividad funcional del producto.
 
+**Evidencia del cliente web (capturas pendientes).** El cliente que se ejecutará es `talki-frontend` en el commit `d63e889` (Next.js 16.2.9 y React 19.2.4), el mismo que cita 7.2.1.3. Las capturas deben tomarse con el cliente en ejecución local, con datos de prueba y sin exponer credenciales ni JWT. La vista móvil corresponde al diseño responsive del navegador, no a una aplicación nativa. La ruta raíz `/` redirige a `/login` o a `/dashboard` según la sesión; el cliente no incluye una landing, que existe solo como diseño en 6.3.
+
+| Pantalla | Ruta | Requiere servicios en ejecución | Estado |
+| --- | --- | --- | --- |
+| Registro | `/register` | La pantalla carga sin ellos; enviar el formulario sí los requiere. | Captura web y móvil pendiente. |
+| Acceso | `/login` | La pantalla carga sin ellos; iniciar sesión sí los requiere. | Captura web y móvil pendiente. |
+| Inicio | `/dashboard` | Sí. | Captura web y móvil pendiente. |
+| Sesiones | `/sessions` | Sí. | Captura web y móvil pendiente. |
+| Coach | `/coach` | Sí, y `GEMINI_API_KEY` para voz real. | Captura web y móvil pendiente. |
+| Reporte de una sesión | `/sessions/[id]` | Sí. | Captura web y móvil pendiente. |
+| Ranking | `/leaderboard` | Sí. | Captura web y móvil pendiente. |
+
+Las capturas de las pantallas que requieren servicios dependen de las tareas SB1-02-C, SB1-03-C y SB1-04-B. Hasta que existan, no se presenta ningún recorrido integrado.
+
 
 La [galería](https://upc-pre-202620-si728-16365-thropic.github.io/talki-project-report/) y el [prototipo UX](https://upc-pre-202620-si728-16365-thropic.github.io/talki-project-report/assets/ux/prototype/) respondieron HTTP 200 el 30/10/2026. Sus pantallas permiten demostrar los flujos de diseño de 6.4–6.5. Las métricas, transcripción y acciones simuladas del prototipo no se presentan como salida de servicios o IA real.
 
