@@ -1,15 +1,15 @@
 {
-  "checkedAt": "2026-11-04T02:43:35.816614+00:00",
+  "checkedAt": "2026-11-04T03:09:12.418977+00:00",
   "scope": "Real services, one RabbitMQ, disposable H2 and fixture data. The closing event uses a written transcript: no microphone, Gemini call, session-service transition or public deployment.",
   "sources": {
     "talki-analysis-services": {
-      "branch": "test/feedback-acceptance-bdd",
-      "commit": "4a7e9108dd5dea0c6f14c4ab540067f745a5c794",
+      "branch": "docs/analysis-openapi-info",
+      "commit": "cbec55bc43b1f1305cfb7e750679479894a51558",
       "cleanWorkingTree": true
     },
     "talki-engagement-services": {
-      "branch": "fix/progress-dead-letter",
-      "commit": "888981677e97a759700f3f1ab579b71f4cf2b85f",
+      "branch": "docs/progress-openapi-info",
+      "commit": "3ea46e81d888c516cbccaf9d1f2e984938b1cf11",
       "cleanWorkingTree": true
     },
     "talki-session-services": {
@@ -60,40 +60,40 @@
       "method": "GET",
       "path": "/v1/progress/dashboard",
       "query": {
-        "userId": "sb1-owner-0215be"
+        "userId": "sb1-owner-30e7bb"
       },
       "httpStatus": 200,
       "response": {
-        "totalMinutes": 0,
-        "bestScore": 0,
-        "averageScore": 0.0,
+        "totalSessions": 0,
+        "userId": "sb1-owner-30e7bb",
         "currentStreak": 0,
-        "userId": "sb1-owner-0215be",
-        "totalSessions": 0
+        "averageScore": 0.0,
+        "bestScore": 0,
+        "totalMinutes": 0
       }
     },
     {
       "step": "Reporte antes del cierre",
       "service": "scoring-service",
       "method": "GET",
-      "path": "/v1/reports/sb1-session-0215be",
+      "path": "/v1/reports/sb1-session-30e7bb",
       "query": {
-        "userId": "sb1-owner-0215be"
+        "userId": "sb1-owner-30e7bb"
       },
       "httpStatus": 404,
       "response": {
-        "timestamp": "2026-11-04T02:43:25.973089969Z",
+        "code": "REPORT_NOT_AVAILABLE",
         "message": "El reporte no existe o no está disponible para este usuario",
-        "code": "REPORT_NOT_AVAILABLE"
+        "timestamp": "2026-11-04T03:09:02.891000798Z"
       }
     },
     {
       "step": "Cierre de la práctica",
       "service": "live-coach-service",
       "method": "POST",
-      "path": "/v1/coach/sb1-session-0215be/finalize",
+      "path": "/v1/coach/sb1-session-30e7bb/finalize",
       "query": {
-        "userId": "sb1-owner-0215be",
+        "userId": "sb1-owner-30e7bb",
         "mode": "quick_practice",
         "transcriptGemini": "[25 palabras]",
         "wordsPerMinute": 130,
@@ -103,13 +103,13 @@
       },
       "httpStatus": 202,
       "response": {
-        "eventId": "aaa20340-564d-4bbc-9265-13bf1e1d6346",
+        "eventId": "33bd6df5-85b1-4686-a188-1e1e6c8973eb",
         "eventType": "session.live.finalized",
-        "occurredAt": "2026-11-04T02:43:25.985923561Z",
-        "traceId": "9f9dccbf-1241-407e-a966-a07218597b47",
+        "occurredAt": "2026-11-04T03:09:02.902602198Z",
+        "traceId": "61c7e9ed-57dc-4cb9-bf4c-bb3eaddb5311",
         "version": "1.0",
-        "sessionId": "sb1-session-0215be",
-        "userId": "sb1-owner-0215be",
+        "sessionId": "sb1-session-30e7bb",
+        "userId": "sb1-owner-30e7bb",
         "mode": "quick_practice",
         "scenarioId": null,
         "transcriptGemini": "Este es mi proyecto, eh, sobre comunicación oral y o sea practico cada semana con mi equipo de la universidad para mejorar mi exposición final",
@@ -124,14 +124,14 @@
       "step": "Reporte del propietario",
       "service": "scoring-service",
       "method": "GET",
-      "path": "/v1/reports/sb1-session-0215be",
+      "path": "/v1/reports/sb1-session-30e7bb",
       "query": {
-        "userId": "sb1-owner-0215be"
+        "userId": "sb1-owner-30e7bb"
       },
       "httpStatus": 200,
       "response": {
-        "reportId": 1,
-        "sessionId": "sb1-session-0215be",
+        "reportId": 2,
+        "sessionId": "sb1-session-30e7bb",
         "analysisState": "COMPLETED",
         "analysisVersion": "filler-rules-v1",
         "rubricVersion": "voice-rules-v1",
@@ -159,11 +159,10 @@
         "limitations": [
           "Puntuación calculada con reglas sobre métricas del discurso; no evalúa el contenido ni la argumentación."
         ],
-        "computedAt": "2026-11-03T21:43:26.305214"
+        "computedAt": "2026-11-03T22:09:02.97836"
       },
       "statusesObservedWhilePolling": [
         404,
-        202,
         200
       ]
     },
@@ -173,25 +172,25 @@
       "method": "GET",
       "path": "/v1/progress/dashboard",
       "query": {
-        "userId": "sb1-owner-0215be"
+        "userId": "sb1-owner-30e7bb"
       },
       "httpStatus": 200,
       "response": {
-        "totalMinutes": 5,
-        "bestScore": 87,
-        "averageScore": 87.0,
+        "totalSessions": 1,
+        "userId": "sb1-owner-30e7bb",
         "currentStreak": 1,
-        "userId": "sb1-owner-0215be",
-        "totalSessions": 1
+        "averageScore": 87.0,
+        "bestScore": 87,
+        "totalMinutes": 5
       }
     },
     {
       "step": "Cierre repetido de la misma práctica",
       "service": "live-coach-service",
       "method": "POST",
-      "path": "/v1/coach/sb1-session-0215be/finalize",
+      "path": "/v1/coach/sb1-session-30e7bb/finalize",
       "query": {
-        "userId": "sb1-owner-0215be",
+        "userId": "sb1-owner-30e7bb",
         "mode": "quick_practice",
         "transcriptGemini": "[25 palabras]",
         "wordsPerMinute": 130,
@@ -201,13 +200,13 @@
       },
       "httpStatus": 202,
       "response": {
-        "eventId": "73cb8d1b-ba20-45ca-a4c4-eddb5e908604",
+        "eventId": "a24c99c1-8728-4b9b-8956-0646914ef267",
         "eventType": "session.live.finalized",
-        "occurredAt": "2026-11-04T02:43:27.564497468Z",
-        "traceId": "11fa672a-71cd-40ff-9ce3-3a6f1e7b021d",
+        "occurredAt": "2026-11-04T03:09:04.224981496Z",
+        "traceId": "d87262a4-8369-4a4b-ba86-77d0eca412b2",
         "version": "1.0",
-        "sessionId": "sb1-session-0215be",
-        "userId": "sb1-owner-0215be",
+        "sessionId": "sb1-session-30e7bb",
+        "userId": "sb1-owner-30e7bb",
         "mode": "quick_practice",
         "scenarioId": null,
         "transcriptGemini": "Este es mi proyecto, eh, sobre comunicación oral y o sea practico cada semana con mi equipo de la universidad para mejorar mi exposición final",
@@ -222,14 +221,14 @@
       "step": "Reporte tras el cierre repetido",
       "service": "scoring-service",
       "method": "GET",
-      "path": "/v1/reports/sb1-session-0215be",
+      "path": "/v1/reports/sb1-session-30e7bb",
       "query": {
-        "userId": "sb1-owner-0215be"
+        "userId": "sb1-owner-30e7bb"
       },
       "httpStatus": 200,
       "response": {
-        "reportId": 1,
-        "sessionId": "sb1-session-0215be",
+        "reportId": 2,
+        "sessionId": "sb1-session-30e7bb",
         "analysisState": "COMPLETED",
         "analysisVersion": "filler-rules-v1",
         "rubricVersion": "voice-rules-v1",
@@ -257,7 +256,7 @@
         "limitations": [
           "Puntuación calculada con reglas sobre métricas del discurso; no evalúa el contenido ni la argumentación."
         ],
-        "computedAt": "2026-11-03T21:43:26.305214"
+        "computedAt": "2026-11-03T22:09:02.97836"
       }
     },
     {
@@ -266,65 +265,65 @@
       "method": "GET",
       "path": "/v1/progress/dashboard",
       "query": {
-        "userId": "sb1-owner-0215be"
+        "userId": "sb1-owner-30e7bb"
       },
       "httpStatus": 200,
       "response": {
-        "totalMinutes": 5,
-        "bestScore": 87,
-        "averageScore": 87.0,
+        "totalSessions": 1,
+        "userId": "sb1-owner-30e7bb",
         "currentStreak": 1,
-        "userId": "sb1-owner-0215be",
-        "totalSessions": 1
+        "averageScore": 87.0,
+        "bestScore": 87,
+        "totalMinutes": 5
       }
     },
     {
       "step": "Reporte consultado por otro usuario",
       "service": "scoring-service",
       "method": "GET",
-      "path": "/v1/reports/sb1-session-0215be",
+      "path": "/v1/reports/sb1-session-30e7bb",
       "query": {
-        "userId": "sb1-intruder-0215be"
+        "userId": "sb1-intruder-30e7bb"
       },
       "httpStatus": 404,
       "response": {
-        "timestamp": "2026-11-04T02:43:33.588311656Z",
+        "code": "REPORT_NOT_AVAILABLE",
         "message": "El reporte no existe o no está disponible para este usuario",
-        "code": "REPORT_NOT_AVAILABLE"
+        "timestamp": "2026-11-04T03:09:10.243283379Z"
       }
     },
     {
       "step": "Reporte sin userId",
       "service": "scoring-service",
       "method": "GET",
-      "path": "/v1/reports/sb1-session-0215be",
+      "path": "/v1/reports/sb1-session-30e7bb",
       "query": {},
       "httpStatus": 400,
       "response": {
-        "timestamp": "2026-11-04T02:43:33.594804256Z",
-        "message": "Falta el parámetro userId",
-        "code": "INVALID_ARGUMENT"
+        "timestamp": "2026-11-04T03:09:10.248124378Z",
+        "code": "INVALID_ARGUMENT",
+        "message": "Falta el parámetro userId"
       }
     },
     {
       "step": "Cierre de una práctica sin palabras",
       "service": "live-coach-service",
       "method": "POST",
-      "path": "/v1/coach/sb1-empty-0215be/finalize",
+      "path": "/v1/coach/sb1-empty-30e7bb/finalize",
       "query": {
-        "userId": "sb1-owner-0215be",
+        "userId": "sb1-owner-30e7bb",
         "mode": "quick_practice",
         "durationSeconds": 30
       },
       "httpStatus": 202,
       "response": {
-        "eventId": "da5c5ffa-aadc-421e-80a3-f2fba1d6c1fb",
+        "eventId": "3442a4d4-71c3-43d1-872b-0a378827239d",
         "eventType": "session.live.finalized",
-        "occurredAt": "2026-11-04T02:43:33.600013456Z",
-        "traceId": "7ae859ee-96d2-484e-b37b-04388ba78bc9",
+        "occurredAt": "2026-11-04T03:09:10.252456577Z",
+        "traceId": "32b44a01-85f2-4314-87b8-a129d708f7c4",
         "version": "1.0",
-        "sessionId": "sb1-empty-0215be",
-        "userId": "sb1-owner-0215be",
+        "sessionId": "sb1-empty-30e7bb",
+        "userId": "sb1-owner-30e7bb",
         "mode": "quick_practice",
         "scenarioId": null,
         "transcriptGemini": "",
@@ -339,14 +338,14 @@
       "step": "Reporte de la práctica sin palabras",
       "service": "scoring-service",
       "method": "GET",
-      "path": "/v1/reports/sb1-empty-0215be",
+      "path": "/v1/reports/sb1-empty-30e7bb",
       "query": {
-        "userId": "sb1-owner-0215be"
+        "userId": "sb1-owner-30e7bb"
       },
       "httpStatus": 200,
       "response": {
-        "reportId": 38,
-        "sessionId": "sb1-empty-0215be",
+        "reportId": 46,
+        "sessionId": "sb1-empty-30e7bb",
         "analysisState": "INSUFFICIENT_EVIDENCE",
         "analysisVersion": "filler-rules-v1",
         "rubricVersion": "voice-rules-v1",
@@ -362,10 +361,10 @@
         "limitations": [
           "La práctica no tiene palabras transcritas: no se calcula puntuación."
         ],
-        "computedAt": "2026-11-03T21:43:33.612583"
+        "computedAt": "2026-11-03T22:09:10.260048"
       },
       "statusesObservedWhilePolling": [
-        202,
+        404,
         200
       ]
     },
@@ -375,27 +374,27 @@
       "method": "GET",
       "path": "/v1/progress/dashboard",
       "query": {
-        "userId": "sb1-owner-0215be"
+        "userId": "sb1-owner-30e7bb"
       },
       "httpStatus": 200,
       "response": {
-        "totalMinutes": 5,
-        "bestScore": 87,
-        "averageScore": 87.0,
+        "totalSessions": 1,
+        "userId": "sb1-owner-30e7bb",
         "currentStreak": 1,
-        "userId": "sb1-owner-0215be",
-        "totalSessions": 1
+        "averageScore": 87.0,
+        "bestScore": 87,
+        "totalMinutes": 5
       }
     },
     {
       "step": "Racha del usuario, observación para SB1-05-B",
       "service": "gamification-service",
       "method": "GET",
-      "path": "/v1/gamification/streaks/sb1-owner-0215be",
+      "path": "/v1/gamification/streaks/sb1-owner-30e7bb",
       "query": {},
       "httpStatus": 200,
       "response": {
-        "userId": "sb1-owner-0215be",
+        "userId": "sb1-owner-30e7bb",
         "currentStreak": 0,
         "longestStreak": 0,
         "totalXp": 0

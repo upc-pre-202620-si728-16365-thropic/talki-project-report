@@ -51,6 +51,8 @@ def main():
                                         capture_output=True, text=True).stdout.strip()
         target = root / repo / service / 'target'
         unit, integration = suites(target / 'surefire-reports'), suites(target / 'failsafe-reports')
+        if not unit or not integration:
+            raise SystemExit(f'{service}: run mvn verify first; no test reports in {target}')
         services[service] = {
             'repository': repo,
             'branch': git('branch', '--show-current'),

@@ -1,13 +1,13 @@
 {
-  "collectedAt": "2026-11-04T02:36:03.993829+00:00",
+  "collectedAt": "2026-11-04T03:06:51.022615+00:00",
   "command": "mvn -B -ntp clean verify",
   "java": "openjdk version \"17.0.20.1\" 2026-08-18",
   "scope": "Unit tests with test doubles; *IT and Cucumber use real RabbitMQ (Testcontainers rabbitmq:3.12-management) and disposable H2. No percentage coverage is measured.",
   "services": {
     "filler-detection-service": {
       "repository": "talki-analysis-services",
-      "branch": "test/feedback-acceptance-bdd",
-      "commit": "4a7e9108dd5dea0c6f14c4ab540067f745a5c794",
+      "branch": "docs/analysis-openapi-info",
+      "commit": "cbec55bc43b1f1305cfb7e750679479894a51558",
       "unit": {
         "total": {
           "tests": 11,
@@ -59,8 +59,8 @@
     },
     "scoring-service": {
       "repository": "talki-analysis-services",
-      "branch": "test/feedback-acceptance-bdd",
-      "commit": "4a7e9108dd5dea0c6f14c4ab540067f745a5c794",
+      "branch": "docs/analysis-openapi-info",
+      "commit": "cbec55bc43b1f1305cfb7e750679479894a51558",
       "unit": {
         "total": {
           "tests": 33,
@@ -101,7 +101,7 @@
       },
       "integrationAndBdd": {
         "total": {
-          "tests": 19,
+          "tests": 22,
           "failures": 0,
           "errors": 0,
           "skipped": 0
@@ -117,6 +117,13 @@
           {
             "class": "com.thropic.talki.scoring.contract.FillersAnalyzedPipelineIT",
             "tests": 2,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0
+          },
+          {
+            "class": "com.thropic.talki.scoring.contract.OpenApiDocumentationIT",
+            "tests": 3,
             "failures": 0,
             "errors": 0,
             "skipped": 0
@@ -147,8 +154,8 @@
     },
     "progress-service": {
       "repository": "talki-engagement-services",
-      "branch": "fix/progress-dead-letter",
-      "commit": "888981677e97a759700f3f1ab579b71f4cf2b85f",
+      "branch": "docs/progress-openapi-info",
+      "commit": "3ea46e81d888c516cbccaf9d1f2e984938b1cf11",
       "unit": {
         "total": {
           "tests": 12,
@@ -175,12 +182,19 @@
       },
       "integrationAndBdd": {
         "total": {
-          "tests": 5,
+          "tests": 7,
           "failures": 0,
           "errors": 0,
           "skipped": 0
         },
         "classes": [
+          {
+            "class": "com.thropic.talki.progress.contract.OpenApiDocumentationIT",
+            "tests": 2,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0
+          },
           {
             "class": "com.thropic.talki.progress.contract.ProgressDeadLetterIT",
             "tests": 2,

@@ -44,7 +44,7 @@ Fuentes: enunciado del curso obtenido con Campus, páginas 34–35, y comentario
 - [ ] **7.2.1.6 — Documentación de servicios.** Incorporar captura de Swagger UI y la URL del ambiente operativo, con ejemplos legibles de solicitud/respuesta y un error pertinente. Las especificaciones locales existentes se conservan como base.
 - [x] **4.3.4 / capítulo V / 7.1–7.2 — Concordancia documentada.** Matriz de los diez contextos frente a los ocho servicios, con enlaces a archivos de commits fijados, alcance comprobado y diferencias. Sharing & Retention, gateway integrado, autorización, purga y reportes versionados están identificados en la [matriz de concordancia en 7.1.4](../../README.md#714-software-deployment-configuration); sus implementaciones pendientes no se marcan cerradas.
 
-**Avance 1.53 (03/11/2026), SB1-04 y SB1-05-A.** 7.2.1.4 a 7.2.1.6 incorporan pruebas de integración y BDD, recorrido local y contrato del reporte de análisis, scoring y progreso, en ramas pendientes de revisión. Faltan su integración, la captura de Swagger UI, la URL del ambiente publicado y las secciones de los demás integrantes; por eso las casillas siguen abiertas.
+**Avance 1.53 (03/11/2026), SB1-04 y SB1-05-A.** 7.2.1.4 a 7.2.1.6 incorporan pruebas de integración y BDD, recorrido local y contrato del reporte de análisis, scoring y progreso, en ramas pendientes de revisión. Las capturas de Swagger UI son locales. Faltan su integración, la URL del ambiente publicado y las secciones de los demás integrantes; por eso las casillas siguen abiertas.
 
 ## Validación y referencias audiovisuales del informe
 
