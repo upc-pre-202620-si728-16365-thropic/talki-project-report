@@ -1,0 +1,61 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Talki — Progress Service API",
+    "description": "Microservicio del bounded context Progress & Metrics (DDD) del producto Talki. Aplica el patrón CQRS: el comando se ejecuta al consumir scoring.completed del exchange talki.events y actualiza la vista materializada UserProgress; las queries del frontend Angular consultan estadísticas históricas y comparativas de sesiones sin contención con el camino de escritura.",
+    "contact": {
+      "name": "Thropic — Equipo Talki",
+      "url": "https://github.com/upc-pre-202601-si657-7940-thropic"
+    },
+    "license": {
+      "name": "Académico — UPC SI657 2026-10"
+    },
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8089",
+      "description": "Local (perfil dev)"
+    },
+    {
+      "url": "https://api.talki.lat",
+      "description": "Producción (Railway)"
+    }
+  ],
+  "paths": {
+    "/v1/progress/dashboard": {
+      "get": {
+        "tags": [
+          "progress-controller"
+        ],
+        "operationId": "getDashboard",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {}
+}
