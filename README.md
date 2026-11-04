@@ -5154,19 +5154,37 @@ El recorrido de prueba no se completó. En particular, el intento de finalizar u
 
 La compilación de producción del cliente con `pnpm build` finalizó correctamente. Esto comprueba compilación y tipos, pero no conectividad funcional del producto.
 
-**Evidencia del cliente web (capturas pendientes).** El cliente que se ejecutará es `talki-frontend` en el commit `d63e889` (Next.js 16.2.9 y React 19.2.4), el mismo que cita 7.2.1.3. Las capturas deben tomarse con el cliente en ejecución local, con datos de prueba y sin exponer credenciales ni JWT. La vista móvil corresponde al diseño responsive del navegador, no a una aplicación nativa. La ruta raíz `/` redirige a `/login` o a `/dashboard` según la sesión; el cliente no incluye una landing, que existe solo como diseño en 6.3.
+**Evidencia del cliente web.** El 03/11/2026 se ejecutó `talki-frontend` en el commit `d63e889` (Next.js 16.2.9 y React 19.2.4), el mismo que cita 7.2.1.3, con `next build` y `next start` en `localhost:3000` y sin servicios de backend. Las capturas se tomaron con Chrome sin interfaz mediante [capture-tb2-client.mjs](scripts/capture-tb2-client.mjs): la vista web a 1440 × 900 y la móvil a 390 × 844 con densidad doble, que emula el tamaño de un teléfono en el navegador y no corresponde a una aplicación nativa. No se ingresaron credenciales ni datos personales; los formularios aparecen vacíos.
+
+Sin sesión, la ruta raíz `/` y las rutas `/dashboard`, `/sessions`, `/coach` y `/leaderboard` responden HTTP 307 hacia `/login`; las cuatro últimas conservan el destino original en el parámetro `next`. Las páginas `/login` y `/register` responden HTTP 200. El cliente no incluye una landing, que existe solo como diseño en 6.3.
 
 | Pantalla | Ruta | Requiere servicios en ejecución | Estado |
 | --- | --- | --- | --- |
-| Registro | `/register` | La pantalla carga sin ellos; enviar el formulario sí los requiere. | Captura web y móvil pendiente. |
-| Acceso | `/login` | La pantalla carga sin ellos; iniciar sesión sí los requiere. | Captura web y móvil pendiente. |
+| Registro | `/register` | La pantalla carga sin ellos; enviar el formulario sí los requiere. | Capturada en web y móvil el 03/11/2026. |
+| Acceso | `/login` | La pantalla carga sin ellos; iniciar sesión sí los requiere. | Capturada en web y móvil el 03/11/2026. |
 | Inicio | `/dashboard` | Sí. | Captura web y móvil pendiente. |
 | Sesiones | `/sessions` | Sí. | Captura web y móvil pendiente. |
 | Coach | `/coach` | Sí, y `GEMINI_API_KEY` para voz real. | Captura web y móvil pendiente. |
 | Reporte de una sesión | `/sessions/[id]` | Sí. | Captura web y móvil pendiente. |
 | Ranking | `/leaderboard` | Sí. | Captura web y móvil pendiente. |
 
-Las capturas de las pantallas que requieren servicios dependen de las tareas SB1-02-C, SB1-03-C y SB1-04-B. Hasta que existan, no se presenta ningún recorrido integrado.
+**Registro (web)**
+
+<img src="assets/evidence/tb2/client/client-register-web.png" alt="Cliente web de Talki: registro en vista web" width="900">
+
+**Registro (móvil)**
+
+<img src="assets/evidence/tb2/client/client-register-mobile.png" alt="Cliente web de Talki: registro en vista móvil" width="320">
+
+**Acceso (web)**
+
+<img src="assets/evidence/tb2/client/client-login-web.png" alt="Cliente web de Talki: acceso en vista web" width="900">
+
+**Acceso (móvil)**
+
+<img src="assets/evidence/tb2/client/client-login-mobile.png" alt="Cliente web de Talki: acceso en vista móvil" width="320">
+
+Estas capturas comprueban que el cliente compila y se ejecuta, pero no un recorrido integrado ni su conexión con los servicios. Las capturas de las pantallas que requieren servicios dependen de las tareas SB1-02-C, SB1-03-C y SB1-04-B; hasta que existan, no se presenta ningún recorrido integrado.
 
 
 La [galería](https://upc-pre-202620-si728-16365-thropic.github.io/talki-project-report/) y el [prototipo UX](https://upc-pre-202620-si728-16365-thropic.github.io/talki-project-report/assets/ux/prototype/) respondieron HTTP 200 el 30/10/2026. Sus pantallas permiten demostrar los flujos de diseño de 6.4–6.5. Las métricas, transcripción y acciones simuladas del prototipo no se presentan como salida de servicios o IA real.
