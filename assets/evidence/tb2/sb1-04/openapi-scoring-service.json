@@ -148,36 +148,6 @@
               }
             }
           },
-          "404": {
-            "description": "La práctica no existe o no está disponible para este usuario",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ApiErrorResponse"
-                },
-                "example": {
-                  "code": "REPORT_NOT_AVAILABLE",
-                  "message": "El reporte no existe o no está disponible para este usuario",
-                  "timestamp": "2026-11-04T02:37:20Z"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Falta userId",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ApiErrorResponse"
-                },
-                "example": {
-                  "code": "INVALID_ARGUMENT",
-                  "message": "Falta el parámetro userId",
-                  "timestamp": "2026-11-04T02:37:20Z"
-                }
-              }
-            }
-          },
           "202": {
             "description": "Análisis en proceso o fallido: devuelve analysisState, nunca una puntuación",
             "content": {
@@ -202,6 +172,36 @@
                       "message": "El análisis falló y no se generó una puntuación"
                     }
                   }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Falta userId",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                },
+                "example": {
+                  "code": "INVALID_ARGUMENT",
+                  "message": "Falta el parámetro userId",
+                  "timestamp": "2026-11-04T02:37:20Z"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "La práctica no existe o no está disponible para este usuario",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                },
+                "example": {
+                  "code": "REPORT_NOT_AVAILABLE",
+                  "message": "El reporte no existe o no está disponible para este usuario",
+                  "timestamp": "2026-11-04T02:37:20Z"
                 }
               }
             }
@@ -320,20 +320,6 @@
           }
         }
       },
-      "ApiErrorResponse": {
-        "type": "object",
-        "properties": {
-          "code": {
-            "type": "string"
-          },
-          "message": {
-            "type": "string"
-          },
-          "timestamp": {
-            "type": "string"
-          }
-        }
-      },
       "AnalysisStatusResponse": {
         "type": "object",
         "properties": {
@@ -350,6 +336,20 @@
             ]
           },
           "message": {
+            "type": "string"
+          }
+        }
+      },
+      "ApiErrorResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "timestamp": {
             "type": "string"
           }
         }

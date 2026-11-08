@@ -1,5 +1,5 @@
 {
-  "collectedAt": "2026-11-04T03:06:51.022615+00:00",
+  "collectedAt": "2026-11-08T14:56:34.244873+00:00",
   "command": "mvn -B -ntp clean verify",
   "java": "openjdk version \"17.0.20.1\" 2026-08-18",
   "scope": "Unit tests with test doubles; *IT and Cucumber use real RabbitMQ (Testcontainers rabbitmq:3.12-management) and disposable H2. No percentage coverage is measured.",
@@ -7,7 +7,7 @@
     "filler-detection-service": {
       "repository": "talki-analysis-services",
       "branch": "docs/analysis-openapi-info",
-      "commit": "cbec55bc43b1f1305cfb7e750679479894a51558",
+      "commit": "785d7057906a5cdf484d0d43fe07c044cae3ca30",
       "unit": {
         "total": {
           "tests": 11,
@@ -60,7 +60,7 @@
     "scoring-service": {
       "repository": "talki-analysis-services",
       "branch": "docs/analysis-openapi-info",
-      "commit": "cbec55bc43b1f1305cfb7e750679479894a51558",
+      "commit": "785d7057906a5cdf484d0d43fe07c044cae3ca30",
       "unit": {
         "total": {
           "tests": 33,
@@ -155,7 +155,7 @@
     "progress-service": {
       "repository": "talki-engagement-services",
       "branch": "docs/progress-openapi-info",
-      "commit": "3ea46e81d888c516cbccaf9d1f2e984938b1cf11",
+      "commit": "35c63b17383063047f445a55954e7217d3bce11d",
       "unit": {
         "total": {
           "tests": 12,
