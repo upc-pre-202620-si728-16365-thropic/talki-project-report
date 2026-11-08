@@ -1,0 +1,223 @@
+{
+  "collectedAt": "2026-11-08T14:56:34.244873+00:00",
+  "command": "mvn -B -ntp clean verify",
+  "java": "openjdk version \"17.0.20.1\" 2026-08-18",
+  "scope": "Unit tests with test doubles; *IT and Cucumber use real RabbitMQ (Testcontainers rabbitmq:3.12-management) and disposable H2. No percentage coverage is measured.",
+  "services": {
+    "filler-detection-service": {
+      "repository": "talki-analysis-services",
+      "branch": "docs/analysis-openapi-info",
+      "commit": "785d7057906a5cdf484d0d43fe07c044cae3ca30",
+      "unit": {
+        "total": {
+          "tests": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "classes": [
+          {
+            "class": "com.thropic.talki.filler.domain.model.FillerDetectorTest",
+            "tests": 7,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0
+          },
+          {
+            "class": "com.thropic.talki.filler.infrastructure.messaging.consumer.SessionLiveFinalizedConsumerTest",
+            "tests": 4,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0
+          }
+        ]
+      },
+      "integrationAndBdd": {
+        "total": {
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "classes": [
+          {
+            "class": "com.thropic.talki.filler.contract.FillerDeadLetterIT",
+            "tests": 1,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0
+          },
+          {
+            "class": "com.thropic.talki.filler.contract.SessionFinalizedPipelineIT",
+            "tests": 1,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0
+          }
+        ]
+      }
+    },
+    "scoring-service": {
+      "repository": "talki-analysis-services",
+      "branch": "docs/analysis-openapi-info",
+      "commit": "785d7057906a5cdf484d0d43fe07c044cae3ca30",
+      "unit": {
+        "total": {
+          "tests": 33,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "classes": [
+          {
+            "class": "com.thropic.talki.scoring.domain.model.ScoreCalculatorTest",
+            "tests": 12,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0
+          },
+          {
+            "class": "com.thropic.talki.scoring.domain.model.VoiceScoreTest",
+            "tests": 12,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0
+          },
+          {
+            "class": "com.thropic.talki.scoring.infrastructure.GlobalExceptionHandlerTest",
+            "tests": 5,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0
+          },
+          {
+            "class": "com.thropic.talki.scoring.infrastructure.messaging.consumer.FillerAnalyzedConsumerTest",
+            "tests": 4,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0
+          }
+        ]
+      },
+      "integrationAndBdd": {
+        "total": {
+          "tests": 22,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "classes": [
+          {
+            "class": "com.thropic.talki.scoring.bdd.RunCucumberIT",
+            "tests": 5,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0
+          },
+          {
+            "class": "com.thropic.talki.scoring.contract.FillersAnalyzedPipelineIT",
+            "tests": 2,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0
+          },
+          {
+            "class": "com.thropic.talki.scoring.contract.OpenApiDocumentationIT",
+            "tests": 3,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0
+          },
+          {
+            "class": "com.thropic.talki.scoring.contract.ReportQueryIT",
+            "tests": 8,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0
+          },
+          {
+            "class": "com.thropic.talki.scoring.contract.ScoringDeadLetterIT",
+            "tests": 3,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0
+          },
+          {
+            "class": "com.thropic.talki.scoring.contract.ScoringRaceConditionIT",
+            "tests": 1,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0
+          }
+        ]
+      }
+    },
+    "progress-service": {
+      "repository": "talki-engagement-services",
+      "branch": "docs/progress-openapi-info",
+      "commit": "35c63b17383063047f445a55954e7217d3bce11d",
+      "unit": {
+        "total": {
+          "tests": 12,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "classes": [
+          {
+            "class": "com.thropic.talki.progress.domain.model.UserProgressTest",
+            "tests": 6,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0
+          },
+          {
+            "class": "com.thropic.talki.progress.infrastructure.messaging.consumer.ScoringCompletedConsumerTest",
+            "tests": 6,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0
+          }
+        ]
+      },
+      "integrationAndBdd": {
+        "total": {
+          "tests": 7,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "classes": [
+          {
+            "class": "com.thropic.talki.progress.contract.OpenApiDocumentationIT",
+            "tests": 2,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0
+          },
+          {
+            "class": "com.thropic.talki.progress.contract.ProgressDeadLetterIT",
+            "tests": 2,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0
+          },
+          {
+            "class": "com.thropic.talki.progress.contract.ProgressIdempotencyIT",
+            "tests": 2,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0
+          },
+          {
+            "class": "com.thropic.talki.progress.contract.ScoringCompletedProjectionIT",
+            "tests": 1,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0
+          }
+        ]
+      }
+    }
+  }
+}

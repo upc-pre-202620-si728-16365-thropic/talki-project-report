@@ -1,0 +1,68 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Talki — Progress Service API",
+    "description": "Microservicio del bounded context Progress & Adaptation del producto Talki. Consume scoring.completed del exchange talki.events y actualiza el resumen del estudiante, una sola vez por sesión. GET /v1/progress/dashboard consulta ese resumen para el cliente web.",
+    "contact": {
+      "name": "Thropic — Equipo Talki",
+      "url": "https://github.com/upc-pre-202620-si728-16365-thropic"
+    },
+    "license": {
+      "name": "Académico — UPC 1ASI0728 2026-20"
+    },
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "/",
+      "description": "Servidor actual"
+    },
+    {
+      "url": "http://localhost:8089",
+      "description": "Local, puerto por defecto"
+    }
+  ],
+  "paths": {
+    "/v1/progress/dashboard": {
+      "get": {
+        "tags": [
+          "progress-controller"
+        ],
+        "summary": "Consultar el resumen de progreso de un estudiante",
+        "description": "Un usuario sin evaluaciones recibe el resumen en cero. El userId lo declara quien llama: el servicio aún no valida el JWT. currentStreak cuenta sesiones, no días.",
+        "operationId": "getDashboard",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Resumen del estudiante",
+            "content": {
+              "application/json": {
+                "example": {
+                  "userId": "42",
+                  "totalSessions": 1,
+                  "totalMinutes": 5,
+                  "averageScore": 87.0,
+                  "bestScore": 87,
+                  "currentStreak": 1
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Falta userId"
+          }
+        }
+      }
+    }
+  },
+  "components": {}
+}

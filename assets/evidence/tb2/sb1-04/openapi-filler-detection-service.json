@@ -1,0 +1,27 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Talki — Filler Detection Service API",
+    "description": "Microservicio del bounded context Speech Analysis del producto Talki. Trabaja por eventos: consume session.live.finalized del exchange talki.events, detecta muletillas en la transcripción y publica fillers.analyzed con las métricas recibidas. No expone rutas REST de negocio.",
+    "contact": {
+      "name": "Thropic — Equipo Talki",
+      "url": "https://github.com/upc-pre-202620-si728-16365-thropic"
+    },
+    "license": {
+      "name": "Académico — UPC 1ASI0728 2026-20"
+    },
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "/",
+      "description": "Servidor actual"
+    },
+    {
+      "url": "http://localhost:8087",
+      "description": "Local, puerto por defecto"
+    }
+  ],
+  "paths": {},
+  "components": {}
+}

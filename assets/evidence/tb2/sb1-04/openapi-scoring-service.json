@@ -1,0 +1,359 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Talki — Scoring Service API",
+    "description": "Microservicio del bounded context Scoring & Feedback del producto Talki. Consume fillers.analyzed del exchange talki.events, calcula el Voice Coach Score con 5 dimensiones de 0 a 100 (fluency, clarity, volume, vocabulary, confidence) y publica scoring.completed sin duplicar evaluaciones. GET /v1/reports/{sessionId} entrega la evaluación con su evidencia, versiones y limitaciones, o el estado del análisis sin puntuación.",
+    "contact": {
+      "name": "Thropic — Equipo Talki",
+      "url": "https://github.com/upc-pre-202620-si728-16365-thropic"
+    },
+    "license": {
+      "name": "Académico — UPC 1ASI0728 2026-20"
+    },
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "/",
+      "description": "Servidor actual"
+    },
+    {
+      "url": "http://localhost:8088",
+      "description": "Local, puerto por defecto"
+    }
+  ],
+  "paths": {
+    "/v1/scores/health": {
+      "get": {
+        "tags": [
+          "score-controller"
+        ],
+        "summary": "Comprobar que el servicio responde",
+        "description": "No equivale a disponibilidad de las evaluaciones. Para consultarlas, usar /v1/reports/{sessionId}.",
+        "operationId": "health",
+        "responses": {
+          "200": {
+            "description": "Servicio en ejecución",
+            "content": {
+              "application/json": {
+                "example": {
+                  "service": "scoring-service",
+                  "status": "UP",
+                  "description": "Consumes fillers.analyzed → calcula VoiceScore → publica scoring.completed"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/reports/{sessionId}": {
+      "get": {
+        "tags": [
+          "report-controller"
+        ],
+        "summary": "Consultar el reporte de una práctica",
+        "description": "Solo el estado COMPLETED incluye puntuación. El userId lo declara quien llama: el servicio aún no valida el JWT, así que esta comparación no es una autorización real.",
+        "operationId": "getReport",
+        "parameters": [
+          {
+            "name": "sessionId",
+            "in": "path",
+            "description": "Identificador de la práctica",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": "session-123"
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "description": "Usuario que consulta",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "example": 42
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Evaluación disponible, o práctica sin evidencia suficiente (sin puntuación)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReportResponse"
+                },
+                "examples": {
+                  "Evaluación disponible": {
+                    "description": "Evaluación disponible",
+                    "value": {
+                      "reportId": 2,
+                      "sessionId": "session-123",
+                      "analysisState": "COMPLETED",
+                      "analysisVersion": "filler-rules-v1",
+                      "rubricVersion": "voice-rules-v1",
+                      "overallScore": 87,
+                      "scores": {
+                        "fluency": 94,
+                        "clarity": 85,
+                        "volume": 90,
+                        "vocabulary": 91,
+                        "confidence": 75
+                      },
+                      "evidence": {
+                        "totalFillers": 3,
+                        "fillersByType": {
+                          "este": 1,
+                          "o sea": 1,
+                          "eh": 1
+                        },
+                        "wordCount": 25,
+                        "wordsPerMinute": 130,
+                        "durationSeconds": 300,
+                        "silenceRatio": 0.08,
+                        "volumeRmsAvg": 0.6
+                      },
+                      "limitations": [
+                        "Puntuación calculada con reglas sobre métricas del discurso; no evalúa el contenido ni la argumentación."
+                      ],
+                      "computedAt": "2026-11-03T21:37:13.33202"
+                    }
+                  },
+                  "Práctica sin palabras": {
+                    "description": "Práctica sin palabras",
+                    "value": {
+                      "reportId": 3,
+                      "sessionId": "session-124",
+                      "analysisState": "INSUFFICIENT_EVIDENCE",
+                      "analysisVersion": "filler-rules-v1",
+                      "rubricVersion": "voice-rules-v1",
+                      "evidence": {
+                        "totalFillers": 0,
+                        "fillersByType": {},
+                        "wordCount": 0,
+                        "wordsPerMinute": 0,
+                        "durationSeconds": 30,
+                        "silenceRatio": 0.0,
+                        "volumeRmsAvg": 0.0
+                      },
+                      "limitations": [
+                        "La práctica no tiene palabras transcritas: no se calcula puntuación."
+                      ],
+                      "computedAt": "2026-11-03T21:37:20.610629"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "202": {
+            "description": "Análisis en proceso o fallido: devuelve analysisState, nunca una puntuación",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnalysisStatusResponse"
+                },
+                "examples": {
+                  "En proceso": {
+                    "description": "En proceso",
+                    "value": {
+                      "sessionId": "session-123",
+                      "analysisState": "PENDING",
+                      "message": "El análisis de la práctica sigue en proceso"
+                    }
+                  },
+                  "Fallido": {
+                    "description": "Fallido",
+                    "value": {
+                      "sessionId": "session-123",
+                      "analysisState": "FAILED",
+                      "message": "El análisis falló y no se generó una puntuación"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Falta userId",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                },
+                "example": {
+                  "code": "INVALID_ARGUMENT",
+                  "message": "Falta el parámetro userId",
+                  "timestamp": "2026-11-04T02:37:20Z"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "La práctica no existe o no está disponible para este usuario",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorResponse"
+                },
+                "example": {
+                  "code": "REPORT_NOT_AVAILABLE",
+                  "message": "El reporte no existe o no está disponible para este usuario",
+                  "timestamp": "2026-11-04T02:37:20Z"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Evidence": {
+        "type": "object",
+        "properties": {
+          "totalFillers": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fillersByType": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "wordCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "wordsPerMinute": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "durationSeconds": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "silenceRatio": {
+            "type": "number",
+            "format": "double"
+          },
+          "volumeRmsAvg": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "ReportResponse": {
+        "type": "object",
+        "properties": {
+          "reportId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "sessionId": {
+            "type": "string"
+          },
+          "analysisState": {
+            "type": "string",
+            "enum": [
+              "PENDING",
+              "COMPLETED",
+              "INSUFFICIENT_EVIDENCE",
+              "FAILED"
+            ]
+          },
+          "analysisVersion": {
+            "type": "string"
+          },
+          "rubricVersion": {
+            "type": "string"
+          },
+          "overallScore": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "scores": {
+            "$ref": "#/components/schemas/VoiceScore"
+          },
+          "evidence": {
+            "$ref": "#/components/schemas/Evidence"
+          },
+          "limitations": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "computedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "VoiceScore": {
+        "type": "object",
+        "properties": {
+          "fluency": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "clarity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "volume": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "vocabulary": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "confidence": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "AnalysisStatusResponse": {
+        "type": "object",
+        "properties": {
+          "sessionId": {
+            "type": "string"
+          },
+          "analysisState": {
+            "type": "string",
+            "enum": [
+              "PENDING",
+              "COMPLETED",
+              "INSUFFICIENT_EVIDENCE",
+              "FAILED"
+            ]
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "ApiErrorResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
