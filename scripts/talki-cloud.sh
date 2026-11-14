@@ -46,7 +46,12 @@ case "$action" in
     while IFS='|' read -r svc repo ref dir; do
       selected "$svc" || continue
       [ -d "$repo" ] || gh repo clone "$ORG/$repo" "$repo" -- -q
-      git -C "$repo" fetch -q origin "$ref" && git -C "$repo" checkout -q FETCH_HEAD
+      # Si la rama o commit fijado no se puede traer, se aborta: nunca se despliega otra rama.
+      if ! git -C "$repo" fetch -q origin "$ref"; then
+        echo "ERROR: no se pudo traer $repo@$ref; actualiza REFS antes de desplegar $svc." >&2
+        exit 1
+      fi
+      git -C "$repo" checkout -q FETCH_HEAD
       sha="$(git -C "$repo" rev-parse --short HEAD)"
       echo "== $svc <- $repo@$ref ($sha)"
       railway up "$repo/$dir" --path-as-root -p "$PROJECT_ID" -e "$ENVIRONMENT" -s "$svc" -d -m "talki-cloud up $repo@$ref $sha" | tail -1
