@@ -1,5 +1,7 @@
 # Pendientes del informe para TB2
 
+**Actualización del 14/11/2026.** Voz real con Gemini Live comprobada en el ambiente desplegado. Quedan abiertos: entrevistas de validación (7.3.2 y 7.3.3), videos (navegación, validación, About-the-Product, About-the-Team y exposición), aporte verificable de Kevin y revisión de bibliografía, figuras y anexos.
+
 Revisión del 30 de octubre de 2026. La prioridad es cerrar el informe acumulativo, desde la carátula hasta los anexos. El corte de contenido de TB2 es **7.4**; el Sprint 2, **7.2.2**, corresponde a TF1.
 
 Fuentes: enunciado del curso obtenido con Campus, páginas 34–35, y comentarios generales del parcial `S07|TB1` (19/20). El [extracto de fuentes](../../assets/evidence/tb2/campus-scope-and-feedback.json) conserva el texto y el hash del enunciado. La numeración de UX sigue el informe actual: 6.4.3 mock-ups, 6.4.4 user flows y 6.5 prototipado.
@@ -31,17 +33,17 @@ Fuentes: enunciado del curso obtenido con Campus, páginas 34–35, y comentario
 - [x] **7.2.1.1 — Calendario y responsabilidades.** Como equipo acordamos Sprint 1 del lunes 26/10 al domingo 08/11/2026, 20 h por integrante durante las dos semanas y división explícita de lo que realizará cada integrante. El planning del 28/10 está incluido en esa capacidad. La fecha institucional de Blackboard se conserva separada del cierre interno.
 - [x] **Herramienta de tablero de la entrega.** GitHub Projects admitido según confirmación del Team Leader el 30/10/2026 y elegido por el equipo. Se conserva el tablero actual; no hace falta trasladarlo a otra herramienta. Quedan las actualizaciones de estados/evidencias conforme se ejecuten las tareas.
 - [x] **7.2.1.3 — Trazabilidad documental.** Historial actual actualizado con repositorio, rama, SHA, fecha/hora, autor, mensaje y archivos. Matriz de ocho PBIs / 24 tareas con historias, coordinación futura, commits base y artefactos disponibles en el README.
-- [ ] **7.2.1.3 — Evidencia de implementación.** Incorporar commit/PR de los cambios reales de software del incremento y sus pruebas. La consulta de la organización actual solo identifica el informe entre los repositorios accesibles; la base de aplicación permanece preservada con su procedencia 202601. La edición documental no se cuenta como desarrollo nuevo de servicios.
-- [ ] **7.2.1.8 — Team Collaboration Insights.** Completar aportes y revisión de los cinco integrantes con commits/PR verificables y captura actual de colaboración. El PR de adaptación está enlazado; las revisiones sugeridas de otros integrantes no se presentan como realizadas.
-- [ ] **Registro de versiones / Student Outcome.** Incorporar cada nueva modificación individual y las acciones que cada integrante realmente realizó en TB2; actualizar las conclusiones grupales acumulativas con esas acciones. La corrección de autoría histórica ya está hecha.
+- [x] **7.2.1.3 — Evidencia de implementación (14/11).** PR y commits del periodo de Alejandro, Werner y Manuel enlazados en 7.2.1.3.
+- [x] **7.2.1.8 — Team Collaboration Insights (14/11).** Aportes por integrante con PR, conteo de commits y capturas de GitHub. Falta el enlace de Kevin.
+- [x] **Registro de versiones / Student Outcome (14/11).** Versiones 1.54 y 1.55; Student Outcome de Alejandro, Gael y Werner actualizado.
 
 ## Evidencia técnica que falta incorporar
 
 - [x] **7.1.1 — Stack documentado y elegido.** Next.js/React/TypeScript con Tailwind/shadcn; servicios Java/Spring Boot. La selección fue confirmada por el Team Leader el 30/10/2026; la migración G-WEB se retiró del plan. La fuente académica original se conserva y no se presenta como autorización docente. Responsive web y móvil propuesto permanecen diferenciados.
-- [ ] **7.1.4 y 7.2.1.7 — Despliegue.** Incorporar ambiente activo, configuración sin secretos, pasos ejecutados, commit desplegado, URLs funcionales y capturas actuales. El diagnóstico existente es 402 en el cliente y 404 en las 16 rutas históricas de backend consultadas; no demuestra una primera versión operativa.
-- [ ] **7.2.1.4 — Testing.** Añadir pruebas ejecutadas de integración y aceptación BDD, con features/steps, comandos, commits y resultados. Las 133 unitarias ya están documentadas; no se convierten en evidencia de aceptación, rendimiento, privacidad o cobertura porcentual.
-- [ ] **7.2.1.5 — Ejecución.** Incorporar capturas y explicación del recorrido integrado real, desde acceso hasta consulta del resultado. Registrar la transición válida de estados y la respuesta controlada al estado inválido. La comprobación actual no cubre voz real ni el cierre completo.
-- [ ] **7.2.1.6 — Documentación de servicios.** Incorporar captura de Swagger UI y la URL del ambiente operativo, con ejemplos legibles de solicitud/respuesta y un error pertinente. Las especificaciones locales existentes se conservan como base.
+- [x] **7.1.4 y 7.2.1.7 — Despliegue (14/11).** Railway (8 servicios, PostgreSQL, RabbitMQ) y Vercel; commits, URLs, capturas y prueba de persistencia. Se enciende con `scripts/talki-cloud.sh up`.
+- [x] **7.2.1.4 — Testing (14/11).** 217 pruebas de sesiones, identidad y notificaciones, además de la aceptación BDD de Manuel.
+- [x] **7.2.1.5 — Ejecución (14/11).** Recorrido integrado en el ambiente desplegado, con 409 ante transición inválida y capturas web y móvil. Falta el video de navegación.
+- [x] **7.2.1.6 — Documentación de servicios (14/11).** Swagger UI y `/v3/api-docs` desplegados para los ocho servicios.
 - [x] **4.3.4 / capítulo V / 7.1–7.2 — Concordancia documentada.** Matriz de los diez contextos frente a los ocho servicios, con enlaces a archivos de commits fijados, alcance comprobado y diferencias. Sharing & Retention, gateway integrado, autorización, purga y reportes versionados están identificados en la [matriz de concordancia en 7.1.4](../../README.md#714-software-deployment-configuration); sus implementaciones pendientes no se marcan cerradas.
 
 **Avance 1.53 (03/11/2026), SB1-04 y SB1-05-A.** 7.2.1.4 a 7.2.1.6 incorporan pruebas de integración y BDD, recorrido local y contrato del reporte de análisis, scoring y progreso, en ramas pendientes de revisión. Las capturas de Swagger UI son locales. Faltan su integración, la URL del ambiente publicado y las secciones de los demás integrantes; por eso las casillas siguen abiertas.

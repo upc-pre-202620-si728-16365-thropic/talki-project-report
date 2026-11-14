@@ -1,0 +1,428 @@
+{
+  "checkedAt": "2026-11-14T13:52:43.377820+00:00",
+  "sessionId": 2,
+  "steps": [
+    {
+      "step": "Registro (a)",
+      "request": "POST /v1/auth/register",
+      "status": 201,
+      "response": {
+        "academicSegment": "ciclos_1_5",
+        "userId": 3,
+        "username": "tb2_a",
+        "email": "cuenta-prueba-a@example.com"
+      }
+    },
+    {
+      "step": "Inicio de sesión (a)",
+      "request": "POST /v1/auth/login",
+      "status": 200,
+      "response": {
+        "tokenType": "Bearer",
+        "refreshToken": "<redactado>",
+        "accessToken": "<redactado>"
+      }
+    },
+    {
+      "step": "Registro (b)",
+      "request": "POST /v1/auth/register",
+      "status": 201,
+      "response": {
+        "academicSegment": "ciclos_1_5",
+        "userId": 4,
+        "username": "tb2_b",
+        "email": "cuenta-prueba-b@example.com"
+      }
+    },
+    {
+      "step": "Inicio de sesión (b)",
+      "request": "POST /v1/auth/login",
+      "status": 200,
+      "response": {
+        "tokenType": "Bearer",
+        "refreshToken": "<redactado>",
+        "accessToken": "<redactado>"
+      }
+    },
+    {
+      "step": "Perfil propio",
+      "request": "GET /v1/users/me",
+      "status": 200,
+      "response": {
+        "userId": 3,
+        "email": "cuenta-prueba-a@example.com",
+        "username": "tb2_a",
+        "academicSegment": "ciclos_1_5",
+        "role": "STUDENT",
+        "emailVerified": false
+      }
+    },
+    {
+      "step": "Crear sesión sin token",
+      "request": "POST /v1/sessions",
+      "status": 401,
+      "response": {
+        "timestamp": "2026-11-14T13:52:18.206408113Z",
+        "status": 401,
+        "error": "Unauthorized",
+        "path": "/v1/sessions"
+      }
+    },
+    {
+      "step": "Aceptar consentimiento de voz",
+      "request": "POST /v1/users/me/voice-consents",
+      "status": 201,
+      "response": {
+        "consentId": "8b5c4c47-1075-47d6-a24d-136608a19d60",
+        "policyVersion": "2026-10",
+        "scope": "voice_processing",
+        "acceptedAt": "2026-11-14T13:52:18.714516240Z",
+        "withdrawnAt": null
+      }
+    },
+    {
+      "step": "Crear sesión de práctica",
+      "request": "POST /v1/sessions",
+      "status": 201,
+      "response": {
+        "id": 2,
+        "title": "Ensayo TB2",
+        "status": "DRAFT",
+        "sessionType": "presentation",
+        "user": {
+          "id": 3,
+          "email": "cuenta-prueba-a@example.com",
+          "username": "tb2_a",
+          "academicSegment": "ciclos_1_5"
+        },
+        "createdAt": "2026-11-14T13:52:19.340848077",
+        "finalizedAt": null
+      }
+    },
+    {
+      "step": "Consultar sesión (propietario)",
+      "request": "GET /v1/sessions/2",
+      "status": 200,
+      "response": {
+        "id": 2,
+        "title": "Ensayo TB2",
+        "status": "DRAFT",
+        "sessionType": "presentation",
+        "user": {
+          "id": 3,
+          "email": "cuenta-prueba-a@example.com",
+          "username": "tb2_a",
+          "academicSegment": "ciclos_1_5"
+        },
+        "createdAt": "2026-11-14T13:52:19.340848",
+        "finalizedAt": null
+      }
+    },
+    {
+      "step": "Consultar sesión ajena",
+      "request": "GET /v1/sessions/2",
+      "status": 403,
+      "response": {
+        "timestamp": "2026-11-14T13:52:20.429941691Z",
+        "status": 403,
+        "error": "Forbidden",
+        "path": "/v1/sessions/2"
+      }
+    },
+    {
+      "step": "Finalizar sesión ajena",
+      "request": "POST /v1/sessions/2/finalize",
+      "status": 403,
+      "response": {
+        "timestamp": "2026-11-14T13:52:20.938493526Z",
+        "status": 403,
+        "error": "Forbidden",
+        "path": "/v1/sessions/2/finalize"
+      }
+    },
+    {
+      "step": "Finalizar desde DRAFT (transición inválida)",
+      "request": "POST /v1/sessions/2/finalize",
+      "status": 409,
+      "response": {
+        "timestamp": "2026-11-14T13:52:21.404099933Z",
+        "status": 409,
+        "error": "Conflict",
+        "code": "INVALID_SESSION_TRANSITION",
+        "action": "finalize",
+        "currentStatus": "DRAFT",
+        "message": "Session must be RECORDING to finalize.",
+        "path": "/v1/sessions/2/finalize"
+      }
+    },
+    {
+      "step": "Iniciar sesión ajena",
+      "request": "POST /v1/sessions/2/start",
+      "status": 403,
+      "response": {
+        "timestamp": "2026-11-14T13:52:21.880308688Z",
+        "status": 403,
+        "error": "Forbidden",
+        "path": "/v1/sessions/2/start"
+      }
+    },
+    {
+      "step": "Iniciar grabación (DRAFT a RECORDING)",
+      "request": "POST /v1/sessions/2/start",
+      "status": 200,
+      "response": {
+        "id": 2,
+        "title": "Ensayo TB2",
+        "status": "RECORDING",
+        "sessionType": "presentation",
+        "user": {
+          "id": 3,
+          "email": "cuenta-prueba-a@example.com",
+          "username": "tb2_a",
+          "academicSegment": "ciclos_1_5"
+        },
+        "createdAt": "2026-11-14T13:52:19.340848",
+        "finalizedAt": null
+      }
+    },
+    {
+      "step": "Iniciar de nuevo (transición inválida)",
+      "request": "POST /v1/sessions/2/start",
+      "status": 409,
+      "response": {
+        "timestamp": "2026-11-14T13:52:22.853906158Z",
+        "status": 409,
+        "error": "Conflict",
+        "code": "INVALID_SESSION_TRANSITION",
+        "action": "start",
+        "currentStatus": "RECORDING",
+        "message": "Session must be DRAFT to start.",
+        "path": "/v1/sessions/2/start"
+      }
+    },
+    {
+      "step": "Finalizar (RECORDING a PROCESSING)",
+      "request": "POST /v1/sessions/2/finalize",
+      "status": 202,
+      "response": {
+        "id": 2,
+        "title": "Ensayo TB2",
+        "status": "PROCESSING",
+        "sessionType": "presentation",
+        "user": {
+          "id": 3,
+          "email": "cuenta-prueba-a@example.com",
+          "username": "tb2_a",
+          "academicSegment": "ciclos_1_5"
+        },
+        "createdAt": "2026-11-14T13:52:19.340848",
+        "finalizedAt": "2026-11-14T13:52:23.341128266"
+      }
+    },
+    {
+      "step": "Modos de práctica",
+      "request": "GET /v1/coach/modes",
+      "status": 200,
+      "response": {
+        "description": "Modos disponibles para sesiones con Gemini Live",
+        "modes": [
+          "quick_practice",
+          "interview",
+          "thesis_defense",
+          "scenario"
+        ]
+      }
+    },
+    {
+      "step": "Cierre del coach: publica session.live.finalized",
+      "request": "POST /v1/coach/2/finalize?mode=presentation&transcriptGemini=Bueno%2C+este%2C+hoy+les+presento+eh+el+proyecto+Talki.+O+sea%2C+la+idea+es+practicar%2C+este%2C+la+exposici%C3%B3n+con+feedback.&wordsPerMinute=138&silenceRatio=0.12&volumeRmsAvg=0.42&durationSeconds=95&academicSegment=ciclos_1_5",
+      "status": 202,
+      "response": {
+        "eventId": "4d3d0c78-3ae4-45ad-92c9-814475a80f73",
+        "eventType": "session.live.finalized",
+        "occurredAt": "2026-11-14T13:52:24.517828879Z",
+        "traceId": "90dcc9a1-2c42-4459-8926-c209d2238bf2",
+        "version": "1.0",
+        "sessionId": "2",
+        "userId": "3",
+        "mode": "presentation",
+        "scenarioId": null,
+        "transcriptGemini": "Bueno, este, hoy les presento eh el proyecto Talki. O sea, la idea es practicar, este, la exposición con feedback.",
+        "wordsPerMinute": 138,
+        "silenceRatio": 0.12,
+        "volumeRmsAvg": 0.42,
+        "durationSeconds": 95,
+        "academicSegment": "ciclos_1_5"
+      }
+    },
+    {
+      "step": "Registrar feedback",
+      "request": "POST /v1/sessions/2/feedbacks",
+      "status": 201,
+      "response": {
+        "id": 2,
+        "session": {
+          "id": 2,
+          "title": "Ensayo TB2",
+          "status": "PROCESSING",
+          "sessionType": "presentation",
+          "user": {
+            "id": 3,
+            "email": "cuenta-prueba-a@example.com",
+            "username": "tb2_a",
+            "academicSegment": "ciclos_1_5"
+          },
+          "createdAt": "2026-11-14T13:52:19.340848",
+          "finalizedAt": "2026-11-14T13:52:23.341128"
+        },
+        "feedbackType": "general",
+        "content": "Buen ritmo; reducir muletillas.",
+        "createdAt": "2026-11-14T13:52:25.009628974"
+      }
+    },
+    {
+      "step": "Listar feedback",
+      "request": "GET /v1/sessions/2/feedbacks",
+      "status": 200,
+      "response": [
+        {
+          "id": 2,
+          "session": {
+            "id": 2,
+            "title": "Ensayo TB2",
+            "status": "PROCESSING",
+            "sessionType": "presentation",
+            "user": {
+              "id": 3,
+              "email": "cuenta-prueba-a@example.com",
+              "username": "tb2_a",
+              "academicSegment": "ciclos_1_5"
+            },
+            "createdAt": "2026-11-14T13:52:19.340848",
+            "finalizedAt": "2026-11-14T13:52:23.341128"
+          },
+          "feedbackType": "general",
+          "content": "Buen ritmo; reducir muletillas.",
+          "createdAt": "2026-11-14T13:52:25.009629"
+        }
+      ]
+    },
+    {
+      "step": "Historial propio",
+      "request": "GET /v1/sessions",
+      "status": 200,
+      "response": [
+        {
+          "id": 2,
+          "title": "Ensayo TB2",
+          "status": "PROCESSING",
+          "sessionType": "presentation",
+          "user": {
+            "id": 3,
+            "email": "cuenta-prueba-a@example.com",
+            "username": "tb2_a",
+            "academicSegment": "ciclos_1_5"
+          },
+          "createdAt": "2026-11-14T13:52:19.340848",
+          "finalizedAt": "2026-11-14T13:52:23.341128"
+        }
+      ]
+    },
+    {
+      "step": "Reporte de análisis y puntuación",
+      "request": "GET /v1/reports/2?userId=3",
+      "status": 200,
+      "response": {
+        "reportId": 1,
+        "sessionId": "2",
+        "analysisState": "COMPLETED",
+        "analysisVersion": "filler-rules-v1",
+        "rubricVersion": "voice-rules-v1",
+        "overallScore": 77,
+        "scores": {
+          "fluency": 90,
+          "clarity": 85,
+          "volume": 70,
+          "vocabulary": 85,
+          "confidence": 55
+        },
+        "evidence": {
+          "totalFillers": 5,
+          "fillersByType": {
+            "este": 2,
+            "o sea": 1,
+            "eh": 1,
+            "bueno": 1
+          },
+          "wordCount": 20,
+          "wordsPerMinute": 138,
+          "durationSeconds": 95,
+          "silenceRatio": 0.12,
+          "volumeRmsAvg": 0.42
+        },
+        "limitations": [
+          "Puntuación calculada con reglas sobre métricas del discurso; no evalúa el contenido ni la argumentación."
+        ],
+        "computedAt": "2026-11-14T13:52:24.673124"
+      }
+    },
+    {
+      "step": "Dashboard de progreso",
+      "request": "GET /v1/progress/dashboard?userId=3",
+      "status": 200,
+      "response": {
+        "averageScore": 77.0,
+        "currentStreak": 1,
+        "userId": "3",
+        "totalSessions": 1,
+        "totalMinutes": 1,
+        "bestScore": 77
+      }
+    },
+    {
+      "step": "Racha de gamificación",
+      "request": "GET /v1/gamification/streaks/3",
+      "status": 200,
+      "response": {
+        "totalXp": 0,
+        "longestStreak": 0,
+        "currentStreak": 0,
+        "userId": "3"
+      }
+    },
+    {
+      "step": "Estado final de la sesión",
+      "request": "GET /v1/sessions/2",
+      "status": 200,
+      "response": {
+        "id": 2,
+        "title": "Ensayo TB2",
+        "status": "PROCESSING",
+        "sessionType": "presentation",
+        "user": {
+          "id": 3,
+          "email": "cuenta-prueba-a@example.com",
+          "username": "tb2_a",
+          "academicSegment": "ciclos_1_5"
+        },
+        "createdAt": "2026-11-14T13:52:19.340848",
+        "finalizedAt": "2026-11-14T13:52:23.341128"
+      }
+    }
+  ],
+  "environment": {
+    "frontend": "https://talki-tb2.vercel.app",
+    "backend": "Railway, proyecto talki-tb2 (production)",
+    "services": {
+      "identity-service": "https://identity-service-production-ce8b50e3.up.railway.app",
+      "session-service": "https://session-service-production-3dd26d8f.up.railway.app",
+      "live-coach-service": "https://live-coach-service-production-6b89fc95.up.railway.app",
+      "filler-detection-service": "https://filler-detection-service-production.up.railway.app",
+      "scoring-service": "https://scoring-service-production-79856239.up.railway.app",
+      "progress-service": "https://progress-service-production-d2692beb.up.railway.app",
+      "gamification-service": "https://gamification-service-production-8393195f.up.railway.app",
+      "notification-service": "https://notification-service-production-6d526845.up.railway.app"
+    }
+  },
+  "note": "Recorrido ejecutado contra el ambiente desplegado. Credenciales y tokens retirados; cuentas de prueba generadas para esta verificación."
+}
