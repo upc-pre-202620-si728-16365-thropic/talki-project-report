@@ -14,8 +14,8 @@ ORG="upc-pre-202620-si728-16365-thropic"
 # servicio | repositorio | rama o commit | carpeta
 REFS="identity-service|talki-user-services|develop|identity-service
 notification-service|talki-user-services|develop|notification-service
-session-service|talki-session-services|feat/sb1-03-session-lifecycle|session-service
-live-coach-service|talki-session-services|feat/sb1-03-session-lifecycle|live-coach-service
+session-service|talki-session-services|develop|session-service
+live-coach-service|talki-session-services|develop|live-coach-service
 filler-detection-service|talki-analysis-services|main|filler-detection-service
 scoring-service|talki-analysis-services|main|scoring-service
 progress-service|talki-engagement-services|main|progress-service

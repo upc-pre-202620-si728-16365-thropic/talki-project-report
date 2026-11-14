@@ -5475,7 +5475,7 @@ Durante el cierre del Sprint 1 desplegamos la primera versión de los productos 
 | --- | --- | --- |
 | Cliente web (Next.js) | [talki-frontend](https://github.com/upc-pre-202620-si728-16365-thropic/talki-frontend) `fix/identity-access-token` | [talki-tb2.vercel.app](https://talki-tb2.vercel.app) |
 | identity-service, notification-service | [talki-user-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-user-services) `develop` @ `86971fd` | Ver 7.2.1.6 |
-| session-service, live-coach-service | [talki-session-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-session-services) `feat/sb1-03-session-lifecycle` @ `9fbec0b` | Ver 7.2.1.6 |
+| session-service, live-coach-service | [talki-session-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-session-services) `feat/sb1-03-session-lifecycle` @ `9fbec0b` (integrado en `develop` como `d51b5c7`) | Ver 7.2.1.6 |
 | filler-detection-service, scoring-service | [talki-analysis-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-analysis-services) `main` @ `46f1a16` | Ver 7.2.1.6 |
 | progress-service, gamification-service | [talki-engagement-services](https://github.com/upc-pre-202620-si728-16365-thropic/talki-engagement-services) `main` @ `735c749` | Ver 7.2.1.6 |
 
