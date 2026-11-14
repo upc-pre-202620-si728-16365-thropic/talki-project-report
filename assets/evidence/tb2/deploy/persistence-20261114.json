@@ -1,0 +1,46 @@
+{
+  "service": "session-service",
+  "checkedAtStart": "2026-11-14T14:13:45Z",
+  "checkedAtEnd": "2026-11-14T14:14:43Z",
+  "procedure": [
+    "GET /v1/sessions con cuenta de prueba",
+    "scripts/talki-cloud.sh down session-service",
+    "GET /actuator/health = 404",
+    "scripts/talki-cloud.sh up session-service (nuevo despliegue desde el código)",
+    "GET /actuator/health = 200",
+    "GET /v1/sessions con la misma cuenta"
+  ],
+  "before": [
+    {
+      "id": 2,
+      "title": "Ensayo TB2",
+      "status": "PROCESSING",
+      "createdAt": "2026-11-14T13:52:19.340848",
+      "finalizedAt": "2026-11-14T13:52:23.341128"
+    },
+    {
+      "id": 3,
+      "title": "Ensayo vía web",
+      "status": "PROCESSING",
+      "createdAt": "2026-11-14T13:56:11.887037",
+      "finalizedAt": "2026-11-14T13:56:12.93197"
+    }
+  ],
+  "after": [
+    {
+      "id": 2,
+      "title": "Ensayo TB2",
+      "status": "PROCESSING",
+      "createdAt": "2026-11-14T13:52:19.340848",
+      "finalizedAt": "2026-11-14T13:52:23.341128"
+    },
+    {
+      "id": 3,
+      "title": "Ensayo vía web",
+      "status": "PROCESSING",
+      "createdAt": "2026-11-14T13:56:11.887037",
+      "finalizedAt": "2026-11-14T13:56:12.93197"
+    }
+  ],
+  "identical": true
+}
