@@ -1,6 +1,6 @@
 # Pendientes del informe para TB2
 
-**Actualización del 14/11/2026.** Voz real con Gemini Live comprobada en el ambiente desplegado. Quedan abiertos: entrevistas de validación (7.3.2 y 7.3.3), videos (navegación, validación, About-the-Product, About-the-Team y exposición), aporte verificable de Kevin y revisión de bibliografía, figuras y anexos.
+**Actualización del 14/11/2026.** Voz real con Gemini Live comprobada en el ambiente desplegado. Quedan abiertos: entrevistas de validación (7.3.2 y 7.3.3), videos (navegación, validación, About-the-Product, About-the-Team y exposición), revisión de bibliografía, figuras y anexos.
 
 Revisión del 30 de octubre de 2026. La prioridad es cerrar el informe acumulativo, desde la carátula hasta los anexos. El corte de contenido de TB2 es **7.4**; el Sprint 2, **7.2.2**, corresponde a TF1.
 
@@ -34,7 +34,7 @@ Fuentes: enunciado del curso obtenido con Campus, páginas 34–35, y comentario
 - [x] **Herramienta de tablero de la entrega.** GitHub Projects admitido según confirmación del Team Leader el 30/10/2026 y elegido por el equipo. Se conserva el tablero actual; no hace falta trasladarlo a otra herramienta. Quedan las actualizaciones de estados/evidencias conforme se ejecuten las tareas.
 - [x] **7.2.1.3 — Trazabilidad documental.** Historial actual actualizado con repositorio, rama, SHA, fecha/hora, autor, mensaje y archivos. Matriz de ocho PBIs / 24 tareas con historias, coordinación futura, commits base y artefactos disponibles en el README.
 - [x] **7.2.1.3 — Evidencia de implementación (14/11).** PR y commits del periodo de Alejandro, Werner y Manuel enlazados en 7.2.1.3.
-- [x] **7.2.1.8 — Team Collaboration Insights (14/11).** Aportes por integrante con PR, conteo de commits y capturas de GitHub. Falta el enlace de Kevin.
+- [x] **7.2.1.8 — Team Collaboration Insights (14/11).** Aportes por integrante con PR, conteo de commits y capturas de GitHub. Kevin acreditado como coautor del despliegue.
 - [x] **Registro de versiones / Student Outcome (14/11).** Versiones 1.54 y 1.55; Student Outcome de Alejandro, Gael y Werner actualizado.
 
 ## Evidencia técnica que falta incorporar
