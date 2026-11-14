@@ -1,0 +1,13 @@
+{
+  "checkedAt": "2026-11-14",
+  "environment": "Railway talki-tb2 (production), live-coach-service con GEMINI_API_KEY del proyecto TalkiDev de Google AI Studio",
+  "steps": [
+    {"request": "POST /v1/coach/live-token?mode=interview", "auth": "JWT de identity-service (cuenta de prueba)", "status": 200,
+     "response": {"token": "<redactado>", "model": "gemini-2.5-flash-native-audio-latest", "mode": "interview", "maxDurationMinutes": 15}},
+    {"request": "Gemini Live API (v1alpha) con el token efímero, @google/genai ai.live.connect, responseModalities AUDIO y outputAudioTranscription",
+     "input": "Texto: «Hola. Actúa como entrevistador de prácticas profesionales y hazme la primera pregunta en una sola frase.»",
+     "result": "turnComplete", "audioChunks": 66, "audioBytes": 170880, "audioSecondsPcm24kHz": 3.6,
+     "outputTranscription": "¿Qué te motivó a postular a estas prácticas profesionales en nuestra empresa?"}
+  ],
+  "note": "La API key permanece solo en el servidor; el navegador recibe un token efímero de un solo uso. La entrada fue texto: la captura de micrófono se demuestra en la exposición."
+}

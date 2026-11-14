@@ -1,6 +1,6 @@
 # Pendientes del informe para TB2
 
-**Actualización del 14/11/2026.** Quedan abiertos: entrevistas de validación (7.3.2 y 7.3.3), videos (navegación, validación, About-the-Product, About-the-Team y exposición), aporte verificable de Kevin y revisión de bibliografía, figuras y anexos.
+**Actualización del 14/11/2026.** Voz real con Gemini Live comprobada en el ambiente desplegado. Quedan abiertos: entrevistas de validación (7.3.2 y 7.3.3), videos (navegación, validación, About-the-Product, About-the-Team y exposición), aporte verificable de Kevin y revisión de bibliografía, figuras y anexos.
 
 Revisión del 30 de octubre de 2026. La prioridad es cerrar el informe acumulativo, desde la carátula hasta los anexos. El corte de contenido de TB2 es **7.4**; el Sprint 2, **7.2.2**, corresponde a TF1.
 

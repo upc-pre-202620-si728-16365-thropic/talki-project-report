@@ -120,6 +120,7 @@
 | 1.53 | 03/11/2026 | Tumi Oliden, Manuel Ignacio | Evidencia de SB1-04 y SB1-05-A en 7.2.1.4 a 7.2.1.6: pruebas de integración y BDD con RabbitMQ real, recorrido local de análisis a progreso, contrato de `GET /v1/reports/{sessionId}`, defectos corregidos y límites. Pendiente de revisión. |
 | 1.54 | 08/11/2026 | Tumi Oliden, Manuel Ignacio | Actualización de commits y evidencia tras la verificación final de SB1-04 y SB1-05-A, y enlace de los PR de análisis y progreso en 7.2.1.8. |
 | 1.55 | 14/11/2026 | Oroncoy Almeyda, Alejandro Daniel | Cierre del Sprint 1 para TB2: despliegue de los ocho servicios en Railway y del cliente en Vercel (7.1.4 y 7.2.1.7), prueba de persistencia, recorrido integrado y capturas en el ambiente desplegado (7.2.1.5 y 7.2.1.6), resultados de 217 pruebas de sesiones, identidad y notificaciones (7.2.1.4), desarrollo de los integrantes con PR y commits (7.2.1.3 y 7.2.1.8), estado de las 24 tareas, Student Outcome, conclusiones sobre tecnologías emergentes y bibliografía. |
+| 1.56 | 14/11/2026 | Oroncoy Almeyda, Alejandro Daniel | Voz real con Gemini Live en el ambiente desplegado: clave en live-coach-service, token efímero y respuesta de audio (7.2.1.5 y 7.2.1.7); SB1-03-B cerrada; conclusiones y recomendaciones actualizadas. |
 
 # Project Report Collaboration Insights
 
@@ -4871,7 +4872,7 @@ El backlog sustituye las diez tareas genéricas iniciales por **ocho PBIs y 24 t
 | Tarea | Responsable acordado | Horas | Dependencias | Criterio de aceptación | Estado |
 | --- | --- | ---: | --- | --- | --- |
 | **SB1-03-A** Cerrar máquina de estados y consentimiento | Alejandro | 4 | SB1-02-B | Ruta de inicio autorizada y transición DRAFT a RECORDING definidas; finalizar desde estado inválido devuelve error de negocio controlado, no 500. Registrar consentimiento antes de captura. | Hecho: talki-session-services#3; 409 verificado en el ambiente. |
-| **SB1-03-B** Comprobar integración de voz y token efímero | Alejandro | 4 | SB1-03-A | Credencial permanente solo en servidor; permiso denegado, clave ausente y token vencido se comunican. Con configuración autorizada se prueba un ensayo corto sin publicar audio personal. | Parcial: JWT y token efímero probados; voz real sin `GEMINI_API_KEY` en el ambiente. |
+| **SB1-03-B** Comprobar integración de voz y token efímero | Alejandro | 4 | SB1-03-A | Credencial permanente solo en servidor; permiso denegado, clave ausente y token vencido se comunican. Con configuración autorizada se prueba un ensayo corto sin publicar audio personal. | Hecho (14/11): token efímero 200 y respuesta de voz de Gemini Live en el ambiente desplegado. |
 | **SB1-03-C** Unificar finalización y evento de análisis | Alejandro | 4 | SB1-03-A, SB1-03-B | El ID persistido de sesión se conserva en coach y eventos; finalizar una vez produce una sola evaluación lógica. Repetir la petición no duplica resultados. | Hecho: talki-frontend#1 (id persistido) y cierre único verificado. |
 | **SB1-03-D** Demostrar controles de práctica y errores | Kevin | 4 | SB1-03-B, SB1-03-C | Web muestra grabación, pausa/reanudación y cierre confirmado; permiso denegado y desconexión tienen recuperación o resultado parcial explícito. No declarar recuperación integral si no se verifica. | Sin commit/PR verificable al 14/11/2026. |
 
@@ -5291,6 +5292,7 @@ El video de navegación del producto integrado sigue pendiente. Su recorrido deb
 | Finalizar sin iniciar | `POST /v1/sessions/{id}/finalize` | 409 | `INVALID_SESSION_TRANSITION`, `currentStatus: DRAFT`. |
 | Iniciar | `POST /v1/sessions/{id}/start` | 200 | `RECORDING`; un segundo inicio responde 409. |
 | Finalizar | `POST /v1/sessions/{id}/finalize` | 202 | `PROCESSING` con `finalizedAt`. |
+| Token de voz | `POST /v1/coach/live-token?mode=interview` | 200 | Token efímero de Gemini Live; la sesión respondió en audio (7.2.1.7). |
 | Cierre del coach | `POST /v1/coach/{id}/finalize` | 202 | Publica `session.live.finalized` con transcripción y métricas. |
 | Reporte | `GET /v1/reports/{id}` | 200 | `COMPLETED`, puntaje 77 (fluidez 90, claridad 85, volumen 70, vocabulario 85, confianza 55) y 5 muletillas: «este» ×2, «o sea», «eh», «bueno». |
 | Progreso | `GET /v1/progress/dashboard` | 200 | 1 sesión, promedio 77, racha 1. |
@@ -5500,7 +5502,9 @@ Durante el cierre del Sprint 1 desplegamos la primera versión de los productos 
 
 *Figura: Documentación OpenAPI de identity-service servida desde Railway, 14/11/2026.*
 
-**Límites.** La voz real con Gemini Live requiere `GEMINI_API_KEY`, que no se cargó en este ambiente: el resto del recorrido no depende de ella. Las bases de los servicios comparten una instancia de PostgreSQL, cada una con sus propias tablas; la separación en instancias distintas (ADD-07) queda para el Sprint 2. Por costo, el ambiente se apaga fuera de la evaluación y se enciende con el script de 7.1.4.
+**Voz real con Gemini Live.** Cargamos `GEMINI_API_KEY` solo en `live-coach-service`, con una clave del proyecto TalkiDev de Google AI Studio. `POST /v1/coach/live-token` respondió 200 con un token efímero para `gemini-2.5-flash-native-audio-latest`, y con ese token abrimos una sesión Live como lo hace el cliente. Ante la consigna de actuar como entrevistador, Gemini respondió en audio (3,6 s) con la transcripción «¿Qué te motivó a postular a estas prácticas profesionales en nuestra empresa?». La clave nunca llega al navegador. El registro está en [gemini-live-20261114.json](assets/evidence/tb2/deploy/gemini-live-20261114.json).
+
+**Límites.** La prueba de voz usó texto como entrada; la captura del micrófono se demuestra en la exposición. Las bases de los servicios comparten una instancia de PostgreSQL, cada una con sus propias tablas; la separación en instancias distintas (ADD-07) queda para el Sprint 2. Por costo, el ambiente se apaga fuera de la evaluación y se enciende con el script de 7.1.4.
 
 #### 7.2.1.8. Team Collaboration Insights during Sprint
 
@@ -5624,7 +5628,7 @@ La inteligencia artificial se propone como apoyo para ensayar preguntas contextu
 
 **Avance TB2.** La planificación actual define 24 tareas, 80 h estimadas y 36 SP residuales; el Team Leader confirmó capacidad de 20 h por integrante y responsables. La matriz de concordancia identifica las diferencias entre diez contextos de diseño y ocho servicios, con Sharing & Retention pendiente y el gateway Gemini integrado en Live Coach. Estas decisiones delimitan el alcance sin presentar el diseño como implementación terminada. La base 202601 ofrece ocho servicios y un cliente compilables. La ejecución con Java 17 aprueba 133 pruebas unitarias; la galería y el prototipo de diseño están publicados. Los enlaces históricos del producto no acreditan disponibilidad actual: el cliente responde 402 y las rutas comprobadas del backend 404. Deben recuperarse el despliegue y la aceptación integrada antes de presentar una primera versión operativa. El protocolo de validación está preparado, pero todavía no hay resultados observados ni opiniones autorizadas de validación para sustentar una mejora de desempeño.
 
-**Cierre del Sprint 1 (TB2).** La primera versión de Talki está desplegada: ocho servicios en Railway, con PostgreSQL y RabbitMQ, y el cliente en Vercel. En ese ambiente comprobamos el recorrido completo (registro, consentimiento, práctica, inicio, cierre, análisis, reporte y progreso), la autorización por propietario y la persistencia tras volver a desplegar un servicio. Las suites de sesiones, identidad y notificaciones suman 217 pruebas sin fallos, y las de análisis y progreso cuentan con aceptación BDD y contratos con RabbitMQ real. Siguen pendientes la voz real con Gemini Live en el ambiente publicado, la racha de gamificación, la consulta de reportes y progreso sin `userId` declarado por el cliente y las entrevistas de validación (7.3).
+**Cierre del Sprint 1 (TB2).** La primera versión de Talki está desplegada: ocho servicios en Railway, con PostgreSQL y RabbitMQ, y el cliente en Vercel. En ese ambiente comprobamos el recorrido completo (registro, consentimiento, práctica, inicio, cierre, análisis, reporte y progreso), la autorización por propietario y la persistencia tras volver a desplegar un servicio. Las suites de sesiones, identidad y notificaciones suman 217 pruebas sin fallos, y las de análisis y progreso cuentan con aceptación BDD y contratos con RabbitMQ real. Gemini Live también respondió en audio desde el ambiente publicado. Siguen pendientes la racha de gamificación, la consulta de reportes y progreso sin `userId` declarado por el cliente y las entrevistas de validación (7.3).
 
 ### Cómo aportan las tecnologías emergentes a la solución
 
@@ -5645,7 +5649,7 @@ El problema de Talki es que los estudiantes no tienen con quién practicar sus e
 - Cerrar las observaciones del parcial con aportes verificables por integrante, la lámina del equipo y la exposición en herramientas. Recuperar el despliegue del cliente Next.js/React y los servicios; ejecutar aceptación, validación por segmento y publicación de videos antes de declarar TB2 completo.
 
 - Integrar en `main` los PR abiertos del cierre del Sprint 1 después de la revisión cruzada y fijar el despliegue a esa rama.
-- Cargar `GEMINI_API_KEY` en el ambiente y comprobar la voz real con un ensayo corto antes de la exposición.
+- Probar la voz con micrófono en la web antes de la exposición; la clave de Gemini ya está cargada en el ambiente.
 - Prototipar una sala de práctica WebXR accesible desde el navegador y validarla con estudiantes antes de comprometer desarrollo de metaverso.
 
 # Video About-the-Team
