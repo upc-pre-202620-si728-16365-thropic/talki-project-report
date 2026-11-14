@@ -5152,6 +5152,32 @@ Se ejecutó `mvn -B -ntp clean test` en los ocho servicios con JDK 17.0.19. El r
 | progress-service | 9 | 0 | 0 | 0 |
 | gamification-service | 13 | 0 | 0 | 0 |
 
+**Evidencia de las suites por servicio.** Cada captura muestra la salida de `mvn -B -ntp clean test` del servicio correspondiente.
+
+**identity-service**
+<img src="assets/evidence/tb2/tests/identity-service.png" alt="Salida de mvn test de identity-service: 16 pruebas aprobadas" width="900">
+
+**notification-service**
+<img src="assets/evidence/tb2/tests/notification-service.png" alt="Salida de mvn test de notification-service: 7 pruebas aprobadas" width="900">
+
+**session-service**
+<img src="assets/evidence/tb2/tests/session-service.png" alt="Salida de mvn test de session-service: 30 pruebas aprobadas" width="900">
+
+**live-coach-service**
+<img src="assets/evidence/tb2/tests/live-coach-service.png" alt="Salida de mvn test de live-coach-service: 14 pruebas aprobadas" width="900">
+
+**filler-detection-service**
+<img src="assets/evidence/tb2/tests/filler-detection-service.png" alt="Salida de mvn test de filler-detection-service: 11 pruebas aprobadas" width="900">
+
+**scoring-service**
+<img src="assets/evidence/tb2/tests/scoring-service.png" alt="Salida de mvn test de scoring-service: 33 pruebas aprobadas" width="900">
+
+**progress-service**
+<img src="assets/evidence/tb2/tests/progress-service.png" alt="Salida de mvn test de progress-service: 9 pruebas aprobadas" width="900">
+
+**gamification-service**
+<img src="assets/evidence/tb2/tests/gamification-service.png" alt="Salida de mvn test de gamification-service: 13 pruebas aprobadas" width="900">
+
 **Resultado:** 133 pruebas, cero fallos, cero errores y cero omitidas. Son pruebas unitarias y de componentes con dobles de prueba, según las clases presentes; el número no representa cobertura porcentual. La primera ejecución con un JDK diferente al declarado presentó incompatibilidad de Mockito/Byte Buddy; la ejecución válida se realizó con Java 17.
 
 La prueba de humo HTTP local, con un caso de finalización fallido, se documenta en 7.2.1.5. No sustituye una suite completa de integración, aceptación BDD ni rendimiento. No se encontraron archivos `.feature` en las cinco instantáneas; los escenarios Gherkin del capítulo III siguen siendo especificaciones, pendientes de vincular con steps y ejecución. Tampoco se encontró evidencia ejecutada de pruebas de voz real, recuperación, autorización entre usuarios, purga distribuida o contratos versionados. El cliente dispone de compilación y lint; no declara un script de pruebas automatizadas en su `package.json`.
