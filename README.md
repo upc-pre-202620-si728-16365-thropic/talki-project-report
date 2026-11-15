@@ -123,6 +123,7 @@
 | 1.56 | 14/11/2026 | Oroncoy Almeyda, Alejandro Daniel | Voz real con Gemini Live en el ambiente desplegado: clave en live-coach-service, token efímero y respuesta de audio (7.2.1.5 y 7.2.1.7); SB1-03-B cerrada; conclusiones y recomendaciones actualizadas. |
 | 1.57 | 14/11/2026 | Oroncoy Almeyda, Alejandro Daniel; Chi Cruzatt, Kevin Jorge | Crédito del despliegue del Sprint 1 a Kevin, que lo realizó en pareja con Alejandro: 7.2.1.8, estado de SB1-07-A y SB1-07-B, Student Outcome e informe de participación TB2. |
 | 1.58 | 14/11/2026 | Oroncoy Almeyda, Alejandro Daniel | Publicación del Video About-the-Product en YouTube (no listado, 1:11) y actualización de 7.4 con enlace, fotograma, estructura, producción y pendientes (opiniones de segmentos, Stream y landing). |
+| 1.59 | 14/11/2026 | Oroncoy Almeyda, Alejandro Daniel | Video About-the-Product en Microsoft Stream (cuentas UPC) e incrustado en la nueva landing pública de talki-tb2.vercel.app; 7.4 actualizado con los tres canales. |
 
 # Project Report Collaboration Insights
 
@@ -5620,7 +5621,13 @@ El análisis final agrupará problemas por segmento y dispositivo, priorizará l
 
 ## 7.4. Video About-the-Product
 
-**Estado: publicado el 14/11/2026 en YouTube como no listado.** Duración: 1:11 (1920×1080, 30 fps). Enlace: [Talki · About the Product](https://youtu.be/Ns5WLxYbWKg).
+**Estado: publicado el 14/11/2026.** Duración: 1:11 (1920×1080, 30 fps).
+
+| Canal | Enlace | Acceso |
+| --- | --- | --- |
+| YouTube | [Talki · About the Product](https://youtu.be/Ns5WLxYbWKg) | No listado: cualquier persona con el enlace. |
+| Microsoft Stream | [TF_1ASI0728_Talki_About_the_Product](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202313397_upc_edu_pe/IQDOXKuOieAsQ4fSfT1hDNFmAXZpdL1mOnNk7Jpe6o2dvi8) | Cuentas UPC con el enlace (solo lectura). Copia comprimida a 9 MB en 1080p. |
+| Landing | [talki-tb2.vercel.app](https://talki-tb2.vercel.app/#video) | Pública; el reproductor de YouTube se carga al pulsar reproducir. |
 
 [![Fotograma del video About-the-Product: Live Coach en una defensa de tesis con transcripción en vivo, muletillas marcadas y consejo del coach](assets/evidence/tb2/video/about-the-product.jpg)](https://youtu.be/Ns5WLxYbWKg)
 
@@ -5637,7 +5644,9 @@ El video presenta Talki a estudiantes que necesitan practicar exposiciones, entr
 
 **Producción.** Narración generada con ElevenLabs (voz en español con acento peruano), música y efectos de transición generados con la misma herramienta, y animación de las escenas con Remotion. Las pantallas reproducen la interfaz desplegada del cliente web (7.2.1.5) con datos de ejemplo de una usuaria ficticia; no corresponden a resultados de estudiantes reales.
 
-**Pendiente.** Las opiniones autorizadas de cada segmento dependen de las entrevistas de validación (7.3), que no se realizaron; se incorporarán en una versión posterior del video. Quedan también la publicación en Microsoft Stream y la inserción del video en la landing.
+**Landing.** La raíz del cliente web muestra una landing pública para visitantes sin sesión, basada en el diseño de 6.3: propuesta de valor, video About-the-Product, pasos de uso, modos de práctica, segmentos y registro ([talki-frontend#2](https://github.com/upc-pre-202620-si728-16365-thropic/talki-frontend/pull/2)). Con sesión iniciada redirige al dashboard. El registro y el inicio de sesión requieren el backend encendido (7.2.1.7).
+
+**Pendiente.** Las opiniones autorizadas de cada segmento dependen de las entrevistas de validación (7.3), que no se realizaron; se incorporarán en una versión posterior del video.
 
 
 # Conclusiones y recomendaciones
