@@ -124,6 +124,7 @@
 | 1.57 | 14/11/2026 | Oroncoy Almeyda, Alejandro Daniel; Chi Cruzatt, Kevin Jorge | Crédito del despliegue del Sprint 1 a Kevin, que lo realizó en pareja con Alejandro: 7.2.1.8, estado de SB1-07-A y SB1-07-B, Student Outcome e informe de participación TB2. |
 | 1.58 | 14/11/2026 | Oroncoy Almeyda, Alejandro Daniel | Publicación del Video About-the-Product en YouTube (no listado, 1:11) y actualización de 7.4 con enlace, fotograma, estructura, producción y pendientes (opiniones de segmentos, Stream y landing). |
 | 1.59 | 14/11/2026 | Oroncoy Almeyda, Alejandro Daniel | Video About-the-Product en Microsoft Stream (cuentas UPC) e incrustado en la nueva landing pública de talki-tb2.vercel.app; 7.4 actualizado con los tres canales. |
+| 1.60 | 14/11/2026 | Oroncoy Almeyda, Alejandro Daniel | Video de navegación del producto (7.2.1.5) publicado en YouTube y Microsoft Stream: recorrido real en el ambiente desplegado, intervalos, condiciones de la grabación y fotograma. |
 
 # Project Report Collaboration Insights
 
@@ -5291,7 +5292,7 @@ Estas capturas comprueban que el cliente compila y se ejecuta, pero no un recorr
 
 La [galería](https://upc-pre-202620-si728-16365-thropic.github.io/talki-project-report/) y el [prototipo UX](https://upc-pre-202620-si728-16365-thropic.github.io/talki-project-report/assets/ux/prototype/) respondieron HTTP 200 el 30/10/2026. Sus pantallas permiten demostrar los flujos de diseño de 6.4–6.5. Las métricas, transcripción y acciones simuladas del prototipo no se presentan como salida de servicios o IA real.
 
-El video de navegación del producto integrado sigue pendiente. Su recorrido debe mostrar landing, acceso, configuración, práctica, cierre, análisis y consulta del resultado, incluyendo un estado de error pertinente. Se debe publicar el MP4 en Stream, registrar duración, insertar una captura con enlace y distinguir la demostración del prototipo de la aplicación conectada. El guion de demostración del anexo K organiza la grabación.
+El video de navegación del producto integrado se publicó el 14/11/2026; su detalle está en **Video del recorrido**, al final de esta sección.
 
 **Recorrido de análisis, scoring y progreso (03/11/2026).** Se levantaron live-coach, filler-detection, scoring, progress y gamification con un solo RabbitMQ y H2 descartable, mediante [capture-sb1-04-evidence.py](scripts/capture-sb1-04-evidence.py). Las respuestas completas y las doce comprobaciones, todas aprobadas, están en [e2e-execution.json](assets/evidence/tb2/sb1-04/e2e-execution.json). El cierre se envía con una transcripción escrita y métricas fixture: no hay micrófono, llamada a Gemini ni transición de estados en session-service, que corresponde a SB1-03.
 
@@ -5345,7 +5346,24 @@ El mismo recorrido funciona desde el cliente de Vercel a través del BFF: inicio
 
 *Figura: Dashboard en un viewport móvil de 390 × 844.*
 
-**Video del recorrido.** La grabación de la navegación del producto queda para la exposición de TB2.
+**Video del recorrido.** Publicado el 14/11/2026. Duración: 2:57 (1920×1080).
+
+| Canal | Enlace | Acceso |
+| --- | --- | --- |
+| YouTube | [Talki · Demo de navegación](https://youtu.be/JOnwQMscKuE) | No listado: cualquier persona con el enlace. |
+| Microsoft Stream | [TF_1ASI0728_Talki_Demo_Navegacion](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202313397_upc_edu_pe/IQBjEpc1C6K0Sp3ILq8NxL7DAY_OKcwrXbxlq1oTmSQov9s) | Cuentas UPC con el enlace (solo lectura). |
+
+[![Fotograma del video de navegación: análisis de una práctica de defensa de tesis con puntaje 73/100, una muletilla detectada y ritmo de 90 palabras por minuto](assets/evidence/tb2/video/demo-navegacion.jpg)](https://youtu.be/JOnwQMscKuE)
+
+| Intervalo | Recorrido en el ambiente desplegado (talki-tb2.vercel.app con los ocho servicios en Railway) |
+| --- | --- |
+| 0:00–0:28 | Landing con el video About-the-Product y registro de una cuenta nueva. |
+| 0:28–0:47 | Dashboard vacío y creación de la sesión «Defensa de tesis» (`thesis_defense`). |
+| 0:47–1:43 | Práctica con transcripción en vivo, cierre y análisis: 73/100, una muletilla («este»), 90 palabras por minuto y recomendaciones. La sesión pasa a «Procesando». |
+| 1:43–2:47 | Live Coach con Gemini Live en modo defensa de tesis: transcripción, respuesta hablada del coach y feedback (68/100, tres muletillas). |
+| 2:47–2:57 | Dashboard con las dos sesiones y ranking. |
+
+**Condiciones de la grabación.** Recorrido automatizado con Playwright en Google Chrome sobre el ambiente desplegado; las respuestas, la transcripción y los puntajes son los que devolvieron los servicios. La voz del estudiante es una locución generada con ElevenLabs, reproducida como entrada de micrófono; la cámara estuvo desactivada. La contraseña de la cuenta de demostración la escribió el Team Leader y ese tramo se recortó. La narración se añadió en edición. No se muestra un estado de error; queda para la versión siguiente del video.
 
 #### 7.2.1.6. Services Documentation Evidence for Sprint Review
 
