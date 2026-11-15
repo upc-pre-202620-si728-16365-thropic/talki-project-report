@@ -125,7 +125,7 @@
 | 1.58 | 14/11/2026 | Oroncoy Almeyda, Alejandro Daniel | Publicación del Video About-the-Product en YouTube (no listado, 1:11) y actualización de 7.4 con enlace, fotograma, estructura, producción y pendientes (opiniones de segmentos, Stream y landing). |
 | 1.59 | 14/11/2026 | Oroncoy Almeyda, Alejandro Daniel | Video About-the-Product en Microsoft Stream (cuentas UPC) e incrustado en la nueva landing pública de talki-tb2.vercel.app; 7.4 actualizado con los tres canales. |
 | 1.60 | 14/11/2026 | Oroncoy Almeyda, Alejandro Daniel | Video de navegación del producto (7.2.1.5) publicado en YouTube y Microsoft Stream: recorrido real en el ambiente desplegado, intervalos, condiciones de la grabación y fotograma. |
-| 1.61 | 14/11/2026 | Oroncoy Almeyda, Alejandro Daniel | Entrevistas de validación (7.3 y SB1-08-A): quedan pendientes para la entrega final. |
+| 1.61 | 14/11/2026 | Oroncoy Almeyda, Alejandro Daniel | Entrevistas de validación (7.3 y SB1-08-A) movidas al Sprint 2. |
 
 # Project Report Collaboration Insights
 
@@ -4917,7 +4917,7 @@ El backlog sustituye las diez tareas genéricas iniciales por **ocho PBIs y 24 t
 
 | Tarea | Responsable acordado | Horas | Dependencias | Criterio de aceptación | Estado |
 | --- | --- | ---: | --- | --- | --- |
-| **SB1-08-A** Aplicar protocolo a ambos segmentos y registrar sesiones | Eduardo | 4 | SB1-06-C | Al menos tres participantes por segmento, consentimiento, fecha, dispositivo/versión y tareas; registrar éxito, tiempo, ayuda y observaciones. Si se usa prototipo, se declara simulación; reclutamiento es dependencia externa. | Por hacer: entrevistas de validación no realizadas; quedan pendientes para la entrega final. |
+| **SB1-08-A** Aplicar protocolo a ambos segmentos y registrar sesiones | Eduardo | 4 | SB1-06-C | Al menos tres participantes por segmento, consentimiento, fecha, dispositivo/versión y tareas; registrar éxito, tiempo, ayuda y observaciones. Si se usa prototipo, se declara simulación; reclutamiento es dependencia externa. | Por hacer: entrevistas de validación no realizadas; movidas al Sprint 2. |
 | **SB1-08-B** Consolidar heurísticas y decisiones de mejora | Werner | 2 | SB1-08-A | Hallazgos reales de usabilidad, arquitectura de información y diseño inclusivo con severidad, evidencia y acción. Videos de validación y About Product siguen diferidos; no se inventan opiniones. | Por hacer: depende de SB1-08-A. |
 
 **Reparto operativo por integrante para ejecutar el incremento.** Como equipo, acordamos los siguientes paquetes de trabajo para el sprint del 26/10 al 08/11. Cada integrante desarrollará sus tareas, comprobará los criterios de las tablas anteriores y actualizará su evidencia en este README. El reparto asigna trabajo futuro; las casillas se cerrarán cuando exista el resultado revisado.
@@ -5584,7 +5584,7 @@ Las capturas de talki-session-services, talki-engagement-services, talki-project
 
 ## 7.3. Validation Interviews
 
-**Quedan pendientes para la entrega final.**
+**Las entrevistas de validación se movieron al Sprint 2.**
 
 ### 7.3.1. Diseño de entrevistas
 
@@ -5609,7 +5609,7 @@ QAS-USA-01 propone que al menos el 90 % prepare una sesión válida en tres minu
 
 ### 7.3.2. Registro de entrevistas
 
-**Estado: quedan pendientes para la entrega final (revisado el 14/11/2026).** Las sesiones de validación no se realizaron durante el Sprint 1; el producto ya está desplegado (7.2.1.7), por lo que pueden aplicarse sobre la versión publicada. No se dispone de evidencia de sesiones de validación en esta revisión. Se deja preparado el registro mínimo de seis participantes, sin asignar identidades o respuestas ficticias. Los videos de validación permanecen pendientes por acuerdo del equipo.
+**Estado: movidas al Sprint 2 (revisado el 14/11/2026).** Las sesiones de validación no se realizaron durante el Sprint 1; el producto ya está desplegado (7.2.1.7), por lo que pueden aplicarse sobre la versión publicada. No se dispone de evidencia de sesiones de validación en esta revisión. Se deja preparado el registro mínimo de seis participantes, sin asignar identidades o respuestas ficticias. Los videos de validación permanecen pendientes por acuerdo del equipo.
 
 | Registro | Segmento previsto | Identidad, edad, distrito y fecha | Dispositivo / versión | Stream, inicio y duración | Resumen y tareas |
 | --- | --- | --- | --- | --- | --- |
@@ -5638,7 +5638,7 @@ Se evaluarán usabilidad, arquitectura de información y diseño inclusivo usand
 
 Cada hallazgo tendrá ID, participante/tarea, heurística, evidencia, frecuencia, severidad 0–4, recomendación, responsable y estado. La severidad 0 indica ausencia de problema; 1 cosmético; 2 menor; 3 mayor; 4 impide una tarea esencial. Se debe justificar la severidad por impacto, frecuencia y recuperación. No se asigna una nota ni se afirma accesibilidad certificada a partir de la existencia de mock-ups.
 
-El análisis final agrupará problemas por segmento y dispositivo, priorizará los bloqueos, enlazará cada decisión con una historia y conservará las versiones anterior y corregida. El resultado de esta sección queda pendiente para la entrega final.
+El análisis final agrupará problemas por segmento y dispositivo, priorizará los bloqueos, enlazará cada decisión con una historia y conservará las versiones anterior y corregida. El resultado de esta sección se obtendrá en el Sprint 2, junto con las entrevistas.
 
 ## 7.4. Video About-the-Product
 
