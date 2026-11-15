@@ -126,6 +126,7 @@
 | 1.59 | 14/11/2026 | Oroncoy Almeyda, Alejandro Daniel | Video About-the-Product en Microsoft Stream (cuentas UPC) e incrustado en la nueva landing pública de talki-tb2.vercel.app; 7.4 actualizado con los tres canales. |
 | 1.60 | 14/11/2026 | Oroncoy Almeyda, Alejandro Daniel | Video de navegación del producto (7.2.1.5) publicado en YouTube y Microsoft Stream: recorrido real en el ambiente desplegado, intervalos, condiciones de la grabación y fotograma. |
 | 1.61 | 14/11/2026 | Oroncoy Almeyda, Alejandro Daniel | Entrevistas de validación (7.3 y SB1-08-A) movidas al Sprint 2. |
+| 1.62 | 14/11/2026 | Oroncoy Almeyda, Alejandro Daniel | Enlace al video de exposición del TB2 en Microsoft Stream en el anexo Videos de Exposiciones. |
 
 # Project Report Collaboration Insights
 
@@ -5796,4 +5797,4 @@ World Wide Web Consortium. (s. f.). *Understanding Success Criterion 2.5.8: Targ
 
 **TP:** [Video de exposición del TP](https://drive.google.com/drive/folders/1S1YQ4q0QtCI28OER21HIhHuKYnlDoAwp?usp=sharing).
 
-**TB2:** grabación de exposición pendiente; debe mostrar los artefactos directamente en sus herramientas, con participación de los cinco integrantes.
+**TB2:** [Video de exposición del TB2](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202313397_upc_edu_pe/IQD95v0l47kfSZbpbt49SymxAapfodxE--5duxSmZy5uWWU) (Microsoft Stream, 18:02). Archivo entregado: `TF_1ASI0728_202620_VIDEO.mp4`.
