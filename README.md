@@ -122,6 +122,7 @@
 | 1.55 | 14/11/2026 | Oroncoy Almeyda, Alejandro Daniel | Cierre del Sprint 1 para TB2: despliegue de los ocho servicios en Railway y del cliente en Vercel (7.1.4 y 7.2.1.7), prueba de persistencia, recorrido integrado y capturas en el ambiente desplegado (7.2.1.5 y 7.2.1.6), resultados de 217 pruebas de sesiones, identidad y notificaciones (7.2.1.4), desarrollo de los integrantes con PR y commits (7.2.1.3 y 7.2.1.8), estado de las 24 tareas, Student Outcome, conclusiones sobre tecnologías emergentes y bibliografía. |
 | 1.56 | 14/11/2026 | Oroncoy Almeyda, Alejandro Daniel | Voz real con Gemini Live en el ambiente desplegado: clave en live-coach-service, token efímero y respuesta de audio (7.2.1.5 y 7.2.1.7); SB1-03-B cerrada; conclusiones y recomendaciones actualizadas. |
 | 1.57 | 14/11/2026 | Oroncoy Almeyda, Alejandro Daniel; Chi Cruzatt, Kevin Jorge | Crédito del despliegue del Sprint 1 a Kevin, que lo realizó en pareja con Alejandro: 7.2.1.8, estado de SB1-07-A y SB1-07-B, Student Outcome e informe de participación TB2. |
+| 1.58 | 14/11/2026 | Oroncoy Almeyda, Alejandro Daniel | Publicación del Video About-the-Product en YouTube (no listado, 1:11) y actualización de 7.4 con enlace, fotograma, estructura, producción y pendientes (opiniones de segmentos, Stream y landing). |
 
 # Project Report Collaboration Insights
 
@@ -5619,17 +5620,24 @@ El análisis final agrupará problemas por segmento y dispositivo, priorizará l
 
 ## 7.4. Video About-the-Product
 
-**Estado: grabación y publicación pendientes.** El video presentará Talki a estudiantes que necesitan practicar exposiciones, entrevistas o sustentaciones. Explicará el problema, la propuesta, el recorrido y las condiciones de uso sin prometer una mejora de desempeño todavía no medida. Debe durar entre uno y tres minutos e incluir interacción con el producto y al menos una opinión autorizada de cada segmento.
+**Estado: publicado el 14/11/2026 en YouTube como no listado.** Duración: 1:11 (1920×1080, 30 fps). Enlace: [Talki · About the Product](https://youtu.be/Ns5WLxYbWKg).
 
-| Intervalo propuesto | Contenido y evidencia |
+[![Fotograma del video About-the-Product: Live Coach en una defensa de tesis con transcripción en vivo, muletillas marcadas y consejo del coach](assets/evidence/tb2/video/about-the-product.jpg)](https://youtu.be/Ns5WLxYbWKg)
+
+El video presenta Talki a estudiantes que necesitan practicar exposiciones, entrevistas o sustentaciones. Plantea el problema, presenta la propuesta y recorre la práctica, el feedback y el progreso sin prometer una mejora de desempeño todavía no medida.
+
+| Intervalo | Contenido |
 | --- | --- |
-| 0:00–0:20 | Necesidad de practicar comunicación oral y presentación breve de Talki. |
-| 0:20–0:45 | Público objetivo y modelo de acceso/planes, distinguiendo propuesta de funcionalidad disponible. |
-| 0:45–1:30 | Configuración, práctica y lectura de feedback; mostrar la aplicación real. Si se usa el prototipo, rotular simulación. |
-| 1:30–2:10 | Una opinión autorizada de ciclos iniciales y una de ciclos superiores, recogidas realmente. |
-| 2:10–2:30 | Beneficio esperado, acceso a la solución y límites pertinentes. |
+| 0:00–0:15 | Necesidad: una exposición frente a un jurado y lo que el ensayo en solitario no revela (ritmo, muletillas, atención del público). |
+| 0:15–0:21 | Presentación de Talki como coach de oratoria con inteligencia artificial. |
+| 0:21–0:43 | Live Coach: elección del modo, transcripción en tiempo real con muletillas marcadas, consejo del coach y análisis posterior con puntaje, ritmo, muletillas, fluidez y consejos. |
+| 0:43–0:51 | Modos de práctica: exposición, entrevista, defensa de tesis y escenario. |
+| 0:51–1:05 | Progreso (puntaje, racha, ranking) y acceso desde la web y el celular. |
+| 1:05–1:11 | Cierre: «Talki. Habla con confianza.» |
 
-La versión final se publicará en Microsoft Stream y YouTube; se añadirá captura, duración, enlaces y fecha de publicación, y se incrustará en la landing. No se sustituye con el video About-the-Team ni con las entrevistas de needfinding. El guion queda preparado; las opiniones y URLs se completarán al grabar.
+**Producción.** Narración generada con ElevenLabs (voz en español con acento peruano), música y efectos de transición generados con la misma herramienta, y animación de las escenas con Remotion. Las pantallas reproducen la interfaz desplegada del cliente web (7.2.1.5) con datos de ejemplo de una usuaria ficticia; no corresponden a resultados de estudiantes reales.
+
+**Pendiente.** Las opiniones autorizadas de cada segmento dependen de las entrevistas de validación (7.3), que no se realizaron; se incorporarán en una versión posterior del video. Quedan también la publicación en Microsoft Stream y la inserción del video en la landing.
 
 
 # Conclusiones y recomendaciones
